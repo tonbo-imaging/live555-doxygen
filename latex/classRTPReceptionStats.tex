@@ -1,0 +1,687 @@
+\section{R\+T\+P\+Reception\+Stats Class Reference}
+\label{classRTPReceptionStats}\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+
+
+{\ttfamily \#include $<$R\+T\+P\+Source.\+hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+u\+\_\+int32\+\_\+t {\bf S\+S\+R\+C} () const 
+\item 
+unsigned {\bf num\+Packets\+Received\+Since\+Last\+Reset} () const 
+\item 
+unsigned {\bf tot\+Num\+Packets\+Received} () const 
+\item 
+double {\bf tot\+Num\+K\+Bytes\+Received} () const 
+\item 
+unsigned {\bf tot\+Num\+Packets\+Expected} () const 
+\item 
+unsigned {\bf base\+Ext\+Seq\+Num\+Received} () const 
+\item 
+unsigned {\bf last\+Reset\+Ext\+Seq\+Num\+Received} () const 
+\item 
+unsigned {\bf highest\+Ext\+Seq\+Num\+Received} () const 
+\item 
+unsigned {\bf jitter} () const 
+\item 
+unsigned {\bf last\+Received\+S\+R\+\_\+\+N\+T\+Pmsw} () const 
+\item 
+unsigned {\bf last\+Received\+S\+R\+\_\+\+N\+T\+Plsw} () const 
+\item 
+struct timeval const \& {\bf last\+Received\+S\+R\+\_\+time} () const 
+\item 
+unsigned {\bf min\+Inter\+Packet\+Gap\+U\+S} () const 
+\item 
+unsigned {\bf max\+Inter\+Packet\+Gap\+U\+S} () const 
+\item 
+struct timeval const \& {\bf total\+Inter\+Packet\+Gaps} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf R\+T\+P\+Reception\+Stats} (u\+\_\+int32\+\_\+t {\bf S\+S\+R\+C}, u\+\_\+int16\+\_\+t initial\+Seq\+Num)
+\item 
+{\bf R\+T\+P\+Reception\+Stats} (u\+\_\+int32\+\_\+t {\bf S\+S\+R\+C})
+\item 
+virtual {\bf $\sim$\+R\+T\+P\+Reception\+Stats} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+u\+\_\+int32\+\_\+t {\bf f\+S\+S\+R\+C}
+\item 
+unsigned {\bf f\+Num\+Packets\+Received\+Since\+Last\+Reset}
+\item 
+unsigned {\bf f\+Tot\+Num\+Packets\+Received}
+\item 
+u\+\_\+int32\+\_\+t {\bf f\+Tot\+Bytes\+Received\+\_\+hi}
+\item 
+u\+\_\+int32\+\_\+t {\bf f\+Tot\+Bytes\+Received\+\_\+lo}
+\item 
+{\bf Boolean} {\bf f\+Have\+Seen\+Initial\+Sequence\+Number}
+\item 
+unsigned {\bf f\+Base\+Ext\+Seq\+Num\+Received}
+\item 
+unsigned {\bf f\+Last\+Reset\+Ext\+Seq\+Num\+Received}
+\item 
+unsigned {\bf f\+Highest\+Ext\+Seq\+Num\+Received}
+\item 
+int {\bf f\+Last\+Transit}
+\item 
+u\+\_\+int32\+\_\+t {\bf f\+Previous\+Packet\+R\+T\+P\+Timestamp}
+\item 
+double {\bf f\+Jitter}
+\item 
+unsigned {\bf f\+Last\+Received\+S\+R\+\_\+\+N\+T\+Pmsw}
+\item 
+unsigned {\bf f\+Last\+Received\+S\+R\+\_\+\+N\+T\+Plsw}
+\item 
+struct timeval {\bf f\+Last\+Received\+S\+R\+\_\+time}
+\item 
+struct timeval {\bf f\+Last\+Packet\+Reception\+Time}
+\item 
+unsigned {\bf f\+Min\+Inter\+Packet\+Gap\+U\+S}
+\item 
+unsigned {\bf f\+Max\+Inter\+Packet\+Gap\+U\+S}
+\item 
+struct timeval {\bf f\+Total\+Inter\+Packet\+Gaps}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf note\+Incoming\+Packet} (u\+\_\+int16\+\_\+t seq\+Num, u\+\_\+int32\+\_\+t rtp\+Timestamp, unsigned timestamp\+Frequency, {\bf Boolean} use\+For\+Jitter\+Calculation, struct timeval \&result\+Presentation\+Time, {\bf Boolean} \&result\+Has\+Been\+Synced\+Using\+R\+T\+C\+P, unsigned packet\+Size)
+\item 
+void {\bf note\+Incoming\+S\+R} (u\+\_\+int32\+\_\+t ntp\+Timestamp\+M\+S\+W, u\+\_\+int32\+\_\+t ntp\+Timestamp\+L\+S\+W, u\+\_\+int32\+\_\+t rtp\+Timestamp)
+\item 
+void {\bf init} (u\+\_\+int32\+\_\+t {\bf S\+S\+R\+C})
+\item 
+void {\bf init\+Seq\+Num} (u\+\_\+int16\+\_\+t initial\+Seq\+Num)
+\item 
+void {\bf reset} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Boolean} {\bf f\+Has\+Been\+Synchronized}
+\item 
+u\+\_\+int32\+\_\+t {\bf f\+Sync\+Timestamp}
+\item 
+struct timeval {\bf f\+Sync\+Time}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf R\+T\+P\+Reception\+Stats\+D\+B}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 178 of file R\+T\+P\+Source.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{R\+T\+P\+Reception\+Stats(u\+\_\+int32\+\_\+t S\+S\+R\+C, u\+\_\+int16\+\_\+t initial\+Seq\+Num)}]{\setlength{\rightskip}{0pt plus 5cm}R\+T\+P\+Reception\+Stats\+::\+R\+T\+P\+Reception\+Stats (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t}]{S\+S\+R\+C, }
+\item[{u\+\_\+int16\+\_\+t}]{initial\+Seq\+Num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_a3ff87a54a6d0627071456ee31172c958}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{R\+T\+P\+Reception\+Stats(u\+\_\+int32\+\_\+t S\+S\+R\+C)}]{\setlength{\rightskip}{0pt plus 5cm}R\+T\+P\+Reception\+Stats\+::\+R\+T\+P\+Reception\+Stats (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t}]{S\+S\+R\+C}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_a07ba41d44c0fa9cccc9c3325ccc57846}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!````~R\+T\+P\+Reception\+Stats@{$\sim$\+R\+T\+P\+Reception\+Stats}}
+\index{````~R\+T\+P\+Reception\+Stats@{$\sim$\+R\+T\+P\+Reception\+Stats}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{$\sim$\+R\+T\+P\+Reception\+Stats()}]{\setlength{\rightskip}{0pt plus 5cm}virtual R\+T\+P\+Reception\+Stats\+::$\sim$\+R\+T\+P\+Reception\+Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classRTPReceptionStats_af6e300828df2d05a459c52ff65e6218a}
+
+
+\subsection{Member Function Documentation}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!base\+Ext\+Seq\+Num\+Received@{base\+Ext\+Seq\+Num\+Received}}
+\index{base\+Ext\+Seq\+Num\+Received@{base\+Ext\+Seq\+Num\+Received}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{base\+Ext\+Seq\+Num\+Received() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::base\+Ext\+Seq\+Num\+Received (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPReceptionStats_af855ef179b0a12b487a5db54924d2ee9}
+
+
+Definition at line 191 of file R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Base\+Ext\+Seq\+Num\+Received.
+
+
+\begin{DoxyCode}
+191 \{ \textcolor{keywordflow}{return} fBaseExtSeqNumReceived; \}
+\end{DoxyCode}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!highest\+Ext\+Seq\+Num\+Received@{highest\+Ext\+Seq\+Num\+Received}}
+\index{highest\+Ext\+Seq\+Num\+Received@{highest\+Ext\+Seq\+Num\+Received}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{highest\+Ext\+Seq\+Num\+Received() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::highest\+Ext\+Seq\+Num\+Received (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPReceptionStats_a9408c78a1d6a513a7bed262c7e1e1640}
+
+
+Definition at line 195 of file R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Highest\+Ext\+Seq\+Num\+Received.
+
+
+\begin{DoxyCode}
+195                                             \{
+196     \textcolor{keywordflow}{return} fHighestExtSeqNumReceived;
+197   \}
+\end{DoxyCode}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!init@{init}}
+\index{init@{init}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{init(u\+\_\+int32\+\_\+t S\+S\+R\+C)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Reception\+Stats\+::init (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t}]{S\+S\+R\+C}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPReceptionStats_ab16310927111d5452aa5c45688f39c67}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!init\+Seq\+Num@{init\+Seq\+Num}}
+\index{init\+Seq\+Num@{init\+Seq\+Num}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{init\+Seq\+Num(u\+\_\+int16\+\_\+t initial\+Seq\+Num)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Reception\+Stats\+::init\+Seq\+Num (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int16\+\_\+t}]{initial\+Seq\+Num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPReceptionStats_ad7d4d741e75d234a48250a926774032d}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!jitter@{jitter}}
+\index{jitter@{jitter}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{jitter() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::jitter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classRTPReceptionStats_aaccbf92ab588dc74887a7654f2f5492f}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!last\+Received\+S\+R\+\_\+\+N\+T\+Plsw@{last\+Received\+S\+R\+\_\+\+N\+T\+Plsw}}
+\index{last\+Received\+S\+R\+\_\+\+N\+T\+Plsw@{last\+Received\+S\+R\+\_\+\+N\+T\+Plsw}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{last\+Received\+S\+R\+\_\+\+N\+T\+Plsw() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::last\+Received\+S\+R\+\_\+\+N\+T\+Plsw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPReceptionStats_aa1b39d1662707b83da25195c6b8e4b01}
+
+
+Definition at line 202 of file R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Last\+Received\+S\+R\+\_\+\+N\+T\+Plsw.
+
+
+\begin{DoxyCode}
+202 \{ \textcolor{keywordflow}{return} fLastReceivedSR_NTPlsw; \}
+\end{DoxyCode}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!last\+Received\+S\+R\+\_\+\+N\+T\+Pmsw@{last\+Received\+S\+R\+\_\+\+N\+T\+Pmsw}}
+\index{last\+Received\+S\+R\+\_\+\+N\+T\+Pmsw@{last\+Received\+S\+R\+\_\+\+N\+T\+Pmsw}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{last\+Received\+S\+R\+\_\+\+N\+T\+Pmsw() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::last\+Received\+S\+R\+\_\+\+N\+T\+Pmsw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPReceptionStats_a7b8e1fe0971d309526d704b076f89031}
+
+
+Definition at line 201 of file R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Last\+Received\+S\+R\+\_\+\+N\+T\+Pmsw.
+
+
+\begin{DoxyCode}
+201 \{ \textcolor{keywordflow}{return} fLastReceivedSR_NTPmsw; \}
+\end{DoxyCode}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!last\+Received\+S\+R\+\_\+time@{last\+Received\+S\+R\+\_\+time}}
+\index{last\+Received\+S\+R\+\_\+time@{last\+Received\+S\+R\+\_\+time}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{last\+Received\+S\+R\+\_\+time() const }]{\setlength{\rightskip}{0pt plus 5cm}struct timeval const\& R\+T\+P\+Reception\+Stats\+::last\+Received\+S\+R\+\_\+time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPReceptionStats_a041f28f088348c648357e9a43e87c0e9}
+
+
+Definition at line 203 of file R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Last\+Received\+S\+R\+\_\+time.
+
+
+\begin{DoxyCode}
+203                                                     \{
+204     \textcolor{keywordflow}{return} fLastReceivedSR_time;
+205   \}
+\end{DoxyCode}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!last\+Reset\+Ext\+Seq\+Num\+Received@{last\+Reset\+Ext\+Seq\+Num\+Received}}
+\index{last\+Reset\+Ext\+Seq\+Num\+Received@{last\+Reset\+Ext\+Seq\+Num\+Received}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{last\+Reset\+Ext\+Seq\+Num\+Received() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::last\+Reset\+Ext\+Seq\+Num\+Received (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPReceptionStats_ae7df15e0277c613966ff58155633a4f4}
+
+
+Definition at line 192 of file R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Last\+Reset\+Ext\+Seq\+Num\+Received.
+
+
+\begin{DoxyCode}
+192                                               \{
+193     \textcolor{keywordflow}{return} fLastResetExtSeqNumReceived;
+194   \}
+\end{DoxyCode}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!max\+Inter\+Packet\+Gap\+U\+S@{max\+Inter\+Packet\+Gap\+U\+S}}
+\index{max\+Inter\+Packet\+Gap\+U\+S@{max\+Inter\+Packet\+Gap\+U\+S}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{max\+Inter\+Packet\+Gap\+U\+S() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::max\+Inter\+Packet\+Gap\+U\+S (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPReceptionStats_ad4e575e15ab99b156b769c805954a1d9}
+
+
+Definition at line 208 of file R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Max\+Inter\+Packet\+Gap\+U\+S.
+
+
+\begin{DoxyCode}
+208 \{ \textcolor{keywordflow}{return} fMaxInterPacketGapUS; \}
+\end{DoxyCode}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!min\+Inter\+Packet\+Gap\+U\+S@{min\+Inter\+Packet\+Gap\+U\+S}}
+\index{min\+Inter\+Packet\+Gap\+U\+S@{min\+Inter\+Packet\+Gap\+U\+S}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{min\+Inter\+Packet\+Gap\+U\+S() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::min\+Inter\+Packet\+Gap\+U\+S (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPReceptionStats_adb961dd32d4020f9ac07bc547d9c75a6}
+
+
+Definition at line 207 of file R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Min\+Inter\+Packet\+Gap\+U\+S.
+
+
+\begin{DoxyCode}
+207 \{ \textcolor{keywordflow}{return} fMinInterPacketGapUS; \}
+\end{DoxyCode}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!note\+Incoming\+Packet@{note\+Incoming\+Packet}}
+\index{note\+Incoming\+Packet@{note\+Incoming\+Packet}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{note\+Incoming\+Packet(u\+\_\+int16\+\_\+t seq\+Num, u\+\_\+int32\+\_\+t rtp\+Timestamp, unsigned timestamp\+Frequency, Boolean use\+For\+Jitter\+Calculation, struct timeval \&result\+Presentation\+Time, Boolean \&result\+Has\+Been\+Synced\+Using\+R\+T\+C\+P, unsigned packet\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Reception\+Stats\+::note\+Incoming\+Packet (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int16\+\_\+t}]{seq\+Num, }
+\item[{u\+\_\+int32\+\_\+t}]{rtp\+Timestamp, }
+\item[{unsigned}]{timestamp\+Frequency, }
+\item[{{\bf Boolean}}]{use\+For\+Jitter\+Calculation, }
+\item[{struct timeval \&}]{result\+Presentation\+Time, }
+\item[{{\bf Boolean} \&}]{result\+Has\+Been\+Synced\+Using\+R\+T\+C\+P, }
+\item[{unsigned}]{packet\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPReceptionStats_a217cff3f876276ae25ca4aa9ae7eb675}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!note\+Incoming\+S\+R@{note\+Incoming\+S\+R}}
+\index{note\+Incoming\+S\+R@{note\+Incoming\+S\+R}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{note\+Incoming\+S\+R(u\+\_\+int32\+\_\+t ntp\+Timestamp\+M\+S\+W, u\+\_\+int32\+\_\+t ntp\+Timestamp\+L\+S\+W, u\+\_\+int32\+\_\+t rtp\+Timestamp)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Reception\+Stats\+::note\+Incoming\+S\+R (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t}]{ntp\+Timestamp\+M\+S\+W, }
+\item[{u\+\_\+int32\+\_\+t}]{ntp\+Timestamp\+L\+S\+W, }
+\item[{u\+\_\+int32\+\_\+t}]{rtp\+Timestamp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPReceptionStats_ac0808776313ff78cc881ce3bf83a8c07}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!num\+Packets\+Received\+Since\+Last\+Reset@{num\+Packets\+Received\+Since\+Last\+Reset}}
+\index{num\+Packets\+Received\+Since\+Last\+Reset@{num\+Packets\+Received\+Since\+Last\+Reset}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{num\+Packets\+Received\+Since\+Last\+Reset() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::num\+Packets\+Received\+Since\+Last\+Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPReceptionStats_a4d97c5cb4889ddaf42984c2ad2b5f63b}
+
+
+Definition at line 181 of file R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Num\+Packets\+Received\+Since\+Last\+Reset.
+
+
+\begin{DoxyCode}
+181                                                     \{
+182     \textcolor{keywordflow}{return} fNumPacketsReceivedSinceLastReset;
+183   \}
+\end{DoxyCode}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!reset@{reset}}
+\index{reset@{reset}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{reset()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Reception\+Stats\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPReceptionStats_acb3ed083f413993ae79762584b0ccb82}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!S\+S\+R\+C@{S\+S\+R\+C}}
+\index{S\+S\+R\+C@{S\+S\+R\+C}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{S\+S\+R\+C() const }]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+P\+Reception\+Stats\+::\+S\+S\+R\+C (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPReceptionStats_a3f1349332365e017ed6cb40e84d461ae}
+
+
+Definition at line 180 of file R\+T\+P\+Source.\+hh.
+
+
+
+References f\+S\+S\+R\+C.
+
+
+\begin{DoxyCode}
+180 \{ \textcolor{keywordflow}{return} fSSRC; \}
+\end{DoxyCode}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!total\+Inter\+Packet\+Gaps@{total\+Inter\+Packet\+Gaps}}
+\index{total\+Inter\+Packet\+Gaps@{total\+Inter\+Packet\+Gaps}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{total\+Inter\+Packet\+Gaps() const }]{\setlength{\rightskip}{0pt plus 5cm}struct timeval const\& R\+T\+P\+Reception\+Stats\+::total\+Inter\+Packet\+Gaps (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPReceptionStats_aa087ba11914c86c4483d597b6e43339d}
+
+
+Definition at line 209 of file R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Total\+Inter\+Packet\+Gaps.
+
+
+\begin{DoxyCode}
+209                                                      \{
+210     \textcolor{keywordflow}{return} fTotalInterPacketGaps;
+211   \}
+\end{DoxyCode}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!tot\+Num\+K\+Bytes\+Received@{tot\+Num\+K\+Bytes\+Received}}
+\index{tot\+Num\+K\+Bytes\+Received@{tot\+Num\+K\+Bytes\+Received}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{tot\+Num\+K\+Bytes\+Received() const }]{\setlength{\rightskip}{0pt plus 5cm}double R\+T\+P\+Reception\+Stats\+::tot\+Num\+K\+Bytes\+Received (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classRTPReceptionStats_a964ceee6a2cefc604fc0fa4b54ffab0d}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!tot\+Num\+Packets\+Expected@{tot\+Num\+Packets\+Expected}}
+\index{tot\+Num\+Packets\+Expected@{tot\+Num\+Packets\+Expected}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{tot\+Num\+Packets\+Expected() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::tot\+Num\+Packets\+Expected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPReceptionStats_a45071b6e4d052800173396d8b0113e3a}
+
+
+Definition at line 187 of file R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Base\+Ext\+Seq\+Num\+Received, and f\+Highest\+Ext\+Seq\+Num\+Received.
+
+
+\begin{DoxyCode}
+187                                          \{
+188     \textcolor{keywordflow}{return} (fHighestExtSeqNumReceived - fBaseExtSeqNumReceived) + 1;
+189   \}
+\end{DoxyCode}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!tot\+Num\+Packets\+Received@{tot\+Num\+Packets\+Received}}
+\index{tot\+Num\+Packets\+Received@{tot\+Num\+Packets\+Received}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{tot\+Num\+Packets\+Received() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::tot\+Num\+Packets\+Received (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPReceptionStats_a35f8fe4ce62227bdbc775a413fcadeb1}
+
+
+Definition at line 184 of file R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Tot\+Num\+Packets\+Received.
+
+
+\begin{DoxyCode}
+184 \{ \textcolor{keywordflow}{return} fTotNumPacketsReceived; \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!R\+T\+P\+Reception\+Stats\+D\+B@{R\+T\+P\+Reception\+Stats\+D\+B}}
+\index{R\+T\+P\+Reception\+Stats\+D\+B@{R\+T\+P\+Reception\+Stats\+D\+B}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{R\+T\+P\+Reception\+Stats\+D\+B}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf R\+T\+P\+Reception\+Stats\+D\+B}\hspace{0.3cm}{\ttfamily [friend]}}\label{classRTPReceptionStats_a4fec7ae8849ae370874e91e8596577df}
+
+
+Definition at line 215 of file R\+T\+P\+Source.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Base\+Ext\+Seq\+Num\+Received@{f\+Base\+Ext\+Seq\+Num\+Received}}
+\index{f\+Base\+Ext\+Seq\+Num\+Received@{f\+Base\+Ext\+Seq\+Num\+Received}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Base\+Ext\+Seq\+Num\+Received}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::f\+Base\+Ext\+Seq\+Num\+Received\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_a0903ef9252aeda957044cae5355034a1}
+
+
+Definition at line 241 of file R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by base\+Ext\+Seq\+Num\+Received(), and tot\+Num\+Packets\+Expected().
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Has\+Been\+Synchronized@{f\+Has\+Been\+Synchronized}}
+\index{f\+Has\+Been\+Synchronized@{f\+Has\+Been\+Synchronized}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Has\+Been\+Synchronized}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+P\+Reception\+Stats\+::f\+Has\+Been\+Synchronized\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPReceptionStats_aeddd6b406d6bbaff21fc43de7fe9bbac}
+
+
+Definition at line 257 of file R\+T\+P\+Source.\+hh.
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Have\+Seen\+Initial\+Sequence\+Number@{f\+Have\+Seen\+Initial\+Sequence\+Number}}
+\index{f\+Have\+Seen\+Initial\+Sequence\+Number@{f\+Have\+Seen\+Initial\+Sequence\+Number}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Have\+Seen\+Initial\+Sequence\+Number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+P\+Reception\+Stats\+::f\+Have\+Seen\+Initial\+Sequence\+Number\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_add72f18a7f44217682384abf25533852}
+
+
+Definition at line 240 of file R\+T\+P\+Source.\+hh.
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Highest\+Ext\+Seq\+Num\+Received@{f\+Highest\+Ext\+Seq\+Num\+Received}}
+\index{f\+Highest\+Ext\+Seq\+Num\+Received@{f\+Highest\+Ext\+Seq\+Num\+Received}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Highest\+Ext\+Seq\+Num\+Received}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::f\+Highest\+Ext\+Seq\+Num\+Received\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_a42a8b4204d23522610216f78f1ecc5ee}
+
+
+Definition at line 243 of file R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by highest\+Ext\+Seq\+Num\+Received(), and tot\+Num\+Packets\+Expected().
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Jitter@{f\+Jitter}}
+\index{f\+Jitter@{f\+Jitter}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Jitter}]{\setlength{\rightskip}{0pt plus 5cm}double R\+T\+P\+Reception\+Stats\+::f\+Jitter\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_a76f399bed05f21fc092f6d1ffb43beb9}
+
+
+Definition at line 246 of file R\+T\+P\+Source.\+hh.
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Last\+Packet\+Reception\+Time@{f\+Last\+Packet\+Reception\+Time}}
+\index{f\+Last\+Packet\+Reception\+Time@{f\+Last\+Packet\+Reception\+Time}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Last\+Packet\+Reception\+Time}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval R\+T\+P\+Reception\+Stats\+::f\+Last\+Packet\+Reception\+Time\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_a0c3332e1b7d08f392108a8e22d993075}
+
+
+Definition at line 251 of file R\+T\+P\+Source.\+hh.
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Last\+Received\+S\+R\+\_\+\+N\+T\+Plsw@{f\+Last\+Received\+S\+R\+\_\+\+N\+T\+Plsw}}
+\index{f\+Last\+Received\+S\+R\+\_\+\+N\+T\+Plsw@{f\+Last\+Received\+S\+R\+\_\+\+N\+T\+Plsw}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Last\+Received\+S\+R\+\_\+\+N\+T\+Plsw}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::f\+Last\+Received\+S\+R\+\_\+\+N\+T\+Plsw\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_a3d474dd9bea79cf4535a003bd113ad49}
+
+
+Definition at line 249 of file R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by last\+Received\+S\+R\+\_\+\+N\+T\+Plsw().
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Last\+Received\+S\+R\+\_\+\+N\+T\+Pmsw@{f\+Last\+Received\+S\+R\+\_\+\+N\+T\+Pmsw}}
+\index{f\+Last\+Received\+S\+R\+\_\+\+N\+T\+Pmsw@{f\+Last\+Received\+S\+R\+\_\+\+N\+T\+Pmsw}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Last\+Received\+S\+R\+\_\+\+N\+T\+Pmsw}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::f\+Last\+Received\+S\+R\+\_\+\+N\+T\+Pmsw\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_aa8532db68f4687ff15a985bac401a321}
+
+
+Definition at line 248 of file R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by last\+Received\+S\+R\+\_\+\+N\+T\+Pmsw().
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Last\+Received\+S\+R\+\_\+time@{f\+Last\+Received\+S\+R\+\_\+time}}
+\index{f\+Last\+Received\+S\+R\+\_\+time@{f\+Last\+Received\+S\+R\+\_\+time}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Last\+Received\+S\+R\+\_\+time}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval R\+T\+P\+Reception\+Stats\+::f\+Last\+Received\+S\+R\+\_\+time\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_acff42a1dfc4d3f63a76dc7d7bbcd7df7}
+
+
+Definition at line 250 of file R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by last\+Received\+S\+R\+\_\+time().
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Last\+Reset\+Ext\+Seq\+Num\+Received@{f\+Last\+Reset\+Ext\+Seq\+Num\+Received}}
+\index{f\+Last\+Reset\+Ext\+Seq\+Num\+Received@{f\+Last\+Reset\+Ext\+Seq\+Num\+Received}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Last\+Reset\+Ext\+Seq\+Num\+Received}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::f\+Last\+Reset\+Ext\+Seq\+Num\+Received\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_a5231cdd5f8535fde22d1c43bd327f7c3}
+
+
+Definition at line 242 of file R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by last\+Reset\+Ext\+Seq\+Num\+Received().
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Last\+Transit@{f\+Last\+Transit}}
+\index{f\+Last\+Transit@{f\+Last\+Transit}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Last\+Transit}]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+P\+Reception\+Stats\+::f\+Last\+Transit\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_aca5535d99f3d5f9be8c5a67804fc6ba8}
+
+
+Definition at line 244 of file R\+T\+P\+Source.\+hh.
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Max\+Inter\+Packet\+Gap\+U\+S@{f\+Max\+Inter\+Packet\+Gap\+U\+S}}
+\index{f\+Max\+Inter\+Packet\+Gap\+U\+S@{f\+Max\+Inter\+Packet\+Gap\+U\+S}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Max\+Inter\+Packet\+Gap\+U\+S}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::f\+Max\+Inter\+Packet\+Gap\+U\+S\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_a6ad7540d72b743789823f45978e77bb1}
+
+
+Definition at line 252 of file R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by max\+Inter\+Packet\+Gap\+U\+S().
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Min\+Inter\+Packet\+Gap\+U\+S@{f\+Min\+Inter\+Packet\+Gap\+U\+S}}
+\index{f\+Min\+Inter\+Packet\+Gap\+U\+S@{f\+Min\+Inter\+Packet\+Gap\+U\+S}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Min\+Inter\+Packet\+Gap\+U\+S}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::f\+Min\+Inter\+Packet\+Gap\+U\+S\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_a0328fdb9e6454ebb9465ccef3761e94f}
+
+
+Definition at line 252 of file R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by min\+Inter\+Packet\+Gap\+U\+S().
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Num\+Packets\+Received\+Since\+Last\+Reset@{f\+Num\+Packets\+Received\+Since\+Last\+Reset}}
+\index{f\+Num\+Packets\+Received\+Since\+Last\+Reset@{f\+Num\+Packets\+Received\+Since\+Last\+Reset}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Num\+Packets\+Received\+Since\+Last\+Reset}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::f\+Num\+Packets\+Received\+Since\+Last\+Reset\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_a4d16dc7f07e1b5e302d5d8dba59bba7e}
+
+
+Definition at line 237 of file R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by num\+Packets\+Received\+Since\+Last\+Reset().
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Previous\+Packet\+R\+T\+P\+Timestamp@{f\+Previous\+Packet\+R\+T\+P\+Timestamp}}
+\index{f\+Previous\+Packet\+R\+T\+P\+Timestamp@{f\+Previous\+Packet\+R\+T\+P\+Timestamp}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Previous\+Packet\+R\+T\+P\+Timestamp}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+P\+Reception\+Stats\+::f\+Previous\+Packet\+R\+T\+P\+Timestamp\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_af76c5516dfd95fcd2e0ad67faf4e0cd9}
+
+
+Definition at line 245 of file R\+T\+P\+Source.\+hh.
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+S\+S\+R\+C@{f\+S\+S\+R\+C}}
+\index{f\+S\+S\+R\+C@{f\+S\+S\+R\+C}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+S\+S\+R\+C}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+P\+Reception\+Stats\+::f\+S\+S\+R\+C\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_ae690a22d323cabe4ce97abb887c1137b}
+
+
+Definition at line 236 of file R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by S\+S\+R\+C().
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Sync\+Time@{f\+Sync\+Time}}
+\index{f\+Sync\+Time@{f\+Sync\+Time}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Sync\+Time}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval R\+T\+P\+Reception\+Stats\+::f\+Sync\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPReceptionStats_a9a29a56cc9132cd889dbc4b0c45a291e}
+
+
+Definition at line 259 of file R\+T\+P\+Source.\+hh.
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Sync\+Timestamp@{f\+Sync\+Timestamp}}
+\index{f\+Sync\+Timestamp@{f\+Sync\+Timestamp}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Sync\+Timestamp}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+P\+Reception\+Stats\+::f\+Sync\+Timestamp\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPReceptionStats_a8a7e8ae1d890cd469ee459a6968b968b}
+
+
+Definition at line 258 of file R\+T\+P\+Source.\+hh.
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Total\+Inter\+Packet\+Gaps@{f\+Total\+Inter\+Packet\+Gaps}}
+\index{f\+Total\+Inter\+Packet\+Gaps@{f\+Total\+Inter\+Packet\+Gaps}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Total\+Inter\+Packet\+Gaps}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval R\+T\+P\+Reception\+Stats\+::f\+Total\+Inter\+Packet\+Gaps\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_a963c9dc63f6a0fea80752991559847cb}
+
+
+Definition at line 253 of file R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by total\+Inter\+Packet\+Gaps().
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Tot\+Bytes\+Received\+\_\+hi@{f\+Tot\+Bytes\+Received\+\_\+hi}}
+\index{f\+Tot\+Bytes\+Received\+\_\+hi@{f\+Tot\+Bytes\+Received\+\_\+hi}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Tot\+Bytes\+Received\+\_\+hi}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+P\+Reception\+Stats\+::f\+Tot\+Bytes\+Received\+\_\+hi\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_ae28320c5fe48e30aa4dc2a32f8ea8775}
+
+
+Definition at line 239 of file R\+T\+P\+Source.\+hh.
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Tot\+Bytes\+Received\+\_\+lo@{f\+Tot\+Bytes\+Received\+\_\+lo}}
+\index{f\+Tot\+Bytes\+Received\+\_\+lo@{f\+Tot\+Bytes\+Received\+\_\+lo}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Tot\+Bytes\+Received\+\_\+lo}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+P\+Reception\+Stats\+::f\+Tot\+Bytes\+Received\+\_\+lo\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_ae019ce2459f91451a7e68ac65cdc3ed0}
+
+
+Definition at line 239 of file R\+T\+P\+Source.\+hh.
+
+\index{R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}!f\+Tot\+Num\+Packets\+Received@{f\+Tot\+Num\+Packets\+Received}}
+\index{f\+Tot\+Num\+Packets\+Received@{f\+Tot\+Num\+Packets\+Received}!R\+T\+P\+Reception\+Stats@{R\+T\+P\+Reception\+Stats}}
+\subsubsection[{f\+Tot\+Num\+Packets\+Received}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Reception\+Stats\+::f\+Tot\+Num\+Packets\+Received\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTPReceptionStats_a00dfdb13415db3689712ff7f65d3d2f2}
+
+
+Definition at line 238 of file R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by tot\+Num\+Packets\+Received().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf R\+T\+P\+Source.\+hh}\end{DoxyCompactItemize}

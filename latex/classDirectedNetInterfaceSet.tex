@@ -1,0 +1,133 @@
+\section{Directed\+Net\+Interface\+Set Class Reference}
+\label{classDirectedNetInterfaceSet}\index{Directed\+Net\+Interface\+Set@{Directed\+Net\+Interface\+Set}}
+
+
+{\ttfamily \#include $<$Net\+Interface.\+hh$>$}
+
+
+
+Collaboration diagram for Directed\+Net\+Interface\+Set\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{classDirectedNetInterfaceSet__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Directed\+Net\+Interface\+Set} ()
+\item 
+virtual {\bf $\sim$\+Directed\+Net\+Interface\+Set} ()
+\item 
+{\bf Directed\+Net\+Interface} $\ast$ {\bf Add} ({\bf Directed\+Net\+Interface} const $\ast$interf)
+\item 
+{\bf Boolean} {\bf Remove} ({\bf Directed\+Net\+Interface} const $\ast$interf)
+\item 
+{\bf Boolean} {\bf Is\+Empty} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Hash\+Table} $\ast$ {\bf f\+Table}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Iterator}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 52 of file Net\+Interface.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Directed\+Net\+Interface\+Set@{Directed\+Net\+Interface\+Set}!Directed\+Net\+Interface\+Set@{Directed\+Net\+Interface\+Set}}
+\index{Directed\+Net\+Interface\+Set@{Directed\+Net\+Interface\+Set}!Directed\+Net\+Interface\+Set@{Directed\+Net\+Interface\+Set}}
+\subsubsection[{Directed\+Net\+Interface\+Set()}]{\setlength{\rightskip}{0pt plus 5cm}Directed\+Net\+Interface\+Set\+::\+Directed\+Net\+Interface\+Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classDirectedNetInterfaceSet_abe3238d4ca3271f14034f489883a196e}
+\index{Directed\+Net\+Interface\+Set@{Directed\+Net\+Interface\+Set}!````~Directed\+Net\+Interface\+Set@{$\sim$\+Directed\+Net\+Interface\+Set}}
+\index{````~Directed\+Net\+Interface\+Set@{$\sim$\+Directed\+Net\+Interface\+Set}!Directed\+Net\+Interface\+Set@{Directed\+Net\+Interface\+Set}}
+\subsubsection[{$\sim$\+Directed\+Net\+Interface\+Set()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Directed\+Net\+Interface\+Set\+::$\sim$\+Directed\+Net\+Interface\+Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classDirectedNetInterfaceSet_a52aa17c3c9f1f4cdf532cbc55c6873eb}
+
+
+\subsection{Member Function Documentation}
+\index{Directed\+Net\+Interface\+Set@{Directed\+Net\+Interface\+Set}!Add@{Add}}
+\index{Add@{Add}!Directed\+Net\+Interface\+Set@{Directed\+Net\+Interface\+Set}}
+\subsubsection[{Add(\+Directed\+Net\+Interface const $\ast$interf)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Directed\+Net\+Interface}$\ast$ Directed\+Net\+Interface\+Set\+::\+Add (
+\begin{DoxyParamCaption}
+\item[{{\bf Directed\+Net\+Interface} const $\ast$}]{interf}
+\end{DoxyParamCaption}
+)}\label{classDirectedNetInterfaceSet_a5b9a8d51e6ae1f1dffb3b320c40dd4a8}
+\index{Directed\+Net\+Interface\+Set@{Directed\+Net\+Interface\+Set}!Is\+Empty@{Is\+Empty}}
+\index{Is\+Empty@{Is\+Empty}!Directed\+Net\+Interface\+Set@{Directed\+Net\+Interface\+Set}}
+\subsubsection[{Is\+Empty()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Directed\+Net\+Interface\+Set\+::\+Is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classDirectedNetInterfaceSet_a1a728e9c4f68c00cfdbfc1ae7ee7673c}
+
+
+Definition at line 61 of file Net\+Interface.\+hh.
+
+
+
+References f\+Table, and Hash\+Table\+::\+Is\+Empty().
+
+
+\begin{DoxyCode}
+61 \{ \textcolor{keywordflow}{return} fTable->IsEmpty(); \}
+\end{DoxyCode}
+\index{Directed\+Net\+Interface\+Set@{Directed\+Net\+Interface\+Set}!Remove@{Remove}}
+\index{Remove@{Remove}!Directed\+Net\+Interface\+Set@{Directed\+Net\+Interface\+Set}}
+\subsubsection[{Remove(\+Directed\+Net\+Interface const $\ast$interf)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Directed\+Net\+Interface\+Set\+::\+Remove (
+\begin{DoxyParamCaption}
+\item[{{\bf Directed\+Net\+Interface} const $\ast$}]{interf}
+\end{DoxyParamCaption}
+)}\label{classDirectedNetInterfaceSet_a606224f56e36d6152b06545ef1f753dd}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Directed\+Net\+Interface\+Set@{Directed\+Net\+Interface\+Set}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!Directed\+Net\+Interface\+Set@{Directed\+Net\+Interface\+Set}}
+\subsubsection[{Iterator}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Iterator}\hspace{0.3cm}{\ttfamily [friend]}}\label{classDirectedNetInterfaceSet_a9830fc407400559db7e7783cc10a9394}
+
+
+Definition at line 76 of file Net\+Interface.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{Directed\+Net\+Interface\+Set@{Directed\+Net\+Interface\+Set}!f\+Table@{f\+Table}}
+\index{f\+Table@{f\+Table}!Directed\+Net\+Interface\+Set@{Directed\+Net\+Interface\+Set}}
+\subsubsection[{f\+Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hash\+Table}$\ast$ Directed\+Net\+Interface\+Set\+::f\+Table\hspace{0.3cm}{\ttfamily [private]}}\label{classDirectedNetInterfaceSet_afc18ef3a2a27b7aedeeede18610c436c}
+
+
+Definition at line 77 of file Net\+Interface.\+hh.
+
+
+
+Referenced by Is\+Empty().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+groupsock/include/{\bf Net\+Interface.\+hh}\end{DoxyCompactItemize}

@@ -1,0 +1,472 @@
+\section{R\+T\+S\+P\+Server\+:\+:R\+T\+S\+P\+Client\+Session Class Reference}
+\label{classRTSPServer_1_1RTSPClientSession}\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+
+
+{\ttfamily \#include $<$R\+T\+S\+P\+Server.\+hh$>$}
+
+
+
+Inheritance diagram for R\+T\+S\+P\+Server\+:\+:R\+T\+S\+P\+Client\+Session\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{classRTSPServer_1_1RTSPClientSession__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for R\+T\+S\+P\+Server\+:\+:R\+T\+S\+P\+Client\+Session\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRTSPServer_1_1RTSPClientSession__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf stream\+State}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf R\+T\+S\+P\+Client\+Session} ({\bf R\+T\+S\+P\+Server} \&our\+Server, u\+\_\+int32\+\_\+t session\+Id)
+\item 
+virtual {\bf $\sim$\+R\+T\+S\+P\+Client\+Session} ()
+\item 
+virtual void {\bf handle\+Cmd\+\_\+\+S\+E\+T\+U\+P} ({\bf R\+T\+S\+P\+Client\+Connection} $\ast$our\+Client\+Connection, char const $\ast$url\+Pre\+Suffix, char const $\ast$url\+Suffix, char const $\ast$full\+Request\+Str)
+\item 
+virtual void {\bf handle\+Cmd\+\_\+within\+Session} ({\bf R\+T\+S\+P\+Client\+Connection} $\ast$our\+Client\+Connection, char const $\ast$cmd\+Name, char const $\ast$url\+Pre\+Suffix, char const $\ast$url\+Suffix, char const $\ast$full\+Request\+Str)
+\item 
+virtual void {\bf handle\+Cmd\+\_\+\+T\+E\+A\+R\+D\+O\+W\+N} ({\bf R\+T\+S\+P\+Client\+Connection} $\ast$our\+Client\+Connection, {\bf Server\+Media\+Subsession} $\ast$subsession)
+\item 
+virtual void {\bf handle\+Cmd\+\_\+\+P\+L\+A\+Y} ({\bf R\+T\+S\+P\+Client\+Connection} $\ast$our\+Client\+Connection, {\bf Server\+Media\+Subsession} $\ast$subsession, char const $\ast$full\+Request\+Str)
+\item 
+virtual void {\bf handle\+Cmd\+\_\+\+P\+A\+U\+S\+E} ({\bf R\+T\+S\+P\+Client\+Connection} $\ast$our\+Client\+Connection, {\bf Server\+Media\+Subsession} $\ast$subsession)
+\item 
+virtual void {\bf handle\+Cmd\+\_\+\+G\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R} ({\bf R\+T\+S\+P\+Client\+Connection} $\ast$our\+Client\+Connection, {\bf Server\+Media\+Subsession} $\ast$subsession, char const $\ast$full\+Request\+Str)
+\item 
+virtual void {\bf handle\+Cmd\+\_\+\+S\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R} ({\bf R\+T\+S\+P\+Client\+Connection} $\ast$our\+Client\+Connection, {\bf Server\+Media\+Subsession} $\ast$subsession, char const $\ast$full\+Request\+Str)
+\item 
+void {\bf delete\+Stream\+By\+Track} (unsigned track\+Num)
+\item 
+void {\bf reclaim\+Stream\+States} ()
+\item 
+{\bf Boolean} {\bf is\+Multicast} () const 
+\item 
+void {\bf set\+R\+T\+S\+P\+Response} ({\bf R\+T\+S\+P\+Client\+Connection} $\ast$our\+Client\+Connection, char const $\ast$response\+Str)
+\item 
+void {\bf set\+R\+T\+S\+P\+Response} ({\bf R\+T\+S\+P\+Client\+Connection} $\ast$our\+Client\+Connection, char const $\ast$response\+Str, u\+\_\+int32\+\_\+t session\+Id)
+\item 
+void {\bf set\+R\+T\+S\+P\+Response} ({\bf R\+T\+S\+P\+Client\+Connection} $\ast$our\+Client\+Connection, char const $\ast$response\+Str, char const $\ast$content\+Str)
+\item 
+void {\bf set\+R\+T\+S\+P\+Response} ({\bf R\+T\+S\+P\+Client\+Connection} $\ast$our\+Client\+Connection, char const $\ast$response\+Str, u\+\_\+int32\+\_\+t session\+Id, char const $\ast$content\+Str)
+\item 
+{\bf Boolean} {\bf uses\+T\+C\+P\+Transport} () const 
+\item 
+{\bf Usage\+Environment} \& {\bf envir} ()
+\item 
+void {\bf note\+Liveness} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf note\+Client\+Liveness} ({\bf Client\+Session} $\ast$client\+Session)
+\item 
+static void {\bf liveness\+Timeout\+Task} ({\bf Client\+Session} $\ast$client\+Session)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf R\+T\+S\+P\+Server} \& {\bf f\+Our\+R\+T\+S\+P\+Server}
+\item 
+{\bf Boolean} {\bf f\+Is\+Multicast}
+\item 
+{\bf Boolean} {\bf f\+Stream\+After\+S\+E\+T\+U\+P}
+\item 
+unsigned char {\bf f\+T\+C\+P\+Stream\+Id\+Count}
+\item 
+unsigned {\bf f\+Num\+Stream\+States}
+\item 
+struct {\bf R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::stream\+State} $\ast$ {\bf f\+Stream\+States}
+\item 
+{\bf Generic\+Media\+Server} \& {\bf f\+Our\+Server}
+\item 
+u\+\_\+int32\+\_\+t {\bf f\+Our\+Session\+Id}
+\item 
+{\bf Server\+Media\+Session} $\ast$ {\bf f\+Our\+Server\+Media\+Session}
+\item 
+{\bf Task\+Token} {\bf f\+Liveness\+Check\+Task}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf R\+T\+S\+P\+Server}
+\item 
+class {\bf R\+T\+S\+P\+Client\+Connection}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 220 of file R\+T\+S\+P\+Server.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Client\+Session}}
+\index{R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Client\+Session}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{R\+T\+S\+P\+Client\+Session(\+R\+T\+S\+P\+Server \&our\+Server, u\+\_\+int32\+\_\+t session\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::\+R\+T\+S\+P\+Client\+Session (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+S\+P\+Server} \&}]{our\+Server, }
+\item[{u\+\_\+int32\+\_\+t}]{session\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTSPServer_1_1RTSPClientSession_aef28f5d9193fb996c6bed2bc904c81a8}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!````~R\+T\+S\+P\+Client\+Session@{$\sim$\+R\+T\+S\+P\+Client\+Session}}
+\index{````~R\+T\+S\+P\+Client\+Session@{$\sim$\+R\+T\+S\+P\+Client\+Session}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{$\sim$\+R\+T\+S\+P\+Client\+Session()}]{\setlength{\rightskip}{0pt plus 5cm}virtual R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::$\sim$\+R\+T\+S\+P\+Client\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classRTSPServer_1_1RTSPClientSession_ab97c0fc6c252ef3ba73226a72ce63064}
+
+
+\subsection{Member Function Documentation}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!delete\+Stream\+By\+Track@{delete\+Stream\+By\+Track}}
+\index{delete\+Stream\+By\+Track@{delete\+Stream\+By\+Track}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{delete\+Stream\+By\+Track(unsigned track\+Num)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::delete\+Stream\+By\+Track (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{track\+Num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTSPServer_1_1RTSPClientSession_adee99bc8c93657f858e3477c4edab4f0}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!envir@{envir}}
+\index{envir@{envir}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{envir()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Generic\+Media\+Server\+::\+Client\+Session\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_1_1ClientSession_a0e1838e7baf157ef60519f863948f117}
+
+
+Definition at line 116 of file Generic\+Media\+Server.\+hh.
+
+
+
+References Medium\+::envir(), and Generic\+Media\+Server\+::\+Client\+Session\+::f\+Our\+Server.
+
+
+\begin{DoxyCode}
+116 \{ \textcolor{keywordflow}{return} fOurServer.envir(); \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!handle\+Cmd\+\_\+\+G\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R@{handle\+Cmd\+\_\+\+G\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R}}
+\index{handle\+Cmd\+\_\+\+G\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R@{handle\+Cmd\+\_\+\+G\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{handle\+Cmd\+\_\+\+G\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R(\+R\+T\+S\+P\+Client\+Connection $\ast$our\+Client\+Connection, Server\+Media\+Subsession $\ast$subsession, char const $\ast$full\+Request\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::handle\+Cmd\+\_\+\+G\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+S\+P\+Client\+Connection} $\ast$}]{our\+Client\+Connection, }
+\item[{{\bf Server\+Media\+Subsession} $\ast$}]{subsession, }
+\item[{char const $\ast$}]{full\+Request\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classRTSPServer_1_1RTSPClientSession_a9826071ca6385b97d7df610f0d3471a1}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!handle\+Cmd\+\_\+\+P\+A\+U\+S\+E@{handle\+Cmd\+\_\+\+P\+A\+U\+S\+E}}
+\index{handle\+Cmd\+\_\+\+P\+A\+U\+S\+E@{handle\+Cmd\+\_\+\+P\+A\+U\+S\+E}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{handle\+Cmd\+\_\+\+P\+A\+U\+S\+E(\+R\+T\+S\+P\+Client\+Connection $\ast$our\+Client\+Connection, Server\+Media\+Subsession $\ast$subsession)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::handle\+Cmd\+\_\+\+P\+A\+U\+S\+E (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+S\+P\+Client\+Connection} $\ast$}]{our\+Client\+Connection, }
+\item[{{\bf Server\+Media\+Subsession} $\ast$}]{subsession}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classRTSPServer_1_1RTSPClientSession_a05cc3c2447798ceb450b611a2313fee8}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!handle\+Cmd\+\_\+\+P\+L\+A\+Y@{handle\+Cmd\+\_\+\+P\+L\+A\+Y}}
+\index{handle\+Cmd\+\_\+\+P\+L\+A\+Y@{handle\+Cmd\+\_\+\+P\+L\+A\+Y}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{handle\+Cmd\+\_\+\+P\+L\+A\+Y(\+R\+T\+S\+P\+Client\+Connection $\ast$our\+Client\+Connection, Server\+Media\+Subsession $\ast$subsession, char const $\ast$full\+Request\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::handle\+Cmd\+\_\+\+P\+L\+A\+Y (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+S\+P\+Client\+Connection} $\ast$}]{our\+Client\+Connection, }
+\item[{{\bf Server\+Media\+Subsession} $\ast$}]{subsession, }
+\item[{char const $\ast$}]{full\+Request\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classRTSPServer_1_1RTSPClientSession_a8520f687f66b87a03eb3ec152d641fc0}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!handle\+Cmd\+\_\+\+S\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R@{handle\+Cmd\+\_\+\+S\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R}}
+\index{handle\+Cmd\+\_\+\+S\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R@{handle\+Cmd\+\_\+\+S\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{handle\+Cmd\+\_\+\+S\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R(\+R\+T\+S\+P\+Client\+Connection $\ast$our\+Client\+Connection, Server\+Media\+Subsession $\ast$subsession, char const $\ast$full\+Request\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::handle\+Cmd\+\_\+\+S\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+S\+P\+Client\+Connection} $\ast$}]{our\+Client\+Connection, }
+\item[{{\bf Server\+Media\+Subsession} $\ast$}]{subsession, }
+\item[{char const $\ast$}]{full\+Request\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classRTSPServer_1_1RTSPClientSession_a8a29d9b8b697e7891e8b867857dd1395}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!handle\+Cmd\+\_\+\+S\+E\+T\+U\+P@{handle\+Cmd\+\_\+\+S\+E\+T\+U\+P}}
+\index{handle\+Cmd\+\_\+\+S\+E\+T\+U\+P@{handle\+Cmd\+\_\+\+S\+E\+T\+U\+P}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{handle\+Cmd\+\_\+\+S\+E\+T\+U\+P(\+R\+T\+S\+P\+Client\+Connection $\ast$our\+Client\+Connection, char const $\ast$url\+Pre\+Suffix, char const $\ast$url\+Suffix, char const $\ast$full\+Request\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::handle\+Cmd\+\_\+\+S\+E\+T\+U\+P (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+S\+P\+Client\+Connection} $\ast$}]{our\+Client\+Connection, }
+\item[{char const $\ast$}]{url\+Pre\+Suffix, }
+\item[{char const $\ast$}]{url\+Suffix, }
+\item[{char const $\ast$}]{full\+Request\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classRTSPServer_1_1RTSPClientSession_a4eff19ecd480ebe8a545108d29d6c3a4}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!handle\+Cmd\+\_\+\+T\+E\+A\+R\+D\+O\+W\+N@{handle\+Cmd\+\_\+\+T\+E\+A\+R\+D\+O\+W\+N}}
+\index{handle\+Cmd\+\_\+\+T\+E\+A\+R\+D\+O\+W\+N@{handle\+Cmd\+\_\+\+T\+E\+A\+R\+D\+O\+W\+N}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{handle\+Cmd\+\_\+\+T\+E\+A\+R\+D\+O\+W\+N(\+R\+T\+S\+P\+Client\+Connection $\ast$our\+Client\+Connection, Server\+Media\+Subsession $\ast$subsession)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::handle\+Cmd\+\_\+\+T\+E\+A\+R\+D\+O\+W\+N (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+S\+P\+Client\+Connection} $\ast$}]{our\+Client\+Connection, }
+\item[{{\bf Server\+Media\+Subsession} $\ast$}]{subsession}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classRTSPServer_1_1RTSPClientSession_ae21d868310c6bb148ac382cbcd1d744d}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!handle\+Cmd\+\_\+within\+Session@{handle\+Cmd\+\_\+within\+Session}}
+\index{handle\+Cmd\+\_\+within\+Session@{handle\+Cmd\+\_\+within\+Session}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{handle\+Cmd\+\_\+within\+Session(\+R\+T\+S\+P\+Client\+Connection $\ast$our\+Client\+Connection, char const $\ast$cmd\+Name, char const $\ast$url\+Pre\+Suffix, char const $\ast$url\+Suffix, char const $\ast$full\+Request\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::handle\+Cmd\+\_\+within\+Session (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+S\+P\+Client\+Connection} $\ast$}]{our\+Client\+Connection, }
+\item[{char const $\ast$}]{cmd\+Name, }
+\item[{char const $\ast$}]{url\+Pre\+Suffix, }
+\item[{char const $\ast$}]{url\+Suffix, }
+\item[{char const $\ast$}]{full\+Request\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classRTSPServer_1_1RTSPClientSession_a5a47f93f2f0b3dd329ca75d35bd1e614}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!is\+Multicast@{is\+Multicast}}
+\index{is\+Multicast@{is\+Multicast}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{is\+Multicast() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::is\+Multicast (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classRTSPServer_1_1RTSPClientSession_a66e2b5f9e9fa015dcbfe6c629ef5c10d}
+
+
+Definition at line 247 of file R\+T\+S\+P\+Server.\+hh.
+
+
+
+References f\+Is\+Multicast.
+
+
+\begin{DoxyCode}
+247 \{ \textcolor{keywordflow}{return} fIsMulticast; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!liveness\+Timeout\+Task@{liveness\+Timeout\+Task}}
+\index{liveness\+Timeout\+Task@{liveness\+Timeout\+Task}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{liveness\+Timeout\+Task(\+Client\+Session $\ast$client\+Session)}]{\setlength{\rightskip}{0pt plus 5cm}static void Generic\+Media\+Server\+::\+Client\+Session\+::liveness\+Timeout\+Task (
+\begin{DoxyParamCaption}
+\item[{{\bf Client\+Session} $\ast$}]{client\+Session}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_1_1ClientSession_a6f593032d64bcf1fe9b67b3f161ea93b}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!note\+Client\+Liveness@{note\+Client\+Liveness}}
+\index{note\+Client\+Liveness@{note\+Client\+Liveness}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{note\+Client\+Liveness(\+Client\+Session $\ast$client\+Session)}]{\setlength{\rightskip}{0pt plus 5cm}static void Generic\+Media\+Server\+::\+Client\+Session\+::note\+Client\+Liveness (
+\begin{DoxyParamCaption}
+\item[{{\bf Client\+Session} $\ast$}]{client\+Session}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_1_1ClientSession_ae5d5e7d8685f4bec2a3ef686f5c86fd1}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!note\+Liveness@{note\+Liveness}}
+\index{note\+Liveness@{note\+Liveness}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{note\+Liveness()}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+Media\+Server\+::\+Client\+Session\+::note\+Liveness (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_1_1ClientSession_a88dc3e2ab1995fa4dc7c155d5e988789}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!reclaim\+Stream\+States@{reclaim\+Stream\+States}}
+\index{reclaim\+Stream\+States@{reclaim\+Stream\+States}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{reclaim\+Stream\+States()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::reclaim\+Stream\+States (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTSPServer_1_1RTSPClientSession_a18a7e311a2b2edd97f89aaef4f46c266}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!set\+R\+T\+S\+P\+Response@{set\+R\+T\+S\+P\+Response}}
+\index{set\+R\+T\+S\+P\+Response@{set\+R\+T\+S\+P\+Response}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{set\+R\+T\+S\+P\+Response(\+R\+T\+S\+P\+Client\+Connection $\ast$our\+Client\+Connection, char const $\ast$response\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::set\+R\+T\+S\+P\+Response (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+S\+P\+Client\+Connection} $\ast$}]{our\+Client\+Connection, }
+\item[{char const $\ast$}]{response\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classRTSPServer_1_1RTSPClientSession_a566abc10d948399b622ef1121b693b36}
+
+
+Definition at line 250 of file R\+T\+S\+P\+Server.\+hh.
+
+
+
+References R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::set\+R\+T\+S\+P\+Response().
+
+
+\begin{DoxyCode}
+250 \{ ourClientConnection->setRTSPResponse(responseStr); \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!set\+R\+T\+S\+P\+Response@{set\+R\+T\+S\+P\+Response}}
+\index{set\+R\+T\+S\+P\+Response@{set\+R\+T\+S\+P\+Response}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{set\+R\+T\+S\+P\+Response(\+R\+T\+S\+P\+Client\+Connection $\ast$our\+Client\+Connection, char const $\ast$response\+Str, u\+\_\+int32\+\_\+t session\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::set\+R\+T\+S\+P\+Response (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+S\+P\+Client\+Connection} $\ast$}]{our\+Client\+Connection, }
+\item[{char const $\ast$}]{response\+Str, }
+\item[{u\+\_\+int32\+\_\+t}]{session\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classRTSPServer_1_1RTSPClientSession_a327d403686f4a7d1a00dd72841afa607}
+
+
+Definition at line 251 of file R\+T\+S\+P\+Server.\+hh.
+
+
+
+References R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::set\+R\+T\+S\+P\+Response().
+
+
+\begin{DoxyCode}
+251 \{ ourClientConnection->setRTSPResponse(responseStr, sessionId); \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!set\+R\+T\+S\+P\+Response@{set\+R\+T\+S\+P\+Response}}
+\index{set\+R\+T\+S\+P\+Response@{set\+R\+T\+S\+P\+Response}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{set\+R\+T\+S\+P\+Response(\+R\+T\+S\+P\+Client\+Connection $\ast$our\+Client\+Connection, char const $\ast$response\+Str, char const $\ast$content\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::set\+R\+T\+S\+P\+Response (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+S\+P\+Client\+Connection} $\ast$}]{our\+Client\+Connection, }
+\item[{char const $\ast$}]{response\+Str, }
+\item[{char const $\ast$}]{content\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classRTSPServer_1_1RTSPClientSession_a60366b295cf5a94b10ffb888527f2d7a}
+
+
+Definition at line 252 of file R\+T\+S\+P\+Server.\+hh.
+
+
+
+References R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::set\+R\+T\+S\+P\+Response().
+
+
+\begin{DoxyCode}
+252 \{ ourClientConnection->setRTSPResponse(responseStr, contentStr); \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!set\+R\+T\+S\+P\+Response@{set\+R\+T\+S\+P\+Response}}
+\index{set\+R\+T\+S\+P\+Response@{set\+R\+T\+S\+P\+Response}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{set\+R\+T\+S\+P\+Response(\+R\+T\+S\+P\+Client\+Connection $\ast$our\+Client\+Connection, char const $\ast$response\+Str, u\+\_\+int32\+\_\+t session\+Id, char const $\ast$content\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::set\+R\+T\+S\+P\+Response (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+S\+P\+Client\+Connection} $\ast$}]{our\+Client\+Connection, }
+\item[{char const $\ast$}]{response\+Str, }
+\item[{u\+\_\+int32\+\_\+t}]{session\+Id, }
+\item[{char const $\ast$}]{content\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classRTSPServer_1_1RTSPClientSession_ab54b2d0776771851e3674e836832b0b8}
+
+
+Definition at line 253 of file R\+T\+S\+P\+Server.\+hh.
+
+
+
+References R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::set\+R\+T\+S\+P\+Response().
+
+
+\begin{DoxyCode}
+253 \{ ourClientConnection->setRTSPResponse(responseStr, sessionId, contentStr); \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!uses\+T\+C\+P\+Transport@{uses\+T\+C\+P\+Transport}}
+\index{uses\+T\+C\+P\+Transport@{uses\+T\+C\+P\+Transport}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{uses\+T\+C\+P\+Transport() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::uses\+T\+C\+P\+Transport (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classRTSPServer_1_1RTSPClientSession_a48238784f86a393fd7acf8403066dab2}
+
+
+Definition at line 259 of file R\+T\+S\+P\+Server.\+hh.
+
+
+\begin{DoxyCode}
+259 \{ \textcolor{keywordflow}{return} fTCPStreamIdCount > 0; \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!R\+T\+S\+P\+Client\+Connection@{R\+T\+S\+P\+Client\+Connection}}
+\index{R\+T\+S\+P\+Client\+Connection@{R\+T\+S\+P\+Client\+Connection}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{R\+T\+S\+P\+Client\+Connection}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf R\+T\+S\+P\+Client\+Connection}\hspace{0.3cm}{\ttfamily [friend]}}\label{classRTSPServer_1_1RTSPClientSession_a19666035908ccaef7a30f0bd29b22e72}
+
+
+Definition at line 226 of file R\+T\+S\+P\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!R\+T\+S\+P\+Server@{R\+T\+S\+P\+Server}}
+\index{R\+T\+S\+P\+Server@{R\+T\+S\+P\+Server}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{R\+T\+S\+P\+Server}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf R\+T\+S\+P\+Server}\hspace{0.3cm}{\ttfamily [friend]}}\label{classRTSPServer_1_1RTSPClientSession_a73161e09d71662ab62de02af14e02a94}
+
+
+Definition at line 225 of file R\+T\+S\+P\+Server.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!f\+Is\+Multicast@{f\+Is\+Multicast}}
+\index{f\+Is\+Multicast@{f\+Is\+Multicast}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{f\+Is\+Multicast}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::f\+Is\+Multicast\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTSPServer_1_1RTSPClientSession_ac508cfa0695faea593195dff4755989a}
+
+
+Definition at line 257 of file R\+T\+S\+P\+Server.\+hh.
+
+
+
+Referenced by is\+Multicast().
+
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!f\+Liveness\+Check\+Task@{f\+Liveness\+Check\+Task}}
+\index{f\+Liveness\+Check\+Task@{f\+Liveness\+Check\+Task}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{f\+Liveness\+Check\+Task}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token} Generic\+Media\+Server\+::\+Client\+Session\+::f\+Liveness\+Check\+Task\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_1_1ClientSession_ad642da1b21409b0e368888bfdea69047}
+
+
+Definition at line 127 of file Generic\+Media\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!f\+Num\+Stream\+States@{f\+Num\+Stream\+States}}
+\index{f\+Num\+Stream\+States@{f\+Num\+Stream\+States}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{f\+Num\+Stream\+States}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::f\+Num\+Stream\+States\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTSPServer_1_1RTSPClientSession_af9f1dbefaf16c546958434bb570b1ea5}
+
+
+Definition at line 260 of file R\+T\+S\+P\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!f\+Our\+R\+T\+S\+P\+Server@{f\+Our\+R\+T\+S\+P\+Server}}
+\index{f\+Our\+R\+T\+S\+P\+Server@{f\+Our\+R\+T\+S\+P\+Server}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{f\+Our\+R\+T\+S\+P\+Server}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+S\+P\+Server}\& R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::f\+Our\+R\+T\+S\+P\+Server\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTSPServer_1_1RTSPClientSession_a7f7fd33268a4ce21d178f6af06e28330}
+
+
+Definition at line 256 of file R\+T\+S\+P\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!f\+Our\+Server@{f\+Our\+Server}}
+\index{f\+Our\+Server@{f\+Our\+Server}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{f\+Our\+Server}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Generic\+Media\+Server}\& Generic\+Media\+Server\+::\+Client\+Session\+::f\+Our\+Server\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_1_1ClientSession_abc025e20592f9ce8f423aa932881e9ea}
+
+
+Definition at line 124 of file Generic\+Media\+Server.\+hh.
+
+
+
+Referenced by Generic\+Media\+Server\+::\+Client\+Session\+::envir().
+
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!f\+Our\+Server\+Media\+Session@{f\+Our\+Server\+Media\+Session}}
+\index{f\+Our\+Server\+Media\+Session@{f\+Our\+Server\+Media\+Session}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{f\+Our\+Server\+Media\+Session}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Server\+Media\+Session}$\ast$ Generic\+Media\+Server\+::\+Client\+Session\+::f\+Our\+Server\+Media\+Session\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_1_1ClientSession_aa21a6548011c76a8a4a2ee9174554935}
+
+
+Definition at line 126 of file Generic\+Media\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!f\+Our\+Session\+Id@{f\+Our\+Session\+Id}}
+\index{f\+Our\+Session\+Id@{f\+Our\+Session\+Id}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{f\+Our\+Session\+Id}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t Generic\+Media\+Server\+::\+Client\+Session\+::f\+Our\+Session\+Id\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_1_1ClientSession_a1e024d0ccd488dfb64282c686180efbf}
+
+
+Definition at line 125 of file Generic\+Media\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!f\+Stream\+After\+S\+E\+T\+U\+P@{f\+Stream\+After\+S\+E\+T\+U\+P}}
+\index{f\+Stream\+After\+S\+E\+T\+U\+P@{f\+Stream\+After\+S\+E\+T\+U\+P}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{f\+Stream\+After\+S\+E\+T\+U\+P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::f\+Stream\+After\+S\+E\+T\+U\+P\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTSPServer_1_1RTSPClientSession_a4df425d763643ba3239dbd9bbe58e448}
+
+
+Definition at line 257 of file R\+T\+S\+P\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!f\+Stream\+States@{f\+Stream\+States}}
+\index{f\+Stream\+States@{f\+Stream\+States}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{f\+Stream\+States}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::stream\+State} $\ast$  R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::f\+Stream\+States\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTSPServer_1_1RTSPClientSession_af85ae51bb0742618d6629ab4b0408f68}
+\index{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}!f\+T\+C\+P\+Stream\+Id\+Count@{f\+T\+C\+P\+Stream\+Id\+Count}}
+\index{f\+T\+C\+P\+Stream\+Id\+Count@{f\+T\+C\+P\+Stream\+Id\+Count}!R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session@{R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session}}
+\subsubsection[{f\+T\+C\+P\+Stream\+Id\+Count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::f\+T\+C\+P\+Stream\+Id\+Count\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTSPServer_1_1RTSPClientSession_ae1dfdab3644ea6ed9e9b4ad77a2f5101}
+
+
+Definition at line 258 of file R\+T\+S\+P\+Server.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf R\+T\+S\+P\+Server.\+hh}\end{DoxyCompactItemize}

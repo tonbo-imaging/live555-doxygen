@@ -1,0 +1,80 @@
+\section{Port Class Reference}
+\label{classPort}\index{Port@{Port}}
+
+
+{\ttfamily \#include $<$Net\+Address.\+hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Port} ({\bf port\+Num\+Bits} {\bf num})
+\item 
+{\bf port\+Num\+Bits} {\bf num} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf port\+Num\+Bits} {\bf f\+Port\+Num}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 94 of file Net\+Address.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Port@{Port}!Port@{Port}}
+\index{Port@{Port}!Port@{Port}}
+\subsubsection[{Port(port\+Num\+Bits num)}]{\setlength{\rightskip}{0pt plus 5cm}Port\+::\+Port (
+\begin{DoxyParamCaption}
+\item[{{\bf port\+Num\+Bits}}]{num}
+\end{DoxyParamCaption}
+)}\label{classPort_ac1b74664ce99f8be7477594809ceabc1}
+
+
+\subsection{Member Function Documentation}
+\index{Port@{Port}!num@{num}}
+\index{num@{num}!Port@{Port}}
+\subsubsection[{num() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf port\+Num\+Bits} Port\+::num (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classPort_a1a2d37b5bc6f835927809d1e8f1af358}
+
+
+Definition at line 98 of file Net\+Address.\+hh.
+
+
+
+References f\+Port\+Num.
+
+
+
+Referenced by Handler\+Server\+For\+R\+E\+G\+I\+S\+T\+E\+R\+Command\+::server\+Port\+Num(), and Output\+Socket\+::source\+Port\+Num().
+
+
+\begin{DoxyCode}
+98 \{ \textcolor{keywordflow}{return} fPortNum; \} \textcolor{comment}{// in network byte order}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Port@{Port}!f\+Port\+Num@{f\+Port\+Num}}
+\index{f\+Port\+Num@{f\+Port\+Num}!Port@{Port}}
+\subsubsection[{f\+Port\+Num}]{\setlength{\rightskip}{0pt plus 5cm}{\bf port\+Num\+Bits} Port\+::f\+Port\+Num\hspace{0.3cm}{\ttfamily [private]}}\label{classPort_a0e8abfd19107b3feec77845ae60e9602}
+
+
+Definition at line 101 of file Net\+Address.\+hh.
+
+
+
+Referenced by num().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+groupsock/include/{\bf Net\+Address.\+hh}\end{DoxyCompactItemize}

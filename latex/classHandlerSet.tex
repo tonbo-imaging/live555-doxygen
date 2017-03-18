@@ -1,0 +1,128 @@
+\section{Handler\+Set Class Reference}
+\label{classHandlerSet}\index{Handler\+Set@{Handler\+Set}}
+
+
+{\ttfamily \#include $<$Handler\+Set.\+hh$>$}
+
+
+
+Collaboration diagram for Handler\+Set\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classHandlerSet__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Handler\+Set} ()
+\item 
+virtual {\bf $\sim$\+Handler\+Set} ()
+\item 
+void {\bf assign\+Handler} (int socket\+Num, int condition\+Set, {\bf Task\+Scheduler\+::\+Background\+Handler\+Proc} $\ast$handler\+Proc, void $\ast$client\+Data)
+\item 
+void {\bf clear\+Handler} (int socket\+Num)
+\item 
+void {\bf move\+Handler} (int old\+Socket\+Num, int new\+Socket\+Num)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Handler\+Descriptor} $\ast$ {\bf lookup\+Handler} (int socket\+Num)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Handler\+Descriptor} {\bf f\+Handlers}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Handler\+Iterator}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 47 of file Handler\+Set.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Handler\+Set@{Handler\+Set}!Handler\+Set@{Handler\+Set}}
+\index{Handler\+Set@{Handler\+Set}!Handler\+Set@{Handler\+Set}}
+\subsubsection[{Handler\+Set()}]{\setlength{\rightskip}{0pt plus 5cm}Handler\+Set\+::\+Handler\+Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classHandlerSet_a49822ee7bf8cc4ad4b9a368c19001f5b}
+\index{Handler\+Set@{Handler\+Set}!````~Handler\+Set@{$\sim$\+Handler\+Set}}
+\index{````~Handler\+Set@{$\sim$\+Handler\+Set}!Handler\+Set@{Handler\+Set}}
+\subsubsection[{$\sim$\+Handler\+Set()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Handler\+Set\+::$\sim$\+Handler\+Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classHandlerSet_ad8e1aecfd11b4858548bd33cc4f0c2a1}
+
+
+\subsection{Member Function Documentation}
+\index{Handler\+Set@{Handler\+Set}!assign\+Handler@{assign\+Handler}}
+\index{assign\+Handler@{assign\+Handler}!Handler\+Set@{Handler\+Set}}
+\subsubsection[{assign\+Handler(int socket\+Num, int condition\+Set, Task\+Scheduler\+::\+Background\+Handler\+Proc $\ast$handler\+Proc, void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}void Handler\+Set\+::assign\+Handler (
+\begin{DoxyParamCaption}
+\item[{int}]{socket\+Num, }
+\item[{int}]{condition\+Set, }
+\item[{{\bf Task\+Scheduler\+::\+Background\+Handler\+Proc} $\ast$}]{handler\+Proc, }
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)}\label{classHandlerSet_afd51b642b19c57c0e93faa735325e645}
+\index{Handler\+Set@{Handler\+Set}!clear\+Handler@{clear\+Handler}}
+\index{clear\+Handler@{clear\+Handler}!Handler\+Set@{Handler\+Set}}
+\subsubsection[{clear\+Handler(int socket\+Num)}]{\setlength{\rightskip}{0pt plus 5cm}void Handler\+Set\+::clear\+Handler (
+\begin{DoxyParamCaption}
+\item[{int}]{socket\+Num}
+\end{DoxyParamCaption}
+)}\label{classHandlerSet_ad9fb12a7d1eb056c14e3a77cebd27bd2}
+\index{Handler\+Set@{Handler\+Set}!lookup\+Handler@{lookup\+Handler}}
+\index{lookup\+Handler@{lookup\+Handler}!Handler\+Set@{Handler\+Set}}
+\subsubsection[{lookup\+Handler(int socket\+Num)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Handler\+Descriptor}$\ast$ Handler\+Set\+::lookup\+Handler (
+\begin{DoxyParamCaption}
+\item[{int}]{socket\+Num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classHandlerSet_a97fe918d925b52422ea09a2ea8887538}
+\index{Handler\+Set@{Handler\+Set}!move\+Handler@{move\+Handler}}
+\index{move\+Handler@{move\+Handler}!Handler\+Set@{Handler\+Set}}
+\subsubsection[{move\+Handler(int old\+Socket\+Num, int new\+Socket\+Num)}]{\setlength{\rightskip}{0pt plus 5cm}void Handler\+Set\+::move\+Handler (
+\begin{DoxyParamCaption}
+\item[{int}]{old\+Socket\+Num, }
+\item[{int}]{new\+Socket\+Num}
+\end{DoxyParamCaption}
+)}\label{classHandlerSet_ad29190d28121881800d6e91c7ed09317}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Handler\+Set@{Handler\+Set}!Handler\+Iterator@{Handler\+Iterator}}
+\index{Handler\+Iterator@{Handler\+Iterator}!Handler\+Set@{Handler\+Set}}
+\subsubsection[{Handler\+Iterator}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Handler\+Iterator}\hspace{0.3cm}{\ttfamily [friend]}}\label{classHandlerSet_a63006f30a683052753f1cada175b2180}
+
+
+Definition at line 60 of file Handler\+Set.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{Handler\+Set@{Handler\+Set}!f\+Handlers@{f\+Handlers}}
+\index{f\+Handlers@{f\+Handlers}!Handler\+Set@{Handler\+Set}}
+\subsubsection[{f\+Handlers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Handler\+Descriptor} Handler\+Set\+::f\+Handlers\hspace{0.3cm}{\ttfamily [private]}}\label{classHandlerSet_ae9f2b1c476d29083e1d8288de3883dfd}
+
+
+Definition at line 61 of file Handler\+Set.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Basic\+Usage\+Environment/include/{\bf Handler\+Set.\+hh}\end{DoxyCompactItemize}

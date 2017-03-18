@@ -1,0 +1,231 @@
+\section{Group\+E\+Id Class Reference}
+\label{classGroupEId}\index{Group\+E\+Id@{Group\+E\+Id}}
+
+
+{\ttfamily \#include $<$Group\+E\+Id.\+hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Group\+E\+Id} (struct in\+\_\+addr const \&group\+Addr, {\bf port\+Num\+Bits} {\bf port\+Num}, u\+\_\+int8\+\_\+t {\bf ttl})
+\item 
+{\bf Group\+E\+Id} (struct in\+\_\+addr const \&group\+Addr, struct in\+\_\+addr const \&source\+Filter\+Addr, {\bf port\+Num\+Bits} {\bf port\+Num})
+\item 
+struct in\+\_\+addr const \& {\bf group\+Address} () const 
+\item 
+struct in\+\_\+addr const \& {\bf source\+Filter\+Address} () const 
+\item 
+{\bf Boolean} {\bf is\+S\+S\+M} () const 
+\item 
+{\bf port\+Num\+Bits} {\bf port\+Num} () const 
+\item 
+u\+\_\+int8\+\_\+t {\bf ttl} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf init} (struct in\+\_\+addr const \&group\+Addr, struct in\+\_\+addr const \&source\+Filter\+Addr, {\bf port\+Num\+Bits} {\bf port\+Num}, u\+\_\+int8\+\_\+t {\bf ttl})
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct in\+\_\+addr {\bf f\+Group\+Address}
+\item 
+struct in\+\_\+addr {\bf f\+Source\+Filter\+Address}
+\item 
+{\bf port\+Num\+Bits} {\bf f\+Port\+Num}
+\item 
+u\+\_\+int8\+\_\+t {\bf f\+T\+T\+L}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 32 of file Group\+E\+Id.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Group\+E\+Id@{Group\+E\+Id}!Group\+E\+Id@{Group\+E\+Id}}
+\index{Group\+E\+Id@{Group\+E\+Id}!Group\+E\+Id@{Group\+E\+Id}}
+\subsubsection[{Group\+E\+Id(struct in\+\_\+addr const \&group\+Addr, port\+Num\+Bits port\+Num, u\+\_\+int8\+\_\+t ttl)}]{\setlength{\rightskip}{0pt plus 5cm}Group\+E\+Id\+::\+Group\+E\+Id (
+\begin{DoxyParamCaption}
+\item[{struct in\+\_\+addr const \&}]{group\+Addr, }
+\item[{{\bf port\+Num\+Bits}}]{port\+Num, }
+\item[{u\+\_\+int8\+\_\+t}]{ttl}
+\end{DoxyParamCaption}
+)}\label{classGroupEId_a7bfe0d2088b44402731a7baf094b0a46}
+\index{Group\+E\+Id@{Group\+E\+Id}!Group\+E\+Id@{Group\+E\+Id}}
+\index{Group\+E\+Id@{Group\+E\+Id}!Group\+E\+Id@{Group\+E\+Id}}
+\subsubsection[{Group\+E\+Id(struct in\+\_\+addr const \&group\+Addr, struct in\+\_\+addr const \&source\+Filter\+Addr, port\+Num\+Bits port\+Num)}]{\setlength{\rightskip}{0pt plus 5cm}Group\+E\+Id\+::\+Group\+E\+Id (
+\begin{DoxyParamCaption}
+\item[{struct in\+\_\+addr const \&}]{group\+Addr, }
+\item[{struct in\+\_\+addr const \&}]{source\+Filter\+Addr, }
+\item[{{\bf port\+Num\+Bits}}]{port\+Num}
+\end{DoxyParamCaption}
+)}\label{classGroupEId_ace0d58ea2f4df6119d97271bd1507a97}
+
+
+\subsection{Member Function Documentation}
+\index{Group\+E\+Id@{Group\+E\+Id}!group\+Address@{group\+Address}}
+\index{group\+Address@{group\+Address}!Group\+E\+Id@{Group\+E\+Id}}
+\subsubsection[{group\+Address() const }]{\setlength{\rightskip}{0pt plus 5cm}struct in\+\_\+addr const\& Group\+E\+Id\+::group\+Address (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classGroupEId_a199a5b5ffaceae461c7e6d2b5c99c908}
+
+
+Definition at line 42 of file Group\+E\+Id.\+hh.
+
+
+
+References f\+Group\+Address.
+
+
+
+Referenced by Groupsock\+::group\+Address().
+
+
+\begin{DoxyCode}
+42 \{ \textcolor{keywordflow}{return} fGroupAddress; \}
+\end{DoxyCode}
+\index{Group\+E\+Id@{Group\+E\+Id}!init@{init}}
+\index{init@{init}!Group\+E\+Id@{Group\+E\+Id}}
+\subsubsection[{init(struct in\+\_\+addr const \&group\+Addr, struct in\+\_\+addr const \&source\+Filter\+Addr, port\+Num\+Bits port\+Num, u\+\_\+int8\+\_\+t ttl)}]{\setlength{\rightskip}{0pt plus 5cm}void Group\+E\+Id\+::init (
+\begin{DoxyParamCaption}
+\item[{struct in\+\_\+addr const \&}]{group\+Addr, }
+\item[{struct in\+\_\+addr const \&}]{source\+Filter\+Addr, }
+\item[{{\bf port\+Num\+Bits}}]{port\+Num, }
+\item[{u\+\_\+int8\+\_\+t}]{ttl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classGroupEId_afa371065960203bf7778b0cb2740f7a5}
+\index{Group\+E\+Id@{Group\+E\+Id}!is\+S\+S\+M@{is\+S\+S\+M}}
+\index{is\+S\+S\+M@{is\+S\+S\+M}!Group\+E\+Id@{Group\+E\+Id}}
+\subsubsection[{is\+S\+S\+M() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Group\+E\+Id\+::is\+S\+S\+M (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classGroupEId_a574d174bac26b991eadffc872de7cd01}
+
+
+Referenced by Groupsock\+::is\+S\+S\+M().
+
+\index{Group\+E\+Id@{Group\+E\+Id}!port\+Num@{port\+Num}}
+\index{port\+Num@{port\+Num}!Group\+E\+Id@{Group\+E\+Id}}
+\subsubsection[{port\+Num() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf port\+Num\+Bits} Group\+E\+Id\+::port\+Num (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classGroupEId_a4ab474edc78288c9b79ef24533218092}
+
+
+Definition at line 47 of file Group\+E\+Id.\+hh.
+
+
+
+References f\+Port\+Num.
+
+
+\begin{DoxyCode}
+47 \{ \textcolor{keywordflow}{return} fPortNum; \}
+\end{DoxyCode}
+\index{Group\+E\+Id@{Group\+E\+Id}!source\+Filter\+Address@{source\+Filter\+Address}}
+\index{source\+Filter\+Address@{source\+Filter\+Address}!Group\+E\+Id@{Group\+E\+Id}}
+\subsubsection[{source\+Filter\+Address() const }]{\setlength{\rightskip}{0pt plus 5cm}struct in\+\_\+addr const\& Group\+E\+Id\+::source\+Filter\+Address (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classGroupEId_acfd688f00b19f87387a34054d3bab344}
+
+
+Definition at line 43 of file Group\+E\+Id.\+hh.
+
+
+
+References f\+Source\+Filter\+Address.
+
+
+
+Referenced by Groupsock\+::source\+Filter\+Address().
+
+
+\begin{DoxyCode}
+43 \{ \textcolor{keywordflow}{return} fSourceFilterAddress; \}
+\end{DoxyCode}
+\index{Group\+E\+Id@{Group\+E\+Id}!ttl@{ttl}}
+\index{ttl@{ttl}!Group\+E\+Id@{Group\+E\+Id}}
+\subsubsection[{ttl() const }]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t Group\+E\+Id\+::ttl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classGroupEId_a6e006b15be92c10f177fd54d3fc216fa}
+
+
+Definition at line 49 of file Group\+E\+Id.\+hh.
+
+
+
+References f\+T\+T\+L.
+
+
+
+Referenced by Groupsock\+::ttl().
+
+
+\begin{DoxyCode}
+49 \{ \textcolor{keywordflow}{return} fTTL; \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Group\+E\+Id@{Group\+E\+Id}!f\+Group\+Address@{f\+Group\+Address}}
+\index{f\+Group\+Address@{f\+Group\+Address}!Group\+E\+Id@{Group\+E\+Id}}
+\subsubsection[{f\+Group\+Address}]{\setlength{\rightskip}{0pt plus 5cm}struct in\+\_\+addr Group\+E\+Id\+::f\+Group\+Address\hspace{0.3cm}{\ttfamily [private]}}\label{classGroupEId_ab7594b800bdcb76995bb7660404e490d}
+
+
+Definition at line 58 of file Group\+E\+Id.\+hh.
+
+
+
+Referenced by group\+Address().
+
+\index{Group\+E\+Id@{Group\+E\+Id}!f\+Port\+Num@{f\+Port\+Num}}
+\index{f\+Port\+Num@{f\+Port\+Num}!Group\+E\+Id@{Group\+E\+Id}}
+\subsubsection[{f\+Port\+Num}]{\setlength{\rightskip}{0pt plus 5cm}{\bf port\+Num\+Bits} Group\+E\+Id\+::f\+Port\+Num\hspace{0.3cm}{\ttfamily [private]}}\label{classGroupEId_a9215288eeab5e81d28b2e72dde010325}
+
+
+Definition at line 60 of file Group\+E\+Id.\+hh.
+
+
+
+Referenced by port\+Num().
+
+\index{Group\+E\+Id@{Group\+E\+Id}!f\+Source\+Filter\+Address@{f\+Source\+Filter\+Address}}
+\index{f\+Source\+Filter\+Address@{f\+Source\+Filter\+Address}!Group\+E\+Id@{Group\+E\+Id}}
+\subsubsection[{f\+Source\+Filter\+Address}]{\setlength{\rightskip}{0pt plus 5cm}struct in\+\_\+addr Group\+E\+Id\+::f\+Source\+Filter\+Address\hspace{0.3cm}{\ttfamily [private]}}\label{classGroupEId_a9d98117f03b678ac4cb0f659126fa7f1}
+
+
+Definition at line 59 of file Group\+E\+Id.\+hh.
+
+
+
+Referenced by source\+Filter\+Address().
+
+\index{Group\+E\+Id@{Group\+E\+Id}!f\+T\+T\+L@{f\+T\+T\+L}}
+\index{f\+T\+T\+L@{f\+T\+T\+L}!Group\+E\+Id@{Group\+E\+Id}}
+\subsubsection[{f\+T\+T\+L}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t Group\+E\+Id\+::f\+T\+T\+L\hspace{0.3cm}{\ttfamily [private]}}\label{classGroupEId_a15f2cb7ee831d2aa67efd6858b57521d}
+
+
+Definition at line 61 of file Group\+E\+Id.\+hh.
+
+
+
+Referenced by ttl().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+groupsock/include/{\bf Group\+E\+Id.\+hh}\end{DoxyCompactItemize}

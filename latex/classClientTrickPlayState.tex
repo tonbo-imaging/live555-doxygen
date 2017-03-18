@@ -1,0 +1,259 @@
+\section{Client\+Trick\+Play\+State Class Reference}
+\label{classClientTrickPlayState}\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+
+
+{\ttfamily \#include $<$M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh$>$}
+
+
+
+Collaboration diagram for Client\+Trick\+Play\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClientTrickPlayState__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Client\+Trick\+Play\+State} ({\bf M\+P\+E\+G2\+Transport\+Stream\+Index\+File} $\ast$index\+File)
+\item 
+unsigned long {\bf update\+State\+From\+N\+P\+T} (double npt, double seek\+Duration)
+\item 
+void {\bf update\+State\+On\+Scale\+Change} ()
+\item 
+void {\bf update\+State\+On\+Play\+Change} ({\bf Boolean} reverse\+To\+Previous\+V\+S\+H)
+\item 
+void {\bf handle\+Stream\+Deletion} ()
+\item 
+void {\bf set\+Source} ({\bf M\+P\+E\+G2\+Transport\+Stream\+Framer} $\ast$framer)
+\item 
+void {\bf set\+Next\+Scale} (float next\+Scale)
+\item 
+{\bf Boolean} {\bf are\+Changing\+Scale} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf update\+T\+S\+Record\+Num} ()
+\item 
+void {\bf reseek\+Original\+Transport\+Stream\+Source} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf M\+P\+E\+G2\+Transport\+Stream\+Index\+File} $\ast$ {\bf f\+Index\+File}
+\item 
+{\bf Byte\+Stream\+File\+Source} $\ast$ {\bf f\+Original\+Transport\+Stream\+Source}
+\item 
+{\bf M\+P\+E\+G2\+Transport\+Stream\+Trick\+Mode\+Filter} $\ast$ {\bf f\+Trick\+Mode\+Filter}
+\item 
+{\bf M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source} $\ast$ {\bf f\+Trick\+Play\+Source}
+\item 
+{\bf M\+P\+E\+G2\+Transport\+Stream\+Framer} $\ast$ {\bf f\+Framer}
+\item 
+float {\bf f\+Scale}
+\item 
+float {\bf f\+Next\+Scale}
+\item 
+float {\bf f\+N\+P\+T}
+\item 
+unsigned long {\bf f\+T\+S\+Record\+Num}
+\item 
+unsigned long {\bf f\+Ix\+Record\+Num}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 102 of file M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{Client\+Trick\+Play\+State(\+M\+P\+E\+G2\+Transport\+Stream\+Index\+File $\ast$index\+File)}]{\setlength{\rightskip}{0pt plus 5cm}Client\+Trick\+Play\+State\+::\+Client\+Trick\+Play\+State (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+P\+E\+G2\+Transport\+Stream\+Index\+File} $\ast$}]{index\+File}
+\end{DoxyParamCaption}
+)}\label{classClientTrickPlayState_a93917698692ee865b3af29a456b88406}
+
+
+\subsection{Member Function Documentation}
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!are\+Changing\+Scale@{are\+Changing\+Scale}}
+\index{are\+Changing\+Scale@{are\+Changing\+Scale}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{are\+Changing\+Scale() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Client\+Trick\+Play\+State\+::are\+Changing\+Scale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classClientTrickPlayState_aa1ac5118f290b4eef1910c52b6266c86}
+
+
+Definition at line 115 of file M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh.
+
+
+
+References f\+Next\+Scale, and f\+Scale.
+
+
+\begin{DoxyCode}
+115 \{ \textcolor{keywordflow}{return} fNextScale != fScale; \}
+\end{DoxyCode}
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!handle\+Stream\+Deletion@{handle\+Stream\+Deletion}}
+\index{handle\+Stream\+Deletion@{handle\+Stream\+Deletion}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{handle\+Stream\+Deletion()}]{\setlength{\rightskip}{0pt plus 5cm}void Client\+Trick\+Play\+State\+::handle\+Stream\+Deletion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classClientTrickPlayState_a7d5e6a3f3b42df5677d5b8a6388bba97}
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!reseek\+Original\+Transport\+Stream\+Source@{reseek\+Original\+Transport\+Stream\+Source}}
+\index{reseek\+Original\+Transport\+Stream\+Source@{reseek\+Original\+Transport\+Stream\+Source}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{reseek\+Original\+Transport\+Stream\+Source()}]{\setlength{\rightskip}{0pt plus 5cm}void Client\+Trick\+Play\+State\+::reseek\+Original\+Transport\+Stream\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classClientTrickPlayState_a354a17b0887be7e131a13f5fe2b835d9}
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!set\+Next\+Scale@{set\+Next\+Scale}}
+\index{set\+Next\+Scale@{set\+Next\+Scale}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{set\+Next\+Scale(float next\+Scale)}]{\setlength{\rightskip}{0pt plus 5cm}void Client\+Trick\+Play\+State\+::set\+Next\+Scale (
+\begin{DoxyParamCaption}
+\item[{float}]{next\+Scale}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classClientTrickPlayState_a8380602a375fb4c1c20bac0582b1ecad}
+
+
+Definition at line 114 of file M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh.
+
+
+
+References f\+Next\+Scale.
+
+
+\begin{DoxyCode}
+114 \{ fNextScale = nextScale; \}
+\end{DoxyCode}
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!set\+Source@{set\+Source}}
+\index{set\+Source@{set\+Source}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{set\+Source(\+M\+P\+E\+G2\+Transport\+Stream\+Framer $\ast$framer)}]{\setlength{\rightskip}{0pt plus 5cm}void Client\+Trick\+Play\+State\+::set\+Source (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+P\+E\+G2\+Transport\+Stream\+Framer} $\ast$}]{framer}
+\end{DoxyParamCaption}
+)}\label{classClientTrickPlayState_a5fc3f3100a5a2978982b6f5ac994f5d0}
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!update\+State\+From\+N\+P\+T@{update\+State\+From\+N\+P\+T}}
+\index{update\+State\+From\+N\+P\+T@{update\+State\+From\+N\+P\+T}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{update\+State\+From\+N\+P\+T(double npt, double seek\+Duration)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long Client\+Trick\+Play\+State\+::update\+State\+From\+N\+P\+T (
+\begin{DoxyParamCaption}
+\item[{double}]{npt, }
+\item[{double}]{seek\+Duration}
+\end{DoxyParamCaption}
+)}\label{classClientTrickPlayState_a6fca9934017ea87714d9fb07d29d3998}
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!update\+State\+On\+Play\+Change@{update\+State\+On\+Play\+Change}}
+\index{update\+State\+On\+Play\+Change@{update\+State\+On\+Play\+Change}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{update\+State\+On\+Play\+Change(\+Boolean reverse\+To\+Previous\+V\+S\+H)}]{\setlength{\rightskip}{0pt plus 5cm}void Client\+Trick\+Play\+State\+::update\+State\+On\+Play\+Change (
+\begin{DoxyParamCaption}
+\item[{{\bf Boolean}}]{reverse\+To\+Previous\+V\+S\+H}
+\end{DoxyParamCaption}
+)}\label{classClientTrickPlayState_ac0953eb4f862a3b11f0b171d7e6e27ac}
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!update\+State\+On\+Scale\+Change@{update\+State\+On\+Scale\+Change}}
+\index{update\+State\+On\+Scale\+Change@{update\+State\+On\+Scale\+Change}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{update\+State\+On\+Scale\+Change()}]{\setlength{\rightskip}{0pt plus 5cm}void Client\+Trick\+Play\+State\+::update\+State\+On\+Scale\+Change (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classClientTrickPlayState_a370fdd7ee76529a651499a65758df12b}
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!update\+T\+S\+Record\+Num@{update\+T\+S\+Record\+Num}}
+\index{update\+T\+S\+Record\+Num@{update\+T\+S\+Record\+Num}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{update\+T\+S\+Record\+Num()}]{\setlength{\rightskip}{0pt plus 5cm}void Client\+Trick\+Play\+State\+::update\+T\+S\+Record\+Num (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classClientTrickPlayState_a8658e8186a7808af8a7c7afcc1e5aa24}
+
+
+\subsection{Field Documentation}
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!f\+Framer@{f\+Framer}}
+\index{f\+Framer@{f\+Framer}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{f\+Framer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+P\+E\+G2\+Transport\+Stream\+Framer}$\ast$ Client\+Trick\+Play\+State\+::f\+Framer\hspace{0.3cm}{\ttfamily [protected]}}\label{classClientTrickPlayState_ab12c8d0bbe6303209505aed60b436a44}
+
+
+Definition at line 126 of file M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh.
+
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!f\+Index\+File@{f\+Index\+File}}
+\index{f\+Index\+File@{f\+Index\+File}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{f\+Index\+File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+P\+E\+G2\+Transport\+Stream\+Index\+File}$\ast$ Client\+Trick\+Play\+State\+::f\+Index\+File\hspace{0.3cm}{\ttfamily [protected]}}\label{classClientTrickPlayState_ac20e449f95f3f9c800aaeb764dc5c09a}
+
+
+Definition at line 122 of file M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh.
+
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!f\+Ix\+Record\+Num@{f\+Ix\+Record\+Num}}
+\index{f\+Ix\+Record\+Num@{f\+Ix\+Record\+Num}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{f\+Ix\+Record\+Num}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long Client\+Trick\+Play\+State\+::f\+Ix\+Record\+Num\hspace{0.3cm}{\ttfamily [protected]}}\label{classClientTrickPlayState_a7c48aaf9650a15d2b9e95f0d0e662178}
+
+
+Definition at line 128 of file M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh.
+
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!f\+Next\+Scale@{f\+Next\+Scale}}
+\index{f\+Next\+Scale@{f\+Next\+Scale}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{f\+Next\+Scale}]{\setlength{\rightskip}{0pt plus 5cm}float Client\+Trick\+Play\+State\+::f\+Next\+Scale\hspace{0.3cm}{\ttfamily [protected]}}\label{classClientTrickPlayState_ad0eb4561e9e68e556fb652064b4cf12c}
+
+
+Definition at line 127 of file M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh.
+
+
+
+Referenced by are\+Changing\+Scale(), and set\+Next\+Scale().
+
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!f\+N\+P\+T@{f\+N\+P\+T}}
+\index{f\+N\+P\+T@{f\+N\+P\+T}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{f\+N\+P\+T}]{\setlength{\rightskip}{0pt plus 5cm}float Client\+Trick\+Play\+State\+::f\+N\+P\+T\hspace{0.3cm}{\ttfamily [protected]}}\label{classClientTrickPlayState_ae9537f4c1ffe26b9baee6e06c43d0acd}
+
+
+Definition at line 127 of file M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh.
+
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!f\+Original\+Transport\+Stream\+Source@{f\+Original\+Transport\+Stream\+Source}}
+\index{f\+Original\+Transport\+Stream\+Source@{f\+Original\+Transport\+Stream\+Source}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{f\+Original\+Transport\+Stream\+Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Byte\+Stream\+File\+Source}$\ast$ Client\+Trick\+Play\+State\+::f\+Original\+Transport\+Stream\+Source\hspace{0.3cm}{\ttfamily [protected]}}\label{classClientTrickPlayState_af1e2731785779bca92f3dcf635870bd2}
+
+
+Definition at line 123 of file M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh.
+
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!f\+Scale@{f\+Scale}}
+\index{f\+Scale@{f\+Scale}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{f\+Scale}]{\setlength{\rightskip}{0pt plus 5cm}float Client\+Trick\+Play\+State\+::f\+Scale\hspace{0.3cm}{\ttfamily [protected]}}\label{classClientTrickPlayState_a5c59b8be393b2c6ab5765dc1ab50fc5f}
+
+
+Definition at line 127 of file M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh.
+
+
+
+Referenced by are\+Changing\+Scale().
+
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!f\+Trick\+Mode\+Filter@{f\+Trick\+Mode\+Filter}}
+\index{f\+Trick\+Mode\+Filter@{f\+Trick\+Mode\+Filter}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{f\+Trick\+Mode\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+P\+E\+G2\+Transport\+Stream\+Trick\+Mode\+Filter}$\ast$ Client\+Trick\+Play\+State\+::f\+Trick\+Mode\+Filter\hspace{0.3cm}{\ttfamily [protected]}}\label{classClientTrickPlayState_a3f39ce0fe61c61c0e63c335abc1f617c}
+
+
+Definition at line 124 of file M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh.
+
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!f\+Trick\+Play\+Source@{f\+Trick\+Play\+Source}}
+\index{f\+Trick\+Play\+Source@{f\+Trick\+Play\+Source}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{f\+Trick\+Play\+Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}$\ast$ Client\+Trick\+Play\+State\+::f\+Trick\+Play\+Source\hspace{0.3cm}{\ttfamily [protected]}}\label{classClientTrickPlayState_ad38e396094b3d931d1d03b8a28a38b4c}
+
+
+Definition at line 125 of file M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh.
+
+\index{Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}!f\+T\+S\+Record\+Num@{f\+T\+S\+Record\+Num}}
+\index{f\+T\+S\+Record\+Num@{f\+T\+S\+Record\+Num}!Client\+Trick\+Play\+State@{Client\+Trick\+Play\+State}}
+\subsubsection[{f\+T\+S\+Record\+Num}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long Client\+Trick\+Play\+State\+::f\+T\+S\+Record\+Num\hspace{0.3cm}{\ttfamily [protected]}}\label{classClientTrickPlayState_a06f9b7c634a33b67d1c42d5affa01ce1}
+
+
+Definition at line 128 of file M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh}\end{DoxyCompactItemize}

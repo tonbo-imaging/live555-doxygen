@@ -1,0 +1,405 @@
+\section{Ogg\+Demux Class Reference}
+\label{classOggDemux}\index{Ogg\+Demux@{Ogg\+Demux}}
+
+
+{\ttfamily \#include $<$Ogg\+File.\+hh$>$}
+
+
+
+Inheritance diagram for Ogg\+Demux\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=115pt]{classOggDemux__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ogg\+Demux\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classOggDemux__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Framed\+Source} $\ast$ {\bf new\+Demuxed\+Track} (u\+\_\+int32\+\_\+t \&result\+Track\+Number)
+\item 
+{\bf Framed\+Source} $\ast$ {\bf new\+Demuxed\+Track\+By\+Track\+Number} (unsigned track\+Number)
+\item 
+{\bf Usage\+Environment} \& {\bf envir} () const 
+\item 
+char const $\ast$ {\bf name} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Source} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Sink} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+C\+P\+Instance} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Client} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Server} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Media\+Session} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Server\+Media\+Session} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name, {\bf Medium} $\ast$\&result\+Medium)
+\item 
+static void {\bf close} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name)
+\item 
+static void {\bf close} ({\bf Medium} $\ast$medium)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Ogg\+Demuxed\+Track} $\ast$ {\bf lookup\+Demuxed\+Track} (u\+\_\+int32\+\_\+t track\+Number)
+\item 
+{\bf Ogg\+Demux} ({\bf Ogg\+File} \&our\+File)
+\item 
+virtual {\bf $\sim$\+Ogg\+Demux} ()
+\item 
+{\bf Task\+Token} \& {\bf next\+Task} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf remove\+Track} (u\+\_\+int32\+\_\+t track\+Number)
+\item 
+void {\bf continue\+Reading} ()
+\item 
+void {\bf handle\+End\+Of\+File} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf handle\+End\+Of\+File} (void $\ast$client\+Data)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ogg\+File} \& {\bf f\+Our\+File}
+\item 
+class {\bf Ogg\+File\+Parser} $\ast$ {\bf f\+Our\+Parser}
+\item 
+{\bf Hash\+Table} $\ast$ {\bf f\+Demuxed\+Tracks\+Table}
+\item 
+{\bf Ogg\+Track\+Table\+Iterator} $\ast$ {\bf f\+Iter}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Ogg\+File}
+\item 
+class {\bf Ogg\+File\+Parser}
+\item 
+class {\bf Ogg\+Demuxed\+Track}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 140 of file Ogg\+File.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Ogg\+Demux@{Ogg\+Demux}!Ogg\+Demux@{Ogg\+Demux}}
+\index{Ogg\+Demux@{Ogg\+Demux}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{Ogg\+Demux(\+Ogg\+File \&our\+File)}]{\setlength{\rightskip}{0pt plus 5cm}Ogg\+Demux\+::\+Ogg\+Demux (
+\begin{DoxyParamCaption}
+\item[{{\bf Ogg\+File} \&}]{our\+File}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classOggDemux_ad920d096b19800f15825821396dfd027}
+\index{Ogg\+Demux@{Ogg\+Demux}!````~Ogg\+Demux@{$\sim$\+Ogg\+Demux}}
+\index{````~Ogg\+Demux@{$\sim$\+Ogg\+Demux}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{$\sim$\+Ogg\+Demux()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Ogg\+Demux\+::$\sim$\+Ogg\+Demux (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classOggDemux_a974e9de6644ea37629419f691f685586}
+
+
+\subsection{Member Function Documentation}
+\index{Ogg\+Demux@{Ogg\+Demux}!close@{close}}
+\index{close@{close}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{close(\+Usage\+Environment \&env, char const $\ast$medium\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a9968c7ce6eedb848f2cc095730c01b17}
+\index{Ogg\+Demux@{Ogg\+Demux}!close@{close}}
+\index{close@{close}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{close(\+Medium $\ast$medium)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_aee50624faf6909b3944dd803fd485467}
+\index{Ogg\+Demux@{Ogg\+Demux}!continue\+Reading@{continue\+Reading}}
+\index{continue\+Reading@{continue\+Reading}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{continue\+Reading()}]{\setlength{\rightskip}{0pt plus 5cm}void Ogg\+Demux\+::continue\+Reading (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classOggDemux_a098d985c5a1a9216d9f4685ec3a2197a}
+\index{Ogg\+Demux@{Ogg\+Demux}!envir@{envir}}
+\index{envir@{envir}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{envir() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Medium\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a32f7ecdd95f2b8400e1a26a5009e3b8e}
+
+
+Definition at line 59 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Environ.
+
+
+
+Referenced by Media\+Subsession\+::env(), R\+T\+P\+Interface\+::envir(), Generic\+Media\+Server\+::\+Client\+Connection\+::envir(), and Generic\+Media\+Server\+::\+Client\+Session\+::envir().
+
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} fEnviron;\}
+\end{DoxyCode}
+\index{Ogg\+Demux@{Ogg\+Demux}!handle\+End\+Of\+File@{handle\+End\+Of\+File}}
+\index{handle\+End\+Of\+File@{handle\+End\+Of\+File}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{handle\+End\+Of\+File(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void Ogg\+Demux\+::handle\+End\+Of\+File (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classOggDemux_ac67052f49ae9de35757dbd47759005f0}
+\index{Ogg\+Demux@{Ogg\+Demux}!handle\+End\+Of\+File@{handle\+End\+Of\+File}}
+\index{handle\+End\+Of\+File@{handle\+End\+Of\+File}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{handle\+End\+Of\+File()}]{\setlength{\rightskip}{0pt plus 5cm}void Ogg\+Demux\+::handle\+End\+Of\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classOggDemux_abe22503d2b2bcdfd82cb08246da183f4}
+\index{Ogg\+Demux@{Ogg\+Demux}!is\+Media\+Session@{is\+Media\+Session}}
+\index{is\+Media\+Session@{is\+Media\+Session}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{is\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ac5858707c4e7a15bd59d476cf48289d6}
+
+
+Reimplemented in {\bf Media\+Session} \doxyref{}{p.}{classMediaSession_a3b2a06a722374ab4477ac05a2ce28829}.
+
+\index{Ogg\+Demux@{Ogg\+Demux}!is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}}
+\index{is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{is\+R\+T\+C\+P\+Instance() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ab5f9f20324698f89a35513d596b2e7be}
+
+
+Reimplemented in {\bf R\+T\+C\+P\+Instance} \doxyref{}{p.}{classRTCPInstance_a844292518419e1dbf24170812fd1e4b5}.
+
+\index{Ogg\+Demux@{Ogg\+Demux}!is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}}
+\index{is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{is\+R\+T\+S\+P\+Client() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aed1c1816867f910ce8c98350686ac038}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Client} \doxyref{}{p.}{classRTSPClient_add07b3a68432b546998080b24380e7e8}.
+
+\index{Ogg\+Demux@{Ogg\+Demux}!is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}}
+\index{is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{is\+R\+T\+S\+P\+Server() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a346e111b31bfde4b7f4ed593e0b97fd3}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Server} \doxyref{}{p.}{classRTSPServer_a45f9fc5ddd8f214169358493215a064a}.
+
+\index{Ogg\+Demux@{Ogg\+Demux}!is\+Server\+Media\+Session@{is\+Server\+Media\+Session}}
+\index{is\+Server\+Media\+Session@{is\+Server\+Media\+Session}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{is\+Server\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aa9fd26c4b954ffba5f79925ecd0283a0}
+
+
+Reimplemented in {\bf Server\+Media\+Session} \doxyref{}{p.}{classServerMediaSession_a34b59e04644b6f0841ea5af99dbf32f6}.
+
+\index{Ogg\+Demux@{Ogg\+Demux}!is\+Sink@{is\+Sink}}
+\index{is\+Sink@{is\+Sink}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{is\+Sink() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a23d49bf466482784b9d4378490d17b5f}
+
+
+Reimplemented in {\bf Media\+Sink} \doxyref{}{p.}{classMediaSink_aa8649dcdf21d5005f9ec319f898f91b6}.
+
+\index{Ogg\+Demux@{Ogg\+Demux}!is\+Source@{is\+Source}}
+\index{is\+Source@{is\+Source}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{is\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a6cdbd02c73a3e9c1cbab8fce9e9497b1}
+
+
+Reimplemented in {\bf Media\+Source} \doxyref{}{p.}{classMediaSource_a4d75fa9ee2b476b1231594282a6854be}.
+
+\index{Ogg\+Demux@{Ogg\+Demux}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$medium\+Name, Medium $\ast$\&result\+Medium)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Medium\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name, }
+\item[{{\bf Medium} $\ast$\&}]{result\+Medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a418c860c1e0ef2766ee0d0f64b346291}
+\index{Ogg\+Demux@{Ogg\+Demux}!lookup\+Demuxed\+Track@{lookup\+Demuxed\+Track}}
+\index{lookup\+Demuxed\+Track@{lookup\+Demuxed\+Track}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{lookup\+Demuxed\+Track(u\+\_\+int32\+\_\+t track\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Ogg\+Demuxed\+Track}$\ast$ Ogg\+Demux\+::lookup\+Demuxed\+Track (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t}]{track\+Number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classOggDemux_a581f04ae3e4517f711ac70e4be4d2291}
+\index{Ogg\+Demux@{Ogg\+Demux}!name@{name}}
+\index{name@{name}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Medium\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a575649802dc781c0e59e097a3870fcdb}
+
+
+Definition at line 61 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Medium\+Name.
+
+
+\begin{DoxyCode}
+61 \{\textcolor{keywordflow}{return} fMediumName;\}
+\end{DoxyCode}
+\index{Ogg\+Demux@{Ogg\+Demux}!new\+Demuxed\+Track@{new\+Demuxed\+Track}}
+\index{new\+Demuxed\+Track@{new\+Demuxed\+Track}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{new\+Demuxed\+Track(u\+\_\+int32\+\_\+t \&result\+Track\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Framed\+Source}$\ast$ Ogg\+Demux\+::new\+Demuxed\+Track (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t \&}]{result\+Track\+Number}
+\end{DoxyParamCaption}
+)}\label{classOggDemux_ad1e508d920e474dafbc6bbbccadbd6b2}
+\index{Ogg\+Demux@{Ogg\+Demux}!new\+Demuxed\+Track\+By\+Track\+Number@{new\+Demuxed\+Track\+By\+Track\+Number}}
+\index{new\+Demuxed\+Track\+By\+Track\+Number@{new\+Demuxed\+Track\+By\+Track\+Number}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{new\+Demuxed\+Track\+By\+Track\+Number(unsigned track\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Framed\+Source}$\ast$ Ogg\+Demux\+::new\+Demuxed\+Track\+By\+Track\+Number (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{track\+Number}
+\end{DoxyParamCaption}
+)}\label{classOggDemux_abf47b33c5796f6560f178c5a0ff0e55a}
+\index{Ogg\+Demux@{Ogg\+Demux}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{next\+Task()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token}\& Medium\+::next\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMedium_a5c8788adec90be1a584393a5bf11a5c9}
+
+
+Definition at line 77 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Next\+Task.
+
+
+\begin{DoxyCode}
+77                         \{
+78         \textcolor{keywordflow}{return} fNextTask;
+79   \}
+\end{DoxyCode}
+\index{Ogg\+Demux@{Ogg\+Demux}!remove\+Track@{remove\+Track}}
+\index{remove\+Track@{remove\+Track}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{remove\+Track(u\+\_\+int32\+\_\+t track\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}void Ogg\+Demux\+::remove\+Track (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t}]{track\+Number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classOggDemux_af2c9b8b98b8964f6213930a242a2cb56}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Ogg\+Demux@{Ogg\+Demux}!Ogg\+Demuxed\+Track@{Ogg\+Demuxed\+Track}}
+\index{Ogg\+Demuxed\+Track@{Ogg\+Demuxed\+Track}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{Ogg\+Demuxed\+Track}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Ogg\+Demuxed\+Track}\hspace{0.3cm}{\ttfamily [friend]}}\label{classOggDemux_afc284a5d73edc6ff770555036c2a7089}
+
+
+Definition at line 163 of file Ogg\+File.\+hh.
+
+\index{Ogg\+Demux@{Ogg\+Demux}!Ogg\+File@{Ogg\+File}}
+\index{Ogg\+File@{Ogg\+File}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{Ogg\+File}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Ogg\+File}\hspace{0.3cm}{\ttfamily [friend]}}\label{classOggDemux_add1c9d73bd1f931ec62ffc20273ed0c2}
+
+
+Definition at line 155 of file Ogg\+File.\+hh.
+
+\index{Ogg\+Demux@{Ogg\+Demux}!Ogg\+File\+Parser@{Ogg\+File\+Parser}}
+\index{Ogg\+File\+Parser@{Ogg\+File\+Parser}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{Ogg\+File\+Parser}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Ogg\+File\+Parser}\hspace{0.3cm}{\ttfamily [friend]}}\label{classOggDemux_abf1957b75f93616f9e84143328ec0cea}
+
+
+Definition at line 156 of file Ogg\+File.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{Ogg\+Demux@{Ogg\+Demux}!f\+Demuxed\+Tracks\+Table@{f\+Demuxed\+Tracks\+Table}}
+\index{f\+Demuxed\+Tracks\+Table@{f\+Demuxed\+Tracks\+Table}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{f\+Demuxed\+Tracks\+Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hash\+Table}$\ast$ Ogg\+Demux\+::f\+Demuxed\+Tracks\+Table\hspace{0.3cm}{\ttfamily [private]}}\label{classOggDemux_a9fb37df3c3d7d89be80805decef28f98}
+
+
+Definition at line 173 of file Ogg\+File.\+hh.
+
+\index{Ogg\+Demux@{Ogg\+Demux}!f\+Iter@{f\+Iter}}
+\index{f\+Iter@{f\+Iter}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{f\+Iter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ogg\+Track\+Table\+Iterator}$\ast$ Ogg\+Demux\+::f\+Iter\hspace{0.3cm}{\ttfamily [private]}}\label{classOggDemux_aa7f4fab47e6be90166679e522c9e06ca}
+
+
+Definition at line 174 of file Ogg\+File.\+hh.
+
+\index{Ogg\+Demux@{Ogg\+Demux}!f\+Our\+File@{f\+Our\+File}}
+\index{f\+Our\+File@{f\+Our\+File}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{f\+Our\+File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ogg\+File}\& Ogg\+Demux\+::f\+Our\+File\hspace{0.3cm}{\ttfamily [private]}}\label{classOggDemux_af064f81b723322898bc8a95d79d07370}
+
+
+Definition at line 171 of file Ogg\+File.\+hh.
+
+\index{Ogg\+Demux@{Ogg\+Demux}!f\+Our\+Parser@{f\+Our\+Parser}}
+\index{f\+Our\+Parser@{f\+Our\+Parser}!Ogg\+Demux@{Ogg\+Demux}}
+\subsubsection[{f\+Our\+Parser}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Ogg\+File\+Parser}$\ast$ Ogg\+Demux\+::f\+Our\+Parser\hspace{0.3cm}{\ttfamily [private]}}\label{classOggDemux_ab4a0a053141c9d0ec16899f4ce6daff7}
+
+
+Definition at line 172 of file Ogg\+File.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf Ogg\+File.\+hh}\end{DoxyCompactItemize}

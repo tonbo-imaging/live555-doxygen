@@ -1,0 +1,361 @@
+\section{Basic\+Usage\+Environment0 Class Reference}
+\label{classBasicUsageEnvironment0}\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+
+
+{\ttfamily \#include $<$Basic\+Usage\+Environment0.\+hh$>$}
+
+
+
+Inheritance diagram for Basic\+Usage\+Environment0\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classBasicUsageEnvironment0__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Basic\+Usage\+Environment0\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classBasicUsageEnvironment0__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef char const $\ast$ {\bf Msg\+String}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf Msg\+String} {\bf get\+Result\+Msg} () const 
+\item 
+virtual void {\bf set\+Result\+Msg} ({\bf Msg\+String} msg)
+\item 
+virtual void {\bf set\+Result\+Msg} ({\bf Msg\+String} msg1, {\bf Msg\+String} msg2)
+\item 
+virtual void {\bf set\+Result\+Msg} ({\bf Msg\+String} msg1, {\bf Msg\+String} msg2, {\bf Msg\+String} msg3)
+\item 
+virtual void {\bf set\+Result\+Err\+Msg} ({\bf Msg\+String} msg, int err=0)
+\item 
+virtual void {\bf append\+To\+Result\+Msg} ({\bf Msg\+String} msg)
+\item 
+virtual void {\bf report\+Background\+Error} ()
+\item 
+{\bf Boolean} {\bf reclaim} ()
+\item 
+{\bf Task\+Scheduler} \& {\bf task\+Scheduler} () const 
+\item 
+virtual void {\bf internal\+Error} ()
+\item 
+virtual int {\bf get\+Errno} () const  =0
+\item 
+virtual {\bf Usage\+Environment} \& {\bf operator$<$$<$} (char const $\ast$str)=0
+\item 
+virtual {\bf Usage\+Environment} \& {\bf operator$<$$<$} (int i)=0
+\item 
+virtual {\bf Usage\+Environment} \& {\bf operator$<$$<$} (unsigned u)=0
+\item 
+virtual {\bf Usage\+Environment} \& {\bf operator$<$$<$} (double d)=0
+\item 
+virtual {\bf Usage\+Environment} \& {\bf operator$<$$<$} (void $\ast$p)=0
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ {\bf live\+Media\+Priv}
+\item 
+void $\ast$ {\bf groupsock\+Priv}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Basic\+Usage\+Environment0} ({\bf Task\+Scheduler} \&{\bf task\+Scheduler})
+\item 
+virtual {\bf $\sim$\+Basic\+Usage\+Environment0} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf reset} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char {\bf f\+Result\+Msg\+Buffer} [{\bf R\+E\+S\+U\+L\+T\+\_\+\+M\+S\+G\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+M\+A\+X}]
+\item 
+unsigned {\bf f\+Cur\+Buffer\+Size}
+\item 
+unsigned {\bf f\+Buffer\+Max\+Size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 39 of file Basic\+Usage\+Environment0.\+hh.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!Msg\+String@{Msg\+String}}
+\index{Msg\+String@{Msg\+String}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{Msg\+String}]{\setlength{\rightskip}{0pt plus 5cm}typedef char const$\ast$ {\bf Usage\+Environment\+::\+Msg\+String}\hspace{0.3cm}{\ttfamily [inherited]}}\label{classUsageEnvironment_a148744a1dcac805213682651e608440f}
+
+
+Definition at line 62 of file Usage\+Environment.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{Basic\+Usage\+Environment0(\+Task\+Scheduler \&task\+Scheduler)}]{\setlength{\rightskip}{0pt plus 5cm}Basic\+Usage\+Environment0\+::\+Basic\+Usage\+Environment0 (
+\begin{DoxyParamCaption}
+\item[{{\bf Task\+Scheduler} \&}]{task\+Scheduler}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classBasicUsageEnvironment0_a76431064d27d8e38add26d8c6e40aba8}
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!````~Basic\+Usage\+Environment0@{$\sim$\+Basic\+Usage\+Environment0}}
+\index{````~Basic\+Usage\+Environment0@{$\sim$\+Basic\+Usage\+Environment0}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{$\sim$\+Basic\+Usage\+Environment0()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Basic\+Usage\+Environment0\+::$\sim$\+Basic\+Usage\+Environment0 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classBasicUsageEnvironment0_ab9e9243fc329b45b516d521d0686d3c7}
+
+
+\subsection{Member Function Documentation}
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!append\+To\+Result\+Msg@{append\+To\+Result\+Msg}}
+\index{append\+To\+Result\+Msg@{append\+To\+Result\+Msg}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{append\+To\+Result\+Msg(\+Msg\+String msg)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Basic\+Usage\+Environment0\+::append\+To\+Result\+Msg (
+\begin{DoxyParamCaption}
+\item[{{\bf Msg\+String}}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classBasicUsageEnvironment0_accacc9dee49dc95dc7795363f457db54}
+
+
+Implements {\bf Usage\+Environment} \doxyref{}{p.}{classUsageEnvironment_a66328c6a99194a63a270c74ddaf79f02}.
+
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!get\+Errno@{get\+Errno}}
+\index{get\+Errno@{get\+Errno}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{get\+Errno() const  =0}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Usage\+Environment\+::get\+Errno (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}\label{classUsageEnvironment_ab8c9fb0c56119cca1c0463c85132300e}
+
+
+Implemented in {\bf Basic\+Usage\+Environment} \doxyref{}{p.}{classBasicUsageEnvironment_ac52ec96614bac6bbf2826139b072cd32}.
+
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!get\+Result\+Msg@{get\+Result\+Msg}}
+\index{get\+Result\+Msg@{get\+Result\+Msg}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{get\+Result\+Msg() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Msg\+String} Basic\+Usage\+Environment0\+::get\+Result\+Msg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classBasicUsageEnvironment0_a4a22b74c3cd009bda593d38ee091170d}
+
+
+Implements {\bf Usage\+Environment} \doxyref{}{p.}{classUsageEnvironment_af712b81163814c9d2fb776a4093cf379}.
+
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!internal\+Error@{internal\+Error}}
+\index{internal\+Error@{internal\+Error}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{internal\+Error()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Usage\+Environment\+::internal\+Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classUsageEnvironment_a0ba4fbb0949351e4771c69be9f58b988}
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{operator$<$$<$(char const $\ast$str)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Usage\+Environment}\& Usage\+Environment\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}\label{classUsageEnvironment_abd0d3accabd7183dcd4d7c49e7f68096}
+
+
+Implemented in {\bf Basic\+Usage\+Environment} \doxyref{}{p.}{classBasicUsageEnvironment_a73dce5dcf1f6920ce9fc8a425760d365}.
+
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{operator$<$$<$(int i)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Usage\+Environment}\& Usage\+Environment\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}\label{classUsageEnvironment_a68d199e856e4b5210c1dbdfdf806365b}
+
+
+Implemented in {\bf Basic\+Usage\+Environment} \doxyref{}{p.}{classBasicUsageEnvironment_a16e91a3ba4929027ca56e0c3f1f6997e}.
+
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{operator$<$$<$(unsigned u)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Usage\+Environment}\& Usage\+Environment\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{u}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}\label{classUsageEnvironment_a8f044ee52cf2bb3e2185ec4bdaeddfd9}
+
+
+Implemented in {\bf Basic\+Usage\+Environment} \doxyref{}{p.}{classBasicUsageEnvironment_ac0d619d6fde7a3b4f6e4b0a34a3bfce5}.
+
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{operator$<$$<$(double d)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Usage\+Environment}\& Usage\+Environment\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{double}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}\label{classUsageEnvironment_ac9d1b1835996b7cf9df56163fda504c8}
+
+
+Implemented in {\bf Basic\+Usage\+Environment} \doxyref{}{p.}{classBasicUsageEnvironment_ad433f13530b515674d93135885ba8845}.
+
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{operator$<$$<$(void $\ast$p)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Usage\+Environment}\& Usage\+Environment\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [inherited]}}\label{classUsageEnvironment_a462b622a06cc368ccd872e8d134afceb}
+
+
+Implemented in {\bf Basic\+Usage\+Environment} \doxyref{}{p.}{classBasicUsageEnvironment_a768bf4d854e2e470e002d9802c5bc06c}.
+
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!reclaim@{reclaim}}
+\index{reclaim@{reclaim}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{reclaim()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Usage\+Environment\+::reclaim (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classUsageEnvironment_ac19435003fb1c8fa6722cd182ed2fffa}
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!report\+Background\+Error@{report\+Background\+Error}}
+\index{report\+Background\+Error@{report\+Background\+Error}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{report\+Background\+Error()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Basic\+Usage\+Environment0\+::report\+Background\+Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classBasicUsageEnvironment0_ad914998ef64fd77a1e71d622149c85e3}
+
+
+Implements {\bf Usage\+Environment} \doxyref{}{p.}{classUsageEnvironment_a200decb7a199a699a90d2ed17d132b7c}.
+
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!reset@{reset}}
+\index{reset@{reset}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{reset()}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Usage\+Environment0\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicUsageEnvironment0_a5914ff9b864675e7ed693fa0c5b33e38}
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!set\+Result\+Err\+Msg@{set\+Result\+Err\+Msg}}
+\index{set\+Result\+Err\+Msg@{set\+Result\+Err\+Msg}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{set\+Result\+Err\+Msg(\+Msg\+String msg, int err=0)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Basic\+Usage\+Environment0\+::set\+Result\+Err\+Msg (
+\begin{DoxyParamCaption}
+\item[{{\bf Msg\+String}}]{msg, }
+\item[{int}]{err = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classBasicUsageEnvironment0_a9b4784acd91b765e40647b1c91d819d6}
+
+
+Implements {\bf Usage\+Environment} \doxyref{}{p.}{classUsageEnvironment_a2759caf285f88a8602548febad71d5d8}.
+
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!set\+Result\+Msg@{set\+Result\+Msg}}
+\index{set\+Result\+Msg@{set\+Result\+Msg}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{set\+Result\+Msg(\+Msg\+String msg)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Basic\+Usage\+Environment0\+::set\+Result\+Msg (
+\begin{DoxyParamCaption}
+\item[{{\bf Msg\+String}}]{msg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classBasicUsageEnvironment0_a27ea3e959c3f1e4ba17413557ae388b1}
+
+
+Implements {\bf Usage\+Environment} \doxyref{}{p.}{classUsageEnvironment_a9d0d9b3d27d93f1c94f171957c3c53bc}.
+
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!set\+Result\+Msg@{set\+Result\+Msg}}
+\index{set\+Result\+Msg@{set\+Result\+Msg}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{set\+Result\+Msg(\+Msg\+String msg1, Msg\+String msg2)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Basic\+Usage\+Environment0\+::set\+Result\+Msg (
+\begin{DoxyParamCaption}
+\item[{{\bf Msg\+String}}]{msg1, }
+\item[{{\bf Msg\+String}}]{msg2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classBasicUsageEnvironment0_ad5d9e23d800f08196733d218165ef1c4}
+
+
+Implements {\bf Usage\+Environment} \doxyref{}{p.}{classUsageEnvironment_a86dfdab22e20fba5bf7c4cb0d75b5d30}.
+
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!set\+Result\+Msg@{set\+Result\+Msg}}
+\index{set\+Result\+Msg@{set\+Result\+Msg}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{set\+Result\+Msg(\+Msg\+String msg1, Msg\+String msg2, Msg\+String msg3)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Basic\+Usage\+Environment0\+::set\+Result\+Msg (
+\begin{DoxyParamCaption}
+\item[{{\bf Msg\+String}}]{msg1, }
+\item[{{\bf Msg\+String}}]{msg2, }
+\item[{{\bf Msg\+String}}]{msg3}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classBasicUsageEnvironment0_a326f076a5449c5ad9b942a97df9f3314}
+
+
+Implements {\bf Usage\+Environment} \doxyref{}{p.}{classUsageEnvironment_aa2739683c635cc1ca07cf06a6ef3f9aa}.
+
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!task\+Scheduler@{task\+Scheduler}}
+\index{task\+Scheduler@{task\+Scheduler}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{task\+Scheduler() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Scheduler}\& Usage\+Environment\+::task\+Scheduler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classUsageEnvironment_a95ce120cd9d00e6cc2fc508b6f8b01da}
+
+
+Definition at line 59 of file Usage\+Environment.\+hh.
+
+
+
+References Usage\+Environment\+::f\+Scheduler.
+
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} fScheduler;\}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!f\+Buffer\+Max\+Size@{f\+Buffer\+Max\+Size}}
+\index{f\+Buffer\+Max\+Size@{f\+Buffer\+Max\+Size}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{f\+Buffer\+Max\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Basic\+Usage\+Environment0\+::f\+Buffer\+Max\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicUsageEnvironment0_a4c762c6298ea95b9ea8d00c1a7f2800a}
+
+
+Definition at line 65 of file Basic\+Usage\+Environment0.\+hh.
+
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!f\+Cur\+Buffer\+Size@{f\+Cur\+Buffer\+Size}}
+\index{f\+Cur\+Buffer\+Size@{f\+Cur\+Buffer\+Size}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{f\+Cur\+Buffer\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Basic\+Usage\+Environment0\+::f\+Cur\+Buffer\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicUsageEnvironment0_a23c774c3bbe7a3986340e05f1c34c438}
+
+
+Definition at line 64 of file Basic\+Usage\+Environment0.\+hh.
+
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!f\+Result\+Msg\+Buffer@{f\+Result\+Msg\+Buffer}}
+\index{f\+Result\+Msg\+Buffer@{f\+Result\+Msg\+Buffer}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{f\+Result\+Msg\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}char Basic\+Usage\+Environment0\+::f\+Result\+Msg\+Buffer[{\bf R\+E\+S\+U\+L\+T\+\_\+\+M\+S\+G\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+M\+A\+X}]\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicUsageEnvironment0_a4ab4bc7d7d7b4e9c34dfb17bc45005af}
+
+
+Definition at line 63 of file Basic\+Usage\+Environment0.\+hh.
+
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!groupsock\+Priv@{groupsock\+Priv}}
+\index{groupsock\+Priv@{groupsock\+Priv}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{groupsock\+Priv}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Usage\+Environment\+::groupsock\+Priv\hspace{0.3cm}{\ttfamily [inherited]}}\label{classUsageEnvironment_ab135b35c7973ae59ae7b7b1d7baa1a6c}
+
+
+Definition at line 91 of file Usage\+Environment.\+hh.
+
+\index{Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}!live\+Media\+Priv@{live\+Media\+Priv}}
+\index{live\+Media\+Priv@{live\+Media\+Priv}!Basic\+Usage\+Environment0@{Basic\+Usage\+Environment0}}
+\subsubsection[{live\+Media\+Priv}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Usage\+Environment\+::live\+Media\+Priv\hspace{0.3cm}{\ttfamily [inherited]}}\label{classUsageEnvironment_ab141f696f1973799e722093fe692b2b6}
+
+
+Definition at line 90 of file Usage\+Environment.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Basic\+Usage\+Environment/include/{\bf Basic\+Usage\+Environment0.\+hh}\end{DoxyCompactItemize}

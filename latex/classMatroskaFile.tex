@@ -1,0 +1,745 @@
+\section{Matroska\+File Class Reference}
+\label{classMatroskaFile}\index{Matroska\+File@{Matroska\+File}}
+
+
+{\ttfamily \#include $<$Matroska\+File.\+hh$>$}
+
+
+
+Inheritance diagram for Matroska\+File\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=120pt]{classMatroskaFile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Matroska\+File\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatroskaFile__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void( {\bf on\+Creation\+Func}) ({\bf Matroska\+File} $\ast$new\+File, void $\ast$client\+Data)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Matroska\+Track} $\ast$ {\bf lookup} (unsigned track\+Number) const 
+\item 
+{\bf Matroska\+Demux} $\ast$ {\bf new\+Demux} ()
+\item 
+unsigned {\bf timecode\+Scale} ()
+\item 
+float {\bf segment\+Duration} ()
+\item 
+float {\bf file\+Duration} ()
+\item 
+char const $\ast$ {\bf file\+Name} () const 
+\item 
+unsigned {\bf chosen\+Video\+Track\+Number} ()
+\item 
+unsigned {\bf chosen\+Audio\+Track\+Number} ()
+\item 
+unsigned {\bf chosen\+Subtitle\+Track\+Number} ()
+\item 
+{\bf Framed\+Source} $\ast$ {\bf create\+Source\+For\+Streaming} ({\bf Framed\+Source} $\ast$base\+Source, unsigned track\+Number, unsigned \&est\+Bitrate, unsigned \&num\+Filters\+In\+Front\+Of\+Track)
+\item 
+{\bf R\+T\+P\+Sink} $\ast$ {\bf create\+R\+T\+P\+Sink\+For\+Track\+Number} (unsigned track\+Number, {\bf Groupsock} $\ast$rtp\+Groupsock, unsigned char rtp\+Payload\+Type\+If\+Dynamic)
+\item 
+{\bf Usage\+Environment} \& {\bf envir} () const 
+\item 
+char const $\ast$ {\bf name} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Source} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Sink} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+C\+P\+Instance} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Client} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Server} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Media\+Session} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Server\+Media\+Session} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf create\+New} ({\bf Usage\+Environment} \&env, char const $\ast${\bf file\+Name}, {\bf on\+Creation\+Func} $\ast$on\+Creation, void $\ast$on\+Creation\+Client\+Data, char const $\ast$preferred\+Language=\char`\"{}eng\char`\"{})
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name, {\bf Medium} $\ast$\&result\+Medium)
+\item 
+static void {\bf close} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name)
+\item 
+static void {\bf close} ({\bf Medium} $\ast$medium)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Task\+Token} \& {\bf next\+Task} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Matroska\+File} ({\bf Usage\+Environment} \&env, char const $\ast${\bf file\+Name}, {\bf on\+Creation\+Func} $\ast$on\+Creation, void $\ast$on\+Creation\+Client\+Data, char const $\ast$preferred\+Language)
+\item 
+virtual {\bf $\sim$\+Matroska\+File} ()
+\item 
+void {\bf handle\+End\+Of\+Track\+Header\+Parsing} ()
+\item 
+void {\bf add\+Track} ({\bf Matroska\+Track} $\ast$new\+Track, unsigned track\+Number)
+\item 
+void {\bf add\+Cue\+Point} (double cue\+Time, u\+\_\+int64\+\_\+t cluster\+Offset\+In\+File, unsigned block\+Num\+Within\+Cluster)
+\item 
+{\bf Boolean} {\bf lookup\+Cue\+Point} (double \&cue\+Time, u\+\_\+int64\+\_\+t \&result\+Cluster\+Offset\+In\+File, unsigned \&result\+Block\+Num\+Within\+Cluster)
+\item 
+void {\bf print\+Cue\+Points} (F\+I\+L\+E $\ast$fid)
+\item 
+void {\bf remove\+Demux} ({\bf Matroska\+Demux} $\ast$demux)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf handle\+End\+Of\+Track\+Header\+Parsing} (void $\ast$client\+Data)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char const $\ast$ {\bf f\+File\+Name}
+\item 
+{\bf on\+Creation\+Func} $\ast$ {\bf f\+On\+Creation}
+\item 
+void $\ast$ {\bf f\+On\+Creation\+Client\+Data}
+\item 
+char const $\ast$ {\bf f\+Preferred\+Language}
+\item 
+unsigned {\bf f\+Timecode\+Scale}
+\item 
+float {\bf f\+Segment\+Duration}
+\item 
+u\+\_\+int64\+\_\+t {\bf f\+Segment\+Data\+Offset}
+\item 
+u\+\_\+int64\+\_\+t {\bf f\+Cluster\+Offset}
+\item 
+u\+\_\+int64\+\_\+t {\bf f\+Cues\+Offset}
+\item 
+class Matroska\+Track\+Table $\ast$ {\bf f\+Track\+Table}
+\item 
+{\bf Hash\+Table} $\ast$ {\bf f\+Demuxes\+Table}
+\item 
+class Cue\+Point $\ast$ {\bf f\+Cue\+Points}
+\item 
+unsigned {\bf f\+Chosen\+Video\+Track\+Number}
+\item 
+unsigned {\bf f\+Chosen\+Audio\+Track\+Number}
+\item 
+unsigned {\bf f\+Chosen\+Subtitle\+Track\+Number}
+\item 
+class {\bf Matroska\+File\+Parser} $\ast$ {\bf f\+Parser\+For\+Initialization}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Matroska\+File\+Parser}
+\item 
+class {\bf Matroska\+Demux}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 34 of file Matroska\+File.\+hh.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{Matroska\+File@{Matroska\+File}!on\+Creation\+Func@{on\+Creation\+Func}}
+\index{on\+Creation\+Func@{on\+Creation\+Func}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{on\+Creation\+Func}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( Matroska\+File\+::on\+Creation\+Func) ({\bf Matroska\+File} $\ast$new\+File, void $\ast$client\+Data)}\label{classMatroskaFile_acaa492cbdd2344b92f6aa3223096439d}
+
+
+Definition at line 36 of file Matroska\+File.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Matroska\+File@{Matroska\+File}!Matroska\+File@{Matroska\+File}}
+\index{Matroska\+File@{Matroska\+File}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{Matroska\+File(\+Usage\+Environment \&env, char const $\ast$file\+Name, on\+Creation\+Func $\ast$on\+Creation, void $\ast$on\+Creation\+Client\+Data, char const $\ast$preferred\+Language)}]{\setlength{\rightskip}{0pt plus 5cm}Matroska\+File\+::\+Matroska\+File (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{file\+Name, }
+\item[{{\bf on\+Creation\+Func} $\ast$}]{on\+Creation, }
+\item[{void $\ast$}]{on\+Creation\+Client\+Data, }
+\item[{char const $\ast$}]{preferred\+Language}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_a1f797c2843406bdb014986f7c1b48427}
+\index{Matroska\+File@{Matroska\+File}!````~Matroska\+File@{$\sim$\+Matroska\+File}}
+\index{````~Matroska\+File@{$\sim$\+Matroska\+File}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{$\sim$\+Matroska\+File()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Matroska\+File\+::$\sim$\+Matroska\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classMatroskaFile_a8e8b15b281c00819a9343c8005c79b44}
+
+
+\subsection{Member Function Documentation}
+\index{Matroska\+File@{Matroska\+File}!add\+Cue\+Point@{add\+Cue\+Point}}
+\index{add\+Cue\+Point@{add\+Cue\+Point}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{add\+Cue\+Point(double cue\+Time, u\+\_\+int64\+\_\+t cluster\+Offset\+In\+File, unsigned block\+Num\+Within\+Cluster)}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+File\+::add\+Cue\+Point (
+\begin{DoxyParamCaption}
+\item[{double}]{cue\+Time, }
+\item[{u\+\_\+int64\+\_\+t}]{cluster\+Offset\+In\+File, }
+\item[{unsigned}]{block\+Num\+Within\+Cluster}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_aaf6369daebb9044d6141c0906f908975}
+\index{Matroska\+File@{Matroska\+File}!add\+Track@{add\+Track}}
+\index{add\+Track@{add\+Track}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{add\+Track(\+Matroska\+Track $\ast$new\+Track, unsigned track\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+File\+::add\+Track (
+\begin{DoxyParamCaption}
+\item[{{\bf Matroska\+Track} $\ast$}]{new\+Track, }
+\item[{unsigned}]{track\+Number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_a46755168000e2d9e8070c79f7ad6a767}
+\index{Matroska\+File@{Matroska\+File}!chosen\+Audio\+Track\+Number@{chosen\+Audio\+Track\+Number}}
+\index{chosen\+Audio\+Track\+Number@{chosen\+Audio\+Track\+Number}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{chosen\+Audio\+Track\+Number()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+File\+::chosen\+Audio\+Track\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMatroskaFile_ac9df0c5506cce7ed45f56049ea16d39a}
+
+
+Definition at line 56 of file Matroska\+File.\+hh.
+
+
+
+References f\+Chosen\+Audio\+Track\+Number.
+
+
+\begin{DoxyCode}
+56 \{ \textcolor{keywordflow}{return} fChosenAudioTrackNumber; \}
+\end{DoxyCode}
+\index{Matroska\+File@{Matroska\+File}!chosen\+Subtitle\+Track\+Number@{chosen\+Subtitle\+Track\+Number}}
+\index{chosen\+Subtitle\+Track\+Number@{chosen\+Subtitle\+Track\+Number}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{chosen\+Subtitle\+Track\+Number()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+File\+::chosen\+Subtitle\+Track\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMatroskaFile_a21f3aacdf9453a42ce7d79c2a1b45fef}
+
+
+Definition at line 57 of file Matroska\+File.\+hh.
+
+
+
+References f\+Chosen\+Subtitle\+Track\+Number.
+
+
+\begin{DoxyCode}
+57 \{ \textcolor{keywordflow}{return} fChosenSubtitleTrackNumber; \}
+\end{DoxyCode}
+\index{Matroska\+File@{Matroska\+File}!chosen\+Video\+Track\+Number@{chosen\+Video\+Track\+Number}}
+\index{chosen\+Video\+Track\+Number@{chosen\+Video\+Track\+Number}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{chosen\+Video\+Track\+Number()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+File\+::chosen\+Video\+Track\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMatroskaFile_a6b271e81abe9db3ba508c6f5f9679dcb}
+
+
+Definition at line 55 of file Matroska\+File.\+hh.
+
+
+
+References f\+Chosen\+Video\+Track\+Number.
+
+
+\begin{DoxyCode}
+55 \{ \textcolor{keywordflow}{return} fChosenVideoTrackNumber; \}
+\end{DoxyCode}
+\index{Matroska\+File@{Matroska\+File}!close@{close}}
+\index{close@{close}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{close(\+Usage\+Environment \&env, char const $\ast$medium\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a9968c7ce6eedb848f2cc095730c01b17}
+\index{Matroska\+File@{Matroska\+File}!close@{close}}
+\index{close@{close}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{close(\+Medium $\ast$medium)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_aee50624faf6909b3944dd803fd485467}
+\index{Matroska\+File@{Matroska\+File}!create\+New@{create\+New}}
+\index{create\+New@{create\+New}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{create\+New(\+Usage\+Environment \&env, char const $\ast$file\+Name, on\+Creation\+Func $\ast$on\+Creation, void $\ast$on\+Creation\+Client\+Data, char const $\ast$preferred\+Language=""eng"")}]{\setlength{\rightskip}{0pt plus 5cm}static void Matroska\+File\+::create\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{file\+Name, }
+\item[{{\bf on\+Creation\+Func} $\ast$}]{on\+Creation, }
+\item[{void $\ast$}]{on\+Creation\+Client\+Data, }
+\item[{char const $\ast$}]{preferred\+Language = {\ttfamily \char`\"{}eng\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classMatroskaFile_a6514c78dee5f218c7eaf63c1d6786a3b}
+\index{Matroska\+File@{Matroska\+File}!create\+R\+T\+P\+Sink\+For\+Track\+Number@{create\+R\+T\+P\+Sink\+For\+Track\+Number}}
+\index{create\+R\+T\+P\+Sink\+For\+Track\+Number@{create\+R\+T\+P\+Sink\+For\+Track\+Number}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{create\+R\+T\+P\+Sink\+For\+Track\+Number(unsigned track\+Number, Groupsock $\ast$rtp\+Groupsock, unsigned char rtp\+Payload\+Type\+If\+Dynamic)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+P\+Sink}$\ast$ Matroska\+File\+::create\+R\+T\+P\+Sink\+For\+Track\+Number (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{track\+Number, }
+\item[{{\bf Groupsock} $\ast$}]{rtp\+Groupsock, }
+\item[{unsigned char}]{rtp\+Payload\+Type\+If\+Dynamic}
+\end{DoxyParamCaption}
+)}\label{classMatroskaFile_a2cf432820bd88573a944afe33770e00d}
+\index{Matroska\+File@{Matroska\+File}!create\+Source\+For\+Streaming@{create\+Source\+For\+Streaming}}
+\index{create\+Source\+For\+Streaming@{create\+Source\+For\+Streaming}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{create\+Source\+For\+Streaming(\+Framed\+Source $\ast$base\+Source, unsigned track\+Number, unsigned \&est\+Bitrate, unsigned \&num\+Filters\+In\+Front\+Of\+Track)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Framed\+Source}$\ast$ Matroska\+File\+::create\+Source\+For\+Streaming (
+\begin{DoxyParamCaption}
+\item[{{\bf Framed\+Source} $\ast$}]{base\+Source, }
+\item[{unsigned}]{track\+Number, }
+\item[{unsigned \&}]{est\+Bitrate, }
+\item[{unsigned \&}]{num\+Filters\+In\+Front\+Of\+Track}
+\end{DoxyParamCaption}
+)}\label{classMatroskaFile_aec446d647ef926a970fa3c63d0002d26}
+\index{Matroska\+File@{Matroska\+File}!envir@{envir}}
+\index{envir@{envir}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{envir() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Medium\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a32f7ecdd95f2b8400e1a26a5009e3b8e}
+
+
+Definition at line 59 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Environ.
+
+
+
+Referenced by Media\+Subsession\+::env(), R\+T\+P\+Interface\+::envir(), Generic\+Media\+Server\+::\+Client\+Connection\+::envir(), and Generic\+Media\+Server\+::\+Client\+Session\+::envir().
+
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} fEnviron;\}
+\end{DoxyCode}
+\index{Matroska\+File@{Matroska\+File}!file\+Duration@{file\+Duration}}
+\index{file\+Duration@{file\+Duration}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{file\+Duration()}]{\setlength{\rightskip}{0pt plus 5cm}float Matroska\+File\+::file\+Duration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classMatroskaFile_a4ea7af186448638d70bdc4b42500e307}
+
+
+Referenced by Matroska\+File\+Server\+Demux\+::file\+Duration().
+
+\index{Matroska\+File@{Matroska\+File}!file\+Name@{file\+Name}}
+\index{file\+Name@{file\+Name}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{file\+Name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Matroska\+File\+::file\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classMatroskaFile_ae34f3f1efdeaf3a2e91d5d5c483ef4ec}
+
+
+Definition at line 53 of file Matroska\+File.\+hh.
+
+
+
+References f\+File\+Name.
+
+
+\begin{DoxyCode}
+53 \{ \textcolor{keywordflow}{return} fFileName; \}
+\end{DoxyCode}
+\index{Matroska\+File@{Matroska\+File}!handle\+End\+Of\+Track\+Header\+Parsing@{handle\+End\+Of\+Track\+Header\+Parsing}}
+\index{handle\+End\+Of\+Track\+Header\+Parsing@{handle\+End\+Of\+Track\+Header\+Parsing}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{handle\+End\+Of\+Track\+Header\+Parsing(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void Matroska\+File\+::handle\+End\+Of\+Track\+Header\+Parsing (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classMatroskaFile_a3aff98199a5cffe706707c6157c81395}
+\index{Matroska\+File@{Matroska\+File}!handle\+End\+Of\+Track\+Header\+Parsing@{handle\+End\+Of\+Track\+Header\+Parsing}}
+\index{handle\+End\+Of\+Track\+Header\+Parsing@{handle\+End\+Of\+Track\+Header\+Parsing}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{handle\+End\+Of\+Track\+Header\+Parsing()}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+File\+::handle\+End\+Of\+Track\+Header\+Parsing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_ac77ea3f87c578e323de2de4b84f137c2}
+\index{Matroska\+File@{Matroska\+File}!is\+Media\+Session@{is\+Media\+Session}}
+\index{is\+Media\+Session@{is\+Media\+Session}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{is\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ac5858707c4e7a15bd59d476cf48289d6}
+
+
+Reimplemented in {\bf Media\+Session} \doxyref{}{p.}{classMediaSession_a3b2a06a722374ab4477ac05a2ce28829}.
+
+\index{Matroska\+File@{Matroska\+File}!is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}}
+\index{is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{is\+R\+T\+C\+P\+Instance() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ab5f9f20324698f89a35513d596b2e7be}
+
+
+Reimplemented in {\bf R\+T\+C\+P\+Instance} \doxyref{}{p.}{classRTCPInstance_a844292518419e1dbf24170812fd1e4b5}.
+
+\index{Matroska\+File@{Matroska\+File}!is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}}
+\index{is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{is\+R\+T\+S\+P\+Client() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aed1c1816867f910ce8c98350686ac038}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Client} \doxyref{}{p.}{classRTSPClient_add07b3a68432b546998080b24380e7e8}.
+
+\index{Matroska\+File@{Matroska\+File}!is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}}
+\index{is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{is\+R\+T\+S\+P\+Server() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a346e111b31bfde4b7f4ed593e0b97fd3}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Server} \doxyref{}{p.}{classRTSPServer_a45f9fc5ddd8f214169358493215a064a}.
+
+\index{Matroska\+File@{Matroska\+File}!is\+Server\+Media\+Session@{is\+Server\+Media\+Session}}
+\index{is\+Server\+Media\+Session@{is\+Server\+Media\+Session}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{is\+Server\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aa9fd26c4b954ffba5f79925ecd0283a0}
+
+
+Reimplemented in {\bf Server\+Media\+Session} \doxyref{}{p.}{classServerMediaSession_a34b59e04644b6f0841ea5af99dbf32f6}.
+
+\index{Matroska\+File@{Matroska\+File}!is\+Sink@{is\+Sink}}
+\index{is\+Sink@{is\+Sink}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{is\+Sink() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a23d49bf466482784b9d4378490d17b5f}
+
+
+Reimplemented in {\bf Media\+Sink} \doxyref{}{p.}{classMediaSink_aa8649dcdf21d5005f9ec319f898f91b6}.
+
+\index{Matroska\+File@{Matroska\+File}!is\+Source@{is\+Source}}
+\index{is\+Source@{is\+Source}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{is\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a6cdbd02c73a3e9c1cbab8fce9e9497b1}
+
+
+Reimplemented in {\bf Media\+Source} \doxyref{}{p.}{classMediaSource_a4d75fa9ee2b476b1231594282a6854be}.
+
+\index{Matroska\+File@{Matroska\+File}!lookup@{lookup}}
+\index{lookup@{lookup}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{lookup(unsigned track\+Number) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matroska\+Track}$\ast$ Matroska\+File\+::lookup (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{track\+Number}
+\end{DoxyParamCaption}
+) const}\label{classMatroskaFile_a9f3fec088de25058ec63389910e58996}
+\index{Matroska\+File@{Matroska\+File}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$medium\+Name, Medium $\ast$\&result\+Medium)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Medium\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name, }
+\item[{{\bf Medium} $\ast$\&}]{result\+Medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a418c860c1e0ef2766ee0d0f64b346291}
+\index{Matroska\+File@{Matroska\+File}!lookup\+Cue\+Point@{lookup\+Cue\+Point}}
+\index{lookup\+Cue\+Point@{lookup\+Cue\+Point}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{lookup\+Cue\+Point(double \&cue\+Time, u\+\_\+int64\+\_\+t \&result\+Cluster\+Offset\+In\+File, unsigned \&result\+Block\+Num\+Within\+Cluster)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Matroska\+File\+::lookup\+Cue\+Point (
+\begin{DoxyParamCaption}
+\item[{double \&}]{cue\+Time, }
+\item[{u\+\_\+int64\+\_\+t \&}]{result\+Cluster\+Offset\+In\+File, }
+\item[{unsigned \&}]{result\+Block\+Num\+Within\+Cluster}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_aa7e0a7175caface5d31421a35322780a}
+\index{Matroska\+File@{Matroska\+File}!name@{name}}
+\index{name@{name}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Medium\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a575649802dc781c0e59e097a3870fcdb}
+
+
+Definition at line 61 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Medium\+Name.
+
+
+\begin{DoxyCode}
+61 \{\textcolor{keywordflow}{return} fMediumName;\}
+\end{DoxyCode}
+\index{Matroska\+File@{Matroska\+File}!new\+Demux@{new\+Demux}}
+\index{new\+Demux@{new\+Demux}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{new\+Demux()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matroska\+Demux}$\ast$ Matroska\+File\+::new\+Demux (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classMatroskaFile_ad3db87b442e06b4e6fd368c043549b2e}
+\index{Matroska\+File@{Matroska\+File}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{next\+Task()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token}\& Medium\+::next\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMedium_a5c8788adec90be1a584393a5bf11a5c9}
+
+
+Definition at line 77 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Next\+Task.
+
+
+\begin{DoxyCode}
+77                         \{
+78         \textcolor{keywordflow}{return} fNextTask;
+79   \}
+\end{DoxyCode}
+\index{Matroska\+File@{Matroska\+File}!print\+Cue\+Points@{print\+Cue\+Points}}
+\index{print\+Cue\+Points@{print\+Cue\+Points}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{print\+Cue\+Points(\+F\+I\+L\+E $\ast$fid)}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+File\+::print\+Cue\+Points (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{fid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_a51c00201109cb250e591a26e0e9b7a43}
+\index{Matroska\+File@{Matroska\+File}!remove\+Demux@{remove\+Demux}}
+\index{remove\+Demux@{remove\+Demux}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{remove\+Demux(\+Matroska\+Demux $\ast$demux)}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+File\+::remove\+Demux (
+\begin{DoxyParamCaption}
+\item[{{\bf Matroska\+Demux} $\ast$}]{demux}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_a9d57893e9023c2ed3ce4ee80e6ca7c45}
+\index{Matroska\+File@{Matroska\+File}!segment\+Duration@{segment\+Duration}}
+\index{segment\+Duration@{segment\+Duration}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{segment\+Duration()}]{\setlength{\rightskip}{0pt plus 5cm}float Matroska\+File\+::segment\+Duration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMatroskaFile_a656dae7147f5330144aeb42511c65af0}
+
+
+Definition at line 50 of file Matroska\+File.\+hh.
+
+
+
+References f\+Segment\+Duration.
+
+
+\begin{DoxyCode}
+50 \{ \textcolor{keywordflow}{return} fSegmentDuration; \} \textcolor{comment}{// in units of "timecodeScale()"}
+\end{DoxyCode}
+\index{Matroska\+File@{Matroska\+File}!timecode\+Scale@{timecode\+Scale}}
+\index{timecode\+Scale@{timecode\+Scale}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{timecode\+Scale()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+File\+::timecode\+Scale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMatroskaFile_a6aa8ea4560ea218d8dc0a80ba5f556b6}
+
+
+Definition at line 49 of file Matroska\+File.\+hh.
+
+
+
+References f\+Timecode\+Scale.
+
+
+\begin{DoxyCode}
+49 \{ \textcolor{keywordflow}{return} fTimecodeScale; \} \textcolor{comment}{// in nanoseconds}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Matroska\+File@{Matroska\+File}!Matroska\+Demux@{Matroska\+Demux}}
+\index{Matroska\+Demux@{Matroska\+Demux}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{Matroska\+Demux}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Matroska\+Demux}\hspace{0.3cm}{\ttfamily [friend]}}\label{classMatroskaFile_a5f3440a585d41e45569d5ed942df47ab}
+
+
+Definition at line 88 of file Matroska\+File.\+hh.
+
+\index{Matroska\+File@{Matroska\+File}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{Matroska\+File\+Parser}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Matroska\+File\+Parser}\hspace{0.3cm}{\ttfamily [friend]}}\label{classMatroskaFile_a33b6d0180b26f93d503d898664d95a6d}
+
+
+Definition at line 87 of file Matroska\+File.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{Matroska\+File@{Matroska\+File}!f\+Chosen\+Audio\+Track\+Number@{f\+Chosen\+Audio\+Track\+Number}}
+\index{f\+Chosen\+Audio\+Track\+Number@{f\+Chosen\+Audio\+Track\+Number}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{f\+Chosen\+Audio\+Track\+Number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+File\+::f\+Chosen\+Audio\+Track\+Number\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_abd73170a86b0ace880e36038845b2f85}
+
+
+Definition at line 101 of file Matroska\+File.\+hh.
+
+
+
+Referenced by chosen\+Audio\+Track\+Number().
+
+\index{Matroska\+File@{Matroska\+File}!f\+Chosen\+Subtitle\+Track\+Number@{f\+Chosen\+Subtitle\+Track\+Number}}
+\index{f\+Chosen\+Subtitle\+Track\+Number@{f\+Chosen\+Subtitle\+Track\+Number}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{f\+Chosen\+Subtitle\+Track\+Number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+File\+::f\+Chosen\+Subtitle\+Track\+Number\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_abf304a00b7e3363e741a8e8c7b12d45c}
+
+
+Definition at line 101 of file Matroska\+File.\+hh.
+
+
+
+Referenced by chosen\+Subtitle\+Track\+Number().
+
+\index{Matroska\+File@{Matroska\+File}!f\+Chosen\+Video\+Track\+Number@{f\+Chosen\+Video\+Track\+Number}}
+\index{f\+Chosen\+Video\+Track\+Number@{f\+Chosen\+Video\+Track\+Number}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{f\+Chosen\+Video\+Track\+Number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+File\+::f\+Chosen\+Video\+Track\+Number\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_a0405a5df436cd840ebcf9561c444f3d4}
+
+
+Definition at line 101 of file Matroska\+File.\+hh.
+
+
+
+Referenced by chosen\+Video\+Track\+Number().
+
+\index{Matroska\+File@{Matroska\+File}!f\+Cluster\+Offset@{f\+Cluster\+Offset}}
+\index{f\+Cluster\+Offset@{f\+Cluster\+Offset}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{f\+Cluster\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int64\+\_\+t Matroska\+File\+::f\+Cluster\+Offset\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_abb5836a448b6cf60b77d2e0b9d8a5021}
+
+
+Definition at line 96 of file Matroska\+File.\+hh.
+
+\index{Matroska\+File@{Matroska\+File}!f\+Cue\+Points@{f\+Cue\+Points}}
+\index{f\+Cue\+Points@{f\+Cue\+Points}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{f\+Cue\+Points}]{\setlength{\rightskip}{0pt plus 5cm}class Cue\+Point$\ast$ Matroska\+File\+::f\+Cue\+Points\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_a9c3b732ea64e345214b0526271cce1c8}
+
+
+Definition at line 100 of file Matroska\+File.\+hh.
+
+\index{Matroska\+File@{Matroska\+File}!f\+Cues\+Offset@{f\+Cues\+Offset}}
+\index{f\+Cues\+Offset@{f\+Cues\+Offset}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{f\+Cues\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int64\+\_\+t Matroska\+File\+::f\+Cues\+Offset\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_ad416bf18bb9e0f399568339b95539a72}
+
+
+Definition at line 96 of file Matroska\+File.\+hh.
+
+\index{Matroska\+File@{Matroska\+File}!f\+Demuxes\+Table@{f\+Demuxes\+Table}}
+\index{f\+Demuxes\+Table@{f\+Demuxes\+Table}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{f\+Demuxes\+Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hash\+Table}$\ast$ Matroska\+File\+::f\+Demuxes\+Table\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_a1f690adba2c09a1686be3cec6e64108e}
+
+
+Definition at line 99 of file Matroska\+File.\+hh.
+
+\index{Matroska\+File@{Matroska\+File}!f\+File\+Name@{f\+File\+Name}}
+\index{f\+File\+Name@{f\+File\+Name}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{f\+File\+Name}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Matroska\+File\+::f\+File\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_adc5472c12b9b7a24478839f276c9cdba}
+
+
+Definition at line 89 of file Matroska\+File.\+hh.
+
+
+
+Referenced by file\+Name().
+
+\index{Matroska\+File@{Matroska\+File}!f\+On\+Creation@{f\+On\+Creation}}
+\index{f\+On\+Creation@{f\+On\+Creation}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{f\+On\+Creation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf on\+Creation\+Func}$\ast$ Matroska\+File\+::f\+On\+Creation\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_a3c2defe1019b63bbc1ab3813d9918b4c}
+
+
+Definition at line 90 of file Matroska\+File.\+hh.
+
+\index{Matroska\+File@{Matroska\+File}!f\+On\+Creation\+Client\+Data@{f\+On\+Creation\+Client\+Data}}
+\index{f\+On\+Creation\+Client\+Data@{f\+On\+Creation\+Client\+Data}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{f\+On\+Creation\+Client\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Matroska\+File\+::f\+On\+Creation\+Client\+Data\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_aa0453d914c12e3cd7601e683e12cfd8e}
+
+
+Definition at line 91 of file Matroska\+File.\+hh.
+
+\index{Matroska\+File@{Matroska\+File}!f\+Parser\+For\+Initialization@{f\+Parser\+For\+Initialization}}
+\index{f\+Parser\+For\+Initialization@{f\+Parser\+For\+Initialization}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{f\+Parser\+For\+Initialization}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Matroska\+File\+Parser}$\ast$ Matroska\+File\+::f\+Parser\+For\+Initialization\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_a007dce64eab02a99fe199d543ac1d8b9}
+
+
+Definition at line 102 of file Matroska\+File.\+hh.
+
+\index{Matroska\+File@{Matroska\+File}!f\+Preferred\+Language@{f\+Preferred\+Language}}
+\index{f\+Preferred\+Language@{f\+Preferred\+Language}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{f\+Preferred\+Language}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Matroska\+File\+::f\+Preferred\+Language\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_a3f7e3f4ae670c02efafaab0d25338ed2}
+
+
+Definition at line 92 of file Matroska\+File.\+hh.
+
+\index{Matroska\+File@{Matroska\+File}!f\+Segment\+Data\+Offset@{f\+Segment\+Data\+Offset}}
+\index{f\+Segment\+Data\+Offset@{f\+Segment\+Data\+Offset}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{f\+Segment\+Data\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int64\+\_\+t Matroska\+File\+::f\+Segment\+Data\+Offset\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_a7bbf511415626485490f0bbd744b6726}
+
+
+Definition at line 96 of file Matroska\+File.\+hh.
+
+\index{Matroska\+File@{Matroska\+File}!f\+Segment\+Duration@{f\+Segment\+Duration}}
+\index{f\+Segment\+Duration@{f\+Segment\+Duration}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{f\+Segment\+Duration}]{\setlength{\rightskip}{0pt plus 5cm}float Matroska\+File\+::f\+Segment\+Duration\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_a9e8bb9fae161144bd78c9b0bf947128e}
+
+
+Definition at line 95 of file Matroska\+File.\+hh.
+
+
+
+Referenced by segment\+Duration().
+
+\index{Matroska\+File@{Matroska\+File}!f\+Timecode\+Scale@{f\+Timecode\+Scale}}
+\index{f\+Timecode\+Scale@{f\+Timecode\+Scale}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{f\+Timecode\+Scale}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+File\+::f\+Timecode\+Scale\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_a35ce501d01bc7c7e1ee06c62b4ac7735}
+
+
+Definition at line 94 of file Matroska\+File.\+hh.
+
+
+
+Referenced by timecode\+Scale().
+
+\index{Matroska\+File@{Matroska\+File}!f\+Track\+Table@{f\+Track\+Table}}
+\index{f\+Track\+Table@{f\+Track\+Table}!Matroska\+File@{Matroska\+File}}
+\subsubsection[{f\+Track\+Table}]{\setlength{\rightskip}{0pt plus 5cm}class Matroska\+Track\+Table$\ast$ Matroska\+File\+::f\+Track\+Table\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFile_af36cc4eb32e25fb36b638a8fd9f12bf1}
+
+
+Definition at line 98 of file Matroska\+File.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf Matroska\+File.\+hh}\end{DoxyCompactItemize}

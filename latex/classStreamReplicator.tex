@@ -1,0 +1,550 @@
+\section{Stream\+Replicator Class Reference}
+\label{classStreamReplicator}\index{Stream\+Replicator@{Stream\+Replicator}}
+
+
+{\ttfamily \#include $<$Stream\+Replicator.\+hh$>$}
+
+
+
+Inheritance diagram for Stream\+Replicator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{classStreamReplicator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Stream\+Replicator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{classStreamReplicator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Framed\+Source} $\ast$ {\bf create\+Stream\+Replica} ()
+\item 
+unsigned {\bf num\+Replicas} () const 
+\item 
+{\bf Framed\+Source} $\ast$ {\bf input\+Source} () const 
+\item 
+void {\bf detach\+Input\+Source} ()
+\item 
+{\bf Usage\+Environment} \& {\bf envir} () const 
+\item 
+char const $\ast$ {\bf name} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Source} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Sink} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+C\+P\+Instance} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Client} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Server} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Media\+Session} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Server\+Media\+Session} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Stream\+Replicator} $\ast$ {\bf create\+New} ({\bf Usage\+Environment} \&env, {\bf Framed\+Source} $\ast${\bf input\+Source}, {\bf Boolean} delete\+When\+Last\+Replica\+Dies={\bf True})
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name, {\bf Medium} $\ast$\&result\+Medium)
+\item 
+static void {\bf close} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name)
+\item 
+static void {\bf close} ({\bf Medium} $\ast$medium)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Stream\+Replicator} ({\bf Usage\+Environment} \&env, {\bf Framed\+Source} $\ast${\bf input\+Source}, {\bf Boolean} delete\+When\+Last\+Replica\+Dies)
+\item 
+virtual {\bf $\sim$\+Stream\+Replicator} ()
+\item 
+{\bf Task\+Token} \& {\bf next\+Task} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf get\+Next\+Frame} ({\bf Stream\+Replica} $\ast$replica)
+\item 
+void {\bf deactivate\+Stream\+Replica} ({\bf Stream\+Replica} $\ast$replica)
+\item 
+void {\bf remove\+Stream\+Replica} ({\bf Stream\+Replica} $\ast$replica)
+\item 
+void {\bf after\+Getting\+Frame} (unsigned frame\+Size, unsigned num\+Truncated\+Bytes, struct timeval presentation\+Time, unsigned duration\+In\+Microseconds)
+\item 
+void {\bf on\+Source\+Closure} ()
+\item 
+void {\bf deliver\+Received\+Frame} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf after\+Getting\+Frame} (void $\ast$client\+Data, unsigned frame\+Size, unsigned num\+Truncated\+Bytes, struct timeval presentation\+Time, unsigned duration\+In\+Microseconds)
+\item 
+static void {\bf on\+Source\+Closure} (void $\ast$client\+Data)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Framed\+Source} $\ast$ {\bf f\+Input\+Source}
+\item 
+{\bf Boolean} {\bf f\+Delete\+When\+Last\+Replica\+Dies}
+\item 
+{\bf Boolean} {\bf f\+Input\+Source\+Has\+Closed}
+\item 
+unsigned {\bf f\+Num\+Replicas}
+\item 
+unsigned {\bf f\+Num\+Active\+Replicas}
+\item 
+unsigned {\bf f\+Num\+Deliveries\+Made\+So\+Far}
+\item 
+int {\bf f\+Frame\+Index}
+\item 
+{\bf Stream\+Replica} $\ast$ {\bf f\+Master\+Replica}
+\item 
+{\bf Stream\+Replica} $\ast$ {\bf f\+Replicas\+Awaiting\+Current\+Frame}
+\item 
+{\bf Stream\+Replica} $\ast$ {\bf f\+Replicas\+Awaiting\+Next\+Frame}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Stream\+Replica}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 30 of file Stream\+Replicator.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Stream\+Replicator@{Stream\+Replicator}!Stream\+Replicator@{Stream\+Replicator}}
+\index{Stream\+Replicator@{Stream\+Replicator}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{Stream\+Replicator(\+Usage\+Environment \&env, Framed\+Source $\ast$input\+Source, Boolean delete\+When\+Last\+Replica\+Dies)}]{\setlength{\rightskip}{0pt plus 5cm}Stream\+Replicator\+::\+Stream\+Replicator (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf Framed\+Source} $\ast$}]{input\+Source, }
+\item[{{\bf Boolean}}]{delete\+When\+Last\+Replica\+Dies}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classStreamReplicator_a519957d8f2150447919af050af2c7ea0}
+\index{Stream\+Replicator@{Stream\+Replicator}!````~Stream\+Replicator@{$\sim$\+Stream\+Replicator}}
+\index{````~Stream\+Replicator@{$\sim$\+Stream\+Replicator}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{$\sim$\+Stream\+Replicator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Stream\+Replicator\+::$\sim$\+Stream\+Replicator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classStreamReplicator_aa3665534f9acfe2cc8c6526787ff9c7d}
+
+
+\subsection{Member Function Documentation}
+\index{Stream\+Replicator@{Stream\+Replicator}!after\+Getting\+Frame@{after\+Getting\+Frame}}
+\index{after\+Getting\+Frame@{after\+Getting\+Frame}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{after\+Getting\+Frame(void $\ast$client\+Data, unsigned frame\+Size, unsigned num\+Truncated\+Bytes, struct timeval presentation\+Time, unsigned duration\+In\+Microseconds)}]{\setlength{\rightskip}{0pt plus 5cm}static void Stream\+Replicator\+::after\+Getting\+Frame (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data, }
+\item[{unsigned}]{frame\+Size, }
+\item[{unsigned}]{num\+Truncated\+Bytes, }
+\item[{struct timeval}]{presentation\+Time, }
+\item[{unsigned}]{duration\+In\+Microseconds}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classStreamReplicator_a5e7e88e68e323c42bfa4dfb3ebabbb8a}
+\index{Stream\+Replicator@{Stream\+Replicator}!after\+Getting\+Frame@{after\+Getting\+Frame}}
+\index{after\+Getting\+Frame@{after\+Getting\+Frame}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{after\+Getting\+Frame(unsigned frame\+Size, unsigned num\+Truncated\+Bytes, struct timeval presentation\+Time, unsigned duration\+In\+Microseconds)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Replicator\+::after\+Getting\+Frame (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{frame\+Size, }
+\item[{unsigned}]{num\+Truncated\+Bytes, }
+\item[{struct timeval}]{presentation\+Time, }
+\item[{unsigned}]{duration\+In\+Microseconds}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamReplicator_a7f5875b3cc987a992c5570b72205ebfa}
+\index{Stream\+Replicator@{Stream\+Replicator}!close@{close}}
+\index{close@{close}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{close(\+Usage\+Environment \&env, char const $\ast$medium\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a9968c7ce6eedb848f2cc095730c01b17}
+\index{Stream\+Replicator@{Stream\+Replicator}!close@{close}}
+\index{close@{close}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{close(\+Medium $\ast$medium)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_aee50624faf6909b3944dd803fd485467}
+\index{Stream\+Replicator@{Stream\+Replicator}!create\+New@{create\+New}}
+\index{create\+New@{create\+New}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{create\+New(\+Usage\+Environment \&env, Framed\+Source $\ast$input\+Source, Boolean delete\+When\+Last\+Replica\+Dies=\+True)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Stream\+Replicator}$\ast$ Stream\+Replicator\+::create\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf Framed\+Source} $\ast$}]{input\+Source, }
+\item[{{\bf Boolean}}]{delete\+When\+Last\+Replica\+Dies = {\ttfamily {\bf True}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classStreamReplicator_ac2306e2568984c833f55f23b84a27125}
+\index{Stream\+Replicator@{Stream\+Replicator}!create\+Stream\+Replica@{create\+Stream\+Replica}}
+\index{create\+Stream\+Replica@{create\+Stream\+Replica}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{create\+Stream\+Replica()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Framed\+Source}$\ast$ Stream\+Replicator\+::create\+Stream\+Replica (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classStreamReplicator_a3d627f7cf371793c2a4743c2a8005edf}
+\index{Stream\+Replicator@{Stream\+Replicator}!deactivate\+Stream\+Replica@{deactivate\+Stream\+Replica}}
+\index{deactivate\+Stream\+Replica@{deactivate\+Stream\+Replica}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{deactivate\+Stream\+Replica(\+Stream\+Replica $\ast$replica)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Replicator\+::deactivate\+Stream\+Replica (
+\begin{DoxyParamCaption}
+\item[{{\bf Stream\+Replica} $\ast$}]{replica}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamReplicator_ae3054174781bbcff7dc711fcc12b626a}
+\index{Stream\+Replicator@{Stream\+Replicator}!deliver\+Received\+Frame@{deliver\+Received\+Frame}}
+\index{deliver\+Received\+Frame@{deliver\+Received\+Frame}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{deliver\+Received\+Frame()}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Replicator\+::deliver\+Received\+Frame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamReplicator_abf5aae86fbbeeca6868d74ac3d53054b}
+\index{Stream\+Replicator@{Stream\+Replicator}!detach\+Input\+Source@{detach\+Input\+Source}}
+\index{detach\+Input\+Source@{detach\+Input\+Source}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{detach\+Input\+Source()}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Replicator\+::detach\+Input\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classStreamReplicator_a9a3ce07691f0611ee10d5b5c57a13146}
+
+
+Definition at line 47 of file Stream\+Replicator.\+hh.
+
+
+
+References f\+Input\+Source, and N\+U\+L\+L.
+
+
+\begin{DoxyCode}
+47 \{ fInputSource = NULL; \}
+\end{DoxyCode}
+\index{Stream\+Replicator@{Stream\+Replicator}!envir@{envir}}
+\index{envir@{envir}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{envir() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Medium\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a32f7ecdd95f2b8400e1a26a5009e3b8e}
+
+
+Definition at line 59 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Environ.
+
+
+
+Referenced by Media\+Subsession\+::env(), R\+T\+P\+Interface\+::envir(), Generic\+Media\+Server\+::\+Client\+Connection\+::envir(), and Generic\+Media\+Server\+::\+Client\+Session\+::envir().
+
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} fEnviron;\}
+\end{DoxyCode}
+\index{Stream\+Replicator@{Stream\+Replicator}!get\+Next\+Frame@{get\+Next\+Frame}}
+\index{get\+Next\+Frame@{get\+Next\+Frame}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{get\+Next\+Frame(\+Stream\+Replica $\ast$replica)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Replicator\+::get\+Next\+Frame (
+\begin{DoxyParamCaption}
+\item[{{\bf Stream\+Replica} $\ast$}]{replica}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamReplicator_afd5502a4a4365344d4bedf29b8c6ddb9}
+\index{Stream\+Replicator@{Stream\+Replicator}!input\+Source@{input\+Source}}
+\index{input\+Source@{input\+Source}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{input\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Framed\+Source}$\ast$ Stream\+Replicator\+::input\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classStreamReplicator_afb742ac35590fb50bd297717a6f71b84}
+
+
+Definition at line 44 of file Stream\+Replicator.\+hh.
+
+
+
+References f\+Input\+Source.
+
+
+\begin{DoxyCode}
+44 \{ \textcolor{keywordflow}{return} fInputSource; \}
+\end{DoxyCode}
+\index{Stream\+Replicator@{Stream\+Replicator}!is\+Media\+Session@{is\+Media\+Session}}
+\index{is\+Media\+Session@{is\+Media\+Session}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{is\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ac5858707c4e7a15bd59d476cf48289d6}
+
+
+Reimplemented in {\bf Media\+Session} \doxyref{}{p.}{classMediaSession_a3b2a06a722374ab4477ac05a2ce28829}.
+
+\index{Stream\+Replicator@{Stream\+Replicator}!is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}}
+\index{is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{is\+R\+T\+C\+P\+Instance() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ab5f9f20324698f89a35513d596b2e7be}
+
+
+Reimplemented in {\bf R\+T\+C\+P\+Instance} \doxyref{}{p.}{classRTCPInstance_a844292518419e1dbf24170812fd1e4b5}.
+
+\index{Stream\+Replicator@{Stream\+Replicator}!is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}}
+\index{is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{is\+R\+T\+S\+P\+Client() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aed1c1816867f910ce8c98350686ac038}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Client} \doxyref{}{p.}{classRTSPClient_add07b3a68432b546998080b24380e7e8}.
+
+\index{Stream\+Replicator@{Stream\+Replicator}!is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}}
+\index{is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{is\+R\+T\+S\+P\+Server() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a346e111b31bfde4b7f4ed593e0b97fd3}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Server} \doxyref{}{p.}{classRTSPServer_a45f9fc5ddd8f214169358493215a064a}.
+
+\index{Stream\+Replicator@{Stream\+Replicator}!is\+Server\+Media\+Session@{is\+Server\+Media\+Session}}
+\index{is\+Server\+Media\+Session@{is\+Server\+Media\+Session}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{is\+Server\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aa9fd26c4b954ffba5f79925ecd0283a0}
+
+
+Reimplemented in {\bf Server\+Media\+Session} \doxyref{}{p.}{classServerMediaSession_a34b59e04644b6f0841ea5af99dbf32f6}.
+
+\index{Stream\+Replicator@{Stream\+Replicator}!is\+Sink@{is\+Sink}}
+\index{is\+Sink@{is\+Sink}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{is\+Sink() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a23d49bf466482784b9d4378490d17b5f}
+
+
+Reimplemented in {\bf Media\+Sink} \doxyref{}{p.}{classMediaSink_aa8649dcdf21d5005f9ec319f898f91b6}.
+
+\index{Stream\+Replicator@{Stream\+Replicator}!is\+Source@{is\+Source}}
+\index{is\+Source@{is\+Source}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{is\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a6cdbd02c73a3e9c1cbab8fce9e9497b1}
+
+
+Reimplemented in {\bf Media\+Source} \doxyref{}{p.}{classMediaSource_a4d75fa9ee2b476b1231594282a6854be}.
+
+\index{Stream\+Replicator@{Stream\+Replicator}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$medium\+Name, Medium $\ast$\&result\+Medium)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Medium\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name, }
+\item[{{\bf Medium} $\ast$\&}]{result\+Medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a418c860c1e0ef2766ee0d0f64b346291}
+\index{Stream\+Replicator@{Stream\+Replicator}!name@{name}}
+\index{name@{name}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Medium\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a575649802dc781c0e59e097a3870fcdb}
+
+
+Definition at line 61 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Medium\+Name.
+
+
+\begin{DoxyCode}
+61 \{\textcolor{keywordflow}{return} fMediumName;\}
+\end{DoxyCode}
+\index{Stream\+Replicator@{Stream\+Replicator}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{next\+Task()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token}\& Medium\+::next\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMedium_a5c8788adec90be1a584393a5bf11a5c9}
+
+
+Definition at line 77 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Next\+Task.
+
+
+\begin{DoxyCode}
+77                         \{
+78         \textcolor{keywordflow}{return} fNextTask;
+79   \}
+\end{DoxyCode}
+\index{Stream\+Replicator@{Stream\+Replicator}!num\+Replicas@{num\+Replicas}}
+\index{num\+Replicas@{num\+Replicas}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{num\+Replicas() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+Replicator\+::num\+Replicas (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classStreamReplicator_a8af98c5708200175fbf688d3bed8f8cb}
+
+
+Definition at line 42 of file Stream\+Replicator.\+hh.
+
+
+
+References f\+Num\+Replicas.
+
+
+\begin{DoxyCode}
+42 \{ \textcolor{keywordflow}{return} fNumReplicas; \}
+\end{DoxyCode}
+\index{Stream\+Replicator@{Stream\+Replicator}!on\+Source\+Closure@{on\+Source\+Closure}}
+\index{on\+Source\+Closure@{on\+Source\+Closure}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{on\+Source\+Closure(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void Stream\+Replicator\+::on\+Source\+Closure (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classStreamReplicator_abfa7eff4c3ceb67c470c27485841965f}
+\index{Stream\+Replicator@{Stream\+Replicator}!on\+Source\+Closure@{on\+Source\+Closure}}
+\index{on\+Source\+Closure@{on\+Source\+Closure}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{on\+Source\+Closure()}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Replicator\+::on\+Source\+Closure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamReplicator_a636548360812768e388141d338055c38}
+\index{Stream\+Replicator@{Stream\+Replicator}!remove\+Stream\+Replica@{remove\+Stream\+Replica}}
+\index{remove\+Stream\+Replica@{remove\+Stream\+Replica}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{remove\+Stream\+Replica(\+Stream\+Replica $\ast$replica)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Replicator\+::remove\+Stream\+Replica (
+\begin{DoxyParamCaption}
+\item[{{\bf Stream\+Replica} $\ast$}]{replica}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamReplicator_a86974403c969996357e01c67737eb5cb}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Stream\+Replicator@{Stream\+Replicator}!Stream\+Replica@{Stream\+Replica}}
+\index{Stream\+Replica@{Stream\+Replica}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{Stream\+Replica}]{\setlength{\rightskip}{0pt plus 5cm}friend class Stream\+Replica\hspace{0.3cm}{\ttfamily [friend]}}\label{classStreamReplicator_a551b6f76a87960316b37800bf48839a1}
+
+
+Definition at line 56 of file Stream\+Replicator.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{Stream\+Replicator@{Stream\+Replicator}!f\+Delete\+When\+Last\+Replica\+Dies@{f\+Delete\+When\+Last\+Replica\+Dies}}
+\index{f\+Delete\+When\+Last\+Replica\+Dies@{f\+Delete\+When\+Last\+Replica\+Dies}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{f\+Delete\+When\+Last\+Replica\+Dies}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Stream\+Replicator\+::f\+Delete\+When\+Last\+Replica\+Dies\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamReplicator_a8018ad765581309b9bc086f53699bbc5}
+
+
+Definition at line 76 of file Stream\+Replicator.\+hh.
+
+\index{Stream\+Replicator@{Stream\+Replicator}!f\+Frame\+Index@{f\+Frame\+Index}}
+\index{f\+Frame\+Index@{f\+Frame\+Index}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{f\+Frame\+Index}]{\setlength{\rightskip}{0pt plus 5cm}int Stream\+Replicator\+::f\+Frame\+Index\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamReplicator_a4b3539911b5562acc8193b98152c192d}
+
+
+Definition at line 78 of file Stream\+Replicator.\+hh.
+
+\index{Stream\+Replicator@{Stream\+Replicator}!f\+Input\+Source@{f\+Input\+Source}}
+\index{f\+Input\+Source@{f\+Input\+Source}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{f\+Input\+Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Framed\+Source}$\ast$ Stream\+Replicator\+::f\+Input\+Source\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamReplicator_a60b20b1c9bf7b038b7a6471a8ef1c8bc}
+
+
+Definition at line 75 of file Stream\+Replicator.\+hh.
+
+
+
+Referenced by detach\+Input\+Source(), and input\+Source().
+
+\index{Stream\+Replicator@{Stream\+Replicator}!f\+Input\+Source\+Has\+Closed@{f\+Input\+Source\+Has\+Closed}}
+\index{f\+Input\+Source\+Has\+Closed@{f\+Input\+Source\+Has\+Closed}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{f\+Input\+Source\+Has\+Closed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Stream\+Replicator\+::f\+Input\+Source\+Has\+Closed\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamReplicator_a22554c567757ef7d6a38b1aedc6073d7}
+
+
+Definition at line 76 of file Stream\+Replicator.\+hh.
+
+\index{Stream\+Replicator@{Stream\+Replicator}!f\+Master\+Replica@{f\+Master\+Replica}}
+\index{f\+Master\+Replica@{f\+Master\+Replica}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{f\+Master\+Replica}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Stream\+Replica}$\ast$ Stream\+Replicator\+::f\+Master\+Replica\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamReplicator_aa4b7cc0236e6f7b88a6434c3cc9dd248}
+
+
+Definition at line 80 of file Stream\+Replicator.\+hh.
+
+\index{Stream\+Replicator@{Stream\+Replicator}!f\+Num\+Active\+Replicas@{f\+Num\+Active\+Replicas}}
+\index{f\+Num\+Active\+Replicas@{f\+Num\+Active\+Replicas}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{f\+Num\+Active\+Replicas}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+Replicator\+::f\+Num\+Active\+Replicas\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamReplicator_a8cb59dc345f138deab174c73f897513d}
+
+
+Definition at line 77 of file Stream\+Replicator.\+hh.
+
+\index{Stream\+Replicator@{Stream\+Replicator}!f\+Num\+Deliveries\+Made\+So\+Far@{f\+Num\+Deliveries\+Made\+So\+Far}}
+\index{f\+Num\+Deliveries\+Made\+So\+Far@{f\+Num\+Deliveries\+Made\+So\+Far}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{f\+Num\+Deliveries\+Made\+So\+Far}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+Replicator\+::f\+Num\+Deliveries\+Made\+So\+Far\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamReplicator_a0358cb522df71029f449b410813123a6}
+
+
+Definition at line 77 of file Stream\+Replicator.\+hh.
+
+\index{Stream\+Replicator@{Stream\+Replicator}!f\+Num\+Replicas@{f\+Num\+Replicas}}
+\index{f\+Num\+Replicas@{f\+Num\+Replicas}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{f\+Num\+Replicas}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+Replicator\+::f\+Num\+Replicas\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamReplicator_a55db72f60a71570e4afe994cad005022}
+
+
+Definition at line 77 of file Stream\+Replicator.\+hh.
+
+
+
+Referenced by num\+Replicas().
+
+\index{Stream\+Replicator@{Stream\+Replicator}!f\+Replicas\+Awaiting\+Current\+Frame@{f\+Replicas\+Awaiting\+Current\+Frame}}
+\index{f\+Replicas\+Awaiting\+Current\+Frame@{f\+Replicas\+Awaiting\+Current\+Frame}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{f\+Replicas\+Awaiting\+Current\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Stream\+Replica}$\ast$ Stream\+Replicator\+::f\+Replicas\+Awaiting\+Current\+Frame\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamReplicator_a4dbfe19841e962319a7071f084618136}
+
+
+Definition at line 81 of file Stream\+Replicator.\+hh.
+
+\index{Stream\+Replicator@{Stream\+Replicator}!f\+Replicas\+Awaiting\+Next\+Frame@{f\+Replicas\+Awaiting\+Next\+Frame}}
+\index{f\+Replicas\+Awaiting\+Next\+Frame@{f\+Replicas\+Awaiting\+Next\+Frame}!Stream\+Replicator@{Stream\+Replicator}}
+\subsubsection[{f\+Replicas\+Awaiting\+Next\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Stream\+Replica}$\ast$ Stream\+Replicator\+::f\+Replicas\+Awaiting\+Next\+Frame\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamReplicator_a306977847218ea63a3233fdb8050ae04}
+
+
+Definition at line 82 of file Stream\+Replicator.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf Stream\+Replicator.\+hh}\end{DoxyCompactItemize}

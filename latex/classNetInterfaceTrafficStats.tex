@@ -1,0 +1,128 @@
+\section{Net\+Interface\+Traffic\+Stats Class Reference}
+\label{classNetInterfaceTrafficStats}\index{Net\+Interface\+Traffic\+Stats@{Net\+Interface\+Traffic\+Stats}}
+
+
+{\ttfamily \#include $<$Net\+Interface.\+hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Net\+Interface\+Traffic\+Stats} ()
+\item 
+void {\bf count\+Packet} (unsigned packet\+Size)
+\item 
+float {\bf tot\+Num\+Packets} () const 
+\item 
+float {\bf tot\+Num\+Bytes} () const 
+\item 
+{\bf Boolean} {\bf have\+Seen\+Traffic} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float {\bf f\+Tot\+Num\+Packets}
+\item 
+float {\bf f\+Tot\+Num\+Bytes}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 133 of file Net\+Interface.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Net\+Interface\+Traffic\+Stats@{Net\+Interface\+Traffic\+Stats}!Net\+Interface\+Traffic\+Stats@{Net\+Interface\+Traffic\+Stats}}
+\index{Net\+Interface\+Traffic\+Stats@{Net\+Interface\+Traffic\+Stats}!Net\+Interface\+Traffic\+Stats@{Net\+Interface\+Traffic\+Stats}}
+\subsubsection[{Net\+Interface\+Traffic\+Stats()}]{\setlength{\rightskip}{0pt plus 5cm}Net\+Interface\+Traffic\+Stats\+::\+Net\+Interface\+Traffic\+Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classNetInterfaceTrafficStats_a768bec92582594f539275ef714e04219}
+
+
+\subsection{Member Function Documentation}
+\index{Net\+Interface\+Traffic\+Stats@{Net\+Interface\+Traffic\+Stats}!count\+Packet@{count\+Packet}}
+\index{count\+Packet@{count\+Packet}!Net\+Interface\+Traffic\+Stats@{Net\+Interface\+Traffic\+Stats}}
+\subsubsection[{count\+Packet(unsigned packet\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}void Net\+Interface\+Traffic\+Stats\+::count\+Packet (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{packet\+Size}
+\end{DoxyParamCaption}
+)}\label{classNetInterfaceTrafficStats_a4711ba811b3c454c77ebfbe87fa90292}
+\index{Net\+Interface\+Traffic\+Stats@{Net\+Interface\+Traffic\+Stats}!have\+Seen\+Traffic@{have\+Seen\+Traffic}}
+\index{have\+Seen\+Traffic@{have\+Seen\+Traffic}!Net\+Interface\+Traffic\+Stats@{Net\+Interface\+Traffic\+Stats}}
+\subsubsection[{have\+Seen\+Traffic() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Net\+Interface\+Traffic\+Stats\+::have\+Seen\+Traffic (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classNetInterfaceTrafficStats_a6e380d9090b1b4a8e63935f2001e7d51}
+\index{Net\+Interface\+Traffic\+Stats@{Net\+Interface\+Traffic\+Stats}!tot\+Num\+Bytes@{tot\+Num\+Bytes}}
+\index{tot\+Num\+Bytes@{tot\+Num\+Bytes}!Net\+Interface\+Traffic\+Stats@{Net\+Interface\+Traffic\+Stats}}
+\subsubsection[{tot\+Num\+Bytes() const }]{\setlength{\rightskip}{0pt plus 5cm}float Net\+Interface\+Traffic\+Stats\+::tot\+Num\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classNetInterfaceTrafficStats_afcbd26cc981ac58d4cd1e8750c5cab52}
+
+
+Definition at line 140 of file Net\+Interface.\+hh.
+
+
+
+References f\+Tot\+Num\+Bytes.
+
+
+\begin{DoxyCode}
+140 \{\textcolor{keywordflow}{return} fTotNumBytes;\}
+\end{DoxyCode}
+\index{Net\+Interface\+Traffic\+Stats@{Net\+Interface\+Traffic\+Stats}!tot\+Num\+Packets@{tot\+Num\+Packets}}
+\index{tot\+Num\+Packets@{tot\+Num\+Packets}!Net\+Interface\+Traffic\+Stats@{Net\+Interface\+Traffic\+Stats}}
+\subsubsection[{tot\+Num\+Packets() const }]{\setlength{\rightskip}{0pt plus 5cm}float Net\+Interface\+Traffic\+Stats\+::tot\+Num\+Packets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classNetInterfaceTrafficStats_aacd3250afc82af697024837ac8100f81}
+
+
+Definition at line 139 of file Net\+Interface.\+hh.
+
+
+
+References f\+Tot\+Num\+Packets.
+
+
+\begin{DoxyCode}
+139 \{\textcolor{keywordflow}{return} fTotNumPackets;\}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Net\+Interface\+Traffic\+Stats@{Net\+Interface\+Traffic\+Stats}!f\+Tot\+Num\+Bytes@{f\+Tot\+Num\+Bytes}}
+\index{f\+Tot\+Num\+Bytes@{f\+Tot\+Num\+Bytes}!Net\+Interface\+Traffic\+Stats@{Net\+Interface\+Traffic\+Stats}}
+\subsubsection[{f\+Tot\+Num\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}float Net\+Interface\+Traffic\+Stats\+::f\+Tot\+Num\+Bytes\hspace{0.3cm}{\ttfamily [private]}}\label{classNetInterfaceTrafficStats_a482c5661bcd2a6a4c6cc23ec63b964d9}
+
+
+Definition at line 146 of file Net\+Interface.\+hh.
+
+
+
+Referenced by tot\+Num\+Bytes().
+
+\index{Net\+Interface\+Traffic\+Stats@{Net\+Interface\+Traffic\+Stats}!f\+Tot\+Num\+Packets@{f\+Tot\+Num\+Packets}}
+\index{f\+Tot\+Num\+Packets@{f\+Tot\+Num\+Packets}!Net\+Interface\+Traffic\+Stats@{Net\+Interface\+Traffic\+Stats}}
+\subsubsection[{f\+Tot\+Num\+Packets}]{\setlength{\rightskip}{0pt plus 5cm}float Net\+Interface\+Traffic\+Stats\+::f\+Tot\+Num\+Packets\hspace{0.3cm}{\ttfamily [private]}}\label{classNetInterfaceTrafficStats_af9bde388817e30c5dc9643f04716f0db}
+
+
+Definition at line 145 of file Net\+Interface.\+hh.
+
+
+
+Referenced by tot\+Num\+Packets().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+groupsock/include/{\bf Net\+Interface.\+hh}\end{DoxyCompactItemize}

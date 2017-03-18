@@ -1,0 +1,239 @@
+\section{Matroska\+Track Class Reference}
+\label{classMatroskaTrack}\index{Matroska\+Track@{Matroska\+Track}}
+
+
+{\ttfamily \#include $<$Matroska\+File.\+hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Matroska\+Track} ()
+\item 
+virtual {\bf $\sim$\+Matroska\+Track} ()
+\item 
+{\bf Boolean} {\bf have\+Subframes} () const 
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf track\+Number}
+\item 
+u\+\_\+int8\+\_\+t {\bf track\+Type}
+\item 
+{\bf Boolean} {\bf is\+Enabled}
+\item 
+{\bf Boolean} {\bf is\+Default}
+\item 
+{\bf Boolean} {\bf is\+Forced}
+\item 
+unsigned {\bf default\+Duration}
+\item 
+char $\ast$ {\bf name}
+\item 
+char $\ast$ {\bf language}
+\item 
+char $\ast$ {\bf codec\+I\+D}
+\item 
+unsigned {\bf sampling\+Frequency}
+\item 
+unsigned {\bf num\+Channels}
+\item 
+char const $\ast$ {\bf mime\+Type}
+\item 
+unsigned {\bf codec\+Private\+Size}
+\item 
+u\+\_\+int8\+\_\+t $\ast$ {\bf codec\+Private}
+\item 
+{\bf Boolean} {\bf codec\+Private\+Uses\+H264\+Format\+For\+H265}
+\item 
+{\bf Boolean} {\bf codec\+Is\+Opus}
+\item 
+unsigned {\bf header\+Stripped\+Bytes\+Size}
+\item 
+u\+\_\+int8\+\_\+t $\ast$ {\bf header\+Stripped\+Bytes}
+\item 
+unsigned {\bf subframe\+Size\+Size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 112 of file Matroska\+File.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Matroska\+Track@{Matroska\+Track}!Matroska\+Track@{Matroska\+Track}}
+\index{Matroska\+Track@{Matroska\+Track}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{Matroska\+Track()}]{\setlength{\rightskip}{0pt plus 5cm}Matroska\+Track\+::\+Matroska\+Track (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classMatroskaTrack_a3e2571725549f9d4cb07f598093575bd}
+\index{Matroska\+Track@{Matroska\+Track}!````~Matroska\+Track@{$\sim$\+Matroska\+Track}}
+\index{````~Matroska\+Track@{$\sim$\+Matroska\+Track}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{$\sim$\+Matroska\+Track()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Matroska\+Track\+::$\sim$\+Matroska\+Track (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classMatroskaTrack_acb0f9fab2e2f9362119b22ecaaa2a8b3}
+
+
+\subsection{Member Function Documentation}
+\index{Matroska\+Track@{Matroska\+Track}!have\+Subframes@{have\+Subframes}}
+\index{have\+Subframes@{have\+Subframes}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{have\+Subframes() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Matroska\+Track\+::have\+Subframes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classMatroskaTrack_a66025f7e1e6e85225790b72ebea1a5ac}
+
+
+Definition at line 135 of file Matroska\+File.\+hh.
+
+
+\begin{DoxyCode}
+135 \{ \textcolor{keywordflow}{return} subframeSizeSize > 0; \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Matroska\+Track@{Matroska\+Track}!codec\+I\+D@{codec\+I\+D}}
+\index{codec\+I\+D@{codec\+I\+D}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{codec\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Matroska\+Track\+::codec\+I\+D}\label{classMatroskaTrack_a0058be599f3d4b92a935f20a41116003}
+
+
+Definition at line 124 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Track@{Matroska\+Track}!codec\+Is\+Opus@{codec\+Is\+Opus}}
+\index{codec\+Is\+Opus@{codec\+Is\+Opus}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{codec\+Is\+Opus}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Matroska\+Track\+::codec\+Is\+Opus}\label{classMatroskaTrack_a3c1ae5a6cb9f995559702f93bc22ccb6}
+
+
+Definition at line 131 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Track@{Matroska\+Track}!codec\+Private@{codec\+Private}}
+\index{codec\+Private@{codec\+Private}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{codec\+Private}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t$\ast$ Matroska\+Track\+::codec\+Private}\label{classMatroskaTrack_a096f9ecfc3c93b2085ea2fd955f7afde}
+
+
+Definition at line 129 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Track@{Matroska\+Track}!codec\+Private\+Size@{codec\+Private\+Size}}
+\index{codec\+Private\+Size@{codec\+Private\+Size}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{codec\+Private\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+Track\+::codec\+Private\+Size}\label{classMatroskaTrack_a64213681638ddde063f15daed2c0b5fc}
+
+
+Definition at line 128 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Track@{Matroska\+Track}!codec\+Private\+Uses\+H264\+Format\+For\+H265@{codec\+Private\+Uses\+H264\+Format\+For\+H265}}
+\index{codec\+Private\+Uses\+H264\+Format\+For\+H265@{codec\+Private\+Uses\+H264\+Format\+For\+H265}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{codec\+Private\+Uses\+H264\+Format\+For\+H265}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Matroska\+Track\+::codec\+Private\+Uses\+H264\+Format\+For\+H265}\label{classMatroskaTrack_aa1486cd41a87f5367cdf6646aae8ac9d}
+
+
+Definition at line 130 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Track@{Matroska\+Track}!default\+Duration@{default\+Duration}}
+\index{default\+Duration@{default\+Duration}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{default\+Duration}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+Track\+::default\+Duration}\label{classMatroskaTrack_a1767c19f5706bb338006194ef97f3902}
+
+
+Definition at line 121 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Track@{Matroska\+Track}!header\+Stripped\+Bytes@{header\+Stripped\+Bytes}}
+\index{header\+Stripped\+Bytes@{header\+Stripped\+Bytes}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{header\+Stripped\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t$\ast$ Matroska\+Track\+::header\+Stripped\+Bytes}\label{classMatroskaTrack_a3a47b230293be67e9ab218dbacf3a99f}
+
+
+Definition at line 133 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Track@{Matroska\+Track}!header\+Stripped\+Bytes\+Size@{header\+Stripped\+Bytes\+Size}}
+\index{header\+Stripped\+Bytes\+Size@{header\+Stripped\+Bytes\+Size}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{header\+Stripped\+Bytes\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+Track\+::header\+Stripped\+Bytes\+Size}\label{classMatroskaTrack_ad818a4a19551667b6b83ebec1830ad5f}
+
+
+Definition at line 132 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Track@{Matroska\+Track}!is\+Default@{is\+Default}}
+\index{is\+Default@{is\+Default}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{is\+Default}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Matroska\+Track\+::is\+Default}\label{classMatroskaTrack_a5a90170ea4fd31ca3605f7e04d4d278a}
+
+
+Definition at line 120 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Track@{Matroska\+Track}!is\+Enabled@{is\+Enabled}}
+\index{is\+Enabled@{is\+Enabled}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{is\+Enabled}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Matroska\+Track\+::is\+Enabled}\label{classMatroskaTrack_a4d50777039372de8a4a5167e78d6cf76}
+
+
+Definition at line 120 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Track@{Matroska\+Track}!is\+Forced@{is\+Forced}}
+\index{is\+Forced@{is\+Forced}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{is\+Forced}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Matroska\+Track\+::is\+Forced}\label{classMatroskaTrack_a66cfbca8780e0c0795aa2f05673c382e}
+
+
+Definition at line 120 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Track@{Matroska\+Track}!language@{language}}
+\index{language@{language}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{language}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Matroska\+Track\+::language}\label{classMatroskaTrack_acae3c7c284cbb3ae78744212d2e23628}
+
+
+Definition at line 123 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Track@{Matroska\+Track}!mime\+Type@{mime\+Type}}
+\index{mime\+Type@{mime\+Type}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{mime\+Type}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Matroska\+Track\+::mime\+Type}\label{classMatroskaTrack_a87f04f91e54c57316de33f8d13e99d29}
+
+
+Definition at line 127 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Track@{Matroska\+Track}!name@{name}}
+\index{name@{name}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Matroska\+Track\+::name}\label{classMatroskaTrack_af239cd3105577d24ee29c447518ce268}
+
+
+Definition at line 122 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Track@{Matroska\+Track}!num\+Channels@{num\+Channels}}
+\index{num\+Channels@{num\+Channels}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{num\+Channels}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+Track\+::num\+Channels}\label{classMatroskaTrack_a1165af1a2dad3506f44f1c4f3ec743d8}
+
+
+Definition at line 126 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Track@{Matroska\+Track}!sampling\+Frequency@{sampling\+Frequency}}
+\index{sampling\+Frequency@{sampling\+Frequency}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{sampling\+Frequency}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+Track\+::sampling\+Frequency}\label{classMatroskaTrack_abe30401f61c1b627520eba3d4305c6e1}
+
+
+Definition at line 125 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Track@{Matroska\+Track}!subframe\+Size\+Size@{subframe\+Size\+Size}}
+\index{subframe\+Size\+Size@{subframe\+Size\+Size}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{subframe\+Size\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+Track\+::subframe\+Size\+Size}\label{classMatroskaTrack_a8c100e77ccf3184cece0570e1cf5682c}
+
+
+Definition at line 134 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Track@{Matroska\+Track}!track\+Number@{track\+Number}}
+\index{track\+Number@{track\+Number}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{track\+Number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+Track\+::track\+Number}\label{classMatroskaTrack_ae4b3028d4069aa9af4f201af3c80126a}
+
+
+Definition at line 118 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Track@{Matroska\+Track}!track\+Type@{track\+Type}}
+\index{track\+Type@{track\+Type}!Matroska\+Track@{Matroska\+Track}}
+\subsubsection[{track\+Type}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t Matroska\+Track\+::track\+Type}\label{classMatroskaTrack_ac4f0f71c5f35bb408a79e807df991cd7}
+
+
+Definition at line 119 of file Matroska\+File.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf Matroska\+File.\+hh}\end{DoxyCompactItemize}

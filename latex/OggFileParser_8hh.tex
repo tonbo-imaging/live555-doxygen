@@ -1,0 +1,56 @@
+\section{live\+Media/\+Ogg\+File\+Parser.hh File Reference}
+\label{OggFileParser_8hh}\index{live\+Media/\+Ogg\+File\+Parser.\+hh@{live\+Media/\+Ogg\+File\+Parser.\+hh}}
+{\ttfamily \#include \char`\"{}Stream\+Parser.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Ogg\+File.\+hh\char`\"{}}\\*
+Include dependency graph for Ogg\+File\+Parser.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{OggFileParser_8hh__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Packet\+Size\+Table}
+\item 
+class {\bf Ogg\+File\+Parser}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Ogg\+Parse\+State} \{ {\bf P\+A\+R\+S\+I\+N\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+O\+F\+\_\+\+F\+I\+L\+E}, 
+{\bf P\+A\+R\+S\+I\+N\+G\+\_\+\+A\+N\+D\+\_\+\+D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+P\+A\+G\+E\+S}, 
+{\bf D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+P\+A\+G\+E}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\index{Ogg\+File\+Parser.\+hh@{Ogg\+File\+Parser.\+hh}!Ogg\+Parse\+State@{Ogg\+Parse\+State}}
+\index{Ogg\+Parse\+State@{Ogg\+Parse\+State}!Ogg\+File\+Parser.\+hh@{Ogg\+File\+Parser.\+hh}}
+\subsubsection[{Ogg\+Parse\+State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ogg\+Parse\+State}}\label{OggFileParser_8hh_a843d10fccb4632f5b4ff9a715f50f4ab}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{P\+A\+R\+S\+I\+N\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+O\+F\+\_\+\+F\+I\+L\+E@{P\+A\+R\+S\+I\+N\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+O\+F\+\_\+\+F\+I\+L\+E}!Ogg\+File\+Parser.\+hh@{Ogg\+File\+Parser.\+hh}}\index{Ogg\+File\+Parser.\+hh@{Ogg\+File\+Parser.\+hh}!P\+A\+R\+S\+I\+N\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+O\+F\+\_\+\+F\+I\+L\+E@{P\+A\+R\+S\+I\+N\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+O\+F\+\_\+\+F\+I\+L\+E}}\item[{\em 
+P\+A\+R\+S\+I\+N\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+O\+F\+\_\+\+F\+I\+L\+E\label{OggFileParser_8hh_a843d10fccb4632f5b4ff9a715f50f4abad00e761c6d985624fc4b9c877d05892f}
+}]\index{P\+A\+R\+S\+I\+N\+G\+\_\+\+A\+N\+D\+\_\+\+D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+P\+A\+G\+E\+S@{P\+A\+R\+S\+I\+N\+G\+\_\+\+A\+N\+D\+\_\+\+D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+P\+A\+G\+E\+S}!Ogg\+File\+Parser.\+hh@{Ogg\+File\+Parser.\+hh}}\index{Ogg\+File\+Parser.\+hh@{Ogg\+File\+Parser.\+hh}!P\+A\+R\+S\+I\+N\+G\+\_\+\+A\+N\+D\+\_\+\+D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+P\+A\+G\+E\+S@{P\+A\+R\+S\+I\+N\+G\+\_\+\+A\+N\+D\+\_\+\+D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+P\+A\+G\+E\+S}}\item[{\em 
+P\+A\+R\+S\+I\+N\+G\+\_\+\+A\+N\+D\+\_\+\+D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+P\+A\+G\+E\+S\label{OggFileParser_8hh_a843d10fccb4632f5b4ff9a715f50f4abad5e94631ed1577aaa4aced61517153e2}
+}]\index{D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+P\+A\+G\+E@{D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+P\+A\+G\+E}!Ogg\+File\+Parser.\+hh@{Ogg\+File\+Parser.\+hh}}\index{Ogg\+File\+Parser.\+hh@{Ogg\+File\+Parser.\+hh}!D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+P\+A\+G\+E@{D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+P\+A\+G\+E}}\item[{\em 
+D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+P\+A\+G\+E\label{OggFileParser_8hh_a843d10fccb4632f5b4ff9a715f50f4abadb65f2c70181d7c58787685bcd1149c6}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 31 of file Ogg\+File\+Parser.\+hh.
+
+
+\begin{DoxyCode}
+31                    \{
+32   PARSING_START_OF_FILE,
+33   PARSING_AND_DELIVERING_PAGES,
+34   DELIVERING_PACKET_WITHIN_PAGE
+35 \};
+\end{DoxyCode}

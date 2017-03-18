@@ -1,0 +1,82 @@
+\section{live\+Media/\+Matroska\+File\+Parser.hh File Reference}
+\label{MatroskaFileParser_8hh}\index{live\+Media/\+Matroska\+File\+Parser.\+hh@{live\+Media/\+Matroska\+File\+Parser.\+hh}}
+{\ttfamily \#include \char`\"{}Stream\+Parser.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Matroska\+File.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}E\+B\+M\+L\+Number.\+hh\char`\"{}}\\*
+Include dependency graph for Matroska\+File\+Parser.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MatroskaFileParser_8hh__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Matroska\+File\+Parser}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Matroska\+Parse\+State} \{ \\*
+{\bf P\+A\+R\+S\+I\+N\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+O\+F\+\_\+\+F\+I\+L\+E}, 
+{\bf L\+O\+O\+K\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+T\+R\+A\+C\+K\+S}, 
+{\bf P\+A\+R\+S\+I\+N\+G\+\_\+\+T\+R\+A\+C\+K}, 
+{\bf P\+A\+R\+S\+I\+N\+G\+\_\+\+C\+U\+E\+S}, 
+\\*
+{\bf L\+O\+O\+K\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+C\+L\+U\+S\+T\+E\+R}, 
+{\bf L\+O\+O\+K\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+B\+L\+O\+C\+K}, 
+{\bf P\+A\+R\+S\+I\+N\+G\+\_\+\+B\+L\+O\+C\+K}, 
+{\bf D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+F\+R\+A\+M\+E\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+B\+L\+O\+C\+K}, 
+\\*
+{\bf D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+F\+R\+A\+M\+E\+\_\+\+B\+Y\+T\+E\+S}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\index{Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}!Matroska\+Parse\+State@{Matroska\+Parse\+State}}
+\index{Matroska\+Parse\+State@{Matroska\+Parse\+State}!Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}}
+\subsubsection[{Matroska\+Parse\+State}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Matroska\+Parse\+State}}\label{MatroskaFileParser_8hh_abd6e34788b26387848218b89d0824096}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{P\+A\+R\+S\+I\+N\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+O\+F\+\_\+\+F\+I\+L\+E@{P\+A\+R\+S\+I\+N\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+O\+F\+\_\+\+F\+I\+L\+E}!Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}}\index{Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}!P\+A\+R\+S\+I\+N\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+O\+F\+\_\+\+F\+I\+L\+E@{P\+A\+R\+S\+I\+N\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+O\+F\+\_\+\+F\+I\+L\+E}}\item[{\em 
+P\+A\+R\+S\+I\+N\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+O\+F\+\_\+\+F\+I\+L\+E\label{MatroskaFileParser_8hh_abd6e34788b26387848218b89d0824096ad00e761c6d985624fc4b9c877d05892f}
+}]\index{L\+O\+O\+K\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+T\+R\+A\+C\+K\+S@{L\+O\+O\+K\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+T\+R\+A\+C\+K\+S}!Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}}\index{Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}!L\+O\+O\+K\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+T\+R\+A\+C\+K\+S@{L\+O\+O\+K\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+T\+R\+A\+C\+K\+S}}\item[{\em 
+L\+O\+O\+K\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+T\+R\+A\+C\+K\+S\label{MatroskaFileParser_8hh_abd6e34788b26387848218b89d0824096a7325d13d7d26599596a31790beea8d17}
+}]\index{P\+A\+R\+S\+I\+N\+G\+\_\+\+T\+R\+A\+C\+K@{P\+A\+R\+S\+I\+N\+G\+\_\+\+T\+R\+A\+C\+K}!Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}}\index{Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}!P\+A\+R\+S\+I\+N\+G\+\_\+\+T\+R\+A\+C\+K@{P\+A\+R\+S\+I\+N\+G\+\_\+\+T\+R\+A\+C\+K}}\item[{\em 
+P\+A\+R\+S\+I\+N\+G\+\_\+\+T\+R\+A\+C\+K\label{MatroskaFileParser_8hh_abd6e34788b26387848218b89d0824096a2d37b2df698ae357950d5078168c0188}
+}]\index{P\+A\+R\+S\+I\+N\+G\+\_\+\+C\+U\+E\+S@{P\+A\+R\+S\+I\+N\+G\+\_\+\+C\+U\+E\+S}!Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}}\index{Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}!P\+A\+R\+S\+I\+N\+G\+\_\+\+C\+U\+E\+S@{P\+A\+R\+S\+I\+N\+G\+\_\+\+C\+U\+E\+S}}\item[{\em 
+P\+A\+R\+S\+I\+N\+G\+\_\+\+C\+U\+E\+S\label{MatroskaFileParser_8hh_abd6e34788b26387848218b89d0824096a70a4eadcb131dd2cf11cd7e61553fe55}
+}]\index{L\+O\+O\+K\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+C\+L\+U\+S\+T\+E\+R@{L\+O\+O\+K\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+C\+L\+U\+S\+T\+E\+R}!Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}}\index{Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}!L\+O\+O\+K\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+C\+L\+U\+S\+T\+E\+R@{L\+O\+O\+K\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+C\+L\+U\+S\+T\+E\+R}}\item[{\em 
+L\+O\+O\+K\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+C\+L\+U\+S\+T\+E\+R\label{MatroskaFileParser_8hh_abd6e34788b26387848218b89d0824096a9a8882237b9747e5b1ad2aec85ee795c}
+}]\index{L\+O\+O\+K\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+B\+L\+O\+C\+K@{L\+O\+O\+K\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+B\+L\+O\+C\+K}!Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}}\index{Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}!L\+O\+O\+K\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+B\+L\+O\+C\+K@{L\+O\+O\+K\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+B\+L\+O\+C\+K}}\item[{\em 
+L\+O\+O\+K\+I\+N\+G\+\_\+\+F\+O\+R\+\_\+\+B\+L\+O\+C\+K\label{MatroskaFileParser_8hh_abd6e34788b26387848218b89d0824096a5e062398623eb58c54bd7c6e66b80bea}
+}]\index{P\+A\+R\+S\+I\+N\+G\+\_\+\+B\+L\+O\+C\+K@{P\+A\+R\+S\+I\+N\+G\+\_\+\+B\+L\+O\+C\+K}!Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}}\index{Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}!P\+A\+R\+S\+I\+N\+G\+\_\+\+B\+L\+O\+C\+K@{P\+A\+R\+S\+I\+N\+G\+\_\+\+B\+L\+O\+C\+K}}\item[{\em 
+P\+A\+R\+S\+I\+N\+G\+\_\+\+B\+L\+O\+C\+K\label{MatroskaFileParser_8hh_abd6e34788b26387848218b89d0824096aca00b96e798422e7ba6e27804b984da4}
+}]\index{D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+F\+R\+A\+M\+E\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+B\+L\+O\+C\+K@{D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+F\+R\+A\+M\+E\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+B\+L\+O\+C\+K}!Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}}\index{Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}!D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+F\+R\+A\+M\+E\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+B\+L\+O\+C\+K@{D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+F\+R\+A\+M\+E\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+B\+L\+O\+C\+K}}\item[{\em 
+D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+F\+R\+A\+M\+E\+\_\+\+W\+I\+T\+H\+I\+N\+\_\+\+B\+L\+O\+C\+K\label{MatroskaFileParser_8hh_abd6e34788b26387848218b89d0824096a1c4c4fb44e0c245bf95bc148ebe198b6}
+}]\index{D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+F\+R\+A\+M\+E\+\_\+\+B\+Y\+T\+E\+S@{D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+F\+R\+A\+M\+E\+\_\+\+B\+Y\+T\+E\+S}!Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}}\index{Matroska\+File\+Parser.\+hh@{Matroska\+File\+Parser.\+hh}!D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+F\+R\+A\+M\+E\+\_\+\+B\+Y\+T\+E\+S@{D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+F\+R\+A\+M\+E\+\_\+\+B\+Y\+T\+E\+S}}\item[{\em 
+D\+E\+L\+I\+V\+E\+R\+I\+N\+G\+\_\+\+F\+R\+A\+M\+E\+\_\+\+B\+Y\+T\+E\+S\label{MatroskaFileParser_8hh_abd6e34788b26387848218b89d0824096af890cb23182ebef9ff50f54c0fb0b9bc}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 34 of file Matroska\+File\+Parser.\+hh.
+
+
+\begin{DoxyCode}
+34                         \{
+35   PARSING_START_OF_FILE,
+36   LOOKING_FOR_TRACKS,
+37   PARSING_TRACK,
+38   PARSING_CUES,
+39   LOOKING_FOR_CLUSTER,
+40   LOOKING_FOR_BLOCK,
+41   PARSING_BLOCK,
+42   DELIVERING_FRAME_WITHIN_BLOCK,
+43   DELIVERING_FRAME_BYTES
+44 \};
+\end{DoxyCode}

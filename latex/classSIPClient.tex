@@ -1,0 +1,906 @@
+\section{S\+I\+P\+Client Class Reference}
+\label{classSIPClient}\index{S\+I\+P\+Client@{S\+I\+P\+Client}}
+
+
+{\ttfamily \#include $<$S\+I\+P\+Client.\+hh$>$}
+
+
+
+Inheritance diagram for S\+I\+P\+Client\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=103pt]{classSIPClient__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for S\+I\+P\+Client\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSIPClient__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf set\+Proxy\+Server} (unsigned proxy\+Server\+Address, {\bf port\+Num\+Bits} proxy\+Server\+Port\+Num)
+\item 
+void {\bf set\+Client\+Start\+Port\+Num} ({\bf port\+Num\+Bits} client\+Start\+Port\+Num)
+\item 
+char $\ast$ {\bf invite} (char const $\ast$url, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+char $\ast$ {\bf invite\+With\+Password} (char const $\ast$url, char const $\ast$username, char const $\ast$password)
+\item 
+{\bf Boolean} {\bf send\+A\+C\+K} ()
+\item 
+{\bf Boolean} {\bf send\+B\+Y\+E} ()
+\item 
+char const $\ast$ {\bf get\+Invite\+Sdp\+Reply} () const 
+\item 
+void {\bf set\+User\+Agent\+String} (char const $\ast$user\+Agent\+Name)
+\item 
+{\bf Usage\+Environment} \& {\bf envir} () const 
+\item 
+char const $\ast$ {\bf name} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Source} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Sink} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+C\+P\+Instance} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Client} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Server} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Media\+Session} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Server\+Media\+Session} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf S\+I\+P\+Client} $\ast$ {\bf create\+New} ({\bf Usage\+Environment} \&env, unsigned char desired\+Audio\+R\+T\+P\+Payload\+Format, char const $\ast$mime\+Subtype={\bf N\+U\+L\+L}, int verbosity\+Level=0, char const $\ast$application\+Name={\bf N\+U\+L\+L})
+\item 
+static {\bf Boolean} {\bf parse\+S\+I\+P\+U\+R\+L} ({\bf Usage\+Environment} \&env, char const $\ast$url, {\bf Net\+Address} \&address, {\bf port\+Num\+Bits} \&port\+Num)
+\item 
+static {\bf Boolean} {\bf parse\+S\+I\+P\+U\+R\+L\+Username\+Password} (char const $\ast$url, char $\ast$\&username, char $\ast$\&password)
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name, {\bf Medium} $\ast$\&result\+Medium)
+\item 
+static void {\bf close} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name)
+\item 
+static void {\bf close} ({\bf Medium} $\ast$medium)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\+S\+I\+P\+Client} ()
+\item 
+{\bf Task\+Token} \& {\bf next\+Task} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf S\+I\+P\+Client} ({\bf Usage\+Environment} \&env, unsigned char desired\+Audio\+R\+T\+P\+Payload\+Format, char const $\ast$mime\+Subtype, int verbosity\+Level, char const $\ast$application\+Name)
+\item 
+void {\bf reset} ()
+\item 
+char $\ast$ {\bf invite1} ({\bf Authenticator} $\ast$authenticator)
+\item 
+{\bf Boolean} {\bf process\+U\+R\+L} (char const $\ast$url)
+\item 
+{\bf Boolean} {\bf send\+I\+N\+V\+I\+T\+E} ()
+\item 
+void {\bf do\+Invite\+State\+Machine} (unsigned response\+Code)
+\item 
+void {\bf do\+Invite\+State\+Terminated} (unsigned response\+Code)
+\item 
+char $\ast$ {\bf create\+Authenticator\+String} ({\bf Authenticator} const $\ast$authenticator, char const $\ast$cmd, char const $\ast$url)
+\item 
+{\bf Boolean} {\bf send\+Request} (char const $\ast$request\+String, unsigned request\+Length)
+\item 
+unsigned {\bf get\+Response\+Code} ()
+\item 
+unsigned {\bf get\+Response} (char $\ast$\&response\+Buffer, unsigned response\+Buffer\+Size)
+\item 
+{\bf Boolean} {\bf parse\+Response\+Code} (char const $\ast$line, unsigned \&response\+Code)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf invite\+Response\+Handler} (void $\ast$client\+Data, int mask)
+\item 
+static void {\bf timer\+A\+Handler} (void $\ast$client\+Data)
+\item 
+static void {\bf timer\+B\+Handler} (void $\ast$client\+Data)
+\item 
+static void {\bf timer\+D\+Handler} (void $\ast$client\+Data)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Task\+Token} {\bf f\+Timer\+A}
+\item 
+{\bf Task\+Token} {\bf f\+Timer\+B}
+\item 
+{\bf Task\+Token} {\bf f\+Timer\+D}
+\item 
+unsigned const {\bf f\+T1}
+\item 
+unsigned {\bf f\+Timer\+A\+Len}
+\item 
+unsigned {\bf f\+Timer\+A\+Count}
+\item 
+unsigned char {\bf f\+Desired\+Audio\+R\+T\+P\+Payload\+Format}
+\item 
+char $\ast$ {\bf f\+M\+I\+M\+E\+Subtype}
+\item 
+unsigned {\bf f\+M\+I\+M\+E\+Subtype\+Size}
+\item 
+int {\bf f\+Verbosity\+Level}
+\item 
+unsigned {\bf f\+C\+Seq}
+\item 
+char const $\ast$ {\bf f\+Application\+Name}
+\item 
+unsigned {\bf f\+Application\+Name\+Size}
+\item 
+char const $\ast$ {\bf f\+Our\+Address\+Str}
+\item 
+unsigned {\bf f\+Our\+Address\+Str\+Size}
+\item 
+{\bf port\+Num\+Bits} {\bf f\+Our\+Port\+Num}
+\item 
+{\bf Groupsock} $\ast$ {\bf f\+Our\+Socket}
+\item 
+char $\ast$ {\bf f\+User\+Agent\+Header\+Str}
+\item 
+unsigned {\bf f\+User\+Agent\+Header\+Str\+Len}
+\item 
+char const $\ast$ {\bf f\+U\+R\+L}
+\item 
+unsigned {\bf f\+U\+R\+L\+Size}
+\item 
+struct in\+\_\+addr {\bf f\+Server\+Address}
+\item 
+{\bf port\+Num\+Bits} {\bf f\+Server\+Port\+Num}
+\item 
+{\bf port\+Num\+Bits} {\bf f\+Client\+Start\+Port\+Num}
+\item 
+unsigned {\bf f\+Call\+Id}
+\item 
+unsigned {\bf f\+From\+Tag}
+\item 
+char const $\ast$ {\bf f\+To\+Tag\+Str}
+\item 
+unsigned {\bf f\+To\+Tag\+Str\+Size}
+\item 
+{\bf Authenticator} {\bf f\+Valid\+Authenticator}
+\item 
+char const $\ast$ {\bf f\+User\+Name}
+\item 
+unsigned {\bf f\+User\+Name\+Size}
+\item 
+char $\ast$ {\bf f\+Invite\+S\+D\+P\+Description}
+\item 
+char $\ast$ {\bf f\+Invite\+S\+D\+P\+Description\+Returned}
+\item 
+char $\ast$ {\bf f\+Invite\+Cmd}
+\item 
+unsigned {\bf f\+Invite\+Cmd\+Size}
+\item 
+{\bf Authenticator} $\ast$ {\bf f\+Working\+Authenticator}
+\item 
+{\bf invite\+Client\+State} {\bf f\+Invite\+Client\+State}
+\item 
+char {\bf f\+Event\+Loop\+Stop\+Flag}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 37 of file S\+I\+P\+Client.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!````~S\+I\+P\+Client@{$\sim$\+S\+I\+P\+Client}}
+\index{````~S\+I\+P\+Client@{$\sim$\+S\+I\+P\+Client}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{$\sim$\+S\+I\+P\+Client()}]{\setlength{\rightskip}{0pt plus 5cm}virtual S\+I\+P\+Client\+::$\sim$\+S\+I\+P\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classSIPClient_aa014b817a3f087e0b7278a22f2cfb979}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{S\+I\+P\+Client(\+Usage\+Environment \&env, unsigned char desired\+Audio\+R\+T\+P\+Payload\+Format, char const $\ast$mime\+Subtype, int verbosity\+Level, char const $\ast$application\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}S\+I\+P\+Client\+::\+S\+I\+P\+Client (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{unsigned char}]{desired\+Audio\+R\+T\+P\+Payload\+Format, }
+\item[{char const $\ast$}]{mime\+Subtype, }
+\item[{int}]{verbosity\+Level, }
+\item[{char const $\ast$}]{application\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a8afa17f052365e9fa19e0f5607ee8684}
+
+
+\subsection{Member Function Documentation}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!close@{close}}
+\index{close@{close}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{close(\+Usage\+Environment \&env, char const $\ast$medium\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a9968c7ce6eedb848f2cc095730c01b17}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!close@{close}}
+\index{close@{close}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{close(\+Medium $\ast$medium)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_aee50624faf6909b3944dd803fd485467}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!create\+Authenticator\+String@{create\+Authenticator\+String}}
+\index{create\+Authenticator\+String@{create\+Authenticator\+String}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{create\+Authenticator\+String(\+Authenticator const $\ast$authenticator, char const $\ast$cmd, char const $\ast$url)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ S\+I\+P\+Client\+::create\+Authenticator\+String (
+\begin{DoxyParamCaption}
+\item[{{\bf Authenticator} const $\ast$}]{authenticator, }
+\item[{char const $\ast$}]{cmd, }
+\item[{char const $\ast$}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a649f0c9e97893b61c6420369c0482bb8}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!create\+New@{create\+New}}
+\index{create\+New@{create\+New}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{create\+New(\+Usage\+Environment \&env, unsigned char desired\+Audio\+R\+T\+P\+Payload\+Format, char const $\ast$mime\+Subtype=\+N\+U\+L\+L, int verbosity\+Level=0, char const $\ast$application\+Name=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf S\+I\+P\+Client}$\ast$ S\+I\+P\+Client\+::create\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{unsigned char}]{desired\+Audio\+R\+T\+P\+Payload\+Format, }
+\item[{char const $\ast$}]{mime\+Subtype = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{int}]{verbosity\+Level = {\ttfamily 0}, }
+\item[{char const $\ast$}]{application\+Name = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classSIPClient_a286ef3f5b219815bc896ba4fafc24132}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!do\+Invite\+State\+Machine@{do\+Invite\+State\+Machine}}
+\index{do\+Invite\+State\+Machine@{do\+Invite\+State\+Machine}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{do\+Invite\+State\+Machine(unsigned response\+Code)}]{\setlength{\rightskip}{0pt plus 5cm}void S\+I\+P\+Client\+::do\+Invite\+State\+Machine (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{response\+Code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a3aa9307adf27113b4956aaa827b5959b}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!do\+Invite\+State\+Terminated@{do\+Invite\+State\+Terminated}}
+\index{do\+Invite\+State\+Terminated@{do\+Invite\+State\+Terminated}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{do\+Invite\+State\+Terminated(unsigned response\+Code)}]{\setlength{\rightskip}{0pt plus 5cm}void S\+I\+P\+Client\+::do\+Invite\+State\+Terminated (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{response\+Code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a1bae28c3e4425e92fd1bdebcf783169b}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!envir@{envir}}
+\index{envir@{envir}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{envir() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Medium\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a32f7ecdd95f2b8400e1a26a5009e3b8e}
+
+
+Definition at line 59 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Environ.
+
+
+
+Referenced by Media\+Subsession\+::env(), R\+T\+P\+Interface\+::envir(), Generic\+Media\+Server\+::\+Client\+Connection\+::envir(), and Generic\+Media\+Server\+::\+Client\+Session\+::envir().
+
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} fEnviron;\}
+\end{DoxyCode}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!get\+Invite\+Sdp\+Reply@{get\+Invite\+Sdp\+Reply}}
+\index{get\+Invite\+Sdp\+Reply@{get\+Invite\+Sdp\+Reply}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{get\+Invite\+Sdp\+Reply() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ S\+I\+P\+Client\+::get\+Invite\+Sdp\+Reply (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classSIPClient_a4a2e712131b8049d5f3da11982b32061}
+
+
+Definition at line 70 of file S\+I\+P\+Client.\+hh.
+
+
+
+References f\+Invite\+S\+D\+P\+Description\+Returned.
+
+
+\begin{DoxyCode}
+70 \{ \textcolor{keywordflow}{return} fInviteSDPDescriptionReturned; \}
+\end{DoxyCode}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!get\+Response@{get\+Response}}
+\index{get\+Response@{get\+Response}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{get\+Response(char $\ast$\&response\+Buffer, unsigned response\+Buffer\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\+I\+P\+Client\+::get\+Response (
+\begin{DoxyParamCaption}
+\item[{char $\ast$\&}]{response\+Buffer, }
+\item[{unsigned}]{response\+Buffer\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_ac0894561dc272b233b1a7ab2fa8e0040}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!get\+Response\+Code@{get\+Response\+Code}}
+\index{get\+Response\+Code@{get\+Response\+Code}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{get\+Response\+Code()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\+I\+P\+Client\+::get\+Response\+Code (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_afc7115775f78af21f302153ef23c2b9e}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!invite@{invite}}
+\index{invite@{invite}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{invite(char const $\ast$url, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ S\+I\+P\+Client\+::invite (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{url, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)}\label{classSIPClient_a60b91a05ee7db864a98ebcb5adc20cae}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!invite1@{invite1}}
+\index{invite1@{invite1}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{invite1(\+Authenticator $\ast$authenticator)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ S\+I\+P\+Client\+::invite1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Authenticator} $\ast$}]{authenticator}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_ae3f1c3cc9908bc6854b5e1593eaddc85}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!invite\+Response\+Handler@{invite\+Response\+Handler}}
+\index{invite\+Response\+Handler@{invite\+Response\+Handler}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{invite\+Response\+Handler(void $\ast$client\+Data, int mask)}]{\setlength{\rightskip}{0pt plus 5cm}static void S\+I\+P\+Client\+::invite\+Response\+Handler (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data, }
+\item[{int}]{mask}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classSIPClient_aacd47580cc73d9af9cffd7788a3ec5e9}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!invite\+With\+Password@{invite\+With\+Password}}
+\index{invite\+With\+Password@{invite\+With\+Password}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{invite\+With\+Password(char const $\ast$url, char const $\ast$username, char const $\ast$password)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ S\+I\+P\+Client\+::invite\+With\+Password (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{url, }
+\item[{char const $\ast$}]{username, }
+\item[{char const $\ast$}]{password}
+\end{DoxyParamCaption}
+)}\label{classSIPClient_a2ec800a9ba07ab746bd6686c4dfdb0b5}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!is\+Media\+Session@{is\+Media\+Session}}
+\index{is\+Media\+Session@{is\+Media\+Session}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{is\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ac5858707c4e7a15bd59d476cf48289d6}
+
+
+Reimplemented in {\bf Media\+Session} \doxyref{}{p.}{classMediaSession_a3b2a06a722374ab4477ac05a2ce28829}.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}}
+\index{is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{is\+R\+T\+C\+P\+Instance() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ab5f9f20324698f89a35513d596b2e7be}
+
+
+Reimplemented in {\bf R\+T\+C\+P\+Instance} \doxyref{}{p.}{classRTCPInstance_a844292518419e1dbf24170812fd1e4b5}.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}}
+\index{is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{is\+R\+T\+S\+P\+Client() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aed1c1816867f910ce8c98350686ac038}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Client} \doxyref{}{p.}{classRTSPClient_add07b3a68432b546998080b24380e7e8}.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}}
+\index{is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{is\+R\+T\+S\+P\+Server() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a346e111b31bfde4b7f4ed593e0b97fd3}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Server} \doxyref{}{p.}{classRTSPServer_a45f9fc5ddd8f214169358493215a064a}.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!is\+Server\+Media\+Session@{is\+Server\+Media\+Session}}
+\index{is\+Server\+Media\+Session@{is\+Server\+Media\+Session}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{is\+Server\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aa9fd26c4b954ffba5f79925ecd0283a0}
+
+
+Reimplemented in {\bf Server\+Media\+Session} \doxyref{}{p.}{classServerMediaSession_a34b59e04644b6f0841ea5af99dbf32f6}.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!is\+Sink@{is\+Sink}}
+\index{is\+Sink@{is\+Sink}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{is\+Sink() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a23d49bf466482784b9d4378490d17b5f}
+
+
+Reimplemented in {\bf Media\+Sink} \doxyref{}{p.}{classMediaSink_aa8649dcdf21d5005f9ec319f898f91b6}.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!is\+Source@{is\+Source}}
+\index{is\+Source@{is\+Source}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{is\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a6cdbd02c73a3e9c1cbab8fce9e9497b1}
+
+
+Reimplemented in {\bf Media\+Source} \doxyref{}{p.}{classMediaSource_a4d75fa9ee2b476b1231594282a6854be}.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$medium\+Name, Medium $\ast$\&result\+Medium)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Medium\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name, }
+\item[{{\bf Medium} $\ast$\&}]{result\+Medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a418c860c1e0ef2766ee0d0f64b346291}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!name@{name}}
+\index{name@{name}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Medium\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a575649802dc781c0e59e097a3870fcdb}
+
+
+Definition at line 61 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Medium\+Name.
+
+
+\begin{DoxyCode}
+61 \{\textcolor{keywordflow}{return} fMediumName;\}
+\end{DoxyCode}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{next\+Task()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token}\& Medium\+::next\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMedium_a5c8788adec90be1a584393a5bf11a5c9}
+
+
+Definition at line 77 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Next\+Task.
+
+
+\begin{DoxyCode}
+77                         \{
+78         \textcolor{keywordflow}{return} fNextTask;
+79   \}
+\end{DoxyCode}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!parse\+Response\+Code@{parse\+Response\+Code}}
+\index{parse\+Response\+Code@{parse\+Response\+Code}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{parse\+Response\+Code(char const $\ast$line, unsigned \&response\+Code)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} S\+I\+P\+Client\+::parse\+Response\+Code (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{line, }
+\item[{unsigned \&}]{response\+Code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a0f7eda82d0c4fde274ff4932df8bfb5b}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!parse\+S\+I\+P\+U\+R\+L@{parse\+S\+I\+P\+U\+R\+L}}
+\index{parse\+S\+I\+P\+U\+R\+L@{parse\+S\+I\+P\+U\+R\+L}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{parse\+S\+I\+P\+U\+R\+L(\+Usage\+Environment \&env, char const $\ast$url, Net\+Address \&address, port\+Num\+Bits \&port\+Num)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} S\+I\+P\+Client\+::parse\+S\+I\+P\+U\+R\+L (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{url, }
+\item[{{\bf Net\+Address} \&}]{address, }
+\item[{{\bf port\+Num\+Bits} \&}]{port\+Num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classSIPClient_affd3da44837660cc32c99fbbc5a1397e}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!parse\+S\+I\+P\+U\+R\+L\+Username\+Password@{parse\+S\+I\+P\+U\+R\+L\+Username\+Password}}
+\index{parse\+S\+I\+P\+U\+R\+L\+Username\+Password@{parse\+S\+I\+P\+U\+R\+L\+Username\+Password}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{parse\+S\+I\+P\+U\+R\+L\+Username\+Password(char const $\ast$url, char $\ast$\&username, char $\ast$\&password)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} S\+I\+P\+Client\+::parse\+S\+I\+P\+U\+R\+L\+Username\+Password (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{url, }
+\item[{char $\ast$\&}]{username, }
+\item[{char $\ast$\&}]{password}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classSIPClient_aa7cb8a4bdeb0d188c049dd26c9fa34a6}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!process\+U\+R\+L@{process\+U\+R\+L}}
+\index{process\+U\+R\+L@{process\+U\+R\+L}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{process\+U\+R\+L(char const $\ast$url)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} S\+I\+P\+Client\+::process\+U\+R\+L (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_aeb52e0ba70dd11cdf511eb83beec87be}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!reset@{reset}}
+\index{reset@{reset}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{reset()}]{\setlength{\rightskip}{0pt plus 5cm}void S\+I\+P\+Client\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a63f96516c01dbb01a0e34d98a0e8f56c}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!send\+A\+C\+K@{send\+A\+C\+K}}
+\index{send\+A\+C\+K@{send\+A\+C\+K}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{send\+A\+C\+K()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} S\+I\+P\+Client\+::send\+A\+C\+K (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classSIPClient_abb69772322ecbe8c9450b15fc3212145}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!send\+B\+Y\+E@{send\+B\+Y\+E}}
+\index{send\+B\+Y\+E@{send\+B\+Y\+E}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{send\+B\+Y\+E()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} S\+I\+P\+Client\+::send\+B\+Y\+E (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classSIPClient_a3e64a4b26223202f9762cd612a55ef30}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!send\+I\+N\+V\+I\+T\+E@{send\+I\+N\+V\+I\+T\+E}}
+\index{send\+I\+N\+V\+I\+T\+E@{send\+I\+N\+V\+I\+T\+E}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{send\+I\+N\+V\+I\+T\+E()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} S\+I\+P\+Client\+::send\+I\+N\+V\+I\+T\+E (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a5c931324c9070e1d861f8ae530b3d914}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!send\+Request@{send\+Request}}
+\index{send\+Request@{send\+Request}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{send\+Request(char const $\ast$request\+String, unsigned request\+Length)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} S\+I\+P\+Client\+::send\+Request (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{request\+String, }
+\item[{unsigned}]{request\+Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_ab557cfeb80e8b6b104ad5362f042b8af}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!set\+Client\+Start\+Port\+Num@{set\+Client\+Start\+Port\+Num}}
+\index{set\+Client\+Start\+Port\+Num@{set\+Client\+Start\+Port\+Num}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{set\+Client\+Start\+Port\+Num(port\+Num\+Bits client\+Start\+Port\+Num)}]{\setlength{\rightskip}{0pt plus 5cm}void S\+I\+P\+Client\+::set\+Client\+Start\+Port\+Num (
+\begin{DoxyParamCaption}
+\item[{{\bf port\+Num\+Bits}}]{client\+Start\+Port\+Num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classSIPClient_a8f3f1bb63b9e0af3dc903735cc20005e}
+
+
+Definition at line 48 of file S\+I\+P\+Client.\+hh.
+
+
+
+References f\+Client\+Start\+Port\+Num.
+
+
+\begin{DoxyCode}
+48                                                              \{
+49     fClientStartPortNum = clientStartPortNum;
+50   \}
+\end{DoxyCode}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!set\+Proxy\+Server@{set\+Proxy\+Server}}
+\index{set\+Proxy\+Server@{set\+Proxy\+Server}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{set\+Proxy\+Server(unsigned proxy\+Server\+Address, port\+Num\+Bits proxy\+Server\+Port\+Num)}]{\setlength{\rightskip}{0pt plus 5cm}void S\+I\+P\+Client\+::set\+Proxy\+Server (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{proxy\+Server\+Address, }
+\item[{{\bf port\+Num\+Bits}}]{proxy\+Server\+Port\+Num}
+\end{DoxyParamCaption}
+)}\label{classSIPClient_a7387fb91c9be08ee283a6c7add26933f}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!set\+User\+Agent\+String@{set\+User\+Agent\+String}}
+\index{set\+User\+Agent\+String@{set\+User\+Agent\+String}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{set\+User\+Agent\+String(char const $\ast$user\+Agent\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}void S\+I\+P\+Client\+::set\+User\+Agent\+String (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{user\+Agent\+Name}
+\end{DoxyParamCaption}
+)}\label{classSIPClient_a8bca2b220b91f9503ed89e80a7ffc989}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!timer\+A\+Handler@{timer\+A\+Handler}}
+\index{timer\+A\+Handler@{timer\+A\+Handler}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{timer\+A\+Handler(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void S\+I\+P\+Client\+::timer\+A\+Handler (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classSIPClient_ad09a4cee3f0e973788dd7cc85d6dc405}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!timer\+B\+Handler@{timer\+B\+Handler}}
+\index{timer\+B\+Handler@{timer\+B\+Handler}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{timer\+B\+Handler(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void S\+I\+P\+Client\+::timer\+B\+Handler (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classSIPClient_acbca11ae9917b9d8dcb07922193af7ae}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!timer\+D\+Handler@{timer\+D\+Handler}}
+\index{timer\+D\+Handler@{timer\+D\+Handler}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{timer\+D\+Handler(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void S\+I\+P\+Client\+::timer\+D\+Handler (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classSIPClient_a1b53d1e7cca56689b716ccb6bbc555b8}
+
+
+\subsection{Field Documentation}
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Application\+Name@{f\+Application\+Name}}
+\index{f\+Application\+Name@{f\+Application\+Name}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Application\+Name}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ S\+I\+P\+Client\+::f\+Application\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a7b54e4a255fbcfa9b879a5127193e141}
+
+
+Definition at line 118 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Application\+Name\+Size@{f\+Application\+Name\+Size}}
+\index{f\+Application\+Name\+Size@{f\+Application\+Name\+Size}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Application\+Name\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\+I\+P\+Client\+::f\+Application\+Name\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a9b1a280a3453f751305854b6c471cc4f}
+
+
+Definition at line 119 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Call\+Id@{f\+Call\+Id}}
+\index{f\+Call\+Id@{f\+Call\+Id}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Call\+Id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\+I\+P\+Client\+::f\+Call\+Id\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_ad19d9496078303c68c21017634f69b6c}
+
+
+Definition at line 133 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Client\+Start\+Port\+Num@{f\+Client\+Start\+Port\+Num}}
+\index{f\+Client\+Start\+Port\+Num@{f\+Client\+Start\+Port\+Num}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Client\+Start\+Port\+Num}]{\setlength{\rightskip}{0pt plus 5cm}{\bf port\+Num\+Bits} S\+I\+P\+Client\+::f\+Client\+Start\+Port\+Num\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_ab9124a5b71fd42229a57b99b1f4448fe}
+
+
+Definition at line 132 of file S\+I\+P\+Client.\+hh.
+
+
+
+Referenced by set\+Client\+Start\+Port\+Num().
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+C\+Seq@{f\+C\+Seq}}
+\index{f\+C\+Seq@{f\+C\+Seq}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+C\+Seq}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\+I\+P\+Client\+::f\+C\+Seq\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a0387f1dc6db6fdd414652b95b0ad1184}
+
+
+Definition at line 117 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Desired\+Audio\+R\+T\+P\+Payload\+Format@{f\+Desired\+Audio\+R\+T\+P\+Payload\+Format}}
+\index{f\+Desired\+Audio\+R\+T\+P\+Payload\+Format@{f\+Desired\+Audio\+R\+T\+P\+Payload\+Format}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Desired\+Audio\+R\+T\+P\+Payload\+Format}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char S\+I\+P\+Client\+::f\+Desired\+Audio\+R\+T\+P\+Payload\+Format\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a149dbcdb67bee5a3408c2a59b6757a3a}
+
+
+Definition at line 113 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Event\+Loop\+Stop\+Flag@{f\+Event\+Loop\+Stop\+Flag}}
+\index{f\+Event\+Loop\+Stop\+Flag@{f\+Event\+Loop\+Stop\+Flag}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Event\+Loop\+Stop\+Flag}]{\setlength{\rightskip}{0pt plus 5cm}char S\+I\+P\+Client\+::f\+Event\+Loop\+Stop\+Flag\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_acb221d96479e7dfbf21a8a20f85d6d71}
+
+
+Definition at line 146 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+From\+Tag@{f\+From\+Tag}}
+\index{f\+From\+Tag@{f\+From\+Tag}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+From\+Tag}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\+I\+P\+Client\+::f\+From\+Tag\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a229233653e6e85843654a53c9dd52108}
+
+
+Definition at line 133 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Invite\+Client\+State@{f\+Invite\+Client\+State}}
+\index{f\+Invite\+Client\+State@{f\+Invite\+Client\+State}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Invite\+Client\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf invite\+Client\+State} S\+I\+P\+Client\+::f\+Invite\+Client\+State\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a19908152a26cd64dd144a86cbb656cfb}
+
+
+Definition at line 145 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Invite\+Cmd@{f\+Invite\+Cmd}}
+\index{f\+Invite\+Cmd@{f\+Invite\+Cmd}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Invite\+Cmd}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ S\+I\+P\+Client\+::f\+Invite\+Cmd\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a3d945c9550773c75a2424c2689e2cd90}
+
+
+Definition at line 142 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Invite\+Cmd\+Size@{f\+Invite\+Cmd\+Size}}
+\index{f\+Invite\+Cmd\+Size@{f\+Invite\+Cmd\+Size}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Invite\+Cmd\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\+I\+P\+Client\+::f\+Invite\+Cmd\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_af4df975f13f9728c0ab5a94c14f1b33f}
+
+
+Definition at line 143 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Invite\+S\+D\+P\+Description@{f\+Invite\+S\+D\+P\+Description}}
+\index{f\+Invite\+S\+D\+P\+Description@{f\+Invite\+S\+D\+P\+Description}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Invite\+S\+D\+P\+Description}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ S\+I\+P\+Client\+::f\+Invite\+S\+D\+P\+Description\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_aa8458f817ecda1264a859b7cd48ed75f}
+
+
+Definition at line 140 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Invite\+S\+D\+P\+Description\+Returned@{f\+Invite\+S\+D\+P\+Description\+Returned}}
+\index{f\+Invite\+S\+D\+P\+Description\+Returned@{f\+Invite\+S\+D\+P\+Description\+Returned}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Invite\+S\+D\+P\+Description\+Returned}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ S\+I\+P\+Client\+::f\+Invite\+S\+D\+P\+Description\+Returned\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a5675d0539d382f453ef98ca77dea0343}
+
+
+Definition at line 141 of file S\+I\+P\+Client.\+hh.
+
+
+
+Referenced by get\+Invite\+Sdp\+Reply().
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+M\+I\+M\+E\+Subtype@{f\+M\+I\+M\+E\+Subtype}}
+\index{f\+M\+I\+M\+E\+Subtype@{f\+M\+I\+M\+E\+Subtype}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+M\+I\+M\+E\+Subtype}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ S\+I\+P\+Client\+::f\+M\+I\+M\+E\+Subtype\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a662ce5b68db612ef83b72cf4ab46a72d}
+
+
+Definition at line 114 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+M\+I\+M\+E\+Subtype\+Size@{f\+M\+I\+M\+E\+Subtype\+Size}}
+\index{f\+M\+I\+M\+E\+Subtype\+Size@{f\+M\+I\+M\+E\+Subtype\+Size}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+M\+I\+M\+E\+Subtype\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\+I\+P\+Client\+::f\+M\+I\+M\+E\+Subtype\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a620bd0fa4fd38e1d84a17fa889488da6}
+
+
+Definition at line 115 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Our\+Address\+Str@{f\+Our\+Address\+Str}}
+\index{f\+Our\+Address\+Str@{f\+Our\+Address\+Str}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Our\+Address\+Str}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ S\+I\+P\+Client\+::f\+Our\+Address\+Str\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a0d94240772946dff1e5e6a4d6badad5a}
+
+
+Definition at line 120 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Our\+Address\+Str\+Size@{f\+Our\+Address\+Str\+Size}}
+\index{f\+Our\+Address\+Str\+Size@{f\+Our\+Address\+Str\+Size}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Our\+Address\+Str\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\+I\+P\+Client\+::f\+Our\+Address\+Str\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a392ab7cb4a92e1787f7ae2b87c54ca00}
+
+
+Definition at line 121 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Our\+Port\+Num@{f\+Our\+Port\+Num}}
+\index{f\+Our\+Port\+Num@{f\+Our\+Port\+Num}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Our\+Port\+Num}]{\setlength{\rightskip}{0pt plus 5cm}{\bf port\+Num\+Bits} S\+I\+P\+Client\+::f\+Our\+Port\+Num\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_ad14540fef8526da445c151c9e7752a23}
+
+
+Definition at line 122 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Our\+Socket@{f\+Our\+Socket}}
+\index{f\+Our\+Socket@{f\+Our\+Socket}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Our\+Socket}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Groupsock}$\ast$ S\+I\+P\+Client\+::f\+Our\+Socket\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a5c0a159757f7f5cae38c945d0db6b859}
+
+
+Definition at line 123 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Server\+Address@{f\+Server\+Address}}
+\index{f\+Server\+Address@{f\+Server\+Address}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Server\+Address}]{\setlength{\rightskip}{0pt plus 5cm}struct in\+\_\+addr S\+I\+P\+Client\+::f\+Server\+Address\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a54030b41e20f8690223f57c07b3a780a}
+
+
+Definition at line 130 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Server\+Port\+Num@{f\+Server\+Port\+Num}}
+\index{f\+Server\+Port\+Num@{f\+Server\+Port\+Num}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Server\+Port\+Num}]{\setlength{\rightskip}{0pt plus 5cm}{\bf port\+Num\+Bits} S\+I\+P\+Client\+::f\+Server\+Port\+Num\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a7d5eb4fa532ca6d8728355ff5efeecdc}
+
+
+Definition at line 131 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+T1@{f\+T1}}
+\index{f\+T1@{f\+T1}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+T1}]{\setlength{\rightskip}{0pt plus 5cm}unsigned const S\+I\+P\+Client\+::f\+T1\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_abe54a30eb99d1fae0a784d22d51ffbad}
+
+
+Definition at line 99 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Timer\+A@{f\+Timer\+A}}
+\index{f\+Timer\+A@{f\+Timer\+A}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Timer\+A}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token} S\+I\+P\+Client\+::f\+Timer\+A\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_af84b52469efe9b3d3c94f72898f1d2e6}
+
+
+Definition at line 95 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Timer\+A\+Count@{f\+Timer\+A\+Count}}
+\index{f\+Timer\+A\+Count@{f\+Timer\+A\+Count}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Timer\+A\+Count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\+I\+P\+Client\+::f\+Timer\+A\+Count\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_ac50a9aa4948bb6e0e1ea275a4f698c91}
+
+
+Definition at line 101 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Timer\+A\+Len@{f\+Timer\+A\+Len}}
+\index{f\+Timer\+A\+Len@{f\+Timer\+A\+Len}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Timer\+A\+Len}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\+I\+P\+Client\+::f\+Timer\+A\+Len\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a6336c9103c6acd413e4d5e5b9ba0d39a}
+
+
+Definition at line 100 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Timer\+B@{f\+Timer\+B}}
+\index{f\+Timer\+B@{f\+Timer\+B}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Timer\+B}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token} S\+I\+P\+Client\+::f\+Timer\+B\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_ae84cff25ede785ec3ed3bc632d79462f}
+
+
+Definition at line 95 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Timer\+D@{f\+Timer\+D}}
+\index{f\+Timer\+D@{f\+Timer\+D}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Timer\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token} S\+I\+P\+Client\+::f\+Timer\+D\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a452b71399e2fd61c877af5368d7fa7ea}
+
+
+Definition at line 95 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+To\+Tag\+Str@{f\+To\+Tag\+Str}}
+\index{f\+To\+Tag\+Str@{f\+To\+Tag\+Str}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+To\+Tag\+Str}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ S\+I\+P\+Client\+::f\+To\+Tag\+Str\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a58fbbf00d266e34823145430c5ad9a44}
+
+
+Definition at line 134 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+To\+Tag\+Str\+Size@{f\+To\+Tag\+Str\+Size}}
+\index{f\+To\+Tag\+Str\+Size@{f\+To\+Tag\+Str\+Size}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+To\+Tag\+Str\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\+I\+P\+Client\+::f\+To\+Tag\+Str\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_ad156e195d38399714e858aa64ce5cdd4}
+
+
+Definition at line 135 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+U\+R\+L@{f\+U\+R\+L}}
+\index{f\+U\+R\+L@{f\+U\+R\+L}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+U\+R\+L}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ S\+I\+P\+Client\+::f\+U\+R\+L\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_ac1b9b778a86e637c82a5151a699b4d4e}
+
+
+Definition at line 128 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+U\+R\+L\+Size@{f\+U\+R\+L\+Size}}
+\index{f\+U\+R\+L\+Size@{f\+U\+R\+L\+Size}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+U\+R\+L\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\+I\+P\+Client\+::f\+U\+R\+L\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_afdb16c4ae1ac7cd35120bffa45721fd0}
+
+
+Definition at line 129 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+User\+Agent\+Header\+Str@{f\+User\+Agent\+Header\+Str}}
+\index{f\+User\+Agent\+Header\+Str@{f\+User\+Agent\+Header\+Str}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+User\+Agent\+Header\+Str}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ S\+I\+P\+Client\+::f\+User\+Agent\+Header\+Str\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a699fffe6af74545a154b50d2e6061a52}
+
+
+Definition at line 124 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+User\+Agent\+Header\+Str\+Len@{f\+User\+Agent\+Header\+Str\+Len}}
+\index{f\+User\+Agent\+Header\+Str\+Len@{f\+User\+Agent\+Header\+Str\+Len}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+User\+Agent\+Header\+Str\+Len}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\+I\+P\+Client\+::f\+User\+Agent\+Header\+Str\+Len\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a011adcc686c130adcaef19e7592dee49}
+
+
+Definition at line 125 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+User\+Name@{f\+User\+Name}}
+\index{f\+User\+Name@{f\+User\+Name}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+User\+Name}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ S\+I\+P\+Client\+::f\+User\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a9b2e72502fdc916d43d604d2c6a7c5bc}
+
+
+Definition at line 137 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+User\+Name\+Size@{f\+User\+Name\+Size}}
+\index{f\+User\+Name\+Size@{f\+User\+Name\+Size}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+User\+Name\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned S\+I\+P\+Client\+::f\+User\+Name\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_af44a7c806a4e7ba43fcaa995293d299e}
+
+
+Definition at line 138 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Valid\+Authenticator@{f\+Valid\+Authenticator}}
+\index{f\+Valid\+Authenticator@{f\+Valid\+Authenticator}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Valid\+Authenticator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Authenticator} S\+I\+P\+Client\+::f\+Valid\+Authenticator\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_aa099543fec4485edfa2e2dcb11dc1895}
+
+
+Definition at line 136 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Verbosity\+Level@{f\+Verbosity\+Level}}
+\index{f\+Verbosity\+Level@{f\+Verbosity\+Level}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Verbosity\+Level}]{\setlength{\rightskip}{0pt plus 5cm}int S\+I\+P\+Client\+::f\+Verbosity\+Level\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_a06fcf7d2342a5b483114475f3d555320}
+
+
+Definition at line 116 of file S\+I\+P\+Client.\+hh.
+
+\index{S\+I\+P\+Client@{S\+I\+P\+Client}!f\+Working\+Authenticator@{f\+Working\+Authenticator}}
+\index{f\+Working\+Authenticator@{f\+Working\+Authenticator}!S\+I\+P\+Client@{S\+I\+P\+Client}}
+\subsubsection[{f\+Working\+Authenticator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Authenticator}$\ast$ S\+I\+P\+Client\+::f\+Working\+Authenticator\hspace{0.3cm}{\ttfamily [private]}}\label{classSIPClient_af4dab6892172785975f318610efb9fc2}
+
+
+Definition at line 144 of file S\+I\+P\+Client.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf S\+I\+P\+Client.\+hh}\end{DoxyCompactItemize}

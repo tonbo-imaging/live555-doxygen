@@ -1,0 +1,179 @@
+\section{Hash\+Table Class Reference}
+\label{classHashTable}\index{Hash\+Table@{Hash\+Table}}
+
+
+{\ttfamily \#include $<$Hash\+Table.\+hh$>$}
+
+
+
+Inheritance diagram for Hash\+Table\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=135pt]{classHashTable__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\+Hash\+Table} ()
+\item 
+virtual void $\ast$ {\bf Add} (char const $\ast$key, void $\ast$value)=0
+\item 
+virtual {\bf Boolean} {\bf Remove} (char const $\ast$key)=0
+\item 
+virtual void $\ast$ {\bf Lookup} (char const $\ast$key) const  =0
+\item 
+virtual unsigned {\bf num\+Entries} () const  =0
+\item 
+{\bf Boolean} {\bf Is\+Empty} () const 
+\item 
+void $\ast$ {\bf Remove\+Next} ()
+\item 
+void $\ast$ {\bf get\+First} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Hash\+Table} $\ast$ {\bf create} (int key\+Type)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Hash\+Table} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 27 of file Hash\+Table.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Hash\+Table@{Hash\+Table}!````~Hash\+Table@{$\sim$\+Hash\+Table}}
+\index{````~Hash\+Table@{$\sim$\+Hash\+Table}!Hash\+Table@{Hash\+Table}}
+\subsubsection[{$\sim$\+Hash\+Table()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Hash\+Table\+::$\sim$\+Hash\+Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classHashTable_adc1d238b66fad676ed683172d8967f46}
+\index{Hash\+Table@{Hash\+Table}!Hash\+Table@{Hash\+Table}}
+\index{Hash\+Table@{Hash\+Table}!Hash\+Table@{Hash\+Table}}
+\subsubsection[{Hash\+Table()}]{\setlength{\rightskip}{0pt plus 5cm}Hash\+Table\+::\+Hash\+Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classHashTable_adc3bf2b214c572819ba957ad314d7db3}
+
+
+\subsection{Member Function Documentation}
+\index{Hash\+Table@{Hash\+Table}!Add@{Add}}
+\index{Add@{Add}!Hash\+Table@{Hash\+Table}}
+\subsubsection[{Add(char const $\ast$key, void $\ast$value)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ Hash\+Table\+::\+Add (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{key, }
+\item[{void $\ast$}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classHashTable_abf5fa579f3d7af971a06f22822fec10e}
+
+
+Implemented in {\bf Basic\+Hash\+Table} \doxyref{}{p.}{classBasicHashTable_ab19d912aeb1defa1a916ff6e65b76390}.
+
+\index{Hash\+Table@{Hash\+Table}!create@{create}}
+\index{create@{create}!Hash\+Table@{Hash\+Table}}
+\subsubsection[{create(int key\+Type)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Hash\+Table}$\ast$ Hash\+Table\+::create (
+\begin{DoxyParamCaption}
+\item[{int}]{key\+Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classHashTable_a8bb2202cf2735615d45ddf40a72a8ef4}
+\index{Hash\+Table@{Hash\+Table}!get\+First@{get\+First}}
+\index{get\+First@{get\+First}!Hash\+Table@{Hash\+Table}}
+\subsubsection[{get\+First()}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Hash\+Table\+::get\+First (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classHashTable_af25d9a7232eab17f339d6f24f94aeff2}
+\index{Hash\+Table@{Hash\+Table}!Is\+Empty@{Is\+Empty}}
+\index{Is\+Empty@{Is\+Empty}!Hash\+Table@{Hash\+Table}}
+\subsubsection[{Is\+Empty() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Hash\+Table\+::\+Is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classHashTable_afd4b6b7824c7b484ddef38d4e97dc81f}
+
+
+Definition at line 41 of file Hash\+Table.\+hh.
+
+
+
+References num\+Entries().
+
+
+
+Referenced by Directed\+Net\+Interface\+Set\+::\+Is\+Empty().
+
+
+\begin{DoxyCode}
+41 \{ \textcolor{keywordflow}{return} numEntries() == 0; \}
+\end{DoxyCode}
+\index{Hash\+Table@{Hash\+Table}!Lookup@{Lookup}}
+\index{Lookup@{Lookup}!Hash\+Table@{Hash\+Table}}
+\subsubsection[{Lookup(char const $\ast$key) const  =0}]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ Hash\+Table\+::\+Lookup (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{key}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classHashTable_a5be28dc7f8f1db0c0fb96b6cde176004}
+
+
+Implemented in {\bf Basic\+Hash\+Table} \doxyref{}{p.}{classBasicHashTable_aa482bca7c7d9bdb750d165c1e0e5b064}.
+
+\index{Hash\+Table@{Hash\+Table}!num\+Entries@{num\+Entries}}
+\index{num\+Entries@{num\+Entries}!Hash\+Table@{Hash\+Table}}
+\subsubsection[{num\+Entries() const  =0}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned Hash\+Table\+::num\+Entries (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classHashTable_ac59bdd1a664995fb38de5175b265210c}
+
+
+Implemented in {\bf Basic\+Hash\+Table} \doxyref{}{p.}{classBasicHashTable_a7c82a51eebec6811694bd0f84399f3c2}.
+
+
+
+Referenced by Is\+Empty().
+
+\index{Hash\+Table@{Hash\+Table}!Remove@{Remove}}
+\index{Remove@{Remove}!Hash\+Table@{Hash\+Table}}
+\subsubsection[{Remove(char const $\ast$key)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Hash\+Table\+::\+Remove (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classHashTable_a8dddba70d5b8d0edada6a5a6988f8205}
+
+
+Implemented in {\bf Basic\+Hash\+Table} \doxyref{}{p.}{classBasicHashTable_af8f26cb24f66e4d3149921810c61981c}.
+
+\index{Hash\+Table@{Hash\+Table}!Remove\+Next@{Remove\+Next}}
+\index{Remove\+Next@{Remove\+Next}!Hash\+Table@{Hash\+Table}}
+\subsubsection[{Remove\+Next()}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Hash\+Table\+::\+Remove\+Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classHashTable_ae1edffc7377b9aeb147e63ac3b24488f}
+
+
+Referenced by Address\+Port\+Lookup\+Table\+::\+Remove\+Next().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Usage\+Environment/include/{\bf Hash\+Table.\+hh}\end{DoxyCompactItemize}

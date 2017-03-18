@@ -1,0 +1,222 @@
+\section{Delay\+Queue Class Reference}
+\label{classDelayQueue}\index{Delay\+Queue@{Delay\+Queue}}
+
+
+{\ttfamily \#include $<$Delay\+Queue.\+hh$>$}
+
+
+
+Inheritance diagram for Delay\+Queue\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=144pt]{classDelayQueue__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Delay\+Queue\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classDelayQueue__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Delay\+Queue} ()
+\item 
+virtual {\bf $\sim$\+Delay\+Queue} ()
+\item 
+void {\bf add\+Entry} ({\bf Delay\+Queue\+Entry} $\ast$new\+Entry)
+\item 
+void {\bf update\+Entry} ({\bf Delay\+Queue\+Entry} $\ast$entry, {\bf Delay\+Interval} new\+Delay)
+\item 
+void {\bf update\+Entry} (intptr\+\_\+t token\+To\+Find, {\bf Delay\+Interval} new\+Delay)
+\item 
+void {\bf remove\+Entry} ({\bf Delay\+Queue\+Entry} $\ast$entry)
+\item 
+{\bf Delay\+Queue\+Entry} $\ast$ {\bf remove\+Entry} (intptr\+\_\+t token\+To\+Find)
+\item 
+{\bf Delay\+Interval} const \& {\bf time\+To\+Next\+Alarm} ()
+\item 
+void {\bf handle\+Alarm} ()
+\item 
+intptr\+\_\+t {\bf token} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf handle\+Timeout} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Delay\+Queue\+Entry} $\ast$ {\bf head} ()
+\item 
+{\bf Delay\+Queue\+Entry} $\ast$ {\bf find\+Entry\+By\+Token} (intptr\+\_\+t {\bf token})
+\item 
+void {\bf synchronize} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf \+\_\+\+Event\+Time} {\bf f\+Last\+Sync\+Time}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 160 of file Delay\+Queue.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Delay\+Queue@{Delay\+Queue}!Delay\+Queue@{Delay\+Queue}}
+\index{Delay\+Queue@{Delay\+Queue}!Delay\+Queue@{Delay\+Queue}}
+\subsubsection[{Delay\+Queue()}]{\setlength{\rightskip}{0pt plus 5cm}Delay\+Queue\+::\+Delay\+Queue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classDelayQueue_a456b2f8ab5709d9af35b155f5396166a}
+\index{Delay\+Queue@{Delay\+Queue}!````~Delay\+Queue@{$\sim$\+Delay\+Queue}}
+\index{````~Delay\+Queue@{$\sim$\+Delay\+Queue}!Delay\+Queue@{Delay\+Queue}}
+\subsubsection[{$\sim$\+Delay\+Queue()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Delay\+Queue\+::$\sim$\+Delay\+Queue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classDelayQueue_a0d6c8dadd2820d08952fda03cffe3e54}
+
+
+\subsection{Member Function Documentation}
+\index{Delay\+Queue@{Delay\+Queue}!add\+Entry@{add\+Entry}}
+\index{add\+Entry@{add\+Entry}!Delay\+Queue@{Delay\+Queue}}
+\subsubsection[{add\+Entry(\+Delay\+Queue\+Entry $\ast$new\+Entry)}]{\setlength{\rightskip}{0pt plus 5cm}void Delay\+Queue\+::add\+Entry (
+\begin{DoxyParamCaption}
+\item[{{\bf Delay\+Queue\+Entry} $\ast$}]{new\+Entry}
+\end{DoxyParamCaption}
+)}\label{classDelayQueue_a0ba9857d411aa4b0ea1b3f5bcee22a0b}
+\index{Delay\+Queue@{Delay\+Queue}!find\+Entry\+By\+Token@{find\+Entry\+By\+Token}}
+\index{find\+Entry\+By\+Token@{find\+Entry\+By\+Token}!Delay\+Queue@{Delay\+Queue}}
+\subsubsection[{find\+Entry\+By\+Token(intptr\+\_\+t token)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Delay\+Queue\+Entry}$\ast$ Delay\+Queue\+::find\+Entry\+By\+Token (
+\begin{DoxyParamCaption}
+\item[{intptr\+\_\+t}]{token}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classDelayQueue_a9d30f8301c5c2e5e3cecdc52d4bcf6d5}
+\index{Delay\+Queue@{Delay\+Queue}!handle\+Alarm@{handle\+Alarm}}
+\index{handle\+Alarm@{handle\+Alarm}!Delay\+Queue@{Delay\+Queue}}
+\subsubsection[{handle\+Alarm()}]{\setlength{\rightskip}{0pt plus 5cm}void Delay\+Queue\+::handle\+Alarm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classDelayQueue_ac817c4e8d87686f70705d8ed2539ff3a}
+\index{Delay\+Queue@{Delay\+Queue}!handle\+Timeout@{handle\+Timeout}}
+\index{handle\+Timeout@{handle\+Timeout}!Delay\+Queue@{Delay\+Queue}}
+\subsubsection[{handle\+Timeout()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Delay\+Queue\+Entry\+::handle\+Timeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classDelayQueueEntry_ab45010b273205b500c4f5d381eb7f2bb}
+\index{Delay\+Queue@{Delay\+Queue}!head@{head}}
+\index{head@{head}!Delay\+Queue@{Delay\+Queue}}
+\subsubsection[{head()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Delay\+Queue\+Entry}$\ast$ Delay\+Queue\+::head (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classDelayQueue_ac6e45cc14d72f3dcec7bfca670c50d03}
+
+
+Definition at line 175 of file Delay\+Queue.\+hh.
+
+
+
+References Delay\+Queue\+Entry\+::f\+Next.
+
+
+\begin{DoxyCode}
+175 \{ \textcolor{keywordflow}{return} fNext; \}
+\end{DoxyCode}
+\index{Delay\+Queue@{Delay\+Queue}!remove\+Entry@{remove\+Entry}}
+\index{remove\+Entry@{remove\+Entry}!Delay\+Queue@{Delay\+Queue}}
+\subsubsection[{remove\+Entry(\+Delay\+Queue\+Entry $\ast$entry)}]{\setlength{\rightskip}{0pt plus 5cm}void Delay\+Queue\+::remove\+Entry (
+\begin{DoxyParamCaption}
+\item[{{\bf Delay\+Queue\+Entry} $\ast$}]{entry}
+\end{DoxyParamCaption}
+)}\label{classDelayQueue_ada6c5403a9e0e40945dc2e14d0e39435}
+\index{Delay\+Queue@{Delay\+Queue}!remove\+Entry@{remove\+Entry}}
+\index{remove\+Entry@{remove\+Entry}!Delay\+Queue@{Delay\+Queue}}
+\subsubsection[{remove\+Entry(intptr\+\_\+t token\+To\+Find)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Delay\+Queue\+Entry}$\ast$ Delay\+Queue\+::remove\+Entry (
+\begin{DoxyParamCaption}
+\item[{intptr\+\_\+t}]{token\+To\+Find}
+\end{DoxyParamCaption}
+)}\label{classDelayQueue_a15e13b987562f1eadd406b2006b6770a}
+\index{Delay\+Queue@{Delay\+Queue}!synchronize@{synchronize}}
+\index{synchronize@{synchronize}!Delay\+Queue@{Delay\+Queue}}
+\subsubsection[{synchronize()}]{\setlength{\rightskip}{0pt plus 5cm}void Delay\+Queue\+::synchronize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classDelayQueue_a44f678c74c1ad9ad7addef193e6584d7}
+\index{Delay\+Queue@{Delay\+Queue}!time\+To\+Next\+Alarm@{time\+To\+Next\+Alarm}}
+\index{time\+To\+Next\+Alarm@{time\+To\+Next\+Alarm}!Delay\+Queue@{Delay\+Queue}}
+\subsubsection[{time\+To\+Next\+Alarm()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Delay\+Interval} const\& Delay\+Queue\+::time\+To\+Next\+Alarm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classDelayQueue_a0f7f2e4ef5a7f1f250f78e17e6ef65a4}
+\index{Delay\+Queue@{Delay\+Queue}!token@{token}}
+\index{token@{token}!Delay\+Queue@{Delay\+Queue}}
+\subsubsection[{token()}]{\setlength{\rightskip}{0pt plus 5cm}intptr\+\_\+t Delay\+Queue\+Entry\+::token (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classDelayQueueEntry_a8bf871cd83977e3d26c09b45af116343}
+
+
+Definition at line 139 of file Delay\+Queue.\+hh.
+
+
+
+References Delay\+Queue\+Entry\+::f\+Token.
+
+
+\begin{DoxyCode}
+139                    \{
+140     \textcolor{keywordflow}{return} fToken;
+141   \}
+\end{DoxyCode}
+\index{Delay\+Queue@{Delay\+Queue}!update\+Entry@{update\+Entry}}
+\index{update\+Entry@{update\+Entry}!Delay\+Queue@{Delay\+Queue}}
+\subsubsection[{update\+Entry(\+Delay\+Queue\+Entry $\ast$entry, Delay\+Interval new\+Delay)}]{\setlength{\rightskip}{0pt plus 5cm}void Delay\+Queue\+::update\+Entry (
+\begin{DoxyParamCaption}
+\item[{{\bf Delay\+Queue\+Entry} $\ast$}]{entry, }
+\item[{{\bf Delay\+Interval}}]{new\+Delay}
+\end{DoxyParamCaption}
+)}\label{classDelayQueue_a70c71a098817c7d3b3c2af2815c2c738}
+\index{Delay\+Queue@{Delay\+Queue}!update\+Entry@{update\+Entry}}
+\index{update\+Entry@{update\+Entry}!Delay\+Queue@{Delay\+Queue}}
+\subsubsection[{update\+Entry(intptr\+\_\+t token\+To\+Find, Delay\+Interval new\+Delay)}]{\setlength{\rightskip}{0pt plus 5cm}void Delay\+Queue\+::update\+Entry (
+\begin{DoxyParamCaption}
+\item[{intptr\+\_\+t}]{token\+To\+Find, }
+\item[{{\bf Delay\+Interval}}]{new\+Delay}
+\end{DoxyParamCaption}
+)}\label{classDelayQueue_ac84aee164786bb5c929d1d12e5837511}
+
+
+\subsection{Field Documentation}
+\index{Delay\+Queue@{Delay\+Queue}!f\+Last\+Sync\+Time@{f\+Last\+Sync\+Time}}
+\index{f\+Last\+Sync\+Time@{f\+Last\+Sync\+Time}!Delay\+Queue@{Delay\+Queue}}
+\subsubsection[{f\+Last\+Sync\+Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+Event\+Time} Delay\+Queue\+::f\+Last\+Sync\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classDelayQueue_a88df1224211a700b6461e29a18fe3199}
+
+
+Definition at line 179 of file Delay\+Queue.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Basic\+Usage\+Environment/include/{\bf Delay\+Queue.\+hh}\end{DoxyCompactItemize}

@@ -1,0 +1,158 @@
+\section{E\+B\+M\+L\+Data\+Size Class Reference}
+\label{classEBMLDataSize}\index{E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}}
+
+
+{\ttfamily \#include $<$E\+B\+M\+L\+Number.\+hh$>$}
+
+
+
+Inheritance diagram for E\+B\+M\+L\+Data\+Size\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=130pt]{classEBMLDataSize__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for E\+B\+M\+L\+Data\+Size\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=130pt]{classEBMLDataSize__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf E\+B\+M\+L\+Data\+Size} ()
+\item 
+virtual {\bf $\sim$\+E\+B\+M\+L\+Data\+Size} ()
+\item 
+u\+\_\+int64\+\_\+t {\bf val} () const 
+\item 
+char $\ast$ {\bf hex\+String} () const 
+\item 
+{\bf Boolean} {\bf operator==} (u\+\_\+int64\+\_\+t arg2) const 
+\item 
+{\bf Boolean} {\bf operator!=} (u\+\_\+int64\+\_\+t arg2) const 
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Boolean} {\bf strip\+Leading1}
+\item 
+unsigned {\bf len}
+\item 
+u\+\_\+int8\+\_\+t {\bf data} [{\bf E\+B\+M\+L\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}]
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 136 of file E\+B\+M\+L\+Number.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}!E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}}
+\index{E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}!E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}}
+\subsubsection[{E\+B\+M\+L\+Data\+Size()}]{\setlength{\rightskip}{0pt plus 5cm}E\+B\+M\+L\+Data\+Size\+::\+E\+B\+M\+L\+Data\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classEBMLDataSize_a8afb03f23f9bd13526bf9ecf277a83d0}
+\index{E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}!````~E\+B\+M\+L\+Data\+Size@{$\sim$\+E\+B\+M\+L\+Data\+Size}}
+\index{````~E\+B\+M\+L\+Data\+Size@{$\sim$\+E\+B\+M\+L\+Data\+Size}!E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}}
+\subsubsection[{$\sim$\+E\+B\+M\+L\+Data\+Size()}]{\setlength{\rightskip}{0pt plus 5cm}virtual E\+B\+M\+L\+Data\+Size\+::$\sim$\+E\+B\+M\+L\+Data\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classEBMLDataSize_ad50738d3c52a64d860557e25f7496741}
+
+
+\subsection{Member Function Documentation}
+\index{E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}!hex\+String@{hex\+String}}
+\index{hex\+String@{hex\+String}!E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}}
+\subsubsection[{hex\+String() const }]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ E\+B\+M\+L\+Number\+::hex\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inherited]}}\label{classEBMLNumber_a602d5548eb89bf5e150a7f0e5ae57482}
+\index{E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}}
+\subsubsection[{operator"!=(u\+\_\+int64\+\_\+t arg2) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} E\+B\+M\+L\+Number\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int64\+\_\+t}]{arg2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classEBMLNumber_acd684574844543c0c2cc523921f20cd2}
+
+
+Definition at line 38 of file E\+B\+M\+L\+Number.\+hh.
+
+
+\begin{DoxyCode}
+38 \{ \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} == arg2); \}
+\end{DoxyCode}
+\index{E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}!operator==@{operator==}}
+\index{operator==@{operator==}!E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}}
+\subsubsection[{operator==(u\+\_\+int64\+\_\+t arg2) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} E\+B\+M\+L\+Number\+::operator== (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int64\+\_\+t}]{arg2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classEBMLNumber_ac4044b200814f6103dbe57dedfbeaca5}
+
+
+Definition at line 37 of file E\+B\+M\+L\+Number.\+hh.
+
+
+
+References E\+B\+M\+L\+Number\+::val().
+
+
+\begin{DoxyCode}
+37 \{ \textcolor{keywordflow}{return} val() == arg2; \}
+\end{DoxyCode}
+\index{E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}!val@{val}}
+\index{val@{val}!E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}}
+\subsubsection[{val() const }]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int64\+\_\+t E\+B\+M\+L\+Number\+::val (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inherited]}}\label{classEBMLNumber_a54a6de5234ef1ba6896d3b8b6ce2829b}
+
+
+Referenced by E\+B\+M\+L\+Number\+::operator==().
+
+
+
+\subsection{Field Documentation}
+\index{E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}!data@{data}}
+\index{data@{data}!E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t E\+B\+M\+L\+Number\+::data[{\bf E\+B\+M\+L\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+M\+A\+X\+\_\+\+L\+E\+N}]\hspace{0.3cm}{\ttfamily [inherited]}}\label{classEBMLNumber_acbc391622758f4f0aee034009df36c26}
+
+
+Definition at line 43 of file E\+B\+M\+L\+Number.\+hh.
+
+\index{E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}!len@{len}}
+\index{len@{len}!E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}}
+\subsubsection[{len}]{\setlength{\rightskip}{0pt plus 5cm}unsigned E\+B\+M\+L\+Number\+::len\hspace{0.3cm}{\ttfamily [inherited]}}\label{classEBMLNumber_a6b5f1ad3ad90d142dedbde1d15300e11}
+
+
+Definition at line 42 of file E\+B\+M\+L\+Number.\+hh.
+
+\index{E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}!strip\+Leading1@{strip\+Leading1}}
+\index{strip\+Leading1@{strip\+Leading1}!E\+B\+M\+L\+Data\+Size@{E\+B\+M\+L\+Data\+Size}}
+\subsubsection[{strip\+Leading1}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} E\+B\+M\+L\+Number\+::strip\+Leading1\hspace{0.3cm}{\ttfamily [inherited]}}\label{classEBMLNumber_a6a5eeb12e3e64758586ce890b4beafca}
+
+
+Definition at line 41 of file E\+B\+M\+L\+Number.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/{\bf E\+B\+M\+L\+Number.\+hh}\end{DoxyCompactItemize}

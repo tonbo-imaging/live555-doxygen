@@ -1,0 +1,590 @@
+\section{M\+P\+E\+G2\+Transport\+Stream\+Index\+File Class Reference}
+\label{classMPEG2TransportStreamIndexFile}\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+
+
+{\ttfamily \#include $<$M\+P\+E\+G2\+Transport\+Stream\+Index\+File.\+hh$>$}
+
+
+
+Inheritance diagram for M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classMPEG2TransportStreamIndexFile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classMPEG2TransportStreamIndexFile__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\+M\+P\+E\+G2\+Transport\+Stream\+Index\+File} ()
+\item 
+void {\bf lookup\+T\+S\+Packet\+Num\+From\+N\+P\+T} (float \&npt, unsigned long \&ts\+Packet\+Number, unsigned long \&index\+Record\+Number)
+\item 
+void {\bf lookup\+P\+C\+R\+From\+T\+S\+Packet\+Num} (unsigned long \&ts\+Packet\+Number, {\bf Boolean} reverse\+To\+Previous\+Clean\+Point, float \&pcr, unsigned long \&index\+Record\+Number)
+\item 
+{\bf Boolean} {\bf read\+Index\+Record\+Values} (unsigned long index\+Record\+Num, unsigned long \&transport\+Packet\+Num, u\+\_\+int8\+\_\+t \&offset, u\+\_\+int8\+\_\+t \&size, float \&pcr, u\+\_\+int8\+\_\+t \&record\+Type)
+\item 
+float {\bf get\+Playing\+Duration} ()
+\item 
+void {\bf stop\+Reading} ()
+\item 
+int {\bf mpeg\+Version} ()
+\item 
+{\bf Usage\+Environment} \& {\bf envir} () const 
+\item 
+char const $\ast$ {\bf name} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Source} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Sink} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+C\+P\+Instance} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Client} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Server} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Media\+Session} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Server\+Media\+Session} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf M\+P\+E\+G2\+Transport\+Stream\+Index\+File} $\ast$ {\bf create\+New} ({\bf Usage\+Environment} \&env, char const $\ast$index\+File\+Name)
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name, {\bf Medium} $\ast$\&result\+Medium)
+\item 
+static void {\bf close} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name)
+\item 
+static void {\bf close} ({\bf Medium} $\ast$medium)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Task\+Token} \& {\bf next\+Task} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf M\+P\+E\+G2\+Transport\+Stream\+Index\+File} ({\bf Usage\+Environment} \&env, char const $\ast$index\+File\+Name)
+\item 
+{\bf Boolean} {\bf open\+Fid} ()
+\item 
+{\bf Boolean} {\bf seek\+To\+Index\+Record} (unsigned long index\+Record\+Number)
+\item 
+{\bf Boolean} {\bf read\+Index\+Record} (unsigned long index\+Record\+Num)
+\item 
+{\bf Boolean} {\bf read\+One\+Index\+Record} (unsigned long index\+Record\+Num)
+\item 
+void {\bf close\+Fid} ()
+\item 
+u\+\_\+int8\+\_\+t {\bf record\+Type\+From\+Buf} ()
+\item 
+u\+\_\+int8\+\_\+t {\bf offset\+From\+Buf} ()
+\item 
+u\+\_\+int8\+\_\+t {\bf size\+From\+Buf} ()
+\item 
+float {\bf pcr\+From\+Buf} ()
+\item 
+unsigned long {\bf ts\+Packet\+Num\+From\+Buf} ()
+\item 
+void {\bf set\+M\+P\+E\+G\+Version\+From\+Record\+Type} (u\+\_\+int8\+\_\+t record\+Type)
+\item 
+{\bf Boolean} {\bf rewind\+To\+Clean\+Point} (unsigned long \&ix\+Found)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ {\bf f\+File\+Name}
+\item 
+F\+I\+L\+E $\ast$ {\bf f\+Fid}
+\item 
+int {\bf f\+M\+P\+E\+G\+Version}
+\item 
+unsigned long {\bf f\+Current\+Index\+Record\+Num}
+\item 
+float {\bf f\+Cached\+P\+C\+R}
+\item 
+unsigned long {\bf f\+Cached\+T\+S\+Packet\+Number}
+\item 
+unsigned long {\bf f\+Cached\+Index\+Record\+Number}
+\item 
+unsigned long {\bf f\+Num\+Index\+Records}
+\item 
+unsigned char {\bf f\+Buf} [{\bf I\+N\+D\+E\+X\+\_\+\+R\+E\+C\+O\+R\+D\+\_\+\+S\+I\+Z\+E}]
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 33 of file M\+P\+E\+G2\+Transport\+Stream\+Index\+File.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!````~M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{$\sim$\+M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\index{````~M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{$\sim$\+M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{$\sim$\+M\+P\+E\+G2\+Transport\+Stream\+Index\+File()}]{\setlength{\rightskip}{0pt plus 5cm}virtual M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::$\sim$\+M\+P\+E\+G2\+Transport\+Stream\+Index\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classMPEG2TransportStreamIndexFile_ab68f2bbc912d942e600a54319a4ec3de}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{M\+P\+E\+G2\+Transport\+Stream\+Index\+File(\+Usage\+Environment \&env, char const $\ast$index\+File\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::\+M\+P\+E\+G2\+Transport\+Stream\+Index\+File (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{index\+File\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_ab509614a1e8e1879f49ee381079593f4}
+
+
+\subsection{Member Function Documentation}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!close@{close}}
+\index{close@{close}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{close(\+Usage\+Environment \&env, char const $\ast$medium\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a9968c7ce6eedb848f2cc095730c01b17}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!close@{close}}
+\index{close@{close}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{close(\+Medium $\ast$medium)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_aee50624faf6909b3944dd803fd485467}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!close\+Fid@{close\+Fid}}
+\index{close\+Fid@{close\+Fid}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{close\+Fid()}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::close\+Fid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_acb4ee3202e6e4d536d8344fc9fe7b829}
+
+
+Referenced by stop\+Reading().
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!create\+New@{create\+New}}
+\index{create\+New@{create\+New}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{create\+New(\+Usage\+Environment \&env, char const $\ast$index\+File\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf M\+P\+E\+G2\+Transport\+Stream\+Index\+File}$\ast$ M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::create\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{index\+File\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classMPEG2TransportStreamIndexFile_a405f240b5b1cde5653b02e46b24c7dc3}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!envir@{envir}}
+\index{envir@{envir}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{envir() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Medium\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a32f7ecdd95f2b8400e1a26a5009e3b8e}
+
+
+Definition at line 59 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Environ.
+
+
+
+Referenced by Media\+Subsession\+::env(), R\+T\+P\+Interface\+::envir(), Generic\+Media\+Server\+::\+Client\+Connection\+::envir(), and Generic\+Media\+Server\+::\+Client\+Session\+::envir().
+
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} fEnviron;\}
+\end{DoxyCode}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!get\+Playing\+Duration@{get\+Playing\+Duration}}
+\index{get\+Playing\+Duration@{get\+Playing\+Duration}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{get\+Playing\+Duration()}]{\setlength{\rightskip}{0pt plus 5cm}float M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::get\+Playing\+Duration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classMPEG2TransportStreamIndexFile_a9048643f72da72743a6523df9eede082}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!is\+Media\+Session@{is\+Media\+Session}}
+\index{is\+Media\+Session@{is\+Media\+Session}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{is\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ac5858707c4e7a15bd59d476cf48289d6}
+
+
+Reimplemented in {\bf Media\+Session} \doxyref{}{p.}{classMediaSession_a3b2a06a722374ab4477ac05a2ce28829}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}}
+\index{is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{is\+R\+T\+C\+P\+Instance() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ab5f9f20324698f89a35513d596b2e7be}
+
+
+Reimplemented in {\bf R\+T\+C\+P\+Instance} \doxyref{}{p.}{classRTCPInstance_a844292518419e1dbf24170812fd1e4b5}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}}
+\index{is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{is\+R\+T\+S\+P\+Client() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aed1c1816867f910ce8c98350686ac038}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Client} \doxyref{}{p.}{classRTSPClient_add07b3a68432b546998080b24380e7e8}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}}
+\index{is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{is\+R\+T\+S\+P\+Server() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a346e111b31bfde4b7f4ed593e0b97fd3}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Server} \doxyref{}{p.}{classRTSPServer_a45f9fc5ddd8f214169358493215a064a}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!is\+Server\+Media\+Session@{is\+Server\+Media\+Session}}
+\index{is\+Server\+Media\+Session@{is\+Server\+Media\+Session}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{is\+Server\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aa9fd26c4b954ffba5f79925ecd0283a0}
+
+
+Reimplemented in {\bf Server\+Media\+Session} \doxyref{}{p.}{classServerMediaSession_a34b59e04644b6f0841ea5af99dbf32f6}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!is\+Sink@{is\+Sink}}
+\index{is\+Sink@{is\+Sink}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{is\+Sink() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a23d49bf466482784b9d4378490d17b5f}
+
+
+Reimplemented in {\bf Media\+Sink} \doxyref{}{p.}{classMediaSink_aa8649dcdf21d5005f9ec319f898f91b6}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!is\+Source@{is\+Source}}
+\index{is\+Source@{is\+Source}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{is\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a6cdbd02c73a3e9c1cbab8fce9e9497b1}
+
+
+Reimplemented in {\bf Media\+Source} \doxyref{}{p.}{classMediaSource_a4d75fa9ee2b476b1231594282a6854be}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$medium\+Name, Medium $\ast$\&result\+Medium)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Medium\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name, }
+\item[{{\bf Medium} $\ast$\&}]{result\+Medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a418c860c1e0ef2766ee0d0f64b346291}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!lookup\+P\+C\+R\+From\+T\+S\+Packet\+Num@{lookup\+P\+C\+R\+From\+T\+S\+Packet\+Num}}
+\index{lookup\+P\+C\+R\+From\+T\+S\+Packet\+Num@{lookup\+P\+C\+R\+From\+T\+S\+Packet\+Num}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{lookup\+P\+C\+R\+From\+T\+S\+Packet\+Num(unsigned long \&ts\+Packet\+Number, Boolean reverse\+To\+Previous\+Clean\+Point, float \&pcr, unsigned long \&index\+Record\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::lookup\+P\+C\+R\+From\+T\+S\+Packet\+Num (
+\begin{DoxyParamCaption}
+\item[{unsigned long \&}]{ts\+Packet\+Number, }
+\item[{{\bf Boolean}}]{reverse\+To\+Previous\+Clean\+Point, }
+\item[{float \&}]{pcr, }
+\item[{unsigned long \&}]{index\+Record\+Number}
+\end{DoxyParamCaption}
+)}\label{classMPEG2TransportStreamIndexFile_a18d0b05ccd95a59c4995546cd1344451}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!lookup\+T\+S\+Packet\+Num\+From\+N\+P\+T@{lookup\+T\+S\+Packet\+Num\+From\+N\+P\+T}}
+\index{lookup\+T\+S\+Packet\+Num\+From\+N\+P\+T@{lookup\+T\+S\+Packet\+Num\+From\+N\+P\+T}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{lookup\+T\+S\+Packet\+Num\+From\+N\+P\+T(float \&npt, unsigned long \&ts\+Packet\+Number, unsigned long \&index\+Record\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::lookup\+T\+S\+Packet\+Num\+From\+N\+P\+T (
+\begin{DoxyParamCaption}
+\item[{float \&}]{npt, }
+\item[{unsigned long \&}]{ts\+Packet\+Number, }
+\item[{unsigned long \&}]{index\+Record\+Number}
+\end{DoxyParamCaption}
+)}\label{classMPEG2TransportStreamIndexFile_a0d4c8c158dbd8b5d2d9b13dad29700ad}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!mpeg\+Version@{mpeg\+Version}}
+\index{mpeg\+Version@{mpeg\+Version}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{mpeg\+Version()}]{\setlength{\rightskip}{0pt plus 5cm}int M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::mpeg\+Version (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classMPEG2TransportStreamIndexFile_a70480fc59ca0b918e23f27a2ed0b3e58}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!name@{name}}
+\index{name@{name}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Medium\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a575649802dc781c0e59e097a3870fcdb}
+
+
+Definition at line 61 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Medium\+Name.
+
+
+\begin{DoxyCode}
+61 \{\textcolor{keywordflow}{return} fMediumName;\}
+\end{DoxyCode}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{next\+Task()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token}\& Medium\+::next\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMedium_a5c8788adec90be1a584393a5bf11a5c9}
+
+
+Definition at line 77 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Next\+Task.
+
+
+\begin{DoxyCode}
+77                         \{
+78         \textcolor{keywordflow}{return} fNextTask;
+79   \}
+\end{DoxyCode}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!offset\+From\+Buf@{offset\+From\+Buf}}
+\index{offset\+From\+Buf@{offset\+From\+Buf}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{offset\+From\+Buf()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::offset\+From\+Buf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_a324cfd3ce4c4bec76110a8692cd17310}
+
+
+Definition at line 76 of file M\+P\+E\+G2\+Transport\+Stream\+Index\+File.\+hh.
+
+
+
+References f\+Buf.
+
+
+\begin{DoxyCode}
+76 \{ \textcolor{keywordflow}{return} fBuf[1]; \}
+\end{DoxyCode}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!open\+Fid@{open\+Fid}}
+\index{open\+Fid@{open\+Fid}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{open\+Fid()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::open\+Fid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_a1fde0cb24994bdc231f3dfbb23caae7c}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!pcr\+From\+Buf@{pcr\+From\+Buf}}
+\index{pcr\+From\+Buf@{pcr\+From\+Buf}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{pcr\+From\+Buf()}]{\setlength{\rightskip}{0pt plus 5cm}float M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::pcr\+From\+Buf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_a46b5b3750f372780b3c91326471f337c}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!read\+Index\+Record@{read\+Index\+Record}}
+\index{read\+Index\+Record@{read\+Index\+Record}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{read\+Index\+Record(unsigned long index\+Record\+Num)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::read\+Index\+Record (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{index\+Record\+Num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_ae0e28c5ef5f81cfdd124f04edbf5d243}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!read\+Index\+Record\+Values@{read\+Index\+Record\+Values}}
+\index{read\+Index\+Record\+Values@{read\+Index\+Record\+Values}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{read\+Index\+Record\+Values(unsigned long index\+Record\+Num, unsigned long \&transport\+Packet\+Num, u\+\_\+int8\+\_\+t \&offset, u\+\_\+int8\+\_\+t \&size, float \&pcr, u\+\_\+int8\+\_\+t \&record\+Type)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::read\+Index\+Record\+Values (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{index\+Record\+Num, }
+\item[{unsigned long \&}]{transport\+Packet\+Num, }
+\item[{u\+\_\+int8\+\_\+t \&}]{offset, }
+\item[{u\+\_\+int8\+\_\+t \&}]{size, }
+\item[{float \&}]{pcr, }
+\item[{u\+\_\+int8\+\_\+t \&}]{record\+Type}
+\end{DoxyParamCaption}
+)}\label{classMPEG2TransportStreamIndexFile_aa9e94682234f732135f58475f54121e1}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!read\+One\+Index\+Record@{read\+One\+Index\+Record}}
+\index{read\+One\+Index\+Record@{read\+One\+Index\+Record}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{read\+One\+Index\+Record(unsigned long index\+Record\+Num)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::read\+One\+Index\+Record (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{index\+Record\+Num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_a277db1e21ab7108d80f804414923abd6}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!record\+Type\+From\+Buf@{record\+Type\+From\+Buf}}
+\index{record\+Type\+From\+Buf@{record\+Type\+From\+Buf}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{record\+Type\+From\+Buf()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::record\+Type\+From\+Buf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_ab1df3d829deea1d4e0aefe867651ec7e}
+
+
+Definition at line 75 of file M\+P\+E\+G2\+Transport\+Stream\+Index\+File.\+hh.
+
+
+
+References f\+Buf.
+
+
+\begin{DoxyCode}
+75 \{ \textcolor{keywordflow}{return} fBuf[0]; \}
+\end{DoxyCode}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!rewind\+To\+Clean\+Point@{rewind\+To\+Clean\+Point}}
+\index{rewind\+To\+Clean\+Point@{rewind\+To\+Clean\+Point}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{rewind\+To\+Clean\+Point(unsigned long \&ix\+Found)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::rewind\+To\+Clean\+Point (
+\begin{DoxyParamCaption}
+\item[{unsigned long \&}]{ix\+Found}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_ae0bea45c4dcee92d7e16354d13a824ee}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!seek\+To\+Index\+Record@{seek\+To\+Index\+Record}}
+\index{seek\+To\+Index\+Record@{seek\+To\+Index\+Record}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{seek\+To\+Index\+Record(unsigned long index\+Record\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::seek\+To\+Index\+Record (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{index\+Record\+Number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_ac64a76f1d976cf383473071ceca1174d}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!set\+M\+P\+E\+G\+Version\+From\+Record\+Type@{set\+M\+P\+E\+G\+Version\+From\+Record\+Type}}
+\index{set\+M\+P\+E\+G\+Version\+From\+Record\+Type@{set\+M\+P\+E\+G\+Version\+From\+Record\+Type}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{set\+M\+P\+E\+G\+Version\+From\+Record\+Type(u\+\_\+int8\+\_\+t record\+Type)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::set\+M\+P\+E\+G\+Version\+From\+Record\+Type (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t}]{record\+Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_a94dd837ca99fcc3a33e83789b9b82335}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!size\+From\+Buf@{size\+From\+Buf}}
+\index{size\+From\+Buf@{size\+From\+Buf}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{size\+From\+Buf()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::size\+From\+Buf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_aa51db9140034384d514fea66e6752faf}
+
+
+Definition at line 77 of file M\+P\+E\+G2\+Transport\+Stream\+Index\+File.\+hh.
+
+
+
+References f\+Buf.
+
+
+\begin{DoxyCode}
+77 \{ \textcolor{keywordflow}{return} fBuf[2]; \}
+\end{DoxyCode}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!stop\+Reading@{stop\+Reading}}
+\index{stop\+Reading@{stop\+Reading}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{stop\+Reading()}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::stop\+Reading (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMPEG2TransportStreamIndexFile_a3e90999ff63336d4234835f3c1afbdca}
+
+
+Definition at line 60 of file M\+P\+E\+G2\+Transport\+Stream\+Index\+File.\+hh.
+
+
+
+References close\+Fid().
+
+
+\begin{DoxyCode}
+60 \{ closeFid(); \}
+\end{DoxyCode}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!ts\+Packet\+Num\+From\+Buf@{ts\+Packet\+Num\+From\+Buf}}
+\index{ts\+Packet\+Num\+From\+Buf@{ts\+Packet\+Num\+From\+Buf}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{ts\+Packet\+Num\+From\+Buf()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::ts\+Packet\+Num\+From\+Buf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_a92d7becff6c0d0a2f6840e3d1f3dd2f8}
+
+
+\subsection{Field Documentation}
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!f\+Buf@{f\+Buf}}
+\index{f\+Buf@{f\+Buf}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{f\+Buf}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::f\+Buf[{\bf I\+N\+D\+E\+X\+\_\+\+R\+E\+C\+O\+R\+D\+\_\+\+S\+I\+Z\+E}]\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_a2c4373fe2487d3f0466eb096a642fab5}
+
+
+Definition at line 93 of file M\+P\+E\+G2\+Transport\+Stream\+Index\+File.\+hh.
+
+
+
+Referenced by offset\+From\+Buf(), record\+Type\+From\+Buf(), and size\+From\+Buf().
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!f\+Cached\+Index\+Record\+Number@{f\+Cached\+Index\+Record\+Number}}
+\index{f\+Cached\+Index\+Record\+Number@{f\+Cached\+Index\+Record\+Number}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{f\+Cached\+Index\+Record\+Number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::f\+Cached\+Index\+Record\+Number\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_afa41bfca4ff6ac6d233f03f3e1a8bf80}
+
+
+Definition at line 91 of file M\+P\+E\+G2\+Transport\+Stream\+Index\+File.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!f\+Cached\+P\+C\+R@{f\+Cached\+P\+C\+R}}
+\index{f\+Cached\+P\+C\+R@{f\+Cached\+P\+C\+R}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{f\+Cached\+P\+C\+R}]{\setlength{\rightskip}{0pt plus 5cm}float M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::f\+Cached\+P\+C\+R\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_a3c82686da45adbe7cb04336fa14f8cb1}
+
+
+Definition at line 90 of file M\+P\+E\+G2\+Transport\+Stream\+Index\+File.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!f\+Cached\+T\+S\+Packet\+Number@{f\+Cached\+T\+S\+Packet\+Number}}
+\index{f\+Cached\+T\+S\+Packet\+Number@{f\+Cached\+T\+S\+Packet\+Number}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{f\+Cached\+T\+S\+Packet\+Number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::f\+Cached\+T\+S\+Packet\+Number\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_aa7bc007d46f0619a046ea95066467a43}
+
+
+Definition at line 91 of file M\+P\+E\+G2\+Transport\+Stream\+Index\+File.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!f\+Current\+Index\+Record\+Num@{f\+Current\+Index\+Record\+Num}}
+\index{f\+Current\+Index\+Record\+Num@{f\+Current\+Index\+Record\+Num}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{f\+Current\+Index\+Record\+Num}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::f\+Current\+Index\+Record\+Num\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_a40552348014b70b98d050ae7f8e420f5}
+
+
+Definition at line 89 of file M\+P\+E\+G2\+Transport\+Stream\+Index\+File.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!f\+Fid@{f\+Fid}}
+\index{f\+Fid@{f\+Fid}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{f\+Fid}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::f\+Fid\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_aa9d8252fa81128ea1c850f191b56dc62}
+
+
+Definition at line 87 of file M\+P\+E\+G2\+Transport\+Stream\+Index\+File.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!f\+File\+Name@{f\+File\+Name}}
+\index{f\+File\+Name@{f\+File\+Name}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{f\+File\+Name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::f\+File\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_a8f570814e55c29c3834befd8c7ad94da}
+
+
+Definition at line 86 of file M\+P\+E\+G2\+Transport\+Stream\+Index\+File.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!f\+M\+P\+E\+G\+Version@{f\+M\+P\+E\+G\+Version}}
+\index{f\+M\+P\+E\+G\+Version@{f\+M\+P\+E\+G\+Version}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{f\+M\+P\+E\+G\+Version}]{\setlength{\rightskip}{0pt plus 5cm}int M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::f\+M\+P\+E\+G\+Version\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_aec64ca7dac6711a47d5d9f050155a84f}
+
+
+Definition at line 88 of file M\+P\+E\+G2\+Transport\+Stream\+Index\+File.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}!f\+Num\+Index\+Records@{f\+Num\+Index\+Records}}
+\index{f\+Num\+Index\+Records@{f\+Num\+Index\+Records}!M\+P\+E\+G2\+Transport\+Stream\+Index\+File@{M\+P\+E\+G2\+Transport\+Stream\+Index\+File}}
+\subsubsection[{f\+Num\+Index\+Records}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long M\+P\+E\+G2\+Transport\+Stream\+Index\+File\+::f\+Num\+Index\+Records\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamIndexFile_a5f47fc553d12caa3ee263481db7f5dc8}
+
+
+Definition at line 92 of file M\+P\+E\+G2\+Transport\+Stream\+Index\+File.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf M\+P\+E\+G2\+Transport\+Stream\+Index\+File.\+hh}\end{DoxyCompactItemize}

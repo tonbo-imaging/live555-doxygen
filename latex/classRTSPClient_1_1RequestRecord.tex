@@ -1,0 +1,537 @@
+\section{R\+T\+S\+P\+Client\+:\+:Request\+Record Class Reference}
+\label{classRTSPClient_1_1RequestRecord}\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+
+
+{\ttfamily \#include $<$R\+T\+S\+P\+Client.\+hh$>$}
+
+
+
+Inheritance diagram for R\+T\+S\+P\+Client\+:\+:Request\+Record\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRTSPClient_1_1RequestRecord__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for R\+T\+S\+P\+Client\+:\+:Request\+Record\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRTSPClient_1_1RequestRecord__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Request\+Record} (unsigned {\bf cseq}, char const $\ast${\bf command\+Name}, {\bf response\+Handler} $\ast${\bf handler}, {\bf Media\+Session} $\ast${\bf session}={\bf N\+U\+L\+L}, {\bf Media\+Subsession} $\ast${\bf subsession}={\bf N\+U\+L\+L}, u\+\_\+int32\+\_\+t {\bf boolean\+Flags}=0, double {\bf start}=0.\+0f, double end=-\/1.\+0f, float scale=1.\+0f, char const $\ast$content\+Str=\+N\+U\+L\+L)
+\item 
+{\bf Request\+Record} (unsigned {\bf cseq}, {\bf response\+Handler} $\ast${\bf handler}, char const $\ast${\bf abs\+Start\+Time}, char const $\ast${\bf abs\+End\+Time}={\bf N\+U\+L\+L}, float {\bf scale}=1.\+0f, Media\+Session $\ast$session=\+N\+U\+L\+L, Media\+Subsession $\ast$subsession=\+N\+U\+L\+L)
+\item 
+virtual {\bf $\sim$\+Request\+Record} ()
+\item 
+{\bf Request\+Record} $\ast$\& {\bf next} ()
+\item 
+unsigned \& {\bf cseq} ()
+\item 
+char const $\ast$ {\bf command\+Name} () const 
+\item 
+{\bf Media\+Session} $\ast$ {\bf session} () const 
+\item 
+{\bf Media\+Subsession} $\ast$ {\bf subsession} () const 
+\item 
+u\+\_\+int32\+\_\+t {\bf boolean\+Flags} () const 
+\item 
+double {\bf start} () const 
+\item 
+double {\bf end} () const 
+\item 
+char const $\ast$ {\bf abs\+Start\+Time} () const 
+\item 
+char const $\ast$ {\bf abs\+End\+Time} () const 
+\item 
+float {\bf scale} () const 
+\item 
+char $\ast$ {\bf content\+Str} () const 
+\item 
+{\bf response\+Handler} $\ast$\& {\bf handler} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Request\+Record} $\ast$ {\bf f\+Next}
+\item 
+unsigned {\bf f\+C\+Seq}
+\item 
+char const $\ast$ {\bf f\+Command\+Name}
+\item 
+{\bf Media\+Session} $\ast$ {\bf f\+Session}
+\item 
+{\bf Media\+Subsession} $\ast$ {\bf f\+Subsession}
+\item 
+u\+\_\+int32\+\_\+t {\bf f\+Boolean\+Flags}
+\item 
+double {\bf f\+Start}
+\item 
+double {\bf f\+End}
+\item 
+char $\ast$ {\bf f\+Abs\+Start\+Time}
+\item 
+char $\ast$ {\bf f\+Abs\+End\+Time}
+\item 
+float {\bf f\+Scale}
+\item 
+char $\ast$ {\bf f\+Content\+Str}
+\item 
+{\bf response\+Handler} $\ast$ {\bf f\+Handler}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 194 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!Request\+Record@{Request\+Record}}
+\index{Request\+Record@{Request\+Record}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{Request\+Record(unsigned cseq, char const $\ast$command\+Name, response\+Handler $\ast$handler, Media\+Session $\ast$session=\+N\+U\+L\+L, Media\+Subsession $\ast$subsession=\+N\+U\+L\+L, u\+\_\+int32\+\_\+t boolean\+Flags=0, double start=0.\+0f, double end=-\/1.\+0f, float scale=1.\+0f, char const $\ast$content\+Str=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}R\+T\+S\+P\+Client\+::\+Request\+Record\+::\+Request\+Record (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{cseq, }
+\item[{char const $\ast$}]{command\+Name, }
+\item[{{\bf response\+Handler} $\ast$}]{handler, }
+\item[{{\bf Media\+Session} $\ast$}]{session = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{{\bf Media\+Subsession} $\ast$}]{subsession = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{u\+\_\+int32\+\_\+t}]{boolean\+Flags = {\ttfamily 0}, }
+\item[{double}]{start = {\ttfamily 0.0f}, }
+\item[{double}]{end = {\ttfamily -\/1.0f}, }
+\item[{float}]{scale = {\ttfamily 1.0f}, }
+\item[{char const $\ast$}]{content\+Str = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)}\label{classRTSPClient_1_1RequestRecord_a8d9ef3fe81bc9493d47cfd1e6f72a02b}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!Request\+Record@{Request\+Record}}
+\index{Request\+Record@{Request\+Record}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{Request\+Record(unsigned cseq, response\+Handler $\ast$handler, char const $\ast$abs\+Start\+Time, char const $\ast$abs\+End\+Time=\+N\+U\+L\+L, float scale=1.\+0f, Media\+Session $\ast$session=\+N\+U\+L\+L, Media\+Subsession $\ast$subsession=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}R\+T\+S\+P\+Client\+::\+Request\+Record\+::\+Request\+Record (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{cseq, }
+\item[{{\bf response\+Handler} $\ast$}]{handler, }
+\item[{char const $\ast$}]{abs\+Start\+Time, }
+\item[{char const $\ast$}]{abs\+End\+Time = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{float}]{scale = {\ttfamily 1.0f}, }
+\item[{{\bf Media\+Session} $\ast$}]{session = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{{\bf Media\+Subsession} $\ast$}]{subsession = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)}\label{classRTSPClient_1_1RequestRecord_a8a0a0b1ee21cfa314cb3d31fb1eef918}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!````~Request\+Record@{$\sim$\+Request\+Record}}
+\index{````~Request\+Record@{$\sim$\+Request\+Record}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{$\sim$\+Request\+Record()}]{\setlength{\rightskip}{0pt plus 5cm}virtual R\+T\+S\+P\+Client\+::\+Request\+Record\+::$\sim$\+Request\+Record (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classRTSPClient_1_1RequestRecord_af60f37698e58228c2449a1bec4e09f85}
+
+
+\subsection{Member Function Documentation}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!abs\+End\+Time@{abs\+End\+Time}}
+\index{abs\+End\+Time@{abs\+End\+Time}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{abs\+End\+Time() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::abs\+End\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTSPClient_1_1RequestRecord_aedd85446dc16aff36dead39df1767e48}
+
+
+Definition at line 214 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References f\+Abs\+End\+Time.
+
+
+\begin{DoxyCode}
+214 \{ \textcolor{keywordflow}{return} fAbsEndTime; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!abs\+Start\+Time@{abs\+Start\+Time}}
+\index{abs\+Start\+Time@{abs\+Start\+Time}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{abs\+Start\+Time() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::abs\+Start\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTSPClient_1_1RequestRecord_a7ae5b852477853dee80b90385f0c5c73}
+
+
+Definition at line 213 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References f\+Abs\+Start\+Time.
+
+
+\begin{DoxyCode}
+213 \{ \textcolor{keywordflow}{return} fAbsStartTime; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!boolean\+Flags@{boolean\+Flags}}
+\index{boolean\+Flags@{boolean\+Flags}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{boolean\+Flags() const }]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+S\+P\+Client\+::\+Request\+Record\+::boolean\+Flags (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTSPClient_1_1RequestRecord_ac0b6f8e34d9bbe7e8ed41aa7aa4df838}
+
+
+Definition at line 210 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References f\+Boolean\+Flags.
+
+
+\begin{DoxyCode}
+210 \{ \textcolor{keywordflow}{return} fBooleanFlags; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!command\+Name@{command\+Name}}
+\index{command\+Name@{command\+Name}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{command\+Name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::command\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTSPClient_1_1RequestRecord_a4860ce1823b7df69b2c23171e72d9c37}
+
+
+Definition at line 207 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References f\+Command\+Name.
+
+
+\begin{DoxyCode}
+207 \{ \textcolor{keywordflow}{return} fCommandName; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!content\+Str@{content\+Str}}
+\index{content\+Str@{content\+Str}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{content\+Str() const }]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::content\+Str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTSPClient_1_1RequestRecord_aceb3f4d253f83750af074046c2e756f7}
+
+
+Definition at line 216 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References f\+Content\+Str.
+
+
+\begin{DoxyCode}
+216 \{ \textcolor{keywordflow}{return} fContentStr; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!cseq@{cseq}}
+\index{cseq@{cseq}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{cseq()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned\& R\+T\+S\+P\+Client\+::\+Request\+Record\+::cseq (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTSPClient_1_1RequestRecord_a77a7fb3a4cfcb958569c663879855fe2}
+
+
+Definition at line 206 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References f\+C\+Seq.
+
+
+\begin{DoxyCode}
+206 \{ \textcolor{keywordflow}{return} fCSeq; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!end@{end}}
+\index{end@{end}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{end() const }]{\setlength{\rightskip}{0pt plus 5cm}double R\+T\+S\+P\+Client\+::\+Request\+Record\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTSPClient_1_1RequestRecord_ad72427f0d3622270387bb15373f9dfa4}
+
+
+Definition at line 212 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References f\+End.
+
+
+\begin{DoxyCode}
+212 \{ \textcolor{keywordflow}{return} fEnd; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!handler@{handler}}
+\index{handler@{handler}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{handler()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf response\+Handler}$\ast$\& R\+T\+S\+P\+Client\+::\+Request\+Record\+::handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTSPClient_1_1RequestRecord_aa64e60fe0193b571a9695ec2ba65706c}
+
+
+Definition at line 217 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References f\+Handler.
+
+
+\begin{DoxyCode}
+217 \{ \textcolor{keywordflow}{return} fHandler; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!next@{next}}
+\index{next@{next}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{next()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Request\+Record}$\ast$\& R\+T\+S\+P\+Client\+::\+Request\+Record\+::next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTSPClient_1_1RequestRecord_ad27bc96348a091072d8429cc2289a955}
+
+
+Definition at line 205 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References f\+Next.
+
+
+\begin{DoxyCode}
+205 \{ \textcolor{keywordflow}{return} fNext; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!scale@{scale}}
+\index{scale@{scale}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{scale() const }]{\setlength{\rightskip}{0pt plus 5cm}float R\+T\+S\+P\+Client\+::\+Request\+Record\+::scale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTSPClient_1_1RequestRecord_aa069ebb663831f82b0134594414c561b}
+
+
+Definition at line 215 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References f\+Scale.
+
+
+\begin{DoxyCode}
+215 \{ \textcolor{keywordflow}{return} fScale; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!session@{session}}
+\index{session@{session}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{session() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Media\+Session}$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTSPClient_1_1RequestRecord_a42dfe543d6a7fc6c6f446c9add3e9057}
+
+
+Definition at line 208 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References f\+Session.
+
+
+\begin{DoxyCode}
+208 \{ \textcolor{keywordflow}{return} fSession; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!start@{start}}
+\index{start@{start}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{start() const }]{\setlength{\rightskip}{0pt plus 5cm}double R\+T\+S\+P\+Client\+::\+Request\+Record\+::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTSPClient_1_1RequestRecord_a87118561b85b8b929831f9d4283e76c8}
+
+
+Definition at line 211 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References f\+Start.
+
+
+\begin{DoxyCode}
+211 \{ \textcolor{keywordflow}{return} fStart; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!subsession@{subsession}}
+\index{subsession@{subsession}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{subsession() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Media\+Subsession}$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::subsession (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTSPClient_1_1RequestRecord_a8d4455c1ac686bbd2d6d50c5120faa78}
+
+
+Definition at line 209 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References f\+Subsession.
+
+
+\begin{DoxyCode}
+209 \{ \textcolor{keywordflow}{return} fSubsession; \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!f\+Abs\+End\+Time@{f\+Abs\+End\+Time}}
+\index{f\+Abs\+End\+Time@{f\+Abs\+End\+Time}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{f\+Abs\+End\+Time}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Abs\+End\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classRTSPClient_1_1RequestRecord_a8923f59b392e4d8179f9a5cdef3a0369}
+
+
+Definition at line 227 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+Referenced by abs\+End\+Time().
+
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!f\+Abs\+Start\+Time@{f\+Abs\+Start\+Time}}
+\index{f\+Abs\+Start\+Time@{f\+Abs\+Start\+Time}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{f\+Abs\+Start\+Time}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Abs\+Start\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classRTSPClient_1_1RequestRecord_a983384557299dddaba241043fa4b413b}
+
+
+Definition at line 227 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+Referenced by abs\+Start\+Time().
+
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!f\+Boolean\+Flags@{f\+Boolean\+Flags}}
+\index{f\+Boolean\+Flags@{f\+Boolean\+Flags}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{f\+Boolean\+Flags}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Boolean\+Flags\hspace{0.3cm}{\ttfamily [private]}}\label{classRTSPClient_1_1RequestRecord_aac2ba24b3af43d5285cc04db3cc645d0}
+
+
+Definition at line 225 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+Referenced by boolean\+Flags().
+
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!f\+Command\+Name@{f\+Command\+Name}}
+\index{f\+Command\+Name@{f\+Command\+Name}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{f\+Command\+Name}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Command\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classRTSPClient_1_1RequestRecord_a84e2e568f1406cf5eeaeeda7161351e4}
+
+
+Definition at line 222 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+Referenced by command\+Name().
+
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!f\+Content\+Str@{f\+Content\+Str}}
+\index{f\+Content\+Str@{f\+Content\+Str}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{f\+Content\+Str}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Content\+Str\hspace{0.3cm}{\ttfamily [private]}}\label{classRTSPClient_1_1RequestRecord_aed9d0bbb1c947163f318f3d63f1d21ef}
+
+
+Definition at line 229 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+Referenced by content\+Str().
+
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!f\+C\+Seq@{f\+C\+Seq}}
+\index{f\+C\+Seq@{f\+C\+Seq}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{f\+C\+Seq}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+C\+Seq\hspace{0.3cm}{\ttfamily [private]}}\label{classRTSPClient_1_1RequestRecord_aa2379d06451c6e84316dbdb33c712a25}
+
+
+Definition at line 221 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+Referenced by cseq().
+
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!f\+End@{f\+End}}
+\index{f\+End@{f\+End}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{f\+End}]{\setlength{\rightskip}{0pt plus 5cm}double R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+End\hspace{0.3cm}{\ttfamily [private]}}\label{classRTSPClient_1_1RequestRecord_a507c7bb85550e32cba42d9554850b8db}
+
+
+Definition at line 226 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+Referenced by end().
+
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!f\+Handler@{f\+Handler}}
+\index{f\+Handler@{f\+Handler}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{f\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf response\+Handler}$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Handler\hspace{0.3cm}{\ttfamily [private]}}\label{classRTSPClient_1_1RequestRecord_a9775fec0764d3f5da69d95f1f15bf58e}
+
+
+Definition at line 230 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+Referenced by handler().
+
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!f\+Next@{f\+Next}}
+\index{f\+Next@{f\+Next}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{f\+Next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Request\+Record}$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Next\hspace{0.3cm}{\ttfamily [private]}}\label{classRTSPClient_1_1RequestRecord_aad2623f3705d5409d713cb4493ac3d7c}
+
+
+Definition at line 220 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+Referenced by next().
+
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!f\+Scale@{f\+Scale}}
+\index{f\+Scale@{f\+Scale}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{f\+Scale}]{\setlength{\rightskip}{0pt plus 5cm}float R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Scale\hspace{0.3cm}{\ttfamily [private]}}\label{classRTSPClient_1_1RequestRecord_a65245a4643f3b98f5b800b8171be8c19}
+
+
+Definition at line 228 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+Referenced by scale().
+
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!f\+Session@{f\+Session}}
+\index{f\+Session@{f\+Session}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{f\+Session}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Media\+Session}$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Session\hspace{0.3cm}{\ttfamily [private]}}\label{classRTSPClient_1_1RequestRecord_a4b85e43e15d2d6e794881120916ba380}
+
+
+Definition at line 223 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+Referenced by session().
+
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!f\+Start@{f\+Start}}
+\index{f\+Start@{f\+Start}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{f\+Start}]{\setlength{\rightskip}{0pt plus 5cm}double R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Start\hspace{0.3cm}{\ttfamily [private]}}\label{classRTSPClient_1_1RequestRecord_a2bbfa566466243644ee0a4fab18b78af}
+
+
+Definition at line 226 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+Referenced by start().
+
+\index{R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}!f\+Subsession@{f\+Subsession}}
+\index{f\+Subsession@{f\+Subsession}!R\+T\+S\+P\+Client\+::\+Request\+Record@{R\+T\+S\+P\+Client\+::\+Request\+Record}}
+\subsubsection[{f\+Subsession}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Media\+Subsession}$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Subsession\hspace{0.3cm}{\ttfamily [private]}}\label{classRTSPClient_1_1RequestRecord_a1e6a80cb5e4eb5461cf5e6292a2cc77b}
+
+
+Definition at line 224 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+Referenced by subsession().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf R\+T\+S\+P\+Client.\+hh}\end{DoxyCompactItemize}

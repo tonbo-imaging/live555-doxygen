@@ -1,0 +1,195 @@
+\section{Tunnel\+Encapsulation\+Trailer Class Reference}
+\label{classTunnelEncapsulationTrailer}\index{Tunnel\+Encapsulation\+Trailer@{Tunnel\+Encapsulation\+Trailer}}
+
+
+{\ttfamily \#include $<$Tunnel\+Encaps.\+hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Cookie} \& {\bf src\+Cookie} ()
+\item 
+{\bf Cookie} \& {\bf dst\+Cookie} ()
+\item 
+u\+\_\+int32\+\_\+t \& {\bf address} ()
+\item 
+{\bf Port} \& {\bf port} ()
+\item 
+u\+\_\+int8\+\_\+t \& {\bf ttl} ()
+\item 
+u\+\_\+int8\+\_\+t \& {\bf command} ()
+\item 
+u\+\_\+int32\+\_\+t \& {\bf aux\+Address} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ {\bf byte\+Offset} (int char\+Index)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 30 of file Tunnel\+Encaps.\+hh.
+
+
+
+\subsection{Member Function Documentation}
+\index{Tunnel\+Encapsulation\+Trailer@{Tunnel\+Encapsulation\+Trailer}!address@{address}}
+\index{address@{address}!Tunnel\+Encapsulation\+Trailer@{Tunnel\+Encapsulation\+Trailer}}
+\subsubsection[{address()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t\& Tunnel\+Encapsulation\+Trailer\+::address (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTunnelEncapsulationTrailer_a08089613e4e91d20a8fe368e3ffb80fa}
+
+
+Definition at line 48 of file Tunnel\+Encaps.\+hh.
+
+
+
+References byte\+Offset().
+
+
+\begin{DoxyCode}
+49                 \{ \textcolor{keywordflow}{return} *(u\_int32\_t*)byteOffset(4); \}
+\end{DoxyCode}
+\index{Tunnel\+Encapsulation\+Trailer@{Tunnel\+Encapsulation\+Trailer}!aux\+Address@{aux\+Address}}
+\index{aux\+Address@{aux\+Address}!Tunnel\+Encapsulation\+Trailer@{Tunnel\+Encapsulation\+Trailer}}
+\subsubsection[{aux\+Address()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t\& Tunnel\+Encapsulation\+Trailer\+::aux\+Address (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTunnelEncapsulationTrailer_a42df1bac389b2fcf4e00c8deb8525596}
+
+
+Definition at line 57 of file Tunnel\+Encaps.\+hh.
+
+
+
+References byte\+Offset().
+
+
+\begin{DoxyCode}
+58                 \{ \textcolor{keywordflow}{return} *(u\_int32\_t*)byteOffset(-4); \}
+\end{DoxyCode}
+\index{Tunnel\+Encapsulation\+Trailer@{Tunnel\+Encapsulation\+Trailer}!byte\+Offset@{byte\+Offset}}
+\index{byte\+Offset@{byte\+Offset}!Tunnel\+Encapsulation\+Trailer@{Tunnel\+Encapsulation\+Trailer}}
+\subsubsection[{byte\+Offset(int char\+Index)}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Tunnel\+Encapsulation\+Trailer\+::byte\+Offset (
+\begin{DoxyParamCaption}
+\item[{int}]{char\+Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classTunnelEncapsulationTrailer_a75b8eea87c0fdfc3bc153535c9f4e259}
+
+
+Definition at line 61 of file Tunnel\+Encaps.\+hh.
+
+
+
+Referenced by address(), aux\+Address(), command(), dst\+Cookie(), port(), src\+Cookie(), and ttl().
+
+
+\begin{DoxyCode}
+62                 \{ \textcolor{keywordflow}{return} ((\textcolor{keywordtype}{char}*)\textcolor{keyword}{this}) + charIndex; \}
+\end{DoxyCode}
+\index{Tunnel\+Encapsulation\+Trailer@{Tunnel\+Encapsulation\+Trailer}!command@{command}}
+\index{command@{command}!Tunnel\+Encapsulation\+Trailer@{Tunnel\+Encapsulation\+Trailer}}
+\subsubsection[{command()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t\& Tunnel\+Encapsulation\+Trailer\+::command (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTunnelEncapsulationTrailer_a4cb370bcce29fafbff6ee581080d890a}
+
+
+Definition at line 54 of file Tunnel\+Encaps.\+hh.
+
+
+
+References byte\+Offset().
+
+
+\begin{DoxyCode}
+55                 \{ \textcolor{keywordflow}{return} *(u\_int8\_t*)byteOffset(11); \}
+\end{DoxyCode}
+\index{Tunnel\+Encapsulation\+Trailer@{Tunnel\+Encapsulation\+Trailer}!dst\+Cookie@{dst\+Cookie}}
+\index{dst\+Cookie@{dst\+Cookie}!Tunnel\+Encapsulation\+Trailer@{Tunnel\+Encapsulation\+Trailer}}
+\subsubsection[{dst\+Cookie()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cookie}\& Tunnel\+Encapsulation\+Trailer\+::dst\+Cookie (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTunnelEncapsulationTrailer_a3fe8aaef53c5b2904de7ca9995bb281a}
+
+
+Definition at line 46 of file Tunnel\+Encaps.\+hh.
+
+
+
+References byte\+Offset().
+
+
+\begin{DoxyCode}
+47                 \{ \textcolor{keywordflow}{return} *(Cookie*)byteOffset(2); \}
+\end{DoxyCode}
+\index{Tunnel\+Encapsulation\+Trailer@{Tunnel\+Encapsulation\+Trailer}!port@{port}}
+\index{port@{port}!Tunnel\+Encapsulation\+Trailer@{Tunnel\+Encapsulation\+Trailer}}
+\subsubsection[{port()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Port}\& Tunnel\+Encapsulation\+Trailer\+::port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTunnelEncapsulationTrailer_ac39ae098ae688bc39ca241b25948cfc0}
+
+
+Definition at line 50 of file Tunnel\+Encaps.\+hh.
+
+
+
+References byte\+Offset().
+
+
+\begin{DoxyCode}
+51                 \{ \textcolor{keywordflow}{return} *(Port*)byteOffset(8); \}
+\end{DoxyCode}
+\index{Tunnel\+Encapsulation\+Trailer@{Tunnel\+Encapsulation\+Trailer}!src\+Cookie@{src\+Cookie}}
+\index{src\+Cookie@{src\+Cookie}!Tunnel\+Encapsulation\+Trailer@{Tunnel\+Encapsulation\+Trailer}}
+\subsubsection[{src\+Cookie()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cookie}\& Tunnel\+Encapsulation\+Trailer\+::src\+Cookie (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTunnelEncapsulationTrailer_a6ccbdf20ede5dc8538e636fa52b986c1}
+
+
+Definition at line 44 of file Tunnel\+Encaps.\+hh.
+
+
+
+References byte\+Offset().
+
+
+\begin{DoxyCode}
+45                 \{ \textcolor{keywordflow}{return} *(Cookie*)byteOffset(0); \}
+\end{DoxyCode}
+\index{Tunnel\+Encapsulation\+Trailer@{Tunnel\+Encapsulation\+Trailer}!ttl@{ttl}}
+\index{ttl@{ttl}!Tunnel\+Encapsulation\+Trailer@{Tunnel\+Encapsulation\+Trailer}}
+\subsubsection[{ttl()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t\& Tunnel\+Encapsulation\+Trailer\+::ttl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTunnelEncapsulationTrailer_a21ef54146767c70f6d96819db7d31776}
+
+
+Definition at line 52 of file Tunnel\+Encaps.\+hh.
+
+
+
+References byte\+Offset().
+
+
+\begin{DoxyCode}
+53                 \{ \textcolor{keywordflow}{return} *(u\_int8\_t*)byteOffset(10); \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+groupsock/include/{\bf Tunnel\+Encaps.\+hh}\end{DoxyCompactItemize}

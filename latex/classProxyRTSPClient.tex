@@ -1,0 +1,1092 @@
+\section{Proxy\+R\+T\+S\+P\+Client Class Reference}
+\label{classProxyRTSPClient}\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+
+
+{\ttfamily \#include $<$Proxy\+Server\+Media\+Session.\+hh$>$}
+
+
+
+Inheritance diagram for Proxy\+R\+T\+S\+P\+Client\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=137pt]{classProxyRTSPClient__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Proxy\+R\+T\+S\+P\+Client\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classProxyRTSPClient__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void( {\bf response\+Handler}) ({\bf R\+T\+S\+P\+Client} $\ast$rtsp\+Client, int result\+Code, char $\ast$result\+String)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Proxy\+R\+T\+S\+P\+Client} (class {\bf Proxy\+Server\+Media\+Session} \&our\+Server\+Media\+Session, char const $\ast$rtsp\+U\+R\+L, char const $\ast$username, char const $\ast$password, {\bf port\+Num\+Bits} tunnel\+Over\+H\+T\+T\+P\+Port\+Num, int verbosity\+Level, int socket\+Num\+To\+Server)
+\item 
+virtual {\bf $\sim$\+Proxy\+R\+T\+S\+P\+Client} ()
+\item 
+void {\bf continue\+After\+D\+E\+S\+C\+R\+I\+B\+E} (char const $\ast$sdp\+Description)
+\item 
+void {\bf continue\+After\+Liveness\+Command} (int result\+Code, {\bf Boolean} server\+Supports\+Get\+Parameter)
+\item 
+void {\bf continue\+After\+S\+E\+T\+U\+P} (int result\+Code)
+\item 
+void {\bf continue\+After\+P\+L\+A\+Y} (int result\+Code)
+\item 
+void {\bf schedule\+Reset} ()
+\item 
+unsigned {\bf send\+Describe\+Command} ({\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Options\+Command} ({\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Announce\+Command} (char const $\ast$sdp\+Description, {\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Setup\+Command} ({\bf Media\+Subsession} \&subsession, {\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Boolean} stream\+Outgoing={\bf False}, {\bf Boolean} stream\+Using\+T\+C\+P={\bf False}, {\bf Boolean} force\+Multicast\+On\+Unspecified={\bf False}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Play\+Command} ({\bf Media\+Session} \&session, {\bf response\+Handler} $\ast${\bf response\+Handler}, double start=0.\+0f, double end=-\/1.\+0f, float scale=1.\+0f, Authenticator $\ast$authenticator=\+N\+U\+L\+L)
+\item 
+unsigned {\bf send\+Play\+Command} ({\bf Media\+Subsession} \&subsession, {\bf response\+Handler} $\ast${\bf response\+Handler}, double start=0.\+0f, double end=-\/1.\+0f, float scale=1.\+0f, Authenticator $\ast$authenticator=\+N\+U\+L\+L)
+\item 
+unsigned {\bf send\+Play\+Command} ({\bf Media\+Session} \&session, {\bf response\+Handler} $\ast${\bf response\+Handler}, char const $\ast$abs\+Start\+Time, char const $\ast$abs\+End\+Time={\bf N\+U\+L\+L}, float scale=1.\+0f, Authenticator $\ast$authenticator=\+N\+U\+L\+L)
+\item 
+unsigned {\bf send\+Play\+Command} ({\bf Media\+Subsession} \&subsession, {\bf response\+Handler} $\ast${\bf response\+Handler}, char const $\ast$abs\+Start\+Time, char const $\ast$abs\+End\+Time={\bf N\+U\+L\+L}, float scale=1.\+0f, Authenticator $\ast$authenticator=\+N\+U\+L\+L)
+\item 
+unsigned {\bf send\+Pause\+Command} ({\bf Media\+Session} \&session, {\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Pause\+Command} ({\bf Media\+Subsession} \&subsession, {\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Record\+Command} ({\bf Media\+Session} \&session, {\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Record\+Command} ({\bf Media\+Subsession} \&subsession, {\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Teardown\+Command} ({\bf Media\+Session} \&session, {\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Teardown\+Command} ({\bf Media\+Subsession} \&subsession, {\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Set\+Parameter\+Command} ({\bf Media\+Session} \&session, {\bf response\+Handler} $\ast${\bf response\+Handler}, char const $\ast$parameter\+Name, char const $\ast$parameter\+Value, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Get\+Parameter\+Command} ({\bf Media\+Session} \&session, {\bf response\+Handler} $\ast${\bf response\+Handler}, char const $\ast$parameter\+Name, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+void {\bf send\+Dummy\+U\+D\+P\+Packets} ({\bf Media\+Session} \&session, unsigned num\+Dummy\+Packets=2)
+\item 
+void {\bf send\+Dummy\+U\+D\+P\+Packets} ({\bf Media\+Subsession} \&subsession, unsigned num\+Dummy\+Packets=2)
+\item 
+void {\bf set\+Speed} ({\bf Media\+Session} \&session, float speed=1.\+0f)
+\item 
+{\bf Boolean} {\bf change\+Response\+Handler} (unsigned cseq, {\bf response\+Handler} $\ast$new\+Response\+Handler)
+\item 
+int {\bf socket\+Num} () const 
+\item 
+void {\bf set\+User\+Agent\+String} (char const $\ast$user\+Agent\+Name)
+\item 
+void {\bf disallow\+Basic\+Authentication} ()
+\item 
+unsigned {\bf session\+Timeout\+Parameter} () const 
+\item 
+char const $\ast$ {\bf url} () const 
+\item 
+{\bf Usage\+Environment} \& {\bf envir} () const 
+\item 
+char const $\ast$ {\bf name} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Source} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Sink} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+C\+P\+Instance} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Server} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Media\+Session} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Server\+Media\+Session} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf R\+T\+S\+P\+Client} $\ast$ {\bf create\+New} ({\bf Usage\+Environment} \&env, char const $\ast$rtsp\+U\+R\+L, int verbosity\+Level=0, char const $\ast$application\+Name={\bf N\+U\+L\+L}, {\bf port\+Num\+Bits} tunnel\+Over\+H\+T\+T\+P\+Port\+Num=0, int socket\+Num\+To\+Server=-\/1)
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$source\+Name, {\bf R\+T\+S\+P\+Client} $\ast$\&result\+Client)
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name, {\bf Medium} $\ast$\&result\+Medium)
+\item 
+static {\bf Boolean} {\bf parse\+R\+T\+S\+P\+U\+R\+L} ({\bf Usage\+Environment} \&env, char const $\ast${\bf url}, char $\ast$\&username, char $\ast$\&password, {\bf Net\+Address} \&address, {\bf port\+Num\+Bits} \&port\+Num, char const $\ast$$\ast$url\+Suffix={\bf N\+U\+L\+L})
+\item 
+static void {\bf close} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name)
+\item 
+static void {\bf close} ({\bf Medium} $\ast$medium)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+u\+\_\+int16\+\_\+t {\bf desired\+Max\+Incoming\+Packet\+Size}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned {\bf response\+Buffer\+Size}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf set\+Base\+U\+R\+L} (char const $\ast${\bf url})
+\item 
+int {\bf grab\+Socket} ()
+\item 
+virtual unsigned {\bf send\+Request} ({\bf Request\+Record} $\ast$request)
+\item 
+virtual {\bf Boolean} {\bf set\+Request\+Fields} ({\bf Request\+Record} $\ast$request, char $\ast$\&cmd\+U\+R\+L, {\bf Boolean} \&cmd\+U\+R\+L\+Was\+Allocated, char const $\ast$\&protocol\+Str, char $\ast$\&extra\+Headers, {\bf Boolean} \&extra\+Headers\+Were\+Allocated)
+\item 
+{\bf Task\+Token} \& {\bf next\+Task} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf f\+Verbosity\+Level}
+\item 
+unsigned {\bf f\+C\+Seq}
+\item 
+{\bf Authenticator} {\bf f\+Current\+Authenticator}
+\item 
+{\bf Boolean} {\bf f\+Allow\+Basic\+Authentication}
+\item 
+{\bf net\+Address\+Bits} {\bf f\+Server\+Address}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf reset} ()
+\item 
+int {\bf connect\+To\+Server} (int {\bf socket\+Num}, {\bf port\+Num\+Bits} remote\+Port\+Num)
+\item 
+{\bf Authenticator} $\ast$ {\bf auth} ()
+\item 
+void {\bf schedule\+Liveness\+Command} ()
+\item 
+void {\bf do\+Reset} ()
+\item 
+void {\bf schedule\+D\+E\+S\+C\+R\+I\+B\+E\+Command} ()
+\item 
+void {\bf handle\+Subsession\+Timeout} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf send\+Liveness\+Command} (void $\ast$client\+Data)
+\item 
+static void {\bf do\+Reset} (void $\ast$client\+Data)
+\item 
+static void {\bf send\+D\+E\+S\+C\+R\+I\+B\+E} (void $\ast$client\+Data)
+\item 
+static void {\bf subsession\+Timeout} (void $\ast$client\+Data)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Proxy\+Server\+Media\+Session} \& {\bf f\+Our\+Server\+Media\+Session}
+\item 
+char $\ast$ {\bf f\+Our\+U\+R\+L}
+\item 
+{\bf Authenticator} $\ast$ {\bf f\+Our\+Authenticator}
+\item 
+{\bf Boolean} {\bf f\+Stream\+R\+T\+P\+Over\+T\+C\+P}
+\item 
+class {\bf Proxy\+Server\+Media\+Subsession} $\ast$ {\bf f\+Setup\+Queue\+Head}
+\item 
+class {\bf Proxy\+Server\+Media\+Subsession} $\ast$ {\bf f\+Setup\+Queue\+Tail}
+\item 
+unsigned {\bf f\+Num\+Setups\+Done}
+\item 
+unsigned {\bf f\+Next\+D\+E\+S\+C\+R\+I\+B\+E\+Delay}
+\item 
+{\bf Boolean} {\bf f\+Server\+Supports\+Get\+Parameter}
+\item 
+{\bf Boolean} {\bf f\+Last\+Command\+Was\+P\+L\+A\+Y}
+\item 
+{\bf Boolean} {\bf f\+Done\+D\+E\+S\+C\+R\+I\+B\+E}
+\item 
+{\bf Task\+Token} {\bf f\+Liveness\+Command\+Task}
+\item 
+{\bf Task\+Token} {\bf f\+D\+E\+S\+C\+R\+I\+B\+E\+Command\+Task}
+\item 
+{\bf Task\+Token} {\bf f\+Subsession\+Timer\+Task}
+\item 
+{\bf Task\+Token} {\bf f\+Reset\+Task}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Proxy\+Server\+Media\+Session}
+\item 
+class {\bf Proxy\+Server\+Media\+Subsession}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 42 of file Proxy\+Server\+Media\+Session.\+hh.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!response\+Handler@{response\+Handler}}
+\index{response\+Handler@{response\+Handler}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{response\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( R\+T\+S\+P\+Client\+::response\+Handler) ({\bf R\+T\+S\+P\+Client} $\ast$rtsp\+Client, int result\+Code, char $\ast$result\+String)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a76be2eeb7a866cef6a131c4ea2dde998}
+
+
+Definition at line 52 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{Proxy\+R\+T\+S\+P\+Client(class Proxy\+Server\+Media\+Session \&our\+Server\+Media\+Session, char const $\ast$rtsp\+U\+R\+L, char const $\ast$username, char const $\ast$password, port\+Num\+Bits tunnel\+Over\+H\+T\+T\+P\+Port\+Num, int verbosity\+Level, int socket\+Num\+To\+Server)}]{\setlength{\rightskip}{0pt plus 5cm}Proxy\+R\+T\+S\+P\+Client\+::\+Proxy\+R\+T\+S\+P\+Client (
+\begin{DoxyParamCaption}
+\item[{class {\bf Proxy\+Server\+Media\+Session} \&}]{our\+Server\+Media\+Session, }
+\item[{char const $\ast$}]{rtsp\+U\+R\+L, }
+\item[{char const $\ast$}]{username, }
+\item[{char const $\ast$}]{password, }
+\item[{{\bf port\+Num\+Bits}}]{tunnel\+Over\+H\+T\+T\+P\+Port\+Num, }
+\item[{int}]{verbosity\+Level, }
+\item[{int}]{socket\+Num\+To\+Server}
+\end{DoxyParamCaption}
+)}\label{classProxyRTSPClient_a1edf42b1e21c7494d13134828b365dea}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!````~Proxy\+R\+T\+S\+P\+Client@{$\sim$\+Proxy\+R\+T\+S\+P\+Client}}
+\index{````~Proxy\+R\+T\+S\+P\+Client@{$\sim$\+Proxy\+R\+T\+S\+P\+Client}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{$\sim$\+Proxy\+R\+T\+S\+P\+Client()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Proxy\+R\+T\+S\+P\+Client\+::$\sim$\+Proxy\+R\+T\+S\+P\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classProxyRTSPClient_a6b4c5cf524977f3af591212d83a8637a}
+
+
+\subsection{Member Function Documentation}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!auth@{auth}}
+\index{auth@{auth}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{auth()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Authenticator}$\ast$ Proxy\+R\+T\+S\+P\+Client\+::auth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classProxyRTSPClient_ad8048e927949059657e07eaf6b62c385}
+
+
+Definition at line 59 of file Proxy\+Server\+Media\+Session.\+hh.
+
+
+
+References f\+Our\+Authenticator.
+
+
+\begin{DoxyCode}
+59 \{ \textcolor{keywordflow}{return} fOurAuthenticator; \}
+\end{DoxyCode}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!change\+Response\+Handler@{change\+Response\+Handler}}
+\index{change\+Response\+Handler@{change\+Response\+Handler}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{change\+Response\+Handler(unsigned cseq, response\+Handler $\ast$new\+Response\+Handler)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+S\+P\+Client\+::change\+Response\+Handler (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{cseq, }
+\item[{{\bf response\+Handler} $\ast$}]{new\+Response\+Handler}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a1442234f611c9e0249c4deca5b6e4fa1}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!close@{close}}
+\index{close@{close}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{close(\+Usage\+Environment \&env, char const $\ast$medium\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a9968c7ce6eedb848f2cc095730c01b17}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!close@{close}}
+\index{close@{close}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{close(\+Medium $\ast$medium)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_aee50624faf6909b3944dd803fd485467}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!connect\+To\+Server@{connect\+To\+Server}}
+\index{connect\+To\+Server@{connect\+To\+Server}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{connect\+To\+Server(int socket\+Num, port\+Num\+Bits remote\+Port\+Num)}]{\setlength{\rightskip}{0pt plus 5cm}int Proxy\+R\+T\+S\+P\+Client\+::connect\+To\+Server (
+\begin{DoxyParamCaption}
+\item[{int}]{socket\+Num, }
+\item[{{\bf port\+Num\+Bits}}]{remote\+Port\+Num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classProxyRTSPClient_a7333f97154774e9a9f1041c9327b8fc4}
+
+
+Reimplemented from {\bf R\+T\+S\+P\+Client} \doxyref{}{p.}{classRTSPClient_adc113aedd82afdceb10692ef068dc260}.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!continue\+After\+D\+E\+S\+C\+R\+I\+B\+E@{continue\+After\+D\+E\+S\+C\+R\+I\+B\+E}}
+\index{continue\+After\+D\+E\+S\+C\+R\+I\+B\+E@{continue\+After\+D\+E\+S\+C\+R\+I\+B\+E}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{continue\+After\+D\+E\+S\+C\+R\+I\+B\+E(char const $\ast$sdp\+Description)}]{\setlength{\rightskip}{0pt plus 5cm}void Proxy\+R\+T\+S\+P\+Client\+::continue\+After\+D\+E\+S\+C\+R\+I\+B\+E (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{sdp\+Description}
+\end{DoxyParamCaption}
+)}\label{classProxyRTSPClient_a69f9942738fdf45f900420d3acf77f1e}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!continue\+After\+Liveness\+Command@{continue\+After\+Liveness\+Command}}
+\index{continue\+After\+Liveness\+Command@{continue\+After\+Liveness\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{continue\+After\+Liveness\+Command(int result\+Code, Boolean server\+Supports\+Get\+Parameter)}]{\setlength{\rightskip}{0pt plus 5cm}void Proxy\+R\+T\+S\+P\+Client\+::continue\+After\+Liveness\+Command (
+\begin{DoxyParamCaption}
+\item[{int}]{result\+Code, }
+\item[{{\bf Boolean}}]{server\+Supports\+Get\+Parameter}
+\end{DoxyParamCaption}
+)}\label{classProxyRTSPClient_a82b7eb1780b61ad7ae0365f6f56f6da3}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!continue\+After\+P\+L\+A\+Y@{continue\+After\+P\+L\+A\+Y}}
+\index{continue\+After\+P\+L\+A\+Y@{continue\+After\+P\+L\+A\+Y}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{continue\+After\+P\+L\+A\+Y(int result\+Code)}]{\setlength{\rightskip}{0pt plus 5cm}void Proxy\+R\+T\+S\+P\+Client\+::continue\+After\+P\+L\+A\+Y (
+\begin{DoxyParamCaption}
+\item[{int}]{result\+Code}
+\end{DoxyParamCaption}
+)}\label{classProxyRTSPClient_a04b87aaff0b40e597e9f6f37c458d6a3}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!continue\+After\+S\+E\+T\+U\+P@{continue\+After\+S\+E\+T\+U\+P}}
+\index{continue\+After\+S\+E\+T\+U\+P@{continue\+After\+S\+E\+T\+U\+P}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{continue\+After\+S\+E\+T\+U\+P(int result\+Code)}]{\setlength{\rightskip}{0pt plus 5cm}void Proxy\+R\+T\+S\+P\+Client\+::continue\+After\+S\+E\+T\+U\+P (
+\begin{DoxyParamCaption}
+\item[{int}]{result\+Code}
+\end{DoxyParamCaption}
+)}\label{classProxyRTSPClient_aa0a54569bd8d82bd289ac475f744d20f}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!create\+New@{create\+New}}
+\index{create\+New@{create\+New}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{create\+New(\+Usage\+Environment \&env, char const $\ast$rtsp\+U\+R\+L, int verbosity\+Level=0, char const $\ast$application\+Name=\+N\+U\+L\+L, port\+Num\+Bits tunnel\+Over\+H\+T\+T\+P\+Port\+Num=0, int socket\+Num\+To\+Server=-\/1)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf R\+T\+S\+P\+Client}$\ast$ R\+T\+S\+P\+Client\+::create\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{rtsp\+U\+R\+L, }
+\item[{int}]{verbosity\+Level = {\ttfamily 0}, }
+\item[{char const $\ast$}]{application\+Name = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{{\bf port\+Num\+Bits}}]{tunnel\+Over\+H\+T\+T\+P\+Port\+Num = {\ttfamily 0}, }
+\item[{int}]{socket\+Num\+To\+Server = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classRTSPClient_a11b643f8d1d68197dbf1345122586ae2}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!disallow\+Basic\+Authentication@{disallow\+Basic\+Authentication}}
+\index{disallow\+Basic\+Authentication@{disallow\+Basic\+Authentication}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{disallow\+Basic\+Authentication()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Client\+::disallow\+Basic\+Authentication (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_a8383e892443d6dd3c2d0a94a00276433}
+
+
+Definition at line 182 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::f\+Allow\+Basic\+Authentication, and False.
+
+
+\begin{DoxyCode}
+182 \{ fAllowBasicAuthentication = False; \}
+\end{DoxyCode}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!do\+Reset@{do\+Reset}}
+\index{do\+Reset@{do\+Reset}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{do\+Reset()}]{\setlength{\rightskip}{0pt plus 5cm}void Proxy\+R\+T\+S\+P\+Client\+::do\+Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_ac36b48cc89146d4ee120c81fc216a570}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!do\+Reset@{do\+Reset}}
+\index{do\+Reset@{do\+Reset}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{do\+Reset(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void Proxy\+R\+T\+S\+P\+Client\+::do\+Reset (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classProxyRTSPClient_a513bb473d82525c11638ad7e3c229cdc}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!envir@{envir}}
+\index{envir@{envir}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{envir() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Medium\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a32f7ecdd95f2b8400e1a26a5009e3b8e}
+
+
+Definition at line 59 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Environ.
+
+
+
+Referenced by Media\+Subsession\+::env(), R\+T\+P\+Interface\+::envir(), Generic\+Media\+Server\+::\+Client\+Connection\+::envir(), and Generic\+Media\+Server\+::\+Client\+Session\+::envir().
+
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} fEnviron;\}
+\end{DoxyCode}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!grab\+Socket@{grab\+Socket}}
+\index{grab\+Socket@{grab\+Socket}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{grab\+Socket()}]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+S\+P\+Client\+::grab\+Socket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPClient_a107c94360766974a6f79da0041cff5ad}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!handle\+Subsession\+Timeout@{handle\+Subsession\+Timeout}}
+\index{handle\+Subsession\+Timeout@{handle\+Subsession\+Timeout}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{handle\+Subsession\+Timeout()}]{\setlength{\rightskip}{0pt plus 5cm}void Proxy\+R\+T\+S\+P\+Client\+::handle\+Subsession\+Timeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_ab60b60c46c8413111b203c8b9e38ccc3}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!is\+Media\+Session@{is\+Media\+Session}}
+\index{is\+Media\+Session@{is\+Media\+Session}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{is\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ac5858707c4e7a15bd59d476cf48289d6}
+
+
+Reimplemented in {\bf Media\+Session} \doxyref{}{p.}{classMediaSession_a3b2a06a722374ab4477ac05a2ce28829}.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}}
+\index{is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{is\+R\+T\+C\+P\+Instance() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ab5f9f20324698f89a35513d596b2e7be}
+
+
+Reimplemented in {\bf R\+T\+C\+P\+Instance} \doxyref{}{p.}{classRTCPInstance_a844292518419e1dbf24170812fd1e4b5}.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}}
+\index{is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{is\+R\+T\+S\+P\+Server() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a346e111b31bfde4b7f4ed593e0b97fd3}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Server} \doxyref{}{p.}{classRTSPServer_a45f9fc5ddd8f214169358493215a064a}.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!is\+Server\+Media\+Session@{is\+Server\+Media\+Session}}
+\index{is\+Server\+Media\+Session@{is\+Server\+Media\+Session}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{is\+Server\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aa9fd26c4b954ffba5f79925ecd0283a0}
+
+
+Reimplemented in {\bf Server\+Media\+Session} \doxyref{}{p.}{classServerMediaSession_a34b59e04644b6f0841ea5af99dbf32f6}.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!is\+Sink@{is\+Sink}}
+\index{is\+Sink@{is\+Sink}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{is\+Sink() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a23d49bf466482784b9d4378490d17b5f}
+
+
+Reimplemented in {\bf Media\+Sink} \doxyref{}{p.}{classMediaSink_aa8649dcdf21d5005f9ec319f898f91b6}.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!is\+Source@{is\+Source}}
+\index{is\+Source@{is\+Source}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{is\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a6cdbd02c73a3e9c1cbab8fce9e9497b1}
+
+
+Reimplemented in {\bf Media\+Source} \doxyref{}{p.}{classMediaSource_a4d75fa9ee2b476b1231594282a6854be}.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$medium\+Name, Medium $\ast$\&result\+Medium)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Medium\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name, }
+\item[{{\bf Medium} $\ast$\&}]{result\+Medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a418c860c1e0ef2766ee0d0f64b346291}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$source\+Name, R\+T\+S\+P\+Client $\ast$\&result\+Client)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} R\+T\+S\+P\+Client\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{source\+Name, }
+\item[{{\bf R\+T\+S\+P\+Client} $\ast$\&}]{result\+Client}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classRTSPClient_a77c5eefae1a176fc597d131a2622700c}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!name@{name}}
+\index{name@{name}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Medium\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a575649802dc781c0e59e097a3870fcdb}
+
+
+Definition at line 61 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Medium\+Name.
+
+
+\begin{DoxyCode}
+61 \{\textcolor{keywordflow}{return} fMediumName;\}
+\end{DoxyCode}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{next\+Task()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token}\& Medium\+::next\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMedium_a5c8788adec90be1a584393a5bf11a5c9}
+
+
+Definition at line 77 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Next\+Task.
+
+
+\begin{DoxyCode}
+77                         \{
+78         \textcolor{keywordflow}{return} fNextTask;
+79   \}
+\end{DoxyCode}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!parse\+R\+T\+S\+P\+U\+R\+L@{parse\+R\+T\+S\+P\+U\+R\+L}}
+\index{parse\+R\+T\+S\+P\+U\+R\+L@{parse\+R\+T\+S\+P\+U\+R\+L}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{parse\+R\+T\+S\+P\+U\+R\+L(\+Usage\+Environment \&env, char const $\ast$url, char $\ast$\&username, char $\ast$\&password, Net\+Address \&address, port\+Num\+Bits \&port\+Num, char const $\ast$$\ast$url\+Suffix=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} R\+T\+S\+P\+Client\+::parse\+R\+T\+S\+P\+U\+R\+L (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{url, }
+\item[{char $\ast$\&}]{username, }
+\item[{char $\ast$\&}]{password, }
+\item[{{\bf Net\+Address} \&}]{address, }
+\item[{{\bf port\+Num\+Bits} \&}]{port\+Num, }
+\item[{char const $\ast$$\ast$}]{url\+Suffix = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classRTSPClient_a0ff5e20b3d18c32dcc17ac16939ce4b0}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!reset@{reset}}
+\index{reset@{reset}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{reset()}]{\setlength{\rightskip}{0pt plus 5cm}void Proxy\+R\+T\+S\+P\+Client\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_ae0ebd52b98aa1216a2ad3dd39fe2fbb0}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!schedule\+D\+E\+S\+C\+R\+I\+B\+E\+Command@{schedule\+D\+E\+S\+C\+R\+I\+B\+E\+Command}}
+\index{schedule\+D\+E\+S\+C\+R\+I\+B\+E\+Command@{schedule\+D\+E\+S\+C\+R\+I\+B\+E\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{schedule\+D\+E\+S\+C\+R\+I\+B\+E\+Command()}]{\setlength{\rightskip}{0pt plus 5cm}void Proxy\+R\+T\+S\+P\+Client\+::schedule\+D\+E\+S\+C\+R\+I\+B\+E\+Command (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_a0cfbb55ba6c72c64e7fac06ae83f9657}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!schedule\+Liveness\+Command@{schedule\+Liveness\+Command}}
+\index{schedule\+Liveness\+Command@{schedule\+Liveness\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{schedule\+Liveness\+Command()}]{\setlength{\rightskip}{0pt plus 5cm}void Proxy\+R\+T\+S\+P\+Client\+::schedule\+Liveness\+Command (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_aea6c958d1184dce1054b0fb1cefcf9a2}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!schedule\+Reset@{schedule\+Reset}}
+\index{schedule\+Reset@{schedule\+Reset}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{schedule\+Reset()}]{\setlength{\rightskip}{0pt plus 5cm}void Proxy\+R\+T\+S\+P\+Client\+::schedule\+Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classProxyRTSPClient_a8c16923d5bcea7142a0f3e18e2a73335}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Announce\+Command@{send\+Announce\+Command}}
+\index{send\+Announce\+Command@{send\+Announce\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Announce\+Command(char const $\ast$sdp\+Description, response\+Handler $\ast$response\+Handler, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Announce\+Command (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{sdp\+Description, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a13f27603fae21a2f93c34184029dfdb7}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+D\+E\+S\+C\+R\+I\+B\+E@{send\+D\+E\+S\+C\+R\+I\+B\+E}}
+\index{send\+D\+E\+S\+C\+R\+I\+B\+E@{send\+D\+E\+S\+C\+R\+I\+B\+E}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+D\+E\+S\+C\+R\+I\+B\+E(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void Proxy\+R\+T\+S\+P\+Client\+::send\+D\+E\+S\+C\+R\+I\+B\+E (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classProxyRTSPClient_a397c9f6f8aae6848ec337b48123e9265}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Describe\+Command@{send\+Describe\+Command}}
+\index{send\+Describe\+Command@{send\+Describe\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Describe\+Command(response\+Handler $\ast$response\+Handler, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Describe\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a3f934eeb892605b2cc91e7dfae093850}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Dummy\+U\+D\+P\+Packets@{send\+Dummy\+U\+D\+P\+Packets}}
+\index{send\+Dummy\+U\+D\+P\+Packets@{send\+Dummy\+U\+D\+P\+Packets}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Dummy\+U\+D\+P\+Packets(\+Media\+Session \&session, unsigned num\+Dummy\+Packets=2)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Client\+::send\+Dummy\+U\+D\+P\+Packets (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Session} \&}]{session, }
+\item[{unsigned}]{num\+Dummy\+Packets = {\ttfamily 2}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a3b4cf054e567c33f35e23c2c6fcc5be4}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Dummy\+U\+D\+P\+Packets@{send\+Dummy\+U\+D\+P\+Packets}}
+\index{send\+Dummy\+U\+D\+P\+Packets@{send\+Dummy\+U\+D\+P\+Packets}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Dummy\+U\+D\+P\+Packets(\+Media\+Subsession \&subsession, unsigned num\+Dummy\+Packets=2)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Client\+::send\+Dummy\+U\+D\+P\+Packets (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Subsession} \&}]{subsession, }
+\item[{unsigned}]{num\+Dummy\+Packets = {\ttfamily 2}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a6772873e10170d83dd60068e094d5120}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Get\+Parameter\+Command@{send\+Get\+Parameter\+Command}}
+\index{send\+Get\+Parameter\+Command@{send\+Get\+Parameter\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Get\+Parameter\+Command(\+Media\+Session \&session, response\+Handler $\ast$response\+Handler, char const $\ast$parameter\+Name, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Get\+Parameter\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Session} \&}]{session, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{char const $\ast$}]{parameter\+Name, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a65b2bf121c69e9640c8a71a12e9c205f}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Liveness\+Command@{send\+Liveness\+Command}}
+\index{send\+Liveness\+Command@{send\+Liveness\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Liveness\+Command(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void Proxy\+R\+T\+S\+P\+Client\+::send\+Liveness\+Command (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classProxyRTSPClient_a5b1350fdba211f69fa65957104e29988}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Options\+Command@{send\+Options\+Command}}
+\index{send\+Options\+Command@{send\+Options\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Options\+Command(response\+Handler $\ast$response\+Handler, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Options\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_aa0547fab9059eb469b0ff5bdd902db2e}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Pause\+Command@{send\+Pause\+Command}}
+\index{send\+Pause\+Command@{send\+Pause\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Pause\+Command(\+Media\+Session \&session, response\+Handler $\ast$response\+Handler, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Pause\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Session} \&}]{session, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a28313f3ee8b69da93437a01ec5bdb259}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Pause\+Command@{send\+Pause\+Command}}
+\index{send\+Pause\+Command@{send\+Pause\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Pause\+Command(\+Media\+Subsession \&subsession, response\+Handler $\ast$response\+Handler, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Pause\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Subsession} \&}]{subsession, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_ad2d18ad4e4965f7c87dd72b59cc46708}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Play\+Command@{send\+Play\+Command}}
+\index{send\+Play\+Command@{send\+Play\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Play\+Command(\+Media\+Session \&session, response\+Handler $\ast$response\+Handler, double start=0.\+0f, double end=-\/1.\+0f, float scale=1.\+0f, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Play\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Session} \&}]{session, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{double}]{start = {\ttfamily 0.0f}, }
+\item[{double}]{end = {\ttfamily -\/1.0f}, }
+\item[{float}]{scale = {\ttfamily 1.0f}, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a5ae81809defa85fe018a14fcace8be8a}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Play\+Command@{send\+Play\+Command}}
+\index{send\+Play\+Command@{send\+Play\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Play\+Command(\+Media\+Subsession \&subsession, response\+Handler $\ast$response\+Handler, double start=0.\+0f, double end=-\/1.\+0f, float scale=1.\+0f, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Play\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Subsession} \&}]{subsession, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{double}]{start = {\ttfamily 0.0f}, }
+\item[{double}]{end = {\ttfamily -\/1.0f}, }
+\item[{float}]{scale = {\ttfamily 1.0f}, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a48e812aaea9faba18c0d9cb7e55006a2}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Play\+Command@{send\+Play\+Command}}
+\index{send\+Play\+Command@{send\+Play\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Play\+Command(\+Media\+Session \&session, response\+Handler $\ast$response\+Handler, char const $\ast$abs\+Start\+Time, char const $\ast$abs\+End\+Time=\+N\+U\+L\+L, float scale=1.\+0f, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Play\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Session} \&}]{session, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{char const $\ast$}]{abs\+Start\+Time, }
+\item[{char const $\ast$}]{abs\+End\+Time = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{float}]{scale = {\ttfamily 1.0f}, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a4f5b4dca3405e9b8caa848abf4d5388a}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Play\+Command@{send\+Play\+Command}}
+\index{send\+Play\+Command@{send\+Play\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Play\+Command(\+Media\+Subsession \&subsession, response\+Handler $\ast$response\+Handler, char const $\ast$abs\+Start\+Time, char const $\ast$abs\+End\+Time=\+N\+U\+L\+L, float scale=1.\+0f, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Play\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Subsession} \&}]{subsession, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{char const $\ast$}]{abs\+Start\+Time, }
+\item[{char const $\ast$}]{abs\+End\+Time = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{float}]{scale = {\ttfamily 1.0f}, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_addd4b9effdb26a95f79966a98353dcd8}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Record\+Command@{send\+Record\+Command}}
+\index{send\+Record\+Command@{send\+Record\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Record\+Command(\+Media\+Session \&session, response\+Handler $\ast$response\+Handler, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Record\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Session} \&}]{session, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_aa0429422a15d29f27a96a6e249cae4d7}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Record\+Command@{send\+Record\+Command}}
+\index{send\+Record\+Command@{send\+Record\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Record\+Command(\+Media\+Subsession \&subsession, response\+Handler $\ast$response\+Handler, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Record\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Subsession} \&}]{subsession, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a3c4d905e8224070e7f5d19253ae281fc}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Request@{send\+Request}}
+\index{send\+Request@{send\+Request}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Request(\+Request\+Record $\ast$request)}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned R\+T\+S\+P\+Client\+::send\+Request (
+\begin{DoxyParamCaption}
+\item[{{\bf Request\+Record} $\ast$}]{request}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPClient_a7b5a6282f158ff26e829e5e966c8877a}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Set\+Parameter\+Command@{send\+Set\+Parameter\+Command}}
+\index{send\+Set\+Parameter\+Command@{send\+Set\+Parameter\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Set\+Parameter\+Command(\+Media\+Session \&session, response\+Handler $\ast$response\+Handler, char const $\ast$parameter\+Name, char const $\ast$parameter\+Value, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Set\+Parameter\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Session} \&}]{session, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{char const $\ast$}]{parameter\+Name, }
+\item[{char const $\ast$}]{parameter\+Value, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_ac7b2ca655f1768d7205920e0eff85bb3}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Setup\+Command@{send\+Setup\+Command}}
+\index{send\+Setup\+Command@{send\+Setup\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Setup\+Command(\+Media\+Subsession \&subsession, response\+Handler $\ast$response\+Handler, Boolean stream\+Outgoing=\+False, Boolean stream\+Using\+T\+C\+P=\+False, Boolean force\+Multicast\+On\+Unspecified=\+False, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Setup\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Subsession} \&}]{subsession, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Boolean}}]{stream\+Outgoing = {\ttfamily {\bf False}}, }
+\item[{{\bf Boolean}}]{stream\+Using\+T\+C\+P = {\ttfamily {\bf False}}, }
+\item[{{\bf Boolean}}]{force\+Multicast\+On\+Unspecified = {\ttfamily {\bf False}}, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_ae29b6d67e4a67d890cf7dbab0a80503c}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Teardown\+Command@{send\+Teardown\+Command}}
+\index{send\+Teardown\+Command@{send\+Teardown\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Teardown\+Command(\+Media\+Session \&session, response\+Handler $\ast$response\+Handler, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Teardown\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Session} \&}]{session, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a57f03b85840a3c10b9bac24e6c1b842e}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!send\+Teardown\+Command@{send\+Teardown\+Command}}
+\index{send\+Teardown\+Command@{send\+Teardown\+Command}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{send\+Teardown\+Command(\+Media\+Subsession \&subsession, response\+Handler $\ast$response\+Handler, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Teardown\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Subsession} \&}]{subsession, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a71514455a20997c5e3e91fe69dedc3bd}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!session\+Timeout\+Parameter@{session\+Timeout\+Parameter}}
+\index{session\+Timeout\+Parameter@{session\+Timeout\+Parameter}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{session\+Timeout\+Parameter() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::session\+Timeout\+Parameter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_a7c2d2cb5dccfc1bfc466fc7ab8db75e0}
+
+
+Definition at line 186 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::f\+Session\+Timeout\+Parameter.
+
+
+\begin{DoxyCode}
+186 \{ \textcolor{keywordflow}{return} fSessionTimeoutParameter; \}
+\end{DoxyCode}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!set\+Base\+U\+R\+L@{set\+Base\+U\+R\+L}}
+\index{set\+Base\+U\+R\+L@{set\+Base\+U\+R\+L}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{set\+Base\+U\+R\+L(char const $\ast$url)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Client\+::set\+Base\+U\+R\+L (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPClient_a6e19a3269d8c72deae78a97a5c83f037}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!set\+Request\+Fields@{set\+Request\+Fields}}
+\index{set\+Request\+Fields@{set\+Request\+Fields}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{set\+Request\+Fields(\+Request\+Record $\ast$request, char $\ast$\&cmd\+U\+R\+L, Boolean \&cmd\+U\+R\+L\+Was\+Allocated, char const $\ast$\&protocol\+Str, char $\ast$\&extra\+Headers, Boolean \&extra\+Headers\+Were\+Allocated)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} R\+T\+S\+P\+Client\+::set\+Request\+Fields (
+\begin{DoxyParamCaption}
+\item[{{\bf Request\+Record} $\ast$}]{request, }
+\item[{char $\ast$\&}]{cmd\+U\+R\+L, }
+\item[{{\bf Boolean} \&}]{cmd\+U\+R\+L\+Was\+Allocated, }
+\item[{char const $\ast$\&}]{protocol\+Str, }
+\item[{char $\ast$\&}]{extra\+Headers, }
+\item[{{\bf Boolean} \&}]{extra\+Headers\+Were\+Allocated}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPClient_a1f4d389e56403c571da75d6e3c128890}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Deregister\+Sender} \doxyref{}{p.}{classRTSPDeregisterSender_a0d02f85c69d0cf56ceff1f7b85d24ec3}, and {\bf R\+T\+S\+P\+Register\+Sender} \doxyref{}{p.}{classRTSPRegisterSender_a4b4510477ded0194ade2d344e585ddfa}.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!set\+Speed@{set\+Speed}}
+\index{set\+Speed@{set\+Speed}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{set\+Speed(\+Media\+Session \&session, float speed=1.\+0f)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Client\+::set\+Speed (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Session} \&}]{session, }
+\item[{float}]{speed = {\ttfamily 1.0f}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a34a54c8dfaaaa3096dd9878f04802048}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!set\+User\+Agent\+String@{set\+User\+Agent\+String}}
+\index{set\+User\+Agent\+String@{set\+User\+Agent\+String}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{set\+User\+Agent\+String(char const $\ast$user\+Agent\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Client\+::set\+User\+Agent\+String (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{user\+Agent\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_adb103693b3d418732f85fd5f0a88111f}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!socket\+Num@{socket\+Num}}
+\index{socket\+Num@{socket\+Num}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{socket\+Num() const }]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+S\+P\+Client\+::socket\+Num (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_aeaaebbc58245d64177a9c17c7557742a}
+
+
+Definition at line 168 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::f\+Input\+Socket\+Num.
+
+
+\begin{DoxyCode}
+168 \{ \textcolor{keywordflow}{return} fInputSocketNum; \}
+\end{DoxyCode}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!subsession\+Timeout@{subsession\+Timeout}}
+\index{subsession\+Timeout@{subsession\+Timeout}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{subsession\+Timeout(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void Proxy\+R\+T\+S\+P\+Client\+::subsession\+Timeout (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classProxyRTSPClient_a1ce1174d139a193c3a6bf2e3c5a3d191}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!url@{url}}
+\index{url@{url}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{url() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ R\+T\+S\+P\+Client\+::url (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_a3ec22026957832e4bd606aedfe8330f8}
+
+
+Definition at line 188 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::f\+Base\+U\+R\+L.
+
+
+\begin{DoxyCode}
+188 \{ \textcolor{keywordflow}{return} fBaseURL; \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!Proxy\+Server\+Media\+Session@{Proxy\+Server\+Media\+Session}}
+\index{Proxy\+Server\+Media\+Session@{Proxy\+Server\+Media\+Session}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{Proxy\+Server\+Media\+Session}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Proxy\+Server\+Media\+Session}\hspace{0.3cm}{\ttfamily [friend]}}\label{classProxyRTSPClient_a79784fb7f4c582aa950969835eae8e61}
+
+
+Definition at line 73 of file Proxy\+Server\+Media\+Session.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!Proxy\+Server\+Media\+Subsession@{Proxy\+Server\+Media\+Subsession}}
+\index{Proxy\+Server\+Media\+Subsession@{Proxy\+Server\+Media\+Subsession}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{Proxy\+Server\+Media\+Subsession}]{\setlength{\rightskip}{0pt plus 5cm}friend class Proxy\+Server\+Media\+Subsession\hspace{0.3cm}{\ttfamily [friend]}}\label{classProxyRTSPClient_a74dd643b166bb289fcd718519e6db434}
+
+
+Definition at line 74 of file Proxy\+Server\+Media\+Session.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!desired\+Max\+Incoming\+Packet\+Size@{desired\+Max\+Incoming\+Packet\+Size}}
+\index{desired\+Max\+Incoming\+Packet\+Size@{desired\+Max\+Incoming\+Packet\+Size}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{desired\+Max\+Incoming\+Packet\+Size}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int16\+\_\+t R\+T\+S\+P\+Client\+::desired\+Max\+Incoming\+Packet\+Size\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a0dba312662a4eb769782084d13890c7f}
+
+
+Definition at line 320 of file R\+T\+S\+P\+Client.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+Allow\+Basic\+Authentication@{f\+Allow\+Basic\+Authentication}}
+\index{f\+Allow\+Basic\+Authentication@{f\+Allow\+Basic\+Authentication}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+Allow\+Basic\+Authentication}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+S\+P\+Client\+::f\+Allow\+Basic\+Authentication\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPClient_a6007d9a80abf10cb656c8a91c62ea6b6}
+
+
+Definition at line 328 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+Referenced by R\+T\+S\+P\+Client\+::disallow\+Basic\+Authentication().
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+C\+Seq@{f\+C\+Seq}}
+\index{f\+C\+Seq@{f\+C\+Seq}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+C\+Seq}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::f\+C\+Seq\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPClient_ab2e1bec010111a7b282eb7b1773d2355}
+
+
+Definition at line 326 of file R\+T\+S\+P\+Client.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+Current\+Authenticator@{f\+Current\+Authenticator}}
+\index{f\+Current\+Authenticator@{f\+Current\+Authenticator}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+Current\+Authenticator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Authenticator} R\+T\+S\+P\+Client\+::f\+Current\+Authenticator\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPClient_a2e52d26d69eea16295884db6007f86f7}
+
+
+Definition at line 327 of file R\+T\+S\+P\+Client.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+D\+E\+S\+C\+R\+I\+B\+E\+Command\+Task@{f\+D\+E\+S\+C\+R\+I\+B\+E\+Command\+Task}}
+\index{f\+D\+E\+S\+C\+R\+I\+B\+E\+Command\+Task@{f\+D\+E\+S\+C\+R\+I\+B\+E\+Command\+Task}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+D\+E\+S\+C\+R\+I\+B\+E\+Command\+Task}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token} Proxy\+R\+T\+S\+P\+Client\+::f\+D\+E\+S\+C\+R\+I\+B\+E\+Command\+Task\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_a1fe77f75eaddc06a293782eef791b825}
+
+
+Definition at line 83 of file Proxy\+Server\+Media\+Session.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+Done\+D\+E\+S\+C\+R\+I\+B\+E@{f\+Done\+D\+E\+S\+C\+R\+I\+B\+E}}
+\index{f\+Done\+D\+E\+S\+C\+R\+I\+B\+E@{f\+Done\+D\+E\+S\+C\+R\+I\+B\+E}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+Done\+D\+E\+S\+C\+R\+I\+B\+E}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Proxy\+R\+T\+S\+P\+Client\+::f\+Done\+D\+E\+S\+C\+R\+I\+B\+E\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_a20faf9232ba500b32a19c5a33d94f42a}
+
+
+Definition at line 82 of file Proxy\+Server\+Media\+Session.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+Last\+Command\+Was\+P\+L\+A\+Y@{f\+Last\+Command\+Was\+P\+L\+A\+Y}}
+\index{f\+Last\+Command\+Was\+P\+L\+A\+Y@{f\+Last\+Command\+Was\+P\+L\+A\+Y}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+Last\+Command\+Was\+P\+L\+A\+Y}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Proxy\+R\+T\+S\+P\+Client\+::f\+Last\+Command\+Was\+P\+L\+A\+Y\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_a5142bbf320fa04196d55a2b92739503b}
+
+
+Definition at line 82 of file Proxy\+Server\+Media\+Session.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+Liveness\+Command\+Task@{f\+Liveness\+Command\+Task}}
+\index{f\+Liveness\+Command\+Task@{f\+Liveness\+Command\+Task}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+Liveness\+Command\+Task}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token} Proxy\+R\+T\+S\+P\+Client\+::f\+Liveness\+Command\+Task\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_a0d68771319c8770eaf3fb7f543067bb5}
+
+
+Definition at line 83 of file Proxy\+Server\+Media\+Session.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+Next\+D\+E\+S\+C\+R\+I\+B\+E\+Delay@{f\+Next\+D\+E\+S\+C\+R\+I\+B\+E\+Delay}}
+\index{f\+Next\+D\+E\+S\+C\+R\+I\+B\+E\+Delay@{f\+Next\+D\+E\+S\+C\+R\+I\+B\+E\+Delay}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+Next\+D\+E\+S\+C\+R\+I\+B\+E\+Delay}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Proxy\+R\+T\+S\+P\+Client\+::f\+Next\+D\+E\+S\+C\+R\+I\+B\+E\+Delay\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_a7f9453e4815ce85ea496a55b5d5adc5f}
+
+
+Definition at line 81 of file Proxy\+Server\+Media\+Session.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+Num\+Setups\+Done@{f\+Num\+Setups\+Done}}
+\index{f\+Num\+Setups\+Done@{f\+Num\+Setups\+Done}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+Num\+Setups\+Done}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Proxy\+R\+T\+S\+P\+Client\+::f\+Num\+Setups\+Done\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_a38c936d85794317eb391d68567fb39ac}
+
+
+Definition at line 80 of file Proxy\+Server\+Media\+Session.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+Our\+Authenticator@{f\+Our\+Authenticator}}
+\index{f\+Our\+Authenticator@{f\+Our\+Authenticator}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+Our\+Authenticator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Authenticator}$\ast$ Proxy\+R\+T\+S\+P\+Client\+::f\+Our\+Authenticator\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_a06afd1fb6e9c6f27e1302edeca811cd0}
+
+
+Definition at line 77 of file Proxy\+Server\+Media\+Session.\+hh.
+
+
+
+Referenced by auth().
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+Our\+Server\+Media\+Session@{f\+Our\+Server\+Media\+Session}}
+\index{f\+Our\+Server\+Media\+Session@{f\+Our\+Server\+Media\+Session}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+Our\+Server\+Media\+Session}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Proxy\+Server\+Media\+Session}\& Proxy\+R\+T\+S\+P\+Client\+::f\+Our\+Server\+Media\+Session\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_a3c9dd214efa4e39de4f8cad288cdf32c}
+
+
+Definition at line 75 of file Proxy\+Server\+Media\+Session.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+Our\+U\+R\+L@{f\+Our\+U\+R\+L}}
+\index{f\+Our\+U\+R\+L@{f\+Our\+U\+R\+L}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+Our\+U\+R\+L}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Proxy\+R\+T\+S\+P\+Client\+::f\+Our\+U\+R\+L\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_a1687f0d6b9a10580b84329caf126cd82}
+
+
+Definition at line 76 of file Proxy\+Server\+Media\+Session.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+Reset\+Task@{f\+Reset\+Task}}
+\index{f\+Reset\+Task@{f\+Reset\+Task}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+Reset\+Task}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token} Proxy\+R\+T\+S\+P\+Client\+::f\+Reset\+Task\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_ab177269363b7829275dff1f01e9fb5e1}
+
+
+Definition at line 83 of file Proxy\+Server\+Media\+Session.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+Server\+Address@{f\+Server\+Address}}
+\index{f\+Server\+Address@{f\+Server\+Address}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+Server\+Address}]{\setlength{\rightskip}{0pt plus 5cm}{\bf net\+Address\+Bits} R\+T\+S\+P\+Client\+::f\+Server\+Address\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPClient_a6b0fe7c27b59e71075c1182e625e816d}
+
+
+Definition at line 329 of file R\+T\+S\+P\+Client.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+Server\+Supports\+Get\+Parameter@{f\+Server\+Supports\+Get\+Parameter}}
+\index{f\+Server\+Supports\+Get\+Parameter@{f\+Server\+Supports\+Get\+Parameter}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+Server\+Supports\+Get\+Parameter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Proxy\+R\+T\+S\+P\+Client\+::f\+Server\+Supports\+Get\+Parameter\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_a9ebd9bea17a93d83e2c277a6562b873e}
+
+
+Definition at line 82 of file Proxy\+Server\+Media\+Session.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+Setup\+Queue\+Head@{f\+Setup\+Queue\+Head}}
+\index{f\+Setup\+Queue\+Head@{f\+Setup\+Queue\+Head}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+Setup\+Queue\+Head}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Proxy\+Server\+Media\+Subsession}$\ast$ Proxy\+R\+T\+S\+P\+Client\+::f\+Setup\+Queue\+Head\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_ad82edf7f7760549df06987dc9d00a0f9}
+
+
+Definition at line 79 of file Proxy\+Server\+Media\+Session.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+Setup\+Queue\+Tail@{f\+Setup\+Queue\+Tail}}
+\index{f\+Setup\+Queue\+Tail@{f\+Setup\+Queue\+Tail}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+Setup\+Queue\+Tail}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Proxy\+Server\+Media\+Subsession} $\ast$ Proxy\+R\+T\+S\+P\+Client\+::f\+Setup\+Queue\+Tail\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_aaa43ffea51e11d3eb197afad4a843744}
+
+
+Definition at line 79 of file Proxy\+Server\+Media\+Session.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+Stream\+R\+T\+P\+Over\+T\+C\+P@{f\+Stream\+R\+T\+P\+Over\+T\+C\+P}}
+\index{f\+Stream\+R\+T\+P\+Over\+T\+C\+P@{f\+Stream\+R\+T\+P\+Over\+T\+C\+P}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+Stream\+R\+T\+P\+Over\+T\+C\+P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Proxy\+R\+T\+S\+P\+Client\+::f\+Stream\+R\+T\+P\+Over\+T\+C\+P\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_a874947eabd8759f23b70de0c244b1bca}
+
+
+Definition at line 78 of file Proxy\+Server\+Media\+Session.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+Subsession\+Timer\+Task@{f\+Subsession\+Timer\+Task}}
+\index{f\+Subsession\+Timer\+Task@{f\+Subsession\+Timer\+Task}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+Subsession\+Timer\+Task}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token} Proxy\+R\+T\+S\+P\+Client\+::f\+Subsession\+Timer\+Task\hspace{0.3cm}{\ttfamily [private]}}\label{classProxyRTSPClient_afcc5313f40ad1511d2318175c6235f16}
+
+
+Definition at line 83 of file Proxy\+Server\+Media\+Session.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!f\+Verbosity\+Level@{f\+Verbosity\+Level}}
+\index{f\+Verbosity\+Level@{f\+Verbosity\+Level}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{f\+Verbosity\+Level}]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+S\+P\+Client\+::f\+Verbosity\+Level\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPClient_aba4ce216b33674d876728b0c2a81072e}
+
+
+Definition at line 325 of file R\+T\+S\+P\+Client.\+hh.
+
+\index{Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}!response\+Buffer\+Size@{response\+Buffer\+Size}}
+\index{response\+Buffer\+Size@{response\+Buffer\+Size}!Proxy\+R\+T\+S\+P\+Client@{Proxy\+R\+T\+S\+P\+Client}}
+\subsubsection[{response\+Buffer\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::response\+Buffer\+Size\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classRTSPClient_a3737ce9c284dc071ceb9d9ac922aa79f}
+
+
+Definition at line 190 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf Proxy\+Server\+Media\+Session.\+hh}\end{DoxyCompactItemize}

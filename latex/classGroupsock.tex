@@ -1,0 +1,669 @@
+\section{Groupsock Class Reference}
+\label{classGroupsock}\index{Groupsock@{Groupsock}}
+
+
+{\ttfamily \#include $<$Groupsock.\+hh$>$}
+
+
+
+Inheritance diagram for Groupsock\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{classGroupsock__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Groupsock\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGroupsock__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Groupsock} ({\bf Usage\+Environment} \&{\bf env}, struct in\+\_\+addr const \&group\+Addr, {\bf Port} {\bf port}, u\+\_\+int8\+\_\+t {\bf ttl})
+\item 
+{\bf Groupsock} ({\bf Usage\+Environment} \&{\bf env}, struct in\+\_\+addr const \&group\+Addr, struct in\+\_\+addr const \&source\+Filter\+Addr, {\bf Port} {\bf port})
+\item 
+virtual {\bf $\sim$\+Groupsock} ()
+\item 
+virtual {\bf dest\+Record} $\ast$ {\bf create\+New\+Dest\+Record} (struct in\+\_\+addr const \&addr, {\bf Port} const \&{\bf port}, u\+\_\+int8\+\_\+t {\bf ttl}, unsigned session\+Id, {\bf dest\+Record} $\ast$next)
+\item 
+void {\bf change\+Destination\+Parameters} (struct in\+\_\+addr const \&new\+Dest\+Addr, {\bf Port} new\+Dest\+Port, int new\+Dest\+T\+T\+L, unsigned session\+Id=0)
+\item 
+unsigned {\bf lookup\+Session\+Id\+From\+Destination} (struct sockaddr\+\_\+in const \&dest\+Addr\+And\+Port) const 
+\item 
+virtual void {\bf add\+Destination} (struct in\+\_\+addr const \&addr, {\bf Port} const \&{\bf port}, unsigned session\+Id)
+\item 
+virtual void {\bf remove\+Destination} (unsigned session\+Id)
+\item 
+void {\bf remove\+All\+Destinations} ()
+\item 
+{\bf Boolean} {\bf has\+Multiple\+Destinations} () const 
+\item 
+struct in\+\_\+addr const \& {\bf group\+Address} () const 
+\item 
+struct in\+\_\+addr const \& {\bf source\+Filter\+Address} () const 
+\item 
+{\bf Boolean} {\bf is\+S\+S\+M} () const 
+\item 
+u\+\_\+int8\+\_\+t {\bf ttl} () const 
+\item 
+void {\bf multicast\+Send\+Only} ()
+\item 
+virtual {\bf Boolean} {\bf output} ({\bf Usage\+Environment} \&{\bf env}, unsigned char $\ast$buffer, unsigned buffer\+Size, {\bf Directed\+Net\+Interface} $\ast$interface\+Not\+To\+Fwd\+Back\+To={\bf N\+U\+L\+L})
+\item 
+{\bf Directed\+Net\+Interface\+Set} \& {\bf members} ()
+\item 
+{\bf Boolean} {\bf was\+Looped\+Back\+From\+Us} ({\bf Usage\+Environment} \&{\bf env}, struct sockaddr\+\_\+in \&from\+Address\+And\+Port)
+\item 
+virtual {\bf Boolean} {\bf handle\+Read} (unsigned char $\ast$buffer, unsigned buffer\+Max\+Size, unsigned \&bytes\+Read, struct sockaddr\+\_\+in \&from\+Address\+And\+Port)
+\item 
+virtual {\bf Boolean} {\bf write} ({\bf net\+Address\+Bits} address, {\bf port\+Num\+Bits} port\+Num, u\+\_\+int8\+\_\+t {\bf ttl}, unsigned char $\ast$buffer, unsigned buffer\+Size)
+\item 
+{\bf Boolean} {\bf write} (struct sockaddr\+\_\+in \&address\+And\+Port, u\+\_\+int8\+\_\+t {\bf ttl}, unsigned char $\ast$buffer, unsigned buffer\+Size)
+\item 
+void {\bf reset} ()
+\item 
+int {\bf socket\+Num} () const 
+\item 
+{\bf Port} {\bf port} () const 
+\item 
+{\bf Usage\+Environment} \& {\bf env} () const 
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Boolean} {\bf delete\+If\+No\+Members}
+\item 
+{\bf Boolean} {\bf is\+Slave}
+\item 
+{\bf Net\+Interface\+Traffic\+Stats} {\bf stats\+Group\+Incoming}
+\item 
+{\bf Net\+Interface\+Traffic\+Stats} {\bf stats\+Group\+Outgoing}
+\item 
+{\bf Net\+Interface\+Traffic\+Stats} {\bf stats\+Group\+Relayed\+Incoming}
+\item 
+{\bf Net\+Interface\+Traffic\+Stats} {\bf stats\+Group\+Relayed\+Outgoing}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Net\+Interface\+Traffic\+Stats} {\bf stats\+Incoming}
+\item 
+static {\bf Net\+Interface\+Traffic\+Stats} {\bf stats\+Outgoing}
+\item 
+static {\bf Net\+Interface\+Traffic\+Stats} {\bf stats\+Relayed\+Incoming}
+\item 
+static {\bf Net\+Interface\+Traffic\+Stats} {\bf stats\+Relayed\+Outgoing}
+\item 
+static int {\bf Debug\+Level}
+\item 
+static {\bf Usage\+Environment} $\ast$ {\bf Default\+Usage\+Environment}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf dest\+Record} $\ast$ {\bf lookup\+Dest\+Record\+From\+Destination} (struct sockaddr\+\_\+in const \&dest\+Addr\+And\+Port) const 
+\item 
+{\bf port\+Num\+Bits} {\bf source\+Port\+Num} () const 
+\item 
+{\bf Boolean} {\bf change\+Port} ({\bf Port} new\+Port)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf dest\+Record} $\ast$ {\bf f\+Dests}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf remove\+Destination\+From} ({\bf dest\+Record} $\ast$\&dests, unsigned session\+Id)
+\item 
+int {\bf output\+To\+All\+Members\+Except} ({\bf Directed\+Net\+Interface} $\ast$except\+Interface, u\+\_\+int8\+\_\+t ttl\+To\+Fwd, unsigned char $\ast$data, unsigned size, {\bf net\+Address\+Bits} source\+Addr)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Group\+E\+Id} {\bf f\+Incoming\+Group\+E\+Id}
+\item 
+{\bf Directed\+Net\+Interface\+Set} {\bf f\+Members}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 82 of file Groupsock.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Groupsock@{Groupsock}!Groupsock@{Groupsock}}
+\index{Groupsock@{Groupsock}!Groupsock@{Groupsock}}
+\subsubsection[{Groupsock(\+Usage\+Environment \&env, struct in\+\_\+addr const \&group\+Addr, Port port, u\+\_\+int8\+\_\+t ttl)}]{\setlength{\rightskip}{0pt plus 5cm}Groupsock\+::\+Groupsock (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{struct in\+\_\+addr const \&}]{group\+Addr, }
+\item[{{\bf Port}}]{port, }
+\item[{u\+\_\+int8\+\_\+t}]{ttl}
+\end{DoxyParamCaption}
+)}\label{classGroupsock_a4cd1983c243f564214c16aece6ab7792}
+\index{Groupsock@{Groupsock}!Groupsock@{Groupsock}}
+\index{Groupsock@{Groupsock}!Groupsock@{Groupsock}}
+\subsubsection[{Groupsock(\+Usage\+Environment \&env, struct in\+\_\+addr const \&group\+Addr, struct in\+\_\+addr const \&source\+Filter\+Addr, Port port)}]{\setlength{\rightskip}{0pt plus 5cm}Groupsock\+::\+Groupsock (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{struct in\+\_\+addr const \&}]{group\+Addr, }
+\item[{struct in\+\_\+addr const \&}]{source\+Filter\+Addr, }
+\item[{{\bf Port}}]{port}
+\end{DoxyParamCaption}
+)}\label{classGroupsock_aa96eed91e164e1aad04fc8438a02c0f7}
+\index{Groupsock@{Groupsock}!````~Groupsock@{$\sim$\+Groupsock}}
+\index{````~Groupsock@{$\sim$\+Groupsock}!Groupsock@{Groupsock}}
+\subsubsection[{$\sim$\+Groupsock()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Groupsock\+::$\sim$\+Groupsock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGroupsock_aa7c9090d52d38bc9aa6740e8b0c422e8}
+
+
+\subsection{Member Function Documentation}
+\index{Groupsock@{Groupsock}!add\+Destination@{add\+Destination}}
+\index{add\+Destination@{add\+Destination}!Groupsock@{Groupsock}}
+\subsubsection[{add\+Destination(struct in\+\_\+addr const \&addr, Port const \&port, unsigned session\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Groupsock\+::add\+Destination (
+\begin{DoxyParamCaption}
+\item[{struct in\+\_\+addr const \&}]{addr, }
+\item[{{\bf Port} const \&}]{port, }
+\item[{unsigned}]{session\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGroupsock_a48307adb647085af398ab97127580eeb}
+\index{Groupsock@{Groupsock}!change\+Destination\+Parameters@{change\+Destination\+Parameters}}
+\index{change\+Destination\+Parameters@{change\+Destination\+Parameters}!Groupsock@{Groupsock}}
+\subsubsection[{change\+Destination\+Parameters(struct in\+\_\+addr const \&new\+Dest\+Addr, Port new\+Dest\+Port, int new\+Dest\+T\+T\+L, unsigned session\+Id=0)}]{\setlength{\rightskip}{0pt plus 5cm}void Groupsock\+::change\+Destination\+Parameters (
+\begin{DoxyParamCaption}
+\item[{struct in\+\_\+addr const \&}]{new\+Dest\+Addr, }
+\item[{{\bf Port}}]{new\+Dest\+Port, }
+\item[{int}]{new\+Dest\+T\+T\+L, }
+\item[{unsigned}]{session\+Id = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{classGroupsock_a90a2e5421868712d1d20a215f127ea72}
+\index{Groupsock@{Groupsock}!change\+Port@{change\+Port}}
+\index{change\+Port@{change\+Port}!Groupsock@{Groupsock}}
+\subsubsection[{change\+Port(\+Port new\+Port)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Socket\+::change\+Port (
+\begin{DoxyParamCaption}
+\item[{{\bf Port}}]{new\+Port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classSocket_a4410afe54cb46839fa07469a9c7f57dc}
+\index{Groupsock@{Groupsock}!create\+New\+Dest\+Record@{create\+New\+Dest\+Record}}
+\index{create\+New\+Dest\+Record@{create\+New\+Dest\+Record}!Groupsock@{Groupsock}}
+\subsubsection[{create\+New\+Dest\+Record(struct in\+\_\+addr const \&addr, Port const \&port, u\+\_\+int8\+\_\+t ttl, unsigned session\+Id, dest\+Record $\ast$next)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf dest\+Record}$\ast$ Groupsock\+::create\+New\+Dest\+Record (
+\begin{DoxyParamCaption}
+\item[{struct in\+\_\+addr const \&}]{addr, }
+\item[{{\bf Port} const \&}]{port, }
+\item[{u\+\_\+int8\+\_\+t}]{ttl, }
+\item[{unsigned}]{session\+Id, }
+\item[{{\bf dest\+Record} $\ast$}]{next}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGroupsock_a0ae92d09e7418eff6413d7b42d6b512a}
+\index{Groupsock@{Groupsock}!env@{env}}
+\index{env@{env}!Groupsock@{Groupsock}}
+\subsubsection[{env() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Socket\+::env (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classSocket_a03712e18dc140b9f5c8cdad98460410b}
+
+
+Definition at line 96 of file Net\+Interface.\+hh.
+
+
+
+References Socket\+::f\+Env.
+
+
+\begin{DoxyCode}
+96 \{ \textcolor{keywordflow}{return} fEnv; \}
+\end{DoxyCode}
+\index{Groupsock@{Groupsock}!group\+Address@{group\+Address}}
+\index{group\+Address@{group\+Address}!Groupsock@{Groupsock}}
+\subsubsection[{group\+Address() const }]{\setlength{\rightskip}{0pt plus 5cm}struct in\+\_\+addr const\& Groupsock\+::group\+Address (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classGroupsock_a141a9462c5e5378ac6aa54c227d6d3c5}
+
+
+Definition at line 116 of file Groupsock.\+hh.
+
+
+
+References f\+Incoming\+Group\+E\+Id, and Group\+E\+Id\+::group\+Address().
+
+
+\begin{DoxyCode}
+116                                              \{
+117     \textcolor{keywordflow}{return} fIncomingGroupEId.groupAddress();
+118   \}
+\end{DoxyCode}
+\index{Groupsock@{Groupsock}!handle\+Read@{handle\+Read}}
+\index{handle\+Read@{handle\+Read}!Groupsock@{Groupsock}}
+\subsubsection[{handle\+Read(unsigned char $\ast$buffer, unsigned buffer\+Max\+Size, unsigned \&bytes\+Read, struct sockaddr\+\_\+in \&from\+Address\+And\+Port)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Groupsock\+::handle\+Read (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{unsigned}]{buffer\+Max\+Size, }
+\item[{unsigned \&}]{bytes\+Read, }
+\item[{struct sockaddr\+\_\+in \&}]{from\+Address\+And\+Port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGroupsock_a18d7581e148a255877cfdd8df6d9f9cd}
+
+
+Reimplemented from {\bf Output\+Socket} \doxyref{}{p.}{classOutputSocket_a868eb3f203221c29ed6b06c81aab4de2}.
+
+\index{Groupsock@{Groupsock}!has\+Multiple\+Destinations@{has\+Multiple\+Destinations}}
+\index{has\+Multiple\+Destinations@{has\+Multiple\+Destinations}!Groupsock@{Groupsock}}
+\subsubsection[{has\+Multiple\+Destinations() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Groupsock\+::has\+Multiple\+Destinations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classGroupsock_a9204e13457d0bd66e8043c8f0f1347df}
+
+
+Definition at line 114 of file Groupsock.\+hh.
+
+
+
+References f\+Dests, dest\+Record\+::f\+Next, and N\+U\+L\+L.
+
+
+\begin{DoxyCode}
+114 \{ \textcolor{keywordflow}{return} fDests != NULL && fDests->fNext != NULL; \}
+\end{DoxyCode}
+\index{Groupsock@{Groupsock}!is\+S\+S\+M@{is\+S\+S\+M}}
+\index{is\+S\+S\+M@{is\+S\+S\+M}!Groupsock@{Groupsock}}
+\subsubsection[{is\+S\+S\+M() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Groupsock\+::is\+S\+S\+M (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classGroupsock_aa371f60b36a370558d8e07a8469e8c19}
+
+
+Definition at line 123 of file Groupsock.\+hh.
+
+
+
+References f\+Incoming\+Group\+E\+Id, and Group\+E\+Id\+::is\+S\+S\+M().
+
+
+\begin{DoxyCode}
+123                         \{
+124     \textcolor{keywordflow}{return} fIncomingGroupEId.isSSM();
+125   \}
+\end{DoxyCode}
+\index{Groupsock@{Groupsock}!lookup\+Dest\+Record\+From\+Destination@{lookup\+Dest\+Record\+From\+Destination}}
+\index{lookup\+Dest\+Record\+From\+Destination@{lookup\+Dest\+Record\+From\+Destination}!Groupsock@{Groupsock}}
+\subsubsection[{lookup\+Dest\+Record\+From\+Destination(struct sockaddr\+\_\+in const \&dest\+Addr\+And\+Port) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf dest\+Record}$\ast$ Groupsock\+::lookup\+Dest\+Record\+From\+Destination (
+\begin{DoxyParamCaption}
+\item[{struct sockaddr\+\_\+in const \&}]{dest\+Addr\+And\+Port}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{classGroupsock_a7e93b23af702e26cbc4b76f7bbc87d3f}
+\index{Groupsock@{Groupsock}!lookup\+Session\+Id\+From\+Destination@{lookup\+Session\+Id\+From\+Destination}}
+\index{lookup\+Session\+Id\+From\+Destination@{lookup\+Session\+Id\+From\+Destination}!Groupsock@{Groupsock}}
+\subsubsection[{lookup\+Session\+Id\+From\+Destination(struct sockaddr\+\_\+in const \&dest\+Addr\+And\+Port) const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Groupsock\+::lookup\+Session\+Id\+From\+Destination (
+\begin{DoxyParamCaption}
+\item[{struct sockaddr\+\_\+in const \&}]{dest\+Addr\+And\+Port}
+\end{DoxyParamCaption}
+) const}\label{classGroupsock_aca95d0522420e92149cad22020925be1}
+\index{Groupsock@{Groupsock}!members@{members}}
+\index{members@{members}!Groupsock@{Groupsock}}
+\subsubsection[{members()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Directed\+Net\+Interface\+Set}\& Groupsock\+::members (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classGroupsock_a60ab428437e9a4fcbc83f679f146b303}
+
+
+Definition at line 134 of file Groupsock.\+hh.
+
+
+
+References f\+Members.
+
+
+\begin{DoxyCode}
+134 \{ \textcolor{keywordflow}{return} fMembers; \}
+\end{DoxyCode}
+\index{Groupsock@{Groupsock}!multicast\+Send\+Only@{multicast\+Send\+Only}}
+\index{multicast\+Send\+Only@{multicast\+Send\+Only}!Groupsock@{Groupsock}}
+\subsubsection[{multicast\+Send\+Only()}]{\setlength{\rightskip}{0pt plus 5cm}void Groupsock\+::multicast\+Send\+Only (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classGroupsock_af1d8b7124167e2a5fc12ba3a0039346a}
+\index{Groupsock@{Groupsock}!output@{output}}
+\index{output@{output}!Groupsock@{Groupsock}}
+\subsubsection[{output(\+Usage\+Environment \&env, unsigned char $\ast$buffer, unsigned buffer\+Size, Directed\+Net\+Interface $\ast$interface\+Not\+To\+Fwd\+Back\+To=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Groupsock\+::output (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{unsigned}]{buffer\+Size, }
+\item[{{\bf Directed\+Net\+Interface} $\ast$}]{interface\+Not\+To\+Fwd\+Back\+To = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGroupsock_acf76460a39e76dd76d1f2df121ba7cb2}
+\index{Groupsock@{Groupsock}!output\+To\+All\+Members\+Except@{output\+To\+All\+Members\+Except}}
+\index{output\+To\+All\+Members\+Except@{output\+To\+All\+Members\+Except}!Groupsock@{Groupsock}}
+\subsubsection[{output\+To\+All\+Members\+Except(\+Directed\+Net\+Interface $\ast$except\+Interface, u\+\_\+int8\+\_\+t ttl\+To\+Fwd, unsigned char $\ast$data, unsigned size, net\+Address\+Bits source\+Addr)}]{\setlength{\rightskip}{0pt plus 5cm}int Groupsock\+::output\+To\+All\+Members\+Except (
+\begin{DoxyParamCaption}
+\item[{{\bf Directed\+Net\+Interface} $\ast$}]{except\+Interface, }
+\item[{u\+\_\+int8\+\_\+t}]{ttl\+To\+Fwd, }
+\item[{unsigned char $\ast$}]{data, }
+\item[{unsigned}]{size, }
+\item[{{\bf net\+Address\+Bits}}]{source\+Addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classGroupsock_af01c47dfaee1b6e7cb7cecce607d8e73}
+\index{Groupsock@{Groupsock}!port@{port}}
+\index{port@{port}!Groupsock@{Groupsock}}
+\subsubsection[{port() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Port} Socket\+::port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classSocket_ae550f2f8bca46db0ee17fc7a77f1924b}
+
+
+Definition at line 92 of file Net\+Interface.\+hh.
+
+
+
+References Socket\+::f\+Port.
+
+
+\begin{DoxyCode}
+92                     \{
+93     \textcolor{keywordflow}{return} fPort;
+94   \}
+\end{DoxyCode}
+\index{Groupsock@{Groupsock}!remove\+All\+Destinations@{remove\+All\+Destinations}}
+\index{remove\+All\+Destinations@{remove\+All\+Destinations}!Groupsock@{Groupsock}}
+\subsubsection[{remove\+All\+Destinations()}]{\setlength{\rightskip}{0pt plus 5cm}void Groupsock\+::remove\+All\+Destinations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classGroupsock_a7e4bab3e980838cf94b7e89df7b97160}
+\index{Groupsock@{Groupsock}!remove\+Destination@{remove\+Destination}}
+\index{remove\+Destination@{remove\+Destination}!Groupsock@{Groupsock}}
+\subsubsection[{remove\+Destination(unsigned session\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Groupsock\+::remove\+Destination (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{session\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classGroupsock_a64d1cca401b48ecd03dad7901335ef6d}
+\index{Groupsock@{Groupsock}!remove\+Destination\+From@{remove\+Destination\+From}}
+\index{remove\+Destination\+From@{remove\+Destination\+From}!Groupsock@{Groupsock}}
+\subsubsection[{remove\+Destination\+From(dest\+Record $\ast$\&dests, unsigned session\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}void Groupsock\+::remove\+Destination\+From (
+\begin{DoxyParamCaption}
+\item[{{\bf dest\+Record} $\ast$\&}]{dests, }
+\item[{unsigned}]{session\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classGroupsock_a405dcb84a7210edc18ed2b1b495c1c44}
+\index{Groupsock@{Groupsock}!reset@{reset}}
+\index{reset@{reset}!Groupsock@{Groupsock}}
+\subsubsection[{reset()}]{\setlength{\rightskip}{0pt plus 5cm}void Socket\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classSocket_aeb0279ac9f6aa44d522439efc1328d48}
+\index{Groupsock@{Groupsock}!socket\+Num@{socket\+Num}}
+\index{socket\+Num@{socket\+Num}!Groupsock@{Groupsock}}
+\subsubsection[{socket\+Num() const }]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::socket\+Num (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classSocket_aace6b9cee795e7814d11ac0e78bd7936}
+
+
+Definition at line 90 of file Net\+Interface.\+hh.
+
+
+
+References Socket\+::f\+Socket\+Num.
+
+
+\begin{DoxyCode}
+90 \{ \textcolor{keywordflow}{return} fSocketNum; \}
+\end{DoxyCode}
+\index{Groupsock@{Groupsock}!source\+Filter\+Address@{source\+Filter\+Address}}
+\index{source\+Filter\+Address@{source\+Filter\+Address}!Groupsock@{Groupsock}}
+\subsubsection[{source\+Filter\+Address() const }]{\setlength{\rightskip}{0pt plus 5cm}struct in\+\_\+addr const\& Groupsock\+::source\+Filter\+Address (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classGroupsock_a888b561b90e190766a72ae0feedd2737}
+
+
+Definition at line 119 of file Groupsock.\+hh.
+
+
+
+References f\+Incoming\+Group\+E\+Id, and Group\+E\+Id\+::source\+Filter\+Address().
+
+
+\begin{DoxyCode}
+119                                                     \{
+120     \textcolor{keywordflow}{return} fIncomingGroupEId.sourceFilterAddress();
+121   \}
+\end{DoxyCode}
+\index{Groupsock@{Groupsock}!source\+Port\+Num@{source\+Port\+Num}}
+\index{source\+Port\+Num@{source\+Port\+Num}!Groupsock@{Groupsock}}
+\subsubsection[{source\+Port\+Num() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf port\+Num\+Bits} Output\+Socket\+::source\+Port\+Num (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classOutputSocket_a756cba02b6d30318c232b6c7bc3e40e5}
+
+
+Definition at line 54 of file Groupsock.\+hh.
+
+
+
+References Output\+Socket\+::f\+Source\+Port, and Port\+::num().
+
+
+\begin{DoxyCode}
+54 \{\textcolor{keywordflow}{return} fSourcePort.num();\}
+\end{DoxyCode}
+\index{Groupsock@{Groupsock}!ttl@{ttl}}
+\index{ttl@{ttl}!Groupsock@{Groupsock}}
+\subsubsection[{ttl() const }]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t Groupsock\+::ttl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classGroupsock_a283c845659cc7c01e542c0e9a552b4fb}
+
+
+Definition at line 127 of file Groupsock.\+hh.
+
+
+
+References f\+Incoming\+Group\+E\+Id, and Group\+E\+Id\+::ttl().
+
+
+\begin{DoxyCode}
+127 \{ \textcolor{keywordflow}{return} fIncomingGroupEId.ttl(); \}
+\end{DoxyCode}
+\index{Groupsock@{Groupsock}!was\+Looped\+Back\+From\+Us@{was\+Looped\+Back\+From\+Us}}
+\index{was\+Looped\+Back\+From\+Us@{was\+Looped\+Back\+From\+Us}!Groupsock@{Groupsock}}
+\subsubsection[{was\+Looped\+Back\+From\+Us(\+Usage\+Environment \&env, struct sockaddr\+\_\+in \&from\+Address\+And\+Port)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Groupsock\+::was\+Looped\+Back\+From\+Us (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{struct sockaddr\+\_\+in \&}]{from\+Address\+And\+Port}
+\end{DoxyParamCaption}
+)}\label{classGroupsock_a513e3590c4bba32d2ad6bc5135cb22fa}
+\index{Groupsock@{Groupsock}!write@{write}}
+\index{write@{write}!Groupsock@{Groupsock}}
+\subsubsection[{write(net\+Address\+Bits address, port\+Num\+Bits port\+Num, u\+\_\+int8\+\_\+t ttl, unsigned char $\ast$buffer, unsigned buffer\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Output\+Socket\+::write (
+\begin{DoxyParamCaption}
+\item[{{\bf net\+Address\+Bits}}]{address, }
+\item[{{\bf port\+Num\+Bits}}]{port\+Num, }
+\item[{u\+\_\+int8\+\_\+t}]{ttl, }
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{unsigned}]{buffer\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classOutputSocket_afa98c2750d28519b5f3a42112dd77674}
+
+
+Referenced by Output\+Socket\+::write().
+
+\index{Groupsock@{Groupsock}!write@{write}}
+\index{write@{write}!Groupsock@{Groupsock}}
+\subsubsection[{write(struct sockaddr\+\_\+in \&address\+And\+Port, u\+\_\+int8\+\_\+t ttl, unsigned char $\ast$buffer, unsigned buffer\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Output\+Socket\+::write (
+\begin{DoxyParamCaption}
+\item[{struct sockaddr\+\_\+in \&}]{address\+And\+Port, }
+\item[{u\+\_\+int8\+\_\+t}]{ttl, }
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{unsigned}]{buffer\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classOutputSocket_a5a334484521fab71bd751be87fca7743}
+
+
+Definition at line 46 of file Groupsock.\+hh.
+
+
+
+References Output\+Socket\+::write().
+
+
+\begin{DoxyCode}
+47                                                             \{
+48     \textcolor{keywordflow}{return} write(addressAndPort.sin\_addr.s\_addr, addressAndPort.sin\_port, ttl, buffer, bufferSize);
+49   \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Groupsock@{Groupsock}!Debug\+Level@{Debug\+Level}}
+\index{Debug\+Level@{Debug\+Level}!Groupsock@{Groupsock}}
+\subsubsection[{Debug\+Level}]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::\+Debug\+Level\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classSocket_af364aa5f7e6899ab56904e8fc5ee0e7a}
+
+
+Definition at line 98 of file Net\+Interface.\+hh.
+
+\index{Groupsock@{Groupsock}!Default\+Usage\+Environment@{Default\+Usage\+Environment}}
+\index{Default\+Usage\+Environment@{Default\+Usage\+Environment}!Groupsock@{Groupsock}}
+\subsubsection[{Default\+Usage\+Environment}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}$\ast$ Net\+Interface\+::\+Default\+Usage\+Environment\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classNetInterface_a570b15d8141a04f1d2691af1783dc30d}
+
+
+Definition at line 32 of file Net\+Interface.\+hh.
+
+\index{Groupsock@{Groupsock}!delete\+If\+No\+Members@{delete\+If\+No\+Members}}
+\index{delete\+If\+No\+Members@{delete\+If\+No\+Members}!Groupsock@{Groupsock}}
+\subsubsection[{delete\+If\+No\+Members}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Groupsock\+::delete\+If\+No\+Members}\label{classGroupsock_a02c44daeaaeb15128ad6f6f3f3c2df58}
+
+
+Definition at line 136 of file Groupsock.\+hh.
+
+\index{Groupsock@{Groupsock}!f\+Dests@{f\+Dests}}
+\index{f\+Dests@{f\+Dests}!Groupsock@{Groupsock}}
+\subsubsection[{f\+Dests}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dest\+Record}$\ast$ Groupsock\+::f\+Dests\hspace{0.3cm}{\ttfamily [protected]}}\label{classGroupsock_a1bab78226ab2e76202880ef12035484c}
+
+
+Definition at line 167 of file Groupsock.\+hh.
+
+
+
+Referenced by has\+Multiple\+Destinations().
+
+\index{Groupsock@{Groupsock}!f\+Incoming\+Group\+E\+Id@{f\+Incoming\+Group\+E\+Id}}
+\index{f\+Incoming\+Group\+E\+Id@{f\+Incoming\+Group\+E\+Id}!Groupsock@{Groupsock}}
+\subsubsection[{f\+Incoming\+Group\+E\+Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Group\+E\+Id} Groupsock\+::f\+Incoming\+Group\+E\+Id\hspace{0.3cm}{\ttfamily [private]}}\label{classGroupsock_aa0205576509c640933395ee331dec683}
+
+
+Definition at line 169 of file Groupsock.\+hh.
+
+
+
+Referenced by group\+Address(), is\+S\+S\+M(), source\+Filter\+Address(), and ttl().
+
+\index{Groupsock@{Groupsock}!f\+Members@{f\+Members}}
+\index{f\+Members@{f\+Members}!Groupsock@{Groupsock}}
+\subsubsection[{f\+Members}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Directed\+Net\+Interface\+Set} Groupsock\+::f\+Members\hspace{0.3cm}{\ttfamily [private]}}\label{classGroupsock_abc704d3a2440a096f3cc11c932be5108}
+
+
+Definition at line 170 of file Groupsock.\+hh.
+
+
+
+Referenced by members().
+
+\index{Groupsock@{Groupsock}!is\+Slave@{is\+Slave}}
+\index{is\+Slave@{is\+Slave}!Groupsock@{Groupsock}}
+\subsubsection[{is\+Slave}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Groupsock\+::is\+Slave}\label{classGroupsock_ab2b146343c5915e2dc9b426fb70f3e4a}
+
+
+Definition at line 137 of file Groupsock.\+hh.
+
+\index{Groupsock@{Groupsock}!stats\+Group\+Incoming@{stats\+Group\+Incoming}}
+\index{stats\+Group\+Incoming@{stats\+Group\+Incoming}!Groupsock@{Groupsock}}
+\subsubsection[{stats\+Group\+Incoming}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Net\+Interface\+Traffic\+Stats} Groupsock\+::stats\+Group\+Incoming}\label{classGroupsock_af8be4d48f10f9b6c75bdd71ffa90a7b6}
+
+
+Definition at line 143 of file Groupsock.\+hh.
+
+\index{Groupsock@{Groupsock}!stats\+Group\+Outgoing@{stats\+Group\+Outgoing}}
+\index{stats\+Group\+Outgoing@{stats\+Group\+Outgoing}!Groupsock@{Groupsock}}
+\subsubsection[{stats\+Group\+Outgoing}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Net\+Interface\+Traffic\+Stats} Groupsock\+::stats\+Group\+Outgoing}\label{classGroupsock_a0ba5c12a84c63a7489462453b28aa13a}
+
+
+Definition at line 144 of file Groupsock.\+hh.
+
+\index{Groupsock@{Groupsock}!stats\+Group\+Relayed\+Incoming@{stats\+Group\+Relayed\+Incoming}}
+\index{stats\+Group\+Relayed\+Incoming@{stats\+Group\+Relayed\+Incoming}!Groupsock@{Groupsock}}
+\subsubsection[{stats\+Group\+Relayed\+Incoming}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Net\+Interface\+Traffic\+Stats} Groupsock\+::stats\+Group\+Relayed\+Incoming}\label{classGroupsock_a032eabc11d0965824e8ede9aeec5a380}
+
+
+Definition at line 145 of file Groupsock.\+hh.
+
+\index{Groupsock@{Groupsock}!stats\+Group\+Relayed\+Outgoing@{stats\+Group\+Relayed\+Outgoing}}
+\index{stats\+Group\+Relayed\+Outgoing@{stats\+Group\+Relayed\+Outgoing}!Groupsock@{Groupsock}}
+\subsubsection[{stats\+Group\+Relayed\+Outgoing}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Net\+Interface\+Traffic\+Stats} Groupsock\+::stats\+Group\+Relayed\+Outgoing}\label{classGroupsock_a0504c707de154acf1bc988397c9517f3}
+
+
+Definition at line 146 of file Groupsock.\+hh.
+
+\index{Groupsock@{Groupsock}!stats\+Incoming@{stats\+Incoming}}
+\index{stats\+Incoming@{stats\+Incoming}!Groupsock@{Groupsock}}
+\subsubsection[{stats\+Incoming}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Net\+Interface\+Traffic\+Stats} Groupsock\+::stats\+Incoming\hspace{0.3cm}{\ttfamily [static]}}\label{classGroupsock_a1d16f3c802519aa4b20ebf653a2ca254}
+
+
+Definition at line 139 of file Groupsock.\+hh.
+
+\index{Groupsock@{Groupsock}!stats\+Outgoing@{stats\+Outgoing}}
+\index{stats\+Outgoing@{stats\+Outgoing}!Groupsock@{Groupsock}}
+\subsubsection[{stats\+Outgoing}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Net\+Interface\+Traffic\+Stats} Groupsock\+::stats\+Outgoing\hspace{0.3cm}{\ttfamily [static]}}\label{classGroupsock_a686b9fcbbc347af49746163c06a4426c}
+
+
+Definition at line 140 of file Groupsock.\+hh.
+
+\index{Groupsock@{Groupsock}!stats\+Relayed\+Incoming@{stats\+Relayed\+Incoming}}
+\index{stats\+Relayed\+Incoming@{stats\+Relayed\+Incoming}!Groupsock@{Groupsock}}
+\subsubsection[{stats\+Relayed\+Incoming}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Net\+Interface\+Traffic\+Stats} Groupsock\+::stats\+Relayed\+Incoming\hspace{0.3cm}{\ttfamily [static]}}\label{classGroupsock_a7e3bc861fd6b76bd9f81cdf9a378cb6b}
+
+
+Definition at line 141 of file Groupsock.\+hh.
+
+\index{Groupsock@{Groupsock}!stats\+Relayed\+Outgoing@{stats\+Relayed\+Outgoing}}
+\index{stats\+Relayed\+Outgoing@{stats\+Relayed\+Outgoing}!Groupsock@{Groupsock}}
+\subsubsection[{stats\+Relayed\+Outgoing}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Net\+Interface\+Traffic\+Stats} Groupsock\+::stats\+Relayed\+Outgoing\hspace{0.3cm}{\ttfamily [static]}}\label{classGroupsock_a6350500bcc29ceed6eb3f8162eb06a97}
+
+
+Definition at line 142 of file Groupsock.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+groupsock/include/{\bf Groupsock.\+hh}\end{DoxyCompactItemize}

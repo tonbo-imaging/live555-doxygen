@@ -1,0 +1,87 @@
+\section{groupsock/include/\+Net\+Address.hh File Reference}
+\label{NetAddress_8hh}\index{groupsock/include/\+Net\+Address.\+hh@{groupsock/include/\+Net\+Address.\+hh}}
+{\ttfamily \#include \char`\"{}Hash\+Table.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Net\+Common.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Usage\+Environment.\+hh\char`\"{}}\\*
+Include dependency graph for Net\+Address.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{NetAddress_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{NetAddress_8hh__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Net\+Address}
+\item 
+class {\bf Net\+Address\+List}
+\item 
+class {\bf Net\+Address\+List\+::\+Iterator}
+\item 
+class {\bf Port}
+\item 
+class {\bf Address\+Port\+Lookup\+Table}
+\item 
+class {\bf Address\+Port\+Lookup\+Table\+::\+Iterator}
+\item 
+class {\bf Address\+String}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef u\+\_\+int32\+\_\+t {\bf net\+Address\+Bits}
+\item 
+typedef u\+\_\+int16\+\_\+t {\bf port\+Num\+Bits}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Usage\+Environment} \& {\bf operator$<$$<$} ({\bf Usage\+Environment} \&s, const {\bf Port} \&p)
+\item 
+{\bf Boolean} {\bf Is\+Multicast\+Address} ({\bf net\+Address\+Bits} address)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{Net\+Address.\+hh@{Net\+Address.\+hh}!net\+Address\+Bits@{net\+Address\+Bits}}
+\index{net\+Address\+Bits@{net\+Address\+Bits}!Net\+Address.\+hh@{Net\+Address.\+hh}}
+\subsubsection[{net\+Address\+Bits}]{\setlength{\rightskip}{0pt plus 5cm}typedef u\+\_\+int32\+\_\+t {\bf net\+Address\+Bits}}\label{NetAddress_8hh_aa610d7f0f0c1d523847ee614ad2108b3}
+
+
+Definition at line 39 of file Net\+Address.\+hh.
+
+\index{Net\+Address.\+hh@{Net\+Address.\+hh}!port\+Num\+Bits@{port\+Num\+Bits}}
+\index{port\+Num\+Bits@{port\+Num\+Bits}!Net\+Address.\+hh@{Net\+Address.\+hh}}
+\subsubsection[{port\+Num\+Bits}]{\setlength{\rightskip}{0pt plus 5cm}typedef u\+\_\+int16\+\_\+t {\bf port\+Num\+Bits}}\label{NetAddress_8hh_ab8c74781af12a252640180fad7430b8c}
+
+
+Definition at line 92 of file Net\+Address.\+hh.
+
+
+
+\subsection{Function Documentation}
+\index{Net\+Address.\+hh@{Net\+Address.\+hh}!Is\+Multicast\+Address@{Is\+Multicast\+Address}}
+\index{Is\+Multicast\+Address@{Is\+Multicast\+Address}!Net\+Address.\+hh@{Net\+Address.\+hh}}
+\subsubsection[{Is\+Multicast\+Address(net\+Address\+Bits address)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Is\+Multicast\+Address (
+\begin{DoxyParamCaption}
+\item[{{\bf net\+Address\+Bits}}]{address}
+\end{DoxyParamCaption}
+)}\label{NetAddress_8hh_a56ad692366a0cbb4fac3a3889ed3160d}
+\index{Net\+Address.\+hh@{Net\+Address.\+hh}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Net\+Address.\+hh@{Net\+Address.\+hh}}
+\subsubsection[{operator$<$$<$(\+Usage\+Environment \&s, const Port \&p)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{s, }
+\item[{const {\bf Port} \&}]{p}
+\end{DoxyParamCaption}
+)}\label{NetAddress_8hh_a47a4f6a645d71329741a624a5ce5bcc8}

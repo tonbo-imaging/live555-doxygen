@@ -1,0 +1,184 @@
+\section{Media\+Lookup\+Table Class Reference}
+\label{classMediaLookupTable}\index{Media\+Lookup\+Table@{Media\+Lookup\+Table}}
+
+
+{\ttfamily \#include $<$Media.\+hh$>$}
+
+
+
+Collaboration diagram for Media\+Lookup\+Table\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{classMediaLookupTable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Hash\+Table} const \& {\bf get\+Table} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Media\+Lookup\+Table} $\ast$ {\bf our\+Media} ({\bf Usage\+Environment} \&env)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Media\+Lookup\+Table} ({\bf Usage\+Environment} \&env)
+\item 
+virtual {\bf $\sim$\+Media\+Lookup\+Table} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Medium} $\ast$ {\bf lookup} (char const $\ast$name) const 
+\item 
+void {\bf add\+New} ({\bf Medium} $\ast$medium, char $\ast$medium\+Name)
+\item 
+void {\bf remove} (char const $\ast$name)
+\item 
+void {\bf generate\+New\+Name} (char $\ast$medium\+Name, unsigned max\+Len)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Usage\+Environment} \& {\bf f\+Env}
+\item 
+{\bf Hash\+Table} $\ast$ {\bf f\+Table}
+\item 
+unsigned {\bf f\+Name\+Generator}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Medium}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 91 of file Media.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Media\+Lookup\+Table@{Media\+Lookup\+Table}!Media\+Lookup\+Table@{Media\+Lookup\+Table}}
+\index{Media\+Lookup\+Table@{Media\+Lookup\+Table}!Media\+Lookup\+Table@{Media\+Lookup\+Table}}
+\subsubsection[{Media\+Lookup\+Table(\+Usage\+Environment \&env)}]{\setlength{\rightskip}{0pt plus 5cm}Media\+Lookup\+Table\+::\+Media\+Lookup\+Table (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classMediaLookupTable_adfcee93fd71744ba9a3f795181b4d823}
+\index{Media\+Lookup\+Table@{Media\+Lookup\+Table}!````~Media\+Lookup\+Table@{$\sim$\+Media\+Lookup\+Table}}
+\index{````~Media\+Lookup\+Table@{$\sim$\+Media\+Lookup\+Table}!Media\+Lookup\+Table@{Media\+Lookup\+Table}}
+\subsubsection[{$\sim$\+Media\+Lookup\+Table()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Media\+Lookup\+Table\+::$\sim$\+Media\+Lookup\+Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classMediaLookupTable_aa35bb6cd263bcd85a25a04dd6614d291}
+
+
+\subsection{Member Function Documentation}
+\index{Media\+Lookup\+Table@{Media\+Lookup\+Table}!add\+New@{add\+New}}
+\index{add\+New@{add\+New}!Media\+Lookup\+Table@{Media\+Lookup\+Table}}
+\subsubsection[{add\+New(\+Medium $\ast$medium, char $\ast$medium\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}void Media\+Lookup\+Table\+::add\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{medium, }
+\item[{char $\ast$}]{medium\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMediaLookupTable_ab9d8d475c49a0fb2f3d52888cd872f3f}
+\index{Media\+Lookup\+Table@{Media\+Lookup\+Table}!generate\+New\+Name@{generate\+New\+Name}}
+\index{generate\+New\+Name@{generate\+New\+Name}!Media\+Lookup\+Table@{Media\+Lookup\+Table}}
+\subsubsection[{generate\+New\+Name(char $\ast$medium\+Name, unsigned max\+Len)}]{\setlength{\rightskip}{0pt plus 5cm}void Media\+Lookup\+Table\+::generate\+New\+Name (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{medium\+Name, }
+\item[{unsigned}]{max\+Len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMediaLookupTable_a12bc7859b572ac7a9f149dc637fdbfee}
+\index{Media\+Lookup\+Table@{Media\+Lookup\+Table}!get\+Table@{get\+Table}}
+\index{get\+Table@{get\+Table}!Media\+Lookup\+Table@{Media\+Lookup\+Table}}
+\subsubsection[{get\+Table()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hash\+Table} const\& Media\+Lookup\+Table\+::get\+Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMediaLookupTable_a96de95e6631e6f7a5c75bee837a86ef6}
+
+
+Definition at line 94 of file Media.\+hh.
+
+
+
+References f\+Table.
+
+
+\begin{DoxyCode}
+94 \{ \textcolor{keywordflow}{return} *fTable; \}
+\end{DoxyCode}
+\index{Media\+Lookup\+Table@{Media\+Lookup\+Table}!lookup@{lookup}}
+\index{lookup@{lookup}!Media\+Lookup\+Table@{Media\+Lookup\+Table}}
+\subsubsection[{lookup(char const $\ast$name) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Medium}$\ast$ Media\+Lookup\+Table\+::lookup (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classMediaLookupTable_a545a305fd4ec06e3209e21d57b5c4f80}
+\index{Media\+Lookup\+Table@{Media\+Lookup\+Table}!our\+Media@{our\+Media}}
+\index{our\+Media@{our\+Media}!Media\+Lookup\+Table@{Media\+Lookup\+Table}}
+\subsubsection[{our\+Media(\+Usage\+Environment \&env)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Media\+Lookup\+Table}$\ast$ Media\+Lookup\+Table\+::our\+Media (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classMediaLookupTable_a51220ab11e51dfdd27c8970a1d82db3a}
+\index{Media\+Lookup\+Table@{Media\+Lookup\+Table}!remove@{remove}}
+\index{remove@{remove}!Media\+Lookup\+Table@{Media\+Lookup\+Table}}
+\subsubsection[{remove(char const $\ast$name)}]{\setlength{\rightskip}{0pt plus 5cm}void Media\+Lookup\+Table\+::remove (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMediaLookupTable_af907a1868fb694915a056bc354b85234}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Media\+Lookup\+Table@{Media\+Lookup\+Table}!Medium@{Medium}}
+\index{Medium@{Medium}!Media\+Lookup\+Table@{Media\+Lookup\+Table}}
+\subsubsection[{Medium}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Medium}\hspace{0.3cm}{\ttfamily [friend]}}\label{classMediaLookupTable_ac7738305a0d7611235bee6e40ee5a556}
+
+
+Definition at line 101 of file Media.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{Media\+Lookup\+Table@{Media\+Lookup\+Table}!f\+Env@{f\+Env}}
+\index{f\+Env@{f\+Env}!Media\+Lookup\+Table@{Media\+Lookup\+Table}}
+\subsubsection[{f\+Env}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Media\+Lookup\+Table\+::f\+Env\hspace{0.3cm}{\ttfamily [private]}}\label{classMediaLookupTable_afaa229b8a07e915890450099a08b5975}
+
+
+Definition at line 112 of file Media.\+hh.
+
+\index{Media\+Lookup\+Table@{Media\+Lookup\+Table}!f\+Name\+Generator@{f\+Name\+Generator}}
+\index{f\+Name\+Generator@{f\+Name\+Generator}!Media\+Lookup\+Table@{Media\+Lookup\+Table}}
+\subsubsection[{f\+Name\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Media\+Lookup\+Table\+::f\+Name\+Generator\hspace{0.3cm}{\ttfamily [private]}}\label{classMediaLookupTable_a585c7c57d4bedb8b11b89850835583c7}
+
+
+Definition at line 114 of file Media.\+hh.
+
+\index{Media\+Lookup\+Table@{Media\+Lookup\+Table}!f\+Table@{f\+Table}}
+\index{f\+Table@{f\+Table}!Media\+Lookup\+Table@{Media\+Lookup\+Table}}
+\subsubsection[{f\+Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hash\+Table}$\ast$ Media\+Lookup\+Table\+::f\+Table\hspace{0.3cm}{\ttfamily [private]}}\label{classMediaLookupTable_abef406482a4763a0bce45832ed1cb2fe}
+
+
+Definition at line 113 of file Media.\+hh.
+
+
+
+Referenced by get\+Table().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf Media.\+hh}\end{DoxyCompactItemize}

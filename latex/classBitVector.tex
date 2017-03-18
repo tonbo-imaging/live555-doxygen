@@ -1,0 +1,250 @@
+\section{Bit\+Vector Class Reference}
+\label{classBitVector}\index{Bit\+Vector@{Bit\+Vector}}
+
+
+{\ttfamily \#include $<$Bit\+Vector.\+hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Bit\+Vector} (unsigned char $\ast$base\+Byte\+Ptr, unsigned base\+Bit\+Offset, unsigned {\bf tot\+Num\+Bits})
+\item 
+void {\bf setup} (unsigned char $\ast$base\+Byte\+Ptr, unsigned base\+Bit\+Offset, unsigned {\bf tot\+Num\+Bits})
+\item 
+void {\bf put\+Bits} (unsigned from, unsigned num\+Bits)
+\item 
+void {\bf put1\+Bit} (unsigned bit)
+\item 
+unsigned {\bf get\+Bits} (unsigned num\+Bits)
+\item 
+unsigned {\bf get1\+Bit} ()
+\item 
+{\bf Boolean} {\bf get1\+Bit\+Boolean} ()
+\item 
+void {\bf skip\+Bits} (unsigned num\+Bits)
+\item 
+unsigned {\bf cur\+Bit\+Index} () const 
+\item 
+unsigned {\bf tot\+Num\+Bits} () const 
+\item 
+unsigned {\bf num\+Bits\+Remaining} () const 
+\item 
+unsigned {\bf get\+\_\+exp\+Golomb} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char $\ast$ {\bf f\+Base\+Byte\+Ptr}
+\item 
+unsigned {\bf f\+Base\+Bit\+Offset}
+\item 
+unsigned {\bf f\+Tot\+Num\+Bits}
+\item 
+unsigned {\bf f\+Cur\+Bit\+Index}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file Bit\+Vector.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Bit\+Vector@{Bit\+Vector}!Bit\+Vector@{Bit\+Vector}}
+\index{Bit\+Vector@{Bit\+Vector}!Bit\+Vector@{Bit\+Vector}}
+\subsubsection[{Bit\+Vector(unsigned char $\ast$base\+Byte\+Ptr, unsigned base\+Bit\+Offset, unsigned tot\+Num\+Bits)}]{\setlength{\rightskip}{0pt plus 5cm}Bit\+Vector\+::\+Bit\+Vector (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{base\+Byte\+Ptr, }
+\item[{unsigned}]{base\+Bit\+Offset, }
+\item[{unsigned}]{tot\+Num\+Bits}
+\end{DoxyParamCaption}
+)}\label{classBitVector_a6920b474ac606f3d6ad1692a4dcfb7b0}
+
+
+\subsection{Member Function Documentation}
+\index{Bit\+Vector@{Bit\+Vector}!cur\+Bit\+Index@{cur\+Bit\+Index}}
+\index{cur\+Bit\+Index@{cur\+Bit\+Index}!Bit\+Vector@{Bit\+Vector}}
+\subsubsection[{cur\+Bit\+Index() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Bit\+Vector\+::cur\+Bit\+Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classBitVector_af8f3e7184051551e2c6a3bed1c2e93d9}
+
+
+Definition at line 47 of file Bit\+Vector.\+hh.
+
+
+
+References f\+Cur\+Bit\+Index.
+
+
+\begin{DoxyCode}
+47 \{ \textcolor{keywordflow}{return} fCurBitIndex; \}
+\end{DoxyCode}
+\index{Bit\+Vector@{Bit\+Vector}!get1\+Bit@{get1\+Bit}}
+\index{get1\+Bit@{get1\+Bit}!Bit\+Vector@{Bit\+Vector}}
+\subsubsection[{get1\+Bit()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Bit\+Vector\+::get1\+Bit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classBitVector_a63439eb95e8027f4347132e26d247cb6}
+
+
+Referenced by M\+P3\+Frame\+Params\+::get1\+Bit(), and get1\+Bit\+Boolean().
+
+\index{Bit\+Vector@{Bit\+Vector}!get1\+Bit\+Boolean@{get1\+Bit\+Boolean}}
+\index{get1\+Bit\+Boolean@{get1\+Bit\+Boolean}!Bit\+Vector@{Bit\+Vector}}
+\subsubsection[{get1\+Bit\+Boolean()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Bit\+Vector\+::get1\+Bit\+Boolean (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classBitVector_a0411a75533d2037c5f1cf5b925646b61}
+
+
+Definition at line 43 of file Bit\+Vector.\+hh.
+
+
+
+References get1\+Bit().
+
+
+\begin{DoxyCode}
+43 \{ \textcolor{keywordflow}{return} get1Bit() != 0; \}
+\end{DoxyCode}
+\index{Bit\+Vector@{Bit\+Vector}!get\+\_\+exp\+Golomb@{get\+\_\+exp\+Golomb}}
+\index{get\+\_\+exp\+Golomb@{get\+\_\+exp\+Golomb}!Bit\+Vector@{Bit\+Vector}}
+\subsubsection[{get\+\_\+exp\+Golomb()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Bit\+Vector\+::get\+\_\+exp\+Golomb (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classBitVector_a2792cdd2f3f6a14bafd8f7db33286e38}
+\index{Bit\+Vector@{Bit\+Vector}!get\+Bits@{get\+Bits}}
+\index{get\+Bits@{get\+Bits}!Bit\+Vector@{Bit\+Vector}}
+\subsubsection[{get\+Bits(unsigned num\+Bits)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Bit\+Vector\+::get\+Bits (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bits}
+\end{DoxyParamCaption}
+)}\label{classBitVector_ae9c2b5431ce0c8abcc2b4142d93f8f3c}
+
+
+Referenced by M\+P3\+Frame\+Params\+::get\+Bits().
+
+\index{Bit\+Vector@{Bit\+Vector}!num\+Bits\+Remaining@{num\+Bits\+Remaining}}
+\index{num\+Bits\+Remaining@{num\+Bits\+Remaining}!Bit\+Vector@{Bit\+Vector}}
+\subsubsection[{num\+Bits\+Remaining() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Bit\+Vector\+::num\+Bits\+Remaining (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classBitVector_ae3956d03e34fd6fa5301d9c4a6169a4d}
+
+
+Definition at line 49 of file Bit\+Vector.\+hh.
+
+
+
+References f\+Cur\+Bit\+Index, and f\+Tot\+Num\+Bits.
+
+
+\begin{DoxyCode}
+49 \{ \textcolor{keywordflow}{return} fTotNumBits - fCurBitIndex; \}
+\end{DoxyCode}
+\index{Bit\+Vector@{Bit\+Vector}!put1\+Bit@{put1\+Bit}}
+\index{put1\+Bit@{put1\+Bit}!Bit\+Vector@{Bit\+Vector}}
+\subsubsection[{put1\+Bit(unsigned bit)}]{\setlength{\rightskip}{0pt plus 5cm}void Bit\+Vector\+::put1\+Bit (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{bit}
+\end{DoxyParamCaption}
+)}\label{classBitVector_af971480c49f7e225cfad45a5934a1d2f}
+\index{Bit\+Vector@{Bit\+Vector}!put\+Bits@{put\+Bits}}
+\index{put\+Bits@{put\+Bits}!Bit\+Vector@{Bit\+Vector}}
+\subsubsection[{put\+Bits(unsigned from, unsigned num\+Bits)}]{\setlength{\rightskip}{0pt plus 5cm}void Bit\+Vector\+::put\+Bits (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{from, }
+\item[{unsigned}]{num\+Bits}
+\end{DoxyParamCaption}
+)}\label{classBitVector_ad638dbcad0fea98007395c4d359476ca}
+\index{Bit\+Vector@{Bit\+Vector}!setup@{setup}}
+\index{setup@{setup}!Bit\+Vector@{Bit\+Vector}}
+\subsubsection[{setup(unsigned char $\ast$base\+Byte\+Ptr, unsigned base\+Bit\+Offset, unsigned tot\+Num\+Bits)}]{\setlength{\rightskip}{0pt plus 5cm}void Bit\+Vector\+::setup (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{base\+Byte\+Ptr, }
+\item[{unsigned}]{base\+Bit\+Offset, }
+\item[{unsigned}]{tot\+Num\+Bits}
+\end{DoxyParamCaption}
+)}\label{classBitVector_a99283aab1acebc4795bf8e60af31a3fc}
+
+
+Referenced by M\+P3\+Frame\+Params\+::set\+Byte\+Pointer().
+
+\index{Bit\+Vector@{Bit\+Vector}!skip\+Bits@{skip\+Bits}}
+\index{skip\+Bits@{skip\+Bits}!Bit\+Vector@{Bit\+Vector}}
+\subsubsection[{skip\+Bits(unsigned num\+Bits)}]{\setlength{\rightskip}{0pt plus 5cm}void Bit\+Vector\+::skip\+Bits (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bits}
+\end{DoxyParamCaption}
+)}\label{classBitVector_a9b69ec4445caa01eb78e16f1e8436f7d}
+\index{Bit\+Vector@{Bit\+Vector}!tot\+Num\+Bits@{tot\+Num\+Bits}}
+\index{tot\+Num\+Bits@{tot\+Num\+Bits}!Bit\+Vector@{Bit\+Vector}}
+\subsubsection[{tot\+Num\+Bits() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Bit\+Vector\+::tot\+Num\+Bits (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classBitVector_abb25d2b8b6df1e0f8a5fdf110795766e}
+
+
+Definition at line 48 of file Bit\+Vector.\+hh.
+
+
+
+References f\+Tot\+Num\+Bits.
+
+
+\begin{DoxyCode}
+48 \{ \textcolor{keywordflow}{return} fTotNumBits; \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Bit\+Vector@{Bit\+Vector}!f\+Base\+Bit\+Offset@{f\+Base\+Bit\+Offset}}
+\index{f\+Base\+Bit\+Offset@{f\+Base\+Bit\+Offset}!Bit\+Vector@{Bit\+Vector}}
+\subsubsection[{f\+Base\+Bit\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Bit\+Vector\+::f\+Base\+Bit\+Offset\hspace{0.3cm}{\ttfamily [private]}}\label{classBitVector_ac6c8c31d653a9df46fc41931c1c9115d}
+
+
+Definition at line 56 of file Bit\+Vector.\+hh.
+
+\index{Bit\+Vector@{Bit\+Vector}!f\+Base\+Byte\+Ptr@{f\+Base\+Byte\+Ptr}}
+\index{f\+Base\+Byte\+Ptr@{f\+Base\+Byte\+Ptr}!Bit\+Vector@{Bit\+Vector}}
+\subsubsection[{f\+Base\+Byte\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ Bit\+Vector\+::f\+Base\+Byte\+Ptr\hspace{0.3cm}{\ttfamily [private]}}\label{classBitVector_a54d91cd0f345ba06000378cca24a02b1}
+
+
+Definition at line 55 of file Bit\+Vector.\+hh.
+
+\index{Bit\+Vector@{Bit\+Vector}!f\+Cur\+Bit\+Index@{f\+Cur\+Bit\+Index}}
+\index{f\+Cur\+Bit\+Index@{f\+Cur\+Bit\+Index}!Bit\+Vector@{Bit\+Vector}}
+\subsubsection[{f\+Cur\+Bit\+Index}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Bit\+Vector\+::f\+Cur\+Bit\+Index\hspace{0.3cm}{\ttfamily [private]}}\label{classBitVector_a048459390d280ea3fb9b34738f09b6c0}
+
+
+Definition at line 58 of file Bit\+Vector.\+hh.
+
+
+
+Referenced by cur\+Bit\+Index(), and num\+Bits\+Remaining().
+
+\index{Bit\+Vector@{Bit\+Vector}!f\+Tot\+Num\+Bits@{f\+Tot\+Num\+Bits}}
+\index{f\+Tot\+Num\+Bits@{f\+Tot\+Num\+Bits}!Bit\+Vector@{Bit\+Vector}}
+\subsubsection[{f\+Tot\+Num\+Bits}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Bit\+Vector\+::f\+Tot\+Num\+Bits\hspace{0.3cm}{\ttfamily [private]}}\label{classBitVector_a98dcf8e2bdf709637e481804b063d8cb}
+
+
+Definition at line 57 of file Bit\+Vector.\+hh.
+
+
+
+Referenced by num\+Bits\+Remaining(), and tot\+Num\+Bits().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf Bit\+Vector.\+hh}\end{DoxyCompactItemize}

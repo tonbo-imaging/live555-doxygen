@@ -1,0 +1,146 @@
+\section{Ogg\+Track Class Reference}
+\label{classOggTrack}\index{Ogg\+Track@{Ogg\+Track}}
+
+
+{\ttfamily \#include $<$Ogg\+File.\+hh$>$}
+
+
+
+Collaboration diagram for Ogg\+Track\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classOggTrack__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf \+\_\+vto\+Hdrs}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ogg\+Track} ()
+\item 
+virtual {\bf $\sim$\+Ogg\+Track} ()
+\item 
+{\bf Boolean} {\bf we\+Need\+Headers} () const 
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+u\+\_\+int32\+\_\+t {\bf track\+Number}
+\item 
+char const $\ast$ {\bf mime\+Type}
+\item 
+unsigned {\bf sampling\+Frequency}
+\item 
+unsigned {\bf num\+Channels}
+\item 
+unsigned {\bf est\+Bitrate}
+\item 
+struct {\bf Ogg\+Track\+::\+\_\+vto\+Hdrs} {\bf vto\+Hdrs}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 90 of file Ogg\+File.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Ogg\+Track@{Ogg\+Track}!Ogg\+Track@{Ogg\+Track}}
+\index{Ogg\+Track@{Ogg\+Track}!Ogg\+Track@{Ogg\+Track}}
+\subsubsection[{Ogg\+Track()}]{\setlength{\rightskip}{0pt plus 5cm}Ogg\+Track\+::\+Ogg\+Track (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classOggTrack_a5187c623706a1485829a6bcf2ce015c2}
+\index{Ogg\+Track@{Ogg\+Track}!````~Ogg\+Track@{$\sim$\+Ogg\+Track}}
+\index{````~Ogg\+Track@{$\sim$\+Ogg\+Track}!Ogg\+Track@{Ogg\+Track}}
+\subsubsection[{$\sim$\+Ogg\+Track()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Ogg\+Track\+::$\sim$\+Ogg\+Track (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classOggTrack_ae43cf30d35b29e4cc5327da2dabb414c}
+
+
+\subsection{Member Function Documentation}
+\index{Ogg\+Track@{Ogg\+Track}!we\+Need\+Headers@{we\+Need\+Headers}}
+\index{we\+Need\+Headers@{we\+Need\+Headers}!Ogg\+Track@{Ogg\+Track}}
+\subsubsection[{we\+Need\+Headers() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Ogg\+Track\+::we\+Need\+Headers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classOggTrack_aa2ace4dd6c9844a84208c33c50bdbd9e}
+
+
+Definition at line 121 of file Ogg\+File.\+hh.
+
+
+
+References Ogg\+Track\+::\+\_\+vto\+Hdrs\+::header, N\+U\+L\+L, and vto\+Hdrs.
+
+
+\begin{DoxyCode}
+121                                 \{
+122     \textcolor{keywordflow}{return}
+123       vtoHdrs.header[0] == NULL ||
+124       vtoHdrs.header[1] == NULL ||
+125       (vtoHdrs.header[2] == NULL && strcmp(mimeType, \textcolor{stringliteral}{"audio/OPUS"}) != 0);
+126     \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Ogg\+Track@{Ogg\+Track}!est\+Bitrate@{est\+Bitrate}}
+\index{est\+Bitrate@{est\+Bitrate}!Ogg\+Track@{Ogg\+Track}}
+\subsubsection[{est\+Bitrate}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Ogg\+Track\+::est\+Bitrate}\label{classOggTrack_afc509e3351117fcea71bbd79fea4fcb3}
+
+
+Definition at line 100 of file Ogg\+File.\+hh.
+
+\index{Ogg\+Track@{Ogg\+Track}!mime\+Type@{mime\+Type}}
+\index{mime\+Type@{mime\+Type}!Ogg\+Track@{Ogg\+Track}}
+\subsubsection[{mime\+Type}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Ogg\+Track\+::mime\+Type}\label{classOggTrack_ac4b1ad73cb4c387914e0127f4d3d76f4}
+
+
+Definition at line 97 of file Ogg\+File.\+hh.
+
+\index{Ogg\+Track@{Ogg\+Track}!num\+Channels@{num\+Channels}}
+\index{num\+Channels@{num\+Channels}!Ogg\+Track@{Ogg\+Track}}
+\subsubsection[{num\+Channels}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Ogg\+Track\+::num\+Channels}\label{classOggTrack_a931235db3ec4cad6eb740e25eab152b9}
+
+
+Definition at line 99 of file Ogg\+File.\+hh.
+
+\index{Ogg\+Track@{Ogg\+Track}!sampling\+Frequency@{sampling\+Frequency}}
+\index{sampling\+Frequency@{sampling\+Frequency}!Ogg\+Track@{Ogg\+Track}}
+\subsubsection[{sampling\+Frequency}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Ogg\+Track\+::sampling\+Frequency}\label{classOggTrack_a43ee4a0122fdd2ec780b16ffcdf8ba5c}
+
+
+Definition at line 99 of file Ogg\+File.\+hh.
+
+\index{Ogg\+Track@{Ogg\+Track}!track\+Number@{track\+Number}}
+\index{track\+Number@{track\+Number}!Ogg\+Track@{Ogg\+Track}}
+\subsubsection[{track\+Number}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t Ogg\+Track\+::track\+Number}\label{classOggTrack_a24dd3946fe5b0b52a867fbf09e5b4290}
+
+
+Definition at line 96 of file Ogg\+File.\+hh.
+
+\index{Ogg\+Track@{Ogg\+Track}!vto\+Hdrs@{vto\+Hdrs}}
+\index{vto\+Hdrs@{vto\+Hdrs}!Ogg\+Track@{Ogg\+Track}}
+\subsubsection[{vto\+Hdrs}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf Ogg\+Track\+::\+\_\+vto\+Hdrs}  Ogg\+Track\+::vto\+Hdrs}\label{classOggTrack_ab4954d9f580f246e483c130baf39da59}
+
+
+Referenced by we\+Need\+Headers().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf Ogg\+File.\+hh}\end{DoxyCompactItemize}

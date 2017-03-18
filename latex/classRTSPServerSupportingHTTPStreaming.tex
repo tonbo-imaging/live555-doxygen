@@ -1,0 +1,725 @@
+\section{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming Class Reference}
+\label{classRTSPServerSupportingHTTPStreaming}\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+
+
+{\ttfamily \#include $<$R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming.\+hh$>$}
+
+
+
+Inheritance diagram for R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classRTSPServerSupportingHTTPStreaming__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRTSPServerSupportingHTTPStreaming__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void( {\bf response\+Handler\+For\+R\+E\+G\+I\+S\+T\+E\+R}) ({\bf R\+T\+S\+P\+Server} $\ast$rtsp\+Server, unsigned request\+Id, int result\+Code, char $\ast$result\+String)
+\item 
+typedef void( {\bf response\+Handler\+For\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}) ({\bf R\+T\+S\+P\+Server} $\ast$rtsp\+Server, unsigned request\+Id, int result\+Code, char $\ast$result\+String)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Boolean} {\bf set\+H\+T\+T\+P\+Port} ({\bf Port} http\+Port)
+\item 
+unsigned {\bf register\+Stream} ({\bf Server\+Media\+Session} $\ast$server\+Media\+Session, char const $\ast$remote\+Client\+Name\+Or\+Address, {\bf port\+Num\+Bits} remote\+Client\+Port\+Num, {\bf response\+Handler\+For\+R\+E\+G\+I\+S\+T\+E\+R} $\ast$response\+Handler, char const $\ast$username={\bf N\+U\+L\+L}, char const $\ast$password={\bf N\+U\+L\+L}, {\bf Boolean} receive\+Our\+Stream\+Via\+T\+C\+P={\bf False}, char const $\ast$proxy\+U\+R\+L\+Suffix={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf deregister\+Stream} ({\bf Server\+Media\+Session} $\ast$server\+Media\+Session, char const $\ast$remote\+Client\+Name\+Or\+Address, {\bf port\+Num\+Bits} remote\+Client\+Port\+Num, {\bf response\+Handler\+For\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R} $\ast$response\+Handler, char const $\ast$username={\bf N\+U\+L\+L}, char const $\ast$password={\bf N\+U\+L\+L}, char const $\ast$proxy\+U\+R\+L\+Suffix={\bf N\+U\+L\+L})
+\item 
+char $\ast$ {\bf rtsp\+U\+R\+L} ({\bf Server\+Media\+Session} const $\ast$server\+Media\+Session, int client\+Socket=-\/1) const 
+\item 
+char $\ast$ {\bf rtsp\+U\+R\+L\+Prefix} (int client\+Socket=-\/1) const 
+\item 
+{\bf User\+Authentication\+Database} $\ast$ {\bf set\+Authentication\+Database} ({\bf User\+Authentication\+Database} $\ast$new\+D\+B)
+\item 
+void {\bf disable\+Streaming\+R\+T\+P\+Over\+T\+C\+P} ()
+\item 
+{\bf Boolean} {\bf set\+Up\+Tunneling\+Over\+H\+T\+T\+P} ({\bf Port} http\+Port)
+\item 
+{\bf port\+Num\+Bits} {\bf http\+Server\+Port\+Num} () const 
+\item 
+void {\bf add\+Server\+Media\+Session} ({\bf Server\+Media\+Session} $\ast$server\+Media\+Session)
+\item 
+virtual {\bf Server\+Media\+Session} $\ast$ {\bf lookup\+Server\+Media\+Session} (char const $\ast$stream\+Name, {\bf Boolean} is\+First\+Lookup\+In\+Session={\bf True})
+\item 
+void {\bf remove\+Server\+Media\+Session} ({\bf Server\+Media\+Session} $\ast$server\+Media\+Session)
+\item 
+void {\bf remove\+Server\+Media\+Session} (char const $\ast$stream\+Name)
+\item 
+void {\bf close\+All\+Client\+Sessions\+For\+Server\+Media\+Session} ({\bf Server\+Media\+Session} $\ast$server\+Media\+Session)
+\item 
+void {\bf close\+All\+Client\+Sessions\+For\+Server\+Media\+Session} (char const $\ast$stream\+Name)
+\item 
+void {\bf delete\+Server\+Media\+Session} ({\bf Server\+Media\+Session} $\ast$server\+Media\+Session)
+\item 
+void {\bf delete\+Server\+Media\+Session} (char const $\ast$stream\+Name)
+\item 
+{\bf Usage\+Environment} \& {\bf envir} () const 
+\item 
+char const $\ast$ {\bf name} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Source} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Sink} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+C\+P\+Instance} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Client} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Media\+Session} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Server\+Media\+Session} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming} $\ast$ {\bf create\+New} ({\bf Usage\+Environment} \&env, {\bf Port} rtsp\+Port=554, {\bf User\+Authentication\+Database} $\ast$auth\+Database={\bf N\+U\+L\+L}, unsigned reclamation\+Test\+Seconds=65)
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast${\bf name}, {\bf R\+T\+S\+P\+Server} $\ast$\&result\+Server)
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name, {\bf Medium} $\ast$\&result\+Medium)
+\item 
+static void {\bf close} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name)
+\item 
+static void {\bf close} ({\bf Medium} $\ast$medium)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming} ({\bf Usage\+Environment} \&env, int our\+Socket, {\bf Port} our\+Port, {\bf User\+Authentication\+Database} $\ast$auth\+Database, unsigned reclamation\+Test\+Seconds)
+\item 
+virtual {\bf $\sim$\+R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming} ()
+\item 
+virtual {\bf Client\+Connection} $\ast$ {\bf create\+New\+Client\+Connection} (int client\+Socket, struct sockaddr\+\_\+in client\+Addr)
+\item 
+virtual char const $\ast$ {\bf allowed\+Command\+Names} ()
+\item 
+virtual {\bf Boolean} {\bf we\+Implement\+R\+E\+G\+I\+S\+T\+E\+R} (char const $\ast$cmd, char const $\ast$proxy\+U\+R\+L\+Suffix, char $\ast$\&response\+Str)
+\item 
+virtual void {\bf implement\+Cmd\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R} (char const $\ast$cmd, char const $\ast$url, char const $\ast$url\+Suffix, int socket\+To\+Remote\+Server, {\bf Boolean} deliver\+Via\+T\+C\+P, char const $\ast$proxy\+U\+R\+L\+Suffix)
+\item 
+virtual {\bf User\+Authentication\+Database} $\ast$ {\bf get\+Authentication\+Database\+For\+Command} (char const $\ast$cmd\+Name)
+\item 
+virtual {\bf Boolean} {\bf special\+Client\+Access\+Check} (int client\+Socket, struct sockaddr\+\_\+in \&client\+Addr, char const $\ast$url\+Suffix)
+\item 
+virtual {\bf Boolean} {\bf special\+Client\+User\+Access\+Check} (int client\+Socket, struct sockaddr\+\_\+in \&client\+Addr, char const $\ast$url\+Suffix, char const $\ast$username)
+\item 
+virtual {\bf Client\+Session} $\ast$ {\bf create\+New\+Client\+Session} (u\+\_\+int32\+\_\+t session\+Id)
+\item 
+void {\bf cleanup} ()
+\item 
+void {\bf incoming\+Connection\+Handler} ()
+\item 
+void {\bf incoming\+Connection\+Handler\+On\+Socket} (int server\+Socket)
+\item 
+{\bf Client\+Session} $\ast$ {\bf create\+New\+Client\+Session\+With\+Id} ()
+\item 
+{\bf Client\+Session} $\ast$ {\bf lookup\+Client\+Session} (u\+\_\+int32\+\_\+t session\+Id)
+\item 
+{\bf Client\+Session} $\ast$ {\bf lookup\+Client\+Session} (char const $\ast$session\+Id\+Str)
+\item 
+{\bf Task\+Token} \& {\bf next\+Task} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int {\bf set\+Up\+Our\+Socket} ({\bf Usage\+Environment} \&env, {\bf Port} \&our\+Port)
+\item 
+static void {\bf incoming\+Connection\+Handler} (void $\ast$, int)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf f\+Server\+Socket}
+\item 
+{\bf Port} {\bf f\+Server\+Port}
+\item 
+unsigned {\bf f\+Reclamation\+Seconds}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 34 of file R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming.\+hh.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!response\+Handler\+For\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{response\+Handler\+For\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\index{response\+Handler\+For\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{response\+Handler\+For\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{response\+Handler\+For\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( R\+T\+S\+P\+Server\+::response\+Handler\+For\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R) ({\bf R\+T\+S\+P\+Server} $\ast$rtsp\+Server, unsigned request\+Id, int result\+Code, char $\ast$result\+String)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPServer_a11d21440c28a3cdd0dab251b2635f260}
+
+
+Definition at line 64 of file R\+T\+S\+P\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!response\+Handler\+For\+R\+E\+G\+I\+S\+T\+E\+R@{response\+Handler\+For\+R\+E\+G\+I\+S\+T\+E\+R}}
+\index{response\+Handler\+For\+R\+E\+G\+I\+S\+T\+E\+R@{response\+Handler\+For\+R\+E\+G\+I\+S\+T\+E\+R}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{response\+Handler\+For\+R\+E\+G\+I\+S\+T\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( R\+T\+S\+P\+Server\+::response\+Handler\+For\+R\+E\+G\+I\+S\+T\+E\+R) ({\bf R\+T\+S\+P\+Server} $\ast$rtsp\+Server, unsigned request\+Id, int result\+Code, char $\ast$result\+String)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPServer_ad0c6639ad94cb81fad43de8590e9c24c}
+
+
+Definition at line 46 of file R\+T\+S\+P\+Server.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming(\+Usage\+Environment \&env, int our\+Socket, Port our\+Port, User\+Authentication\+Database $\ast$auth\+Database, unsigned reclamation\+Test\+Seconds)}]{\setlength{\rightskip}{0pt plus 5cm}R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{int}]{our\+Socket, }
+\item[{{\bf Port}}]{our\+Port, }
+\item[{{\bf User\+Authentication\+Database} $\ast$}]{auth\+Database, }
+\item[{unsigned}]{reclamation\+Test\+Seconds}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTSPServerSupportingHTTPStreaming_a73f8268773a0c4b010daa13e80869069}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!````~R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{$\sim$\+R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\index{````~R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{$\sim$\+R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{$\sim$\+R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming()}]{\setlength{\rightskip}{0pt plus 5cm}virtual R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::$\sim$\+R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classRTSPServerSupportingHTTPStreaming_ad9775cb3f63610fee8fe062c345b425c}
+
+
+\subsection{Member Function Documentation}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!add\+Server\+Media\+Session@{add\+Server\+Media\+Session}}
+\index{add\+Server\+Media\+Session@{add\+Server\+Media\+Session}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{add\+Server\+Media\+Session(\+Server\+Media\+Session $\ast$server\+Media\+Session)}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+Media\+Server\+::add\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+\item[{{\bf Server\+Media\+Session} $\ast$}]{server\+Media\+Session}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classGenericMediaServer_a3fe64a67add9eddf7d85fa1ba667c8fd}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!allowed\+Command\+Names@{allowed\+Command\+Names}}
+\index{allowed\+Command\+Names@{allowed\+Command\+Names}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{allowed\+Command\+Names()}]{\setlength{\rightskip}{0pt plus 5cm}virtual char const$\ast$ R\+T\+S\+P\+Server\+::allowed\+Command\+Names (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_ac1097c092d9102887e5e4d8e01d14506}
+
+
+Reimplemented in {\bf Handler\+Server\+For\+R\+E\+G\+I\+S\+T\+E\+R\+Command} \doxyref{}{p.}{classHandlerServerForREGISTERCommand_a0cbc7253e29b96d7aa51f0c743b0ef7c}, and {\bf R\+T\+S\+P\+Server\+With\+R\+E\+G\+I\+S\+T\+E\+R\+Proxying} \doxyref{}{p.}{classRTSPServerWithREGISTERProxying_a882187f7d41ccc190e4927aa5f64c52d}.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{cleanup()}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+Media\+Server\+::cleanup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_ab4058a35d47997621b94312f89c141a1}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!close@{close}}
+\index{close@{close}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{close(\+Usage\+Environment \&env, char const $\ast$medium\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a9968c7ce6eedb848f2cc095730c01b17}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!close@{close}}
+\index{close@{close}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{close(\+Medium $\ast$medium)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_aee50624faf6909b3944dd803fd485467}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!close\+All\+Client\+Sessions\+For\+Server\+Media\+Session@{close\+All\+Client\+Sessions\+For\+Server\+Media\+Session}}
+\index{close\+All\+Client\+Sessions\+For\+Server\+Media\+Session@{close\+All\+Client\+Sessions\+For\+Server\+Media\+Session}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{close\+All\+Client\+Sessions\+For\+Server\+Media\+Session(\+Server\+Media\+Session $\ast$server\+Media\+Session)}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+Media\+Server\+::close\+All\+Client\+Sessions\+For\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+\item[{{\bf Server\+Media\+Session} $\ast$}]{server\+Media\+Session}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classGenericMediaServer_af6913347168b317a01a442e81af88783}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!close\+All\+Client\+Sessions\+For\+Server\+Media\+Session@{close\+All\+Client\+Sessions\+For\+Server\+Media\+Session}}
+\index{close\+All\+Client\+Sessions\+For\+Server\+Media\+Session@{close\+All\+Client\+Sessions\+For\+Server\+Media\+Session}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{close\+All\+Client\+Sessions\+For\+Server\+Media\+Session(char const $\ast$stream\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+Media\+Server\+::close\+All\+Client\+Sessions\+For\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{stream\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classGenericMediaServer_a3331c7a21273d8cbbd5902cd866a78cb}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!create\+New@{create\+New}}
+\index{create\+New@{create\+New}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{create\+New(\+Usage\+Environment \&env, Port rtsp\+Port=554, User\+Authentication\+Database $\ast$auth\+Database=\+N\+U\+L\+L, unsigned reclamation\+Test\+Seconds=65)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}$\ast$ R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::create\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf Port}}]{rtsp\+Port = {\ttfamily 554}, }
+\item[{{\bf User\+Authentication\+Database} $\ast$}]{auth\+Database = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{unsigned}]{reclamation\+Test\+Seconds = {\ttfamily 65}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classRTSPServerSupportingHTTPStreaming_a2c5e12d5d7c8d1b64e08feafec957d9f}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!create\+New\+Client\+Connection@{create\+New\+Client\+Connection}}
+\index{create\+New\+Client\+Connection@{create\+New\+Client\+Connection}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{create\+New\+Client\+Connection(int client\+Socket, struct sockaddr\+\_\+in client\+Addr)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Client\+Connection}$\ast$ R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::create\+New\+Client\+Connection (
+\begin{DoxyParamCaption}
+\item[{int}]{client\+Socket, }
+\item[{struct sockaddr\+\_\+in}]{client\+Addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classRTSPServerSupportingHTTPStreaming_a7d311083f33d69ac55451beab986b78f}
+
+
+Reimplemented from {\bf R\+T\+S\+P\+Server} \doxyref{}{p.}{classRTSPServer_a2401025a72fac7f0fcbfce1d20621577}.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!create\+New\+Client\+Session@{create\+New\+Client\+Session}}
+\index{create\+New\+Client\+Session@{create\+New\+Client\+Session}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{create\+New\+Client\+Session(u\+\_\+int32\+\_\+t session\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Client\+Session}$\ast$ R\+T\+S\+P\+Server\+::create\+New\+Client\+Session (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t}]{session\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_a50fd5dc860a4c4a9f2b04a60033b8acf}
+
+
+Implements {\bf Generic\+Media\+Server} \doxyref{}{p.}{classGenericMediaServer_ae01e6faae9a7e84a0258567ba0992d18}.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!create\+New\+Client\+Session\+With\+Id@{create\+New\+Client\+Session\+With\+Id}}
+\index{create\+New\+Client\+Session\+With\+Id@{create\+New\+Client\+Session\+With\+Id}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{create\+New\+Client\+Session\+With\+Id()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Client\+Session}$\ast$ Generic\+Media\+Server\+::create\+New\+Client\+Session\+With\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_a999e3f0fca72a9590fc908ca05facc7f}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!delete\+Server\+Media\+Session@{delete\+Server\+Media\+Session}}
+\index{delete\+Server\+Media\+Session@{delete\+Server\+Media\+Session}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{delete\+Server\+Media\+Session(\+Server\+Media\+Session $\ast$server\+Media\+Session)}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+Media\+Server\+::delete\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+\item[{{\bf Server\+Media\+Session} $\ast$}]{server\+Media\+Session}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classGenericMediaServer_a1958c44a033dfef2ee7461dfbec25cc4}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!delete\+Server\+Media\+Session@{delete\+Server\+Media\+Session}}
+\index{delete\+Server\+Media\+Session@{delete\+Server\+Media\+Session}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{delete\+Server\+Media\+Session(char const $\ast$stream\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+Media\+Server\+::delete\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{stream\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classGenericMediaServer_a0432841a9106f023ab02d56cedeb7762}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!deregister\+Stream@{deregister\+Stream}}
+\index{deregister\+Stream@{deregister\+Stream}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{deregister\+Stream(\+Server\+Media\+Session $\ast$server\+Media\+Session, char const $\ast$remote\+Client\+Name\+Or\+Address, port\+Num\+Bits remote\+Client\+Port\+Num, response\+Handler\+For\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R $\ast$response\+Handler, char const $\ast$username=\+N\+U\+L\+L, char const $\ast$password=\+N\+U\+L\+L, char const $\ast$proxy\+U\+R\+L\+Suffix=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Server\+::deregister\+Stream (
+\begin{DoxyParamCaption}
+\item[{{\bf Server\+Media\+Session} $\ast$}]{server\+Media\+Session, }
+\item[{char const $\ast$}]{remote\+Client\+Name\+Or\+Address, }
+\item[{{\bf port\+Num\+Bits}}]{remote\+Client\+Port\+Num, }
+\item[{{\bf response\+Handler\+For\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R} $\ast$}]{response\+Handler, }
+\item[{char const $\ast$}]{username = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{char const $\ast$}]{password = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{char const $\ast$}]{proxy\+U\+R\+L\+Suffix = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPServer_a3efe1c39ace1c72df8ae840cfb051aaf}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!disable\+Streaming\+R\+T\+P\+Over\+T\+C\+P@{disable\+Streaming\+R\+T\+P\+Over\+T\+C\+P}}
+\index{disable\+Streaming\+R\+T\+P\+Over\+T\+C\+P@{disable\+Streaming\+R\+T\+P\+Over\+T\+C\+P}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{disable\+Streaming\+R\+T\+P\+Over\+T\+C\+P()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Server\+::disable\+Streaming\+R\+T\+P\+Over\+T\+C\+P (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPServer_aaa6b7bcc345460c6fc5ed356b6b1278d}
+
+
+Definition at line 88 of file R\+T\+S\+P\+Server.\+hh.
+
+
+
+References R\+T\+S\+P\+Server\+::f\+Allow\+Streaming\+R\+T\+P\+Over\+T\+C\+P, and False.
+
+
+\begin{DoxyCode}
+88                                     \{
+89     fAllowStreamingRTPOverTCP = False;
+90   \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!envir@{envir}}
+\index{envir@{envir}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{envir() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Medium\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a32f7ecdd95f2b8400e1a26a5009e3b8e}
+
+
+Definition at line 59 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Environ.
+
+
+
+Referenced by Media\+Subsession\+::env(), R\+T\+P\+Interface\+::envir(), Generic\+Media\+Server\+::\+Client\+Connection\+::envir(), and Generic\+Media\+Server\+::\+Client\+Session\+::envir().
+
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} fEnviron;\}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!get\+Authentication\+Database\+For\+Command@{get\+Authentication\+Database\+For\+Command}}
+\index{get\+Authentication\+Database\+For\+Command@{get\+Authentication\+Database\+For\+Command}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{get\+Authentication\+Database\+For\+Command(char const $\ast$cmd\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf User\+Authentication\+Database}$\ast$ R\+T\+S\+P\+Server\+::get\+Authentication\+Database\+For\+Command (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{cmd\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_ae2e1024be89380a0b77234db63702793}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Server\+With\+R\+E\+G\+I\+S\+T\+E\+R\+Proxying} \doxyref{}{p.}{classRTSPServerWithREGISTERProxying_a89ca968a3fd2e1fc7d61a5c4df479a62}.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!http\+Server\+Port\+Num@{http\+Server\+Port\+Num}}
+\index{http\+Server\+Port\+Num@{http\+Server\+Port\+Num}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{http\+Server\+Port\+Num() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf port\+Num\+Bits} R\+T\+S\+P\+Server\+::http\+Server\+Port\+Num (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPServer_a31759f551bd2d5320cb69aaa52a5527b}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!implement\+Cmd\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R@{implement\+Cmd\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R}}
+\index{implement\+Cmd\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R@{implement\+Cmd\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{implement\+Cmd\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R(char const $\ast$cmd, char const $\ast$url, char const $\ast$url\+Suffix, int socket\+To\+Remote\+Server, Boolean deliver\+Via\+T\+C\+P, char const $\ast$proxy\+U\+R\+L\+Suffix)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::implement\+Cmd\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{cmd, }
+\item[{char const $\ast$}]{url, }
+\item[{char const $\ast$}]{url\+Suffix, }
+\item[{int}]{socket\+To\+Remote\+Server, }
+\item[{{\bf Boolean}}]{deliver\+Via\+T\+C\+P, }
+\item[{char const $\ast$}]{proxy\+U\+R\+L\+Suffix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_a59c52ae55fc97191758d5b095a1bbdcd}
+
+
+Reimplemented in {\bf Handler\+Server\+For\+R\+E\+G\+I\+S\+T\+E\+R\+Command} \doxyref{}{p.}{classHandlerServerForREGISTERCommand_a395c9a6116bcacd3bc1ecc6bcc28017c}, and {\bf R\+T\+S\+P\+Server\+With\+R\+E\+G\+I\+S\+T\+E\+R\+Proxying} \doxyref{}{p.}{classRTSPServerWithREGISTERProxying_ada78fbcce10f42ef577d58bd9489ba86}.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!incoming\+Connection\+Handler@{incoming\+Connection\+Handler}}
+\index{incoming\+Connection\+Handler@{incoming\+Connection\+Handler}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{incoming\+Connection\+Handler(void $\ast$, int)}]{\setlength{\rightskip}{0pt plus 5cm}static void Generic\+Media\+Server\+::incoming\+Connection\+Handler (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{, }
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_ac01b46af65d3ce43492430207b9e7621}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!incoming\+Connection\+Handler@{incoming\+Connection\+Handler}}
+\index{incoming\+Connection\+Handler@{incoming\+Connection\+Handler}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{incoming\+Connection\+Handler()}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+Media\+Server\+::incoming\+Connection\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_a65f4f80502b7d474659990d4f49c5368}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!incoming\+Connection\+Handler\+On\+Socket@{incoming\+Connection\+Handler\+On\+Socket}}
+\index{incoming\+Connection\+Handler\+On\+Socket@{incoming\+Connection\+Handler\+On\+Socket}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{incoming\+Connection\+Handler\+On\+Socket(int server\+Socket)}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+Media\+Server\+::incoming\+Connection\+Handler\+On\+Socket (
+\begin{DoxyParamCaption}
+\item[{int}]{server\+Socket}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_a8ee2ba1b183e4a8158a6feaba0adfb22}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!is\+Media\+Session@{is\+Media\+Session}}
+\index{is\+Media\+Session@{is\+Media\+Session}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{is\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ac5858707c4e7a15bd59d476cf48289d6}
+
+
+Reimplemented in {\bf Media\+Session} \doxyref{}{p.}{classMediaSession_a3b2a06a722374ab4477ac05a2ce28829}.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}}
+\index{is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{is\+R\+T\+C\+P\+Instance() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ab5f9f20324698f89a35513d596b2e7be}
+
+
+Reimplemented in {\bf R\+T\+C\+P\+Instance} \doxyref{}{p.}{classRTCPInstance_a844292518419e1dbf24170812fd1e4b5}.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}}
+\index{is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{is\+R\+T\+S\+P\+Client() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aed1c1816867f910ce8c98350686ac038}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Client} \doxyref{}{p.}{classRTSPClient_add07b3a68432b546998080b24380e7e8}.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!is\+Server\+Media\+Session@{is\+Server\+Media\+Session}}
+\index{is\+Server\+Media\+Session@{is\+Server\+Media\+Session}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{is\+Server\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aa9fd26c4b954ffba5f79925ecd0283a0}
+
+
+Reimplemented in {\bf Server\+Media\+Session} \doxyref{}{p.}{classServerMediaSession_a34b59e04644b6f0841ea5af99dbf32f6}.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!is\+Sink@{is\+Sink}}
+\index{is\+Sink@{is\+Sink}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{is\+Sink() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a23d49bf466482784b9d4378490d17b5f}
+
+
+Reimplemented in {\bf Media\+Sink} \doxyref{}{p.}{classMediaSink_aa8649dcdf21d5005f9ec319f898f91b6}.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!is\+Source@{is\+Source}}
+\index{is\+Source@{is\+Source}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{is\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a6cdbd02c73a3e9c1cbab8fce9e9497b1}
+
+
+Reimplemented in {\bf Media\+Source} \doxyref{}{p.}{classMediaSource_a4d75fa9ee2b476b1231594282a6854be}.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$name, R\+T\+S\+P\+Server $\ast$\&result\+Server)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} R\+T\+S\+P\+Server\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{name, }
+\item[{{\bf R\+T\+S\+P\+Server} $\ast$\&}]{result\+Server}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classRTSPServer_aa62ef77bae1583bb4b84e8ce159fd2f4}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$medium\+Name, Medium $\ast$\&result\+Medium)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Medium\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name, }
+\item[{{\bf Medium} $\ast$\&}]{result\+Medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a418c860c1e0ef2766ee0d0f64b346291}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!lookup\+Client\+Session@{lookup\+Client\+Session}}
+\index{lookup\+Client\+Session@{lookup\+Client\+Session}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{lookup\+Client\+Session(u\+\_\+int32\+\_\+t session\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Client\+Session}$\ast$ Generic\+Media\+Server\+::lookup\+Client\+Session (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t}]{session\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_a535ac0e97b8cd4b34f7a54d08aa30cbb}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!lookup\+Client\+Session@{lookup\+Client\+Session}}
+\index{lookup\+Client\+Session@{lookup\+Client\+Session}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{lookup\+Client\+Session(char const $\ast$session\+Id\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Client\+Session}$\ast$ Generic\+Media\+Server\+::lookup\+Client\+Session (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{session\+Id\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_ae8a6fdb0c5b165effd2ad7575668ffb9}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!lookup\+Server\+Media\+Session@{lookup\+Server\+Media\+Session}}
+\index{lookup\+Server\+Media\+Session@{lookup\+Server\+Media\+Session}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{lookup\+Server\+Media\+Session(char const $\ast$stream\+Name, Boolean is\+First\+Lookup\+In\+Session=\+True)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Server\+Media\+Session}$\ast$ Generic\+Media\+Server\+::lookup\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{stream\+Name, }
+\item[{{\bf Boolean}}]{is\+First\+Lookup\+In\+Session = {\ttfamily {\bf True}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_a34a0065c18826d9c02b3633c4dd35075}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!name@{name}}
+\index{name@{name}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Medium\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a575649802dc781c0e59e097a3870fcdb}
+
+
+Definition at line 61 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Medium\+Name.
+
+
+\begin{DoxyCode}
+61 \{\textcolor{keywordflow}{return} fMediumName;\}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{next\+Task()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token}\& Medium\+::next\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMedium_a5c8788adec90be1a584393a5bf11a5c9}
+
+
+Definition at line 77 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Next\+Task.
+
+
+\begin{DoxyCode}
+77                         \{
+78         \textcolor{keywordflow}{return} fNextTask;
+79   \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!register\+Stream@{register\+Stream}}
+\index{register\+Stream@{register\+Stream}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{register\+Stream(\+Server\+Media\+Session $\ast$server\+Media\+Session, char const $\ast$remote\+Client\+Name\+Or\+Address, port\+Num\+Bits remote\+Client\+Port\+Num, response\+Handler\+For\+R\+E\+G\+I\+S\+T\+E\+R $\ast$response\+Handler, char const $\ast$username=\+N\+U\+L\+L, char const $\ast$password=\+N\+U\+L\+L, Boolean receive\+Our\+Stream\+Via\+T\+C\+P=\+False, char const $\ast$proxy\+U\+R\+L\+Suffix=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Server\+::register\+Stream (
+\begin{DoxyParamCaption}
+\item[{{\bf Server\+Media\+Session} $\ast$}]{server\+Media\+Session, }
+\item[{char const $\ast$}]{remote\+Client\+Name\+Or\+Address, }
+\item[{{\bf port\+Num\+Bits}}]{remote\+Client\+Port\+Num, }
+\item[{{\bf response\+Handler\+For\+R\+E\+G\+I\+S\+T\+E\+R} $\ast$}]{response\+Handler, }
+\item[{char const $\ast$}]{username = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{char const $\ast$}]{password = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{{\bf Boolean}}]{receive\+Our\+Stream\+Via\+T\+C\+P = {\ttfamily {\bf False}}, }
+\item[{char const $\ast$}]{proxy\+U\+R\+L\+Suffix = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPServer_af6433abb07b16f8fdc0815cbdc20a022}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!remove\+Server\+Media\+Session@{remove\+Server\+Media\+Session}}
+\index{remove\+Server\+Media\+Session@{remove\+Server\+Media\+Session}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{remove\+Server\+Media\+Session(\+Server\+Media\+Session $\ast$server\+Media\+Session)}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+Media\+Server\+::remove\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+\item[{{\bf Server\+Media\+Session} $\ast$}]{server\+Media\+Session}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classGenericMediaServer_a6972c632be5b7b6b1a6a5fa1f661377f}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!remove\+Server\+Media\+Session@{remove\+Server\+Media\+Session}}
+\index{remove\+Server\+Media\+Session@{remove\+Server\+Media\+Session}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{remove\+Server\+Media\+Session(char const $\ast$stream\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+Media\+Server\+::remove\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{stream\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classGenericMediaServer_a74d41e64c57f14846a0b44ca75cdfc85}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!rtsp\+U\+R\+L@{rtsp\+U\+R\+L}}
+\index{rtsp\+U\+R\+L@{rtsp\+U\+R\+L}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{rtsp\+U\+R\+L(\+Server\+Media\+Session const $\ast$server\+Media\+Session, int client\+Socket=-\/1) const }]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ R\+T\+S\+P\+Server\+::rtsp\+U\+R\+L (
+\begin{DoxyParamCaption}
+\item[{{\bf Server\+Media\+Session} const $\ast$}]{server\+Media\+Session, }
+\item[{int}]{client\+Socket = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPServer_a87a5aa1e3566b5ece5483ae872b3222a}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!rtsp\+U\+R\+L\+Prefix@{rtsp\+U\+R\+L\+Prefix}}
+\index{rtsp\+U\+R\+L\+Prefix@{rtsp\+U\+R\+L\+Prefix}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{rtsp\+U\+R\+L\+Prefix(int client\+Socket=-\/1) const }]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ R\+T\+S\+P\+Server\+::rtsp\+U\+R\+L\+Prefix (
+\begin{DoxyParamCaption}
+\item[{int}]{client\+Socket = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPServer_a2836b67a3642557deb31aea6b9148f45}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!set\+Authentication\+Database@{set\+Authentication\+Database}}
+\index{set\+Authentication\+Database@{set\+Authentication\+Database}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{set\+Authentication\+Database(\+User\+Authentication\+Database $\ast$new\+D\+B)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf User\+Authentication\+Database}$\ast$ R\+T\+S\+P\+Server\+::set\+Authentication\+Database (
+\begin{DoxyParamCaption}
+\item[{{\bf User\+Authentication\+Database} $\ast$}]{new\+D\+B}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPServer_a00708fab40af98f38e58a91247720810}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!set\+H\+T\+T\+P\+Port@{set\+H\+T\+T\+P\+Port}}
+\index{set\+H\+T\+T\+P\+Port@{set\+H\+T\+T\+P\+Port}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{set\+H\+T\+T\+P\+Port(\+Port http\+Port)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::set\+H\+T\+T\+P\+Port (
+\begin{DoxyParamCaption}
+\item[{{\bf Port}}]{http\+Port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTSPServerSupportingHTTPStreaming_a9949039ac0f6592f2ebd7df2b246b3fb}
+
+
+Definition at line 40 of file R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming.\+hh.
+
+
+
+References R\+T\+S\+P\+Server\+::set\+Up\+Tunneling\+Over\+H\+T\+T\+P().
+
+
+\begin{DoxyCode}
+40 \{ \textcolor{keywordflow}{return} setUpTunnelingOverHTTP(httpPort); \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!set\+Up\+Our\+Socket@{set\+Up\+Our\+Socket}}
+\index{set\+Up\+Our\+Socket@{set\+Up\+Our\+Socket}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{set\+Up\+Our\+Socket(\+Usage\+Environment \&env, Port \&our\+Port)}]{\setlength{\rightskip}{0pt plus 5cm}static int Generic\+Media\+Server\+::set\+Up\+Our\+Socket (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf Port} \&}]{our\+Port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_ab83b9a1f63b7f61a9cb0c5777b585e93}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!set\+Up\+Tunneling\+Over\+H\+T\+T\+P@{set\+Up\+Tunneling\+Over\+H\+T\+T\+P}}
+\index{set\+Up\+Tunneling\+Over\+H\+T\+T\+P@{set\+Up\+Tunneling\+Over\+H\+T\+T\+P}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{set\+Up\+Tunneling\+Over\+H\+T\+T\+P(\+Port http\+Port)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+S\+P\+Server\+::set\+Up\+Tunneling\+Over\+H\+T\+T\+P (
+\begin{DoxyParamCaption}
+\item[{{\bf Port}}]{http\+Port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPServer_af9e195121fb2f99cf372cec05c9f56e1}
+
+
+Referenced by set\+H\+T\+T\+P\+Port().
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!special\+Client\+Access\+Check@{special\+Client\+Access\+Check}}
+\index{special\+Client\+Access\+Check@{special\+Client\+Access\+Check}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{special\+Client\+Access\+Check(int client\+Socket, struct sockaddr\+\_\+in \&client\+Addr, char const $\ast$url\+Suffix)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} R\+T\+S\+P\+Server\+::special\+Client\+Access\+Check (
+\begin{DoxyParamCaption}
+\item[{int}]{client\+Socket, }
+\item[{struct sockaddr\+\_\+in \&}]{client\+Addr, }
+\item[{char const $\ast$}]{url\+Suffix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_af16bf55186c97f1da34958fc5736f4df}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!special\+Client\+User\+Access\+Check@{special\+Client\+User\+Access\+Check}}
+\index{special\+Client\+User\+Access\+Check@{special\+Client\+User\+Access\+Check}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{special\+Client\+User\+Access\+Check(int client\+Socket, struct sockaddr\+\_\+in \&client\+Addr, char const $\ast$url\+Suffix, char const $\ast$username)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} R\+T\+S\+P\+Server\+::special\+Client\+User\+Access\+Check (
+\begin{DoxyParamCaption}
+\item[{int}]{client\+Socket, }
+\item[{struct sockaddr\+\_\+in \&}]{client\+Addr, }
+\item[{char const $\ast$}]{url\+Suffix, }
+\item[{char const $\ast$}]{username}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_a51c270c6a71afb201997114c84c0f001}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!we\+Implement\+R\+E\+G\+I\+S\+T\+E\+R@{we\+Implement\+R\+E\+G\+I\+S\+T\+E\+R}}
+\index{we\+Implement\+R\+E\+G\+I\+S\+T\+E\+R@{we\+Implement\+R\+E\+G\+I\+S\+T\+E\+R}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{we\+Implement\+R\+E\+G\+I\+S\+T\+E\+R(char const $\ast$cmd, char const $\ast$proxy\+U\+R\+L\+Suffix, char $\ast$\&response\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} R\+T\+S\+P\+Server\+::we\+Implement\+R\+E\+G\+I\+S\+T\+E\+R (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{cmd, }
+\item[{char const $\ast$}]{proxy\+U\+R\+L\+Suffix, }
+\item[{char $\ast$\&}]{response\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_aff2a5903dc19193fe359ae730a7b96b0}
+
+
+Reimplemented in {\bf Handler\+Server\+For\+R\+E\+G\+I\+S\+T\+E\+R\+Command} \doxyref{}{p.}{classHandlerServerForREGISTERCommand_afee2028117c291172bf5df88227b0354}, and {\bf R\+T\+S\+P\+Server\+With\+R\+E\+G\+I\+S\+T\+E\+R\+Proxying} \doxyref{}{p.}{classRTSPServerWithREGISTERProxying_a13435adc3c5411340a40939226dbc0c9}.
+
+
+
+\subsection{Field Documentation}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Reclamation\+Seconds@{f\+Reclamation\+Seconds}}
+\index{f\+Reclamation\+Seconds@{f\+Reclamation\+Seconds}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Reclamation\+Seconds}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Generic\+Media\+Server\+::f\+Reclamation\+Seconds\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_aa998d391a410d0f20988783f62f717db}
+
+
+Definition at line 158 of file Generic\+Media\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Server\+Port@{f\+Server\+Port}}
+\index{f\+Server\+Port@{f\+Server\+Port}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Server\+Port}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Port} Generic\+Media\+Server\+::f\+Server\+Port\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_ae000cc9aeffa8a8989a08e87714709f6}
+
+
+Definition at line 157 of file Generic\+Media\+Server.\+hh.
+
+
+
+Referenced by Handler\+Server\+For\+R\+E\+G\+I\+S\+T\+E\+R\+Command\+::server\+Port\+Num().
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Server\+Socket@{f\+Server\+Socket}}
+\index{f\+Server\+Socket@{f\+Server\+Socket}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Server\+Socket}]{\setlength{\rightskip}{0pt plus 5cm}int Generic\+Media\+Server\+::f\+Server\+Socket\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_a845628bba463f7e072a2554f92a77ceb}
+
+
+Definition at line 156 of file Generic\+Media\+Server.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming.\+hh}\end{DoxyCompactItemize}

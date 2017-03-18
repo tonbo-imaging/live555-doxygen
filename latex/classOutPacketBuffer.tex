@@ -1,0 +1,675 @@
+\section{Out\+Packet\+Buffer Class Reference}
+\label{classOutPacketBuffer}\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+
+
+{\ttfamily \#include $<$Media\+Sink.\+hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Out\+Packet\+Buffer} (unsigned preferred\+Packet\+Size, unsigned max\+Packet\+Size, unsigned max\+Buffer\+Size=0)
+\item 
+{\bf $\sim$\+Out\+Packet\+Buffer} ()
+\item 
+unsigned char $\ast$ {\bf cur\+Ptr} () const 
+\item 
+unsigned {\bf total\+Bytes\+Available} () const 
+\item 
+unsigned {\bf total\+Buffer\+Size} () const 
+\item 
+unsigned char $\ast$ {\bf packet} () const 
+\item 
+unsigned {\bf cur\+Packet\+Size} () const 
+\item 
+void {\bf increment} (unsigned num\+Bytes)
+\item 
+void {\bf enqueue} (unsigned char const $\ast$from, unsigned num\+Bytes)
+\item 
+void {\bf enqueue\+Word} (u\+\_\+int32\+\_\+t word)
+\item 
+void {\bf insert} (unsigned char const $\ast$from, unsigned num\+Bytes, unsigned to\+Position)
+\item 
+void {\bf insert\+Word} (u\+\_\+int32\+\_\+t word, unsigned to\+Position)
+\item 
+void {\bf extract} (unsigned char $\ast$to, unsigned num\+Bytes, unsigned from\+Position)
+\item 
+u\+\_\+int32\+\_\+t {\bf extract\+Word} (unsigned from\+Position)
+\item 
+void {\bf skip\+Bytes} (unsigned num\+Bytes)
+\item 
+{\bf Boolean} {\bf is\+Preferred\+Size} () const 
+\item 
+{\bf Boolean} {\bf would\+Overflow} (unsigned num\+Bytes) const 
+\item 
+unsigned {\bf num\+Overflow\+Bytes} (unsigned num\+Bytes) const 
+\item 
+{\bf Boolean} {\bf is\+Too\+Big\+For\+A\+Packet} (unsigned num\+Bytes) const 
+\item 
+void {\bf set\+Overflow\+Data} (unsigned overflow\+Data\+Offset, unsigned {\bf overflow\+Data\+Size}, struct timeval const \&presentation\+Time, unsigned duration\+In\+Microseconds)
+\item 
+unsigned {\bf overflow\+Data\+Size} () const 
+\item 
+struct timeval {\bf overflow\+Presentation\+Time} () const 
+\item 
+unsigned {\bf overflow\+Duration\+In\+Microseconds} () const 
+\item 
+{\bf Boolean} {\bf have\+Overflow\+Data} () const 
+\item 
+void {\bf use\+Overflow\+Data} ()
+\item 
+void {\bf adjust\+Packet\+Start} (unsigned num\+Bytes)
+\item 
+void {\bf reset\+Packet\+Start} ()
+\item 
+void {\bf reset\+Offset} ()
+\item 
+void {\bf reset\+Overflow\+Data} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf increase\+Max\+Size\+To} (unsigned new\+Max\+Size)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned {\bf max\+Size}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf f\+Packet\+Start}
+\item 
+unsigned {\bf f\+Cur\+Offset}
+\item 
+unsigned {\bf f\+Preferred}
+\item 
+unsigned {\bf f\+Max}
+\item 
+unsigned {\bf f\+Limit}
+\item 
+unsigned char $\ast$ {\bf f\+Buf}
+\item 
+unsigned {\bf f\+Overflow\+Data\+Offset}
+\item 
+unsigned {\bf f\+Overflow\+Data\+Size}
+\item 
+struct timeval {\bf f\+Overflow\+Presentation\+Time}
+\item 
+unsigned {\bf f\+Overflow\+Duration\+In\+Microseconds}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 71 of file Media\+Sink.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{Out\+Packet\+Buffer(unsigned preferred\+Packet\+Size, unsigned max\+Packet\+Size, unsigned max\+Buffer\+Size=0)}]{\setlength{\rightskip}{0pt plus 5cm}Out\+Packet\+Buffer\+::\+Out\+Packet\+Buffer (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{preferred\+Packet\+Size, }
+\item[{unsigned}]{max\+Packet\+Size, }
+\item[{unsigned}]{max\+Buffer\+Size = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{classOutPacketBuffer_ad94242dcfe44b042bc3e644b0d567339}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!````~Out\+Packet\+Buffer@{$\sim$\+Out\+Packet\+Buffer}}
+\index{````~Out\+Packet\+Buffer@{$\sim$\+Out\+Packet\+Buffer}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{$\sim$\+Out\+Packet\+Buffer()}]{\setlength{\rightskip}{0pt plus 5cm}Out\+Packet\+Buffer\+::$\sim$\+Out\+Packet\+Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classOutPacketBuffer_acb8b443368160383baebc9509558bb19}
+
+
+\subsection{Member Function Documentation}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!adjust\+Packet\+Start@{adjust\+Packet\+Start}}
+\index{adjust\+Packet\+Start@{adjust\+Packet\+Start}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{adjust\+Packet\+Start(unsigned num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Out\+Packet\+Buffer\+::adjust\+Packet\+Start (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+)}\label{classOutPacketBuffer_af9ffe93cd35a92227c11af308e257363}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!cur\+Packet\+Size@{cur\+Packet\+Size}}
+\index{cur\+Packet\+Size@{cur\+Packet\+Size}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{cur\+Packet\+Size() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Out\+Packet\+Buffer\+::cur\+Packet\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classOutPacketBuffer_ac47bf610d1b0420278a1cfeee55b00d7}
+
+
+Definition at line 87 of file Media\+Sink.\+hh.
+
+
+
+References f\+Cur\+Offset.
+
+
+\begin{DoxyCode}
+87 \{\textcolor{keywordflow}{return} fCurOffset;\}
+\end{DoxyCode}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!cur\+Ptr@{cur\+Ptr}}
+\index{cur\+Ptr@{cur\+Ptr}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{cur\+Ptr() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ Out\+Packet\+Buffer\+::cur\+Ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classOutPacketBuffer_a803752652b2368961c3fddc0d19e2f1d}
+
+
+Definition at line 81 of file Media\+Sink.\+hh.
+
+
+
+References f\+Buf, f\+Cur\+Offset, and f\+Packet\+Start.
+
+
+\begin{DoxyCode}
+81 \{\textcolor{keywordflow}{return} &fBuf[fPacketStart + fCurOffset];\}
+\end{DoxyCode}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{enqueue(unsigned char const $\ast$from, unsigned num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Out\+Packet\+Buffer\+::enqueue (
+\begin{DoxyParamCaption}
+\item[{unsigned char const $\ast$}]{from, }
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+)}\label{classOutPacketBuffer_abb9681bac4c38632d4fa1958c699c996}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!enqueue\+Word@{enqueue\+Word}}
+\index{enqueue\+Word@{enqueue\+Word}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{enqueue\+Word(u\+\_\+int32\+\_\+t word)}]{\setlength{\rightskip}{0pt plus 5cm}void Out\+Packet\+Buffer\+::enqueue\+Word (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t}]{word}
+\end{DoxyParamCaption}
+)}\label{classOutPacketBuffer_ac518e5dcf4f800438c886c804c38697a}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!extract@{extract}}
+\index{extract@{extract}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{extract(unsigned char $\ast$to, unsigned num\+Bytes, unsigned from\+Position)}]{\setlength{\rightskip}{0pt plus 5cm}void Out\+Packet\+Buffer\+::extract (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{to, }
+\item[{unsigned}]{num\+Bytes, }
+\item[{unsigned}]{from\+Position}
+\end{DoxyParamCaption}
+)}\label{classOutPacketBuffer_a27a39492418bcb7e0c3315d61630daaf}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!extract\+Word@{extract\+Word}}
+\index{extract\+Word@{extract\+Word}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{extract\+Word(unsigned from\+Position)}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t Out\+Packet\+Buffer\+::extract\+Word (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{from\+Position}
+\end{DoxyParamCaption}
+)}\label{classOutPacketBuffer_afa0340582f1d1ff7d8c1c170f3c5fa02}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!have\+Overflow\+Data@{have\+Overflow\+Data}}
+\index{have\+Overflow\+Data@{have\+Overflow\+Data}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{have\+Overflow\+Data() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Out\+Packet\+Buffer\+::have\+Overflow\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classOutPacketBuffer_a6baf6f22d6ecc1fb542d2e8b5143be61}
+
+
+Definition at line 118 of file Media\+Sink.\+hh.
+
+
+
+References f\+Overflow\+Data\+Size.
+
+
+\begin{DoxyCode}
+118 \{\textcolor{keywordflow}{return} fOverflowDataSize > 0;\}
+\end{DoxyCode}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!increase\+Max\+Size\+To@{increase\+Max\+Size\+To}}
+\index{increase\+Max\+Size\+To@{increase\+Max\+Size\+To}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{increase\+Max\+Size\+To(unsigned new\+Max\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}static void Out\+Packet\+Buffer\+::increase\+Max\+Size\+To (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{new\+Max\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classOutPacketBuffer_a033dad02b8207349eff4d7df2a2fbe6a}
+
+
+Definition at line 79 of file Media\+Sink.\+hh.
+
+
+
+References max\+Size.
+
+
+\begin{DoxyCode}
+79 \{ \textcolor{keywordflow}{if} (newMaxSize > OutPacketBuffer::maxSize) OutPacketBuffer::maxSize = newMaxSize; \}
+\end{DoxyCode}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!increment@{increment}}
+\index{increment@{increment}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{increment(unsigned num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Out\+Packet\+Buffer\+::increment (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classOutPacketBuffer_ab7ce82fe616cba25014b5ae5d5d07e7c}
+
+
+Definition at line 89 of file Media\+Sink.\+hh.
+
+
+
+References f\+Cur\+Offset.
+
+
+\begin{DoxyCode}
+89 \{fCurOffset += numBytes;\}
+\end{DoxyCode}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!insert@{insert}}
+\index{insert@{insert}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{insert(unsigned char const $\ast$from, unsigned num\+Bytes, unsigned to\+Position)}]{\setlength{\rightskip}{0pt plus 5cm}void Out\+Packet\+Buffer\+::insert (
+\begin{DoxyParamCaption}
+\item[{unsigned char const $\ast$}]{from, }
+\item[{unsigned}]{num\+Bytes, }
+\item[{unsigned}]{to\+Position}
+\end{DoxyParamCaption}
+)}\label{classOutPacketBuffer_afa13b91ae1b2f2753085e0f47bd5de4a}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!insert\+Word@{insert\+Word}}
+\index{insert\+Word@{insert\+Word}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{insert\+Word(u\+\_\+int32\+\_\+t word, unsigned to\+Position)}]{\setlength{\rightskip}{0pt plus 5cm}void Out\+Packet\+Buffer\+::insert\+Word (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t}]{word, }
+\item[{unsigned}]{to\+Position}
+\end{DoxyParamCaption}
+)}\label{classOutPacketBuffer_abf9f4e9af27298cf0ef244377da2b9ff}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!is\+Preferred\+Size@{is\+Preferred\+Size}}
+\index{is\+Preferred\+Size@{is\+Preferred\+Size}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{is\+Preferred\+Size() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Out\+Packet\+Buffer\+::is\+Preferred\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classOutPacketBuffer_a6fe3174556d0cd5010b7735953123ad5}
+
+
+Definition at line 100 of file Media\+Sink.\+hh.
+
+
+
+References f\+Cur\+Offset, and f\+Preferred.
+
+
+\begin{DoxyCode}
+100 \{\textcolor{keywordflow}{return} fCurOffset >= fPreferred;\}
+\end{DoxyCode}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!is\+Too\+Big\+For\+A\+Packet@{is\+Too\+Big\+For\+A\+Packet}}
+\index{is\+Too\+Big\+For\+A\+Packet@{is\+Too\+Big\+For\+A\+Packet}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{is\+Too\+Big\+For\+A\+Packet(unsigned num\+Bytes) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Out\+Packet\+Buffer\+::is\+Too\+Big\+For\+A\+Packet (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classOutPacketBuffer_ab02cd0194a0df982a2ad07eea86d8ce5}
+
+
+Definition at line 107 of file Media\+Sink.\+hh.
+
+
+
+References f\+Max.
+
+
+\begin{DoxyCode}
+107                                                       \{
+108     \textcolor{keywordflow}{return} numBytes > fMax;
+109   \}
+\end{DoxyCode}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!num\+Overflow\+Bytes@{num\+Overflow\+Bytes}}
+\index{num\+Overflow\+Bytes@{num\+Overflow\+Bytes}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{num\+Overflow\+Bytes(unsigned num\+Bytes) const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Out\+Packet\+Buffer\+::num\+Overflow\+Bytes (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classOutPacketBuffer_af1b6c98e99cb8f511cd5e06c4ebb2abc}
+
+
+Definition at line 104 of file Media\+Sink.\+hh.
+
+
+
+References f\+Cur\+Offset, and f\+Max.
+
+
+\begin{DoxyCode}
+104                                                      \{
+105     \textcolor{keywordflow}{return} (fCurOffset+numBytes) - fMax;
+106   \}
+\end{DoxyCode}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!overflow\+Data\+Size@{overflow\+Data\+Size}}
+\index{overflow\+Data\+Size@{overflow\+Data\+Size}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{overflow\+Data\+Size() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Out\+Packet\+Buffer\+::overflow\+Data\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classOutPacketBuffer_a79155a1b5b3116efc3fb638859ee1ab7}
+
+
+Definition at line 115 of file Media\+Sink.\+hh.
+
+
+
+References f\+Overflow\+Data\+Size.
+
+
+\begin{DoxyCode}
+115 \{\textcolor{keywordflow}{return} fOverflowDataSize;\}
+\end{DoxyCode}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!overflow\+Duration\+In\+Microseconds@{overflow\+Duration\+In\+Microseconds}}
+\index{overflow\+Duration\+In\+Microseconds@{overflow\+Duration\+In\+Microseconds}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{overflow\+Duration\+In\+Microseconds() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Out\+Packet\+Buffer\+::overflow\+Duration\+In\+Microseconds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classOutPacketBuffer_a1a44eece32568e87780c958f5646e8f7}
+
+
+Definition at line 117 of file Media\+Sink.\+hh.
+
+
+
+References f\+Overflow\+Duration\+In\+Microseconds.
+
+
+\begin{DoxyCode}
+117 \{\textcolor{keywordflow}{return} fOverflowDurationInMicroseconds;\}
+\end{DoxyCode}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!overflow\+Presentation\+Time@{overflow\+Presentation\+Time}}
+\index{overflow\+Presentation\+Time@{overflow\+Presentation\+Time}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{overflow\+Presentation\+Time() const }]{\setlength{\rightskip}{0pt plus 5cm}struct timeval Out\+Packet\+Buffer\+::overflow\+Presentation\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classOutPacketBuffer_ad3c05ad5b517cb2692f2338b5a3a1511}
+
+
+Definition at line 116 of file Media\+Sink.\+hh.
+
+
+
+References f\+Overflow\+Presentation\+Time.
+
+
+\begin{DoxyCode}
+116 \{\textcolor{keywordflow}{return} fOverflowPresentationTime;\}
+\end{DoxyCode}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!packet@{packet}}
+\index{packet@{packet}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{packet() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ Out\+Packet\+Buffer\+::packet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classOutPacketBuffer_a28e3687fa551064b8b49ec5e4daa5d01}
+
+
+Definition at line 86 of file Media\+Sink.\+hh.
+
+
+
+References f\+Buf, and f\+Packet\+Start.
+
+
+\begin{DoxyCode}
+86 \{\textcolor{keywordflow}{return} &fBuf[fPacketStart];\}
+\end{DoxyCode}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!reset\+Offset@{reset\+Offset}}
+\index{reset\+Offset@{reset\+Offset}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{reset\+Offset()}]{\setlength{\rightskip}{0pt plus 5cm}void Out\+Packet\+Buffer\+::reset\+Offset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classOutPacketBuffer_a7f814747cac77071e35f46c33903f1e6}
+
+
+Definition at line 123 of file Media\+Sink.\+hh.
+
+
+
+References f\+Cur\+Offset.
+
+
+\begin{DoxyCode}
+123 \{ fCurOffset = 0; \}
+\end{DoxyCode}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!reset\+Overflow\+Data@{reset\+Overflow\+Data}}
+\index{reset\+Overflow\+Data@{reset\+Overflow\+Data}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{reset\+Overflow\+Data()}]{\setlength{\rightskip}{0pt plus 5cm}void Out\+Packet\+Buffer\+::reset\+Overflow\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classOutPacketBuffer_ae5b1c4f9d0c516a15689f44c6414c163}
+
+
+Definition at line 124 of file Media\+Sink.\+hh.
+
+
+
+References f\+Overflow\+Data\+Offset, and f\+Overflow\+Data\+Size.
+
+
+\begin{DoxyCode}
+124 \{ fOverflowDataOffset = fOverflowDataSize = 0; \}
+\end{DoxyCode}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!reset\+Packet\+Start@{reset\+Packet\+Start}}
+\index{reset\+Packet\+Start@{reset\+Packet\+Start}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{reset\+Packet\+Start()}]{\setlength{\rightskip}{0pt plus 5cm}void Out\+Packet\+Buffer\+::reset\+Packet\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classOutPacketBuffer_a434990f36591365b46ac91dc06ebb60b}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!set\+Overflow\+Data@{set\+Overflow\+Data}}
+\index{set\+Overflow\+Data@{set\+Overflow\+Data}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{set\+Overflow\+Data(unsigned overflow\+Data\+Offset, unsigned overflow\+Data\+Size, struct timeval const \&presentation\+Time, unsigned duration\+In\+Microseconds)}]{\setlength{\rightskip}{0pt plus 5cm}void Out\+Packet\+Buffer\+::set\+Overflow\+Data (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{overflow\+Data\+Offset, }
+\item[{unsigned}]{overflow\+Data\+Size, }
+\item[{struct timeval const \&}]{presentation\+Time, }
+\item[{unsigned}]{duration\+In\+Microseconds}
+\end{DoxyParamCaption}
+)}\label{classOutPacketBuffer_ab05f7ebd5919ae986041bf34f5af20cb}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!skip\+Bytes@{skip\+Bytes}}
+\index{skip\+Bytes@{skip\+Bytes}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{skip\+Bytes(unsigned num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Out\+Packet\+Buffer\+::skip\+Bytes (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+)}\label{classOutPacketBuffer_aa54261487520f549de9160e7eb674691}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!total\+Buffer\+Size@{total\+Buffer\+Size}}
+\index{total\+Buffer\+Size@{total\+Buffer\+Size}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{total\+Buffer\+Size() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Out\+Packet\+Buffer\+::total\+Buffer\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classOutPacketBuffer_a0a6fe376c222a67e3a9824c3a6190186}
+
+
+Definition at line 85 of file Media\+Sink.\+hh.
+
+
+
+References f\+Limit.
+
+
+\begin{DoxyCode}
+85 \{ \textcolor{keywordflow}{return} fLimit; \}
+\end{DoxyCode}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!total\+Bytes\+Available@{total\+Bytes\+Available}}
+\index{total\+Bytes\+Available@{total\+Bytes\+Available}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{total\+Bytes\+Available() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Out\+Packet\+Buffer\+::total\+Bytes\+Available (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classOutPacketBuffer_aaa4235219e8994fb8f503bba483653ed}
+
+
+Definition at line 82 of file Media\+Sink.\+hh.
+
+
+
+References f\+Cur\+Offset, f\+Limit, and f\+Packet\+Start.
+
+
+\begin{DoxyCode}
+82                                        \{
+83     \textcolor{keywordflow}{return} fLimit - (fPacketStart + fCurOffset);
+84   \}
+\end{DoxyCode}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!use\+Overflow\+Data@{use\+Overflow\+Data}}
+\index{use\+Overflow\+Data@{use\+Overflow\+Data}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{use\+Overflow\+Data()}]{\setlength{\rightskip}{0pt plus 5cm}void Out\+Packet\+Buffer\+::use\+Overflow\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classOutPacketBuffer_ae4967cb194dd5beb01a9fe6c28ae758d}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!would\+Overflow@{would\+Overflow}}
+\index{would\+Overflow@{would\+Overflow}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{would\+Overflow(unsigned num\+Bytes) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Out\+Packet\+Buffer\+::would\+Overflow (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classOutPacketBuffer_a1e8d5eebadecc44c8c1fdcc860b94c10}
+
+
+Definition at line 101 of file Media\+Sink.\+hh.
+
+
+
+References f\+Cur\+Offset, and f\+Max.
+
+
+\begin{DoxyCode}
+101                                                  \{
+102     \textcolor{keywordflow}{return} (fCurOffset+numBytes) > fMax;
+103   \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!f\+Buf@{f\+Buf}}
+\index{f\+Buf@{f\+Buf}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{f\+Buf}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ Out\+Packet\+Buffer\+::f\+Buf\hspace{0.3cm}{\ttfamily [private]}}\label{classOutPacketBuffer_ace3c6ee4d23d1e604a5a1f7e5b865acf}
+
+
+Definition at line 128 of file Media\+Sink.\+hh.
+
+
+
+Referenced by cur\+Ptr(), and packet().
+
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!f\+Cur\+Offset@{f\+Cur\+Offset}}
+\index{f\+Cur\+Offset@{f\+Cur\+Offset}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{f\+Cur\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Out\+Packet\+Buffer\+::f\+Cur\+Offset\hspace{0.3cm}{\ttfamily [private]}}\label{classOutPacketBuffer_ab5154974b5e8c2c098dbb7dc5fbe668c}
+
+
+Definition at line 127 of file Media\+Sink.\+hh.
+
+
+
+Referenced by cur\+Packet\+Size(), cur\+Ptr(), increment(), is\+Preferred\+Size(), num\+Overflow\+Bytes(), reset\+Offset(), total\+Bytes\+Available(), and would\+Overflow().
+
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!f\+Limit@{f\+Limit}}
+\index{f\+Limit@{f\+Limit}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{f\+Limit}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Out\+Packet\+Buffer\+::f\+Limit\hspace{0.3cm}{\ttfamily [private]}}\label{classOutPacketBuffer_a2f7f090be357bab06907e81fb287c518}
+
+
+Definition at line 127 of file Media\+Sink.\+hh.
+
+
+
+Referenced by total\+Buffer\+Size(), and total\+Bytes\+Available().
+
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!f\+Max@{f\+Max}}
+\index{f\+Max@{f\+Max}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{f\+Max}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Out\+Packet\+Buffer\+::f\+Max\hspace{0.3cm}{\ttfamily [private]}}\label{classOutPacketBuffer_a5629bfc1f44082c9f9058369b4204d69}
+
+
+Definition at line 127 of file Media\+Sink.\+hh.
+
+
+
+Referenced by is\+Too\+Big\+For\+A\+Packet(), num\+Overflow\+Bytes(), and would\+Overflow().
+
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!f\+Overflow\+Data\+Offset@{f\+Overflow\+Data\+Offset}}
+\index{f\+Overflow\+Data\+Offset@{f\+Overflow\+Data\+Offset}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{f\+Overflow\+Data\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Out\+Packet\+Buffer\+::f\+Overflow\+Data\+Offset\hspace{0.3cm}{\ttfamily [private]}}\label{classOutPacketBuffer_a5b15e9deeec48b85148e5a1ee8815c69}
+
+
+Definition at line 130 of file Media\+Sink.\+hh.
+
+
+
+Referenced by reset\+Overflow\+Data().
+
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!f\+Overflow\+Data\+Size@{f\+Overflow\+Data\+Size}}
+\index{f\+Overflow\+Data\+Size@{f\+Overflow\+Data\+Size}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{f\+Overflow\+Data\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Out\+Packet\+Buffer\+::f\+Overflow\+Data\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classOutPacketBuffer_a3399e5309a3237730cd2932fd1293a40}
+
+
+Definition at line 130 of file Media\+Sink.\+hh.
+
+
+
+Referenced by have\+Overflow\+Data(), overflow\+Data\+Size(), and reset\+Overflow\+Data().
+
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!f\+Overflow\+Duration\+In\+Microseconds@{f\+Overflow\+Duration\+In\+Microseconds}}
+\index{f\+Overflow\+Duration\+In\+Microseconds@{f\+Overflow\+Duration\+In\+Microseconds}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{f\+Overflow\+Duration\+In\+Microseconds}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Out\+Packet\+Buffer\+::f\+Overflow\+Duration\+In\+Microseconds\hspace{0.3cm}{\ttfamily [private]}}\label{classOutPacketBuffer_a2af838d31bdf73ea6cef84fd126548b6}
+
+
+Definition at line 132 of file Media\+Sink.\+hh.
+
+
+
+Referenced by overflow\+Duration\+In\+Microseconds().
+
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!f\+Overflow\+Presentation\+Time@{f\+Overflow\+Presentation\+Time}}
+\index{f\+Overflow\+Presentation\+Time@{f\+Overflow\+Presentation\+Time}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{f\+Overflow\+Presentation\+Time}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval Out\+Packet\+Buffer\+::f\+Overflow\+Presentation\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classOutPacketBuffer_a0c1567bec145a51e55f34d7b1cbe1ae7}
+
+
+Definition at line 131 of file Media\+Sink.\+hh.
+
+
+
+Referenced by overflow\+Presentation\+Time().
+
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!f\+Packet\+Start@{f\+Packet\+Start}}
+\index{f\+Packet\+Start@{f\+Packet\+Start}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{f\+Packet\+Start}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Out\+Packet\+Buffer\+::f\+Packet\+Start\hspace{0.3cm}{\ttfamily [private]}}\label{classOutPacketBuffer_a178289e7df882e3223ebd939199b024a}
+
+
+Definition at line 127 of file Media\+Sink.\+hh.
+
+
+
+Referenced by cur\+Ptr(), packet(), and total\+Bytes\+Available().
+
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!f\+Preferred@{f\+Preferred}}
+\index{f\+Preferred@{f\+Preferred}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{f\+Preferred}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Out\+Packet\+Buffer\+::f\+Preferred\hspace{0.3cm}{\ttfamily [private]}}\label{classOutPacketBuffer_a68c2946fda68e0200ecab2f80f0297ea}
+
+
+Definition at line 127 of file Media\+Sink.\+hh.
+
+
+
+Referenced by is\+Preferred\+Size().
+
+\index{Out\+Packet\+Buffer@{Out\+Packet\+Buffer}!max\+Size@{max\+Size}}
+\index{max\+Size@{max\+Size}!Out\+Packet\+Buffer@{Out\+Packet\+Buffer}}
+\subsubsection[{max\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Out\+Packet\+Buffer\+::max\+Size\hspace{0.3cm}{\ttfamily [static]}}\label{classOutPacketBuffer_a27f745b288df55bbfb39a7564fe40596}
+
+
+Definition at line 78 of file Media\+Sink.\+hh.
+
+
+
+Referenced by increase\+Max\+Size\+To().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf Media\+Sink.\+hh}\end{DoxyCompactItemize}

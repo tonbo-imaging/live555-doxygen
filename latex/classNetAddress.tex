@@ -1,0 +1,169 @@
+\section{Net\+Address Class Reference}
+\label{classNetAddress}\index{Net\+Address@{Net\+Address}}
+
+
+{\ttfamily \#include $<$Net\+Address.\+hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Net\+Address} (u\+\_\+int8\+\_\+t const $\ast${\bf data}, unsigned {\bf length}=4)
+\item 
+{\bf Net\+Address} (unsigned {\bf length}=4)
+\item 
+{\bf Net\+Address} ({\bf Net\+Address} const \&orig)
+\item 
+{\bf Net\+Address} \& {\bf operator=} ({\bf Net\+Address} const \&right\+Side)
+\item 
+virtual {\bf $\sim$\+Net\+Address} ()
+\item 
+unsigned {\bf length} () const 
+\item 
+u\+\_\+int8\+\_\+t const $\ast$ {\bf data} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf assign} (u\+\_\+int8\+\_\+t const $\ast${\bf data}, unsigned {\bf length})
+\item 
+void {\bf clean} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf f\+Length}
+\item 
+u\+\_\+int8\+\_\+t $\ast$ {\bf f\+Data}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 41 of file Net\+Address.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Net\+Address@{Net\+Address}!Net\+Address@{Net\+Address}}
+\index{Net\+Address@{Net\+Address}!Net\+Address@{Net\+Address}}
+\subsubsection[{Net\+Address(u\+\_\+int8\+\_\+t const $\ast$data, unsigned length=4)}]{\setlength{\rightskip}{0pt plus 5cm}Net\+Address\+::\+Net\+Address (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t const $\ast$}]{data, }
+\item[{unsigned}]{length = {\ttfamily 4}}
+\end{DoxyParamCaption}
+)}\label{classNetAddress_a3b92ececdd450bf7b8de7a4c1b9cb5cf}
+\index{Net\+Address@{Net\+Address}!Net\+Address@{Net\+Address}}
+\index{Net\+Address@{Net\+Address}!Net\+Address@{Net\+Address}}
+\subsubsection[{Net\+Address(unsigned length=4)}]{\setlength{\rightskip}{0pt plus 5cm}Net\+Address\+::\+Net\+Address (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{length = {\ttfamily 4}}
+\end{DoxyParamCaption}
+)}\label{classNetAddress_a1500380a0acf93a1305c5a31d07c48cf}
+\index{Net\+Address@{Net\+Address}!Net\+Address@{Net\+Address}}
+\index{Net\+Address@{Net\+Address}!Net\+Address@{Net\+Address}}
+\subsubsection[{Net\+Address(\+Net\+Address const \&orig)}]{\setlength{\rightskip}{0pt plus 5cm}Net\+Address\+::\+Net\+Address (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+Address} const \&}]{orig}
+\end{DoxyParamCaption}
+)}\label{classNetAddress_aad318e919000c3d737ba5daeb782a8ad}
+\index{Net\+Address@{Net\+Address}!````~Net\+Address@{$\sim$\+Net\+Address}}
+\index{````~Net\+Address@{$\sim$\+Net\+Address}!Net\+Address@{Net\+Address}}
+\subsubsection[{$\sim$\+Net\+Address()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Net\+Address\+::$\sim$\+Net\+Address (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classNetAddress_adeec91b430ad6df98084fec621f65001}
+
+
+\subsection{Member Function Documentation}
+\index{Net\+Address@{Net\+Address}!assign@{assign}}
+\index{assign@{assign}!Net\+Address@{Net\+Address}}
+\subsubsection[{assign(u\+\_\+int8\+\_\+t const $\ast$data, unsigned length)}]{\setlength{\rightskip}{0pt plus 5cm}void Net\+Address\+::assign (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t const $\ast$}]{data, }
+\item[{unsigned}]{length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classNetAddress_a6c572973b228a62358344aac01ec9f10}
+\index{Net\+Address@{Net\+Address}!clean@{clean}}
+\index{clean@{clean}!Net\+Address@{Net\+Address}}
+\subsubsection[{clean()}]{\setlength{\rightskip}{0pt plus 5cm}void Net\+Address\+::clean (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classNetAddress_a65f60e1b7092e510c50e19f5d6a8c1bd}
+\index{Net\+Address@{Net\+Address}!data@{data}}
+\index{data@{data}!Net\+Address@{Net\+Address}}
+\subsubsection[{data() const }]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t const$\ast$ Net\+Address\+::data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classNetAddress_a2f419bbced7498e5f3bfce3aeea76e73}
+
+
+Definition at line 51 of file Net\+Address.\+hh.
+
+
+
+References f\+Data.
+
+
+\begin{DoxyCode}
+52   \{ \textcolor{keywordflow}{return} fData; \}
+\end{DoxyCode}
+\index{Net\+Address@{Net\+Address}!length@{length}}
+\index{length@{length}!Net\+Address@{Net\+Address}}
+\subsubsection[{length() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Net\+Address\+::length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classNetAddress_a6ebb9e051165bbd28da51c17ae712cb0}
+
+
+Definition at line 50 of file Net\+Address.\+hh.
+
+
+
+References f\+Length.
+
+
+\begin{DoxyCode}
+50 \{ \textcolor{keywordflow}{return} fLength; \}
+\end{DoxyCode}
+\index{Net\+Address@{Net\+Address}!operator=@{operator=}}
+\index{operator=@{operator=}!Net\+Address@{Net\+Address}}
+\subsubsection[{operator=(\+Net\+Address const \&right\+Side)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Net\+Address}\& Net\+Address\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+Address} const \&}]{right\+Side}
+\end{DoxyParamCaption}
+)}\label{classNetAddress_a6eb8a368a2a8a0c2fe6a765bcbd6a7de}
+
+
+\subsection{Field Documentation}
+\index{Net\+Address@{Net\+Address}!f\+Data@{f\+Data}}
+\index{f\+Data@{f\+Data}!Net\+Address@{Net\+Address}}
+\subsubsection[{f\+Data}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t$\ast$ Net\+Address\+::f\+Data\hspace{0.3cm}{\ttfamily [private]}}\label{classNetAddress_aabf1d7be2115724b388fa4cbf1004448}
+
+
+Definition at line 59 of file Net\+Address.\+hh.
+
+
+
+Referenced by data().
+
+\index{Net\+Address@{Net\+Address}!f\+Length@{f\+Length}}
+\index{f\+Length@{f\+Length}!Net\+Address@{Net\+Address}}
+\subsubsection[{f\+Length}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Net\+Address\+::f\+Length\hspace{0.3cm}{\ttfamily [private]}}\label{classNetAddress_ad211f7732107ede076a87b38bf344136}
+
+
+Definition at line 58 of file Net\+Address.\+hh.
+
+
+
+Referenced by length().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+groupsock/include/{\bf Net\+Address.\+hh}\end{DoxyCompactItemize}

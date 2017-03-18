@@ -1,0 +1,149 @@
+\section{Address\+Port\+Lookup\+Table Class Reference}
+\label{classAddressPortLookupTable}\index{Address\+Port\+Lookup\+Table@{Address\+Port\+Lookup\+Table}}
+
+
+{\ttfamily \#include $<$Net\+Address.\+hh$>$}
+
+
+
+Collaboration diagram for Address\+Port\+Lookup\+Table\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classAddressPortLookupTable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Address\+Port\+Lookup\+Table} ()
+\item 
+virtual {\bf $\sim$\+Address\+Port\+Lookup\+Table} ()
+\item 
+void $\ast$ {\bf Add} ({\bf net\+Address\+Bits} address1, {\bf net\+Address\+Bits} address2, {\bf Port} port, void $\ast$value)
+\item 
+{\bf Boolean} {\bf Remove} ({\bf net\+Address\+Bits} address1, {\bf net\+Address\+Bits} address2, {\bf Port} port)
+\item 
+void $\ast$ {\bf Lookup} ({\bf net\+Address\+Bits} address1, {\bf net\+Address\+Bits} address2, {\bf Port} port)
+\item 
+void $\ast$ {\bf Remove\+Next} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Hash\+Table} $\ast$ {\bf f\+Table}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Iterator}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 111 of file Net\+Address.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Address\+Port\+Lookup\+Table@{Address\+Port\+Lookup\+Table}!Address\+Port\+Lookup\+Table@{Address\+Port\+Lookup\+Table}}
+\index{Address\+Port\+Lookup\+Table@{Address\+Port\+Lookup\+Table}!Address\+Port\+Lookup\+Table@{Address\+Port\+Lookup\+Table}}
+\subsubsection[{Address\+Port\+Lookup\+Table()}]{\setlength{\rightskip}{0pt plus 5cm}Address\+Port\+Lookup\+Table\+::\+Address\+Port\+Lookup\+Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classAddressPortLookupTable_ab6c2a84fbac26848af97564c835626a5}
+\index{Address\+Port\+Lookup\+Table@{Address\+Port\+Lookup\+Table}!````~Address\+Port\+Lookup\+Table@{$\sim$\+Address\+Port\+Lookup\+Table}}
+\index{````~Address\+Port\+Lookup\+Table@{$\sim$\+Address\+Port\+Lookup\+Table}!Address\+Port\+Lookup\+Table@{Address\+Port\+Lookup\+Table}}
+\subsubsection[{$\sim$\+Address\+Port\+Lookup\+Table()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Address\+Port\+Lookup\+Table\+::$\sim$\+Address\+Port\+Lookup\+Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classAddressPortLookupTable_a81a2b6cb075613ec0df8fbd651efc718}
+
+
+\subsection{Member Function Documentation}
+\index{Address\+Port\+Lookup\+Table@{Address\+Port\+Lookup\+Table}!Add@{Add}}
+\index{Add@{Add}!Address\+Port\+Lookup\+Table@{Address\+Port\+Lookup\+Table}}
+\subsubsection[{Add(net\+Address\+Bits address1, net\+Address\+Bits address2, Port port, void $\ast$value)}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Address\+Port\+Lookup\+Table\+::\+Add (
+\begin{DoxyParamCaption}
+\item[{{\bf net\+Address\+Bits}}]{address1, }
+\item[{{\bf net\+Address\+Bits}}]{address2, }
+\item[{{\bf Port}}]{port, }
+\item[{void $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\label{classAddressPortLookupTable_a79a20d21abfd864113cdd60538662e00}
+\index{Address\+Port\+Lookup\+Table@{Address\+Port\+Lookup\+Table}!Lookup@{Lookup}}
+\index{Lookup@{Lookup}!Address\+Port\+Lookup\+Table@{Address\+Port\+Lookup\+Table}}
+\subsubsection[{Lookup(net\+Address\+Bits address1, net\+Address\+Bits address2, Port port)}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Address\+Port\+Lookup\+Table\+::\+Lookup (
+\begin{DoxyParamCaption}
+\item[{{\bf net\+Address\+Bits}}]{address1, }
+\item[{{\bf net\+Address\+Bits}}]{address2, }
+\item[{{\bf Port}}]{port}
+\end{DoxyParamCaption}
+)}\label{classAddressPortLookupTable_a4cb19ca8ed42e0d19732c893c82e5914}
+\index{Address\+Port\+Lookup\+Table@{Address\+Port\+Lookup\+Table}!Remove@{Remove}}
+\index{Remove@{Remove}!Address\+Port\+Lookup\+Table@{Address\+Port\+Lookup\+Table}}
+\subsubsection[{Remove(net\+Address\+Bits address1, net\+Address\+Bits address2, Port port)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Address\+Port\+Lookup\+Table\+::\+Remove (
+\begin{DoxyParamCaption}
+\item[{{\bf net\+Address\+Bits}}]{address1, }
+\item[{{\bf net\+Address\+Bits}}]{address2, }
+\item[{{\bf Port}}]{port}
+\end{DoxyParamCaption}
+)}\label{classAddressPortLookupTable_ac3580086c8d112784dd94c63f1fbb1aa}
+\index{Address\+Port\+Lookup\+Table@{Address\+Port\+Lookup\+Table}!Remove\+Next@{Remove\+Next}}
+\index{Remove\+Next@{Remove\+Next}!Address\+Port\+Lookup\+Table@{Address\+Port\+Lookup\+Table}}
+\subsubsection[{Remove\+Next()}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Address\+Port\+Lookup\+Table\+::\+Remove\+Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classAddressPortLookupTable_a6a0df6aa12631f276abb4d835847553e}
+
+
+Definition at line 121 of file Net\+Address.\+hh.
+
+
+
+References f\+Table, and Hash\+Table\+::\+Remove\+Next().
+
+
+\begin{DoxyCode}
+121 \{ \textcolor{keywordflow}{return} fTable->RemoveNext(); \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Address\+Port\+Lookup\+Table@{Address\+Port\+Lookup\+Table}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!Address\+Port\+Lookup\+Table@{Address\+Port\+Lookup\+Table}}
+\subsubsection[{Iterator}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Iterator}\hspace{0.3cm}{\ttfamily [friend]}}\label{classAddressPortLookupTable_a9830fc407400559db7e7783cc10a9394}
+
+
+Definition at line 136 of file Net\+Address.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{Address\+Port\+Lookup\+Table@{Address\+Port\+Lookup\+Table}!f\+Table@{f\+Table}}
+\index{f\+Table@{f\+Table}!Address\+Port\+Lookup\+Table@{Address\+Port\+Lookup\+Table}}
+\subsubsection[{f\+Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hash\+Table}$\ast$ Address\+Port\+Lookup\+Table\+::f\+Table\hspace{0.3cm}{\ttfamily [private]}}\label{classAddressPortLookupTable_a5fce950c17ca4cc19093ac327ae082b0}
+
+
+Definition at line 137 of file Net\+Address.\+hh.
+
+
+
+Referenced by Remove\+Next().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+groupsock/include/{\bf Net\+Address.\+hh}\end{DoxyCompactItemize}

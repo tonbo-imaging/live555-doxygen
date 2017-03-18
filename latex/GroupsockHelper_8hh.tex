@@ -1,0 +1,377 @@
+\section{groupsock/include/\+Groupsock\+Helper.hh File Reference}
+\label{GroupsockHelper_8hh}\index{groupsock/include/\+Groupsock\+Helper.\+hh@{groupsock/include/\+Groupsock\+Helper.\+hh}}
+{\ttfamily \#include \char`\"{}Net\+Address.\+hh\char`\"{}}\\*
+{\ttfamily \#include $<$sys/time.\+h$>$}\\*
+Include dependency graph for Groupsock\+Helper.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GroupsockHelper_8hh__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf No\+Reuse}
+\item 
+struct {\bf \+\_\+groupsock\+Priv}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf S\+E\+T\+\_\+\+S\+O\+C\+K\+A\+D\+D\+R\+\_\+\+S\+I\+N\+\_\+\+L\+E\+N}(var)
+\item 
+\#define {\bf M\+A\+K\+E\+\_\+\+S\+O\+C\+K\+A\+D\+D\+R\+\_\+\+I\+N}(var,  adr,  prt)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf setup\+Datagram\+Socket} ({\bf Usage\+Environment} \&env, {\bf Port} port)
+\item 
+int {\bf setup\+Stream\+Socket} ({\bf Usage\+Environment} \&env, {\bf Port} port, {\bf Boolean} make\+Non\+Blocking={\bf True})
+\item 
+int {\bf read\+Socket} ({\bf Usage\+Environment} \&env, int socket, unsigned char $\ast$buffer, unsigned buffer\+Size, struct sockaddr\+\_\+in \&from\+Address)
+\item 
+{\bf Boolean} {\bf write\+Socket} ({\bf Usage\+Environment} \&env, int socket, struct in\+\_\+addr address, {\bf port\+Num\+Bits} port\+Num, u\+\_\+int8\+\_\+t ttl\+Arg, unsigned char $\ast$buffer, unsigned buffer\+Size)
+\item 
+{\bf Boolean} {\bf write\+Socket} ({\bf Usage\+Environment} \&env, int socket, struct in\+\_\+addr address, {\bf port\+Num\+Bits} port\+Num, unsigned char $\ast$buffer, unsigned buffer\+Size)
+\item 
+void {\bf ignore\+Sig\+Pipe\+On\+Socket} (int socket\+Num)
+\item 
+unsigned {\bf get\+Send\+Buffer\+Size} ({\bf Usage\+Environment} \&env, int socket)
+\item 
+unsigned {\bf get\+Receive\+Buffer\+Size} ({\bf Usage\+Environment} \&env, int socket)
+\item 
+unsigned {\bf set\+Send\+Buffer\+To} ({\bf Usage\+Environment} \&env, int socket, unsigned requested\+Size)
+\item 
+unsigned {\bf set\+Receive\+Buffer\+To} ({\bf Usage\+Environment} \&env, int socket, unsigned requested\+Size)
+\item 
+unsigned {\bf increase\+Send\+Buffer\+To} ({\bf Usage\+Environment} \&env, int socket, unsigned requested\+Size)
+\item 
+unsigned {\bf increase\+Receive\+Buffer\+To} ({\bf Usage\+Environment} \&env, int socket, unsigned requested\+Size)
+\item 
+{\bf Boolean} {\bf make\+Socket\+Non\+Blocking} (int sock)
+\item 
+{\bf Boolean} {\bf make\+Socket\+Blocking} (int sock, unsigned write\+Timeout\+In\+Milliseconds=0)
+\item 
+{\bf Boolean} {\bf socket\+Join\+Group} ({\bf Usage\+Environment} \&env, int socket, {\bf net\+Address\+Bits} group\+Address)
+\item 
+{\bf Boolean} {\bf socket\+Leave\+Group} ({\bf Usage\+Environment} \&, int socket, {\bf net\+Address\+Bits} group\+Address)
+\item 
+{\bf Boolean} {\bf socket\+Join\+Group\+S\+S\+M} ({\bf Usage\+Environment} \&env, int socket, {\bf net\+Address\+Bits} group\+Address, {\bf net\+Address\+Bits} source\+Filter\+Addr)
+\item 
+{\bf Boolean} {\bf socket\+Leave\+Group\+S\+S\+M} ({\bf Usage\+Environment} \&, int socket, {\bf net\+Address\+Bits} group\+Address, {\bf net\+Address\+Bits} source\+Filter\+Addr)
+\item 
+{\bf Boolean} {\bf get\+Source\+Port} ({\bf Usage\+Environment} \&env, int socket, {\bf Port} \&port)
+\item 
+{\bf net\+Address\+Bits} {\bf our\+I\+P\+Address} ({\bf Usage\+Environment} \&env)
+\item 
+{\bf net\+Address\+Bits} {\bf choose\+Random\+I\+Pv4\+S\+S\+M\+Address} ({\bf Usage\+Environment} \&env)
+\item 
+char const $\ast$ {\bf timestamp\+String} ()
+\item 
+{\bf \+\_\+groupsock\+Priv} $\ast$ {\bf groupsock\+Priv} ({\bf Usage\+Environment} \&env)
+\item 
+void {\bf reclaim\+Groupsock\+Priv} ({\bf Usage\+Environment} \&env)
+\item 
+{\bf net\+Address\+Bits} {\bf our\+\_\+inet\+\_\+addr} (char const $\ast$)
+\item 
+void {\bf our\+\_\+srandom} (int x)
+\item 
+long {\bf our\+\_\+random} ()
+\item 
+u\+\_\+int32\+\_\+t {\bf our\+\_\+random32} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\bf net\+Address\+Bits} {\bf Sending\+Interface\+Addr}
+\item 
+{\bf net\+Address\+Bits} {\bf Receiving\+Interface\+Addr}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!M\+A\+K\+E\+\_\+\+S\+O\+C\+K\+A\+D\+D\+R\+\_\+\+I\+N@{M\+A\+K\+E\+\_\+\+S\+O\+C\+K\+A\+D\+D\+R\+\_\+\+I\+N}}
+\index{M\+A\+K\+E\+\_\+\+S\+O\+C\+K\+A\+D\+D\+R\+\_\+\+I\+N@{M\+A\+K\+E\+\_\+\+S\+O\+C\+K\+A\+D\+D\+R\+\_\+\+I\+N}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{M\+A\+K\+E\+\_\+\+S\+O\+C\+K\+A\+D\+D\+R\+\_\+\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+K\+E\+\_\+\+S\+O\+C\+K\+A\+D\+D\+R\+\_\+\+I\+N(
+\begin{DoxyParamCaption}
+\item[{}]{var, }
+\item[{}]{adr, }
+\item[{}]{prt}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_a07ba78d7baea145bc8040dccebdd94d4}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{comment}{/*adr,prt must be in network order*/}\(\backslash\)
+    struct sockaddr\_in var;\(\backslash\)
+    var.sin\_family = AF\_INET;\(\backslash\)
+    var.sin\_addr.s\_addr = (adr);\(\backslash\)
+    var.sin\_port = (prt);\(\backslash\)
+    SET\_SOCKADDR\_SIN\_LEN(var);
+\end{DoxyCode}
+
+
+Definition at line 98 of file Groupsock\+Helper.\+hh.
+
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!S\+E\+T\+\_\+\+S\+O\+C\+K\+A\+D\+D\+R\+\_\+\+S\+I\+N\+\_\+\+L\+E\+N@{S\+E\+T\+\_\+\+S\+O\+C\+K\+A\+D\+D\+R\+\_\+\+S\+I\+N\+\_\+\+L\+E\+N}}
+\index{S\+E\+T\+\_\+\+S\+O\+C\+K\+A\+D\+D\+R\+\_\+\+S\+I\+N\+\_\+\+L\+E\+N@{S\+E\+T\+\_\+\+S\+O\+C\+K\+A\+D\+D\+R\+\_\+\+S\+I\+N\+\_\+\+L\+E\+N}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{S\+E\+T\+\_\+\+S\+O\+C\+K\+A\+D\+D\+R\+\_\+\+S\+I\+N\+\_\+\+L\+E\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+T\+\_\+\+S\+O\+C\+K\+A\+D\+D\+R\+\_\+\+S\+I\+N\+\_\+\+L\+E\+N(
+\begin{DoxyParamCaption}
+\item[{}]{var}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_aaf47bf81e732573efb23b51eb7cdc939}
+
+
+Definition at line 95 of file Groupsock\+Helper.\+hh.
+
+
+
+\subsection{Function Documentation}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!choose\+Random\+I\+Pv4\+S\+S\+M\+Address@{choose\+Random\+I\+Pv4\+S\+S\+M\+Address}}
+\index{choose\+Random\+I\+Pv4\+S\+S\+M\+Address@{choose\+Random\+I\+Pv4\+S\+S\+M\+Address}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{choose\+Random\+I\+Pv4\+S\+S\+M\+Address(\+Usage\+Environment \&env)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf net\+Address\+Bits} choose\+Random\+I\+Pv4\+S\+S\+M\+Address (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_ae1330c5b8a3463231cced71d0d886157}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!get\+Receive\+Buffer\+Size@{get\+Receive\+Buffer\+Size}}
+\index{get\+Receive\+Buffer\+Size@{get\+Receive\+Buffer\+Size}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{get\+Receive\+Buffer\+Size(\+Usage\+Environment \&env, int socket)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned get\+Receive\+Buffer\+Size (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{int}]{socket}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_a31aeb2469627accd6634c6df17d7f639}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!get\+Send\+Buffer\+Size@{get\+Send\+Buffer\+Size}}
+\index{get\+Send\+Buffer\+Size@{get\+Send\+Buffer\+Size}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{get\+Send\+Buffer\+Size(\+Usage\+Environment \&env, int socket)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned get\+Send\+Buffer\+Size (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{int}]{socket}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_af69600d9cab07e3e60856eda997f81d9}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!get\+Source\+Port@{get\+Source\+Port}}
+\index{get\+Source\+Port@{get\+Source\+Port}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{get\+Source\+Port(\+Usage\+Environment \&env, int socket, Port \&port)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} get\+Source\+Port (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{int}]{socket, }
+\item[{{\bf Port} \&}]{port}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_a786565b5efd7bfc06f711568845471b4}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!groupsock\+Priv@{groupsock\+Priv}}
+\index{groupsock\+Priv@{groupsock\+Priv}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{groupsock\+Priv(\+Usage\+Environment \&env)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+groupsock\+Priv}$\ast$ groupsock\+Priv (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_a75a91874b4d53551148f46722b528000}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!ignore\+Sig\+Pipe\+On\+Socket@{ignore\+Sig\+Pipe\+On\+Socket}}
+\index{ignore\+Sig\+Pipe\+On\+Socket@{ignore\+Sig\+Pipe\+On\+Socket}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{ignore\+Sig\+Pipe\+On\+Socket(int socket\+Num)}]{\setlength{\rightskip}{0pt plus 5cm}void ignore\+Sig\+Pipe\+On\+Socket (
+\begin{DoxyParamCaption}
+\item[{int}]{socket\+Num}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_ad33060ce7cc6ee3b34ea083fc66966e5}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!increase\+Receive\+Buffer\+To@{increase\+Receive\+Buffer\+To}}
+\index{increase\+Receive\+Buffer\+To@{increase\+Receive\+Buffer\+To}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{increase\+Receive\+Buffer\+To(\+Usage\+Environment \&env, int socket, unsigned requested\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned increase\+Receive\+Buffer\+To (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{int}]{socket, }
+\item[{unsigned}]{requested\+Size}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_a76b0dd1e23e61ea1ac636d0d4652411b}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!increase\+Send\+Buffer\+To@{increase\+Send\+Buffer\+To}}
+\index{increase\+Send\+Buffer\+To@{increase\+Send\+Buffer\+To}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{increase\+Send\+Buffer\+To(\+Usage\+Environment \&env, int socket, unsigned requested\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned increase\+Send\+Buffer\+To (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{int}]{socket, }
+\item[{unsigned}]{requested\+Size}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_aedd309205d44f5b51e3e050d29cdae6e}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!make\+Socket\+Blocking@{make\+Socket\+Blocking}}
+\index{make\+Socket\+Blocking@{make\+Socket\+Blocking}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{make\+Socket\+Blocking(int sock, unsigned write\+Timeout\+In\+Milliseconds=0)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} make\+Socket\+Blocking (
+\begin{DoxyParamCaption}
+\item[{int}]{sock, }
+\item[{unsigned}]{write\+Timeout\+In\+Milliseconds = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_a6fa242d1a0a41b5ec8f67c650e724498}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!make\+Socket\+Non\+Blocking@{make\+Socket\+Non\+Blocking}}
+\index{make\+Socket\+Non\+Blocking@{make\+Socket\+Non\+Blocking}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{make\+Socket\+Non\+Blocking(int sock)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} make\+Socket\+Non\+Blocking (
+\begin{DoxyParamCaption}
+\item[{int}]{sock}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_a1574c6f28397983b875d259ad6db253b}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!our\+\_\+inet\+\_\+addr@{our\+\_\+inet\+\_\+addr}}
+\index{our\+\_\+inet\+\_\+addr@{our\+\_\+inet\+\_\+addr}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{our\+\_\+inet\+\_\+addr(char const $\ast$)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf net\+Address\+Bits} our\+\_\+inet\+\_\+addr (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_a51c2c7dfe6096d62965cc9114c8f1cf4}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!our\+\_\+random@{our\+\_\+random}}
+\index{our\+\_\+random@{our\+\_\+random}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{our\+\_\+random()}]{\setlength{\rightskip}{0pt plus 5cm}long our\+\_\+random (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_ae2547208c702aa7011963dd52f0dad60}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!our\+\_\+random32@{our\+\_\+random32}}
+\index{our\+\_\+random32@{our\+\_\+random32}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{our\+\_\+random32()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t our\+\_\+random32 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_aa6cf1d39123b1ae19b7004752f4ebd39}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!our\+\_\+srandom@{our\+\_\+srandom}}
+\index{our\+\_\+srandom@{our\+\_\+srandom}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{our\+\_\+srandom(int x)}]{\setlength{\rightskip}{0pt plus 5cm}void our\+\_\+srandom (
+\begin{DoxyParamCaption}
+\item[{int}]{x}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_af0c365cba045a1b5af512f840b8c2f9d}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!our\+I\+P\+Address@{our\+I\+P\+Address}}
+\index{our\+I\+P\+Address@{our\+I\+P\+Address}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{our\+I\+P\+Address(\+Usage\+Environment \&env)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf net\+Address\+Bits} our\+I\+P\+Address (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_aaf60ec46701800f3014db531946bc31f}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!read\+Socket@{read\+Socket}}
+\index{read\+Socket@{read\+Socket}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{read\+Socket(\+Usage\+Environment \&env, int socket, unsigned char $\ast$buffer, unsigned buffer\+Size, struct sockaddr\+\_\+in \&from\+Address)}]{\setlength{\rightskip}{0pt plus 5cm}int read\+Socket (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{int}]{socket, }
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{unsigned}]{buffer\+Size, }
+\item[{struct sockaddr\+\_\+in \&}]{from\+Address}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_aded76aaffe997b53c40ec2215e62b6c7}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!reclaim\+Groupsock\+Priv@{reclaim\+Groupsock\+Priv}}
+\index{reclaim\+Groupsock\+Priv@{reclaim\+Groupsock\+Priv}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{reclaim\+Groupsock\+Priv(\+Usage\+Environment \&env)}]{\setlength{\rightskip}{0pt plus 5cm}void reclaim\+Groupsock\+Priv (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_a9d500492bb3aec8d13baad9b44a611b5}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!set\+Receive\+Buffer\+To@{set\+Receive\+Buffer\+To}}
+\index{set\+Receive\+Buffer\+To@{set\+Receive\+Buffer\+To}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{set\+Receive\+Buffer\+To(\+Usage\+Environment \&env, int socket, unsigned requested\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned set\+Receive\+Buffer\+To (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{int}]{socket, }
+\item[{unsigned}]{requested\+Size}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_a662bd536b09507e0f97299bfa7f414d3}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!set\+Send\+Buffer\+To@{set\+Send\+Buffer\+To}}
+\index{set\+Send\+Buffer\+To@{set\+Send\+Buffer\+To}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{set\+Send\+Buffer\+To(\+Usage\+Environment \&env, int socket, unsigned requested\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned set\+Send\+Buffer\+To (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{int}]{socket, }
+\item[{unsigned}]{requested\+Size}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_a01d73336f0835818d9b43bf6fbc09626}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!setup\+Datagram\+Socket@{setup\+Datagram\+Socket}}
+\index{setup\+Datagram\+Socket@{setup\+Datagram\+Socket}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{setup\+Datagram\+Socket(\+Usage\+Environment \&env, Port port)}]{\setlength{\rightskip}{0pt plus 5cm}int setup\+Datagram\+Socket (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf Port}}]{port}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_acf795608ce3e5568f26290051d374e20}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!setup\+Stream\+Socket@{setup\+Stream\+Socket}}
+\index{setup\+Stream\+Socket@{setup\+Stream\+Socket}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{setup\+Stream\+Socket(\+Usage\+Environment \&env, Port port, Boolean make\+Non\+Blocking=\+True)}]{\setlength{\rightskip}{0pt plus 5cm}int setup\+Stream\+Socket (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf Port}}]{port, }
+\item[{{\bf Boolean}}]{make\+Non\+Blocking = {\ttfamily {\bf True}}}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_ac66ebaf606f8ee8adb9bc0d70471ae36}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!socket\+Join\+Group@{socket\+Join\+Group}}
+\index{socket\+Join\+Group@{socket\+Join\+Group}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{socket\+Join\+Group(\+Usage\+Environment \&env, int socket, net\+Address\+Bits group\+Address)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} socket\+Join\+Group (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{int}]{socket, }
+\item[{{\bf net\+Address\+Bits}}]{group\+Address}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_a5f1f61b3fdcab7087340df3ecfd7306b}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!socket\+Join\+Group\+S\+S\+M@{socket\+Join\+Group\+S\+S\+M}}
+\index{socket\+Join\+Group\+S\+S\+M@{socket\+Join\+Group\+S\+S\+M}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{socket\+Join\+Group\+S\+S\+M(\+Usage\+Environment \&env, int socket, net\+Address\+Bits group\+Address, net\+Address\+Bits source\+Filter\+Addr)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} socket\+Join\+Group\+S\+S\+M (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{int}]{socket, }
+\item[{{\bf net\+Address\+Bits}}]{group\+Address, }
+\item[{{\bf net\+Address\+Bits}}]{source\+Filter\+Addr}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_a498aeeb6312f6cf01211b79ca93c81bf}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!socket\+Leave\+Group@{socket\+Leave\+Group}}
+\index{socket\+Leave\+Group@{socket\+Leave\+Group}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{socket\+Leave\+Group(\+Usage\+Environment \&, int socket, net\+Address\+Bits group\+Address)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} socket\+Leave\+Group (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{, }
+\item[{int}]{socket, }
+\item[{{\bf net\+Address\+Bits}}]{group\+Address}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_a724b6be387a4c83c324384a95ee7283c}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!socket\+Leave\+Group\+S\+S\+M@{socket\+Leave\+Group\+S\+S\+M}}
+\index{socket\+Leave\+Group\+S\+S\+M@{socket\+Leave\+Group\+S\+S\+M}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{socket\+Leave\+Group\+S\+S\+M(\+Usage\+Environment \&, int socket, net\+Address\+Bits group\+Address, net\+Address\+Bits source\+Filter\+Addr)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} socket\+Leave\+Group\+S\+S\+M (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{, }
+\item[{int}]{socket, }
+\item[{{\bf net\+Address\+Bits}}]{group\+Address, }
+\item[{{\bf net\+Address\+Bits}}]{source\+Filter\+Addr}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_ab1a8d348810bd24ebd5aaf3ac296fdda}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!timestamp\+String@{timestamp\+String}}
+\index{timestamp\+String@{timestamp\+String}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{timestamp\+String()}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ timestamp\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_acf6258e49bd3bcc7be73e692fef2b22b}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!write\+Socket@{write\+Socket}}
+\index{write\+Socket@{write\+Socket}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{write\+Socket(\+Usage\+Environment \&env, int socket, struct in\+\_\+addr address, port\+Num\+Bits port\+Num, u\+\_\+int8\+\_\+t ttl\+Arg, unsigned char $\ast$buffer, unsigned buffer\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} write\+Socket (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{int}]{socket, }
+\item[{struct in\+\_\+addr}]{address, }
+\item[{{\bf port\+Num\+Bits}}]{port\+Num, }
+\item[{u\+\_\+int8\+\_\+t}]{ttl\+Arg, }
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{unsigned}]{buffer\+Size}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_a9226c928ffa9ad7c4cd6a7b74ef4d262}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!write\+Socket@{write\+Socket}}
+\index{write\+Socket@{write\+Socket}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{write\+Socket(\+Usage\+Environment \&env, int socket, struct in\+\_\+addr address, port\+Num\+Bits port\+Num, unsigned char $\ast$buffer, unsigned buffer\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} write\+Socket (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{int}]{socket, }
+\item[{struct in\+\_\+addr}]{address, }
+\item[{{\bf port\+Num\+Bits}}]{port\+Num, }
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{unsigned}]{buffer\+Size}
+\end{DoxyParamCaption}
+)}\label{GroupsockHelper_8hh_a14382a7d1b6501ad80b570e699548ea9}
+
+
+\subsection{Variable Documentation}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!Receiving\+Interface\+Addr@{Receiving\+Interface\+Addr}}
+\index{Receiving\+Interface\+Addr@{Receiving\+Interface\+Addr}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{Receiving\+Interface\+Addr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf net\+Address\+Bits} Receiving\+Interface\+Addr}\label{GroupsockHelper_8hh_ae706e47f8cb4b2e0e2bfce381af7d83d}
+\index{Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}!Sending\+Interface\+Addr@{Sending\+Interface\+Addr}}
+\index{Sending\+Interface\+Addr@{Sending\+Interface\+Addr}!Groupsock\+Helper.\+hh@{Groupsock\+Helper.\+hh}}
+\subsubsection[{Sending\+Interface\+Addr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf net\+Address\+Bits} Sending\+Interface\+Addr}\label{GroupsockHelper_8hh_a391c8d8ea4c9960c97e5e11cdf934430}

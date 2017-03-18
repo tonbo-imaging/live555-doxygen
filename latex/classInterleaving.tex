@@ -1,0 +1,122 @@
+\section{Interleaving Class Reference}
+\label{classInterleaving}\index{Interleaving@{Interleaving}}
+
+
+{\ttfamily \#include $<$M\+P3\+A\+D\+Uinterleaving.\+hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Interleaving} (unsigned {\bf cycle\+Size}, unsigned char const $\ast$cycle\+Array)
+\item 
+virtual {\bf $\sim$\+Interleaving} ()
+\item 
+unsigned {\bf cycle\+Size} () const 
+\item 
+unsigned char {\bf lookup\+Inverse\+Cycle} (unsigned char index) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf f\+Cycle\+Size}
+\item 
+unsigned char {\bf f\+Inverse\+Cycle} [{\bf M\+A\+X\+\_\+\+C\+Y\+C\+L\+E\+\_\+\+S\+I\+Z\+E}]
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 30 of file M\+P3\+A\+D\+Uinterleaving.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Interleaving@{Interleaving}!Interleaving@{Interleaving}}
+\index{Interleaving@{Interleaving}!Interleaving@{Interleaving}}
+\subsubsection[{Interleaving(unsigned cycle\+Size, unsigned char const $\ast$cycle\+Array)}]{\setlength{\rightskip}{0pt plus 5cm}Interleaving\+::\+Interleaving (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{cycle\+Size, }
+\item[{unsigned char const $\ast$}]{cycle\+Array}
+\end{DoxyParamCaption}
+)}\label{classInterleaving_a7ec5a0e617e1ffb6fd3852d56db1d707}
+\index{Interleaving@{Interleaving}!````~Interleaving@{$\sim$\+Interleaving}}
+\index{````~Interleaving@{$\sim$\+Interleaving}!Interleaving@{Interleaving}}
+\subsubsection[{$\sim$\+Interleaving()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Interleaving\+::$\sim$\+Interleaving (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classInterleaving_a3a4e1bc7f54e795128618a216fe48e71}
+
+
+\subsection{Member Function Documentation}
+\index{Interleaving@{Interleaving}!cycle\+Size@{cycle\+Size}}
+\index{cycle\+Size@{cycle\+Size}!Interleaving@{Interleaving}}
+\subsubsection[{cycle\+Size() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Interleaving\+::cycle\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classInterleaving_ab7018c3e110ac433cd8b398819fd81a7}
+
+
+Definition at line 35 of file M\+P3\+A\+D\+Uinterleaving.\+hh.
+
+
+
+References f\+Cycle\+Size.
+
+
+\begin{DoxyCode}
+35 \{\textcolor{keywordflow}{return} fCycleSize;\}
+\end{DoxyCode}
+\index{Interleaving@{Interleaving}!lookup\+Inverse\+Cycle@{lookup\+Inverse\+Cycle}}
+\index{lookup\+Inverse\+Cycle@{lookup\+Inverse\+Cycle}!Interleaving@{Interleaving}}
+\subsubsection[{lookup\+Inverse\+Cycle(unsigned char index) const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Interleaving\+::lookup\+Inverse\+Cycle (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classInterleaving_a8399cf8626b34e07328528be5e9eb4f8}
+
+
+Definition at line 36 of file M\+P3\+A\+D\+Uinterleaving.\+hh.
+
+
+
+References f\+Inverse\+Cycle.
+
+
+\begin{DoxyCode}
+36                                                               \{
+37     \textcolor{keywordflow}{return} fInverseCycle[index];
+38   \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Interleaving@{Interleaving}!f\+Cycle\+Size@{f\+Cycle\+Size}}
+\index{f\+Cycle\+Size@{f\+Cycle\+Size}!Interleaving@{Interleaving}}
+\subsubsection[{f\+Cycle\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Interleaving\+::f\+Cycle\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classInterleaving_aff01e0fbe20f98df1d1992cadd1e38ff}
+
+
+Definition at line 41 of file M\+P3\+A\+D\+Uinterleaving.\+hh.
+
+
+
+Referenced by cycle\+Size().
+
+\index{Interleaving@{Interleaving}!f\+Inverse\+Cycle@{f\+Inverse\+Cycle}}
+\index{f\+Inverse\+Cycle@{f\+Inverse\+Cycle}!Interleaving@{Interleaving}}
+\subsubsection[{f\+Inverse\+Cycle}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Interleaving\+::f\+Inverse\+Cycle[{\bf M\+A\+X\+\_\+\+C\+Y\+C\+L\+E\+\_\+\+S\+I\+Z\+E}]\hspace{0.3cm}{\ttfamily [private]}}\label{classInterleaving_abbdc691d34cb82572a0d91cdbc0fe798}
+
+
+Definition at line 42 of file M\+P3\+A\+D\+Uinterleaving.\+hh.
+
+
+
+Referenced by lookup\+Inverse\+Cycle().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf M\+P3\+A\+D\+Uinterleaving.\+hh}\end{DoxyCompactItemize}

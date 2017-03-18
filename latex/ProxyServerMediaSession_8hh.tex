@@ -1,0 +1,69 @@
+\section{live\+Media/include/\+Proxy\+Server\+Media\+Session.hh File Reference}
+\label{ProxyServerMediaSession_8hh}\index{live\+Media/include/\+Proxy\+Server\+Media\+Session.\+hh@{live\+Media/include/\+Proxy\+Server\+Media\+Session.\+hh}}
+{\ttfamily \#include \char`\"{}Server\+Media\+Session.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Media\+Session.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}R\+T\+S\+P\+Client.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Media\+Transcoding\+Table.\+hh\char`\"{}}\\*
+Include dependency graph for Proxy\+Server\+Media\+Session.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ProxyServerMediaSession_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{ProxyServerMediaSession_8hh__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Proxy\+R\+T\+S\+P\+Client}
+\item 
+class {\bf Proxy\+Server\+Media\+Session}
+\item 
+class {\bf Presentation\+Time\+Subsession\+Normalizer}
+\item 
+class {\bf Presentation\+Time\+Session\+Normalizer}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf Proxy\+R\+T\+S\+P\+Client} $\ast$ {\bf create\+New\+Proxy\+R\+T\+S\+P\+Client\+Func}({\bf Proxy\+Server\+Media\+Session} \&our\+Server\+Media\+Session, char const $\ast$rtsp\+U\+R\+L, char const $\ast$username, char const $\ast$password, {\bf port\+Num\+Bits} tunnel\+Over\+H\+T\+T\+P\+Port\+Num, int verbosity\+Level, int socket\+Num\+To\+Server)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Proxy\+R\+T\+S\+P\+Client} $\ast$ {\bf default\+Create\+New\+Proxy\+R\+T\+S\+P\+Client\+Func} ({\bf Proxy\+Server\+Media\+Session} \&our\+Server\+Media\+Session, char const $\ast$rtsp\+U\+R\+L, char const $\ast$username, char const $\ast$password, {\bf port\+Num\+Bits} tunnel\+Over\+H\+T\+T\+P\+Port\+Num, int verbosity\+Level, int socket\+Num\+To\+Server)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{Proxy\+Server\+Media\+Session.\+hh@{Proxy\+Server\+Media\+Session.\+hh}!create\+New\+Proxy\+R\+T\+S\+P\+Client\+Func@{create\+New\+Proxy\+R\+T\+S\+P\+Client\+Func}}
+\index{create\+New\+Proxy\+R\+T\+S\+P\+Client\+Func@{create\+New\+Proxy\+R\+T\+S\+P\+Client\+Func}!Proxy\+Server\+Media\+Session.\+hh@{Proxy\+Server\+Media\+Session.\+hh}}
+\subsubsection[{create\+New\+Proxy\+R\+T\+S\+P\+Client\+Func}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Proxy\+R\+T\+S\+P\+Client}$\ast$ create\+New\+Proxy\+R\+T\+S\+P\+Client\+Func({\bf Proxy\+Server\+Media\+Session} \&our\+Server\+Media\+Session, char const $\ast$rtsp\+U\+R\+L, char const $\ast$username, char const $\ast$password, {\bf port\+Num\+Bits} tunnel\+Over\+H\+T\+T\+P\+Port\+Num, int verbosity\+Level, int socket\+Num\+To\+Server)}\label{ProxyServerMediaSession_8hh_a1c0d3b77e0f0f429a8f56147ac994b30}
+
+
+Definition at line 88 of file Proxy\+Server\+Media\+Session.\+hh.
+
+
+
+\subsection{Function Documentation}
+\index{Proxy\+Server\+Media\+Session.\+hh@{Proxy\+Server\+Media\+Session.\+hh}!default\+Create\+New\+Proxy\+R\+T\+S\+P\+Client\+Func@{default\+Create\+New\+Proxy\+R\+T\+S\+P\+Client\+Func}}
+\index{default\+Create\+New\+Proxy\+R\+T\+S\+P\+Client\+Func@{default\+Create\+New\+Proxy\+R\+T\+S\+P\+Client\+Func}!Proxy\+Server\+Media\+Session.\+hh@{Proxy\+Server\+Media\+Session.\+hh}}
+\subsubsection[{default\+Create\+New\+Proxy\+R\+T\+S\+P\+Client\+Func(\+Proxy\+Server\+Media\+Session \&our\+Server\+Media\+Session, char const $\ast$rtsp\+U\+R\+L, char const $\ast$username, char const $\ast$password, port\+Num\+Bits tunnel\+Over\+H\+T\+T\+P\+Port\+Num, int verbosity\+Level, int socket\+Num\+To\+Server)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Proxy\+R\+T\+S\+P\+Client}$\ast$ default\+Create\+New\+Proxy\+R\+T\+S\+P\+Client\+Func (
+\begin{DoxyParamCaption}
+\item[{{\bf Proxy\+Server\+Media\+Session} \&}]{our\+Server\+Media\+Session, }
+\item[{char const $\ast$}]{rtsp\+U\+R\+L, }
+\item[{char const $\ast$}]{username, }
+\item[{char const $\ast$}]{password, }
+\item[{{\bf port\+Num\+Bits}}]{tunnel\+Over\+H\+T\+T\+P\+Port\+Num, }
+\item[{int}]{verbosity\+Level, }
+\item[{int}]{socket\+Num\+To\+Server}
+\end{DoxyParamCaption}
+)}\label{ProxyServerMediaSession_8hh_ac708f4a1467e14d7b7dbd4fae7b43fc6}

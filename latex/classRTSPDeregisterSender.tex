@@ -1,0 +1,814 @@
+\section{R\+T\+S\+P\+Deregister\+Sender Class Reference}
+\label{classRTSPDeregisterSender}\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+
+
+{\ttfamily \#include $<$R\+T\+S\+P\+Register\+Sender.\+hh$>$}
+
+
+
+Inheritance diagram for R\+T\+S\+P\+Deregister\+Sender\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classRTSPDeregisterSender__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for R\+T\+S\+P\+Deregister\+Sender\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRTSPDeregisterSender__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Request\+Record\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void( {\bf response\+Handler}) ({\bf R\+T\+S\+P\+Client} $\ast$rtsp\+Client, int result\+Code, char $\ast$result\+String)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf send\+Describe\+Command} ({\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Options\+Command} ({\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Announce\+Command} (char const $\ast$sdp\+Description, {\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Setup\+Command} ({\bf Media\+Subsession} \&subsession, {\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Boolean} stream\+Outgoing={\bf False}, {\bf Boolean} stream\+Using\+T\+C\+P={\bf False}, {\bf Boolean} force\+Multicast\+On\+Unspecified={\bf False}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Play\+Command} ({\bf Media\+Session} \&session, {\bf response\+Handler} $\ast${\bf response\+Handler}, double start=0.\+0f, double end=-\/1.\+0f, float scale=1.\+0f, Authenticator $\ast$authenticator=\+N\+U\+L\+L)
+\item 
+unsigned {\bf send\+Play\+Command} ({\bf Media\+Subsession} \&subsession, {\bf response\+Handler} $\ast${\bf response\+Handler}, double start=0.\+0f, double end=-\/1.\+0f, float scale=1.\+0f, Authenticator $\ast$authenticator=\+N\+U\+L\+L)
+\item 
+unsigned {\bf send\+Play\+Command} ({\bf Media\+Session} \&session, {\bf response\+Handler} $\ast${\bf response\+Handler}, char const $\ast$abs\+Start\+Time, char const $\ast$abs\+End\+Time={\bf N\+U\+L\+L}, float scale=1.\+0f, Authenticator $\ast$authenticator=\+N\+U\+L\+L)
+\item 
+unsigned {\bf send\+Play\+Command} ({\bf Media\+Subsession} \&subsession, {\bf response\+Handler} $\ast${\bf response\+Handler}, char const $\ast$abs\+Start\+Time, char const $\ast$abs\+End\+Time={\bf N\+U\+L\+L}, float scale=1.\+0f, Authenticator $\ast$authenticator=\+N\+U\+L\+L)
+\item 
+unsigned {\bf send\+Pause\+Command} ({\bf Media\+Session} \&session, {\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Pause\+Command} ({\bf Media\+Subsession} \&subsession, {\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Record\+Command} ({\bf Media\+Session} \&session, {\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Record\+Command} ({\bf Media\+Subsession} \&subsession, {\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Teardown\+Command} ({\bf Media\+Session} \&session, {\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Teardown\+Command} ({\bf Media\+Subsession} \&subsession, {\bf response\+Handler} $\ast${\bf response\+Handler}, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Set\+Parameter\+Command} ({\bf Media\+Session} \&session, {\bf response\+Handler} $\ast${\bf response\+Handler}, char const $\ast$parameter\+Name, char const $\ast$parameter\+Value, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+unsigned {\bf send\+Get\+Parameter\+Command} ({\bf Media\+Session} \&session, {\bf response\+Handler} $\ast${\bf response\+Handler}, char const $\ast$parameter\+Name, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L})
+\item 
+void {\bf send\+Dummy\+U\+D\+P\+Packets} ({\bf Media\+Session} \&session, unsigned num\+Dummy\+Packets=2)
+\item 
+void {\bf send\+Dummy\+U\+D\+P\+Packets} ({\bf Media\+Subsession} \&subsession, unsigned num\+Dummy\+Packets=2)
+\item 
+void {\bf set\+Speed} ({\bf Media\+Session} \&session, float speed=1.\+0f)
+\item 
+{\bf Boolean} {\bf change\+Response\+Handler} (unsigned cseq, {\bf response\+Handler} $\ast$new\+Response\+Handler)
+\item 
+int {\bf socket\+Num} () const 
+\item 
+void {\bf set\+User\+Agent\+String} (char const $\ast$user\+Agent\+Name)
+\item 
+void {\bf disallow\+Basic\+Authentication} ()
+\item 
+unsigned {\bf session\+Timeout\+Parameter} () const 
+\item 
+char const $\ast$ {\bf url} () const 
+\item 
+{\bf Usage\+Environment} \& {\bf envir} () const 
+\item 
+char const $\ast$ {\bf name} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Source} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Sink} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+C\+P\+Instance} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Server} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Media\+Session} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Server\+Media\+Session} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf R\+T\+S\+P\+Deregister\+Sender} $\ast$ {\bf create\+New} ({\bf Usage\+Environment} \&env, char const $\ast$remote\+Client\+Name\+Or\+Address, {\bf port\+Num\+Bits} remote\+Client\+Port\+Num, char const $\ast$rtsp\+U\+R\+L\+To\+Deregister, {\bf R\+T\+S\+P\+Client\+::response\+Handler} $\ast$rtsp\+Response\+Handler, {\bf Authenticator} $\ast$authenticator={\bf N\+U\+L\+L}, char const $\ast$proxy\+U\+R\+L\+Suffix={\bf N\+U\+L\+L}, int verbosity\+Level=0, char const $\ast$application\+Name={\bf N\+U\+L\+L})
+\item 
+static {\bf R\+T\+S\+P\+Client} $\ast$ {\bf create\+New} ({\bf Usage\+Environment} \&env, char const $\ast$rtsp\+U\+R\+L, int verbosity\+Level=0, char const $\ast$application\+Name={\bf N\+U\+L\+L}, {\bf port\+Num\+Bits} tunnel\+Over\+H\+T\+T\+P\+Port\+Num=0, int socket\+Num\+To\+Server=-\/1)
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$source\+Name, {\bf R\+T\+S\+P\+Client} $\ast$\&result\+Client)
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name, {\bf Medium} $\ast$\&result\+Medium)
+\item 
+static {\bf Boolean} {\bf parse\+R\+T\+S\+P\+U\+R\+L} ({\bf Usage\+Environment} \&env, char const $\ast${\bf url}, char $\ast$\&username, char $\ast$\&password, {\bf Net\+Address} \&address, {\bf port\+Num\+Bits} \&port\+Num, char const $\ast$$\ast$url\+Suffix={\bf N\+U\+L\+L})
+\item 
+static void {\bf close} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name)
+\item 
+static void {\bf close} ({\bf Medium} $\ast$medium)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+u\+\_\+int16\+\_\+t {\bf desired\+Max\+Incoming\+Packet\+Size}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned {\bf response\+Buffer\+Size}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf R\+T\+S\+P\+Deregister\+Sender} ({\bf Usage\+Environment} \&env, char const $\ast$remote\+Client\+Name\+Or\+Address, {\bf port\+Num\+Bits} remote\+Client\+Port\+Num, char const $\ast$rtsp\+U\+R\+L\+To\+Deregister, {\bf R\+T\+S\+P\+Client\+::response\+Handler} $\ast$rtsp\+Response\+Handler, {\bf Authenticator} $\ast$authenticator, char const $\ast$proxy\+U\+R\+L\+Suffix, int verbosity\+Level, char const $\ast$application\+Name)
+\item 
+virtual {\bf $\sim$\+R\+T\+S\+P\+Deregister\+Sender} ()
+\item 
+virtual {\bf Boolean} {\bf set\+Request\+Fields} ({\bf Request\+Record} $\ast$request, char $\ast$\&cmd\+U\+R\+L, {\bf Boolean} \&cmd\+U\+R\+L\+Was\+Allocated, char const $\ast$\&protocol\+Str, char $\ast$\&extra\+Headers, {\bf Boolean} \&extra\+Headers\+Were\+Allocated)
+\item 
+void {\bf reset} ()
+\item 
+void {\bf set\+Base\+U\+R\+L} (char const $\ast${\bf url})
+\item 
+int {\bf grab\+Socket} ()
+\item 
+virtual unsigned {\bf send\+Request} ({\bf Request\+Record} $\ast$request)
+\item 
+virtual int {\bf connect\+To\+Server} (int {\bf socket\+Num}, {\bf port\+Num\+Bits} remote\+Port\+Num)
+\item 
+{\bf Task\+Token} \& {\bf next\+Task} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf port\+Num\+Bits} {\bf f\+Remote\+Client\+Port\+Num}
+\item 
+int {\bf f\+Verbosity\+Level}
+\item 
+unsigned {\bf f\+C\+Seq}
+\item 
+{\bf Authenticator} {\bf f\+Current\+Authenticator}
+\item 
+{\bf Boolean} {\bf f\+Allow\+Basic\+Authentication}
+\item 
+{\bf net\+Address\+Bits} {\bf f\+Server\+Address}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 103 of file R\+T\+S\+P\+Register\+Sender.\+hh.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!response\+Handler@{response\+Handler}}
+\index{response\+Handler@{response\+Handler}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{response\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( R\+T\+S\+P\+Client\+::response\+Handler) ({\bf R\+T\+S\+P\+Client} $\ast$rtsp\+Client, int result\+Code, char $\ast$result\+String)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a76be2eeb7a866cef6a131c4ea2dde998}
+
+
+Definition at line 52 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{R\+T\+S\+P\+Deregister\+Sender(\+Usage\+Environment \&env, char const $\ast$remote\+Client\+Name\+Or\+Address, port\+Num\+Bits remote\+Client\+Port\+Num, char const $\ast$rtsp\+U\+R\+L\+To\+Deregister, R\+T\+S\+P\+Client\+::response\+Handler $\ast$rtsp\+Response\+Handler, Authenticator $\ast$authenticator, char const $\ast$proxy\+U\+R\+L\+Suffix, int verbosity\+Level, char const $\ast$application\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}R\+T\+S\+P\+Deregister\+Sender\+::\+R\+T\+S\+P\+Deregister\+Sender (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{remote\+Client\+Name\+Or\+Address, }
+\item[{{\bf port\+Num\+Bits}}]{remote\+Client\+Port\+Num, }
+\item[{char const $\ast$}]{rtsp\+U\+R\+L\+To\+Deregister, }
+\item[{{\bf R\+T\+S\+P\+Client\+::response\+Handler} $\ast$}]{rtsp\+Response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator, }
+\item[{char const $\ast$}]{proxy\+U\+R\+L\+Suffix, }
+\item[{int}]{verbosity\+Level, }
+\item[{char const $\ast$}]{application\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTSPDeregisterSender_a668eeb3a4983bc946dba142e9eefe73f}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!````~R\+T\+S\+P\+Deregister\+Sender@{$\sim$\+R\+T\+S\+P\+Deregister\+Sender}}
+\index{````~R\+T\+S\+P\+Deregister\+Sender@{$\sim$\+R\+T\+S\+P\+Deregister\+Sender}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{$\sim$\+R\+T\+S\+P\+Deregister\+Sender()}]{\setlength{\rightskip}{0pt plus 5cm}virtual R\+T\+S\+P\+Deregister\+Sender\+::$\sim$\+R\+T\+S\+P\+Deregister\+Sender (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classRTSPDeregisterSender_aece94c97de23898390737733f6ea7860}
+
+
+\subsection{Member Function Documentation}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!change\+Response\+Handler@{change\+Response\+Handler}}
+\index{change\+Response\+Handler@{change\+Response\+Handler}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{change\+Response\+Handler(unsigned cseq, response\+Handler $\ast$new\+Response\+Handler)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+S\+P\+Client\+::change\+Response\+Handler (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{cseq, }
+\item[{{\bf response\+Handler} $\ast$}]{new\+Response\+Handler}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a1442234f611c9e0249c4deca5b6e4fa1}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!close@{close}}
+\index{close@{close}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{close(\+Usage\+Environment \&env, char const $\ast$medium\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a9968c7ce6eedb848f2cc095730c01b17}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!close@{close}}
+\index{close@{close}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{close(\+Medium $\ast$medium)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_aee50624faf6909b3944dd803fd485467}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!connect\+To\+Server@{connect\+To\+Server}}
+\index{connect\+To\+Server@{connect\+To\+Server}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{connect\+To\+Server(int socket\+Num, port\+Num\+Bits remote\+Port\+Num)}]{\setlength{\rightskip}{0pt plus 5cm}virtual int R\+T\+S\+P\+Client\+::connect\+To\+Server (
+\begin{DoxyParamCaption}
+\item[{int}]{socket\+Num, }
+\item[{{\bf port\+Num\+Bits}}]{remote\+Port\+Num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPClient_adc113aedd82afdceb10692ef068dc260}
+
+
+Reimplemented in {\bf Proxy\+R\+T\+S\+P\+Client} \doxyref{}{p.}{classProxyRTSPClient_a7333f97154774e9a9f1041c9327b8fc4}.
+
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!create\+New@{create\+New}}
+\index{create\+New@{create\+New}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{create\+New(\+Usage\+Environment \&env, char const $\ast$rtsp\+U\+R\+L, int verbosity\+Level=0, char const $\ast$application\+Name=\+N\+U\+L\+L, port\+Num\+Bits tunnel\+Over\+H\+T\+T\+P\+Port\+Num=0, int socket\+Num\+To\+Server=-\/1)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf R\+T\+S\+P\+Client}$\ast$ R\+T\+S\+P\+Client\+::create\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{rtsp\+U\+R\+L, }
+\item[{int}]{verbosity\+Level = {\ttfamily 0}, }
+\item[{char const $\ast$}]{application\+Name = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{{\bf port\+Num\+Bits}}]{tunnel\+Over\+H\+T\+T\+P\+Port\+Num = {\ttfamily 0}, }
+\item[{int}]{socket\+Num\+To\+Server = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classRTSPClient_a11b643f8d1d68197dbf1345122586ae2}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!create\+New@{create\+New}}
+\index{create\+New@{create\+New}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{create\+New(\+Usage\+Environment \&env, char const $\ast$remote\+Client\+Name\+Or\+Address, port\+Num\+Bits remote\+Client\+Port\+Num, char const $\ast$rtsp\+U\+R\+L\+To\+Deregister, R\+T\+S\+P\+Client\+::response\+Handler $\ast$rtsp\+Response\+Handler, Authenticator $\ast$authenticator=\+N\+U\+L\+L, char const $\ast$proxy\+U\+R\+L\+Suffix=\+N\+U\+L\+L, int verbosity\+Level=0, char const $\ast$application\+Name=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf R\+T\+S\+P\+Deregister\+Sender}$\ast$ R\+T\+S\+P\+Deregister\+Sender\+::create\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{remote\+Client\+Name\+Or\+Address, }
+\item[{{\bf port\+Num\+Bits}}]{remote\+Client\+Port\+Num, }
+\item[{char const $\ast$}]{rtsp\+U\+R\+L\+To\+Deregister, }
+\item[{{\bf R\+T\+S\+P\+Client\+::response\+Handler} $\ast$}]{rtsp\+Response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{char const $\ast$}]{proxy\+U\+R\+L\+Suffix = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{int}]{verbosity\+Level = {\ttfamily 0}, }
+\item[{char const $\ast$}]{application\+Name = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classRTSPDeregisterSender_a2ba4c81813dd9b2e3f524a979dbad4f7}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!disallow\+Basic\+Authentication@{disallow\+Basic\+Authentication}}
+\index{disallow\+Basic\+Authentication@{disallow\+Basic\+Authentication}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{disallow\+Basic\+Authentication()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Client\+::disallow\+Basic\+Authentication (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_a8383e892443d6dd3c2d0a94a00276433}
+
+
+Definition at line 182 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::f\+Allow\+Basic\+Authentication, and False.
+
+
+\begin{DoxyCode}
+182 \{ fAllowBasicAuthentication = False; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!envir@{envir}}
+\index{envir@{envir}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{envir() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Medium\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a32f7ecdd95f2b8400e1a26a5009e3b8e}
+
+
+Definition at line 59 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Environ.
+
+
+
+Referenced by Media\+Subsession\+::env(), R\+T\+P\+Interface\+::envir(), Generic\+Media\+Server\+::\+Client\+Connection\+::envir(), and Generic\+Media\+Server\+::\+Client\+Session\+::envir().
+
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} fEnviron;\}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!grab\+Socket@{grab\+Socket}}
+\index{grab\+Socket@{grab\+Socket}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{grab\+Socket()}]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+S\+P\+Client\+::grab\+Socket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPClient_a107c94360766974a6f79da0041cff5ad}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!is\+Media\+Session@{is\+Media\+Session}}
+\index{is\+Media\+Session@{is\+Media\+Session}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{is\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ac5858707c4e7a15bd59d476cf48289d6}
+
+
+Reimplemented in {\bf Media\+Session} \doxyref{}{p.}{classMediaSession_a3b2a06a722374ab4477ac05a2ce28829}.
+
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}}
+\index{is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{is\+R\+T\+C\+P\+Instance() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ab5f9f20324698f89a35513d596b2e7be}
+
+
+Reimplemented in {\bf R\+T\+C\+P\+Instance} \doxyref{}{p.}{classRTCPInstance_a844292518419e1dbf24170812fd1e4b5}.
+
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}}
+\index{is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{is\+R\+T\+S\+P\+Server() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a346e111b31bfde4b7f4ed593e0b97fd3}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Server} \doxyref{}{p.}{classRTSPServer_a45f9fc5ddd8f214169358493215a064a}.
+
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!is\+Server\+Media\+Session@{is\+Server\+Media\+Session}}
+\index{is\+Server\+Media\+Session@{is\+Server\+Media\+Session}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{is\+Server\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aa9fd26c4b954ffba5f79925ecd0283a0}
+
+
+Reimplemented in {\bf Server\+Media\+Session} \doxyref{}{p.}{classServerMediaSession_a34b59e04644b6f0841ea5af99dbf32f6}.
+
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!is\+Sink@{is\+Sink}}
+\index{is\+Sink@{is\+Sink}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{is\+Sink() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a23d49bf466482784b9d4378490d17b5f}
+
+
+Reimplemented in {\bf Media\+Sink} \doxyref{}{p.}{classMediaSink_aa8649dcdf21d5005f9ec319f898f91b6}.
+
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!is\+Source@{is\+Source}}
+\index{is\+Source@{is\+Source}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{is\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a6cdbd02c73a3e9c1cbab8fce9e9497b1}
+
+
+Reimplemented in {\bf Media\+Source} \doxyref{}{p.}{classMediaSource_a4d75fa9ee2b476b1231594282a6854be}.
+
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$medium\+Name, Medium $\ast$\&result\+Medium)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Medium\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name, }
+\item[{{\bf Medium} $\ast$\&}]{result\+Medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a418c860c1e0ef2766ee0d0f64b346291}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$source\+Name, R\+T\+S\+P\+Client $\ast$\&result\+Client)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} R\+T\+S\+P\+Client\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{source\+Name, }
+\item[{{\bf R\+T\+S\+P\+Client} $\ast$\&}]{result\+Client}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classRTSPClient_a77c5eefae1a176fc597d131a2622700c}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!name@{name}}
+\index{name@{name}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Medium\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a575649802dc781c0e59e097a3870fcdb}
+
+
+Definition at line 61 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Medium\+Name.
+
+
+\begin{DoxyCode}
+61 \{\textcolor{keywordflow}{return} fMediumName;\}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{next\+Task()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token}\& Medium\+::next\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMedium_a5c8788adec90be1a584393a5bf11a5c9}
+
+
+Definition at line 77 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Next\+Task.
+
+
+\begin{DoxyCode}
+77                         \{
+78         \textcolor{keywordflow}{return} fNextTask;
+79   \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!parse\+R\+T\+S\+P\+U\+R\+L@{parse\+R\+T\+S\+P\+U\+R\+L}}
+\index{parse\+R\+T\+S\+P\+U\+R\+L@{parse\+R\+T\+S\+P\+U\+R\+L}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{parse\+R\+T\+S\+P\+U\+R\+L(\+Usage\+Environment \&env, char const $\ast$url, char $\ast$\&username, char $\ast$\&password, Net\+Address \&address, port\+Num\+Bits \&port\+Num, char const $\ast$$\ast$url\+Suffix=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} R\+T\+S\+P\+Client\+::parse\+R\+T\+S\+P\+U\+R\+L (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{url, }
+\item[{char $\ast$\&}]{username, }
+\item[{char $\ast$\&}]{password, }
+\item[{{\bf Net\+Address} \&}]{address, }
+\item[{{\bf port\+Num\+Bits} \&}]{port\+Num, }
+\item[{char const $\ast$$\ast$}]{url\+Suffix = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classRTSPClient_a0ff5e20b3d18c32dcc17ac16939ce4b0}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!reset@{reset}}
+\index{reset@{reset}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{reset()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Client\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPClient_a31f26a1062ad4bb566d7ca8a6f39bacc}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!send\+Announce\+Command@{send\+Announce\+Command}}
+\index{send\+Announce\+Command@{send\+Announce\+Command}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{send\+Announce\+Command(char const $\ast$sdp\+Description, response\+Handler $\ast$response\+Handler, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Announce\+Command (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{sdp\+Description, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a13f27603fae21a2f93c34184029dfdb7}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!send\+Describe\+Command@{send\+Describe\+Command}}
+\index{send\+Describe\+Command@{send\+Describe\+Command}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{send\+Describe\+Command(response\+Handler $\ast$response\+Handler, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Describe\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a3f934eeb892605b2cc91e7dfae093850}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!send\+Dummy\+U\+D\+P\+Packets@{send\+Dummy\+U\+D\+P\+Packets}}
+\index{send\+Dummy\+U\+D\+P\+Packets@{send\+Dummy\+U\+D\+P\+Packets}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{send\+Dummy\+U\+D\+P\+Packets(\+Media\+Session \&session, unsigned num\+Dummy\+Packets=2)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Client\+::send\+Dummy\+U\+D\+P\+Packets (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Session} \&}]{session, }
+\item[{unsigned}]{num\+Dummy\+Packets = {\ttfamily 2}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a3b4cf054e567c33f35e23c2c6fcc5be4}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!send\+Dummy\+U\+D\+P\+Packets@{send\+Dummy\+U\+D\+P\+Packets}}
+\index{send\+Dummy\+U\+D\+P\+Packets@{send\+Dummy\+U\+D\+P\+Packets}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{send\+Dummy\+U\+D\+P\+Packets(\+Media\+Subsession \&subsession, unsigned num\+Dummy\+Packets=2)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Client\+::send\+Dummy\+U\+D\+P\+Packets (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Subsession} \&}]{subsession, }
+\item[{unsigned}]{num\+Dummy\+Packets = {\ttfamily 2}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a6772873e10170d83dd60068e094d5120}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!send\+Get\+Parameter\+Command@{send\+Get\+Parameter\+Command}}
+\index{send\+Get\+Parameter\+Command@{send\+Get\+Parameter\+Command}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{send\+Get\+Parameter\+Command(\+Media\+Session \&session, response\+Handler $\ast$response\+Handler, char const $\ast$parameter\+Name, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Get\+Parameter\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Session} \&}]{session, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{char const $\ast$}]{parameter\+Name, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a65b2bf121c69e9640c8a71a12e9c205f}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!send\+Options\+Command@{send\+Options\+Command}}
+\index{send\+Options\+Command@{send\+Options\+Command}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{send\+Options\+Command(response\+Handler $\ast$response\+Handler, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Options\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_aa0547fab9059eb469b0ff5bdd902db2e}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!send\+Pause\+Command@{send\+Pause\+Command}}
+\index{send\+Pause\+Command@{send\+Pause\+Command}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{send\+Pause\+Command(\+Media\+Session \&session, response\+Handler $\ast$response\+Handler, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Pause\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Session} \&}]{session, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a28313f3ee8b69da93437a01ec5bdb259}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!send\+Pause\+Command@{send\+Pause\+Command}}
+\index{send\+Pause\+Command@{send\+Pause\+Command}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{send\+Pause\+Command(\+Media\+Subsession \&subsession, response\+Handler $\ast$response\+Handler, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Pause\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Subsession} \&}]{subsession, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_ad2d18ad4e4965f7c87dd72b59cc46708}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!send\+Play\+Command@{send\+Play\+Command}}
+\index{send\+Play\+Command@{send\+Play\+Command}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{send\+Play\+Command(\+Media\+Session \&session, response\+Handler $\ast$response\+Handler, double start=0.\+0f, double end=-\/1.\+0f, float scale=1.\+0f, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Play\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Session} \&}]{session, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{double}]{start = {\ttfamily 0.0f}, }
+\item[{double}]{end = {\ttfamily -\/1.0f}, }
+\item[{float}]{scale = {\ttfamily 1.0f}, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a5ae81809defa85fe018a14fcace8be8a}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!send\+Play\+Command@{send\+Play\+Command}}
+\index{send\+Play\+Command@{send\+Play\+Command}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{send\+Play\+Command(\+Media\+Subsession \&subsession, response\+Handler $\ast$response\+Handler, double start=0.\+0f, double end=-\/1.\+0f, float scale=1.\+0f, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Play\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Subsession} \&}]{subsession, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{double}]{start = {\ttfamily 0.0f}, }
+\item[{double}]{end = {\ttfamily -\/1.0f}, }
+\item[{float}]{scale = {\ttfamily 1.0f}, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a48e812aaea9faba18c0d9cb7e55006a2}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!send\+Play\+Command@{send\+Play\+Command}}
+\index{send\+Play\+Command@{send\+Play\+Command}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{send\+Play\+Command(\+Media\+Session \&session, response\+Handler $\ast$response\+Handler, char const $\ast$abs\+Start\+Time, char const $\ast$abs\+End\+Time=\+N\+U\+L\+L, float scale=1.\+0f, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Play\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Session} \&}]{session, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{char const $\ast$}]{abs\+Start\+Time, }
+\item[{char const $\ast$}]{abs\+End\+Time = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{float}]{scale = {\ttfamily 1.0f}, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a4f5b4dca3405e9b8caa848abf4d5388a}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!send\+Play\+Command@{send\+Play\+Command}}
+\index{send\+Play\+Command@{send\+Play\+Command}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{send\+Play\+Command(\+Media\+Subsession \&subsession, response\+Handler $\ast$response\+Handler, char const $\ast$abs\+Start\+Time, char const $\ast$abs\+End\+Time=\+N\+U\+L\+L, float scale=1.\+0f, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Play\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Subsession} \&}]{subsession, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{char const $\ast$}]{abs\+Start\+Time, }
+\item[{char const $\ast$}]{abs\+End\+Time = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{float}]{scale = {\ttfamily 1.0f}, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_addd4b9effdb26a95f79966a98353dcd8}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!send\+Record\+Command@{send\+Record\+Command}}
+\index{send\+Record\+Command@{send\+Record\+Command}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{send\+Record\+Command(\+Media\+Session \&session, response\+Handler $\ast$response\+Handler, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Record\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Session} \&}]{session, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_aa0429422a15d29f27a96a6e249cae4d7}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!send\+Record\+Command@{send\+Record\+Command}}
+\index{send\+Record\+Command@{send\+Record\+Command}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{send\+Record\+Command(\+Media\+Subsession \&subsession, response\+Handler $\ast$response\+Handler, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Record\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Subsession} \&}]{subsession, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a3c4d905e8224070e7f5d19253ae281fc}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!send\+Request@{send\+Request}}
+\index{send\+Request@{send\+Request}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{send\+Request(\+Request\+Record $\ast$request)}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned R\+T\+S\+P\+Client\+::send\+Request (
+\begin{DoxyParamCaption}
+\item[{{\bf Request\+Record} $\ast$}]{request}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPClient_a7b5a6282f158ff26e829e5e966c8877a}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!send\+Set\+Parameter\+Command@{send\+Set\+Parameter\+Command}}
+\index{send\+Set\+Parameter\+Command@{send\+Set\+Parameter\+Command}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{send\+Set\+Parameter\+Command(\+Media\+Session \&session, response\+Handler $\ast$response\+Handler, char const $\ast$parameter\+Name, char const $\ast$parameter\+Value, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Set\+Parameter\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Session} \&}]{session, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{char const $\ast$}]{parameter\+Name, }
+\item[{char const $\ast$}]{parameter\+Value, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_ac7b2ca655f1768d7205920e0eff85bb3}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!send\+Setup\+Command@{send\+Setup\+Command}}
+\index{send\+Setup\+Command@{send\+Setup\+Command}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{send\+Setup\+Command(\+Media\+Subsession \&subsession, response\+Handler $\ast$response\+Handler, Boolean stream\+Outgoing=\+False, Boolean stream\+Using\+T\+C\+P=\+False, Boolean force\+Multicast\+On\+Unspecified=\+False, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Setup\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Subsession} \&}]{subsession, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Boolean}}]{stream\+Outgoing = {\ttfamily {\bf False}}, }
+\item[{{\bf Boolean}}]{stream\+Using\+T\+C\+P = {\ttfamily {\bf False}}, }
+\item[{{\bf Boolean}}]{force\+Multicast\+On\+Unspecified = {\ttfamily {\bf False}}, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_ae29b6d67e4a67d890cf7dbab0a80503c}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!send\+Teardown\+Command@{send\+Teardown\+Command}}
+\index{send\+Teardown\+Command@{send\+Teardown\+Command}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{send\+Teardown\+Command(\+Media\+Session \&session, response\+Handler $\ast$response\+Handler, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Teardown\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Session} \&}]{session, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a57f03b85840a3c10b9bac24e6c1b842e}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!send\+Teardown\+Command@{send\+Teardown\+Command}}
+\index{send\+Teardown\+Command@{send\+Teardown\+Command}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{send\+Teardown\+Command(\+Media\+Subsession \&subsession, response\+Handler $\ast$response\+Handler, Authenticator $\ast$authenticator=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::send\+Teardown\+Command (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Subsession} \&}]{subsession, }
+\item[{{\bf response\+Handler} $\ast$}]{response\+Handler, }
+\item[{{\bf Authenticator} $\ast$}]{authenticator = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a71514455a20997c5e3e91fe69dedc3bd}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!session\+Timeout\+Parameter@{session\+Timeout\+Parameter}}
+\index{session\+Timeout\+Parameter@{session\+Timeout\+Parameter}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{session\+Timeout\+Parameter() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::session\+Timeout\+Parameter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_a7c2d2cb5dccfc1bfc466fc7ab8db75e0}
+
+
+Definition at line 186 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::f\+Session\+Timeout\+Parameter.
+
+
+\begin{DoxyCode}
+186 \{ \textcolor{keywordflow}{return} fSessionTimeoutParameter; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!set\+Base\+U\+R\+L@{set\+Base\+U\+R\+L}}
+\index{set\+Base\+U\+R\+L@{set\+Base\+U\+R\+L}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{set\+Base\+U\+R\+L(char const $\ast$url)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Client\+::set\+Base\+U\+R\+L (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPClient_a6e19a3269d8c72deae78a97a5c83f037}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!set\+Request\+Fields@{set\+Request\+Fields}}
+\index{set\+Request\+Fields@{set\+Request\+Fields}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{set\+Request\+Fields(\+Request\+Record $\ast$request, char $\ast$\&cmd\+U\+R\+L, Boolean \&cmd\+U\+R\+L\+Was\+Allocated, char const $\ast$\&protocol\+Str, char $\ast$\&extra\+Headers, Boolean \&extra\+Headers\+Were\+Allocated)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} R\+T\+S\+P\+Deregister\+Sender\+::set\+Request\+Fields (
+\begin{DoxyParamCaption}
+\item[{{\bf Request\+Record} $\ast$}]{request, }
+\item[{char $\ast$\&}]{cmd\+U\+R\+L, }
+\item[{{\bf Boolean} \&}]{cmd\+U\+R\+L\+Was\+Allocated, }
+\item[{char const $\ast$\&}]{protocol\+Str, }
+\item[{char $\ast$\&}]{extra\+Headers, }
+\item[{{\bf Boolean} \&}]{extra\+Headers\+Were\+Allocated}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classRTSPDeregisterSender_a0d02f85c69d0cf56ceff1f7b85d24ec3}
+
+
+Reimplemented from {\bf R\+T\+S\+P\+Client} \doxyref{}{p.}{classRTSPClient_a1f4d389e56403c571da75d6e3c128890}.
+
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!set\+Speed@{set\+Speed}}
+\index{set\+Speed@{set\+Speed}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{set\+Speed(\+Media\+Session \&session, float speed=1.\+0f)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Client\+::set\+Speed (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Session} \&}]{session, }
+\item[{float}]{speed = {\ttfamily 1.0f}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a34a54c8dfaaaa3096dd9878f04802048}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!set\+User\+Agent\+String@{set\+User\+Agent\+String}}
+\index{set\+User\+Agent\+String@{set\+User\+Agent\+String}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{set\+User\+Agent\+String(char const $\ast$user\+Agent\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Client\+::set\+User\+Agent\+String (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{user\+Agent\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_adb103693b3d418732f85fd5f0a88111f}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!socket\+Num@{socket\+Num}}
+\index{socket\+Num@{socket\+Num}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{socket\+Num() const }]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+S\+P\+Client\+::socket\+Num (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_aeaaebbc58245d64177a9c17c7557742a}
+
+
+Definition at line 168 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::f\+Input\+Socket\+Num.
+
+
+\begin{DoxyCode}
+168 \{ \textcolor{keywordflow}{return} fInputSocketNum; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!url@{url}}
+\index{url@{url}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{url() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ R\+T\+S\+P\+Client\+::url (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_a3ec22026957832e4bd606aedfe8330f8}
+
+
+Definition at line 188 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::f\+Base\+U\+R\+L.
+
+
+\begin{DoxyCode}
+188 \{ \textcolor{keywordflow}{return} fBaseURL; \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!desired\+Max\+Incoming\+Packet\+Size@{desired\+Max\+Incoming\+Packet\+Size}}
+\index{desired\+Max\+Incoming\+Packet\+Size@{desired\+Max\+Incoming\+Packet\+Size}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{desired\+Max\+Incoming\+Packet\+Size}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int16\+\_\+t R\+T\+S\+P\+Client\+::desired\+Max\+Incoming\+Packet\+Size\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTSPClient_a0dba312662a4eb769782084d13890c7f}
+
+
+Definition at line 320 of file R\+T\+S\+P\+Client.\+hh.
+
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!f\+Allow\+Basic\+Authentication@{f\+Allow\+Basic\+Authentication}}
+\index{f\+Allow\+Basic\+Authentication@{f\+Allow\+Basic\+Authentication}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{f\+Allow\+Basic\+Authentication}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+S\+P\+Client\+::f\+Allow\+Basic\+Authentication\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPClient_a6007d9a80abf10cb656c8a91c62ea6b6}
+
+
+Definition at line 328 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+Referenced by R\+T\+S\+P\+Client\+::disallow\+Basic\+Authentication().
+
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!f\+C\+Seq@{f\+C\+Seq}}
+\index{f\+C\+Seq@{f\+C\+Seq}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{f\+C\+Seq}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::f\+C\+Seq\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPClient_ab2e1bec010111a7b282eb7b1773d2355}
+
+
+Definition at line 326 of file R\+T\+S\+P\+Client.\+hh.
+
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!f\+Current\+Authenticator@{f\+Current\+Authenticator}}
+\index{f\+Current\+Authenticator@{f\+Current\+Authenticator}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{f\+Current\+Authenticator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Authenticator} R\+T\+S\+P\+Client\+::f\+Current\+Authenticator\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPClient_a2e52d26d69eea16295884db6007f86f7}
+
+
+Definition at line 327 of file R\+T\+S\+P\+Client.\+hh.
+
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!f\+Remote\+Client\+Port\+Num@{f\+Remote\+Client\+Port\+Num}}
+\index{f\+Remote\+Client\+Port\+Num@{f\+Remote\+Client\+Port\+Num}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{f\+Remote\+Client\+Port\+Num}]{\setlength{\rightskip}{0pt plus 5cm}{\bf port\+Num\+Bits} R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::f\+Remote\+Client\+Port\+Num\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPRegisterOrDeregisterSender_aa39bb6e32b98ec0541e3c728ebcc0039}
+
+
+Definition at line 53 of file R\+T\+S\+P\+Register\+Sender.\+hh.
+
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!f\+Server\+Address@{f\+Server\+Address}}
+\index{f\+Server\+Address@{f\+Server\+Address}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{f\+Server\+Address}]{\setlength{\rightskip}{0pt plus 5cm}{\bf net\+Address\+Bits} R\+T\+S\+P\+Client\+::f\+Server\+Address\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPClient_a6b0fe7c27b59e71075c1182e625e816d}
+
+
+Definition at line 329 of file R\+T\+S\+P\+Client.\+hh.
+
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!f\+Verbosity\+Level@{f\+Verbosity\+Level}}
+\index{f\+Verbosity\+Level@{f\+Verbosity\+Level}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{f\+Verbosity\+Level}]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+S\+P\+Client\+::f\+Verbosity\+Level\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPClient_aba4ce216b33674d876728b0c2a81072e}
+
+
+Definition at line 325 of file R\+T\+S\+P\+Client.\+hh.
+
+\index{R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}!response\+Buffer\+Size@{response\+Buffer\+Size}}
+\index{response\+Buffer\+Size@{response\+Buffer\+Size}!R\+T\+S\+P\+Deregister\+Sender@{R\+T\+S\+P\+Deregister\+Sender}}
+\subsubsection[{response\+Buffer\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Client\+::response\+Buffer\+Size\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classRTSPClient_a3737ce9c284dc071ceb9d9ac922aa79f}
+
+
+Definition at line 190 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf R\+T\+S\+P\+Register\+Sender.\+hh}\end{DoxyCompactItemize}

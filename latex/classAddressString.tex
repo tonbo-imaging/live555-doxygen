@@ -1,0 +1,115 @@
+\section{Address\+String Class Reference}
+\label{classAddressString}\index{Address\+String@{Address\+String}}
+
+
+{\ttfamily \#include $<$Net\+Address.\+hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Address\+String} (struct sockaddr\+\_\+in const \&addr)
+\item 
+{\bf Address\+String} (struct in\+\_\+addr const \&addr)
+\item 
+{\bf Address\+String} ({\bf net\+Address\+Bits} addr)
+\item 
+virtual {\bf $\sim$\+Address\+String} ()
+\item 
+char const $\ast$ {\bf val} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf init} ({\bf net\+Address\+Bits} addr)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ {\bf f\+Val}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 145 of file Net\+Address.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Address\+String@{Address\+String}!Address\+String@{Address\+String}}
+\index{Address\+String@{Address\+String}!Address\+String@{Address\+String}}
+\subsubsection[{Address\+String(struct sockaddr\+\_\+in const \&addr)}]{\setlength{\rightskip}{0pt plus 5cm}Address\+String\+::\+Address\+String (
+\begin{DoxyParamCaption}
+\item[{struct sockaddr\+\_\+in const \&}]{addr}
+\end{DoxyParamCaption}
+)}\label{classAddressString_a7d85b231516da4d863b5563bc08a65d7}
+\index{Address\+String@{Address\+String}!Address\+String@{Address\+String}}
+\index{Address\+String@{Address\+String}!Address\+String@{Address\+String}}
+\subsubsection[{Address\+String(struct in\+\_\+addr const \&addr)}]{\setlength{\rightskip}{0pt plus 5cm}Address\+String\+::\+Address\+String (
+\begin{DoxyParamCaption}
+\item[{struct in\+\_\+addr const \&}]{addr}
+\end{DoxyParamCaption}
+)}\label{classAddressString_abb7988a9e2305f7bb794eaa72f3a3774}
+\index{Address\+String@{Address\+String}!Address\+String@{Address\+String}}
+\index{Address\+String@{Address\+String}!Address\+String@{Address\+String}}
+\subsubsection[{Address\+String(net\+Address\+Bits addr)}]{\setlength{\rightskip}{0pt plus 5cm}Address\+String\+::\+Address\+String (
+\begin{DoxyParamCaption}
+\item[{{\bf net\+Address\+Bits}}]{addr}
+\end{DoxyParamCaption}
+)}\label{classAddressString_a5cd0657ab3dead52dc723329f29ae29c}
+\index{Address\+String@{Address\+String}!````~Address\+String@{$\sim$\+Address\+String}}
+\index{````~Address\+String@{$\sim$\+Address\+String}!Address\+String@{Address\+String}}
+\subsubsection[{$\sim$\+Address\+String()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Address\+String\+::$\sim$\+Address\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classAddressString_a1ca617e434ae9a322ac52402e2ef433b}
+
+
+\subsection{Member Function Documentation}
+\index{Address\+String@{Address\+String}!init@{init}}
+\index{init@{init}!Address\+String@{Address\+String}}
+\subsubsection[{init(net\+Address\+Bits addr)}]{\setlength{\rightskip}{0pt plus 5cm}void Address\+String\+::init (
+\begin{DoxyParamCaption}
+\item[{{\bf net\+Address\+Bits}}]{addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAddressString_a17745f146b864e2fc867bc760dfce0b8}
+\index{Address\+String@{Address\+String}!val@{val}}
+\index{val@{val}!Address\+String@{Address\+String}}
+\subsubsection[{val() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Address\+String\+::val (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classAddressString_a330e9b2c8549f64062f2267decab5dd7}
+
+
+Definition at line 153 of file Net\+Address.\+hh.
+
+
+
+References f\+Val.
+
+
+\begin{DoxyCode}
+153 \{ \textcolor{keywordflow}{return} fVal; \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Address\+String@{Address\+String}!f\+Val@{f\+Val}}
+\index{f\+Val@{f\+Val}!Address\+String@{Address\+String}}
+\subsubsection[{f\+Val}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Address\+String\+::f\+Val\hspace{0.3cm}{\ttfamily [private]}}\label{classAddressString_a984fc4ead38cac0e2231334175cc675d}
+
+
+Definition at line 159 of file Net\+Address.\+hh.
+
+
+
+Referenced by val().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+groupsock/include/{\bf Net\+Address.\+hh}\end{DoxyCompactItemize}

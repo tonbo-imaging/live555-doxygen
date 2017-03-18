@@ -1,0 +1,455 @@
+\section{Basic\+Task\+Scheduler Class Reference}
+\label{classBasicTaskScheduler}\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+
+
+{\ttfamily \#include $<$Basic\+Usage\+Environment.\+hh$>$}
+
+
+
+Inheritance diagram for Basic\+Task\+Scheduler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classBasicTaskScheduler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Basic\+Task\+Scheduler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBasicTaskScheduler__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void {\bf Background\+Handler\+Proc}(void $\ast$client\+Data, int mask)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\+Basic\+Task\+Scheduler} ()
+\item 
+virtual {\bf Task\+Token} {\bf schedule\+Delayed\+Task} (int64\+\_\+t microseconds, {\bf Task\+Func} $\ast$proc, void $\ast$client\+Data)
+\item 
+virtual void {\bf unschedule\+Delayed\+Task} ({\bf Task\+Token} \&prev\+Task)
+\item 
+virtual void {\bf do\+Event\+Loop} (char volatile $\ast$watch\+Variable)
+\item 
+virtual {\bf Event\+Trigger\+Id} {\bf create\+Event\+Trigger} ({\bf Task\+Func} $\ast$event\+Handler\+Proc)
+\item 
+virtual void {\bf delete\+Event\+Trigger} ({\bf Event\+Trigger\+Id} event\+Trigger\+Id)
+\item 
+virtual void {\bf trigger\+Event} ({\bf Event\+Trigger\+Id} event\+Trigger\+Id, void $\ast$client\+Data={\bf N\+U\+L\+L})
+\item 
+virtual void {\bf reschedule\+Delayed\+Task} ({\bf Task\+Token} \&task, int64\+\_\+t microseconds, {\bf Task\+Func} $\ast$proc, void $\ast$client\+Data)
+\item 
+void {\bf disable\+Background\+Handling} (int socket\+Num)
+\item 
+void {\bf turn\+On\+Background\+Read\+Handling} (int socket\+Num, {\bf Background\+Handler\+Proc} $\ast$handler\+Proc, void $\ast$client\+Data)
+\item 
+void {\bf turn\+Off\+Background\+Read\+Handling} (int socket\+Num)
+\item 
+virtual void {\bf internal\+Error} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Basic\+Task\+Scheduler} $\ast$ {\bf create\+New} (unsigned max\+Scheduler\+Granularity=10000)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Basic\+Task\+Scheduler} (unsigned max\+Scheduler\+Granularity)
+\item 
+void {\bf scheduler\+Tick\+Task} ()
+\item 
+virtual void {\bf Single\+Step} (unsigned max\+Delay\+Time)
+\item 
+virtual void {\bf set\+Background\+Handling} (int socket\+Num, int condition\+Set, {\bf Background\+Handler\+Proc} $\ast$handler\+Proc, void $\ast$client\+Data)
+\item 
+virtual void {\bf move\+Socket\+Handling} (int old\+Socket\+Num, int new\+Socket\+Num)
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf scheduler\+Tick\+Task} (void $\ast$client\+Data)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf f\+Max\+Scheduler\+Granularity}
+\item 
+int {\bf f\+Max\+Num\+Sockets}
+\item 
+fd\+\_\+set {\bf f\+Read\+Set}
+\item 
+fd\+\_\+set {\bf f\+Write\+Set}
+\item 
+fd\+\_\+set {\bf f\+Exception\+Set}
+\item 
+{\bf Delay\+Queue} {\bf f\+Delay\+Queue}
+\item 
+{\bf Handler\+Set} $\ast$ {\bf f\+Handlers}
+\item 
+int {\bf f\+Last\+Handled\+Socket\+Num}
+\item 
+{\bf Event\+Trigger\+Id} volatile {\bf f\+Triggers\+Awaiting\+Handling}
+\item 
+{\bf Event\+Trigger\+Id} {\bf f\+Last\+Used\+Trigger\+Mask}
+\item 
+{\bf Task\+Func} $\ast$ {\bf f\+Triggered\+Event\+Handlers} [{\bf M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+T\+R\+I\+G\+G\+E\+R\+S}]
+\item 
+void $\ast$ {\bf f\+Triggered\+Event\+Client\+Datas} [{\bf M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+T\+R\+I\+G\+G\+E\+R\+S}]
+\item 
+unsigned {\bf f\+Last\+Used\+Trigger\+Num}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 47 of file Basic\+Usage\+Environment.\+hh.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!Background\+Handler\+Proc@{Background\+Handler\+Proc}}
+\index{Background\+Handler\+Proc@{Background\+Handler\+Proc}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{Background\+Handler\+Proc}]{\setlength{\rightskip}{0pt plus 5cm}typedef void Task\+Scheduler\+::\+Background\+Handler\+Proc(void $\ast$client\+Data, int mask)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classTaskScheduler_a63da964afc1ec4368b305668b5e2cca6}
+
+
+Definition at line 132 of file Usage\+Environment.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!````~Basic\+Task\+Scheduler@{$\sim$\+Basic\+Task\+Scheduler}}
+\index{````~Basic\+Task\+Scheduler@{$\sim$\+Basic\+Task\+Scheduler}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{$\sim$\+Basic\+Task\+Scheduler()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Basic\+Task\+Scheduler\+::$\sim$\+Basic\+Task\+Scheduler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classBasicTaskScheduler_a258dd7ceaaa309503e16d46471d0573b}
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{Basic\+Task\+Scheduler(unsigned max\+Scheduler\+Granularity)}]{\setlength{\rightskip}{0pt plus 5cm}Basic\+Task\+Scheduler\+::\+Basic\+Task\+Scheduler (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{max\+Scheduler\+Granularity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classBasicTaskScheduler_ad65e0ce9c83b3eee268b174bbbe96f32}
+
+
+\subsection{Member Function Documentation}
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!create\+Event\+Trigger@{create\+Event\+Trigger}}
+\index{create\+Event\+Trigger@{create\+Event\+Trigger}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{create\+Event\+Trigger(\+Task\+Func $\ast$event\+Handler\+Proc)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Event\+Trigger\+Id} Basic\+Task\+Scheduler0\+::create\+Event\+Trigger (
+\begin{DoxyParamCaption}
+\item[{{\bf Task\+Func} $\ast$}]{event\+Handler\+Proc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classBasicTaskScheduler0_a080125a18e5e308ad7dba55fab0cfd1b}
+
+
+Implements {\bf Task\+Scheduler} \doxyref{}{p.}{classTaskScheduler_a741a60e9ec6fd9da3daa12d1b55b8541}.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!create\+New@{create\+New}}
+\index{create\+New@{create\+New}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{create\+New(unsigned max\+Scheduler\+Granularity=10000)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Basic\+Task\+Scheduler}$\ast$ Basic\+Task\+Scheduler\+::create\+New (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{max\+Scheduler\+Granularity = {\ttfamily 10000}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classBasicTaskScheduler_af3ec9332fd2367253e4102efb36996ee}
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!delete\+Event\+Trigger@{delete\+Event\+Trigger}}
+\index{delete\+Event\+Trigger@{delete\+Event\+Trigger}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{delete\+Event\+Trigger(\+Event\+Trigger\+Id event\+Trigger\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Basic\+Task\+Scheduler0\+::delete\+Event\+Trigger (
+\begin{DoxyParamCaption}
+\item[{{\bf Event\+Trigger\+Id}}]{event\+Trigger\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classBasicTaskScheduler0_a92dd695ec182b20f88d0b082657c8709}
+
+
+Implements {\bf Task\+Scheduler} \doxyref{}{p.}{classTaskScheduler_a1278e889bb6f6fe8b856c7dffd9bbe4f}.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!disable\+Background\+Handling@{disable\+Background\+Handling}}
+\index{disable\+Background\+Handling@{disable\+Background\+Handling}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{disable\+Background\+Handling(int socket\+Num)}]{\setlength{\rightskip}{0pt plus 5cm}void Task\+Scheduler\+::disable\+Background\+Handling (
+\begin{DoxyParamCaption}
+\item[{int}]{socket\+Num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classTaskScheduler_af7d12b5e74ffa51cf42cbb608a3bd0c6}
+
+
+Definition at line 139 of file Usage\+Environment.\+hh.
+
+
+
+References N\+U\+L\+L, and Task\+Scheduler\+::set\+Background\+Handling().
+
+
+
+Referenced by Task\+Scheduler\+::turn\+Off\+Background\+Read\+Handling().
+
+
+\begin{DoxyCode}
+139 \{ setBackgroundHandling(socketNum, 0, NULL, NULL); \}
+\end{DoxyCode}
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!do\+Event\+Loop@{do\+Event\+Loop}}
+\index{do\+Event\+Loop@{do\+Event\+Loop}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{do\+Event\+Loop(char volatile $\ast$watch\+Variable)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Basic\+Task\+Scheduler0\+::do\+Event\+Loop (
+\begin{DoxyParamCaption}
+\item[{char volatile $\ast$}]{watch\+Variable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classBasicTaskScheduler0_ade6cd21b851fe191f52e975addea0d1d}
+
+
+Implements {\bf Task\+Scheduler} \doxyref{}{p.}{classTaskScheduler_a7cc1c9c1d7ea03991d2b38923b19d90c}.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!internal\+Error@{internal\+Error}}
+\index{internal\+Error@{internal\+Error}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{internal\+Error()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Task\+Scheduler\+::internal\+Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classTaskScheduler_a168b691985f937e829f8cc4ad960f069}
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!move\+Socket\+Handling@{move\+Socket\+Handling}}
+\index{move\+Socket\+Handling@{move\+Socket\+Handling}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{move\+Socket\+Handling(int old\+Socket\+Num, int new\+Socket\+Num)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Basic\+Task\+Scheduler\+::move\+Socket\+Handling (
+\begin{DoxyParamCaption}
+\item[{int}]{old\+Socket\+Num, }
+\item[{int}]{new\+Socket\+Num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classBasicTaskScheduler_af1874dc7e588c9c2c0c92a2f8776b553}
+
+
+Implements {\bf Task\+Scheduler} \doxyref{}{p.}{classTaskScheduler_a79ee7b5a9650e1fc1c6398373b001eef}.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!reschedule\+Delayed\+Task@{reschedule\+Delayed\+Task}}
+\index{reschedule\+Delayed\+Task@{reschedule\+Delayed\+Task}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{reschedule\+Delayed\+Task(\+Task\+Token \&task, int64\+\_\+t microseconds, Task\+Func $\ast$proc, void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Task\+Scheduler\+::reschedule\+Delayed\+Task (
+\begin{DoxyParamCaption}
+\item[{{\bf Task\+Token} \&}]{task, }
+\item[{int64\+\_\+t}]{microseconds, }
+\item[{{\bf Task\+Func} $\ast$}]{proc, }
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classTaskScheduler_a7b03f11040948a461990c64cad22ca25}
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!schedule\+Delayed\+Task@{schedule\+Delayed\+Task}}
+\index{schedule\+Delayed\+Task@{schedule\+Delayed\+Task}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{schedule\+Delayed\+Task(int64\+\_\+t microseconds, Task\+Func $\ast$proc, void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Task\+Token} Basic\+Task\+Scheduler0\+::schedule\+Delayed\+Task (
+\begin{DoxyParamCaption}
+\item[{int64\+\_\+t}]{microseconds, }
+\item[{{\bf Task\+Func} $\ast$}]{proc, }
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classBasicTaskScheduler0_aefbbed66e2d4bbe3cad11afdd14d50a9}
+
+
+Implements {\bf Task\+Scheduler} \doxyref{}{p.}{classTaskScheduler_a88f3556fd319aa67c18267d7c90f0d92}.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!scheduler\+Tick\+Task@{scheduler\+Tick\+Task}}
+\index{scheduler\+Tick\+Task@{scheduler\+Tick\+Task}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{scheduler\+Tick\+Task(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void Basic\+Task\+Scheduler\+::scheduler\+Tick\+Task (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{classBasicTaskScheduler_a1ba4b2eb5460768544a2c54931b9b683}
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!scheduler\+Tick\+Task@{scheduler\+Tick\+Task}}
+\index{scheduler\+Tick\+Task@{scheduler\+Tick\+Task}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{scheduler\+Tick\+Task()}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Task\+Scheduler\+::scheduler\+Tick\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classBasicTaskScheduler_a0d7ad95a19a6a8d37ac8678f03aef1a3}
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!set\+Background\+Handling@{set\+Background\+Handling}}
+\index{set\+Background\+Handling@{set\+Background\+Handling}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{set\+Background\+Handling(int socket\+Num, int condition\+Set, Background\+Handler\+Proc $\ast$handler\+Proc, void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Basic\+Task\+Scheduler\+::set\+Background\+Handling (
+\begin{DoxyParamCaption}
+\item[{int}]{socket\+Num, }
+\item[{int}]{condition\+Set, }
+\item[{{\bf Background\+Handler\+Proc} $\ast$}]{handler\+Proc, }
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classBasicTaskScheduler_ab09888793f5bffb1b83a88a52d9fe081}
+
+
+Implements {\bf Task\+Scheduler} \doxyref{}{p.}{classTaskScheduler_a2ec6c0be09cf7c85f9b8626b518b8087}.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!Single\+Step@{Single\+Step}}
+\index{Single\+Step@{Single\+Step}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{Single\+Step(unsigned max\+Delay\+Time)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Basic\+Task\+Scheduler\+::\+Single\+Step (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{max\+Delay\+Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classBasicTaskScheduler_a430d10a6747657e11679566867843f3e}
+
+
+Implements {\bf Basic\+Task\+Scheduler0} \doxyref{}{p.}{classBasicTaskScheduler0_a5555de2b6fadb460b2ac53cffe00f98f}.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!trigger\+Event@{trigger\+Event}}
+\index{trigger\+Event@{trigger\+Event}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{trigger\+Event(\+Event\+Trigger\+Id event\+Trigger\+Id, void $\ast$client\+Data=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Basic\+Task\+Scheduler0\+::trigger\+Event (
+\begin{DoxyParamCaption}
+\item[{{\bf Event\+Trigger\+Id}}]{event\+Trigger\+Id, }
+\item[{void $\ast$}]{client\+Data = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classBasicTaskScheduler0_a9701ba8ffd867ccba0e56ecf4d5f40d2}
+
+
+Implements {\bf Task\+Scheduler} \doxyref{}{p.}{classTaskScheduler_a13b474a3f71a5b8b443caead8726e151}.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!turn\+Off\+Background\+Read\+Handling@{turn\+Off\+Background\+Read\+Handling}}
+\index{turn\+Off\+Background\+Read\+Handling@{turn\+Off\+Background\+Read\+Handling}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{turn\+Off\+Background\+Read\+Handling(int socket\+Num)}]{\setlength{\rightskip}{0pt plus 5cm}void Task\+Scheduler\+::turn\+Off\+Background\+Read\+Handling (
+\begin{DoxyParamCaption}
+\item[{int}]{socket\+Num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classTaskScheduler_afcf69f0356ffe272c1e1c8ac8a44bece}
+
+
+Definition at line 164 of file Usage\+Environment.\+hh.
+
+
+
+References Task\+Scheduler\+::disable\+Background\+Handling().
+
+
+\begin{DoxyCode}
+164 \{ disableBackgroundHandling(socketNum); \}
+\end{DoxyCode}
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!turn\+On\+Background\+Read\+Handling@{turn\+On\+Background\+Read\+Handling}}
+\index{turn\+On\+Background\+Read\+Handling@{turn\+On\+Background\+Read\+Handling}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{turn\+On\+Background\+Read\+Handling(int socket\+Num, Background\+Handler\+Proc $\ast$handler\+Proc, void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}void Task\+Scheduler\+::turn\+On\+Background\+Read\+Handling (
+\begin{DoxyParamCaption}
+\item[{int}]{socket\+Num, }
+\item[{{\bf Background\+Handler\+Proc} $\ast$}]{handler\+Proc, }
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classTaskScheduler_a0eaa526c4888e8ac02da51e90cae6cac}
+
+
+Definition at line 161 of file Usage\+Environment.\+hh.
+
+
+
+References Task\+Scheduler\+::set\+Background\+Handling(), and S\+O\+C\+K\+E\+T\+\_\+\+R\+E\+A\+D\+A\+B\+L\+E.
+
+
+\begin{DoxyCode}
+161                                                                                                          \{
+162     setBackgroundHandling(socketNum, SOCKET_READABLE, handlerProc, clientData);
+163   \}
+\end{DoxyCode}
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!unschedule\+Delayed\+Task@{unschedule\+Delayed\+Task}}
+\index{unschedule\+Delayed\+Task@{unschedule\+Delayed\+Task}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{unschedule\+Delayed\+Task(\+Task\+Token \&prev\+Task)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Basic\+Task\+Scheduler0\+::unschedule\+Delayed\+Task (
+\begin{DoxyParamCaption}
+\item[{{\bf Task\+Token} \&}]{prev\+Task}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classBasicTaskScheduler0_a50221a14a4bd1ed3aec907146ec949ea}
+
+
+Implements {\bf Task\+Scheduler} \doxyref{}{p.}{classTaskScheduler_a0b4f21c7e19e4d37a55c2c48d60e989f}.
+
+
+
+\subsection{Field Documentation}
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!f\+Delay\+Queue@{f\+Delay\+Queue}}
+\index{f\+Delay\+Queue@{f\+Delay\+Queue}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{f\+Delay\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Delay\+Queue} Basic\+Task\+Scheduler0\+::f\+Delay\+Queue\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classBasicTaskScheduler0_adcdd96b2fa0e2bfd5d59dc8dc0215e39}
+
+
+Definition at line 100 of file Basic\+Usage\+Environment0.\+hh.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!f\+Exception\+Set@{f\+Exception\+Set}}
+\index{f\+Exception\+Set@{f\+Exception\+Set}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{f\+Exception\+Set}]{\setlength{\rightskip}{0pt plus 5cm}fd\+\_\+set Basic\+Task\+Scheduler\+::f\+Exception\+Set\hspace{0.3cm}{\ttfamily [protected]}}\label{classBasicTaskScheduler_af077d6e2a930f769bc5789a82ab88d2b}
+
+
+Definition at line 77 of file Basic\+Usage\+Environment.\+hh.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!f\+Handlers@{f\+Handlers}}
+\index{f\+Handlers@{f\+Handlers}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{f\+Handlers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Handler\+Set}$\ast$ Basic\+Task\+Scheduler0\+::f\+Handlers\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classBasicTaskScheduler0_aa6b340904c7ae13b21dccea7ac896c7d}
+
+
+Definition at line 103 of file Basic\+Usage\+Environment0.\+hh.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!f\+Last\+Handled\+Socket\+Num@{f\+Last\+Handled\+Socket\+Num}}
+\index{f\+Last\+Handled\+Socket\+Num@{f\+Last\+Handled\+Socket\+Num}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{f\+Last\+Handled\+Socket\+Num}]{\setlength{\rightskip}{0pt plus 5cm}int Basic\+Task\+Scheduler0\+::f\+Last\+Handled\+Socket\+Num\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classBasicTaskScheduler0_a8dc20835e2ff66adb9b85d2d49ab4edf}
+
+
+Definition at line 104 of file Basic\+Usage\+Environment0.\+hh.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!f\+Last\+Used\+Trigger\+Mask@{f\+Last\+Used\+Trigger\+Mask}}
+\index{f\+Last\+Used\+Trigger\+Mask@{f\+Last\+Used\+Trigger\+Mask}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{f\+Last\+Used\+Trigger\+Mask}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Event\+Trigger\+Id} Basic\+Task\+Scheduler0\+::f\+Last\+Used\+Trigger\+Mask\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classBasicTaskScheduler0_af94e905b5d8d367125ccd0af5c043286}
+
+
+Definition at line 108 of file Basic\+Usage\+Environment0.\+hh.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!f\+Last\+Used\+Trigger\+Num@{f\+Last\+Used\+Trigger\+Num}}
+\index{f\+Last\+Used\+Trigger\+Num@{f\+Last\+Used\+Trigger\+Num}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{f\+Last\+Used\+Trigger\+Num}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Basic\+Task\+Scheduler0\+::f\+Last\+Used\+Trigger\+Num\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classBasicTaskScheduler0_ad7899261969d01f4ca460ccd43b05896}
+
+
+Definition at line 111 of file Basic\+Usage\+Environment0.\+hh.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!f\+Max\+Num\+Sockets@{f\+Max\+Num\+Sockets}}
+\index{f\+Max\+Num\+Sockets@{f\+Max\+Num\+Sockets}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{f\+Max\+Num\+Sockets}]{\setlength{\rightskip}{0pt plus 5cm}int Basic\+Task\+Scheduler\+::f\+Max\+Num\+Sockets\hspace{0.3cm}{\ttfamily [protected]}}\label{classBasicTaskScheduler_af7ec7d2fec1235bee7e6f1f0fc9778c4}
+
+
+Definition at line 74 of file Basic\+Usage\+Environment.\+hh.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!f\+Max\+Scheduler\+Granularity@{f\+Max\+Scheduler\+Granularity}}
+\index{f\+Max\+Scheduler\+Granularity@{f\+Max\+Scheduler\+Granularity}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{f\+Max\+Scheduler\+Granularity}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Basic\+Task\+Scheduler\+::f\+Max\+Scheduler\+Granularity\hspace{0.3cm}{\ttfamily [protected]}}\label{classBasicTaskScheduler_a8939c3f53a13b7cd8ed8f085142c66fb}
+
+
+Definition at line 71 of file Basic\+Usage\+Environment.\+hh.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!f\+Read\+Set@{f\+Read\+Set}}
+\index{f\+Read\+Set@{f\+Read\+Set}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{f\+Read\+Set}]{\setlength{\rightskip}{0pt plus 5cm}fd\+\_\+set Basic\+Task\+Scheduler\+::f\+Read\+Set\hspace{0.3cm}{\ttfamily [protected]}}\label{classBasicTaskScheduler_adb5aa6594f360faee94bcd44a0c4fb52}
+
+
+Definition at line 75 of file Basic\+Usage\+Environment.\+hh.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!f\+Triggered\+Event\+Client\+Datas@{f\+Triggered\+Event\+Client\+Datas}}
+\index{f\+Triggered\+Event\+Client\+Datas@{f\+Triggered\+Event\+Client\+Datas}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{f\+Triggered\+Event\+Client\+Datas}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Basic\+Task\+Scheduler0\+::f\+Triggered\+Event\+Client\+Datas[{\bf M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+T\+R\+I\+G\+G\+E\+R\+S}]\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classBasicTaskScheduler0_a173e5896dfc992243f0a440a13d2e4c7}
+
+
+Definition at line 110 of file Basic\+Usage\+Environment0.\+hh.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!f\+Triggered\+Event\+Handlers@{f\+Triggered\+Event\+Handlers}}
+\index{f\+Triggered\+Event\+Handlers@{f\+Triggered\+Event\+Handlers}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{f\+Triggered\+Event\+Handlers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Func}$\ast$ Basic\+Task\+Scheduler0\+::f\+Triggered\+Event\+Handlers[{\bf M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+E\+V\+E\+N\+T\+\_\+\+T\+R\+I\+G\+G\+E\+R\+S}]\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classBasicTaskScheduler0_ac923ea4e0360c39d2af784267fa414b3}
+
+
+Definition at line 109 of file Basic\+Usage\+Environment0.\+hh.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!f\+Triggers\+Awaiting\+Handling@{f\+Triggers\+Awaiting\+Handling}}
+\index{f\+Triggers\+Awaiting\+Handling@{f\+Triggers\+Awaiting\+Handling}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{f\+Triggers\+Awaiting\+Handling}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Event\+Trigger\+Id} volatile Basic\+Task\+Scheduler0\+::f\+Triggers\+Awaiting\+Handling\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classBasicTaskScheduler0_a5d850cff3d19f42caeadcf41bae75af2}
+
+
+Definition at line 107 of file Basic\+Usage\+Environment0.\+hh.
+
+\index{Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}!f\+Write\+Set@{f\+Write\+Set}}
+\index{f\+Write\+Set@{f\+Write\+Set}!Basic\+Task\+Scheduler@{Basic\+Task\+Scheduler}}
+\subsubsection[{f\+Write\+Set}]{\setlength{\rightskip}{0pt plus 5cm}fd\+\_\+set Basic\+Task\+Scheduler\+::f\+Write\+Set\hspace{0.3cm}{\ttfamily [protected]}}\label{classBasicTaskScheduler_ac7437bedd1f488b5e9b488add6d0b446}
+
+
+Definition at line 76 of file Basic\+Usage\+Environment.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Basic\+Usage\+Environment/include/{\bf Basic\+Usage\+Environment.\+hh}\end{DoxyCompactItemize}

@@ -1,0 +1,187 @@
+\section{Generic\+Media\+Server\+:\+:Client\+Session Class Reference}
+\label{classGenericMediaServer_1_1ClientSession}\index{Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}}
+
+
+{\ttfamily \#include $<$Generic\+Media\+Server.\+hh$>$}
+
+
+
+Inheritance diagram for Generic\+Media\+Server\+:\+:Client\+Session\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{classGenericMediaServer_1_1ClientSession__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Generic\+Media\+Server\+:\+:Client\+Session\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGenericMediaServer_1_1ClientSession__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Client\+Session} ({\bf Generic\+Media\+Server} \&our\+Server, u\+\_\+int32\+\_\+t session\+Id)
+\item 
+virtual {\bf $\sim$\+Client\+Session} ()
+\item 
+{\bf Usage\+Environment} \& {\bf envir} ()
+\item 
+void {\bf note\+Liveness} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf note\+Client\+Liveness} ({\bf Client\+Session} $\ast$client\+Session)
+\item 
+static void {\bf liveness\+Timeout\+Task} ({\bf Client\+Session} $\ast$client\+Session)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Generic\+Media\+Server} \& {\bf f\+Our\+Server}
+\item 
+u\+\_\+int32\+\_\+t {\bf f\+Our\+Session\+Id}
+\item 
+{\bf Server\+Media\+Session} $\ast$ {\bf f\+Our\+Server\+Media\+Session}
+\item 
+{\bf Task\+Token} {\bf f\+Liveness\+Check\+Task}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Generic\+Media\+Server}
+\item 
+class {\bf Client\+Connection}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 111 of file Generic\+Media\+Server.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}!Client\+Session@{Client\+Session}}
+\index{Client\+Session@{Client\+Session}!Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}}
+\subsubsection[{Client\+Session(\+Generic\+Media\+Server \&our\+Server, u\+\_\+int32\+\_\+t session\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+Media\+Server\+::\+Client\+Session\+::\+Client\+Session (
+\begin{DoxyParamCaption}
+\item[{{\bf Generic\+Media\+Server} \&}]{our\+Server, }
+\item[{u\+\_\+int32\+\_\+t}]{session\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientSession_a1c2e297385225cd0a2b789a177e98e33}
+\index{Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}!````~Client\+Session@{$\sim$\+Client\+Session}}
+\index{````~Client\+Session@{$\sim$\+Client\+Session}!Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}}
+\subsubsection[{$\sim$\+Client\+Session()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Generic\+Media\+Server\+::\+Client\+Session\+::$\sim$\+Client\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classGenericMediaServer_1_1ClientSession_ad148280e0ae851f28de4f360743f1cec}
+
+
+\subsection{Member Function Documentation}
+\index{Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}!envir@{envir}}
+\index{envir@{envir}!Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}}
+\subsubsection[{envir()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Generic\+Media\+Server\+::\+Client\+Session\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientSession_a0e1838e7baf157ef60519f863948f117}
+
+
+Definition at line 116 of file Generic\+Media\+Server.\+hh.
+
+
+
+References Medium\+::envir(), and f\+Our\+Server.
+
+
+\begin{DoxyCode}
+116 \{ \textcolor{keywordflow}{return} fOurServer.envir(); \}
+\end{DoxyCode}
+\index{Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}!liveness\+Timeout\+Task@{liveness\+Timeout\+Task}}
+\index{liveness\+Timeout\+Task@{liveness\+Timeout\+Task}!Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}}
+\subsubsection[{liveness\+Timeout\+Task(\+Client\+Session $\ast$client\+Session)}]{\setlength{\rightskip}{0pt plus 5cm}static void Generic\+Media\+Server\+::\+Client\+Session\+::liveness\+Timeout\+Task (
+\begin{DoxyParamCaption}
+\item[{{\bf Client\+Session} $\ast$}]{client\+Session}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientSession_a6f593032d64bcf1fe9b67b3f161ea93b}
+\index{Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}!note\+Client\+Liveness@{note\+Client\+Liveness}}
+\index{note\+Client\+Liveness@{note\+Client\+Liveness}!Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}}
+\subsubsection[{note\+Client\+Liveness(\+Client\+Session $\ast$client\+Session)}]{\setlength{\rightskip}{0pt plus 5cm}static void Generic\+Media\+Server\+::\+Client\+Session\+::note\+Client\+Liveness (
+\begin{DoxyParamCaption}
+\item[{{\bf Client\+Session} $\ast$}]{client\+Session}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientSession_ae5d5e7d8685f4bec2a3ef686f5c86fd1}
+\index{Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}!note\+Liveness@{note\+Liveness}}
+\index{note\+Liveness@{note\+Liveness}!Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}}
+\subsubsection[{note\+Liveness()}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+Media\+Server\+::\+Client\+Session\+::note\+Liveness (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientSession_a88dc3e2ab1995fa4dc7c155d5e988789}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}!Client\+Connection@{Client\+Connection}}
+\index{Client\+Connection@{Client\+Connection}!Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}}
+\subsubsection[{Client\+Connection}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Client\+Connection}\hspace{0.3cm}{\ttfamily [friend]}}\label{classGenericMediaServer_1_1ClientSession_a57ddb58ac9f33fbc303507690b67add3}
+
+
+Definition at line 123 of file Generic\+Media\+Server.\+hh.
+
+\index{Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}!Generic\+Media\+Server@{Generic\+Media\+Server}}
+\index{Generic\+Media\+Server@{Generic\+Media\+Server}!Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}}
+\subsubsection[{Generic\+Media\+Server}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Generic\+Media\+Server}\hspace{0.3cm}{\ttfamily [friend]}}\label{classGenericMediaServer_1_1ClientSession_a126ab726581d2a15d95bb3de815ee65c}
+
+
+Definition at line 122 of file Generic\+Media\+Server.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}!f\+Liveness\+Check\+Task@{f\+Liveness\+Check\+Task}}
+\index{f\+Liveness\+Check\+Task@{f\+Liveness\+Check\+Task}!Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}}
+\subsubsection[{f\+Liveness\+Check\+Task}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token} Generic\+Media\+Server\+::\+Client\+Session\+::f\+Liveness\+Check\+Task\hspace{0.3cm}{\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientSession_ad642da1b21409b0e368888bfdea69047}
+
+
+Definition at line 127 of file Generic\+Media\+Server.\+hh.
+
+\index{Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}!f\+Our\+Server@{f\+Our\+Server}}
+\index{f\+Our\+Server@{f\+Our\+Server}!Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}}
+\subsubsection[{f\+Our\+Server}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Generic\+Media\+Server}\& Generic\+Media\+Server\+::\+Client\+Session\+::f\+Our\+Server\hspace{0.3cm}{\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientSession_abc025e20592f9ce8f423aa932881e9ea}
+
+
+Definition at line 124 of file Generic\+Media\+Server.\+hh.
+
+
+
+Referenced by envir().
+
+\index{Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}!f\+Our\+Server\+Media\+Session@{f\+Our\+Server\+Media\+Session}}
+\index{f\+Our\+Server\+Media\+Session@{f\+Our\+Server\+Media\+Session}!Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}}
+\subsubsection[{f\+Our\+Server\+Media\+Session}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Server\+Media\+Session}$\ast$ Generic\+Media\+Server\+::\+Client\+Session\+::f\+Our\+Server\+Media\+Session\hspace{0.3cm}{\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientSession_aa21a6548011c76a8a4a2ee9174554935}
+
+
+Definition at line 126 of file Generic\+Media\+Server.\+hh.
+
+\index{Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}!f\+Our\+Session\+Id@{f\+Our\+Session\+Id}}
+\index{f\+Our\+Session\+Id@{f\+Our\+Session\+Id}!Generic\+Media\+Server\+::\+Client\+Session@{Generic\+Media\+Server\+::\+Client\+Session}}
+\subsubsection[{f\+Our\+Session\+Id}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t Generic\+Media\+Server\+::\+Client\+Session\+::f\+Our\+Session\+Id\hspace{0.3cm}{\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientSession_a1e024d0ccd488dfb64282c686180efbf}
+
+
+Definition at line 125 of file Generic\+Media\+Server.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf Generic\+Media\+Server.\+hh}\end{DoxyCompactItemize}

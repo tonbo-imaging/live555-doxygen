@@ -1,0 +1,158 @@
+\section{Basic\+Usage\+Environment/include/\+Delay\+Queue.hh File Reference}
+\label{DelayQueue_8hh}\index{Basic\+Usage\+Environment/include/\+Delay\+Queue.\+hh@{Basic\+Usage\+Environment/include/\+Delay\+Queue.\+hh}}
+{\ttfamily \#include \char`\"{}Net\+Common.\+h\char`\"{}}\\*
+Include dependency graph for Delay\+Queue.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DelayQueue_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{DelayQueue_8hh__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Timeval}
+\item 
+class {\bf Delay\+Interval}
+\item 
+class {\bf \+\_\+\+Event\+Time}
+\item 
+class {\bf Delay\+Queue\+Entry}
+\item 
+class {\bf Delay\+Queue}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef long {\bf time\+\_\+base\+\_\+seconds}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Timeval} {\bf max} ({\bf Timeval} const \&arg1, {\bf Timeval} const \&arg2)
+\item 
+{\bf Timeval} {\bf min} ({\bf Timeval} const \&arg1, {\bf Timeval} const \&arg2)
+\item 
+class {\bf Delay\+Interval} {\bf operator-\/} ({\bf Timeval} const \&arg1, {\bf Timeval} const \&arg2)
+\item 
+{\bf Delay\+Interval} {\bf operator$\ast$} (short arg1, {\bf Delay\+Interval} const \&arg2)
+\item 
+{\bf \+\_\+\+Event\+Time} {\bf Time\+Now} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Delay\+Interval} const {\bf D\+E\+L\+A\+Y\+\_\+\+Z\+E\+R\+O}
+\item 
+{\bf Delay\+Interval} const {\bf D\+E\+L\+A\+Y\+\_\+\+S\+E\+C\+O\+N\+D}
+\item 
+{\bf Delay\+Interval} const {\bf D\+E\+L\+A\+Y\+\_\+\+M\+I\+N\+U\+T\+E}
+\item 
+{\bf Delay\+Interval} const {\bf D\+E\+L\+A\+Y\+\_\+\+H\+O\+U\+R}
+\item 
+{\bf Delay\+Interval} const {\bf D\+E\+L\+A\+Y\+\_\+\+D\+A\+Y}
+\item 
+{\bf \+\_\+\+Event\+Time} const {\bf T\+H\+E\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+T\+I\+M\+E}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{Delay\+Queue.\+hh@{Delay\+Queue.\+hh}!time\+\_\+base\+\_\+seconds@{time\+\_\+base\+\_\+seconds}}
+\index{time\+\_\+base\+\_\+seconds@{time\+\_\+base\+\_\+seconds}!Delay\+Queue.\+hh@{Delay\+Queue.\+hh}}
+\subsubsection[{time\+\_\+base\+\_\+seconds}]{\setlength{\rightskip}{0pt plus 5cm}typedef long {\bf time\+\_\+base\+\_\+seconds}}\label{DelayQueue_8hh_aa4177faca9d19bc5d16527b8f1378fe4}
+
+
+Definition at line 30 of file Delay\+Queue.\+hh.
+
+
+
+\subsection{Function Documentation}
+\index{Delay\+Queue.\+hh@{Delay\+Queue.\+hh}!max@{max}}
+\index{max@{max}!Delay\+Queue.\+hh@{Delay\+Queue.\+hh}}
+\subsubsection[{max(\+Timeval const \&arg1, Timeval const \&arg2)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Timeval} max (
+\begin{DoxyParamCaption}
+\item[{{\bf Timeval} const \&}]{arg1, }
+\item[{{\bf Timeval} const \&}]{arg2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{DelayQueue_8hh_a2e04ed79038937f39725361bb4978268}
+
+
+Definition at line 88 of file Delay\+Queue.\+hh.
+
+
+\begin{DoxyCode}
+88                                                              \{
+89   \textcolor{keywordflow}{return} arg1 >= arg2 ? arg1 : arg2;
+90 \}
+\end{DoxyCode}
+\index{Delay\+Queue.\+hh@{Delay\+Queue.\+hh}!min@{min}}
+\index{min@{min}!Delay\+Queue.\+hh@{Delay\+Queue.\+hh}}
+\subsubsection[{min(\+Timeval const \&arg1, Timeval const \&arg2)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Timeval} min (
+\begin{DoxyParamCaption}
+\item[{{\bf Timeval} const \&}]{arg1, }
+\item[{{\bf Timeval} const \&}]{arg2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{DelayQueue_8hh_a541943698502dd5b81eb079234cd4f2d}
+
+
+Definition at line 93 of file Delay\+Queue.\+hh.
+
+
+\begin{DoxyCode}
+93                                                              \{
+94   \textcolor{keywordflow}{return} arg1 <= arg2 ? arg1 : arg2;
+95 \}
+\end{DoxyCode}
+\index{Delay\+Queue.\+hh@{Delay\+Queue.\+hh}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Delay\+Queue.\+hh@{Delay\+Queue.\+hh}}
+\subsubsection[{operator$\ast$(short arg1, Delay\+Interval const \&arg2)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Delay\+Interval} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{short}]{arg1, }
+\item[{{\bf Delay\+Interval} const \&}]{arg2}
+\end{DoxyParamCaption}
+)}\label{DelayQueue_8hh_a84622cd702755639ecdc2d715fd419c3}
+\index{Delay\+Queue.\+hh@{Delay\+Queue.\+hh}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Delay\+Queue.\+hh@{Delay\+Queue.\+hh}}
+\subsubsection[{operator-\/(\+Timeval const \&arg1, Timeval const \&arg2)}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Delay\+Interval} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{{\bf Timeval} const \&}]{arg1, }
+\item[{{\bf Timeval} const \&}]{arg2}
+\end{DoxyParamCaption}
+)}\label{DelayQueue_8hh_af84f2b8c91d24aec519e97d7935eae92}
+\index{Delay\+Queue.\+hh@{Delay\+Queue.\+hh}!Time\+Now@{Time\+Now}}
+\index{Time\+Now@{Time\+Now}!Delay\+Queue.\+hh@{Delay\+Queue.\+hh}}
+\subsubsection[{Time\+Now()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+Event\+Time} Time\+Now (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{DelayQueue_8hh_accab7eea3bb3eba3b1680b17c3c6120a}
+
+
+\subsection{Variable Documentation}
+\index{Delay\+Queue.\+hh@{Delay\+Queue.\+hh}!D\+E\+L\+A\+Y\+\_\+\+D\+A\+Y@{D\+E\+L\+A\+Y\+\_\+\+D\+A\+Y}}
+\index{D\+E\+L\+A\+Y\+\_\+\+D\+A\+Y@{D\+E\+L\+A\+Y\+\_\+\+D\+A\+Y}!Delay\+Queue.\+hh@{Delay\+Queue.\+hh}}
+\subsubsection[{D\+E\+L\+A\+Y\+\_\+\+D\+A\+Y}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Delay\+Interval} const D\+E\+L\+A\+Y\+\_\+\+D\+A\+Y}\label{DelayQueue_8hh_a3de9140235288a907b175062677819dc}
+\index{Delay\+Queue.\+hh@{Delay\+Queue.\+hh}!D\+E\+L\+A\+Y\+\_\+\+H\+O\+U\+R@{D\+E\+L\+A\+Y\+\_\+\+H\+O\+U\+R}}
+\index{D\+E\+L\+A\+Y\+\_\+\+H\+O\+U\+R@{D\+E\+L\+A\+Y\+\_\+\+H\+O\+U\+R}!Delay\+Queue.\+hh@{Delay\+Queue.\+hh}}
+\subsubsection[{D\+E\+L\+A\+Y\+\_\+\+H\+O\+U\+R}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Delay\+Interval} const D\+E\+L\+A\+Y\+\_\+\+H\+O\+U\+R}\label{DelayQueue_8hh_a4be910f4e7fd281b6141e237522d1ff5}
+\index{Delay\+Queue.\+hh@{Delay\+Queue.\+hh}!D\+E\+L\+A\+Y\+\_\+\+M\+I\+N\+U\+T\+E@{D\+E\+L\+A\+Y\+\_\+\+M\+I\+N\+U\+T\+E}}
+\index{D\+E\+L\+A\+Y\+\_\+\+M\+I\+N\+U\+T\+E@{D\+E\+L\+A\+Y\+\_\+\+M\+I\+N\+U\+T\+E}!Delay\+Queue.\+hh@{Delay\+Queue.\+hh}}
+\subsubsection[{D\+E\+L\+A\+Y\+\_\+\+M\+I\+N\+U\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Delay\+Interval} const D\+E\+L\+A\+Y\+\_\+\+M\+I\+N\+U\+T\+E}\label{DelayQueue_8hh_afd539a97ce2c7c2f5436929f4b15087f}
+\index{Delay\+Queue.\+hh@{Delay\+Queue.\+hh}!D\+E\+L\+A\+Y\+\_\+\+S\+E\+C\+O\+N\+D@{D\+E\+L\+A\+Y\+\_\+\+S\+E\+C\+O\+N\+D}}
+\index{D\+E\+L\+A\+Y\+\_\+\+S\+E\+C\+O\+N\+D@{D\+E\+L\+A\+Y\+\_\+\+S\+E\+C\+O\+N\+D}!Delay\+Queue.\+hh@{Delay\+Queue.\+hh}}
+\subsubsection[{D\+E\+L\+A\+Y\+\_\+\+S\+E\+C\+O\+N\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Delay\+Interval} const D\+E\+L\+A\+Y\+\_\+\+S\+E\+C\+O\+N\+D}\label{DelayQueue_8hh_a1a6362b81b9e3c8217be3f896572cc0a}
+\index{Delay\+Queue.\+hh@{Delay\+Queue.\+hh}!D\+E\+L\+A\+Y\+\_\+\+Z\+E\+R\+O@{D\+E\+L\+A\+Y\+\_\+\+Z\+E\+R\+O}}
+\index{D\+E\+L\+A\+Y\+\_\+\+Z\+E\+R\+O@{D\+E\+L\+A\+Y\+\_\+\+Z\+E\+R\+O}!Delay\+Queue.\+hh@{Delay\+Queue.\+hh}}
+\subsubsection[{D\+E\+L\+A\+Y\+\_\+\+Z\+E\+R\+O}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Delay\+Interval} const D\+E\+L\+A\+Y\+\_\+\+Z\+E\+R\+O}\label{DelayQueue_8hh_a29240a1f4a3bc3926386dcadd6edf069}
+\index{Delay\+Queue.\+hh@{Delay\+Queue.\+hh}!T\+H\+E\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+T\+I\+M\+E@{T\+H\+E\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+T\+I\+M\+E}}
+\index{T\+H\+E\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+T\+I\+M\+E@{T\+H\+E\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+T\+I\+M\+E}!Delay\+Queue.\+hh@{Delay\+Queue.\+hh}}
+\subsubsection[{T\+H\+E\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+T\+I\+M\+E}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+Event\+Time} const T\+H\+E\+\_\+\+E\+N\+D\+\_\+\+O\+F\+\_\+\+T\+I\+M\+E}\label{DelayQueue_8hh_a83cad3ccfd759230084d61c8d31d71f9}

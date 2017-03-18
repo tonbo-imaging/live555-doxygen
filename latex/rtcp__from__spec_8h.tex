@@ -1,0 +1,235 @@
+\section{live\+Media/rtcp\+\_\+from\+\_\+spec.h File Reference}
+\label{rtcp__from__spec_8h}\index{live\+Media/rtcp\+\_\+from\+\_\+spec.\+h@{live\+Media/rtcp\+\_\+from\+\_\+spec.\+h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+Include dependency graph for rtcp\+\_\+from\+\_\+spec.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{rtcp__from__spec_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf \+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+}(x)~()
+\item 
+\#define {\bf E\+X\+T\+E\+R\+N}~extern
+\item 
+\#define {\bf E\+V\+E\+N\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N}~0
+\item 
+\#define {\bf E\+V\+E\+N\+T\+\_\+\+R\+E\+P\+O\+R\+T}~1
+\item 
+\#define {\bf E\+V\+E\+N\+T\+\_\+\+B\+Y\+E}~2
+\item 
+\#define {\bf P\+A\+C\+K\+E\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+T\+Y\+P\+E}~0
+\item 
+\#define {\bf P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+P}~1
+\item 
+\#define {\bf P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+C\+P\+\_\+\+R\+E\+P\+O\+R\+T}~2
+\item 
+\#define {\bf P\+A\+C\+K\+E\+T\+\_\+\+B\+Y\+E}~3
+\item 
+\#define {\bf P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+C\+P\+\_\+\+A\+P\+P}~4
+\item 
+\#define {\bf drand48}~drand30
+\item 
+\#define {\bf exit}(n)~do \{\} while (0)
+\item 
+\#define {\bf F\+A\+L\+S\+E}~0
+\item 
+\#define {\bf T\+R\+U\+E}~1
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void $\ast$ {\bf event}
+\item 
+typedef double {\bf time\+\_\+tp}
+\item 
+typedef void $\ast$ {\bf packet}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf E\+X\+T\+E\+R\+N} void On\+Expire {\bf \+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+} (({\bf event}, int, int, double, int, double $\ast$, int $\ast$, {\bf time\+\_\+tp}, {\bf time\+\_\+tp} $\ast$, int $\ast$))
+\item 
+{\bf E\+X\+T\+E\+R\+N} void On\+Receive {\bf \+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+} (({\bf packet}, {\bf event}, int $\ast$, int $\ast$, int $\ast$, double $\ast$, double $\ast$, double, double))
+\item 
+{\bf E\+X\+T\+E\+R\+N} void Schedule {\bf \+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+} ((double, {\bf event}))
+\item 
+{\bf E\+X\+T\+E\+R\+N} void Send\+R\+T\+C\+P\+Report {\bf \+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+} (({\bf event}))
+\item 
+{\bf E\+X\+T\+E\+R\+N} double drand30 {\bf \+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+} ((void))
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+@{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+}}
+\index{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+@{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~()}\label{rtcp__from__spec_8h_ad069b0a7e21735aa2ed01f47c7e9bc11}
+
+
+Definition at line 18 of file rtcp\+\_\+from\+\_\+spec.\+h.
+
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!drand48@{drand48}}
+\index{drand48@{drand48}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{drand48}]{\setlength{\rightskip}{0pt plus 5cm}\#define drand48~drand30}\label{rtcp__from__spec_8h_a294c0743920f6e7069e39f884554a874}
+
+
+Definition at line 46 of file rtcp\+\_\+from\+\_\+spec.\+h.
+
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!E\+V\+E\+N\+T\+\_\+\+B\+Y\+E@{E\+V\+E\+N\+T\+\_\+\+B\+Y\+E}}
+\index{E\+V\+E\+N\+T\+\_\+\+B\+Y\+E@{E\+V\+E\+N\+T\+\_\+\+B\+Y\+E}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{E\+V\+E\+N\+T\+\_\+\+B\+Y\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+V\+E\+N\+T\+\_\+\+B\+Y\+E~2}\label{rtcp__from__spec_8h_a27f7c98af162c0edefbd280ca3fcf757}
+
+
+Definition at line 31 of file rtcp\+\_\+from\+\_\+spec.\+h.
+
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!E\+V\+E\+N\+T\+\_\+\+R\+E\+P\+O\+R\+T@{E\+V\+E\+N\+T\+\_\+\+R\+E\+P\+O\+R\+T}}
+\index{E\+V\+E\+N\+T\+\_\+\+R\+E\+P\+O\+R\+T@{E\+V\+E\+N\+T\+\_\+\+R\+E\+P\+O\+R\+T}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{E\+V\+E\+N\+T\+\_\+\+R\+E\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+V\+E\+N\+T\+\_\+\+R\+E\+P\+O\+R\+T~1}\label{rtcp__from__spec_8h_ae8495e56c6850eb7efba80efa454493c}
+
+
+Definition at line 30 of file rtcp\+\_\+from\+\_\+spec.\+h.
+
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!E\+V\+E\+N\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N@{E\+V\+E\+N\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N}}
+\index{E\+V\+E\+N\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N@{E\+V\+E\+N\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{E\+V\+E\+N\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+V\+E\+N\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N~0}\label{rtcp__from__spec_8h_a224341682f733380df397c234b1ff0ca}
+
+
+Definition at line 29 of file rtcp\+\_\+from\+\_\+spec.\+h.
+
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!exit@{exit}}
+\index{exit@{exit}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{exit}]{\setlength{\rightskip}{0pt plus 5cm}\#define exit(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~do \{\} while (0)}\label{rtcp__from__spec_8h_ae89e499e2d2433815526bd7725377a5a}
+
+
+Definition at line 49 of file rtcp\+\_\+from\+\_\+spec.\+h.
+
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!E\+X\+T\+E\+R\+N@{E\+X\+T\+E\+R\+N}}
+\index{E\+X\+T\+E\+R\+N@{E\+X\+T\+E\+R\+N}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{E\+X\+T\+E\+R\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+X\+T\+E\+R\+N~extern}\label{rtcp__from__spec_8h_a77366c1bd428629dc898e188bfd182a3}
+
+
+Definition at line 23 of file rtcp\+\_\+from\+\_\+spec.\+h.
+
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!F\+A\+L\+S\+E@{F\+A\+L\+S\+E}}
+\index{F\+A\+L\+S\+E@{F\+A\+L\+S\+E}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{F\+A\+L\+S\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+A\+L\+S\+E~0}\label{rtcp__from__spec_8h_aa93f0eb578d23995850d61f7d61c55c1}
+
+
+Definition at line 52 of file rtcp\+\_\+from\+\_\+spec.\+h.
+
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!P\+A\+C\+K\+E\+T\+\_\+\+B\+Y\+E@{P\+A\+C\+K\+E\+T\+\_\+\+B\+Y\+E}}
+\index{P\+A\+C\+K\+E\+T\+\_\+\+B\+Y\+E@{P\+A\+C\+K\+E\+T\+\_\+\+B\+Y\+E}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{P\+A\+C\+K\+E\+T\+\_\+\+B\+Y\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+A\+C\+K\+E\+T\+\_\+\+B\+Y\+E~3}\label{rtcp__from__spec_8h_a58da2391391123160ec94bfe07807c44}
+
+
+Definition at line 42 of file rtcp\+\_\+from\+\_\+spec.\+h.
+
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+C\+P\+\_\+\+A\+P\+P@{P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+C\+P\+\_\+\+A\+P\+P}}
+\index{P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+C\+P\+\_\+\+A\+P\+P@{P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+C\+P\+\_\+\+A\+P\+P}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+C\+P\+\_\+\+A\+P\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+C\+P\+\_\+\+A\+P\+P~4}\label{rtcp__from__spec_8h_adf05d15f949c4aefec1ba3c143ae18ff}
+
+
+Definition at line 43 of file rtcp\+\_\+from\+\_\+spec.\+h.
+
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+C\+P\+\_\+\+R\+E\+P\+O\+R\+T@{P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+C\+P\+\_\+\+R\+E\+P\+O\+R\+T}}
+\index{P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+C\+P\+\_\+\+R\+E\+P\+O\+R\+T@{P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+C\+P\+\_\+\+R\+E\+P\+O\+R\+T}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+C\+P\+\_\+\+R\+E\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+C\+P\+\_\+\+R\+E\+P\+O\+R\+T~2}\label{rtcp__from__spec_8h_a2e33bf8a5e5baab1b814321ca170bda8}
+
+
+Definition at line 41 of file rtcp\+\_\+from\+\_\+spec.\+h.
+
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+P@{P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+P}}
+\index{P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+P@{P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+P}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+P}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+A\+C\+K\+E\+T\+\_\+\+R\+T\+P~1}\label{rtcp__from__spec_8h_a8bc13a0940984aa551a29f922df12f99}
+
+
+Definition at line 40 of file rtcp\+\_\+from\+\_\+spec.\+h.
+
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!P\+A\+C\+K\+E\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+T\+Y\+P\+E@{P\+A\+C\+K\+E\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+T\+Y\+P\+E}}
+\index{P\+A\+C\+K\+E\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+T\+Y\+P\+E@{P\+A\+C\+K\+E\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+T\+Y\+P\+E}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{P\+A\+C\+K\+E\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+T\+Y\+P\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+A\+C\+K\+E\+T\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+T\+Y\+P\+E~0}\label{rtcp__from__spec_8h_a1ec24dc183eecc046ed27513c6d579eb}
+
+
+Definition at line 39 of file rtcp\+\_\+from\+\_\+spec.\+h.
+
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!T\+R\+U\+E@{T\+R\+U\+E}}
+\index{T\+R\+U\+E@{T\+R\+U\+E}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{T\+R\+U\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+R\+U\+E~1}\label{rtcp__from__spec_8h_aa8cecfc5c5c054d2875c03e77b7be15d}
+
+
+Definition at line 55 of file rtcp\+\_\+from\+\_\+spec.\+h.
+
+
+
+\subsection{Typedef Documentation}
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!event@{event}}
+\index{event@{event}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{event}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf event}}\label{rtcp__from__spec_8h_ac5d58a571d451bcf1a6000ad61d8a879}
+
+
+Definition at line 27 of file rtcp\+\_\+from\+\_\+spec.\+h.
+
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!packet@{packet}}
+\index{packet@{packet}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{packet}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf packet}}\label{rtcp__from__spec_8h_ad2cb04a1512cf9de396e5ecbd94027a1}
+
+
+Definition at line 37 of file rtcp\+\_\+from\+\_\+spec.\+h.
+
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!time\+\_\+tp@{time\+\_\+tp}}
+\index{time\+\_\+tp@{time\+\_\+tp}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{time\+\_\+tp}]{\setlength{\rightskip}{0pt plus 5cm}typedef double {\bf time\+\_\+tp}}\label{rtcp__from__spec_8h_a7554c5c6dd19b1bfb260823490a0f2cc}
+
+
+Definition at line 34 of file rtcp\+\_\+from\+\_\+spec.\+h.
+
+
+
+\subsection{Function Documentation}
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+@{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+}}
+\index{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+@{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+((event, int, int, double, int, double $\ast$, int $\ast$, time\+\_\+tp, time\+\_\+tp $\ast$, int $\ast$))}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+X\+T\+E\+R\+N} void On\+Expire \+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{({\bf event}, int, int, double, int, double $\ast$, int $\ast$, {\bf time\+\_\+tp}, {\bf time\+\_\+tp} $\ast$, int $\ast$)}]{}
+\end{DoxyParamCaption}
+)}\label{rtcp__from__spec_8h_a6c5caaf886cf7d3a5e0f4c370b389be9}
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+@{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+}}
+\index{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+@{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+((packet, event, int $\ast$, int $\ast$, int $\ast$, double $\ast$, double $\ast$, double, double))}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+X\+T\+E\+R\+N} void On\+Receive \+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{({\bf packet}, {\bf event}, int $\ast$, int $\ast$, int $\ast$, double $\ast$, double $\ast$, double, double)}]{}
+\end{DoxyParamCaption}
+)}\label{rtcp__from__spec_8h_ae320b7d9f564f984cffab5827f0055aa}
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+@{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+}}
+\index{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+@{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+((double, event))}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+X\+T\+E\+R\+N} void Reschedule \+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{(double, {\bf event})}]{}
+\end{DoxyParamCaption}
+)}\label{rtcp__from__spec_8h_a71241a987da5b0993397cfdf80b8a77c}
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+@{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+}}
+\index{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+@{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+((event))}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+X\+T\+E\+R\+N} void Remove\+Sender \+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{({\bf event})}]{}
+\end{DoxyParamCaption}
+)}\label{rtcp__from__spec_8h_af933cba9e1e62a1ca35c9bde943af304}
+\index{rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}!\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+@{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+}}
+\index{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+@{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+}!rtcp\+\_\+from\+\_\+spec.\+h@{rtcp\+\_\+from\+\_\+spec.\+h}}
+\subsubsection[{\+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+((void))}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+X\+T\+E\+R\+N} double drand30 \+\_\+\+A\+N\+S\+I\+\_\+\+A\+R\+G\+S\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{(void)}]{}
+\end{DoxyParamCaption}
+)}\label{rtcp__from__spec_8h_aee49ee6f9a5760ea499274b7e4cd110d}

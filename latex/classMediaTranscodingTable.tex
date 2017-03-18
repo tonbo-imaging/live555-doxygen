@@ -1,0 +1,339 @@
+\section{Media\+Transcoding\+Table Class Reference}
+\label{classMediaTranscodingTable}\index{Media\+Transcoding\+Table@{Media\+Transcoding\+Table}}
+
+
+{\ttfamily \#include $<$Media\+Transcoding\+Table.\+hh$>$}
+
+
+
+Inheritance diagram for Media\+Transcoding\+Table\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classMediaTranscodingTable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Media\+Transcoding\+Table\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classMediaTranscodingTable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf Framed\+Filter} $\ast$ {\bf lookup\+Transcoder} ({\bf Media\+Subsession} \&, char $\ast$\&output\+Codec\+Name)
+\item 
+virtual {\bf Boolean} {\bf we\+Will\+Transcode} (char const $\ast$, char const $\ast$)
+\item 
+{\bf Usage\+Environment} \& {\bf envir} () const 
+\item 
+char const $\ast$ {\bf name} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Source} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Sink} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+C\+P\+Instance} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Client} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Server} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Media\+Session} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Server\+Media\+Session} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name, {\bf Medium} $\ast$\&result\+Medium)
+\item 
+static void {\bf close} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name)
+\item 
+static void {\bf close} ({\bf Medium} $\ast$medium)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Media\+Transcoding\+Table} ({\bf Usage\+Environment} \&env)
+\item 
+virtual {\bf $\sim$\+Media\+Transcoding\+Table} ()
+\item 
+{\bf Task\+Token} \& {\bf next\+Task} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 34 of file Media\+Transcoding\+Table.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Media\+Transcoding\+Table@{Media\+Transcoding\+Table}!Media\+Transcoding\+Table@{Media\+Transcoding\+Table}}
+\index{Media\+Transcoding\+Table@{Media\+Transcoding\+Table}!Media\+Transcoding\+Table@{Media\+Transcoding\+Table}}
+\subsubsection[{Media\+Transcoding\+Table(\+Usage\+Environment \&env)}]{\setlength{\rightskip}{0pt plus 5cm}Media\+Transcoding\+Table\+::\+Media\+Transcoding\+Table (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classMediaTranscodingTable_a8ee34a66e0437099735bb4bb771cfdd8}
+
+
+Definition at line 59 of file Media\+Transcoding\+Table.\+hh.
+
+
+\begin{DoxyCode}
+60     : Medium(env) \{
+61   \}
+\end{DoxyCode}
+\index{Media\+Transcoding\+Table@{Media\+Transcoding\+Table}!````~Media\+Transcoding\+Table@{$\sim$\+Media\+Transcoding\+Table}}
+\index{````~Media\+Transcoding\+Table@{$\sim$\+Media\+Transcoding\+Table}!Media\+Transcoding\+Table@{Media\+Transcoding\+Table}}
+\subsubsection[{$\sim$\+Media\+Transcoding\+Table()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Media\+Transcoding\+Table\+::$\sim$\+Media\+Transcoding\+Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classMediaTranscodingTable_af2553e28b44e40f6043c619474e53a5c}
+
+
+Definition at line 62 of file Media\+Transcoding\+Table.\+hh.
+
+
+\begin{DoxyCode}
+62                                    \{
+63   \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Media\+Transcoding\+Table@{Media\+Transcoding\+Table}!close@{close}}
+\index{close@{close}!Media\+Transcoding\+Table@{Media\+Transcoding\+Table}}
+\subsubsection[{close(\+Usage\+Environment \&env, char const $\ast$medium\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a9968c7ce6eedb848f2cc095730c01b17}
+\index{Media\+Transcoding\+Table@{Media\+Transcoding\+Table}!close@{close}}
+\index{close@{close}!Media\+Transcoding\+Table@{Media\+Transcoding\+Table}}
+\subsubsection[{close(\+Medium $\ast$medium)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_aee50624faf6909b3944dd803fd485467}
+\index{Media\+Transcoding\+Table@{Media\+Transcoding\+Table}!envir@{envir}}
+\index{envir@{envir}!Media\+Transcoding\+Table@{Media\+Transcoding\+Table}}
+\subsubsection[{envir() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Medium\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a32f7ecdd95f2b8400e1a26a5009e3b8e}
+
+
+Definition at line 59 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Environ.
+
+
+
+Referenced by Media\+Subsession\+::env(), R\+T\+P\+Interface\+::envir(), Generic\+Media\+Server\+::\+Client\+Connection\+::envir(), and Generic\+Media\+Server\+::\+Client\+Session\+::envir().
+
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} fEnviron;\}
+\end{DoxyCode}
+\index{Media\+Transcoding\+Table@{Media\+Transcoding\+Table}!is\+Media\+Session@{is\+Media\+Session}}
+\index{is\+Media\+Session@{is\+Media\+Session}!Media\+Transcoding\+Table@{Media\+Transcoding\+Table}}
+\subsubsection[{is\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ac5858707c4e7a15bd59d476cf48289d6}
+
+
+Reimplemented in {\bf Media\+Session} \doxyref{}{p.}{classMediaSession_a3b2a06a722374ab4477ac05a2ce28829}.
+
+\index{Media\+Transcoding\+Table@{Media\+Transcoding\+Table}!is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}}
+\index{is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}!Media\+Transcoding\+Table@{Media\+Transcoding\+Table}}
+\subsubsection[{is\+R\+T\+C\+P\+Instance() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ab5f9f20324698f89a35513d596b2e7be}
+
+
+Reimplemented in {\bf R\+T\+C\+P\+Instance} \doxyref{}{p.}{classRTCPInstance_a844292518419e1dbf24170812fd1e4b5}.
+
+\index{Media\+Transcoding\+Table@{Media\+Transcoding\+Table}!is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}}
+\index{is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}!Media\+Transcoding\+Table@{Media\+Transcoding\+Table}}
+\subsubsection[{is\+R\+T\+S\+P\+Client() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aed1c1816867f910ce8c98350686ac038}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Client} \doxyref{}{p.}{classRTSPClient_add07b3a68432b546998080b24380e7e8}.
+
+\index{Media\+Transcoding\+Table@{Media\+Transcoding\+Table}!is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}}
+\index{is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}!Media\+Transcoding\+Table@{Media\+Transcoding\+Table}}
+\subsubsection[{is\+R\+T\+S\+P\+Server() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a346e111b31bfde4b7f4ed593e0b97fd3}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Server} \doxyref{}{p.}{classRTSPServer_a45f9fc5ddd8f214169358493215a064a}.
+
+\index{Media\+Transcoding\+Table@{Media\+Transcoding\+Table}!is\+Server\+Media\+Session@{is\+Server\+Media\+Session}}
+\index{is\+Server\+Media\+Session@{is\+Server\+Media\+Session}!Media\+Transcoding\+Table@{Media\+Transcoding\+Table}}
+\subsubsection[{is\+Server\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aa9fd26c4b954ffba5f79925ecd0283a0}
+
+
+Reimplemented in {\bf Server\+Media\+Session} \doxyref{}{p.}{classServerMediaSession_a34b59e04644b6f0841ea5af99dbf32f6}.
+
+\index{Media\+Transcoding\+Table@{Media\+Transcoding\+Table}!is\+Sink@{is\+Sink}}
+\index{is\+Sink@{is\+Sink}!Media\+Transcoding\+Table@{Media\+Transcoding\+Table}}
+\subsubsection[{is\+Sink() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a23d49bf466482784b9d4378490d17b5f}
+
+
+Reimplemented in {\bf Media\+Sink} \doxyref{}{p.}{classMediaSink_aa8649dcdf21d5005f9ec319f898f91b6}.
+
+\index{Media\+Transcoding\+Table@{Media\+Transcoding\+Table}!is\+Source@{is\+Source}}
+\index{is\+Source@{is\+Source}!Media\+Transcoding\+Table@{Media\+Transcoding\+Table}}
+\subsubsection[{is\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a6cdbd02c73a3e9c1cbab8fce9e9497b1}
+
+
+Reimplemented in {\bf Media\+Source} \doxyref{}{p.}{classMediaSource_a4d75fa9ee2b476b1231594282a6854be}.
+
+\index{Media\+Transcoding\+Table@{Media\+Transcoding\+Table}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!Media\+Transcoding\+Table@{Media\+Transcoding\+Table}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$medium\+Name, Medium $\ast$\&result\+Medium)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Medium\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name, }
+\item[{{\bf Medium} $\ast$\&}]{result\+Medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a418c860c1e0ef2766ee0d0f64b346291}
+\index{Media\+Transcoding\+Table@{Media\+Transcoding\+Table}!lookup\+Transcoder@{lookup\+Transcoder}}
+\index{lookup\+Transcoder@{lookup\+Transcoder}!Media\+Transcoding\+Table@{Media\+Transcoding\+Table}}
+\subsubsection[{lookup\+Transcoder(\+Media\+Subsession \&, char $\ast$\&output\+Codec\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Framed\+Filter}$\ast$ Media\+Transcoding\+Table\+::lookup\+Transcoder (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Subsession} \&}]{, }
+\item[{char $\ast$\&}]{output\+Codec\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classMediaTranscodingTable_a4b33c78a8e3abd57e081b31458185961}
+
+
+Definition at line 37 of file Media\+Transcoding\+Table.\+hh.
+
+
+
+References N\+U\+L\+L.
+
+
+\begin{DoxyCode}
+38                                             \{
+39     \textcolor{comment}{// Default implementation: Return NULL (indicating: no transcoding).}
+40     \textcolor{comment}{// You would reimplement this virtual function in a subclass to return a new 'transcoding'}
+41     \textcolor{comment}{// "FramedFilter" (subclass) object for each ("mediumName","codecName") that you wish to}
+42     \textcolor{comment}{// transcode (or return NULL for no transcoding).}
+43     \textcolor{comment}{// (Note that "inputCodecDescription" must have a non-NULL "readSource()"; this is used}
+44     \textcolor{comment}{//  as the input to the new "FramedFilter" (subclass) object.)}
+45     outputCodecName = NULL;
+46     \textcolor{keywordflow}{return} NULL;
+47   \}
+\end{DoxyCode}
+\index{Media\+Transcoding\+Table@{Media\+Transcoding\+Table}!name@{name}}
+\index{name@{name}!Media\+Transcoding\+Table@{Media\+Transcoding\+Table}}
+\subsubsection[{name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Medium\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a575649802dc781c0e59e097a3870fcdb}
+
+
+Definition at line 61 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Medium\+Name.
+
+
+\begin{DoxyCode}
+61 \{\textcolor{keywordflow}{return} fMediumName;\}
+\end{DoxyCode}
+\index{Media\+Transcoding\+Table@{Media\+Transcoding\+Table}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!Media\+Transcoding\+Table@{Media\+Transcoding\+Table}}
+\subsubsection[{next\+Task()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token}\& Medium\+::next\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMedium_a5c8788adec90be1a584393a5bf11a5c9}
+
+
+Definition at line 77 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Next\+Task.
+
+
+\begin{DoxyCode}
+77                         \{
+78         \textcolor{keywordflow}{return} fNextTask;
+79   \}
+\end{DoxyCode}
+\index{Media\+Transcoding\+Table@{Media\+Transcoding\+Table}!we\+Will\+Transcode@{we\+Will\+Transcode}}
+\index{we\+Will\+Transcode@{we\+Will\+Transcode}!Media\+Transcoding\+Table@{Media\+Transcoding\+Table}}
+\subsubsection[{we\+Will\+Transcode(char const $\ast$, char const $\ast$)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Media\+Transcoding\+Table\+::we\+Will\+Transcode (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{, }
+\item[{char const $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classMediaTranscodingTable_ac5fb5c19fd7e658dcdc88174d67ac13a}
+
+
+Definition at line 49 of file Media\+Transcoding\+Table.\+hh.
+
+
+
+References False.
+
+
+\begin{DoxyCode}
+49                                                                 \{
+50     \textcolor{comment}{// Default implementation: Return False.}
+51     \textcolor{comment}{// You would reimplement this in a subclass - returning True for each}
+52     \textcolor{comment}{// <mediumName>/<codecName> for which you'll do transcoding.}
+53     \textcolor{comment}{// Note: Unlike "lookupTranscoder()", this function does not actually create any 'transcoding'}
+54     \textcolor{comment}{// filter objects.  (It may be called before "MediaSubsession::initiate()".)}
+55     \textcolor{keywordflow}{return} False;
+56   \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf Media\+Transcoding\+Table.\+hh}\end{DoxyCompactItemize}

@@ -1,0 +1,407 @@
+\section{R\+T\+P\+Interface Class Reference}
+\label{classRTPInterface}\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+
+
+{\ttfamily \#include $<$R\+T\+P\+Interface.\+hh$>$}
+
+
+
+Collaboration diagram for R\+T\+P\+Interface\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRTPInterface__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf R\+T\+P\+Interface} ({\bf Medium} $\ast$owner, {\bf Groupsock} $\ast${\bf gs})
+\item 
+virtual {\bf $\sim$\+R\+T\+P\+Interface} ()
+\item 
+{\bf Groupsock} $\ast$ {\bf gs} () const 
+\item 
+void {\bf set\+Stream\+Socket} (int sock\+Num, unsigned char stream\+Channel\+Id)
+\item 
+void {\bf add\+Stream\+Socket} (int sock\+Num, unsigned char stream\+Channel\+Id)
+\item 
+void {\bf remove\+Stream\+Socket} (int sock\+Num, unsigned char stream\+Channel\+Id)
+\item 
+{\bf Boolean} {\bf send\+Packet} (unsigned char $\ast${\bf packet}, unsigned packet\+Size)
+\item 
+void {\bf start\+Network\+Reading} ({\bf Task\+Scheduler\+::\+Background\+Handler\+Proc} $\ast$handler\+Proc)
+\item 
+{\bf Boolean} {\bf handle\+Read} (unsigned char $\ast$buffer, unsigned buffer\+Max\+Size, unsigned \&bytes\+Read, struct sockaddr\+\_\+in \&from\+Address, int \&tcp\+Socket\+Num, unsigned char \&tcp\+Stream\+Channel\+Id, {\bf Boolean} \&packet\+Read\+Was\+Incomplete)
+\item 
+void {\bf stop\+Network\+Reading} ()
+\item 
+{\bf Usage\+Environment} \& {\bf envir} () const 
+\item 
+void {\bf set\+Auxilliary\+Read\+Handler} ({\bf Aux\+Handler\+Func} $\ast$handler\+Func, void $\ast$handler\+Client\+Data)
+\item 
+void {\bf forget\+Our\+Groupsock} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf set\+Server\+Request\+Alternative\+Byte\+Handler} ({\bf Usage\+Environment} \&env, int socket\+Num, {\bf Server\+Request\+Alternative\+Byte\+Handler} $\ast$handler, void $\ast$client\+Data)
+\item 
+static void {\bf clear\+Server\+Request\+Alternative\+Byte\+Handler} ({\bf Usage\+Environment} \&env, int socket\+Num)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Boolean} {\bf send\+R\+T\+Por\+R\+T\+C\+P\+Packet\+Over\+T\+C\+P} (unsigned char $\ast${\bf packet}, unsigned packet\+Size, int socket\+Num, unsigned char stream\+Channel\+Id)
+\item 
+{\bf Boolean} {\bf send\+Data\+Over\+T\+C\+P} (int socket\+Num, u\+\_\+int8\+\_\+t const $\ast$data, unsigned data\+Size, {\bf Boolean} force\+Send\+To\+Succeed)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Medium} $\ast$ {\bf f\+Owner}
+\item 
+{\bf Groupsock} $\ast$ {\bf f\+G\+S}
+\item 
+{\bf tcp\+Stream\+Record} $\ast$ {\bf f\+T\+C\+P\+Streams}
+\item 
+unsigned short {\bf f\+Next\+T\+C\+P\+Read\+Size}
+\item 
+int {\bf f\+Next\+T\+C\+P\+Read\+Stream\+Socket\+Num}
+\item 
+unsigned char {\bf f\+Next\+T\+C\+P\+Read\+Stream\+Channel\+Id}
+\item 
+{\bf Task\+Scheduler\+::\+Background\+Handler\+Proc} $\ast$ {\bf f\+Read\+Handler\+Proc}
+\item 
+{\bf Aux\+Handler\+Func} $\ast$ {\bf f\+Aux\+Read\+Handler\+Func}
+\item 
+void $\ast$ {\bf f\+Aux\+Read\+Handler\+Client\+Data}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Socket\+Descriptor}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 55 of file R\+T\+P\+Interface.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{R\+T\+P\+Interface(\+Medium $\ast$owner, Groupsock $\ast$gs)}]{\setlength{\rightskip}{0pt plus 5cm}R\+T\+P\+Interface\+::\+R\+T\+P\+Interface (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{owner, }
+\item[{{\bf Groupsock} $\ast$}]{gs}
+\end{DoxyParamCaption}
+)}\label{classRTPInterface_adbf37978f53be783a05d394367d508e8}
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!````~R\+T\+P\+Interface@{$\sim$\+R\+T\+P\+Interface}}
+\index{````~R\+T\+P\+Interface@{$\sim$\+R\+T\+P\+Interface}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{$\sim$\+R\+T\+P\+Interface()}]{\setlength{\rightskip}{0pt plus 5cm}virtual R\+T\+P\+Interface\+::$\sim$\+R\+T\+P\+Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classRTPInterface_a012f5d587f783faadd12f1fa6aee8146}
+
+
+\subsection{Member Function Documentation}
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!add\+Stream\+Socket@{add\+Stream\+Socket}}
+\index{add\+Stream\+Socket@{add\+Stream\+Socket}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{add\+Stream\+Socket(int sock\+Num, unsigned char stream\+Channel\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Interface\+::add\+Stream\+Socket (
+\begin{DoxyParamCaption}
+\item[{int}]{sock\+Num, }
+\item[{unsigned char}]{stream\+Channel\+Id}
+\end{DoxyParamCaption}
+)}\label{classRTPInterface_acda49d554838cb44aff8ed83a2c604b9}
+
+
+Referenced by R\+T\+P\+Sink\+::add\+Stream\+Socket().
+
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!clear\+Server\+Request\+Alternative\+Byte\+Handler@{clear\+Server\+Request\+Alternative\+Byte\+Handler}}
+\index{clear\+Server\+Request\+Alternative\+Byte\+Handler@{clear\+Server\+Request\+Alternative\+Byte\+Handler}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{clear\+Server\+Request\+Alternative\+Byte\+Handler(\+Usage\+Environment \&env, int socket\+Num)}]{\setlength{\rightskip}{0pt plus 5cm}static void R\+T\+P\+Interface\+::clear\+Server\+Request\+Alternative\+Byte\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{int}]{socket\+Num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classRTPInterface_a6ff4fdbaabc4189c79256ba60521059e}
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!envir@{envir}}
+\index{envir@{envir}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{envir() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& R\+T\+P\+Interface\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPInterface_a6444f6429e30f86eb9a8985ecef2fe4e}
+
+
+Definition at line 86 of file R\+T\+P\+Interface.\+hh.
+
+
+
+References Medium\+::envir(), and f\+Owner.
+
+
+\begin{DoxyCode}
+86 \{ \textcolor{keywordflow}{return} fOwner->envir(); \}
+\end{DoxyCode}
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!forget\+Our\+Groupsock@{forget\+Our\+Groupsock}}
+\index{forget\+Our\+Groupsock@{forget\+Our\+Groupsock}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{forget\+Our\+Groupsock()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Interface\+::forget\+Our\+Groupsock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPInterface_ad959fb8e2e5d63846496412122dd99ae}
+
+
+Definition at line 94 of file R\+T\+P\+Interface.\+hh.
+
+
+
+References f\+G\+S, and N\+U\+L\+L.
+
+
+\begin{DoxyCode}
+94 \{ fGS = NULL; \}
+\end{DoxyCode}
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!gs@{gs}}
+\index{gs@{gs}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{gs() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Groupsock}$\ast$ R\+T\+P\+Interface\+::gs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPInterface_ab86a1f5382e3e73d1fc48415d3aacd11}
+
+
+Definition at line 60 of file R\+T\+P\+Interface.\+hh.
+
+
+
+References f\+G\+S.
+
+
+
+Referenced by R\+T\+P\+Sink\+::groupsock\+Being\+Used(), R\+T\+C\+P\+Instance\+::\+R\+T\+C\+Pgs(), and R\+T\+P\+Source\+::\+R\+T\+Pgs().
+
+
+\begin{DoxyCode}
+60 \{ \textcolor{keywordflow}{return} fGS; \}
+\end{DoxyCode}
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!handle\+Read@{handle\+Read}}
+\index{handle\+Read@{handle\+Read}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{handle\+Read(unsigned char $\ast$buffer, unsigned buffer\+Max\+Size, unsigned \&bytes\+Read, struct sockaddr\+\_\+in \&from\+Address, int \&tcp\+Socket\+Num, unsigned char \&tcp\+Stream\+Channel\+Id, Boolean \&packet\+Read\+Was\+Incomplete)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+P\+Interface\+::handle\+Read (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{unsigned}]{buffer\+Max\+Size, }
+\item[{unsigned \&}]{bytes\+Read, }
+\item[{struct sockaddr\+\_\+in \&}]{from\+Address, }
+\item[{int \&}]{tcp\+Socket\+Num, }
+\item[{unsigned char \&}]{tcp\+Stream\+Channel\+Id, }
+\item[{{\bf Boolean} \&}]{packet\+Read\+Was\+Incomplete}
+\end{DoxyParamCaption}
+)}\label{classRTPInterface_ab2e5a7e85ebf9e9f2e246e43ae43cfac}
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!remove\+Stream\+Socket@{remove\+Stream\+Socket}}
+\index{remove\+Stream\+Socket@{remove\+Stream\+Socket}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{remove\+Stream\+Socket(int sock\+Num, unsigned char stream\+Channel\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Interface\+::remove\+Stream\+Socket (
+\begin{DoxyParamCaption}
+\item[{int}]{sock\+Num, }
+\item[{unsigned char}]{stream\+Channel\+Id}
+\end{DoxyParamCaption}
+)}\label{classRTPInterface_a157a87067127705ca215b6dccc2376ed}
+
+
+Referenced by R\+T\+P\+Sink\+::remove\+Stream\+Socket(), and R\+T\+C\+P\+Instance\+::remove\+Stream\+Socket().
+
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!send\+Data\+Over\+T\+C\+P@{send\+Data\+Over\+T\+C\+P}}
+\index{send\+Data\+Over\+T\+C\+P@{send\+Data\+Over\+T\+C\+P}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{send\+Data\+Over\+T\+C\+P(int socket\+Num, u\+\_\+int8\+\_\+t const $\ast$data, unsigned data\+Size, Boolean force\+Send\+To\+Succeed)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+P\+Interface\+::send\+Data\+Over\+T\+C\+P (
+\begin{DoxyParamCaption}
+\item[{int}]{socket\+Num, }
+\item[{u\+\_\+int8\+\_\+t const $\ast$}]{data, }
+\item[{unsigned}]{data\+Size, }
+\item[{{\bf Boolean}}]{force\+Send\+To\+Succeed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPInterface_a80bde57eadddb4af97b4aaf1350ca936}
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!send\+Packet@{send\+Packet}}
+\index{send\+Packet@{send\+Packet}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{send\+Packet(unsigned char $\ast$packet, unsigned packet\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+P\+Interface\+::send\+Packet (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{packet, }
+\item[{unsigned}]{packet\+Size}
+\end{DoxyParamCaption}
+)}\label{classRTPInterface_adc5659c8b3edecb9cfc14ecb7b435975}
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!send\+R\+T\+Por\+R\+T\+C\+P\+Packet\+Over\+T\+C\+P@{send\+R\+T\+Por\+R\+T\+C\+P\+Packet\+Over\+T\+C\+P}}
+\index{send\+R\+T\+Por\+R\+T\+C\+P\+Packet\+Over\+T\+C\+P@{send\+R\+T\+Por\+R\+T\+C\+P\+Packet\+Over\+T\+C\+P}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{send\+R\+T\+Por\+R\+T\+C\+P\+Packet\+Over\+T\+C\+P(unsigned char $\ast$packet, unsigned packet\+Size, int socket\+Num, unsigned char stream\+Channel\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+P\+Interface\+::send\+R\+T\+Por\+R\+T\+C\+P\+Packet\+Over\+T\+C\+P (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{packet, }
+\item[{unsigned}]{packet\+Size, }
+\item[{int}]{socket\+Num, }
+\item[{unsigned char}]{stream\+Channel\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPInterface_af517e166fd399645561726e1d101b82a}
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!set\+Auxilliary\+Read\+Handler@{set\+Auxilliary\+Read\+Handler}}
+\index{set\+Auxilliary\+Read\+Handler@{set\+Auxilliary\+Read\+Handler}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{set\+Auxilliary\+Read\+Handler(\+Aux\+Handler\+Func $\ast$handler\+Func, void $\ast$handler\+Client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Interface\+::set\+Auxilliary\+Read\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf Aux\+Handler\+Func} $\ast$}]{handler\+Func, }
+\item[{void $\ast$}]{handler\+Client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPInterface_ae5c4c880f5beccc993c0fde19f5c252a}
+
+
+Definition at line 88 of file R\+T\+P\+Interface.\+hh.
+
+
+
+References f\+Aux\+Read\+Handler\+Client\+Data, and f\+Aux\+Read\+Handler\+Func.
+
+
+
+Referenced by R\+T\+P\+Source\+::set\+Auxilliary\+Read\+Handler(), and R\+T\+C\+P\+Instance\+::set\+Auxilliary\+Read\+Handler().
+
+
+\begin{DoxyCode}
+89                                                          \{
+90     fAuxReadHandlerFunc = handlerFunc;
+91     fAuxReadHandlerClientData = handlerClientData;
+92   \}
+\end{DoxyCode}
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!set\+Server\+Request\+Alternative\+Byte\+Handler@{set\+Server\+Request\+Alternative\+Byte\+Handler}}
+\index{set\+Server\+Request\+Alternative\+Byte\+Handler@{set\+Server\+Request\+Alternative\+Byte\+Handler}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{set\+Server\+Request\+Alternative\+Byte\+Handler(\+Usage\+Environment \&env, int socket\+Num, Server\+Request\+Alternative\+Byte\+Handler $\ast$handler, void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void R\+T\+P\+Interface\+::set\+Server\+Request\+Alternative\+Byte\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{int}]{socket\+Num, }
+\item[{{\bf Server\+Request\+Alternative\+Byte\+Handler} $\ast$}]{handler, }
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classRTPInterface_af92ff4a1aa625706afb634fe32d45503}
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!set\+Stream\+Socket@{set\+Stream\+Socket}}
+\index{set\+Stream\+Socket@{set\+Stream\+Socket}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{set\+Stream\+Socket(int sock\+Num, unsigned char stream\+Channel\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Interface\+::set\+Stream\+Socket (
+\begin{DoxyParamCaption}
+\item[{int}]{sock\+Num, }
+\item[{unsigned char}]{stream\+Channel\+Id}
+\end{DoxyParamCaption}
+)}\label{classRTPInterface_a7280e0301b50e969d727e3bd6df49cc5}
+
+
+Referenced by R\+T\+P\+Source\+::set\+Stream\+Socket(), and R\+T\+P\+Sink\+::set\+Stream\+Socket().
+
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!start\+Network\+Reading@{start\+Network\+Reading}}
+\index{start\+Network\+Reading@{start\+Network\+Reading}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{start\+Network\+Reading(\+Task\+Scheduler\+::\+Background\+Handler\+Proc $\ast$handler\+Proc)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Interface\+::start\+Network\+Reading (
+\begin{DoxyParamCaption}
+\item[{{\bf Task\+Scheduler\+::\+Background\+Handler\+Proc} $\ast$}]{handler\+Proc}
+\end{DoxyParamCaption}
+)}\label{classRTPInterface_a8b8c505ba8826633644042cdb2f556d7}
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!stop\+Network\+Reading@{stop\+Network\+Reading}}
+\index{stop\+Network\+Reading@{stop\+Network\+Reading}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{stop\+Network\+Reading()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Interface\+::stop\+Network\+Reading (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classRTPInterface_a5c3dad5c5da64b5003cd5ae5aa4b5b9a}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!Socket\+Descriptor@{Socket\+Descriptor}}
+\index{Socket\+Descriptor@{Socket\+Descriptor}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{Socket\+Descriptor}]{\setlength{\rightskip}{0pt plus 5cm}friend class Socket\+Descriptor\hspace{0.3cm}{\ttfamily [friend]}}\label{classRTPInterface_aec275b7a55d6e637005a4dab48277374}
+
+
+Definition at line 106 of file R\+T\+P\+Interface.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!f\+Aux\+Read\+Handler\+Client\+Data@{f\+Aux\+Read\+Handler\+Client\+Data}}
+\index{f\+Aux\+Read\+Handler\+Client\+Data@{f\+Aux\+Read\+Handler\+Client\+Data}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{f\+Aux\+Read\+Handler\+Client\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ R\+T\+P\+Interface\+::f\+Aux\+Read\+Handler\+Client\+Data\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPInterface_afa85e9b11b5d3a3d2de3aa38af8a3fe5}
+
+
+Definition at line 118 of file R\+T\+P\+Interface.\+hh.
+
+
+
+Referenced by set\+Auxilliary\+Read\+Handler().
+
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!f\+Aux\+Read\+Handler\+Func@{f\+Aux\+Read\+Handler\+Func}}
+\index{f\+Aux\+Read\+Handler\+Func@{f\+Aux\+Read\+Handler\+Func}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{f\+Aux\+Read\+Handler\+Func}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Aux\+Handler\+Func}$\ast$ R\+T\+P\+Interface\+::f\+Aux\+Read\+Handler\+Func\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPInterface_a4078280456a39c3e1f1a1d67961587c6}
+
+
+Definition at line 117 of file R\+T\+P\+Interface.\+hh.
+
+
+
+Referenced by set\+Auxilliary\+Read\+Handler().
+
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!f\+G\+S@{f\+G\+S}}
+\index{f\+G\+S@{f\+G\+S}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{f\+G\+S}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Groupsock}$\ast$ R\+T\+P\+Interface\+::f\+G\+S\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPInterface_a20aeb3d4b8919026ed97f44a2097f963}
+
+
+Definition at line 108 of file R\+T\+P\+Interface.\+hh.
+
+
+
+Referenced by forget\+Our\+Groupsock(), and gs().
+
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!f\+Next\+T\+C\+P\+Read\+Size@{f\+Next\+T\+C\+P\+Read\+Size}}
+\index{f\+Next\+T\+C\+P\+Read\+Size@{f\+Next\+T\+C\+P\+Read\+Size}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{f\+Next\+T\+C\+P\+Read\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short R\+T\+P\+Interface\+::f\+Next\+T\+C\+P\+Read\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPInterface_a71d7a5043d1ca376edc9f6b3c59f513b}
+
+
+Definition at line 111 of file R\+T\+P\+Interface.\+hh.
+
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!f\+Next\+T\+C\+P\+Read\+Stream\+Channel\+Id@{f\+Next\+T\+C\+P\+Read\+Stream\+Channel\+Id}}
+\index{f\+Next\+T\+C\+P\+Read\+Stream\+Channel\+Id@{f\+Next\+T\+C\+P\+Read\+Stream\+Channel\+Id}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{f\+Next\+T\+C\+P\+Read\+Stream\+Channel\+Id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char R\+T\+P\+Interface\+::f\+Next\+T\+C\+P\+Read\+Stream\+Channel\+Id\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPInterface_a58005d350ac02c5b437f10dc19cb63a6}
+
+
+Definition at line 114 of file R\+T\+P\+Interface.\+hh.
+
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!f\+Next\+T\+C\+P\+Read\+Stream\+Socket\+Num@{f\+Next\+T\+C\+P\+Read\+Stream\+Socket\+Num}}
+\index{f\+Next\+T\+C\+P\+Read\+Stream\+Socket\+Num@{f\+Next\+T\+C\+P\+Read\+Stream\+Socket\+Num}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{f\+Next\+T\+C\+P\+Read\+Stream\+Socket\+Num}]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+P\+Interface\+::f\+Next\+T\+C\+P\+Read\+Stream\+Socket\+Num\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPInterface_a640a78382f4e413a24ac565db4c5f4e3}
+
+
+Definition at line 113 of file R\+T\+P\+Interface.\+hh.
+
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!f\+Owner@{f\+Owner}}
+\index{f\+Owner@{f\+Owner}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{f\+Owner}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Medium}$\ast$ R\+T\+P\+Interface\+::f\+Owner\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPInterface_aa096c41863fccf31975027c18e2d1e12}
+
+
+Definition at line 107 of file R\+T\+P\+Interface.\+hh.
+
+
+
+Referenced by envir().
+
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!f\+Read\+Handler\+Proc@{f\+Read\+Handler\+Proc}}
+\index{f\+Read\+Handler\+Proc@{f\+Read\+Handler\+Proc}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{f\+Read\+Handler\+Proc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Scheduler\+::\+Background\+Handler\+Proc}$\ast$ R\+T\+P\+Interface\+::f\+Read\+Handler\+Proc\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPInterface_a6bd7165f8aef4937d890884e1843d711}
+
+
+Definition at line 115 of file R\+T\+P\+Interface.\+hh.
+
+\index{R\+T\+P\+Interface@{R\+T\+P\+Interface}!f\+T\+C\+P\+Streams@{f\+T\+C\+P\+Streams}}
+\index{f\+T\+C\+P\+Streams@{f\+T\+C\+P\+Streams}!R\+T\+P\+Interface@{R\+T\+P\+Interface}}
+\subsubsection[{f\+T\+C\+P\+Streams}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tcp\+Stream\+Record}$\ast$ R\+T\+P\+Interface\+::f\+T\+C\+P\+Streams\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPInterface_a7fc1c661320206413c05245066f4fd81}
+
+
+Definition at line 109 of file R\+T\+P\+Interface.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf R\+T\+P\+Interface.\+hh}\end{DoxyCompactItemize}

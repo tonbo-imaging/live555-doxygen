@@ -1,0 +1,388 @@
+\section{Basic\+Hash\+Table Class Reference}
+\label{classBasicHashTable}\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+
+
+{\ttfamily \#include $<$Basic\+Hash\+Table.\+hh$>$}
+
+
+
+Inheritance diagram for Basic\+Hash\+Table\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=135pt]{classBasicHashTable__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Basic\+Hash\+Table\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{classBasicHashTable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Iterator}
+\item 
+class {\bf Table\+Entry}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Basic\+Hash\+Table} (int key\+Type)
+\item 
+virtual {\bf $\sim$\+Basic\+Hash\+Table} ()
+\item 
+{\bf Boolean} {\bf Is\+Empty} () const 
+\item 
+void $\ast$ {\bf Remove\+Next} ()
+\item 
+void $\ast$ {\bf get\+First} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Hash\+Table} $\ast$ {\bf create} (int key\+Type)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void $\ast$ {\bf Add} (char const $\ast$key, void $\ast$value)
+\item 
+virtual {\bf Boolean} {\bf Remove} (char const $\ast$key)
+\item 
+virtual void $\ast$ {\bf Lookup} (char const $\ast$key) const 
+\item 
+virtual unsigned {\bf num\+Entries} () const 
+\item 
+{\bf Table\+Entry} $\ast$ {\bf lookup\+Key} (char const $\ast$key, unsigned \&index) const 
+\item 
+{\bf Boolean} {\bf key\+Matches} (char const $\ast$key1, char const $\ast$key2) const 
+\item 
+{\bf Table\+Entry} $\ast$ {\bf insert\+New\+Entry} (unsigned index, char const $\ast$key)
+\item 
+void {\bf assign\+Key} ({\bf Table\+Entry} $\ast$entry, char const $\ast$key)
+\item 
+void {\bf delete\+Entry} (unsigned index, {\bf Table\+Entry} $\ast$entry)
+\item 
+void {\bf delete\+Key} ({\bf Table\+Entry} $\ast$entry)
+\item 
+void {\bf rebuild} ()
+\item 
+unsigned {\bf hash\+Index\+From\+Key} (char const $\ast$key) const 
+\item 
+unsigned {\bf random\+Index} (uintptr\+\_\+t i) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Table\+Entry} $\ast$$\ast$ {\bf f\+Buckets}
+\item 
+{\bf Table\+Entry} $\ast$ {\bf f\+Static\+Buckets} [{\bf S\+M\+A\+L\+L\+\_\+\+H\+A\+S\+H\+\_\+\+T\+A\+B\+L\+E\+\_\+\+S\+I\+Z\+E}]
+\item 
+unsigned {\bf f\+Num\+Buckets}
+\item 
+unsigned {\bf f\+Num\+Entries}
+\item 
+unsigned {\bf f\+Rebuild\+Size}
+\item 
+unsigned {\bf f\+Down\+Shift}
+\item 
+unsigned {\bf f\+Mask}
+\item 
+int {\bf f\+Key\+Type}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Iterator}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 35 of file Basic\+Hash\+Table.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{Basic\+Hash\+Table(int key\+Type)}]{\setlength{\rightskip}{0pt plus 5cm}Basic\+Hash\+Table\+::\+Basic\+Hash\+Table (
+\begin{DoxyParamCaption}
+\item[{int}]{key\+Type}
+\end{DoxyParamCaption}
+)}\label{classBasicHashTable_a70be168d803988ad7ed05e38e9824ed3}
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!````~Basic\+Hash\+Table@{$\sim$\+Basic\+Hash\+Table}}
+\index{````~Basic\+Hash\+Table@{$\sim$\+Basic\+Hash\+Table}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{$\sim$\+Basic\+Hash\+Table()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Basic\+Hash\+Table\+::$\sim$\+Basic\+Hash\+Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classBasicHashTable_a5c34261a6abf5c06bc9899848e1b7493}
+
+
+\subsection{Member Function Documentation}
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!Add@{Add}}
+\index{Add@{Add}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{Add(char const $\ast$key, void $\ast$value)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ Basic\+Hash\+Table\+::\+Add (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{key, }
+\item[{void $\ast$}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classBasicHashTable_ab19d912aeb1defa1a916ff6e65b76390}
+
+
+Implements {\bf Hash\+Table} \doxyref{}{p.}{classHashTable_abf5fa579f3d7af971a06f22822fec10e}.
+
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!assign\+Key@{assign\+Key}}
+\index{assign\+Key@{assign\+Key}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{assign\+Key(\+Table\+Entry $\ast$entry, char const $\ast$key)}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Hash\+Table\+::assign\+Key (
+\begin{DoxyParamCaption}
+\item[{{\bf Table\+Entry} $\ast$}]{entry, }
+\item[{char const $\ast$}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicHashTable_a12e7f48b84a66dac35331075bc8f9e64}
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!create@{create}}
+\index{create@{create}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{create(int key\+Type)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Hash\+Table}$\ast$ Hash\+Table\+::create (
+\begin{DoxyParamCaption}
+\item[{int}]{key\+Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classHashTable_a8bb2202cf2735615d45ddf40a72a8ef4}
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!delete\+Entry@{delete\+Entry}}
+\index{delete\+Entry@{delete\+Entry}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{delete\+Entry(unsigned index, Table\+Entry $\ast$entry)}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Hash\+Table\+::delete\+Entry (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{index, }
+\item[{{\bf Table\+Entry} $\ast$}]{entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicHashTable_a1c4071afe5a95cd80f32b2cb1d31b29c}
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!delete\+Key@{delete\+Key}}
+\index{delete\+Key@{delete\+Key}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{delete\+Key(\+Table\+Entry $\ast$entry)}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Hash\+Table\+::delete\+Key (
+\begin{DoxyParamCaption}
+\item[{{\bf Table\+Entry} $\ast$}]{entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicHashTable_ad54ef2f00f27fd05369d64ad1cab64f4}
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!get\+First@{get\+First}}
+\index{get\+First@{get\+First}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{get\+First()}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Hash\+Table\+::get\+First (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classHashTable_af25d9a7232eab17f339d6f24f94aeff2}
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!hash\+Index\+From\+Key@{hash\+Index\+From\+Key}}
+\index{hash\+Index\+From\+Key@{hash\+Index\+From\+Key}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{hash\+Index\+From\+Key(char const $\ast$key) const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Basic\+Hash\+Table\+::hash\+Index\+From\+Key (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{key}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicHashTable_ac29a28f6f143ddac3040e7aae2d8eeb9}
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!insert\+New\+Entry@{insert\+New\+Entry}}
+\index{insert\+New\+Entry@{insert\+New\+Entry}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{insert\+New\+Entry(unsigned index, char const $\ast$key)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Table\+Entry}$\ast$ Basic\+Hash\+Table\+::insert\+New\+Entry (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{index, }
+\item[{char const $\ast$}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicHashTable_a4d0cd7fc90f447037af7b3ccc2999554}
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!Is\+Empty@{Is\+Empty}}
+\index{Is\+Empty@{Is\+Empty}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{Is\+Empty() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Hash\+Table\+::\+Is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classHashTable_afd4b6b7824c7b484ddef38d4e97dc81f}
+
+
+Definition at line 41 of file Hash\+Table.\+hh.
+
+
+
+References Hash\+Table\+::num\+Entries().
+
+
+
+Referenced by Directed\+Net\+Interface\+Set\+::\+Is\+Empty().
+
+
+\begin{DoxyCode}
+41 \{ \textcolor{keywordflow}{return} numEntries() == 0; \}
+\end{DoxyCode}
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!key\+Matches@{key\+Matches}}
+\index{key\+Matches@{key\+Matches}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{key\+Matches(char const $\ast$key1, char const $\ast$key2) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Basic\+Hash\+Table\+::key\+Matches (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{key1, }
+\item[{char const $\ast$}]{key2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicHashTable_afd2717798edd89059df88a13398c1976}
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!Lookup@{Lookup}}
+\index{Lookup@{Lookup}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{Lookup(char const $\ast$key) const }]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ Basic\+Hash\+Table\+::\+Lookup (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{key}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classBasicHashTable_aa482bca7c7d9bdb750d165c1e0e5b064}
+
+
+Implements {\bf Hash\+Table} \doxyref{}{p.}{classHashTable_a5be28dc7f8f1db0c0fb96b6cde176004}.
+
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!lookup\+Key@{lookup\+Key}}
+\index{lookup\+Key@{lookup\+Key}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{lookup\+Key(char const $\ast$key, unsigned \&index) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Table\+Entry}$\ast$ Basic\+Hash\+Table\+::lookup\+Key (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{key, }
+\item[{unsigned \&}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicHashTable_aef6165f307e52983b22e812f135f2de5}
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!num\+Entries@{num\+Entries}}
+\index{num\+Entries@{num\+Entries}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{num\+Entries() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned Basic\+Hash\+Table\+::num\+Entries (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classBasicHashTable_a7c82a51eebec6811694bd0f84399f3c2}
+
+
+Implements {\bf Hash\+Table} \doxyref{}{p.}{classHashTable_ac59bdd1a664995fb38de5175b265210c}.
+
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!random\+Index@{random\+Index}}
+\index{random\+Index@{random\+Index}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{random\+Index(uintptr\+\_\+t i) const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Basic\+Hash\+Table\+::random\+Index (
+\begin{DoxyParamCaption}
+\item[{uintptr\+\_\+t}]{i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classBasicHashTable_aaf493e0477a0c61db8fa1c5cc2b97c6a}
+
+
+Definition at line 93 of file Basic\+Hash\+Table.\+hh.
+
+
+
+References f\+Down\+Shift, and f\+Mask.
+
+
+\begin{DoxyCode}
+93                                           \{
+94     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{unsigned})(((i*1103515245) >> fDownShift) & fMask);
+95   \}
+\end{DoxyCode}
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!rebuild@{rebuild}}
+\index{rebuild@{rebuild}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{rebuild()}]{\setlength{\rightskip}{0pt plus 5cm}void Basic\+Hash\+Table\+::rebuild (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicHashTable_a220dc53bc7fbf47bb522e96e747a3111}
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!Remove@{Remove}}
+\index{Remove@{Remove}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{Remove(char const $\ast$key)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Basic\+Hash\+Table\+::\+Remove (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classBasicHashTable_af8f26cb24f66e4d3149921810c61981c}
+
+
+Implements {\bf Hash\+Table} \doxyref{}{p.}{classHashTable_a8dddba70d5b8d0edada6a5a6988f8205}.
+
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!Remove\+Next@{Remove\+Next}}
+\index{Remove\+Next@{Remove\+Next}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{Remove\+Next()}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Hash\+Table\+::\+Remove\+Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classHashTable_ae1edffc7377b9aeb147e63ac3b24488f}
+
+
+Referenced by Address\+Port\+Lookup\+Table\+::\+Remove\+Next().
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{Iterator}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Iterator}\hspace{0.3cm}{\ttfamily [friend]}}\label{classBasicHashTable_a9830fc407400559db7e7783cc10a9394}
+
+
+Definition at line 44 of file Basic\+Hash\+Table.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!f\+Buckets@{f\+Buckets}}
+\index{f\+Buckets@{f\+Buckets}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{f\+Buckets}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Table\+Entry}$\ast$$\ast$ Basic\+Hash\+Table\+::f\+Buckets\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicHashTable_abf2d7b0bd2d643a85cc04e5f5ac47058}
+
+
+Definition at line 98 of file Basic\+Hash\+Table.\+hh.
+
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!f\+Down\+Shift@{f\+Down\+Shift}}
+\index{f\+Down\+Shift@{f\+Down\+Shift}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{f\+Down\+Shift}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Basic\+Hash\+Table\+::f\+Down\+Shift\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicHashTable_a5b98037862fed75cc4c1cb509ccb7089}
+
+
+Definition at line 100 of file Basic\+Hash\+Table.\+hh.
+
+
+
+Referenced by random\+Index().
+
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!f\+Key\+Type@{f\+Key\+Type}}
+\index{f\+Key\+Type@{f\+Key\+Type}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{f\+Key\+Type}]{\setlength{\rightskip}{0pt plus 5cm}int Basic\+Hash\+Table\+::f\+Key\+Type\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicHashTable_ae9e8db986c78b6248a60dde4a40495e9}
+
+
+Definition at line 101 of file Basic\+Hash\+Table.\+hh.
+
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!f\+Mask@{f\+Mask}}
+\index{f\+Mask@{f\+Mask}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{f\+Mask}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Basic\+Hash\+Table\+::f\+Mask\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicHashTable_a2a7ed4a6ee83c9526282f830a50eaf29}
+
+
+Definition at line 100 of file Basic\+Hash\+Table.\+hh.
+
+
+
+Referenced by random\+Index().
+
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!f\+Num\+Buckets@{f\+Num\+Buckets}}
+\index{f\+Num\+Buckets@{f\+Num\+Buckets}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{f\+Num\+Buckets}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Basic\+Hash\+Table\+::f\+Num\+Buckets\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicHashTable_ae0c4b7b85d53a3e42652e094ce326202}
+
+
+Definition at line 100 of file Basic\+Hash\+Table.\+hh.
+
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!f\+Num\+Entries@{f\+Num\+Entries}}
+\index{f\+Num\+Entries@{f\+Num\+Entries}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{f\+Num\+Entries}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Basic\+Hash\+Table\+::f\+Num\+Entries\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicHashTable_acb37e33356fa1dc13c6bc46c9d43b18b}
+
+
+Definition at line 100 of file Basic\+Hash\+Table.\+hh.
+
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!f\+Rebuild\+Size@{f\+Rebuild\+Size}}
+\index{f\+Rebuild\+Size@{f\+Rebuild\+Size}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{f\+Rebuild\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Basic\+Hash\+Table\+::f\+Rebuild\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicHashTable_ad2aa010b3e535c3ed9502475ae05283e}
+
+
+Definition at line 100 of file Basic\+Hash\+Table.\+hh.
+
+\index{Basic\+Hash\+Table@{Basic\+Hash\+Table}!f\+Static\+Buckets@{f\+Static\+Buckets}}
+\index{f\+Static\+Buckets@{f\+Static\+Buckets}!Basic\+Hash\+Table@{Basic\+Hash\+Table}}
+\subsubsection[{f\+Static\+Buckets}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Table\+Entry}$\ast$ Basic\+Hash\+Table\+::f\+Static\+Buckets[{\bf S\+M\+A\+L\+L\+\_\+\+H\+A\+S\+H\+\_\+\+T\+A\+B\+L\+E\+\_\+\+S\+I\+Z\+E}]\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicHashTable_ae8514f4d0e728222bae1aaab0bc05a9e}
+
+
+Definition at line 99 of file Basic\+Hash\+Table.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Basic\+Usage\+Environment/include/{\bf Basic\+Hash\+Table.\+hh}\end{DoxyCompactItemize}

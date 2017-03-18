@@ -1,0 +1,177 @@
+\section{Delay\+Queue\+Entry Class Reference}
+\label{classDelayQueueEntry}\index{Delay\+Queue\+Entry@{Delay\+Queue\+Entry}}
+
+
+{\ttfamily \#include $<$Delay\+Queue.\+hh$>$}
+
+
+
+Inheritance diagram for Delay\+Queue\+Entry\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=144pt]{classDelayQueueEntry__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Delay\+Queue\+Entry\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classDelayQueueEntry__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\+Delay\+Queue\+Entry} ()
+\item 
+intptr\+\_\+t {\bf token} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Delay\+Queue\+Entry} ({\bf Delay\+Interval} delay)
+\item 
+virtual void {\bf handle\+Timeout} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Delay\+Queue\+Entry} $\ast$ {\bf f\+Next}
+\item 
+{\bf Delay\+Queue\+Entry} $\ast$ {\bf f\+Prev}
+\item 
+{\bf Delay\+Interval} {\bf f\+Delta\+Time\+Remaining}
+\item 
+intptr\+\_\+t {\bf f\+Token}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static intptr\+\_\+t {\bf token\+Counter}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Delay\+Queue}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 135 of file Delay\+Queue.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Delay\+Queue\+Entry@{Delay\+Queue\+Entry}!````~Delay\+Queue\+Entry@{$\sim$\+Delay\+Queue\+Entry}}
+\index{````~Delay\+Queue\+Entry@{$\sim$\+Delay\+Queue\+Entry}!Delay\+Queue\+Entry@{Delay\+Queue\+Entry}}
+\subsubsection[{$\sim$\+Delay\+Queue\+Entry()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Delay\+Queue\+Entry\+::$\sim$\+Delay\+Queue\+Entry (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classDelayQueueEntry_ad2163356f4ac39aed45de22f9c319100}
+\index{Delay\+Queue\+Entry@{Delay\+Queue\+Entry}!Delay\+Queue\+Entry@{Delay\+Queue\+Entry}}
+\index{Delay\+Queue\+Entry@{Delay\+Queue\+Entry}!Delay\+Queue\+Entry@{Delay\+Queue\+Entry}}
+\subsubsection[{Delay\+Queue\+Entry(\+Delay\+Interval delay)}]{\setlength{\rightskip}{0pt plus 5cm}Delay\+Queue\+Entry\+::\+Delay\+Queue\+Entry (
+\begin{DoxyParamCaption}
+\item[{{\bf Delay\+Interval}}]{delay}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classDelayQueueEntry_a79a530edf370c855d50c3845b628a4cb}
+
+
+\subsection{Member Function Documentation}
+\index{Delay\+Queue\+Entry@{Delay\+Queue\+Entry}!handle\+Timeout@{handle\+Timeout}}
+\index{handle\+Timeout@{handle\+Timeout}!Delay\+Queue\+Entry@{Delay\+Queue\+Entry}}
+\subsubsection[{handle\+Timeout()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Delay\+Queue\+Entry\+::handle\+Timeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classDelayQueueEntry_ab45010b273205b500c4f5d381eb7f2bb}
+\index{Delay\+Queue\+Entry@{Delay\+Queue\+Entry}!token@{token}}
+\index{token@{token}!Delay\+Queue\+Entry@{Delay\+Queue\+Entry}}
+\subsubsection[{token()}]{\setlength{\rightskip}{0pt plus 5cm}intptr\+\_\+t Delay\+Queue\+Entry\+::token (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classDelayQueueEntry_a8bf871cd83977e3d26c09b45af116343}
+
+
+Definition at line 139 of file Delay\+Queue.\+hh.
+
+
+
+References f\+Token.
+
+
+\begin{DoxyCode}
+139                    \{
+140     \textcolor{keywordflow}{return} fToken;
+141   \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Delay\+Queue\+Entry@{Delay\+Queue\+Entry}!Delay\+Queue@{Delay\+Queue}}
+\index{Delay\+Queue@{Delay\+Queue}!Delay\+Queue\+Entry@{Delay\+Queue\+Entry}}
+\subsubsection[{Delay\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Delay\+Queue}\hspace{0.3cm}{\ttfamily [friend]}}\label{classDelayQueueEntry_a1fd26f07bb5eaba5df4fe6eed5c1bf30}
+
+
+Definition at line 149 of file Delay\+Queue.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{Delay\+Queue\+Entry@{Delay\+Queue\+Entry}!f\+Delta\+Time\+Remaining@{f\+Delta\+Time\+Remaining}}
+\index{f\+Delta\+Time\+Remaining@{f\+Delta\+Time\+Remaining}!Delay\+Queue\+Entry@{Delay\+Queue\+Entry}}
+\subsubsection[{f\+Delta\+Time\+Remaining}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Delay\+Interval} Delay\+Queue\+Entry\+::f\+Delta\+Time\+Remaining\hspace{0.3cm}{\ttfamily [private]}}\label{classDelayQueueEntry_a68a7578179260ad40cb4f8fbde38e491}
+
+
+Definition at line 152 of file Delay\+Queue.\+hh.
+
+\index{Delay\+Queue\+Entry@{Delay\+Queue\+Entry}!f\+Next@{f\+Next}}
+\index{f\+Next@{f\+Next}!Delay\+Queue\+Entry@{Delay\+Queue\+Entry}}
+\subsubsection[{f\+Next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Delay\+Queue\+Entry}$\ast$ Delay\+Queue\+Entry\+::f\+Next\hspace{0.3cm}{\ttfamily [private]}}\label{classDelayQueueEntry_a3a2ccdcdcac760623833136b5ced2410}
+
+
+Definition at line 150 of file Delay\+Queue.\+hh.
+
+
+
+Referenced by Delay\+Queue\+::head().
+
+\index{Delay\+Queue\+Entry@{Delay\+Queue\+Entry}!f\+Prev@{f\+Prev}}
+\index{f\+Prev@{f\+Prev}!Delay\+Queue\+Entry@{Delay\+Queue\+Entry}}
+\subsubsection[{f\+Prev}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Delay\+Queue\+Entry}$\ast$ Delay\+Queue\+Entry\+::f\+Prev\hspace{0.3cm}{\ttfamily [private]}}\label{classDelayQueueEntry_a9bafd3137d60cd3b5cef4298a01644fd}
+
+
+Definition at line 151 of file Delay\+Queue.\+hh.
+
+\index{Delay\+Queue\+Entry@{Delay\+Queue\+Entry}!f\+Token@{f\+Token}}
+\index{f\+Token@{f\+Token}!Delay\+Queue\+Entry@{Delay\+Queue\+Entry}}
+\subsubsection[{f\+Token}]{\setlength{\rightskip}{0pt plus 5cm}intptr\+\_\+t Delay\+Queue\+Entry\+::f\+Token\hspace{0.3cm}{\ttfamily [private]}}\label{classDelayQueueEntry_a4e4a6774b367174401a42bdc8602d888}
+
+
+Definition at line 154 of file Delay\+Queue.\+hh.
+
+
+
+Referenced by token().
+
+\index{Delay\+Queue\+Entry@{Delay\+Queue\+Entry}!token\+Counter@{token\+Counter}}
+\index{token\+Counter@{token\+Counter}!Delay\+Queue\+Entry@{Delay\+Queue\+Entry}}
+\subsubsection[{token\+Counter}]{\setlength{\rightskip}{0pt plus 5cm}intptr\+\_\+t Delay\+Queue\+Entry\+::token\+Counter\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classDelayQueueEntry_af197da566777feabb5768312904696ae}
+
+
+Definition at line 155 of file Delay\+Queue.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Basic\+Usage\+Environment/include/{\bf Delay\+Queue.\+hh}\end{DoxyCompactItemize}

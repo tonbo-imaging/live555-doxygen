@@ -1,0 +1,103 @@
+\section{Socket\+Lookup\+Table Class Reference}
+\label{classSocketLookupTable}\index{Socket\+Lookup\+Table@{Socket\+Lookup\+Table}}
+
+
+{\ttfamily \#include $<$Net\+Interface.\+hh$>$}
+
+
+
+Collaboration diagram for Socket\+Lookup\+Table\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{classSocketLookupTable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\+Socket\+Lookup\+Table} ()
+\item 
+{\bf Socket} $\ast$ {\bf Fetch} ({\bf Usage\+Environment} \&env, {\bf Port} port, {\bf Boolean} \&is\+New)
+\item 
+{\bf Boolean} {\bf Remove} ({\bf Socket} const $\ast$sock)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Socket\+Lookup\+Table} ()
+\item 
+virtual {\bf Socket} $\ast$ {\bf Create\+New} ({\bf Usage\+Environment} \&env, {\bf Port} port)=0
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Hash\+Table} $\ast$ {\bf f\+Table}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 115 of file Net\+Interface.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Socket\+Lookup\+Table@{Socket\+Lookup\+Table}!````~Socket\+Lookup\+Table@{$\sim$\+Socket\+Lookup\+Table}}
+\index{````~Socket\+Lookup\+Table@{$\sim$\+Socket\+Lookup\+Table}!Socket\+Lookup\+Table@{Socket\+Lookup\+Table}}
+\subsubsection[{$\sim$\+Socket\+Lookup\+Table()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Socket\+Lookup\+Table\+::$\sim$\+Socket\+Lookup\+Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSocketLookupTable_a8701e3e390154605e58a9bf83ef1951f}
+\index{Socket\+Lookup\+Table@{Socket\+Lookup\+Table}!Socket\+Lookup\+Table@{Socket\+Lookup\+Table}}
+\index{Socket\+Lookup\+Table@{Socket\+Lookup\+Table}!Socket\+Lookup\+Table@{Socket\+Lookup\+Table}}
+\subsubsection[{Socket\+Lookup\+Table()}]{\setlength{\rightskip}{0pt plus 5cm}Socket\+Lookup\+Table\+::\+Socket\+Lookup\+Table (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSocketLookupTable_ac6e0890b91e3d5e9737bc483d3299b53}
+
+
+\subsection{Member Function Documentation}
+\index{Socket\+Lookup\+Table@{Socket\+Lookup\+Table}!Create\+New@{Create\+New}}
+\index{Create\+New@{Create\+New}!Socket\+Lookup\+Table@{Socket\+Lookup\+Table}}
+\subsubsection[{Create\+New(\+Usage\+Environment \&env, Port port)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Socket}$\ast$ Socket\+Lookup\+Table\+::\+Create\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf Port}}]{port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\label{classSocketLookupTable_a0ec9321cd016f2c6135ab1958997bef1}
+\index{Socket\+Lookup\+Table@{Socket\+Lookup\+Table}!Fetch@{Fetch}}
+\index{Fetch@{Fetch}!Socket\+Lookup\+Table@{Socket\+Lookup\+Table}}
+\subsubsection[{Fetch(\+Usage\+Environment \&env, Port port, Boolean \&is\+New)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Socket}$\ast$ Socket\+Lookup\+Table\+::\+Fetch (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf Port}}]{port, }
+\item[{{\bf Boolean} \&}]{is\+New}
+\end{DoxyParamCaption}
+)}\label{classSocketLookupTable_a0faa6a550f760fd445c7844e11d41756}
+\index{Socket\+Lookup\+Table@{Socket\+Lookup\+Table}!Remove@{Remove}}
+\index{Remove@{Remove}!Socket\+Lookup\+Table@{Socket\+Lookup\+Table}}
+\subsubsection[{Remove(\+Socket const $\ast$sock)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Socket\+Lookup\+Table\+::\+Remove (
+\begin{DoxyParamCaption}
+\item[{{\bf Socket} const $\ast$}]{sock}
+\end{DoxyParamCaption}
+)}\label{classSocketLookupTable_af8c330b41c8bc70786786a4edb0a7b1a}
+
+
+\subsection{Field Documentation}
+\index{Socket\+Lookup\+Table@{Socket\+Lookup\+Table}!f\+Table@{f\+Table}}
+\index{f\+Table@{f\+Table}!Socket\+Lookup\+Table@{Socket\+Lookup\+Table}}
+\subsubsection[{f\+Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hash\+Table}$\ast$ Socket\+Lookup\+Table\+::f\+Table\hspace{0.3cm}{\ttfamily [private]}}\label{classSocketLookupTable_a42b39177906fb0e8c97aee6e074714f3}
+
+
+Definition at line 128 of file Net\+Interface.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+groupsock/include/{\bf Net\+Interface.\+hh}\end{DoxyCompactItemize}

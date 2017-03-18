@@ -1,0 +1,173 @@
+\section{Net\+Address\+List Class Reference}
+\label{classNetAddressList}\index{Net\+Address\+List@{Net\+Address\+List}}
+
+
+{\ttfamily \#include $<$Net\+Address.\+hh$>$}
+
+
+
+Collaboration diagram for Net\+Address\+List\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classNetAddressList__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Net\+Address\+List} (char const $\ast$hostname)
+\item 
+{\bf Net\+Address\+List} ({\bf Net\+Address\+List} const \&orig)
+\item 
+{\bf Net\+Address\+List} \& {\bf operator=} ({\bf Net\+Address\+List} const \&right\+Side)
+\item 
+virtual {\bf $\sim$\+Net\+Address\+List} ()
+\item 
+unsigned {\bf num\+Addresses} () const 
+\item 
+{\bf Net\+Address} const $\ast$ {\bf first\+Address} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf assign} ({\bf net\+Address\+Bits} {\bf num\+Addresses}, {\bf Net\+Address} $\ast$$\ast$address\+Array)
+\item 
+void {\bf clean} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf f\+Num\+Addresses}
+\item 
+{\bf Net\+Address} $\ast$$\ast$ {\bf f\+Address\+Array}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Iterator}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 62 of file Net\+Address.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Net\+Address\+List@{Net\+Address\+List}!Net\+Address\+List@{Net\+Address\+List}}
+\index{Net\+Address\+List@{Net\+Address\+List}!Net\+Address\+List@{Net\+Address\+List}}
+\subsubsection[{Net\+Address\+List(char const $\ast$hostname)}]{\setlength{\rightskip}{0pt plus 5cm}Net\+Address\+List\+::\+Net\+Address\+List (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{hostname}
+\end{DoxyParamCaption}
+)}\label{classNetAddressList_af49e2c0c7ea5dda3ee6479c62e67b887}
+\index{Net\+Address\+List@{Net\+Address\+List}!Net\+Address\+List@{Net\+Address\+List}}
+\index{Net\+Address\+List@{Net\+Address\+List}!Net\+Address\+List@{Net\+Address\+List}}
+\subsubsection[{Net\+Address\+List(\+Net\+Address\+List const \&orig)}]{\setlength{\rightskip}{0pt plus 5cm}Net\+Address\+List\+::\+Net\+Address\+List (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+Address\+List} const \&}]{orig}
+\end{DoxyParamCaption}
+)}\label{classNetAddressList_a229bc2c9f8440b04aeb10a14652e72bd}
+\index{Net\+Address\+List@{Net\+Address\+List}!````~Net\+Address\+List@{$\sim$\+Net\+Address\+List}}
+\index{````~Net\+Address\+List@{$\sim$\+Net\+Address\+List}!Net\+Address\+List@{Net\+Address\+List}}
+\subsubsection[{$\sim$\+Net\+Address\+List()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Net\+Address\+List\+::$\sim$\+Net\+Address\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classNetAddressList_a08c1ebe6455decf1953fdd83953cba3a}
+
+
+\subsection{Member Function Documentation}
+\index{Net\+Address\+List@{Net\+Address\+List}!assign@{assign}}
+\index{assign@{assign}!Net\+Address\+List@{Net\+Address\+List}}
+\subsubsection[{assign(net\+Address\+Bits num\+Addresses, Net\+Address $\ast$$\ast$address\+Array)}]{\setlength{\rightskip}{0pt plus 5cm}void Net\+Address\+List\+::assign (
+\begin{DoxyParamCaption}
+\item[{{\bf net\+Address\+Bits}}]{num\+Addresses, }
+\item[{{\bf Net\+Address} $\ast$$\ast$}]{address\+Array}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classNetAddressList_adf832569975fe1d8a4d777d524ff8ca3}
+\index{Net\+Address\+List@{Net\+Address\+List}!clean@{clean}}
+\index{clean@{clean}!Net\+Address\+List@{Net\+Address\+List}}
+\subsubsection[{clean()}]{\setlength{\rightskip}{0pt plus 5cm}void Net\+Address\+List\+::clean (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classNetAddressList_ac35c517ea9f8d2725a8b9101d9483b6b}
+\index{Net\+Address\+List@{Net\+Address\+List}!first\+Address@{first\+Address}}
+\index{first\+Address@{first\+Address}!Net\+Address\+List@{Net\+Address\+List}}
+\subsubsection[{first\+Address() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Net\+Address} const$\ast$ Net\+Address\+List\+::first\+Address (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classNetAddressList_a1cee138131b2434928e722ed58e104b3}
+\index{Net\+Address\+List@{Net\+Address\+List}!num\+Addresses@{num\+Addresses}}
+\index{num\+Addresses@{num\+Addresses}!Net\+Address\+List@{Net\+Address\+List}}
+\subsubsection[{num\+Addresses() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Net\+Address\+List\+::num\+Addresses (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classNetAddressList_a53d40f4e7e4083f60be81cf0a38eea30}
+
+
+Definition at line 69 of file Net\+Address.\+hh.
+
+
+
+References f\+Num\+Addresses.
+
+
+\begin{DoxyCode}
+69 \{ \textcolor{keywordflow}{return} fNumAddresses; \}
+\end{DoxyCode}
+\index{Net\+Address\+List@{Net\+Address\+List}!operator=@{operator=}}
+\index{operator=@{operator=}!Net\+Address\+List@{Net\+Address\+List}}
+\subsubsection[{operator=(\+Net\+Address\+List const \&right\+Side)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Net\+Address\+List}\& Net\+Address\+List\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Net\+Address\+List} const \&}]{right\+Side}
+\end{DoxyParamCaption}
+)}\label{classNetAddressList_ac5c3e88b950c3ffe2de720a2c31d8ebc}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Net\+Address\+List@{Net\+Address\+List}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!Net\+Address\+List@{Net\+Address\+List}}
+\subsubsection[{Iterator}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Iterator}\hspace{0.3cm}{\ttfamily [friend]}}\label{classNetAddressList_a9830fc407400559db7e7783cc10a9394}
+
+
+Definition at line 87 of file Net\+Address.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{Net\+Address\+List@{Net\+Address\+List}!f\+Address\+Array@{f\+Address\+Array}}
+\index{f\+Address\+Array@{f\+Address\+Array}!Net\+Address\+List@{Net\+Address\+List}}
+\subsubsection[{f\+Address\+Array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Net\+Address}$\ast$$\ast$ Net\+Address\+List\+::f\+Address\+Array\hspace{0.3cm}{\ttfamily [private]}}\label{classNetAddressList_a9ef45f704929570fcbab0d849efa3d98}
+
+
+Definition at line 89 of file Net\+Address.\+hh.
+
+\index{Net\+Address\+List@{Net\+Address\+List}!f\+Num\+Addresses@{f\+Num\+Addresses}}
+\index{f\+Num\+Addresses@{f\+Num\+Addresses}!Net\+Address\+List@{Net\+Address\+List}}
+\subsubsection[{f\+Num\+Addresses}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Net\+Address\+List\+::f\+Num\+Addresses\hspace{0.3cm}{\ttfamily [private]}}\label{classNetAddressList_a24edfb5ff9bd0cf6a9ffb8f6ea5cdd9c}
+
+
+Definition at line 88 of file Net\+Address.\+hh.
+
+
+
+Referenced by num\+Addresses().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+groupsock/include/{\bf Net\+Address.\+hh}\end{DoxyCompactItemize}

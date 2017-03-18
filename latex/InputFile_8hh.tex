@@ -1,0 +1,77 @@
+\section{live\+Media/include/\+Input\+File.hh File Reference}
+\label{InputFile_8hh}\index{live\+Media/include/\+Input\+File.\+hh@{live\+Media/include/\+Input\+File.\+hh}}
+{\ttfamily \#include $<$Usage\+Environment.\+hh$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\+h$>$}\\*
+Include dependency graph for Input\+File.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{InputFile_8hh__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+F\+I\+L\+E $\ast$ {\bf Open\+Input\+File} ({\bf Usage\+Environment} \&env, char const $\ast$file\+Name)
+\item 
+void {\bf Close\+Input\+File} (F\+I\+L\+E $\ast$fid)
+\item 
+u\+\_\+int64\+\_\+t {\bf Get\+File\+Size} (char const $\ast$file\+Name, F\+I\+L\+E $\ast$fid)
+\item 
+int64\+\_\+t {\bf Seek\+File64} (F\+I\+L\+E $\ast$fid, int64\+\_\+t offset, int whence)
+\item 
+int64\+\_\+t {\bf Tell\+File64} (F\+I\+L\+E $\ast$fid)
+\item 
+{\bf Boolean} {\bf File\+Is\+Seekable} (F\+I\+L\+E $\ast$fid)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{Input\+File.\+hh@{Input\+File.\+hh}!Close\+Input\+File@{Close\+Input\+File}}
+\index{Close\+Input\+File@{Close\+Input\+File}!Input\+File.\+hh@{Input\+File.\+hh}}
+\subsubsection[{Close\+Input\+File(\+F\+I\+L\+E $\ast$fid)}]{\setlength{\rightskip}{0pt plus 5cm}void Close\+Input\+File (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{fid}
+\end{DoxyParamCaption}
+)}\label{InputFile_8hh_ad0b89962998fdd3a87e2577918f6efd7}
+\index{Input\+File.\+hh@{Input\+File.\+hh}!File\+Is\+Seekable@{File\+Is\+Seekable}}
+\index{File\+Is\+Seekable@{File\+Is\+Seekable}!Input\+File.\+hh@{Input\+File.\+hh}}
+\subsubsection[{File\+Is\+Seekable(\+F\+I\+L\+E $\ast$fid)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} File\+Is\+Seekable (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{fid}
+\end{DoxyParamCaption}
+)}\label{InputFile_8hh_a15076411a35d08bd5dffdefcb09e53fc}
+\index{Input\+File.\+hh@{Input\+File.\+hh}!Get\+File\+Size@{Get\+File\+Size}}
+\index{Get\+File\+Size@{Get\+File\+Size}!Input\+File.\+hh@{Input\+File.\+hh}}
+\subsubsection[{Get\+File\+Size(char const $\ast$file\+Name, F\+I\+L\+E $\ast$fid)}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int64\+\_\+t Get\+File\+Size (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{file\+Name, }
+\item[{F\+I\+L\+E $\ast$}]{fid}
+\end{DoxyParamCaption}
+)}\label{InputFile_8hh_a64ad6eae33294727f6856538dbaa7237}
+\index{Input\+File.\+hh@{Input\+File.\+hh}!Open\+Input\+File@{Open\+Input\+File}}
+\index{Open\+Input\+File@{Open\+Input\+File}!Input\+File.\+hh@{Input\+File.\+hh}}
+\subsubsection[{Open\+Input\+File(\+Usage\+Environment \&env, char const $\ast$file\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ Open\+Input\+File (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{file\+Name}
+\end{DoxyParamCaption}
+)}\label{InputFile_8hh_a66ab21bb376ba22c9165dcb91efdf334}
+\index{Input\+File.\+hh@{Input\+File.\+hh}!Seek\+File64@{Seek\+File64}}
+\index{Seek\+File64@{Seek\+File64}!Input\+File.\+hh@{Input\+File.\+hh}}
+\subsubsection[{Seek\+File64(\+F\+I\+L\+E $\ast$fid, int64\+\_\+t offset, int whence)}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t Seek\+File64 (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{fid, }
+\item[{int64\+\_\+t}]{offset, }
+\item[{int}]{whence}
+\end{DoxyParamCaption}
+)}\label{InputFile_8hh_a66fa0d3697c790d3b62272cf6b6f7ac2}
+\index{Input\+File.\+hh@{Input\+File.\+hh}!Tell\+File64@{Tell\+File64}}
+\index{Tell\+File64@{Tell\+File64}!Input\+File.\+hh@{Input\+File.\+hh}}
+\subsubsection[{Tell\+File64(\+F\+I\+L\+E $\ast$fid)}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t Tell\+File64 (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{fid}
+\end{DoxyParamCaption}
+)}\label{InputFile_8hh_ab198a2222502fb2abff02107ecc90983}

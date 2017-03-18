@@ -1,0 +1,535 @@
+\section{Buffered\+Packet Class Reference}
+\label{classBufferedPacket}\index{Buffered\+Packet@{Buffered\+Packet}}
+
+
+{\ttfamily \#include $<$Multi\+Framed\+R\+T\+P\+Source.\+hh$>$}
+
+
+
+Collaboration diagram for Buffered\+Packet\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{classBufferedPacket__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Buffered\+Packet} ()
+\item 
+virtual {\bf $\sim$\+Buffered\+Packet} ()
+\item 
+{\bf Boolean} {\bf has\+Usable\+Data} () const 
+\item 
+unsigned {\bf use\+Count} () const 
+\item 
+{\bf Boolean} {\bf fill\+In\+Data} ({\bf R\+T\+P\+Interface} \&rtp\+Interface, struct sockaddr\+\_\+in \&from\+Address, {\bf Boolean} \&packet\+Read\+Was\+Incomplete)
+\item 
+void {\bf assign\+Misc\+Params} (unsigned short {\bf rtp\+Seq\+No}, unsigned rtp\+Timestamp, struct timeval presentation\+Time, {\bf Boolean} has\+Been\+Synced\+Using\+R\+T\+C\+P, {\bf Boolean} {\bf rtp\+Marker\+Bit}, struct timeval {\bf time\+Received})
+\item 
+void {\bf skip} (unsigned num\+Bytes)
+\item 
+void {\bf remove\+Padding} (unsigned num\+Bytes)
+\item 
+void {\bf append\+Data} (unsigned char $\ast$new\+Data, unsigned num\+Bytes)
+\item 
+void {\bf use} (unsigned char $\ast$to, unsigned to\+Size, unsigned \&bytes\+Used, unsigned \&bytes\+Truncated, unsigned short \&{\bf rtp\+Seq\+No}, unsigned \&rtp\+Timestamp, struct timeval \&presentation\+Time, {\bf Boolean} \&has\+Been\+Synced\+Using\+R\+T\+C\+P, {\bf Boolean} \&{\bf rtp\+Marker\+Bit})
+\item 
+{\bf Buffered\+Packet} $\ast$\& {\bf next\+Packet} ()
+\item 
+unsigned short {\bf rtp\+Seq\+No} () const 
+\item 
+struct timeval const \& {\bf time\+Received} () const 
+\item 
+unsigned char $\ast$ {\bf data} () const 
+\item 
+unsigned {\bf data\+Size} () const 
+\item 
+{\bf Boolean} {\bf rtp\+Marker\+Bit} () const 
+\item 
+{\bf Boolean} \& {\bf is\+First\+Packet} ()
+\item 
+unsigned {\bf bytes\+Available} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf reset} ()
+\item 
+virtual unsigned {\bf next\+Enclosed\+Frame\+Size} (unsigned char $\ast$\&frame\+Ptr, unsigned {\bf data\+Size})
+\item 
+virtual void {\bf get\+Next\+Enclosed\+Frame\+Parameters} (unsigned char $\ast$\&frame\+Ptr, unsigned {\bf data\+Size}, unsigned \&frame\+Size, unsigned \&frame\+Duration\+In\+Microseconds)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf f\+Packet\+Size}
+\item 
+unsigned char $\ast$ {\bf f\+Buf}
+\item 
+unsigned {\bf f\+Head}
+\item 
+unsigned {\bf f\+Tail}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Buffered\+Packet} $\ast$ {\bf f\+Next\+Packet}
+\item 
+unsigned {\bf f\+Use\+Count}
+\item 
+unsigned short {\bf f\+R\+T\+P\+Seq\+No}
+\item 
+unsigned {\bf f\+R\+T\+P\+Timestamp}
+\item 
+struct timeval {\bf f\+Presentation\+Time}
+\item 
+{\bf Boolean} {\bf f\+Has\+Been\+Synced\+Using\+R\+T\+C\+P}
+\item 
+{\bf Boolean} {\bf f\+R\+T\+P\+Marker\+Bit}
+\item 
+{\bf Boolean} {\bf f\+Is\+First\+Packet}
+\item 
+struct timeval {\bf f\+Time\+Received}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 86 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Buffered\+Packet@{Buffered\+Packet}!Buffered\+Packet@{Buffered\+Packet}}
+\index{Buffered\+Packet@{Buffered\+Packet}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{Buffered\+Packet()}]{\setlength{\rightskip}{0pt plus 5cm}Buffered\+Packet\+::\+Buffered\+Packet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classBufferedPacket_a387e39b4df2d0b6838319f1c81f8b7e6}
+\index{Buffered\+Packet@{Buffered\+Packet}!````~Buffered\+Packet@{$\sim$\+Buffered\+Packet}}
+\index{````~Buffered\+Packet@{$\sim$\+Buffered\+Packet}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{$\sim$\+Buffered\+Packet()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Buffered\+Packet\+::$\sim$\+Buffered\+Packet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classBufferedPacket_a516187f6ff2d4bd08861be22f2bb9b7b}
+
+
+\subsection{Member Function Documentation}
+\index{Buffered\+Packet@{Buffered\+Packet}!append\+Data@{append\+Data}}
+\index{append\+Data@{append\+Data}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{append\+Data(unsigned char $\ast$new\+Data, unsigned num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Buffered\+Packet\+::append\+Data (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{new\+Data, }
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+)}\label{classBufferedPacket_a7b7241dbd1bca422aa26c95e93c773ba}
+\index{Buffered\+Packet@{Buffered\+Packet}!assign\+Misc\+Params@{assign\+Misc\+Params}}
+\index{assign\+Misc\+Params@{assign\+Misc\+Params}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{assign\+Misc\+Params(unsigned short rtp\+Seq\+No, unsigned rtp\+Timestamp, struct timeval presentation\+Time, Boolean has\+Been\+Synced\+Using\+R\+T\+C\+P, Boolean rtp\+Marker\+Bit, struct timeval time\+Received)}]{\setlength{\rightskip}{0pt plus 5cm}void Buffered\+Packet\+::assign\+Misc\+Params (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{rtp\+Seq\+No, }
+\item[{unsigned}]{rtp\+Timestamp, }
+\item[{struct timeval}]{presentation\+Time, }
+\item[{{\bf Boolean}}]{has\+Been\+Synced\+Using\+R\+T\+C\+P, }
+\item[{{\bf Boolean}}]{rtp\+Marker\+Bit, }
+\item[{struct timeval}]{time\+Received}
+\end{DoxyParamCaption}
+)}\label{classBufferedPacket_adbc4eac912218b58cf2e744873c6d767}
+\index{Buffered\+Packet@{Buffered\+Packet}!bytes\+Available@{bytes\+Available}}
+\index{bytes\+Available@{bytes\+Available}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{bytes\+Available() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Buffered\+Packet\+::bytes\+Available (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classBufferedPacket_a0fe650979cc9d0c0372aa5c3d0da7f79}
+
+
+Definition at line 117 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Packet\+Size, and f\+Tail.
+
+
+\begin{DoxyCode}
+117 \{ \textcolor{keywordflow}{return} fPacketSize - fTail; \}
+\end{DoxyCode}
+\index{Buffered\+Packet@{Buffered\+Packet}!data@{data}}
+\index{data@{data}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{data() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ Buffered\+Packet\+::data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classBufferedPacket_a09e2d2652c0fee5b48ec32a67104c950}
+
+
+Definition at line 113 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Buf, and f\+Head.
+
+
+\begin{DoxyCode}
+113 \{ \textcolor{keywordflow}{return} &fBuf[fHead]; \}
+\end{DoxyCode}
+\index{Buffered\+Packet@{Buffered\+Packet}!data\+Size@{data\+Size}}
+\index{data\+Size@{data\+Size}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{data\+Size() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Buffered\+Packet\+::data\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classBufferedPacket_a03200ae8b830481352bff8c1e81a8bd8}
+
+
+Definition at line 114 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Head, and f\+Tail.
+
+
+\begin{DoxyCode}
+114 \{ \textcolor{keywordflow}{return} fTail-fHead; \}
+\end{DoxyCode}
+\index{Buffered\+Packet@{Buffered\+Packet}!fill\+In\+Data@{fill\+In\+Data}}
+\index{fill\+In\+Data@{fill\+In\+Data}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{fill\+In\+Data(\+R\+T\+P\+Interface \&rtp\+Interface, struct sockaddr\+\_\+in \&from\+Address, Boolean \&packet\+Read\+Was\+Incomplete)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Buffered\+Packet\+::fill\+In\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+P\+Interface} \&}]{rtp\+Interface, }
+\item[{struct sockaddr\+\_\+in \&}]{from\+Address, }
+\item[{{\bf Boolean} \&}]{packet\+Read\+Was\+Incomplete}
+\end{DoxyParamCaption}
+)}\label{classBufferedPacket_a1519f59860f6a69c63c878654a5d0f74}
+\index{Buffered\+Packet@{Buffered\+Packet}!get\+Next\+Enclosed\+Frame\+Parameters@{get\+Next\+Enclosed\+Frame\+Parameters}}
+\index{get\+Next\+Enclosed\+Frame\+Parameters@{get\+Next\+Enclosed\+Frame\+Parameters}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{get\+Next\+Enclosed\+Frame\+Parameters(unsigned char $\ast$\&frame\+Ptr, unsigned data\+Size, unsigned \&frame\+Size, unsigned \&frame\+Duration\+In\+Microseconds)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Buffered\+Packet\+::get\+Next\+Enclosed\+Frame\+Parameters (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$\&}]{frame\+Ptr, }
+\item[{unsigned}]{data\+Size, }
+\item[{unsigned \&}]{frame\+Size, }
+\item[{unsigned \&}]{frame\+Duration\+In\+Microseconds}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classBufferedPacket_abee6d019ddd23b2f7ccd67f19a25862c}
+\index{Buffered\+Packet@{Buffered\+Packet}!has\+Usable\+Data@{has\+Usable\+Data}}
+\index{has\+Usable\+Data@{has\+Usable\+Data}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{has\+Usable\+Data() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Buffered\+Packet\+::has\+Usable\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classBufferedPacket_a0737d14e0402a61d0dcb2b477e1a90e8}
+
+
+Definition at line 91 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Head, and f\+Tail.
+
+
+\begin{DoxyCode}
+91 \{ \textcolor{keywordflow}{return} fTail > fHead; \}
+\end{DoxyCode}
+\index{Buffered\+Packet@{Buffered\+Packet}!is\+First\+Packet@{is\+First\+Packet}}
+\index{is\+First\+Packet@{is\+First\+Packet}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{is\+First\+Packet()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean}\& Buffered\+Packet\+::is\+First\+Packet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classBufferedPacket_a9186cb3fc5ca2b0ab32b717e9d41180a}
+
+
+Definition at line 116 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Is\+First\+Packet.
+
+
+\begin{DoxyCode}
+116 \{ \textcolor{keywordflow}{return} fIsFirstPacket; \}
+\end{DoxyCode}
+\index{Buffered\+Packet@{Buffered\+Packet}!next\+Enclosed\+Frame\+Size@{next\+Enclosed\+Frame\+Size}}
+\index{next\+Enclosed\+Frame\+Size@{next\+Enclosed\+Frame\+Size}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{next\+Enclosed\+Frame\+Size(unsigned char $\ast$\&frame\+Ptr, unsigned data\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned Buffered\+Packet\+::next\+Enclosed\+Frame\+Size (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$\&}]{frame\+Ptr, }
+\item[{unsigned}]{data\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classBufferedPacket_a87ba17c4a1aa9f6d6db661731c4c3c1d}
+\index{Buffered\+Packet@{Buffered\+Packet}!next\+Packet@{next\+Packet}}
+\index{next\+Packet@{next\+Packet}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{next\+Packet()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Buffered\+Packet}$\ast$\& Buffered\+Packet\+::next\+Packet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classBufferedPacket_a0e0b2c4c5dcd49c2f777e8066695551b}
+
+
+Definition at line 108 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Next\+Packet.
+
+
+\begin{DoxyCode}
+108 \{ \textcolor{keywordflow}{return} fNextPacket; \}
+\end{DoxyCode}
+\index{Buffered\+Packet@{Buffered\+Packet}!remove\+Padding@{remove\+Padding}}
+\index{remove\+Padding@{remove\+Padding}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{remove\+Padding(unsigned num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Buffered\+Packet\+::remove\+Padding (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+)}\label{classBufferedPacket_a3aaeb2d8528c0052fcb2aef5a8d41841}
+\index{Buffered\+Packet@{Buffered\+Packet}!reset@{reset}}
+\index{reset@{reset}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{reset()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Buffered\+Packet\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classBufferedPacket_a4cb542b65fc7530dabc0e4c651335d63}
+\index{Buffered\+Packet@{Buffered\+Packet}!rtp\+Marker\+Bit@{rtp\+Marker\+Bit}}
+\index{rtp\+Marker\+Bit@{rtp\+Marker\+Bit}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{rtp\+Marker\+Bit() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Buffered\+Packet\+::rtp\+Marker\+Bit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classBufferedPacket_a051132ee0d42765c6c795fd4bfe98b85}
+
+
+Definition at line 115 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+References f\+R\+T\+P\+Marker\+Bit.
+
+
+\begin{DoxyCode}
+115 \{ \textcolor{keywordflow}{return} fRTPMarkerBit; \}
+\end{DoxyCode}
+\index{Buffered\+Packet@{Buffered\+Packet}!rtp\+Seq\+No@{rtp\+Seq\+No}}
+\index{rtp\+Seq\+No@{rtp\+Seq\+No}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{rtp\+Seq\+No() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Buffered\+Packet\+::rtp\+Seq\+No (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classBufferedPacket_aba66fd53bdd620ab3e73c99fba67b901}
+
+
+Definition at line 110 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+References f\+R\+T\+P\+Seq\+No.
+
+
+\begin{DoxyCode}
+110 \{ \textcolor{keywordflow}{return} fRTPSeqNo; \}
+\end{DoxyCode}
+\index{Buffered\+Packet@{Buffered\+Packet}!skip@{skip}}
+\index{skip@{skip}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{skip(unsigned num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Buffered\+Packet\+::skip (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+)}\label{classBufferedPacket_aaf2e7a77fc876893795d857259307167}
+\index{Buffered\+Packet@{Buffered\+Packet}!time\+Received@{time\+Received}}
+\index{time\+Received@{time\+Received}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{time\+Received() const }]{\setlength{\rightskip}{0pt plus 5cm}struct timeval const\& Buffered\+Packet\+::time\+Received (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classBufferedPacket_a3501e9bbb2ab3e3866edb699c46b6458}
+
+
+Definition at line 111 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Time\+Received.
+
+
+\begin{DoxyCode}
+111 \{ \textcolor{keywordflow}{return} fTimeReceived; \}
+\end{DoxyCode}
+\index{Buffered\+Packet@{Buffered\+Packet}!use@{use}}
+\index{use@{use}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{use(unsigned char $\ast$to, unsigned to\+Size, unsigned \&bytes\+Used, unsigned \&bytes\+Truncated, unsigned short \&rtp\+Seq\+No, unsigned \&rtp\+Timestamp, struct timeval \&presentation\+Time, Boolean \&has\+Been\+Synced\+Using\+R\+T\+C\+P, Boolean \&rtp\+Marker\+Bit)}]{\setlength{\rightskip}{0pt plus 5cm}void Buffered\+Packet\+::use (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{to, }
+\item[{unsigned}]{to\+Size, }
+\item[{unsigned \&}]{bytes\+Used, }
+\item[{unsigned \&}]{bytes\+Truncated, }
+\item[{unsigned short \&}]{rtp\+Seq\+No, }
+\item[{unsigned \&}]{rtp\+Timestamp, }
+\item[{struct timeval \&}]{presentation\+Time, }
+\item[{{\bf Boolean} \&}]{has\+Been\+Synced\+Using\+R\+T\+C\+P, }
+\item[{{\bf Boolean} \&}]{rtp\+Marker\+Bit}
+\end{DoxyParamCaption}
+)}\label{classBufferedPacket_adaafbcd46c7f0e805067c121f4946110}
+\index{Buffered\+Packet@{Buffered\+Packet}!use\+Count@{use\+Count}}
+\index{use\+Count@{use\+Count}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{use\+Count() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Buffered\+Packet\+::use\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classBufferedPacket_a5dbe02847c1db9bc48748f9bef040f0f}
+
+
+Definition at line 92 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+References f\+Use\+Count.
+
+
+\begin{DoxyCode}
+92 \{ \textcolor{keywordflow}{return} fUseCount; \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Buffered\+Packet@{Buffered\+Packet}!f\+Buf@{f\+Buf}}
+\index{f\+Buf@{f\+Buf}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{f\+Buf}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ Buffered\+Packet\+::f\+Buf\hspace{0.3cm}{\ttfamily [protected]}}\label{classBufferedPacket_a0313009b149f8d0ad4de988b98ba3781}
+
+
+Definition at line 130 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by data().
+
+\index{Buffered\+Packet@{Buffered\+Packet}!f\+Has\+Been\+Synced\+Using\+R\+T\+C\+P@{f\+Has\+Been\+Synced\+Using\+R\+T\+C\+P}}
+\index{f\+Has\+Been\+Synced\+Using\+R\+T\+C\+P@{f\+Has\+Been\+Synced\+Using\+R\+T\+C\+P}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{f\+Has\+Been\+Synced\+Using\+R\+T\+C\+P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Buffered\+Packet\+::f\+Has\+Been\+Synced\+Using\+R\+T\+C\+P\hspace{0.3cm}{\ttfamily [private]}}\label{classBufferedPacket_a9b8f6e802cadcf67972640cf67113548}
+
+
+Definition at line 141 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+\index{Buffered\+Packet@{Buffered\+Packet}!f\+Head@{f\+Head}}
+\index{f\+Head@{f\+Head}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{f\+Head}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Buffered\+Packet\+::f\+Head\hspace{0.3cm}{\ttfamily [protected]}}\label{classBufferedPacket_afe193b20a82b39ed7dc0a1b9f204bff7}
+
+
+Definition at line 131 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by data(), data\+Size(), and has\+Usable\+Data().
+
+\index{Buffered\+Packet@{Buffered\+Packet}!f\+Is\+First\+Packet@{f\+Is\+First\+Packet}}
+\index{f\+Is\+First\+Packet@{f\+Is\+First\+Packet}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{f\+Is\+First\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Buffered\+Packet\+::f\+Is\+First\+Packet\hspace{0.3cm}{\ttfamily [private]}}\label{classBufferedPacket_a7db19c86593d8675669f4b4b5d48e943}
+
+
+Definition at line 143 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by is\+First\+Packet().
+
+\index{Buffered\+Packet@{Buffered\+Packet}!f\+Next\+Packet@{f\+Next\+Packet}}
+\index{f\+Next\+Packet@{f\+Next\+Packet}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{f\+Next\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Buffered\+Packet}$\ast$ Buffered\+Packet\+::f\+Next\+Packet\hspace{0.3cm}{\ttfamily [private]}}\label{classBufferedPacket_a8de5fc5a6feca861cf036e69fd272d35}
+
+
+Definition at line 135 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by next\+Packet().
+
+\index{Buffered\+Packet@{Buffered\+Packet}!f\+Packet\+Size@{f\+Packet\+Size}}
+\index{f\+Packet\+Size@{f\+Packet\+Size}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{f\+Packet\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Buffered\+Packet\+::f\+Packet\+Size\hspace{0.3cm}{\ttfamily [protected]}}\label{classBufferedPacket_adeaeaf805ffe83fb1618fe011cf17d93}
+
+
+Definition at line 129 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by bytes\+Available().
+
+\index{Buffered\+Packet@{Buffered\+Packet}!f\+Presentation\+Time@{f\+Presentation\+Time}}
+\index{f\+Presentation\+Time@{f\+Presentation\+Time}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{f\+Presentation\+Time}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval Buffered\+Packet\+::f\+Presentation\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classBufferedPacket_a3836ccab593c9e36f62986fad05dccd5}
+
+
+Definition at line 140 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+\index{Buffered\+Packet@{Buffered\+Packet}!f\+R\+T\+P\+Marker\+Bit@{f\+R\+T\+P\+Marker\+Bit}}
+\index{f\+R\+T\+P\+Marker\+Bit@{f\+R\+T\+P\+Marker\+Bit}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{f\+R\+T\+P\+Marker\+Bit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Buffered\+Packet\+::f\+R\+T\+P\+Marker\+Bit\hspace{0.3cm}{\ttfamily [private]}}\label{classBufferedPacket_acbe913920ed30afc0bb6fd15e8e23884}
+
+
+Definition at line 142 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by rtp\+Marker\+Bit().
+
+\index{Buffered\+Packet@{Buffered\+Packet}!f\+R\+T\+P\+Seq\+No@{f\+R\+T\+P\+Seq\+No}}
+\index{f\+R\+T\+P\+Seq\+No@{f\+R\+T\+P\+Seq\+No}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{f\+R\+T\+P\+Seq\+No}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Buffered\+Packet\+::f\+R\+T\+P\+Seq\+No\hspace{0.3cm}{\ttfamily [private]}}\label{classBufferedPacket_a50d693966371d00351679dd9a42f7919}
+
+
+Definition at line 138 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by rtp\+Seq\+No().
+
+\index{Buffered\+Packet@{Buffered\+Packet}!f\+R\+T\+P\+Timestamp@{f\+R\+T\+P\+Timestamp}}
+\index{f\+R\+T\+P\+Timestamp@{f\+R\+T\+P\+Timestamp}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{f\+R\+T\+P\+Timestamp}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Buffered\+Packet\+::f\+R\+T\+P\+Timestamp\hspace{0.3cm}{\ttfamily [private]}}\label{classBufferedPacket_a1154bec11066565700b7d9cf1f4ebf1c}
+
+
+Definition at line 139 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+\index{Buffered\+Packet@{Buffered\+Packet}!f\+Tail@{f\+Tail}}
+\index{f\+Tail@{f\+Tail}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{f\+Tail}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Buffered\+Packet\+::f\+Tail\hspace{0.3cm}{\ttfamily [protected]}}\label{classBufferedPacket_a38069f3ce011f07cf33bbb2a1f124e88}
+
+
+Definition at line 132 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by bytes\+Available(), data\+Size(), and has\+Usable\+Data().
+
+\index{Buffered\+Packet@{Buffered\+Packet}!f\+Time\+Received@{f\+Time\+Received}}
+\index{f\+Time\+Received@{f\+Time\+Received}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{f\+Time\+Received}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval Buffered\+Packet\+::f\+Time\+Received\hspace{0.3cm}{\ttfamily [private]}}\label{classBufferedPacket_a90f8fc902c35de35f29a0e44d87d5061}
+
+
+Definition at line 144 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by time\+Received().
+
+\index{Buffered\+Packet@{Buffered\+Packet}!f\+Use\+Count@{f\+Use\+Count}}
+\index{f\+Use\+Count@{f\+Use\+Count}!Buffered\+Packet@{Buffered\+Packet}}
+\subsubsection[{f\+Use\+Count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Buffered\+Packet\+::f\+Use\+Count\hspace{0.3cm}{\ttfamily [private]}}\label{classBufferedPacket_a941bf549cb24168779e5dab40cdb51b7}
+
+
+Definition at line 137 of file Multi\+Framed\+R\+T\+P\+Source.\+hh.
+
+
+
+Referenced by use\+Count().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf Multi\+Framed\+R\+T\+P\+Source.\+hh}\end{DoxyCompactItemize}

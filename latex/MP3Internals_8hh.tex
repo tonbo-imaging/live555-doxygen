@@ -1,0 +1,124 @@
+\section{live\+Media/\+M\+P3\+Internals.hh File Reference}
+\label{MP3Internals_8hh}\index{live\+Media/\+M\+P3\+Internals.\+hh@{live\+Media/\+M\+P3\+Internals.\+hh}}
+{\ttfamily \#include \char`\"{}Boolean.\+hh\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Bit\+Vector.\+hh\char`\"{}}\\*
+Include dependency graph for M\+P3\+Internals.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{MP3Internals_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MP3Internals_8hh__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf M\+P3\+Side\+Info}
+\item 
+struct {\bf M\+P3\+Side\+Info\+::gr\+\_\+info\+\_\+s}
+\item 
+class {\bf M\+P3\+Frame\+Params}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf S\+B\+L\+I\+M\+I\+T}~32
+\item 
+\#define {\bf M\+A\+X\+\_\+\+M\+P3\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+I\+Z\+E}~2500 /$\ast$ also big enough for an \textquotesingle{}A\+D\+U\textquotesingle{}ized frame $\ast$/
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct {\bf M\+P3\+Side\+Info} {\bf M\+P3\+Side\+Info\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf Compute\+Frame\+Size} (unsigned bitrate, unsigned sampling\+Freq, {\bf Boolean} use\+Padding, {\bf Boolean} is\+M\+P\+E\+G2, unsigned char layer)
+\item 
+{\bf Boolean} {\bf Get\+A\+D\+U\+Info\+From\+M\+P3\+Frame} (unsigned char const $\ast$frame\+Ptr, unsigned tot\+Frame\+Size, unsigned \&hdr, unsigned \&frame\+Size, {\bf M\+P3\+Side\+Info} \&side\+Info, unsigned \&side\+Info\+Size, unsigned \&backpointer, unsigned \&adu\+Size)
+\item 
+{\bf Boolean} {\bf Zero\+Out\+M\+P3\+Side\+Info} (unsigned char $\ast$frame\+Ptr, unsigned tot\+Frame\+Size, unsigned new\+Backpointer)
+\item 
+unsigned {\bf Transcode\+M\+P3\+A\+D\+U} (unsigned char const $\ast$from\+Ptr, unsigned from\+Size, unsigned to\+Bitrate, unsigned char $\ast$to\+Ptr, unsigned to\+Max\+Size, unsigned \&available\+Bytes\+For\+Backpointer)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{M\+P3\+Internals.\+hh@{M\+P3\+Internals.\+hh}!M\+A\+X\+\_\+\+M\+P3\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+I\+Z\+E@{M\+A\+X\+\_\+\+M\+P3\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+I\+Z\+E}}
+\index{M\+A\+X\+\_\+\+M\+P3\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+I\+Z\+E@{M\+A\+X\+\_\+\+M\+P3\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+I\+Z\+E}!M\+P3\+Internals.\+hh@{M\+P3\+Internals.\+hh}}
+\subsubsection[{M\+A\+X\+\_\+\+M\+P3\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+M\+P3\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+I\+Z\+E~2500 /$\ast$ also big enough for an \textquotesingle{}A\+D\+U\textquotesingle{}ized frame $\ast$/}\label{MP3Internals_8hh_a6c572617763669152a4de18f934a6f55}
+
+
+Definition at line 64 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Internals.\+hh@{M\+P3\+Internals.\+hh}!S\+B\+L\+I\+M\+I\+T@{S\+B\+L\+I\+M\+I\+T}}
+\index{S\+B\+L\+I\+M\+I\+T@{S\+B\+L\+I\+M\+I\+T}!M\+P3\+Internals.\+hh@{M\+P3\+Internals.\+hh}}
+\subsubsection[{S\+B\+L\+I\+M\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+B\+L\+I\+M\+I\+T~32}\label{MP3Internals_8hh_aae2d5a401c55c6b2b834c99340911fdb}
+
+
+Definition at line 63 of file M\+P3\+Internals.\+hh.
+
+
+
+\subsection{Typedef Documentation}
+\index{M\+P3\+Internals.\+hh@{M\+P3\+Internals.\+hh}!M\+P3\+Side\+Info\+\_\+t@{M\+P3\+Side\+Info\+\_\+t}}
+\index{M\+P3\+Side\+Info\+\_\+t@{M\+P3\+Side\+Info\+\_\+t}!M\+P3\+Internals.\+hh@{M\+P3\+Internals.\+hh}}
+\subsubsection[{M\+P3\+Side\+Info\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf M\+P3\+Side\+Info}  {\bf M\+P3\+Side\+Info\+\_\+t}}\label{MP3Internals_8hh_a624b8e277b83fb3cf5dcc86f6eae2af7}
+
+
+\subsection{Function Documentation}
+\index{M\+P3\+Internals.\+hh@{M\+P3\+Internals.\+hh}!Compute\+Frame\+Size@{Compute\+Frame\+Size}}
+\index{Compute\+Frame\+Size@{Compute\+Frame\+Size}!M\+P3\+Internals.\+hh@{M\+P3\+Internals.\+hh}}
+\subsubsection[{Compute\+Frame\+Size(unsigned bitrate, unsigned sampling\+Freq, Boolean use\+Padding, Boolean is\+M\+P\+E\+G2, unsigned char layer)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Compute\+Frame\+Size (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{bitrate, }
+\item[{unsigned}]{sampling\+Freq, }
+\item[{{\bf Boolean}}]{use\+Padding, }
+\item[{{\bf Boolean}}]{is\+M\+P\+E\+G2, }
+\item[{unsigned char}]{layer}
+\end{DoxyParamCaption}
+)}\label{MP3Internals_8hh_afa53d9e83afed857cf66c7eabda868a4}
+\index{M\+P3\+Internals.\+hh@{M\+P3\+Internals.\+hh}!Get\+A\+D\+U\+Info\+From\+M\+P3\+Frame@{Get\+A\+D\+U\+Info\+From\+M\+P3\+Frame}}
+\index{Get\+A\+D\+U\+Info\+From\+M\+P3\+Frame@{Get\+A\+D\+U\+Info\+From\+M\+P3\+Frame}!M\+P3\+Internals.\+hh@{M\+P3\+Internals.\+hh}}
+\subsubsection[{Get\+A\+D\+U\+Info\+From\+M\+P3\+Frame(unsigned char const $\ast$frame\+Ptr, unsigned tot\+Frame\+Size, unsigned \&hdr, unsigned \&frame\+Size, M\+P3\+Side\+Info \&side\+Info, unsigned \&side\+Info\+Size, unsigned \&backpointer, unsigned \&adu\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Get\+A\+D\+U\+Info\+From\+M\+P3\+Frame (
+\begin{DoxyParamCaption}
+\item[{unsigned char const $\ast$}]{frame\+Ptr, }
+\item[{unsigned}]{tot\+Frame\+Size, }
+\item[{unsigned \&}]{hdr, }
+\item[{unsigned \&}]{frame\+Size, }
+\item[{{\bf M\+P3\+Side\+Info} \&}]{side\+Info, }
+\item[{unsigned \&}]{side\+Info\+Size, }
+\item[{unsigned \&}]{backpointer, }
+\item[{unsigned \&}]{adu\+Size}
+\end{DoxyParamCaption}
+)}\label{MP3Internals_8hh_ad595e0d9f15b199eb73923b5089e2b46}
+\index{M\+P3\+Internals.\+hh@{M\+P3\+Internals.\+hh}!Transcode\+M\+P3\+A\+D\+U@{Transcode\+M\+P3\+A\+D\+U}}
+\index{Transcode\+M\+P3\+A\+D\+U@{Transcode\+M\+P3\+A\+D\+U}!M\+P3\+Internals.\+hh@{M\+P3\+Internals.\+hh}}
+\subsubsection[{Transcode\+M\+P3\+A\+D\+U(unsigned char const $\ast$from\+Ptr, unsigned from\+Size, unsigned to\+Bitrate, unsigned char $\ast$to\+Ptr, unsigned to\+Max\+Size, unsigned \&available\+Bytes\+For\+Backpointer)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Transcode\+M\+P3\+A\+D\+U (
+\begin{DoxyParamCaption}
+\item[{unsigned char const $\ast$}]{from\+Ptr, }
+\item[{unsigned}]{from\+Size, }
+\item[{unsigned}]{to\+Bitrate, }
+\item[{unsigned char $\ast$}]{to\+Ptr, }
+\item[{unsigned}]{to\+Max\+Size, }
+\item[{unsigned \&}]{available\+Bytes\+For\+Backpointer}
+\end{DoxyParamCaption}
+)}\label{MP3Internals_8hh_a025a5462651032115b7a4d9884b4f9d9}
+\index{M\+P3\+Internals.\+hh@{M\+P3\+Internals.\+hh}!Zero\+Out\+M\+P3\+Side\+Info@{Zero\+Out\+M\+P3\+Side\+Info}}
+\index{Zero\+Out\+M\+P3\+Side\+Info@{Zero\+Out\+M\+P3\+Side\+Info}!M\+P3\+Internals.\+hh@{M\+P3\+Internals.\+hh}}
+\subsubsection[{Zero\+Out\+M\+P3\+Side\+Info(unsigned char $\ast$frame\+Ptr, unsigned tot\+Frame\+Size, unsigned new\+Backpointer)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Zero\+Out\+M\+P3\+Side\+Info (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{frame\+Ptr, }
+\item[{unsigned}]{tot\+Frame\+Size, }
+\item[{unsigned}]{new\+Backpointer}
+\end{DoxyParamCaption}
+)}\label{MP3Internals_8hh_af01c886919f67c8d583023b959e2ffd3}

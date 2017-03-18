@@ -1,0 +1,758 @@
+\section{Stream\+Parser Class Reference}
+\label{classStreamParser}\index{Stream\+Parser@{Stream\+Parser}}
+
+
+{\ttfamily \#include $<$Stream\+Parser.\+hh$>$}
+
+
+
+Inheritance diagram for Stream\+Parser\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStreamParser__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Stream\+Parser\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{classStreamParser__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf flush\+Input} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void( {\bf client\+Continue\+Func}) (void $\ast$client\+Data, unsigned char $\ast$ptr, unsigned size, struct timeval presentation\+Time)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Stream\+Parser} ({\bf Framed\+Source} $\ast$input\+Source, {\bf Framed\+Source\+::on\+Close\+Func} $\ast$on\+Input\+Close\+Func, void $\ast$on\+Input\+Close\+Client\+Data, {\bf client\+Continue\+Func} $\ast${\bf client\+Continue\+Func}, void $\ast$client\+Continue\+Client\+Data)
+\item 
+virtual {\bf $\sim$\+Stream\+Parser} ()
+\item 
+void {\bf save\+Parser\+State} ()
+\item 
+virtual void {\bf restore\+Saved\+Parser\+State} ()
+\item 
+u\+\_\+int32\+\_\+t {\bf get4\+Bytes} ()
+\item 
+u\+\_\+int32\+\_\+t {\bf test4\+Bytes} ()
+\item 
+u\+\_\+int16\+\_\+t {\bf get2\+Bytes} ()
+\item 
+u\+\_\+int8\+\_\+t {\bf get1\+Byte} ()
+\item 
+u\+\_\+int8\+\_\+t {\bf test1\+Byte} ()
+\item 
+void {\bf get\+Bytes} (u\+\_\+int8\+\_\+t $\ast$to, unsigned num\+Bytes)
+\item 
+void {\bf test\+Bytes} (u\+\_\+int8\+\_\+t $\ast$to, unsigned num\+Bytes)
+\item 
+void {\bf skip\+Bytes} (unsigned num\+Bytes)
+\item 
+void {\bf skip\+Bits} (unsigned num\+Bits)
+\item 
+unsigned {\bf get\+Bits} (unsigned num\+Bits)
+\item 
+unsigned {\bf cur\+Offset} () const 
+\item 
+unsigned \& {\bf tot\+Num\+Valid\+Bytes} ()
+\item 
+{\bf Boolean} {\bf have\+Seen\+E\+O\+F} () const 
+\item 
+unsigned {\bf bank\+Size} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char $\ast$ {\bf cur\+Bank} ()
+\item 
+unsigned char $\ast$ {\bf next\+To\+Parse} ()
+\item 
+unsigned char $\ast$ {\bf last\+Parsed} ()
+\item 
+void {\bf ensure\+Valid\+Bytes} (unsigned num\+Bytes\+Needed)
+\item 
+void {\bf ensure\+Valid\+Bytes1} (unsigned num\+Bytes\+Needed)
+\item 
+void {\bf after\+Getting\+Bytes1} (unsigned num\+Bytes\+Read, struct timeval presentation\+Time)
+\item 
+void {\bf on\+Input\+Closure1} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf after\+Getting\+Bytes} (void $\ast$client\+Data, unsigned num\+Bytes\+Read, unsigned num\+Truncated\+Bytes, struct timeval presentation\+Time, unsigned duration\+In\+Microseconds)
+\item 
+static void {\bf on\+Input\+Closure} (void $\ast$client\+Data)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Framed\+Source} $\ast$ {\bf f\+Input\+Source}
+\item 
+{\bf Framed\+Source\+::on\+Close\+Func} $\ast$ {\bf f\+Client\+On\+Input\+Close\+Func}
+\item 
+void $\ast$ {\bf f\+Client\+On\+Input\+Close\+Client\+Data}
+\item 
+{\bf client\+Continue\+Func} $\ast$ {\bf f\+Client\+Continue\+Func}
+\item 
+void $\ast$ {\bf f\+Client\+Continue\+Client\+Data}
+\item 
+unsigned char $\ast$ {\bf f\+Bank} [2]
+\item 
+unsigned char {\bf f\+Cur\+Bank\+Num}
+\item 
+unsigned char $\ast$ {\bf f\+Cur\+Bank}
+\item 
+unsigned {\bf f\+Saved\+Parser\+Index}
+\item 
+unsigned char {\bf f\+Saved\+Remaining\+Unparsed\+Bits}
+\item 
+unsigned {\bf f\+Cur\+Parser\+Index}
+\item 
+unsigned char {\bf f\+Remaining\+Unparsed\+Bits}
+\item 
+unsigned {\bf f\+Tot\+Num\+Valid\+Bytes}
+\item 
+{\bf Boolean} {\bf f\+Have\+Seen\+E\+O\+F}
+\item 
+struct timeval {\bf f\+Last\+Seen\+Presentation\+Time}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file Stream\+Parser.\+hh.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{Stream\+Parser@{Stream\+Parser}!client\+Continue\+Func@{client\+Continue\+Func}}
+\index{client\+Continue\+Func@{client\+Continue\+Func}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{client\+Continue\+Func}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( Stream\+Parser\+::client\+Continue\+Func) (void $\ast$client\+Data, unsigned char $\ast$ptr, unsigned size, struct timeval presentation\+Time)\hspace{0.3cm}{\ttfamily [protected]}}\label{classStreamParser_af64ee5887e237d64d1df3072f10e11fb}
+
+
+Definition at line 33 of file Stream\+Parser.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Stream\+Parser@{Stream\+Parser}!Stream\+Parser@{Stream\+Parser}}
+\index{Stream\+Parser@{Stream\+Parser}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{Stream\+Parser(\+Framed\+Source $\ast$input\+Source, Framed\+Source\+::on\+Close\+Func $\ast$on\+Input\+Close\+Func, void $\ast$on\+Input\+Close\+Client\+Data, client\+Continue\+Func $\ast$client\+Continue\+Func, void $\ast$client\+Continue\+Client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}Stream\+Parser\+::\+Stream\+Parser (
+\begin{DoxyParamCaption}
+\item[{{\bf Framed\+Source} $\ast$}]{input\+Source, }
+\item[{{\bf Framed\+Source\+::on\+Close\+Func} $\ast$}]{on\+Input\+Close\+Func, }
+\item[{void $\ast$}]{on\+Input\+Close\+Client\+Data, }
+\item[{{\bf client\+Continue\+Func} $\ast$}]{client\+Continue\+Func, }
+\item[{void $\ast$}]{client\+Continue\+Client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classStreamParser_a4c717ebe8bd153537f180585ba5ab3b1}
+\index{Stream\+Parser@{Stream\+Parser}!````~Stream\+Parser@{$\sim$\+Stream\+Parser}}
+\index{````~Stream\+Parser@{$\sim$\+Stream\+Parser}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{$\sim$\+Stream\+Parser()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Stream\+Parser\+::$\sim$\+Stream\+Parser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classStreamParser_a86e9ca731be511cec0f2db9e88becadd}
+
+
+\subsection{Member Function Documentation}
+\index{Stream\+Parser@{Stream\+Parser}!after\+Getting\+Bytes@{after\+Getting\+Bytes}}
+\index{after\+Getting\+Bytes@{after\+Getting\+Bytes}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{after\+Getting\+Bytes(void $\ast$client\+Data, unsigned num\+Bytes\+Read, unsigned num\+Truncated\+Bytes, struct timeval presentation\+Time, unsigned duration\+In\+Microseconds)}]{\setlength{\rightskip}{0pt plus 5cm}static void Stream\+Parser\+::after\+Getting\+Bytes (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data, }
+\item[{unsigned}]{num\+Bytes\+Read, }
+\item[{unsigned}]{num\+Truncated\+Bytes, }
+\item[{struct timeval}]{presentation\+Time, }
+\item[{unsigned}]{duration\+In\+Microseconds}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classStreamParser_adef3e0c9df7cf5cc79095346baf3ee64}
+\index{Stream\+Parser@{Stream\+Parser}!after\+Getting\+Bytes1@{after\+Getting\+Bytes1}}
+\index{after\+Getting\+Bytes1@{after\+Getting\+Bytes1}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{after\+Getting\+Bytes1(unsigned num\+Bytes\+Read, struct timeval presentation\+Time)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::after\+Getting\+Bytes1 (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bytes\+Read, }
+\item[{struct timeval}]{presentation\+Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamParser_a4189e395d00d23a8856832da53062092}
+\index{Stream\+Parser@{Stream\+Parser}!bank\+Size@{bank\+Size}}
+\index{bank\+Size@{bank\+Size}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{bank\+Size() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+Parser\+::bank\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{classStreamParser_a861774b85359a9a8b3de447ac88da9f2}
+\index{Stream\+Parser@{Stream\+Parser}!cur\+Bank@{cur\+Bank}}
+\index{cur\+Bank@{cur\+Bank}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{cur\+Bank()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ Stream\+Parser\+::cur\+Bank (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classStreamParser_a11cba0163b01dc4711a7f62a9fb63f8f}
+
+
+Definition at line 109 of file Stream\+Parser.\+hh.
+
+
+
+References f\+Cur\+Bank.
+
+
+
+Referenced by get1\+Byte(), last\+Parsed(), and next\+To\+Parse().
+
+
+\begin{DoxyCode}
+109 \{ \textcolor{keywordflow}{return} fCurBank; \}
+\end{DoxyCode}
+\index{Stream\+Parser@{Stream\+Parser}!cur\+Offset@{cur\+Offset}}
+\index{cur\+Offset@{cur\+Offset}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{cur\+Offset() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+Parser\+::cur\+Offset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classStreamParser_ad7f2eaf42a390a5ebc257b5ac5dc9fed}
+
+
+Definition at line 100 of file Stream\+Parser.\+hh.
+
+
+
+References f\+Cur\+Parser\+Index.
+
+
+\begin{DoxyCode}
+100 \{ \textcolor{keywordflow}{return} fCurParserIndex; \}
+\end{DoxyCode}
+\index{Stream\+Parser@{Stream\+Parser}!ensure\+Valid\+Bytes@{ensure\+Valid\+Bytes}}
+\index{ensure\+Valid\+Bytes@{ensure\+Valid\+Bytes}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{ensure\+Valid\+Bytes(unsigned num\+Bytes\+Needed)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::ensure\+Valid\+Bytes (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bytes\+Needed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classStreamParser_a9684525dee39b99c60fa887915a79cb2}
+
+
+Definition at line 114 of file Stream\+Parser.\+hh.
+
+
+
+References ensure\+Valid\+Bytes1(), f\+Cur\+Parser\+Index, and f\+Tot\+Num\+Valid\+Bytes.
+
+
+
+Referenced by get1\+Byte(), get2\+Bytes(), skip\+Bytes(), test1\+Byte(), test4\+Bytes(), and test\+Bytes().
+
+
+\begin{DoxyCode}
+114                                                  \{
+115     \textcolor{comment}{// common case: inlined:}
+116     \textcolor{keywordflow}{if} (fCurParserIndex + numBytesNeeded <= fTotNumValidBytes) \textcolor{keywordflow}{return};
+117 
+118     ensureValidBytes1(numBytesNeeded);
+119   \}
+\end{DoxyCode}
+\index{Stream\+Parser@{Stream\+Parser}!ensure\+Valid\+Bytes1@{ensure\+Valid\+Bytes1}}
+\index{ensure\+Valid\+Bytes1@{ensure\+Valid\+Bytes1}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{ensure\+Valid\+Bytes1(unsigned num\+Bytes\+Needed)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::ensure\+Valid\+Bytes1 (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bytes\+Needed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamParser_adddecfb1a375c9cef009f566a8fb4c88}
+
+
+Referenced by ensure\+Valid\+Bytes().
+
+\index{Stream\+Parser@{Stream\+Parser}!flush\+Input@{flush\+Input}}
+\index{flush\+Input@{flush\+Input}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{flush\+Input()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Stream\+Parser\+::flush\+Input (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classStreamParser_a3225e9b48cf370e2ff9a9aa3a60308fd}
+\index{Stream\+Parser@{Stream\+Parser}!get1\+Byte@{get1\+Byte}}
+\index{get1\+Byte@{get1\+Byte}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{get1\+Byte()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t Stream\+Parser\+::get1\+Byte (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classStreamParser_aa198ceef145e9c25617b3e7c10ed8476}
+
+
+Definition at line 72 of file Stream\+Parser.\+hh.
+
+
+
+References cur\+Bank(), ensure\+Valid\+Bytes(), f\+Cur\+Parser\+Index, and f\+Remaining\+Unparsed\+Bits.
+
+
+
+Referenced by M\+P\+E\+G\+Video\+Stream\+Parser\+::save\+To\+Next\+Code(), and M\+P\+E\+G\+Video\+Stream\+Parser\+::skip\+To\+Next\+Code().
+
+
+\begin{DoxyCode}
+72                       \{ \textcolor{comment}{// byte-aligned}
+73     ensureValidBytes(1);
+74     fRemainingUnparsedBits = 0;
+75     \textcolor{keywordflow}{return} curBank()[fCurParserIndex++];
+76   \}
+\end{DoxyCode}
+\index{Stream\+Parser@{Stream\+Parser}!get2\+Bytes@{get2\+Bytes}}
+\index{get2\+Bytes@{get2\+Bytes}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{get2\+Bytes()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int16\+\_\+t Stream\+Parser\+::get2\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classStreamParser_aa32642bfa6d9705d04d894d7bf820821}
+
+
+Definition at line 60 of file Stream\+Parser.\+hh.
+
+
+
+References ensure\+Valid\+Bytes(), f\+Cur\+Parser\+Index, f\+Remaining\+Unparsed\+Bits, and next\+To\+Parse().
+
+
+\begin{DoxyCode}
+60                         \{
+61     ensureValidBytes(2);
+62 
+63     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \textcolor{keyword}{const}* ptr = nextToParse();
+64     u\_int16\_t result = (ptr[0]<<8)|ptr[1];
+65 
+66     fCurParserIndex += 2;
+67     fRemainingUnparsedBits = 0;
+68 
+69     \textcolor{keywordflow}{return} result;
+70   \}
+\end{DoxyCode}
+\index{Stream\+Parser@{Stream\+Parser}!get4\+Bytes@{get4\+Bytes}}
+\index{get4\+Bytes@{get4\+Bytes}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{get4\+Bytes()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t Stream\+Parser\+::get4\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classStreamParser_adad1edf3d565b40e56878a33b015ba71}
+
+
+Definition at line 46 of file Stream\+Parser.\+hh.
+
+
+
+References f\+Cur\+Parser\+Index, f\+Remaining\+Unparsed\+Bits, and test4\+Bytes().
+
+
+
+Referenced by M\+P\+E\+G\+Video\+Stream\+Parser\+::save\+To\+Next\+Code(), and M\+P\+E\+G\+Video\+Stream\+Parser\+::skip\+To\+Next\+Code().
+
+
+\begin{DoxyCode}
+46                         \{ \textcolor{comment}{// byte-aligned; returned in big-endian order}
+47     u\_int32\_t result = test4Bytes();
+48     fCurParserIndex += 4;
+49     fRemainingUnparsedBits = 0;
+50 
+51     \textcolor{keywordflow}{return} result;
+52   \}
+\end{DoxyCode}
+\index{Stream\+Parser@{Stream\+Parser}!get\+Bits@{get\+Bits}}
+\index{get\+Bits@{get\+Bits}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{get\+Bits(unsigned num\+Bits)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+Parser\+::get\+Bits (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bits}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classStreamParser_a4c2c541641d32e623cee26a87c7757b9}
+\index{Stream\+Parser@{Stream\+Parser}!get\+Bytes@{get\+Bytes}}
+\index{get\+Bytes@{get\+Bytes}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{get\+Bytes(u\+\_\+int8\+\_\+t $\ast$to, unsigned num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::get\+Bytes (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t $\ast$}]{to, }
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classStreamParser_a51d3d9bd192703f2e68abc091ad52df5}
+
+
+Definition at line 82 of file Stream\+Parser.\+hh.
+
+
+
+References f\+Cur\+Parser\+Index, f\+Remaining\+Unparsed\+Bits, and test\+Bytes().
+
+
+\begin{DoxyCode}
+82                                                  \{
+83     testBytes(to, numBytes);
+84     fCurParserIndex += numBytes;
+85     fRemainingUnparsedBits = 0;
+86   \}
+\end{DoxyCode}
+\index{Stream\+Parser@{Stream\+Parser}!have\+Seen\+E\+O\+F@{have\+Seen\+E\+O\+F}}
+\index{have\+Seen\+E\+O\+F@{have\+Seen\+E\+O\+F}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{have\+Seen\+E\+O\+F() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Stream\+Parser\+::have\+Seen\+E\+O\+F (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classStreamParser_abf3705cbce3ed9bce23d13fa50641fbd}
+
+
+Definition at line 104 of file Stream\+Parser.\+hh.
+
+
+
+References f\+Have\+Seen\+E\+O\+F.
+
+
+\begin{DoxyCode}
+104 \{ \textcolor{keywordflow}{return} fHaveSeenEOF; \}
+\end{DoxyCode}
+\index{Stream\+Parser@{Stream\+Parser}!last\+Parsed@{last\+Parsed}}
+\index{last\+Parsed@{last\+Parsed}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{last\+Parsed()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ Stream\+Parser\+::last\+Parsed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classStreamParser_a836e9907b42662f95b38c000d3506e78}
+
+
+Definition at line 111 of file Stream\+Parser.\+hh.
+
+
+
+References cur\+Bank(), and f\+Cur\+Parser\+Index.
+
+
+\begin{DoxyCode}
+111 \{ \textcolor{keywordflow}{return} &curBank()[fCurParserIndex-1]; \}
+\end{DoxyCode}
+\index{Stream\+Parser@{Stream\+Parser}!next\+To\+Parse@{next\+To\+Parse}}
+\index{next\+To\+Parse@{next\+To\+Parse}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{next\+To\+Parse()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ Stream\+Parser\+::next\+To\+Parse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classStreamParser_aeed9a194ab412c045be98a7c26219316}
+
+
+Definition at line 110 of file Stream\+Parser.\+hh.
+
+
+
+References cur\+Bank(), and f\+Cur\+Parser\+Index.
+
+
+
+Referenced by get2\+Bytes(), test1\+Byte(), test4\+Bytes(), and test\+Bytes().
+
+
+\begin{DoxyCode}
+110 \{ \textcolor{keywordflow}{return} &curBank()[fCurParserIndex]; \}
+\end{DoxyCode}
+\index{Stream\+Parser@{Stream\+Parser}!on\+Input\+Closure@{on\+Input\+Closure}}
+\index{on\+Input\+Closure@{on\+Input\+Closure}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{on\+Input\+Closure(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void Stream\+Parser\+::on\+Input\+Closure (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classStreamParser_a49ac9e2cd29da7751e4de3a2fdfb7c98}
+\index{Stream\+Parser@{Stream\+Parser}!on\+Input\+Closure1@{on\+Input\+Closure1}}
+\index{on\+Input\+Closure1@{on\+Input\+Closure1}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{on\+Input\+Closure1()}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::on\+Input\+Closure1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamParser_aa2f2ce9c95173fadf3444be314165b72}
+\index{Stream\+Parser@{Stream\+Parser}!restore\+Saved\+Parser\+State@{restore\+Saved\+Parser\+State}}
+\index{restore\+Saved\+Parser\+State@{restore\+Saved\+Parser\+State}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{restore\+Saved\+Parser\+State()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Stream\+Parser\+::restore\+Saved\+Parser\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classStreamParser_ac15f8f98fdd79ae31b8cee01f1a963e9}
+
+
+Reimplemented in {\bf M\+P\+E\+G\+Video\+Stream\+Parser} \doxyref{}{p.}{classMPEGVideoStreamParser_a5e739b73408c43237316c95a5bb93d00}, {\bf H263plus\+Video\+Stream\+Parser} \doxyref{}{p.}{classH263plusVideoStreamParser_a58481083d419747e3b16be83e9ff17d2}, and {\bf Matroska\+File\+Parser} \doxyref{}{p.}{classMatroskaFileParser_a6bac9fa861c86b71ba7c531d808c976e}.
+
+\index{Stream\+Parser@{Stream\+Parser}!save\+Parser\+State@{save\+Parser\+State}}
+\index{save\+Parser\+State@{save\+Parser\+State}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{save\+Parser\+State()}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::save\+Parser\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classStreamParser_afad3a870af863d25ea1927ab9c07b3f2}
+
+
+Referenced by M\+P\+E\+G\+Video\+Stream\+Parser\+::set\+Parse\+State().
+
+\index{Stream\+Parser@{Stream\+Parser}!skip\+Bits@{skip\+Bits}}
+\index{skip\+Bits@{skip\+Bits}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{skip\+Bits(unsigned num\+Bits)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::skip\+Bits (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bits}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classStreamParser_aaf2cf90f248fbd494ab74e5bccec5546}
+\index{Stream\+Parser@{Stream\+Parser}!skip\+Bytes@{skip\+Bytes}}
+\index{skip\+Bytes@{skip\+Bytes}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{skip\+Bytes(unsigned num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::skip\+Bytes (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classStreamParser_aa340f831acf01b8626060818a530cfb5}
+
+
+Definition at line 91 of file Stream\+Parser.\+hh.
+
+
+
+References ensure\+Valid\+Bytes(), and f\+Cur\+Parser\+Index.
+
+
+\begin{DoxyCode}
+91                                     \{
+92     ensureValidBytes(numBytes);
+93     fCurParserIndex += numBytes;
+94   \}
+\end{DoxyCode}
+\index{Stream\+Parser@{Stream\+Parser}!test1\+Byte@{test1\+Byte}}
+\index{test1\+Byte@{test1\+Byte}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{test1\+Byte()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t Stream\+Parser\+::test1\+Byte (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classStreamParser_a6d099b5aed1c181e2f2d320721d2f87f}
+
+
+Definition at line 77 of file Stream\+Parser.\+hh.
+
+
+
+References ensure\+Valid\+Bytes(), and next\+To\+Parse().
+
+
+\begin{DoxyCode}
+77                        \{ \textcolor{comment}{// as above, but doesn't advance ptr}
+78     ensureValidBytes(1);
+79     \textcolor{keywordflow}{return} nextToParse()[0];
+80   \}
+\end{DoxyCode}
+\index{Stream\+Parser@{Stream\+Parser}!test4\+Bytes@{test4\+Bytes}}
+\index{test4\+Bytes@{test4\+Bytes}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{test4\+Bytes()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t Stream\+Parser\+::test4\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classStreamParser_ab27bd80b6ff148a1a6afbc54e9938385}
+
+
+Definition at line 53 of file Stream\+Parser.\+hh.
+
+
+
+References ensure\+Valid\+Bytes(), and next\+To\+Parse().
+
+
+
+Referenced by get4\+Bytes().
+
+
+\begin{DoxyCode}
+53                          \{ \textcolor{comment}{// as above, but doesn't advance ptr}
+54     ensureValidBytes(4);
+55 
+56     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \textcolor{keyword}{const}* ptr = nextToParse();
+57     \textcolor{keywordflow}{return} (ptr[0]<<24)|(ptr[1]<<16)|(ptr[2]<<8)|ptr[3];
+58   \}
+\end{DoxyCode}
+\index{Stream\+Parser@{Stream\+Parser}!test\+Bytes@{test\+Bytes}}
+\index{test\+Bytes@{test\+Bytes}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{test\+Bytes(u\+\_\+int8\+\_\+t $\ast$to, unsigned num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::test\+Bytes (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t $\ast$}]{to, }
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classStreamParser_a2ded9a22a9d1fc854303c80f9c1ad6b3}
+
+
+Definition at line 87 of file Stream\+Parser.\+hh.
+
+
+
+References ensure\+Valid\+Bytes(), and next\+To\+Parse().
+
+
+
+Referenced by get\+Bytes().
+
+
+\begin{DoxyCode}
+87                                                   \{ \textcolor{comment}{// as above, but doesn't advance ptr}
+88     ensureValidBytes(numBytes);
+89     memmove(to, nextToParse(), numBytes);
+90   \}
+\end{DoxyCode}
+\index{Stream\+Parser@{Stream\+Parser}!tot\+Num\+Valid\+Bytes@{tot\+Num\+Valid\+Bytes}}
+\index{tot\+Num\+Valid\+Bytes@{tot\+Num\+Valid\+Bytes}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{tot\+Num\+Valid\+Bytes()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned\& Stream\+Parser\+::tot\+Num\+Valid\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classStreamParser_a9cf19a8362a39bff364a8f3d2a5136cf}
+
+
+Definition at line 102 of file Stream\+Parser.\+hh.
+
+
+
+References f\+Tot\+Num\+Valid\+Bytes.
+
+
+\begin{DoxyCode}
+102 \{ \textcolor{keywordflow}{return} fTotNumValidBytes; \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Stream\+Parser@{Stream\+Parser}!f\+Bank@{f\+Bank}}
+\index{f\+Bank@{f\+Bank}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{f\+Bank}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ Stream\+Parser\+::f\+Bank[2]\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamParser_af0bd415c8d280c20e0ec44de583d3700}
+
+
+Definition at line 139 of file Stream\+Parser.\+hh.
+
+\index{Stream\+Parser@{Stream\+Parser}!f\+Client\+Continue\+Client\+Data@{f\+Client\+Continue\+Client\+Data}}
+\index{f\+Client\+Continue\+Client\+Data@{f\+Client\+Continue\+Client\+Data}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{f\+Client\+Continue\+Client\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Stream\+Parser\+::f\+Client\+Continue\+Client\+Data\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamParser_a5d0c8e72162f94ea1c9a013e90e7a02a}
+
+
+Definition at line 136 of file Stream\+Parser.\+hh.
+
+\index{Stream\+Parser@{Stream\+Parser}!f\+Client\+Continue\+Func@{f\+Client\+Continue\+Func}}
+\index{f\+Client\+Continue\+Func@{f\+Client\+Continue\+Func}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{f\+Client\+Continue\+Func}]{\setlength{\rightskip}{0pt plus 5cm}{\bf client\+Continue\+Func}$\ast$ Stream\+Parser\+::f\+Client\+Continue\+Func\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamParser_a69143763fb409852dea9311ae46bcfce}
+
+
+Definition at line 135 of file Stream\+Parser.\+hh.
+
+\index{Stream\+Parser@{Stream\+Parser}!f\+Client\+On\+Input\+Close\+Client\+Data@{f\+Client\+On\+Input\+Close\+Client\+Data}}
+\index{f\+Client\+On\+Input\+Close\+Client\+Data@{f\+Client\+On\+Input\+Close\+Client\+Data}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{f\+Client\+On\+Input\+Close\+Client\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Stream\+Parser\+::f\+Client\+On\+Input\+Close\+Client\+Data\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamParser_a5b20a1d1a000887da4920e76f72961a7}
+
+
+Definition at line 134 of file Stream\+Parser.\+hh.
+
+\index{Stream\+Parser@{Stream\+Parser}!f\+Client\+On\+Input\+Close\+Func@{f\+Client\+On\+Input\+Close\+Func}}
+\index{f\+Client\+On\+Input\+Close\+Func@{f\+Client\+On\+Input\+Close\+Func}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{f\+Client\+On\+Input\+Close\+Func}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Framed\+Source\+::on\+Close\+Func}$\ast$ Stream\+Parser\+::f\+Client\+On\+Input\+Close\+Func\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamParser_a0fd443a29213781ddd52b818f386f1a6}
+
+
+Definition at line 133 of file Stream\+Parser.\+hh.
+
+\index{Stream\+Parser@{Stream\+Parser}!f\+Cur\+Bank@{f\+Cur\+Bank}}
+\index{f\+Cur\+Bank@{f\+Cur\+Bank}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{f\+Cur\+Bank}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ Stream\+Parser\+::f\+Cur\+Bank\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamParser_a14191c53d8a19c96ed32f89c303e2a08}
+
+
+Definition at line 141 of file Stream\+Parser.\+hh.
+
+
+
+Referenced by cur\+Bank().
+
+\index{Stream\+Parser@{Stream\+Parser}!f\+Cur\+Bank\+Num@{f\+Cur\+Bank\+Num}}
+\index{f\+Cur\+Bank\+Num@{f\+Cur\+Bank\+Num}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{f\+Cur\+Bank\+Num}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Stream\+Parser\+::f\+Cur\+Bank\+Num\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamParser_a404a66a994292cea2ab9dbe84c13ce6b}
+
+
+Definition at line 140 of file Stream\+Parser.\+hh.
+
+\index{Stream\+Parser@{Stream\+Parser}!f\+Cur\+Parser\+Index@{f\+Cur\+Parser\+Index}}
+\index{f\+Cur\+Parser\+Index@{f\+Cur\+Parser\+Index}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{f\+Cur\+Parser\+Index}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+Parser\+::f\+Cur\+Parser\+Index\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamParser_a22c344373f1e549b18bd7f66dadfc353}
+
+
+Definition at line 148 of file Stream\+Parser.\+hh.
+
+
+
+Referenced by cur\+Offset(), ensure\+Valid\+Bytes(), get1\+Byte(), get2\+Bytes(), get4\+Bytes(), get\+Bytes(), last\+Parsed(), next\+To\+Parse(), and skip\+Bytes().
+
+\index{Stream\+Parser@{Stream\+Parser}!f\+Have\+Seen\+E\+O\+F@{f\+Have\+Seen\+E\+O\+F}}
+\index{f\+Have\+Seen\+E\+O\+F@{f\+Have\+Seen\+E\+O\+F}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{f\+Have\+Seen\+E\+O\+F}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Stream\+Parser\+::f\+Have\+Seen\+E\+O\+F\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamParser_abdb68f35adb5832768484925dd18b165}
+
+
+Definition at line 155 of file Stream\+Parser.\+hh.
+
+
+
+Referenced by have\+Seen\+E\+O\+F().
+
+\index{Stream\+Parser@{Stream\+Parser}!f\+Input\+Source@{f\+Input\+Source}}
+\index{f\+Input\+Source@{f\+Input\+Source}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{f\+Input\+Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Framed\+Source}$\ast$ Stream\+Parser\+::f\+Input\+Source\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamParser_abcf98889376feb6e42f6fd2a5497f77e}
+
+
+Definition at line 132 of file Stream\+Parser.\+hh.
+
+\index{Stream\+Parser@{Stream\+Parser}!f\+Last\+Seen\+Presentation\+Time@{f\+Last\+Seen\+Presentation\+Time}}
+\index{f\+Last\+Seen\+Presentation\+Time@{f\+Last\+Seen\+Presentation\+Time}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{f\+Last\+Seen\+Presentation\+Time}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval Stream\+Parser\+::f\+Last\+Seen\+Presentation\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamParser_abab8f7dda69a2c6072e6ef75fd119bc6}
+
+
+Definition at line 157 of file Stream\+Parser.\+hh.
+
+\index{Stream\+Parser@{Stream\+Parser}!f\+Remaining\+Unparsed\+Bits@{f\+Remaining\+Unparsed\+Bits}}
+\index{f\+Remaining\+Unparsed\+Bits@{f\+Remaining\+Unparsed\+Bits}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{f\+Remaining\+Unparsed\+Bits}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Stream\+Parser\+::f\+Remaining\+Unparsed\+Bits\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamParser_aa35f6902afdc0d37c7ce469bb44b75d5}
+
+
+Definition at line 149 of file Stream\+Parser.\+hh.
+
+
+
+Referenced by get1\+Byte(), get2\+Bytes(), get4\+Bytes(), and get\+Bytes().
+
+\index{Stream\+Parser@{Stream\+Parser}!f\+Saved\+Parser\+Index@{f\+Saved\+Parser\+Index}}
+\index{f\+Saved\+Parser\+Index@{f\+Saved\+Parser\+Index}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{f\+Saved\+Parser\+Index}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+Parser\+::f\+Saved\+Parser\+Index\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamParser_a116b18ec258a17a0a922806ad9bbf633}
+
+
+Definition at line 144 of file Stream\+Parser.\+hh.
+
+\index{Stream\+Parser@{Stream\+Parser}!f\+Saved\+Remaining\+Unparsed\+Bits@{f\+Saved\+Remaining\+Unparsed\+Bits}}
+\index{f\+Saved\+Remaining\+Unparsed\+Bits@{f\+Saved\+Remaining\+Unparsed\+Bits}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{f\+Saved\+Remaining\+Unparsed\+Bits}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Stream\+Parser\+::f\+Saved\+Remaining\+Unparsed\+Bits\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamParser_a9a6a0d53be347c35b5d7a03c52b556e4}
+
+
+Definition at line 145 of file Stream\+Parser.\+hh.
+
+\index{Stream\+Parser@{Stream\+Parser}!f\+Tot\+Num\+Valid\+Bytes@{f\+Tot\+Num\+Valid\+Bytes}}
+\index{f\+Tot\+Num\+Valid\+Bytes@{f\+Tot\+Num\+Valid\+Bytes}!Stream\+Parser@{Stream\+Parser}}
+\subsubsection[{f\+Tot\+Num\+Valid\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+Parser\+::f\+Tot\+Num\+Valid\+Bytes\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamParser_a10a92c20d91397304fecf81c8f8b2274}
+
+
+Definition at line 152 of file Stream\+Parser.\+hh.
+
+
+
+Referenced by ensure\+Valid\+Bytes(), and tot\+Num\+Valid\+Bytes().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/{\bf Stream\+Parser.\+hh}\end{DoxyCompactItemize}

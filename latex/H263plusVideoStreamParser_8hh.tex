@@ -1,0 +1,105 @@
+\section{live\+Media/\+H263plus\+Video\+Stream\+Parser.hh File Reference}
+\label{H263plusVideoStreamParser_8hh}\index{live\+Media/\+H263plus\+Video\+Stream\+Parser.\+hh@{live\+Media/\+H263plus\+Video\+Stream\+Parser.\+hh}}
+{\ttfamily \#include \char`\"{}Stream\+Parser.\+hh\char`\"{}}\\*
+Include dependency graph for H263plus\+Video\+Stream\+Parser.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{H263plusVideoStreamParser_8hh__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf \+\_\+\+H263\+I\+N\+F\+O}
+\item 
+struct {\bf \+\_\+\+Max\+Bitrate\+\_\+\+C\+T\+X}
+\item 
+class {\bf H263plus\+Video\+Stream\+Parser}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf H263\+\_\+\+T\+I\+M\+E\+S\+C\+A\+L\+E}~1000
+\item 
+\#define {\bf H263\+\_\+\+B\+A\+S\+I\+C\+\_\+\+F\+R\+A\+M\+E\+\_\+\+R\+A\+T\+E}~30
+\item 
+\#define {\bf H263\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S}~5
+\item 
+\#define {\bf H263\+\_\+\+S\+T\+A\+R\+T\+C\+O\+D\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S}~3
+\item 
+\#define {\bf H263\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}~256 $\ast$ 1024
+\item 
+\#define {\bf A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+N\+E\+E\+D\+E\+D}~{\bf H263\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S} -\/ {\bf H263\+\_\+\+S\+T\+A\+R\+T\+C\+O\+D\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S}
+\item 
+\#define {\bf H263\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+B\+R\+\_\+\+T\+O\+L\+E\+R\+A\+N\+C\+E}~10
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct {\bf \+\_\+\+H263\+I\+N\+F\+O} {\bf H263\+I\+N\+F\+O}
+\item 
+typedef struct {\bf \+\_\+\+Max\+Bitrate\+\_\+\+C\+T\+X} {\bf Max\+Bitrate\+\_\+\+C\+T\+X}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{H263plus\+Video\+Stream\+Parser.\+hh@{H263plus\+Video\+Stream\+Parser.\+hh}!A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+N\+E\+E\+D\+E\+D@{A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+N\+E\+E\+D\+E\+D}}
+\index{A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+N\+E\+E\+D\+E\+D@{A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+N\+E\+E\+D\+E\+D}!H263plus\+Video\+Stream\+Parser.\+hh@{H263plus\+Video\+Stream\+Parser.\+hh}}
+\subsubsection[{A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+N\+E\+E\+D\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+N\+E\+E\+D\+E\+D~{\bf H263\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S} -\/ {\bf H263\+\_\+\+S\+T\+A\+R\+T\+C\+O\+D\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S}}\label{H263plusVideoStreamParser_8hh_a73e40eb4d7e895016cba91a8571de8ec}
+
+
+Definition at line 48 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+\index{H263plus\+Video\+Stream\+Parser.\+hh@{H263plus\+Video\+Stream\+Parser.\+hh}!H263\+\_\+\+B\+A\+S\+I\+C\+\_\+\+F\+R\+A\+M\+E\+\_\+\+R\+A\+T\+E@{H263\+\_\+\+B\+A\+S\+I\+C\+\_\+\+F\+R\+A\+M\+E\+\_\+\+R\+A\+T\+E}}
+\index{H263\+\_\+\+B\+A\+S\+I\+C\+\_\+\+F\+R\+A\+M\+E\+\_\+\+R\+A\+T\+E@{H263\+\_\+\+B\+A\+S\+I\+C\+\_\+\+F\+R\+A\+M\+E\+\_\+\+R\+A\+T\+E}!H263plus\+Video\+Stream\+Parser.\+hh@{H263plus\+Video\+Stream\+Parser.\+hh}}
+\subsubsection[{H263\+\_\+\+B\+A\+S\+I\+C\+\_\+\+F\+R\+A\+M\+E\+\_\+\+R\+A\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define H263\+\_\+\+B\+A\+S\+I\+C\+\_\+\+F\+R\+A\+M\+E\+\_\+\+R\+A\+T\+E~30}\label{H263plusVideoStreamParser_8hh_a08f2a3a95e1d1ea63d3587c6c5529209}
+
+
+Definition at line 34 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+\index{H263plus\+Video\+Stream\+Parser.\+hh@{H263plus\+Video\+Stream\+Parser.\+hh}!H263\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E@{H263\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}}
+\index{H263\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E@{H263\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}!H263plus\+Video\+Stream\+Parser.\+hh@{H263plus\+Video\+Stream\+Parser.\+hh}}
+\subsubsection[{H263\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define H263\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E~256 $\ast$ 1024}\label{H263plusVideoStreamParser_8hh_a014c493a7cac1bd9f7e6dcba80dd2763}
+
+
+Definition at line 44 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+\index{H263plus\+Video\+Stream\+Parser.\+hh@{H263plus\+Video\+Stream\+Parser.\+hh}!H263\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+B\+R\+\_\+\+T\+O\+L\+E\+R\+A\+N\+C\+E@{H263\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+B\+R\+\_\+\+T\+O\+L\+E\+R\+A\+N\+C\+E}}
+\index{H263\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+B\+R\+\_\+\+T\+O\+L\+E\+R\+A\+N\+C\+E@{H263\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+B\+R\+\_\+\+T\+O\+L\+E\+R\+A\+N\+C\+E}!H263plus\+Video\+Stream\+Parser.\+hh@{H263plus\+Video\+Stream\+Parser.\+hh}}
+\subsubsection[{H263\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+B\+R\+\_\+\+T\+O\+L\+E\+R\+A\+N\+C\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define H263\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+B\+R\+\_\+\+T\+O\+L\+E\+R\+A\+N\+C\+E~10}\label{H263plusVideoStreamParser_8hh_a2f7d454f5e963b869a5c607a565ea779}
+
+
+Definition at line 51 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+\index{H263plus\+Video\+Stream\+Parser.\+hh@{H263plus\+Video\+Stream\+Parser.\+hh}!H263\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S@{H263\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S}}
+\index{H263\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S@{H263\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S}!H263plus\+Video\+Stream\+Parser.\+hh@{H263plus\+Video\+Stream\+Parser.\+hh}}
+\subsubsection[{H263\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H263\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S~5}\label{H263plusVideoStreamParser_8hh_aadb1e2c1eb5a636e665d77e878f9577e}
+
+
+Definition at line 37 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+\index{H263plus\+Video\+Stream\+Parser.\+hh@{H263plus\+Video\+Stream\+Parser.\+hh}!H263\+\_\+\+S\+T\+A\+R\+T\+C\+O\+D\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S@{H263\+\_\+\+S\+T\+A\+R\+T\+C\+O\+D\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S}}
+\index{H263\+\_\+\+S\+T\+A\+R\+T\+C\+O\+D\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S@{H263\+\_\+\+S\+T\+A\+R\+T\+C\+O\+D\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S}!H263plus\+Video\+Stream\+Parser.\+hh@{H263plus\+Video\+Stream\+Parser.\+hh}}
+\subsubsection[{H263\+\_\+\+S\+T\+A\+R\+T\+C\+O\+D\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H263\+\_\+\+S\+T\+A\+R\+T\+C\+O\+D\+E\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S~3}\label{H263plusVideoStreamParser_8hh_a1764f3c8ed6eda8b2003e4403d9a06cb}
+
+
+Definition at line 40 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+\index{H263plus\+Video\+Stream\+Parser.\+hh@{H263plus\+Video\+Stream\+Parser.\+hh}!H263\+\_\+\+T\+I\+M\+E\+S\+C\+A\+L\+E@{H263\+\_\+\+T\+I\+M\+E\+S\+C\+A\+L\+E}}
+\index{H263\+\_\+\+T\+I\+M\+E\+S\+C\+A\+L\+E@{H263\+\_\+\+T\+I\+M\+E\+S\+C\+A\+L\+E}!H263plus\+Video\+Stream\+Parser.\+hh@{H263plus\+Video\+Stream\+Parser.\+hh}}
+\subsubsection[{H263\+\_\+\+T\+I\+M\+E\+S\+C\+A\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define H263\+\_\+\+T\+I\+M\+E\+S\+C\+A\+L\+E~1000}\label{H263plusVideoStreamParser_8hh_a708d9df7928b19420f0cbbb0ca227cb8}
+
+
+Definition at line 31 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+
+
+\subsection{Typedef Documentation}
+\index{H263plus\+Video\+Stream\+Parser.\+hh@{H263plus\+Video\+Stream\+Parser.\+hh}!H263\+I\+N\+F\+O@{H263\+I\+N\+F\+O}}
+\index{H263\+I\+N\+F\+O@{H263\+I\+N\+F\+O}!H263plus\+Video\+Stream\+Parser.\+hh@{H263plus\+Video\+Stream\+Parser.\+hh}}
+\subsubsection[{H263\+I\+N\+F\+O}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+\+H263\+I\+N\+F\+O}  {\bf H263\+I\+N\+F\+O}}\label{H263plusVideoStreamParser_8hh_a7bb45428f1ca0c32093f1937a0292ffa}
+\index{H263plus\+Video\+Stream\+Parser.\+hh@{H263plus\+Video\+Stream\+Parser.\+hh}!Max\+Bitrate\+\_\+\+C\+T\+X@{Max\+Bitrate\+\_\+\+C\+T\+X}}
+\index{Max\+Bitrate\+\_\+\+C\+T\+X@{Max\+Bitrate\+\_\+\+C\+T\+X}!H263plus\+Video\+Stream\+Parser.\+hh@{H263plus\+Video\+Stream\+Parser.\+hh}}
+\subsubsection[{Max\+Bitrate\+\_\+\+C\+T\+X}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+\+Max\+Bitrate\+\_\+\+C\+T\+X}  {\bf Max\+Bitrate\+\_\+\+C\+T\+X}}\label{H263plusVideoStreamParser_8hh_a2fb86079cd9e3a1edb65c830963e3aa4}

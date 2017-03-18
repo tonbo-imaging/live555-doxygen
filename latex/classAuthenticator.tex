@@ -1,0 +1,347 @@
+\section{Authenticator Class Reference}
+\label{classAuthenticator}\index{Authenticator@{Authenticator}}
+
+
+{\ttfamily \#include $<$Digest\+Authentication.\+hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Authenticator} ()
+\item 
+{\bf Authenticator} (char const $\ast${\bf username}, char const $\ast${\bf password}, {\bf Boolean} password\+Is\+M\+D5={\bf False})
+\item 
+{\bf Authenticator} (const {\bf Authenticator} \&orig)
+\item 
+{\bf Authenticator} \& {\bf operator=} (const {\bf Authenticator} \&right\+Side)
+\item 
+{\bf Boolean} {\bf operator$<$} (const {\bf Authenticator} $\ast$right\+Side)
+\item 
+virtual {\bf $\sim$\+Authenticator} ()
+\item 
+void {\bf reset} ()
+\item 
+void {\bf set\+Realm\+And\+Nonce} (char const $\ast${\bf realm}, char const $\ast${\bf nonce})
+\item 
+void {\bf set\+Realm\+And\+Random\+Nonce} (char const $\ast${\bf realm})
+\item 
+void {\bf set\+Username\+And\+Password} (char const $\ast${\bf username}, char const $\ast${\bf password}, {\bf Boolean} password\+Is\+M\+D5={\bf False})
+\item 
+char const $\ast$ {\bf realm} () const 
+\item 
+char const $\ast$ {\bf nonce} () const 
+\item 
+char const $\ast$ {\bf username} () const 
+\item 
+char const $\ast$ {\bf password} () const 
+\item 
+char const $\ast$ {\bf compute\+Digest\+Response} (char const $\ast$cmd, char const $\ast$url) const 
+\item 
+void {\bf reclaim\+Digest\+Response} (char const $\ast$response\+Str) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf reset\+Realm\+And\+Nonce} ()
+\item 
+void {\bf reset\+Username\+And\+Password} ()
+\item 
+void {\bf assign\+Realm\+And\+Nonce} (char const $\ast${\bf realm}, char const $\ast${\bf nonce})
+\item 
+void {\bf assign\+Username\+And\+Password} (char const $\ast${\bf username}, char const $\ast${\bf password}, {\bf Boolean} password\+Is\+M\+D5)
+\item 
+void {\bf assign} (char const $\ast${\bf realm}, char const $\ast${\bf nonce}, char const $\ast${\bf username}, char const $\ast${\bf password}, {\bf Boolean} password\+Is\+M\+D5)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ {\bf f\+Realm}
+\item 
+char $\ast$ {\bf f\+Nonce}
+\item 
+char $\ast$ {\bf f\+Username}
+\item 
+char $\ast$ {\bf f\+Password}
+\item 
+{\bf Boolean} {\bf f\+Password\+Is\+M\+D5}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 32 of file Digest\+Authentication.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Authenticator@{Authenticator}!Authenticator@{Authenticator}}
+\index{Authenticator@{Authenticator}!Authenticator@{Authenticator}}
+\subsubsection[{Authenticator()}]{\setlength{\rightskip}{0pt plus 5cm}Authenticator\+::\+Authenticator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classAuthenticator_a50f5410cc0fb998ea4dbac9535e34e31}
+\index{Authenticator@{Authenticator}!Authenticator@{Authenticator}}
+\index{Authenticator@{Authenticator}!Authenticator@{Authenticator}}
+\subsubsection[{Authenticator(char const $\ast$username, char const $\ast$password, Boolean password\+Is\+M\+D5=\+False)}]{\setlength{\rightskip}{0pt plus 5cm}Authenticator\+::\+Authenticator (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{username, }
+\item[{char const $\ast$}]{password, }
+\item[{{\bf Boolean}}]{password\+Is\+M\+D5 = {\ttfamily {\bf False}}}
+\end{DoxyParamCaption}
+)}\label{classAuthenticator_ad55ae841e1aa0518cda27813ff5b04e0}
+\index{Authenticator@{Authenticator}!Authenticator@{Authenticator}}
+\index{Authenticator@{Authenticator}!Authenticator@{Authenticator}}
+\subsubsection[{Authenticator(const Authenticator \&orig)}]{\setlength{\rightskip}{0pt plus 5cm}Authenticator\+::\+Authenticator (
+\begin{DoxyParamCaption}
+\item[{const {\bf Authenticator} \&}]{orig}
+\end{DoxyParamCaption}
+)}\label{classAuthenticator_a0b5c6d7c688d37e43cefd4d19ecb1b3e}
+\index{Authenticator@{Authenticator}!````~Authenticator@{$\sim$\+Authenticator}}
+\index{````~Authenticator@{$\sim$\+Authenticator}!Authenticator@{Authenticator}}
+\subsubsection[{$\sim$\+Authenticator()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Authenticator\+::$\sim$\+Authenticator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classAuthenticator_a22cb17ecf65ef654d7c0719db586ffed}
+
+
+\subsection{Member Function Documentation}
+\index{Authenticator@{Authenticator}!assign@{assign}}
+\index{assign@{assign}!Authenticator@{Authenticator}}
+\subsubsection[{assign(char const $\ast$realm, char const $\ast$nonce, char const $\ast$username, char const $\ast$password, Boolean password\+Is\+M\+D5)}]{\setlength{\rightskip}{0pt plus 5cm}void Authenticator\+::assign (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{realm, }
+\item[{char const $\ast$}]{nonce, }
+\item[{char const $\ast$}]{username, }
+\item[{char const $\ast$}]{password, }
+\item[{{\bf Boolean}}]{password\+Is\+M\+D5}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAuthenticator_aa325552e34f61f26ed860ee2419e0dd9}
+\index{Authenticator@{Authenticator}!assign\+Realm\+And\+Nonce@{assign\+Realm\+And\+Nonce}}
+\index{assign\+Realm\+And\+Nonce@{assign\+Realm\+And\+Nonce}!Authenticator@{Authenticator}}
+\subsubsection[{assign\+Realm\+And\+Nonce(char const $\ast$realm, char const $\ast$nonce)}]{\setlength{\rightskip}{0pt plus 5cm}void Authenticator\+::assign\+Realm\+And\+Nonce (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{realm, }
+\item[{char const $\ast$}]{nonce}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAuthenticator_a8cd2f749a1660795b0ded4ce298df916}
+\index{Authenticator@{Authenticator}!assign\+Username\+And\+Password@{assign\+Username\+And\+Password}}
+\index{assign\+Username\+And\+Password@{assign\+Username\+And\+Password}!Authenticator@{Authenticator}}
+\subsubsection[{assign\+Username\+And\+Password(char const $\ast$username, char const $\ast$password, Boolean password\+Is\+M\+D5)}]{\setlength{\rightskip}{0pt plus 5cm}void Authenticator\+::assign\+Username\+And\+Password (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{username, }
+\item[{char const $\ast$}]{password, }
+\item[{{\bf Boolean}}]{password\+Is\+M\+D5}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAuthenticator_a43e75a0a3c41f9d88fcbe1b62dc96f92}
+\index{Authenticator@{Authenticator}!compute\+Digest\+Response@{compute\+Digest\+Response}}
+\index{compute\+Digest\+Response@{compute\+Digest\+Response}!Authenticator@{Authenticator}}
+\subsubsection[{compute\+Digest\+Response(char const $\ast$cmd, char const $\ast$url) const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Authenticator\+::compute\+Digest\+Response (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{cmd, }
+\item[{char const $\ast$}]{url}
+\end{DoxyParamCaption}
+) const}\label{classAuthenticator_adfd5731f295d3bd4dcd9cac591547d32}
+\index{Authenticator@{Authenticator}!nonce@{nonce}}
+\index{nonce@{nonce}!Authenticator@{Authenticator}}
+\subsubsection[{nonce() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Authenticator\+::nonce (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classAuthenticator_ae26565450daf8917c57bdd0a8e760ff0}
+
+
+Definition at line 53 of file Digest\+Authentication.\+hh.
+
+
+
+References f\+Nonce.
+
+
+\begin{DoxyCode}
+53 \{ \textcolor{keywordflow}{return} fNonce; \}
+\end{DoxyCode}
+\index{Authenticator@{Authenticator}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Authenticator@{Authenticator}}
+\subsubsection[{operator$<$(const Authenticator $\ast$right\+Side)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Authenticator\+::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Authenticator} $\ast$}]{right\+Side}
+\end{DoxyParamCaption}
+)}\label{classAuthenticator_a75fc8467499f16af4b8a726deade45ba}
+\index{Authenticator@{Authenticator}!operator=@{operator=}}
+\index{operator=@{operator=}!Authenticator@{Authenticator}}
+\subsubsection[{operator=(const Authenticator \&right\+Side)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Authenticator}\& Authenticator\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Authenticator} \&}]{right\+Side}
+\end{DoxyParamCaption}
+)}\label{classAuthenticator_a5985d2b92a95f70dc7a2a5f2f47c9cb4}
+\index{Authenticator@{Authenticator}!password@{password}}
+\index{password@{password}!Authenticator@{Authenticator}}
+\subsubsection[{password() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Authenticator\+::password (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classAuthenticator_af65490682aadec785b00ed143949314d}
+
+
+Definition at line 55 of file Digest\+Authentication.\+hh.
+
+
+
+References f\+Password.
+
+
+\begin{DoxyCode}
+55 \{ \textcolor{keywordflow}{return} fPassword; \}
+\end{DoxyCode}
+\index{Authenticator@{Authenticator}!realm@{realm}}
+\index{realm@{realm}!Authenticator@{Authenticator}}
+\subsubsection[{realm() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Authenticator\+::realm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classAuthenticator_ad1f27969b42e1b8b0b5ff9f4b42a0993}
+
+
+Definition at line 52 of file Digest\+Authentication.\+hh.
+
+
+
+References f\+Realm.
+
+
+\begin{DoxyCode}
+52 \{ \textcolor{keywordflow}{return} fRealm; \}
+\end{DoxyCode}
+\index{Authenticator@{Authenticator}!reclaim\+Digest\+Response@{reclaim\+Digest\+Response}}
+\index{reclaim\+Digest\+Response@{reclaim\+Digest\+Response}!Authenticator@{Authenticator}}
+\subsubsection[{reclaim\+Digest\+Response(char const $\ast$response\+Str) const }]{\setlength{\rightskip}{0pt plus 5cm}void Authenticator\+::reclaim\+Digest\+Response (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{response\+Str}
+\end{DoxyParamCaption}
+) const}\label{classAuthenticator_ae318e0c178396a499976185020d5bb93}
+\index{Authenticator@{Authenticator}!reset@{reset}}
+\index{reset@{reset}!Authenticator@{Authenticator}}
+\subsubsection[{reset()}]{\setlength{\rightskip}{0pt plus 5cm}void Authenticator\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classAuthenticator_a3870f21cb1f2d9241cf5f2b6220b71a6}
+\index{Authenticator@{Authenticator}!reset\+Realm\+And\+Nonce@{reset\+Realm\+And\+Nonce}}
+\index{reset\+Realm\+And\+Nonce@{reset\+Realm\+And\+Nonce}!Authenticator@{Authenticator}}
+\subsubsection[{reset\+Realm\+And\+Nonce()}]{\setlength{\rightskip}{0pt plus 5cm}void Authenticator\+::reset\+Realm\+And\+Nonce (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAuthenticator_a976f9c3128ed33b1152ab94d590ad6b2}
+\index{Authenticator@{Authenticator}!reset\+Username\+And\+Password@{reset\+Username\+And\+Password}}
+\index{reset\+Username\+And\+Password@{reset\+Username\+And\+Password}!Authenticator@{Authenticator}}
+\subsubsection[{reset\+Username\+And\+Password()}]{\setlength{\rightskip}{0pt plus 5cm}void Authenticator\+::reset\+Username\+And\+Password (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAuthenticator_af2f348f7c78e73b4f7654faf35cadce4}
+\index{Authenticator@{Authenticator}!set\+Realm\+And\+Nonce@{set\+Realm\+And\+Nonce}}
+\index{set\+Realm\+And\+Nonce@{set\+Realm\+And\+Nonce}!Authenticator@{Authenticator}}
+\subsubsection[{set\+Realm\+And\+Nonce(char const $\ast$realm, char const $\ast$nonce)}]{\setlength{\rightskip}{0pt plus 5cm}void Authenticator\+::set\+Realm\+And\+Nonce (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{realm, }
+\item[{char const $\ast$}]{nonce}
+\end{DoxyParamCaption}
+)}\label{classAuthenticator_a00424d1fb0e1e8c92f45511050713c28}
+\index{Authenticator@{Authenticator}!set\+Realm\+And\+Random\+Nonce@{set\+Realm\+And\+Random\+Nonce}}
+\index{set\+Realm\+And\+Random\+Nonce@{set\+Realm\+And\+Random\+Nonce}!Authenticator@{Authenticator}}
+\subsubsection[{set\+Realm\+And\+Random\+Nonce(char const $\ast$realm)}]{\setlength{\rightskip}{0pt plus 5cm}void Authenticator\+::set\+Realm\+And\+Random\+Nonce (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{realm}
+\end{DoxyParamCaption}
+)}\label{classAuthenticator_a0225d5c5bb3d3dd9488402e952618fdb}
+\index{Authenticator@{Authenticator}!set\+Username\+And\+Password@{set\+Username\+And\+Password}}
+\index{set\+Username\+And\+Password@{set\+Username\+And\+Password}!Authenticator@{Authenticator}}
+\subsubsection[{set\+Username\+And\+Password(char const $\ast$username, char const $\ast$password, Boolean password\+Is\+M\+D5=\+False)}]{\setlength{\rightskip}{0pt plus 5cm}void Authenticator\+::set\+Username\+And\+Password (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{username, }
+\item[{char const $\ast$}]{password, }
+\item[{{\bf Boolean}}]{password\+Is\+M\+D5 = {\ttfamily {\bf False}}}
+\end{DoxyParamCaption}
+)}\label{classAuthenticator_a31c15abe654dbf1fd1082e4e6958ac0d}
+\index{Authenticator@{Authenticator}!username@{username}}
+\index{username@{username}!Authenticator@{Authenticator}}
+\subsubsection[{username() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Authenticator\+::username (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classAuthenticator_a120198f986f99583a0ed0241cffb6f80}
+
+
+Definition at line 54 of file Digest\+Authentication.\+hh.
+
+
+
+References f\+Username.
+
+
+\begin{DoxyCode}
+54 \{ \textcolor{keywordflow}{return} fUsername; \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Authenticator@{Authenticator}!f\+Nonce@{f\+Nonce}}
+\index{f\+Nonce@{f\+Nonce}!Authenticator@{Authenticator}}
+\subsubsection[{f\+Nonce}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Authenticator\+::f\+Nonce\hspace{0.3cm}{\ttfamily [private]}}\label{classAuthenticator_a52a2207a407481871c2199a81373fed7}
+
+
+Definition at line 70 of file Digest\+Authentication.\+hh.
+
+
+
+Referenced by nonce().
+
+\index{Authenticator@{Authenticator}!f\+Password@{f\+Password}}
+\index{f\+Password@{f\+Password}!Authenticator@{Authenticator}}
+\subsubsection[{f\+Password}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Authenticator\+::f\+Password\hspace{0.3cm}{\ttfamily [private]}}\label{classAuthenticator_ac215a6ccdcf1b72d5db99170aea64063}
+
+
+Definition at line 71 of file Digest\+Authentication.\+hh.
+
+
+
+Referenced by password().
+
+\index{Authenticator@{Authenticator}!f\+Password\+Is\+M\+D5@{f\+Password\+Is\+M\+D5}}
+\index{f\+Password\+Is\+M\+D5@{f\+Password\+Is\+M\+D5}!Authenticator@{Authenticator}}
+\subsubsection[{f\+Password\+Is\+M\+D5}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Authenticator\+::f\+Password\+Is\+M\+D5\hspace{0.3cm}{\ttfamily [private]}}\label{classAuthenticator_adee5874f80ae73b7f2a0cec37db424b0}
+
+
+Definition at line 72 of file Digest\+Authentication.\+hh.
+
+\index{Authenticator@{Authenticator}!f\+Realm@{f\+Realm}}
+\index{f\+Realm@{f\+Realm}!Authenticator@{Authenticator}}
+\subsubsection[{f\+Realm}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Authenticator\+::f\+Realm\hspace{0.3cm}{\ttfamily [private]}}\label{classAuthenticator_ad069b5f52aa62057f955801a4853ba43}
+
+
+Definition at line 70 of file Digest\+Authentication.\+hh.
+
+
+
+Referenced by realm().
+
+\index{Authenticator@{Authenticator}!f\+Username@{f\+Username}}
+\index{f\+Username@{f\+Username}!Authenticator@{Authenticator}}
+\subsubsection[{f\+Username}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Authenticator\+::f\+Username\hspace{0.3cm}{\ttfamily [private]}}\label{classAuthenticator_a4d0bbdd7d3951882b659e5655b84c480}
+
+
+Definition at line 71 of file Digest\+Authentication.\+hh.
+
+
+
+Referenced by username().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf Digest\+Authentication.\+hh}\end{DoxyCompactItemize}

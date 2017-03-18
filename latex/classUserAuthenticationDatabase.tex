@@ -1,0 +1,167 @@
+\section{User\+Authentication\+Database Class Reference}
+\label{classUserAuthenticationDatabase}\index{User\+Authentication\+Database@{User\+Authentication\+Database}}
+
+
+{\ttfamily \#include $<$Generic\+Media\+Server.\+hh$>$}
+
+
+
+Collaboration diagram for User\+Authentication\+Database\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classUserAuthenticationDatabase__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf User\+Authentication\+Database} (char const $\ast${\bf realm}={\bf N\+U\+L\+L}, {\bf Boolean} {\bf passwords\+Are\+M\+D5}={\bf False})
+\item 
+virtual {\bf $\sim$\+User\+Authentication\+Database} ()
+\item 
+virtual void {\bf add\+User\+Record} (char const $\ast$username, char const $\ast$password)
+\item 
+virtual void {\bf remove\+User\+Record} (char const $\ast$username)
+\item 
+virtual char const $\ast$ {\bf lookup\+Password} (char const $\ast$username)
+\item 
+char const $\ast$ {\bf realm} ()
+\item 
+{\bf Boolean} {\bf passwords\+Are\+M\+D5} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Hash\+Table} $\ast$ {\bf f\+Table}
+\item 
+char $\ast$ {\bf f\+Realm}
+\item 
+{\bf Boolean} {\bf f\+Passwords\+Are\+M\+D5}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 168 of file Generic\+Media\+Server.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{User\+Authentication\+Database@{User\+Authentication\+Database}!User\+Authentication\+Database@{User\+Authentication\+Database}}
+\index{User\+Authentication\+Database@{User\+Authentication\+Database}!User\+Authentication\+Database@{User\+Authentication\+Database}}
+\subsubsection[{User\+Authentication\+Database(char const $\ast$realm=\+N\+U\+L\+L, Boolean passwords\+Are\+M\+D5=\+False)}]{\setlength{\rightskip}{0pt plus 5cm}User\+Authentication\+Database\+::\+User\+Authentication\+Database (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{realm = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{{\bf Boolean}}]{passwords\+Are\+M\+D5 = {\ttfamily {\bf False}}}
+\end{DoxyParamCaption}
+)}\label{classUserAuthenticationDatabase_a96e3e3e32006582eedd1330d1043ede7}
+\index{User\+Authentication\+Database@{User\+Authentication\+Database}!````~User\+Authentication\+Database@{$\sim$\+User\+Authentication\+Database}}
+\index{````~User\+Authentication\+Database@{$\sim$\+User\+Authentication\+Database}!User\+Authentication\+Database@{User\+Authentication\+Database}}
+\subsubsection[{$\sim$\+User\+Authentication\+Database()}]{\setlength{\rightskip}{0pt plus 5cm}virtual User\+Authentication\+Database\+::$\sim$\+User\+Authentication\+Database (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classUserAuthenticationDatabase_adef39aa9c37ffb8dc8e8e4b9c7b9231b}
+
+
+\subsection{Member Function Documentation}
+\index{User\+Authentication\+Database@{User\+Authentication\+Database}!add\+User\+Record@{add\+User\+Record}}
+\index{add\+User\+Record@{add\+User\+Record}!User\+Authentication\+Database@{User\+Authentication\+Database}}
+\subsubsection[{add\+User\+Record(char const $\ast$username, char const $\ast$password)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\+Authentication\+Database\+::add\+User\+Record (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{username, }
+\item[{char const $\ast$}]{password}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classUserAuthenticationDatabase_a6ed782a129e969dd0f7c71470ebe58f1}
+\index{User\+Authentication\+Database@{User\+Authentication\+Database}!lookup\+Password@{lookup\+Password}}
+\index{lookup\+Password@{lookup\+Password}!User\+Authentication\+Database@{User\+Authentication\+Database}}
+\subsubsection[{lookup\+Password(char const $\ast$username)}]{\setlength{\rightskip}{0pt plus 5cm}virtual char const$\ast$ User\+Authentication\+Database\+::lookup\+Password (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{username}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classUserAuthenticationDatabase_a41ff0938d74d562d63a712601923ec96}
+\index{User\+Authentication\+Database@{User\+Authentication\+Database}!passwords\+Are\+M\+D5@{passwords\+Are\+M\+D5}}
+\index{passwords\+Are\+M\+D5@{passwords\+Are\+M\+D5}!User\+Authentication\+Database@{User\+Authentication\+Database}}
+\subsubsection[{passwords\+Are\+M\+D5()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} User\+Authentication\+Database\+::passwords\+Are\+M\+D5 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classUserAuthenticationDatabase_a2aca07f3b256723404c71ab14286a026}
+
+
+Definition at line 184 of file Generic\+Media\+Server.\+hh.
+
+
+
+References f\+Passwords\+Are\+M\+D5.
+
+
+\begin{DoxyCode}
+184 \{ \textcolor{keywordflow}{return} fPasswordsAreMD5; \}
+\end{DoxyCode}
+\index{User\+Authentication\+Database@{User\+Authentication\+Database}!realm@{realm}}
+\index{realm@{realm}!User\+Authentication\+Database@{User\+Authentication\+Database}}
+\subsubsection[{realm()}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ User\+Authentication\+Database\+::realm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classUserAuthenticationDatabase_a56d0643eb900b7e8aae794cfd6ec9c57}
+
+
+Definition at line 183 of file Generic\+Media\+Server.\+hh.
+
+
+
+References f\+Realm.
+
+
+\begin{DoxyCode}
+183 \{ \textcolor{keywordflow}{return} fRealm; \}
+\end{DoxyCode}
+\index{User\+Authentication\+Database@{User\+Authentication\+Database}!remove\+User\+Record@{remove\+User\+Record}}
+\index{remove\+User\+Record@{remove\+User\+Record}!User\+Authentication\+Database@{User\+Authentication\+Database}}
+\subsubsection[{remove\+User\+Record(char const $\ast$username)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\+Authentication\+Database\+::remove\+User\+Record (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{username}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classUserAuthenticationDatabase_a3081cf05fe3d1a94643250add4f45dd0}
+
+
+\subsection{Field Documentation}
+\index{User\+Authentication\+Database@{User\+Authentication\+Database}!f\+Passwords\+Are\+M\+D5@{f\+Passwords\+Are\+M\+D5}}
+\index{f\+Passwords\+Are\+M\+D5@{f\+Passwords\+Are\+M\+D5}!User\+Authentication\+Database@{User\+Authentication\+Database}}
+\subsubsection[{f\+Passwords\+Are\+M\+D5}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} User\+Authentication\+Database\+::f\+Passwords\+Are\+M\+D5\hspace{0.3cm}{\ttfamily [protected]}}\label{classUserAuthenticationDatabase_a6603756a3a25c5486dd20f62b2036a5f}
+
+
+Definition at line 189 of file Generic\+Media\+Server.\+hh.
+
+
+
+Referenced by passwords\+Are\+M\+D5().
+
+\index{User\+Authentication\+Database@{User\+Authentication\+Database}!f\+Realm@{f\+Realm}}
+\index{f\+Realm@{f\+Realm}!User\+Authentication\+Database@{User\+Authentication\+Database}}
+\subsubsection[{f\+Realm}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ User\+Authentication\+Database\+::f\+Realm\hspace{0.3cm}{\ttfamily [protected]}}\label{classUserAuthenticationDatabase_a1fc887c501542a0135662fb1603fc3ed}
+
+
+Definition at line 188 of file Generic\+Media\+Server.\+hh.
+
+
+
+Referenced by realm().
+
+\index{User\+Authentication\+Database@{User\+Authentication\+Database}!f\+Table@{f\+Table}}
+\index{f\+Table@{f\+Table}!User\+Authentication\+Database@{User\+Authentication\+Database}}
+\subsubsection[{f\+Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hash\+Table}$\ast$ User\+Authentication\+Database\+::f\+Table\hspace{0.3cm}{\ttfamily [protected]}}\label{classUserAuthenticationDatabase_a7a4da7529537c7cdf9f373331f320c60}
+
+
+Definition at line 187 of file Generic\+Media\+Server.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf Generic\+Media\+Server.\+hh}\end{DoxyCompactItemize}

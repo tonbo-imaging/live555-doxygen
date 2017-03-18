@@ -1,0 +1,151 @@
+\section{Groupsock\+Lookup\+Table Class Reference}
+\label{classGroupsockLookupTable}\index{Groupsock\+Lookup\+Table@{Groupsock\+Lookup\+Table}}
+
+
+{\ttfamily \#include $<$Groupsock.\+hh$>$}
+
+
+
+Collaboration diagram for Groupsock\+Lookup\+Table\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classGroupsockLookupTable__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Groupsock} $\ast$ {\bf Fetch} ({\bf Usage\+Environment} \&env, {\bf net\+Address\+Bits} group\+Address, {\bf Port} port, u\+\_\+int8\+\_\+t ttl, {\bf Boolean} \&is\+New)
+\item 
+{\bf Groupsock} $\ast$ {\bf Fetch} ({\bf Usage\+Environment} \&env, {\bf net\+Address\+Bits} group\+Address, {\bf net\+Address\+Bits} source\+Filter\+Addr, {\bf Port} port, {\bf Boolean} \&is\+New)
+\item 
+{\bf Groupsock} $\ast$ {\bf Lookup} ({\bf net\+Address\+Bits} group\+Address, {\bf Port} port)
+\item 
+{\bf Groupsock} $\ast$ {\bf Lookup} ({\bf net\+Address\+Bits} group\+Address, {\bf net\+Address\+Bits} source\+Filter\+Addr, {\bf Port} port)
+\item 
+{\bf Groupsock} $\ast$ {\bf Lookup} ({\bf Usage\+Environment} \&env, int sock)
+\item 
+{\bf Boolean} {\bf Remove} ({\bf Groupsock} const $\ast$groupsock)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Groupsock} $\ast$ {\bf Add\+New} ({\bf Usage\+Environment} \&env, {\bf net\+Address\+Bits} group\+Address, {\bf net\+Address\+Bits} source\+Filter\+Address, {\bf Port} port, u\+\_\+int8\+\_\+t ttl)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Address\+Port\+Lookup\+Table} {\bf f\+Table}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Iterator}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 177 of file Groupsock.\+hh.
+
+
+
+\subsection{Member Function Documentation}
+\index{Groupsock\+Lookup\+Table@{Groupsock\+Lookup\+Table}!Add\+New@{Add\+New}}
+\index{Add\+New@{Add\+New}!Groupsock\+Lookup\+Table@{Groupsock\+Lookup\+Table}}
+\subsubsection[{Add\+New(\+Usage\+Environment \&env, net\+Address\+Bits group\+Address, net\+Address\+Bits source\+Filter\+Address, Port port, u\+\_\+int8\+\_\+t ttl)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Groupsock}$\ast$ Groupsock\+Lookup\+Table\+::\+Add\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf net\+Address\+Bits}}]{group\+Address, }
+\item[{{\bf net\+Address\+Bits}}]{source\+Filter\+Address, }
+\item[{{\bf Port}}]{port, }
+\item[{u\+\_\+int8\+\_\+t}]{ttl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classGroupsockLookupTable_a72ef470108c6735d2deef2e6dfd54506}
+\index{Groupsock\+Lookup\+Table@{Groupsock\+Lookup\+Table}!Fetch@{Fetch}}
+\index{Fetch@{Fetch}!Groupsock\+Lookup\+Table@{Groupsock\+Lookup\+Table}}
+\subsubsection[{Fetch(\+Usage\+Environment \&env, net\+Address\+Bits group\+Address, Port port, u\+\_\+int8\+\_\+t ttl, Boolean \&is\+New)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Groupsock}$\ast$ Groupsock\+Lookup\+Table\+::\+Fetch (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf net\+Address\+Bits}}]{group\+Address, }
+\item[{{\bf Port}}]{port, }
+\item[{u\+\_\+int8\+\_\+t}]{ttl, }
+\item[{{\bf Boolean} \&}]{is\+New}
+\end{DoxyParamCaption}
+)}\label{classGroupsockLookupTable_a272a5522a9ed2fad1e21a582cc8e64bb}
+\index{Groupsock\+Lookup\+Table@{Groupsock\+Lookup\+Table}!Fetch@{Fetch}}
+\index{Fetch@{Fetch}!Groupsock\+Lookup\+Table@{Groupsock\+Lookup\+Table}}
+\subsubsection[{Fetch(\+Usage\+Environment \&env, net\+Address\+Bits group\+Address, net\+Address\+Bits source\+Filter\+Addr, Port port, Boolean \&is\+New)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Groupsock}$\ast$ Groupsock\+Lookup\+Table\+::\+Fetch (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf net\+Address\+Bits}}]{group\+Address, }
+\item[{{\bf net\+Address\+Bits}}]{source\+Filter\+Addr, }
+\item[{{\bf Port}}]{port, }
+\item[{{\bf Boolean} \&}]{is\+New}
+\end{DoxyParamCaption}
+)}\label{classGroupsockLookupTable_a58b8fe632b9778ef86f74ec5e7fb672d}
+\index{Groupsock\+Lookup\+Table@{Groupsock\+Lookup\+Table}!Lookup@{Lookup}}
+\index{Lookup@{Lookup}!Groupsock\+Lookup\+Table@{Groupsock\+Lookup\+Table}}
+\subsubsection[{Lookup(net\+Address\+Bits group\+Address, Port port)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Groupsock}$\ast$ Groupsock\+Lookup\+Table\+::\+Lookup (
+\begin{DoxyParamCaption}
+\item[{{\bf net\+Address\+Bits}}]{group\+Address, }
+\item[{{\bf Port}}]{port}
+\end{DoxyParamCaption}
+)}\label{classGroupsockLookupTable_a8f4a10ee8f5bb49f259ae575795ebb7e}
+\index{Groupsock\+Lookup\+Table@{Groupsock\+Lookup\+Table}!Lookup@{Lookup}}
+\index{Lookup@{Lookup}!Groupsock\+Lookup\+Table@{Groupsock\+Lookup\+Table}}
+\subsubsection[{Lookup(net\+Address\+Bits group\+Address, net\+Address\+Bits source\+Filter\+Addr, Port port)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Groupsock}$\ast$ Groupsock\+Lookup\+Table\+::\+Lookup (
+\begin{DoxyParamCaption}
+\item[{{\bf net\+Address\+Bits}}]{group\+Address, }
+\item[{{\bf net\+Address\+Bits}}]{source\+Filter\+Addr, }
+\item[{{\bf Port}}]{port}
+\end{DoxyParamCaption}
+)}\label{classGroupsockLookupTable_a1da22e009848339b6605a586fcd9b5c1}
+\index{Groupsock\+Lookup\+Table@{Groupsock\+Lookup\+Table}!Lookup@{Lookup}}
+\index{Lookup@{Lookup}!Groupsock\+Lookup\+Table@{Groupsock\+Lookup\+Table}}
+\subsubsection[{Lookup(\+Usage\+Environment \&env, int sock)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Groupsock}$\ast$ Groupsock\+Lookup\+Table\+::\+Lookup (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{int}]{sock}
+\end{DoxyParamCaption}
+)}\label{classGroupsockLookupTable_ab101b772d783f9b2f6a09a5d504b8254}
+\index{Groupsock\+Lookup\+Table@{Groupsock\+Lookup\+Table}!Remove@{Remove}}
+\index{Remove@{Remove}!Groupsock\+Lookup\+Table@{Groupsock\+Lookup\+Table}}
+\subsubsection[{Remove(\+Groupsock const $\ast$groupsock)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Groupsock\+Lookup\+Table\+::\+Remove (
+\begin{DoxyParamCaption}
+\item[{{\bf Groupsock} const $\ast$}]{groupsock}
+\end{DoxyParamCaption}
+)}\label{classGroupsockLookupTable_a9700088135e937ad02c631f089e0cb4e}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Groupsock\+Lookup\+Table@{Groupsock\+Lookup\+Table}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!Groupsock\+Lookup\+Table@{Groupsock\+Lookup\+Table}}
+\subsubsection[{Iterator}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Iterator}\hspace{0.3cm}{\ttfamily [friend]}}\label{classGroupsockLookupTable_a9830fc407400559db7e7783cc10a9394}
+
+
+Definition at line 214 of file Groupsock.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{Groupsock\+Lookup\+Table@{Groupsock\+Lookup\+Table}!f\+Table@{f\+Table}}
+\index{f\+Table@{f\+Table}!Groupsock\+Lookup\+Table@{Groupsock\+Lookup\+Table}}
+\subsubsection[{f\+Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Address\+Port\+Lookup\+Table} Groupsock\+Lookup\+Table\+::f\+Table\hspace{0.3cm}{\ttfamily [private]}}\label{classGroupsockLookupTable_af3cc4913a5ece0654289d5b0f233aeaa}
+
+
+Definition at line 215 of file Groupsock.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+groupsock/include/{\bf Groupsock.\+hh}\end{DoxyCompactItemize}

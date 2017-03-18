@@ -1,0 +1,117 @@
+\section{Basic\+Hash\+Table\+:\+:Iterator Class Reference}
+\label{classBasicHashTable_1_1Iterator}\index{Basic\+Hash\+Table\+::\+Iterator@{Basic\+Hash\+Table\+::\+Iterator}}
+
+
+{\ttfamily \#include $<$Basic\+Hash\+Table.\+hh$>$}
+
+
+
+Inheritance diagram for Basic\+Hash\+Table\+:\+:Iterator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classBasicHashTable_1_1Iterator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Basic\+Hash\+Table\+:\+:Iterator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBasicHashTable_1_1Iterator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Iterator} ({\bf Basic\+Hash\+Table} const \&table)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Iterator} $\ast$ {\bf create} ({\bf Hash\+Table} const \&hash\+Table)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ {\bf next} (char const $\ast$\&key)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Basic\+Hash\+Table} const \& {\bf f\+Table}
+\item 
+unsigned {\bf f\+Next\+Index}
+\item 
+{\bf Table\+Entry} $\ast$ {\bf f\+Next\+Entry}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 45 of file Basic\+Hash\+Table.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Basic\+Hash\+Table\+::\+Iterator@{Basic\+Hash\+Table\+::\+Iterator}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!Basic\+Hash\+Table\+::\+Iterator@{Basic\+Hash\+Table\+::\+Iterator}}
+\subsubsection[{Iterator(\+Basic\+Hash\+Table const \&table)}]{\setlength{\rightskip}{0pt plus 5cm}Basic\+Hash\+Table\+::\+Iterator\+::\+Iterator (
+\begin{DoxyParamCaption}
+\item[{{\bf Basic\+Hash\+Table} const \&}]{table}
+\end{DoxyParamCaption}
+)}\label{classBasicHashTable_1_1Iterator_a19e322bbdb25b989bb0ea06334ef2ac6}
+
+
+\subsection{Member Function Documentation}
+\index{Basic\+Hash\+Table\+::\+Iterator@{Basic\+Hash\+Table\+::\+Iterator}!create@{create}}
+\index{create@{create}!Basic\+Hash\+Table\+::\+Iterator@{Basic\+Hash\+Table\+::\+Iterator}}
+\subsubsection[{create(\+Hash\+Table const \&hash\+Table)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Iterator}$\ast$ Hash\+Table\+::\+Iterator\+::create (
+\begin{DoxyParamCaption}
+\item[{{\bf Hash\+Table} const \&}]{hash\+Table}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classHashTable_1_1Iterator_a31c6d1137cf5b58c5df7249078381095}
+\index{Basic\+Hash\+Table\+::\+Iterator@{Basic\+Hash\+Table\+::\+Iterator}!next@{next}}
+\index{next@{next}!Basic\+Hash\+Table\+::\+Iterator@{Basic\+Hash\+Table\+::\+Iterator}}
+\subsubsection[{next(char const $\ast$\&key)}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Basic\+Hash\+Table\+::\+Iterator\+::next (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$\&}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classBasicHashTable_1_1Iterator_a323c33156bbfa6fee33889e23cf00947}
+
+
+Implements {\bf Hash\+Table\+::\+Iterator} \doxyref{}{p.}{classHashTable_1_1Iterator_a51276398cc6042a20cd0ebc37f5d134e}.
+
+
+
+\subsection{Field Documentation}
+\index{Basic\+Hash\+Table\+::\+Iterator@{Basic\+Hash\+Table\+::\+Iterator}!f\+Next\+Entry@{f\+Next\+Entry}}
+\index{f\+Next\+Entry@{f\+Next\+Entry}!Basic\+Hash\+Table\+::\+Iterator@{Basic\+Hash\+Table\+::\+Iterator}}
+\subsubsection[{f\+Next\+Entry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Table\+Entry}$\ast$ Basic\+Hash\+Table\+::\+Iterator\+::f\+Next\+Entry\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicHashTable_1_1Iterator_a6122981359049cb2780ba68d9ee905d6}
+
+
+Definition at line 55 of file Basic\+Hash\+Table.\+hh.
+
+\index{Basic\+Hash\+Table\+::\+Iterator@{Basic\+Hash\+Table\+::\+Iterator}!f\+Next\+Index@{f\+Next\+Index}}
+\index{f\+Next\+Index@{f\+Next\+Index}!Basic\+Hash\+Table\+::\+Iterator@{Basic\+Hash\+Table\+::\+Iterator}}
+\subsubsection[{f\+Next\+Index}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Basic\+Hash\+Table\+::\+Iterator\+::f\+Next\+Index\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicHashTable_1_1Iterator_a2fbff026ff7d2cd604a629bfe8b88acb}
+
+
+Definition at line 54 of file Basic\+Hash\+Table.\+hh.
+
+\index{Basic\+Hash\+Table\+::\+Iterator@{Basic\+Hash\+Table\+::\+Iterator}!f\+Table@{f\+Table}}
+\index{f\+Table@{f\+Table}!Basic\+Hash\+Table\+::\+Iterator@{Basic\+Hash\+Table\+::\+Iterator}}
+\subsubsection[{f\+Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Basic\+Hash\+Table} const\& Basic\+Hash\+Table\+::\+Iterator\+::f\+Table\hspace{0.3cm}{\ttfamily [private]}}\label{classBasicHashTable_1_1Iterator_a949689674263b19fa2d878886509532c}
+
+
+Definition at line 53 of file Basic\+Hash\+Table.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Basic\+Usage\+Environment/include/{\bf Basic\+Hash\+Table.\+hh}\end{DoxyCompactItemize}

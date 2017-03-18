@@ -1,0 +1,297 @@
+\section{Output\+Socket Class Reference}
+\label{classOutputSocket}\index{Output\+Socket@{Output\+Socket}}
+
+
+{\ttfamily \#include $<$Groupsock.\+hh$>$}
+
+
+
+Inheritance diagram for Output\+Socket\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{classOutputSocket__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Output\+Socket\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{classOutputSocket__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Output\+Socket} ({\bf Usage\+Environment} \&{\bf env})
+\item 
+virtual {\bf $\sim$\+Output\+Socket} ()
+\item 
+virtual {\bf Boolean} {\bf write} ({\bf net\+Address\+Bits} address, {\bf port\+Num\+Bits} port\+Num, u\+\_\+int8\+\_\+t ttl, unsigned char $\ast$buffer, unsigned buffer\+Size)
+\item 
+{\bf Boolean} {\bf write} (struct sockaddr\+\_\+in \&address\+And\+Port, u\+\_\+int8\+\_\+t ttl, unsigned char $\ast$buffer, unsigned buffer\+Size)
+\item 
+void {\bf reset} ()
+\item 
+int {\bf socket\+Num} () const 
+\item 
+{\bf Port} {\bf port} () const 
+\item 
+{\bf Usage\+Environment} \& {\bf env} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int {\bf Debug\+Level}
+\item 
+static {\bf Usage\+Environment} $\ast$ {\bf Default\+Usage\+Environment}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Output\+Socket} ({\bf Usage\+Environment} \&{\bf env}, {\bf Port} {\bf port})
+\item 
+{\bf port\+Num\+Bits} {\bf source\+Port\+Num} () const 
+\item 
+{\bf Boolean} {\bf change\+Port} ({\bf Port} new\+Port)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf Boolean} {\bf handle\+Read} (unsigned char $\ast$buffer, unsigned buffer\+Max\+Size, unsigned \&bytes\+Read, struct sockaddr\+\_\+in \&from\+Address\+And\+Port)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Port} {\bf f\+Source\+Port}
+\item 
+unsigned {\bf f\+Last\+Sent\+T\+T\+L}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 39 of file Groupsock.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Output\+Socket@{Output\+Socket}!Output\+Socket@{Output\+Socket}}
+\index{Output\+Socket@{Output\+Socket}!Output\+Socket@{Output\+Socket}}
+\subsubsection[{Output\+Socket(\+Usage\+Environment \&env)}]{\setlength{\rightskip}{0pt plus 5cm}Output\+Socket\+::\+Output\+Socket (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env}
+\end{DoxyParamCaption}
+)}\label{classOutputSocket_a0ef581b9dca44414442c2ad1d1690a49}
+\index{Output\+Socket@{Output\+Socket}!````~Output\+Socket@{$\sim$\+Output\+Socket}}
+\index{````~Output\+Socket@{$\sim$\+Output\+Socket}!Output\+Socket@{Output\+Socket}}
+\subsubsection[{$\sim$\+Output\+Socket()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Output\+Socket\+::$\sim$\+Output\+Socket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classOutputSocket_aa55b105d85a21ae50904930772c6e0b8}
+\index{Output\+Socket@{Output\+Socket}!Output\+Socket@{Output\+Socket}}
+\index{Output\+Socket@{Output\+Socket}!Output\+Socket@{Output\+Socket}}
+\subsubsection[{Output\+Socket(\+Usage\+Environment \&env, Port port)}]{\setlength{\rightskip}{0pt plus 5cm}Output\+Socket\+::\+Output\+Socket (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf Port}}]{port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classOutputSocket_a90f671115ff26e9e486eb21f990b03bc}
+
+
+\subsection{Member Function Documentation}
+\index{Output\+Socket@{Output\+Socket}!change\+Port@{change\+Port}}
+\index{change\+Port@{change\+Port}!Output\+Socket@{Output\+Socket}}
+\subsubsection[{change\+Port(\+Port new\+Port)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Socket\+::change\+Port (
+\begin{DoxyParamCaption}
+\item[{{\bf Port}}]{new\+Port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classSocket_a4410afe54cb46839fa07469a9c7f57dc}
+\index{Output\+Socket@{Output\+Socket}!env@{env}}
+\index{env@{env}!Output\+Socket@{Output\+Socket}}
+\subsubsection[{env() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Socket\+::env (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classSocket_a03712e18dc140b9f5c8cdad98460410b}
+
+
+Definition at line 96 of file Net\+Interface.\+hh.
+
+
+
+References Socket\+::f\+Env.
+
+
+\begin{DoxyCode}
+96 \{ \textcolor{keywordflow}{return} fEnv; \}
+\end{DoxyCode}
+\index{Output\+Socket@{Output\+Socket}!handle\+Read@{handle\+Read}}
+\index{handle\+Read@{handle\+Read}!Output\+Socket@{Output\+Socket}}
+\subsubsection[{handle\+Read(unsigned char $\ast$buffer, unsigned buffer\+Max\+Size, unsigned \&bytes\+Read, struct sockaddr\+\_\+in \&from\+Address\+And\+Port)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Output\+Socket\+::handle\+Read (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{unsigned}]{buffer\+Max\+Size, }
+\item[{unsigned \&}]{bytes\+Read, }
+\item[{struct sockaddr\+\_\+in \&}]{from\+Address\+And\+Port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classOutputSocket_a868eb3f203221c29ed6b06c81aab4de2}
+
+
+Implements {\bf Socket} \doxyref{}{p.}{classSocket_aa7537f42f1b740b627a8bb7ffc8c8986}.
+
+
+
+Reimplemented in {\bf Groupsock} \doxyref{}{p.}{classGroupsock_a18d7581e148a255877cfdd8df6d9f9cd}.
+
+\index{Output\+Socket@{Output\+Socket}!port@{port}}
+\index{port@{port}!Output\+Socket@{Output\+Socket}}
+\subsubsection[{port() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Port} Socket\+::port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classSocket_ae550f2f8bca46db0ee17fc7a77f1924b}
+
+
+Definition at line 92 of file Net\+Interface.\+hh.
+
+
+
+References Socket\+::f\+Port.
+
+
+\begin{DoxyCode}
+92                     \{
+93     \textcolor{keywordflow}{return} fPort;
+94   \}
+\end{DoxyCode}
+\index{Output\+Socket@{Output\+Socket}!reset@{reset}}
+\index{reset@{reset}!Output\+Socket@{Output\+Socket}}
+\subsubsection[{reset()}]{\setlength{\rightskip}{0pt plus 5cm}void Socket\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classSocket_aeb0279ac9f6aa44d522439efc1328d48}
+\index{Output\+Socket@{Output\+Socket}!socket\+Num@{socket\+Num}}
+\index{socket\+Num@{socket\+Num}!Output\+Socket@{Output\+Socket}}
+\subsubsection[{socket\+Num() const }]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::socket\+Num (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classSocket_aace6b9cee795e7814d11ac0e78bd7936}
+
+
+Definition at line 90 of file Net\+Interface.\+hh.
+
+
+
+References Socket\+::f\+Socket\+Num.
+
+
+\begin{DoxyCode}
+90 \{ \textcolor{keywordflow}{return} fSocketNum; \}
+\end{DoxyCode}
+\index{Output\+Socket@{Output\+Socket}!source\+Port\+Num@{source\+Port\+Num}}
+\index{source\+Port\+Num@{source\+Port\+Num}!Output\+Socket@{Output\+Socket}}
+\subsubsection[{source\+Port\+Num() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf port\+Num\+Bits} Output\+Socket\+::source\+Port\+Num (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classOutputSocket_a756cba02b6d30318c232b6c7bc3e40e5}
+
+
+Definition at line 54 of file Groupsock.\+hh.
+
+
+
+References f\+Source\+Port, and Port\+::num().
+
+
+\begin{DoxyCode}
+54 \{\textcolor{keywordflow}{return} fSourcePort.num();\}
+\end{DoxyCode}
+\index{Output\+Socket@{Output\+Socket}!write@{write}}
+\index{write@{write}!Output\+Socket@{Output\+Socket}}
+\subsubsection[{write(net\+Address\+Bits address, port\+Num\+Bits port\+Num, u\+\_\+int8\+\_\+t ttl, unsigned char $\ast$buffer, unsigned buffer\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Output\+Socket\+::write (
+\begin{DoxyParamCaption}
+\item[{{\bf net\+Address\+Bits}}]{address, }
+\item[{{\bf port\+Num\+Bits}}]{port\+Num, }
+\item[{u\+\_\+int8\+\_\+t}]{ttl, }
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{unsigned}]{buffer\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classOutputSocket_afa98c2750d28519b5f3a42112dd77674}
+
+
+Referenced by write().
+
+\index{Output\+Socket@{Output\+Socket}!write@{write}}
+\index{write@{write}!Output\+Socket@{Output\+Socket}}
+\subsubsection[{write(struct sockaddr\+\_\+in \&address\+And\+Port, u\+\_\+int8\+\_\+t ttl, unsigned char $\ast$buffer, unsigned buffer\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Output\+Socket\+::write (
+\begin{DoxyParamCaption}
+\item[{struct sockaddr\+\_\+in \&}]{address\+And\+Port, }
+\item[{u\+\_\+int8\+\_\+t}]{ttl, }
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{unsigned}]{buffer\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classOutputSocket_a5a334484521fab71bd751be87fca7743}
+
+
+Definition at line 46 of file Groupsock.\+hh.
+
+
+
+References write().
+
+
+\begin{DoxyCode}
+47                                                             \{
+48     \textcolor{keywordflow}{return} write(addressAndPort.sin\_addr.s\_addr, addressAndPort.sin\_port, ttl, buffer, bufferSize);
+49   \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Output\+Socket@{Output\+Socket}!Debug\+Level@{Debug\+Level}}
+\index{Debug\+Level@{Debug\+Level}!Output\+Socket@{Output\+Socket}}
+\subsubsection[{Debug\+Level}]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::\+Debug\+Level\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classSocket_af364aa5f7e6899ab56904e8fc5ee0e7a}
+
+
+Definition at line 98 of file Net\+Interface.\+hh.
+
+\index{Output\+Socket@{Output\+Socket}!Default\+Usage\+Environment@{Default\+Usage\+Environment}}
+\index{Default\+Usage\+Environment@{Default\+Usage\+Environment}!Output\+Socket@{Output\+Socket}}
+\subsubsection[{Default\+Usage\+Environment}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}$\ast$ Net\+Interface\+::\+Default\+Usage\+Environment\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classNetInterface_a570b15d8141a04f1d2691af1783dc30d}
+
+
+Definition at line 32 of file Net\+Interface.\+hh.
+
+\index{Output\+Socket@{Output\+Socket}!f\+Last\+Sent\+T\+T\+L@{f\+Last\+Sent\+T\+T\+L}}
+\index{f\+Last\+Sent\+T\+T\+L@{f\+Last\+Sent\+T\+T\+L}!Output\+Socket@{Output\+Socket}}
+\subsubsection[{f\+Last\+Sent\+T\+T\+L}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Output\+Socket\+::f\+Last\+Sent\+T\+T\+L\hspace{0.3cm}{\ttfamily [private]}}\label{classOutputSocket_ad8bb7c0bd3b9a5962251de4037eb8c8e}
+
+
+Definition at line 63 of file Groupsock.\+hh.
+
+\index{Output\+Socket@{Output\+Socket}!f\+Source\+Port@{f\+Source\+Port}}
+\index{f\+Source\+Port@{f\+Source\+Port}!Output\+Socket@{Output\+Socket}}
+\subsubsection[{f\+Source\+Port}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Port} Output\+Socket\+::f\+Source\+Port\hspace{0.3cm}{\ttfamily [private]}}\label{classOutputSocket_a16a9cf4feaf252ff14aa37a33607016e}
+
+
+Definition at line 62 of file Groupsock.\+hh.
+
+
+
+Referenced by source\+Port\+Num().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+groupsock/include/{\bf Groupsock.\+hh}\end{DoxyCompactItemize}

@@ -1,0 +1,423 @@
+\section{Matroska\+Demux Class Reference}
+\label{classMatroskaDemux}\index{Matroska\+Demux@{Matroska\+Demux}}
+
+
+{\ttfamily \#include $<$Matroska\+File.\+hh$>$}
+
+
+
+Inheritance diagram for Matroska\+Demux\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{classMatroskaDemux__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Matroska\+Demux\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatroskaDemux__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Framed\+Source} $\ast$ {\bf new\+Demuxed\+Track} ()
+\item 
+{\bf Framed\+Source} $\ast$ {\bf new\+Demuxed\+Track} (unsigned \&result\+Track\+Number)
+\item 
+{\bf Framed\+Source} $\ast$ {\bf new\+Demuxed\+Track\+By\+Track\+Number} (unsigned track\+Number)
+\item 
+{\bf Usage\+Environment} \& {\bf envir} () const 
+\item 
+char const $\ast$ {\bf name} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Source} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Sink} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+C\+P\+Instance} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Client} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Server} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Media\+Session} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Server\+Media\+Session} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name, {\bf Medium} $\ast$\&result\+Medium)
+\item 
+static void {\bf close} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name)
+\item 
+static void {\bf close} ({\bf Medium} $\ast$medium)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Matroska\+Demuxed\+Track} $\ast$ {\bf lookup\+Demuxed\+Track} (unsigned track\+Number)
+\item 
+{\bf Matroska\+Demux} ({\bf Matroska\+File} \&our\+File)
+\item 
+virtual {\bf $\sim$\+Matroska\+Demux} ()
+\item 
+{\bf Task\+Token} \& {\bf next\+Task} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf remove\+Track} (unsigned track\+Number)
+\item 
+void {\bf continue\+Reading} ()
+\item 
+void {\bf seek\+To\+Time} (double \&seek\+N\+P\+T)
+\item 
+void {\bf handle\+End\+Of\+File} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf handle\+End\+Of\+File} (void $\ast$client\+Data)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Matroska\+File} \& {\bf f\+Our\+File}
+\item 
+class {\bf Matroska\+File\+Parser} $\ast$ {\bf f\+Our\+Parser}
+\item 
+{\bf Hash\+Table} $\ast$ {\bf f\+Demuxed\+Tracks\+Table}
+\item 
+u\+\_\+int8\+\_\+t {\bf f\+Next\+Track\+Type\+To\+Check}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Matroska\+File}
+\item 
+class {\bf Matroska\+File\+Parser}
+\item 
+class {\bf Matroska\+Demuxed\+Track}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 138 of file Matroska\+File.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Matroska\+Demux@{Matroska\+Demux}!Matroska\+Demux@{Matroska\+Demux}}
+\index{Matroska\+Demux@{Matroska\+Demux}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{Matroska\+Demux(\+Matroska\+File \&our\+File)}]{\setlength{\rightskip}{0pt plus 5cm}Matroska\+Demux\+::\+Matroska\+Demux (
+\begin{DoxyParamCaption}
+\item[{{\bf Matroska\+File} \&}]{our\+File}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classMatroskaDemux_ae54b17c09cf50d679fbaac855f7f551d}
+\index{Matroska\+Demux@{Matroska\+Demux}!````~Matroska\+Demux@{$\sim$\+Matroska\+Demux}}
+\index{````~Matroska\+Demux@{$\sim$\+Matroska\+Demux}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{$\sim$\+Matroska\+Demux()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Matroska\+Demux\+::$\sim$\+Matroska\+Demux (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classMatroskaDemux_a8693e614c06c251b59405663d488a344}
+
+
+\subsection{Member Function Documentation}
+\index{Matroska\+Demux@{Matroska\+Demux}!close@{close}}
+\index{close@{close}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{close(\+Usage\+Environment \&env, char const $\ast$medium\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a9968c7ce6eedb848f2cc095730c01b17}
+\index{Matroska\+Demux@{Matroska\+Demux}!close@{close}}
+\index{close@{close}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{close(\+Medium $\ast$medium)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_aee50624faf6909b3944dd803fd485467}
+\index{Matroska\+Demux@{Matroska\+Demux}!continue\+Reading@{continue\+Reading}}
+\index{continue\+Reading@{continue\+Reading}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{continue\+Reading()}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+Demux\+::continue\+Reading (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaDemux_a3aa8bc585c910602f346b988a7912e7e}
+\index{Matroska\+Demux@{Matroska\+Demux}!envir@{envir}}
+\index{envir@{envir}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{envir() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Medium\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a32f7ecdd95f2b8400e1a26a5009e3b8e}
+
+
+Definition at line 59 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Environ.
+
+
+
+Referenced by Media\+Subsession\+::env(), R\+T\+P\+Interface\+::envir(), Generic\+Media\+Server\+::\+Client\+Connection\+::envir(), and Generic\+Media\+Server\+::\+Client\+Session\+::envir().
+
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} fEnviron;\}
+\end{DoxyCode}
+\index{Matroska\+Demux@{Matroska\+Demux}!handle\+End\+Of\+File@{handle\+End\+Of\+File}}
+\index{handle\+End\+Of\+File@{handle\+End\+Of\+File}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{handle\+End\+Of\+File(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void Matroska\+Demux\+::handle\+End\+Of\+File (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classMatroskaDemux_a0881c40271e1bff2aabbcaa08b196ccc}
+\index{Matroska\+Demux@{Matroska\+Demux}!handle\+End\+Of\+File@{handle\+End\+Of\+File}}
+\index{handle\+End\+Of\+File@{handle\+End\+Of\+File}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{handle\+End\+Of\+File()}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+Demux\+::handle\+End\+Of\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaDemux_a45fe7368ab1d5bd25a59668aaf9bedda}
+\index{Matroska\+Demux@{Matroska\+Demux}!is\+Media\+Session@{is\+Media\+Session}}
+\index{is\+Media\+Session@{is\+Media\+Session}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{is\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ac5858707c4e7a15bd59d476cf48289d6}
+
+
+Reimplemented in {\bf Media\+Session} \doxyref{}{p.}{classMediaSession_a3b2a06a722374ab4477ac05a2ce28829}.
+
+\index{Matroska\+Demux@{Matroska\+Demux}!is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}}
+\index{is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{is\+R\+T\+C\+P\+Instance() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ab5f9f20324698f89a35513d596b2e7be}
+
+
+Reimplemented in {\bf R\+T\+C\+P\+Instance} \doxyref{}{p.}{classRTCPInstance_a844292518419e1dbf24170812fd1e4b5}.
+
+\index{Matroska\+Demux@{Matroska\+Demux}!is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}}
+\index{is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{is\+R\+T\+S\+P\+Client() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aed1c1816867f910ce8c98350686ac038}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Client} \doxyref{}{p.}{classRTSPClient_add07b3a68432b546998080b24380e7e8}.
+
+\index{Matroska\+Demux@{Matroska\+Demux}!is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}}
+\index{is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{is\+R\+T\+S\+P\+Server() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a346e111b31bfde4b7f4ed593e0b97fd3}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Server} \doxyref{}{p.}{classRTSPServer_a45f9fc5ddd8f214169358493215a064a}.
+
+\index{Matroska\+Demux@{Matroska\+Demux}!is\+Server\+Media\+Session@{is\+Server\+Media\+Session}}
+\index{is\+Server\+Media\+Session@{is\+Server\+Media\+Session}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{is\+Server\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aa9fd26c4b954ffba5f79925ecd0283a0}
+
+
+Reimplemented in {\bf Server\+Media\+Session} \doxyref{}{p.}{classServerMediaSession_a34b59e04644b6f0841ea5af99dbf32f6}.
+
+\index{Matroska\+Demux@{Matroska\+Demux}!is\+Sink@{is\+Sink}}
+\index{is\+Sink@{is\+Sink}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{is\+Sink() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a23d49bf466482784b9d4378490d17b5f}
+
+
+Reimplemented in {\bf Media\+Sink} \doxyref{}{p.}{classMediaSink_aa8649dcdf21d5005f9ec319f898f91b6}.
+
+\index{Matroska\+Demux@{Matroska\+Demux}!is\+Source@{is\+Source}}
+\index{is\+Source@{is\+Source}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{is\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a6cdbd02c73a3e9c1cbab8fce9e9497b1}
+
+
+Reimplemented in {\bf Media\+Source} \doxyref{}{p.}{classMediaSource_a4d75fa9ee2b476b1231594282a6854be}.
+
+\index{Matroska\+Demux@{Matroska\+Demux}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$medium\+Name, Medium $\ast$\&result\+Medium)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Medium\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name, }
+\item[{{\bf Medium} $\ast$\&}]{result\+Medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a418c860c1e0ef2766ee0d0f64b346291}
+\index{Matroska\+Demux@{Matroska\+Demux}!lookup\+Demuxed\+Track@{lookup\+Demuxed\+Track}}
+\index{lookup\+Demuxed\+Track@{lookup\+Demuxed\+Track}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{lookup\+Demuxed\+Track(unsigned track\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Matroska\+Demuxed\+Track}$\ast$ Matroska\+Demux\+::lookup\+Demuxed\+Track (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{track\+Number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classMatroskaDemux_a6be62a52525c762fe93116c367e1b6f9}
+\index{Matroska\+Demux@{Matroska\+Demux}!name@{name}}
+\index{name@{name}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Medium\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a575649802dc781c0e59e097a3870fcdb}
+
+
+Definition at line 61 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Medium\+Name.
+
+
+\begin{DoxyCode}
+61 \{\textcolor{keywordflow}{return} fMediumName;\}
+\end{DoxyCode}
+\index{Matroska\+Demux@{Matroska\+Demux}!new\+Demuxed\+Track@{new\+Demuxed\+Track}}
+\index{new\+Demuxed\+Track@{new\+Demuxed\+Track}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{new\+Demuxed\+Track()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Framed\+Source}$\ast$ Matroska\+Demux\+::new\+Demuxed\+Track (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classMatroskaDemux_a879b7fb7e942b53deade3fac3bf9f117}
+\index{Matroska\+Demux@{Matroska\+Demux}!new\+Demuxed\+Track@{new\+Demuxed\+Track}}
+\index{new\+Demuxed\+Track@{new\+Demuxed\+Track}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{new\+Demuxed\+Track(unsigned \&result\+Track\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Framed\+Source}$\ast$ Matroska\+Demux\+::new\+Demuxed\+Track (
+\begin{DoxyParamCaption}
+\item[{unsigned \&}]{result\+Track\+Number}
+\end{DoxyParamCaption}
+)}\label{classMatroskaDemux_aff464a4011a1ef3655d75fba52b223b8}
+\index{Matroska\+Demux@{Matroska\+Demux}!new\+Demuxed\+Track\+By\+Track\+Number@{new\+Demuxed\+Track\+By\+Track\+Number}}
+\index{new\+Demuxed\+Track\+By\+Track\+Number@{new\+Demuxed\+Track\+By\+Track\+Number}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{new\+Demuxed\+Track\+By\+Track\+Number(unsigned track\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Framed\+Source}$\ast$ Matroska\+Demux\+::new\+Demuxed\+Track\+By\+Track\+Number (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{track\+Number}
+\end{DoxyParamCaption}
+)}\label{classMatroskaDemux_a68e4e266dd472e389336064ca3eefd4d}
+\index{Matroska\+Demux@{Matroska\+Demux}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{next\+Task()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token}\& Medium\+::next\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMedium_a5c8788adec90be1a584393a5bf11a5c9}
+
+
+Definition at line 77 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Next\+Task.
+
+
+\begin{DoxyCode}
+77                         \{
+78         \textcolor{keywordflow}{return} fNextTask;
+79   \}
+\end{DoxyCode}
+\index{Matroska\+Demux@{Matroska\+Demux}!remove\+Track@{remove\+Track}}
+\index{remove\+Track@{remove\+Track}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{remove\+Track(unsigned track\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+Demux\+::remove\+Track (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{track\+Number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaDemux_a43868181a71e102dea1d318b3729eeaa}
+\index{Matroska\+Demux@{Matroska\+Demux}!seek\+To\+Time@{seek\+To\+Time}}
+\index{seek\+To\+Time@{seek\+To\+Time}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{seek\+To\+Time(double \&seek\+N\+P\+T)}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+Demux\+::seek\+To\+Time (
+\begin{DoxyParamCaption}
+\item[{double \&}]{seek\+N\+P\+T}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaDemux_a85230444af1ae13aec76e275af13b827}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Matroska\+Demux@{Matroska\+Demux}!Matroska\+Demuxed\+Track@{Matroska\+Demuxed\+Track}}
+\index{Matroska\+Demuxed\+Track@{Matroska\+Demuxed\+Track}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{Matroska\+Demuxed\+Track}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Matroska\+Demuxed\+Track}\hspace{0.3cm}{\ttfamily [friend]}}\label{classMatroskaDemux_af1f5815da8338642284e12499959964b}
+
+
+Definition at line 164 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Demux@{Matroska\+Demux}!Matroska\+File@{Matroska\+File}}
+\index{Matroska\+File@{Matroska\+File}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{Matroska\+File}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Matroska\+File}\hspace{0.3cm}{\ttfamily [friend]}}\label{classMatroskaDemux_a80009acfe44a4842d8d280e3d3894c1c}
+
+
+Definition at line 156 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Demux@{Matroska\+Demux}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{Matroska\+File\+Parser}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Matroska\+File\+Parser}\hspace{0.3cm}{\ttfamily [friend]}}\label{classMatroskaDemux_a33b6d0180b26f93d503d898664d95a6d}
+
+
+Definition at line 157 of file Matroska\+File.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{Matroska\+Demux@{Matroska\+Demux}!f\+Demuxed\+Tracks\+Table@{f\+Demuxed\+Tracks\+Table}}
+\index{f\+Demuxed\+Tracks\+Table@{f\+Demuxed\+Tracks\+Table}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{f\+Demuxed\+Tracks\+Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hash\+Table}$\ast$ Matroska\+Demux\+::f\+Demuxed\+Tracks\+Table\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaDemux_af09f3d2fe3afae191d02d039d65de91a}
+
+
+Definition at line 175 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Demux@{Matroska\+Demux}!f\+Next\+Track\+Type\+To\+Check@{f\+Next\+Track\+Type\+To\+Check}}
+\index{f\+Next\+Track\+Type\+To\+Check@{f\+Next\+Track\+Type\+To\+Check}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{f\+Next\+Track\+Type\+To\+Check}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t Matroska\+Demux\+::f\+Next\+Track\+Type\+To\+Check\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaDemux_afbb20840b32dfb01031a73c6be4ce739}
+
+
+Definition at line 178 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Demux@{Matroska\+Demux}!f\+Our\+File@{f\+Our\+File}}
+\index{f\+Our\+File@{f\+Our\+File}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{f\+Our\+File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matroska\+File}\& Matroska\+Demux\+::f\+Our\+File\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaDemux_a8ff7a7cdb5bc27b3c0455786ef23c752}
+
+
+Definition at line 173 of file Matroska\+File.\+hh.
+
+\index{Matroska\+Demux@{Matroska\+Demux}!f\+Our\+Parser@{f\+Our\+Parser}}
+\index{f\+Our\+Parser@{f\+Our\+Parser}!Matroska\+Demux@{Matroska\+Demux}}
+\subsubsection[{f\+Our\+Parser}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Matroska\+File\+Parser}$\ast$ Matroska\+Demux\+::f\+Our\+Parser\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaDemux_a3a6fe7f75dbe266268b75e0dcd551191}
+
+
+Definition at line 174 of file Matroska\+File.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf Matroska\+File.\+hh}\end{DoxyCompactItemize}

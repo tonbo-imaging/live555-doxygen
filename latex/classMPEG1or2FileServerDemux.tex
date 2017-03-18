@@ -1,0 +1,449 @@
+\section{M\+P\+E\+G1or2\+File\+Server\+Demux Class Reference}
+\label{classMPEG1or2FileServerDemux}\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+
+
+{\ttfamily \#include $<$M\+P\+E\+G1or2\+File\+Server\+Demux.\+hh$>$}
+
+
+
+Inheritance diagram for M\+P\+E\+G1or2\+File\+Server\+Demux\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classMPEG1or2FileServerDemux__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for M\+P\+E\+G1or2\+File\+Server\+Demux\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMPEG1or2FileServerDemux__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Server\+Media\+Subsession} $\ast$ {\bf new\+Audio\+Server\+Media\+Subsession} ()
+\item 
+{\bf Server\+Media\+Subsession} $\ast$ {\bf new\+Video\+Server\+Media\+Subsession} ({\bf Boolean} i\+Frames\+Only={\bf False}, double vsh\+Period=5.\+0)
+\item 
+{\bf Server\+Media\+Subsession} $\ast$ {\bf new\+A\+C3\+Audio\+Server\+Media\+Subsession} ()
+\item 
+unsigned {\bf file\+Size} () const 
+\item 
+float {\bf file\+Duration} () const 
+\item 
+{\bf Usage\+Environment} \& {\bf envir} () const 
+\item 
+char const $\ast$ {\bf name} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Source} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Sink} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+C\+P\+Instance} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Client} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Server} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Media\+Session} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Server\+Media\+Session} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf M\+P\+E\+G1or2\+File\+Server\+Demux} $\ast$ {\bf create\+New} ({\bf Usage\+Environment} \&env, char const $\ast$file\+Name, {\bf Boolean} reuse\+First\+Source)
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name, {\bf Medium} $\ast$\&result\+Medium)
+\item 
+static void {\bf close} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name)
+\item 
+static void {\bf close} ({\bf Medium} $\ast$medium)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Task\+Token} \& {\bf next\+Task} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf M\+P\+E\+G1or2\+File\+Server\+Demux} ({\bf Usage\+Environment} \&env, char const $\ast$file\+Name, {\bf Boolean} reuse\+First\+Source)
+\item 
+virtual {\bf $\sim$\+M\+P\+E\+G1or2\+File\+Server\+Demux} ()
+\item 
+{\bf M\+P\+E\+G1or2\+Demuxed\+Elementary\+Stream} $\ast$ {\bf new\+Elementary\+Stream} (unsigned client\+Session\+Id, u\+\_\+int8\+\_\+t stream\+Id\+Tag)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char const $\ast$ {\bf f\+File\+Name}
+\item 
+unsigned {\bf f\+File\+Size}
+\item 
+float {\bf f\+File\+Duration}
+\item 
+{\bf Boolean} {\bf f\+Reuse\+First\+Source}
+\item 
+{\bf M\+P\+E\+G1or2\+Demux} $\ast$ {\bf f\+Session0\+Demux}
+\item 
+{\bf M\+P\+E\+G1or2\+Demux} $\ast$ {\bf f\+Last\+Created\+Demux}
+\item 
+unsigned {\bf f\+Last\+Client\+Session\+Id}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf M\+P\+E\+G1or2\+Demuxed\+Server\+Media\+Subsession}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 31 of file M\+P\+E\+G1or2\+File\+Server\+Demux.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{M\+P\+E\+G1or2\+File\+Server\+Demux(\+Usage\+Environment \&env, char const $\ast$file\+Name, Boolean reuse\+First\+Source)}]{\setlength{\rightskip}{0pt plus 5cm}M\+P\+E\+G1or2\+File\+Server\+Demux\+::\+M\+P\+E\+G1or2\+File\+Server\+Demux (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{file\+Name, }
+\item[{{\bf Boolean}}]{reuse\+First\+Source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG1or2FileServerDemux_ab24c41891dffafbafc2339ba394915c8}
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!````~M\+P\+E\+G1or2\+File\+Server\+Demux@{$\sim$\+M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\index{````~M\+P\+E\+G1or2\+File\+Server\+Demux@{$\sim$\+M\+P\+E\+G1or2\+File\+Server\+Demux}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{$\sim$\+M\+P\+E\+G1or2\+File\+Server\+Demux()}]{\setlength{\rightskip}{0pt plus 5cm}virtual M\+P\+E\+G1or2\+File\+Server\+Demux\+::$\sim$\+M\+P\+E\+G1or2\+File\+Server\+Demux (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classMPEG1or2FileServerDemux_aff02a4be7b6ba130e37c0d5e12c7f23a}
+
+
+\subsection{Member Function Documentation}
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!close@{close}}
+\index{close@{close}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{close(\+Usage\+Environment \&env, char const $\ast$medium\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a9968c7ce6eedb848f2cc095730c01b17}
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!close@{close}}
+\index{close@{close}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{close(\+Medium $\ast$medium)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_aee50624faf6909b3944dd803fd485467}
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!create\+New@{create\+New}}
+\index{create\+New@{create\+New}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{create\+New(\+Usage\+Environment \&env, char const $\ast$file\+Name, Boolean reuse\+First\+Source)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf M\+P\+E\+G1or2\+File\+Server\+Demux}$\ast$ M\+P\+E\+G1or2\+File\+Server\+Demux\+::create\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{file\+Name, }
+\item[{{\bf Boolean}}]{reuse\+First\+Source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classMPEG1or2FileServerDemux_a8bda3dd1c37bcc8e7c895263cb6d6bc3}
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!envir@{envir}}
+\index{envir@{envir}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{envir() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Medium\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a32f7ecdd95f2b8400e1a26a5009e3b8e}
+
+
+Definition at line 59 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Environ.
+
+
+
+Referenced by Media\+Subsession\+::env(), R\+T\+P\+Interface\+::envir(), Generic\+Media\+Server\+::\+Client\+Connection\+::envir(), and Generic\+Media\+Server\+::\+Client\+Session\+::envir().
+
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} fEnviron;\}
+\end{DoxyCode}
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!file\+Duration@{file\+Duration}}
+\index{file\+Duration@{file\+Duration}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{file\+Duration() const }]{\setlength{\rightskip}{0pt plus 5cm}float M\+P\+E\+G1or2\+File\+Server\+Demux\+::file\+Duration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classMPEG1or2FileServerDemux_ac96e9ae5c5d401697ec5557d78d51d13}
+
+
+Definition at line 44 of file M\+P\+E\+G1or2\+File\+Server\+Demux.\+hh.
+
+
+
+References f\+File\+Duration.
+
+
+\begin{DoxyCode}
+44 \{ \textcolor{keywordflow}{return} fFileDuration; \}
+\end{DoxyCode}
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!file\+Size@{file\+Size}}
+\index{file\+Size@{file\+Size}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{file\+Size() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P\+E\+G1or2\+File\+Server\+Demux\+::file\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classMPEG1or2FileServerDemux_a0eed74b8bcbe31f9e0710c388caec93b}
+
+
+Definition at line 43 of file M\+P\+E\+G1or2\+File\+Server\+Demux.\+hh.
+
+
+
+References f\+File\+Size.
+
+
+\begin{DoxyCode}
+43 \{ \textcolor{keywordflow}{return} fFileSize; \}
+\end{DoxyCode}
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!is\+Media\+Session@{is\+Media\+Session}}
+\index{is\+Media\+Session@{is\+Media\+Session}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{is\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ac5858707c4e7a15bd59d476cf48289d6}
+
+
+Reimplemented in {\bf Media\+Session} \doxyref{}{p.}{classMediaSession_a3b2a06a722374ab4477ac05a2ce28829}.
+
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}}
+\index{is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{is\+R\+T\+C\+P\+Instance() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ab5f9f20324698f89a35513d596b2e7be}
+
+
+Reimplemented in {\bf R\+T\+C\+P\+Instance} \doxyref{}{p.}{classRTCPInstance_a844292518419e1dbf24170812fd1e4b5}.
+
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}}
+\index{is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{is\+R\+T\+S\+P\+Client() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aed1c1816867f910ce8c98350686ac038}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Client} \doxyref{}{p.}{classRTSPClient_add07b3a68432b546998080b24380e7e8}.
+
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}}
+\index{is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{is\+R\+T\+S\+P\+Server() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a346e111b31bfde4b7f4ed593e0b97fd3}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Server} \doxyref{}{p.}{classRTSPServer_a45f9fc5ddd8f214169358493215a064a}.
+
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!is\+Server\+Media\+Session@{is\+Server\+Media\+Session}}
+\index{is\+Server\+Media\+Session@{is\+Server\+Media\+Session}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{is\+Server\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aa9fd26c4b954ffba5f79925ecd0283a0}
+
+
+Reimplemented in {\bf Server\+Media\+Session} \doxyref{}{p.}{classServerMediaSession_a34b59e04644b6f0841ea5af99dbf32f6}.
+
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!is\+Sink@{is\+Sink}}
+\index{is\+Sink@{is\+Sink}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{is\+Sink() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a23d49bf466482784b9d4378490d17b5f}
+
+
+Reimplemented in {\bf Media\+Sink} \doxyref{}{p.}{classMediaSink_aa8649dcdf21d5005f9ec319f898f91b6}.
+
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!is\+Source@{is\+Source}}
+\index{is\+Source@{is\+Source}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{is\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a6cdbd02c73a3e9c1cbab8fce9e9497b1}
+
+
+Reimplemented in {\bf Media\+Source} \doxyref{}{p.}{classMediaSource_a4d75fa9ee2b476b1231594282a6854be}.
+
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$medium\+Name, Medium $\ast$\&result\+Medium)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Medium\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name, }
+\item[{{\bf Medium} $\ast$\&}]{result\+Medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a418c860c1e0ef2766ee0d0f64b346291}
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!name@{name}}
+\index{name@{name}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Medium\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a575649802dc781c0e59e097a3870fcdb}
+
+
+Definition at line 61 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Medium\+Name.
+
+
+\begin{DoxyCode}
+61 \{\textcolor{keywordflow}{return} fMediumName;\}
+\end{DoxyCode}
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!new\+A\+C3\+Audio\+Server\+Media\+Subsession@{new\+A\+C3\+Audio\+Server\+Media\+Subsession}}
+\index{new\+A\+C3\+Audio\+Server\+Media\+Subsession@{new\+A\+C3\+Audio\+Server\+Media\+Subsession}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{new\+A\+C3\+Audio\+Server\+Media\+Subsession()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Server\+Media\+Subsession}$\ast$ M\+P\+E\+G1or2\+File\+Server\+Demux\+::new\+A\+C3\+Audio\+Server\+Media\+Subsession (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classMPEG1or2FileServerDemux_a01b65d00c56332904cb8831f917f6a2e}
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!new\+Audio\+Server\+Media\+Subsession@{new\+Audio\+Server\+Media\+Subsession}}
+\index{new\+Audio\+Server\+Media\+Subsession@{new\+Audio\+Server\+Media\+Subsession}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{new\+Audio\+Server\+Media\+Subsession()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Server\+Media\+Subsession}$\ast$ M\+P\+E\+G1or2\+File\+Server\+Demux\+::new\+Audio\+Server\+Media\+Subsession (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classMPEG1or2FileServerDemux_acf8bb1ca3f8a4f8e3b7b30e9fb3094a3}
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!new\+Elementary\+Stream@{new\+Elementary\+Stream}}
+\index{new\+Elementary\+Stream@{new\+Elementary\+Stream}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{new\+Elementary\+Stream(unsigned client\+Session\+Id, u\+\_\+int8\+\_\+t stream\+Id\+Tag)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+P\+E\+G1or2\+Demuxed\+Elementary\+Stream}$\ast$ M\+P\+E\+G1or2\+File\+Server\+Demux\+::new\+Elementary\+Stream (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{client\+Session\+Id, }
+\item[{u\+\_\+int8\+\_\+t}]{stream\+Id\+Tag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG1or2FileServerDemux_a74f51af26cf514c7df422b458e825bd8}
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!new\+Video\+Server\+Media\+Subsession@{new\+Video\+Server\+Media\+Subsession}}
+\index{new\+Video\+Server\+Media\+Subsession@{new\+Video\+Server\+Media\+Subsession}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{new\+Video\+Server\+Media\+Subsession(\+Boolean i\+Frames\+Only=\+False, double vsh\+Period=5.\+0)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Server\+Media\+Subsession}$\ast$ M\+P\+E\+G1or2\+File\+Server\+Demux\+::new\+Video\+Server\+Media\+Subsession (
+\begin{DoxyParamCaption}
+\item[{{\bf Boolean}}]{i\+Frames\+Only = {\ttfamily {\bf False}}, }
+\item[{double}]{vsh\+Period = {\ttfamily 5.0}}
+\end{DoxyParamCaption}
+)}\label{classMPEG1or2FileServerDemux_a86966540bec784d1c38d379a24c2dd44}
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{next\+Task()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token}\& Medium\+::next\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMedium_a5c8788adec90be1a584393a5bf11a5c9}
+
+
+Definition at line 77 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Next\+Task.
+
+
+\begin{DoxyCode}
+77                         \{
+78         \textcolor{keywordflow}{return} fNextTask;
+79   \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!M\+P\+E\+G1or2\+Demuxed\+Server\+Media\+Subsession@{M\+P\+E\+G1or2\+Demuxed\+Server\+Media\+Subsession}}
+\index{M\+P\+E\+G1or2\+Demuxed\+Server\+Media\+Subsession@{M\+P\+E\+G1or2\+Demuxed\+Server\+Media\+Subsession}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{M\+P\+E\+G1or2\+Demuxed\+Server\+Media\+Subsession}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf M\+P\+E\+G1or2\+Demuxed\+Server\+Media\+Subsession}\hspace{0.3cm}{\ttfamily [friend]}}\label{classMPEG1or2FileServerDemux_a826fdab576e777abeee4bfdc105d4fb9}
+
+
+Definition at line 53 of file M\+P\+E\+G1or2\+File\+Server\+Demux.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!f\+File\+Duration@{f\+File\+Duration}}
+\index{f\+File\+Duration@{f\+File\+Duration}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{f\+File\+Duration}]{\setlength{\rightskip}{0pt plus 5cm}float M\+P\+E\+G1or2\+File\+Server\+Demux\+::f\+File\+Duration\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG1or2FileServerDemux_a7c4d129f30e989dbaed5281c23304c90}
+
+
+Definition at line 60 of file M\+P\+E\+G1or2\+File\+Server\+Demux.\+hh.
+
+
+
+Referenced by file\+Duration().
+
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!f\+File\+Name@{f\+File\+Name}}
+\index{f\+File\+Name@{f\+File\+Name}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{f\+File\+Name}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ M\+P\+E\+G1or2\+File\+Server\+Demux\+::f\+File\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG1or2FileServerDemux_a4f2a044bddaa2f60f304353490715cea}
+
+
+Definition at line 58 of file M\+P\+E\+G1or2\+File\+Server\+Demux.\+hh.
+
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!f\+File\+Size@{f\+File\+Size}}
+\index{f\+File\+Size@{f\+File\+Size}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{f\+File\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P\+E\+G1or2\+File\+Server\+Demux\+::f\+File\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG1or2FileServerDemux_ac393cd7a8f892f39600b25e4b7ff2730}
+
+
+Definition at line 59 of file M\+P\+E\+G1or2\+File\+Server\+Demux.\+hh.
+
+
+
+Referenced by file\+Size().
+
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!f\+Last\+Client\+Session\+Id@{f\+Last\+Client\+Session\+Id}}
+\index{f\+Last\+Client\+Session\+Id@{f\+Last\+Client\+Session\+Id}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{f\+Last\+Client\+Session\+Id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P\+E\+G1or2\+File\+Server\+Demux\+::f\+Last\+Client\+Session\+Id\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG1or2FileServerDemux_aca23370421d2007393af011bc6ade80c}
+
+
+Definition at line 64 of file M\+P\+E\+G1or2\+File\+Server\+Demux.\+hh.
+
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!f\+Last\+Created\+Demux@{f\+Last\+Created\+Demux}}
+\index{f\+Last\+Created\+Demux@{f\+Last\+Created\+Demux}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{f\+Last\+Created\+Demux}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+P\+E\+G1or2\+Demux}$\ast$ M\+P\+E\+G1or2\+File\+Server\+Demux\+::f\+Last\+Created\+Demux\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG1or2FileServerDemux_a950983f3b28af0fe80183ea76b52225c}
+
+
+Definition at line 63 of file M\+P\+E\+G1or2\+File\+Server\+Demux.\+hh.
+
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!f\+Reuse\+First\+Source@{f\+Reuse\+First\+Source}}
+\index{f\+Reuse\+First\+Source@{f\+Reuse\+First\+Source}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{f\+Reuse\+First\+Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P\+E\+G1or2\+File\+Server\+Demux\+::f\+Reuse\+First\+Source\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG1or2FileServerDemux_a140d7cc28c663f0fd4708323286dfda8}
+
+
+Definition at line 61 of file M\+P\+E\+G1or2\+File\+Server\+Demux.\+hh.
+
+\index{M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}!f\+Session0\+Demux@{f\+Session0\+Demux}}
+\index{f\+Session0\+Demux@{f\+Session0\+Demux}!M\+P\+E\+G1or2\+File\+Server\+Demux@{M\+P\+E\+G1or2\+File\+Server\+Demux}}
+\subsubsection[{f\+Session0\+Demux}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+P\+E\+G1or2\+Demux}$\ast$ M\+P\+E\+G1or2\+File\+Server\+Demux\+::f\+Session0\+Demux\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG1or2FileServerDemux_a1fbd40e5f83d2e611600dee4b731f30b}
+
+
+Definition at line 62 of file M\+P\+E\+G1or2\+File\+Server\+Demux.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf M\+P\+E\+G1or2\+File\+Server\+Demux.\+hh}\end{DoxyCompactItemize}

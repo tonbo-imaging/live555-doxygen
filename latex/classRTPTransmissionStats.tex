@@ -1,0 +1,597 @@
+\section{R\+T\+P\+Transmission\+Stats Class Reference}
+\label{classRTPTransmissionStats}\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+
+
+{\ttfamily \#include $<$R\+T\+P\+Sink.\+hh$>$}
+
+
+
+Collaboration diagram for R\+T\+P\+Transmission\+Stats\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRTPTransmissionStats__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+u\+\_\+int32\+\_\+t {\bf S\+S\+R\+C} () const 
+\item 
+struct sockaddr\+\_\+in const \& {\bf last\+From\+Address} () const 
+\item 
+unsigned {\bf last\+Packet\+Num\+Received} () const 
+\item 
+unsigned {\bf first\+Packet\+Num\+Reported} () const 
+\item 
+unsigned {\bf tot\+Num\+Packets\+Lost} () const 
+\item 
+unsigned {\bf jitter} () const 
+\item 
+unsigned {\bf last\+S\+R\+Time} () const 
+\item 
+unsigned {\bf diff\+S\+R\+\_\+\+R\+R\+Time} () const 
+\item 
+unsigned {\bf round\+Trip\+Delay} () const 
+\item 
+struct timeval const \& {\bf time\+Created} () const 
+\item 
+struct timeval const \& {\bf last\+Time\+Received} () const 
+\item 
+void {\bf get\+Total\+Octet\+Count} (u\+\_\+int32\+\_\+t \&hi, u\+\_\+int32\+\_\+t \&lo)
+\item 
+void {\bf get\+Total\+Packet\+Count} (u\+\_\+int32\+\_\+t \&hi, u\+\_\+int32\+\_\+t \&lo)
+\item 
+unsigned {\bf packets\+Received\+Since\+Last\+R\+R} () const 
+\item 
+u\+\_\+int8\+\_\+t {\bf packet\+Loss\+Ratio} () const 
+\item 
+int {\bf packets\+Lost\+Between\+R\+R} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf R\+T\+P\+Transmission\+Stats} ({\bf R\+T\+P\+Sink} \&rtp\+Sink, u\+\_\+int32\+\_\+t {\bf S\+S\+R\+C})
+\item 
+virtual {\bf $\sim$\+R\+T\+P\+Transmission\+Stats} ()
+\item 
+void {\bf note\+Incoming\+R\+R} (struct sockaddr\+\_\+in const \&{\bf last\+From\+Address}, unsigned loss\+Stats, unsigned {\bf last\+Packet\+Num\+Received}, unsigned {\bf jitter}, unsigned {\bf last\+S\+R\+Time}, unsigned {\bf diff\+S\+R\+\_\+\+R\+R\+Time})
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf R\+T\+P\+Sink} \& {\bf f\+Our\+R\+T\+P\+Sink}
+\item 
+u\+\_\+int32\+\_\+t {\bf f\+S\+S\+R\+C}
+\item 
+struct sockaddr\+\_\+in {\bf f\+Last\+From\+Address}
+\item 
+unsigned {\bf f\+Last\+Packet\+Num\+Received}
+\item 
+u\+\_\+int8\+\_\+t {\bf f\+Packet\+Loss\+Ratio}
+\item 
+unsigned {\bf f\+Tot\+Num\+Packets\+Lost}
+\item 
+unsigned {\bf f\+Jitter}
+\item 
+unsigned {\bf f\+Last\+S\+R\+Time}
+\item 
+unsigned {\bf f\+Diff\+S\+R\+\_\+\+R\+R\+Time}
+\item 
+struct timeval f\+Time\+Created {\bf f\+Time\+Received}
+\item 
+{\bf Boolean} {\bf f\+At\+Least\+Two\+R\+Rs\+Have\+Been\+Received}
+\item 
+unsigned {\bf f\+Old\+Last\+Packet\+Num\+Received}
+\item 
+unsigned {\bf f\+Old\+Tot\+Num\+Packets\+Lost}
+\item 
+{\bf Boolean} {\bf f\+First\+Packet}
+\item 
+unsigned {\bf f\+First\+Packet\+Num\+Reported}
+\item 
+u\+\_\+int32\+\_\+t {\bf f\+Last\+Octet\+Count}
+\item 
+u\+\_\+int32\+\_\+t {\bf f\+Total\+Octet\+Count\+\_\+hi}
+\item 
+u\+\_\+int32\+\_\+t {\bf f\+Total\+Octet\+Count\+\_\+lo}
+\item 
+u\+\_\+int32\+\_\+t {\bf f\+Last\+Packet\+Count}
+\item 
+u\+\_\+int32\+\_\+t {\bf f\+Total\+Packet\+Count\+\_\+hi}
+\item 
+u\+\_\+int32\+\_\+t {\bf f\+Total\+Packet\+Count\+\_\+lo}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf R\+T\+P\+Transmission\+Stats\+D\+B}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 178 of file R\+T\+P\+Sink.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{R\+T\+P\+Transmission\+Stats(\+R\+T\+P\+Sink \&rtp\+Sink, u\+\_\+int32\+\_\+t S\+S\+R\+C)}]{\setlength{\rightskip}{0pt plus 5cm}R\+T\+P\+Transmission\+Stats\+::\+R\+T\+P\+Transmission\+Stats (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+P\+Sink} \&}]{rtp\+Sink, }
+\item[{u\+\_\+int32\+\_\+t}]{S\+S\+R\+C}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_a13aa08b670ae40db550f50efa0327173}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!````~R\+T\+P\+Transmission\+Stats@{$\sim$\+R\+T\+P\+Transmission\+Stats}}
+\index{````~R\+T\+P\+Transmission\+Stats@{$\sim$\+R\+T\+P\+Transmission\+Stats}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{$\sim$\+R\+T\+P\+Transmission\+Stats()}]{\setlength{\rightskip}{0pt plus 5cm}virtual R\+T\+P\+Transmission\+Stats\+::$\sim$\+R\+T\+P\+Transmission\+Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classRTPTransmissionStats_a03b9b7dd7e7c54fdd1e6830eec380d6f}
+
+
+\subsection{Member Function Documentation}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!diff\+S\+R\+\_\+\+R\+R\+Time@{diff\+S\+R\+\_\+\+R\+R\+Time}}
+\index{diff\+S\+R\+\_\+\+R\+R\+Time@{diff\+S\+R\+\_\+\+R\+R\+Time}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{diff\+S\+R\+\_\+\+R\+R\+Time() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Transmission\+Stats\+::diff\+S\+R\+\_\+\+R\+R\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPTransmissionStats_af95f0339b976be0bf38b6c110d9783a4}
+
+
+Definition at line 187 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References f\+Diff\+S\+R\+\_\+\+R\+R\+Time.
+
+
+\begin{DoxyCode}
+187 \{ \textcolor{keywordflow}{return} fDiffSR_RRTime; \}
+\end{DoxyCode}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!first\+Packet\+Num\+Reported@{first\+Packet\+Num\+Reported}}
+\index{first\+Packet\+Num\+Reported@{first\+Packet\+Num\+Reported}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{first\+Packet\+Num\+Reported() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Transmission\+Stats\+::first\+Packet\+Num\+Reported (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPTransmissionStats_ab9fdbe9e935b0cf167bc72e82d8c0b2a}
+
+
+Definition at line 183 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References f\+First\+Packet\+Num\+Reported.
+
+
+\begin{DoxyCode}
+183 \{\textcolor{keywordflow}{return} fFirstPacketNumReported;\}
+\end{DoxyCode}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!get\+Total\+Octet\+Count@{get\+Total\+Octet\+Count}}
+\index{get\+Total\+Octet\+Count@{get\+Total\+Octet\+Count}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{get\+Total\+Octet\+Count(u\+\_\+int32\+\_\+t \&hi, u\+\_\+int32\+\_\+t \&lo)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Transmission\+Stats\+::get\+Total\+Octet\+Count (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t \&}]{hi, }
+\item[{u\+\_\+int32\+\_\+t \&}]{lo}
+\end{DoxyParamCaption}
+)}\label{classRTPTransmissionStats_a2ab907056c5b677ebb62718e28db082a}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!get\+Total\+Packet\+Count@{get\+Total\+Packet\+Count}}
+\index{get\+Total\+Packet\+Count@{get\+Total\+Packet\+Count}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{get\+Total\+Packet\+Count(u\+\_\+int32\+\_\+t \&hi, u\+\_\+int32\+\_\+t \&lo)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Transmission\+Stats\+::get\+Total\+Packet\+Count (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t \&}]{hi, }
+\item[{u\+\_\+int32\+\_\+t \&}]{lo}
+\end{DoxyParamCaption}
+)}\label{classRTPTransmissionStats_a9f761db91e8c472784a01ad3211bd180}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!jitter@{jitter}}
+\index{jitter@{jitter}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{jitter() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Transmission\+Stats\+::jitter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPTransmissionStats_a42d0c53f5869865982fe42563f6ff5dd}
+
+
+Definition at line 185 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References f\+Jitter.
+
+
+\begin{DoxyCode}
+185 \{\textcolor{keywordflow}{return} fJitter;\}
+\end{DoxyCode}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!last\+From\+Address@{last\+From\+Address}}
+\index{last\+From\+Address@{last\+From\+Address}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{last\+From\+Address() const }]{\setlength{\rightskip}{0pt plus 5cm}struct sockaddr\+\_\+in const\& R\+T\+P\+Transmission\+Stats\+::last\+From\+Address (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPTransmissionStats_af52947c842a3640eb4680adaed1e44c0}
+
+
+Definition at line 181 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References f\+Last\+From\+Address.
+
+
+\begin{DoxyCode}
+181 \{\textcolor{keywordflow}{return} fLastFromAddress;\}
+\end{DoxyCode}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!last\+Packet\+Num\+Received@{last\+Packet\+Num\+Received}}
+\index{last\+Packet\+Num\+Received@{last\+Packet\+Num\+Received}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{last\+Packet\+Num\+Received() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Transmission\+Stats\+::last\+Packet\+Num\+Received (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPTransmissionStats_ae33ce330f4cac98e7346c4915847dc15}
+
+
+Definition at line 182 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References f\+Last\+Packet\+Num\+Received.
+
+
+\begin{DoxyCode}
+182 \{\textcolor{keywordflow}{return} fLastPacketNumReceived;\}
+\end{DoxyCode}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!last\+S\+R\+Time@{last\+S\+R\+Time}}
+\index{last\+S\+R\+Time@{last\+S\+R\+Time}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{last\+S\+R\+Time() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Transmission\+Stats\+::last\+S\+R\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPTransmissionStats_a14959b0359766db97ead2083c87ce538}
+
+
+Definition at line 186 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References f\+Last\+S\+R\+Time.
+
+
+\begin{DoxyCode}
+186 \{ \textcolor{keywordflow}{return} fLastSRTime; \}
+\end{DoxyCode}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!last\+Time\+Received@{last\+Time\+Received}}
+\index{last\+Time\+Received@{last\+Time\+Received}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{last\+Time\+Received() const }]{\setlength{\rightskip}{0pt plus 5cm}struct timeval const\& R\+T\+P\+Transmission\+Stats\+::last\+Time\+Received (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPTransmissionStats_aca761857d234748a4695005c923dc804}
+
+
+Definition at line 192 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References f\+Time\+Received.
+
+
+\begin{DoxyCode}
+192 \{\textcolor{keywordflow}{return} fTimeReceived;\}
+\end{DoxyCode}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!note\+Incoming\+R\+R@{note\+Incoming\+R\+R}}
+\index{note\+Incoming\+R\+R@{note\+Incoming\+R\+R}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{note\+Incoming\+R\+R(struct sockaddr\+\_\+in const \&last\+From\+Address, unsigned loss\+Stats, unsigned last\+Packet\+Num\+Received, unsigned jitter, unsigned last\+S\+R\+Time, unsigned diff\+S\+R\+\_\+\+R\+R\+Time)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Transmission\+Stats\+::note\+Incoming\+R\+R (
+\begin{DoxyParamCaption}
+\item[{struct sockaddr\+\_\+in const \&}]{last\+From\+Address, }
+\item[{unsigned}]{loss\+Stats, }
+\item[{unsigned}]{last\+Packet\+Num\+Received, }
+\item[{unsigned}]{jitter, }
+\item[{unsigned}]{last\+S\+R\+Time, }
+\item[{unsigned}]{diff\+S\+R\+\_\+\+R\+R\+Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_abb6e0a0c8e067269ba6a8c6579e067f3}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!packet\+Loss\+Ratio@{packet\+Loss\+Ratio}}
+\index{packet\+Loss\+Ratio@{packet\+Loss\+Ratio}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{packet\+Loss\+Ratio() const }]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t R\+T\+P\+Transmission\+Stats\+::packet\+Loss\+Ratio (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPTransmissionStats_acc4e921ed9b63c682019f2fe7e0e7359}
+
+
+Definition at line 198 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References f\+Packet\+Loss\+Ratio.
+
+
+\begin{DoxyCode}
+198 \{ \textcolor{keywordflow}{return} fPacketLossRatio; \}
+\end{DoxyCode}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!packets\+Lost\+Between\+R\+R@{packets\+Lost\+Between\+R\+R}}
+\index{packets\+Lost\+Between\+R\+R@{packets\+Lost\+Between\+R\+R}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{packets\+Lost\+Between\+R\+R() const }]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+P\+Transmission\+Stats\+::packets\+Lost\+Between\+R\+R (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classRTPTransmissionStats_a6926696290160c990259699f10115023}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!packets\+Received\+Since\+Last\+R\+R@{packets\+Received\+Since\+Last\+R\+R}}
+\index{packets\+Received\+Since\+Last\+R\+R@{packets\+Received\+Since\+Last\+R\+R}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{packets\+Received\+Since\+Last\+R\+R() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Transmission\+Stats\+::packets\+Received\+Since\+Last\+R\+R (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classRTPTransmissionStats_a3d21b8a08e0ce172297bf787089fe395}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!round\+Trip\+Delay@{round\+Trip\+Delay}}
+\index{round\+Trip\+Delay@{round\+Trip\+Delay}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{round\+Trip\+Delay() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Transmission\+Stats\+::round\+Trip\+Delay (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classRTPTransmissionStats_a15f2ae034a7103d71679b0d1e5495627}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!S\+S\+R\+C@{S\+S\+R\+C}}
+\index{S\+S\+R\+C@{S\+S\+R\+C}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{S\+S\+R\+C() const }]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+P\+Transmission\+Stats\+::\+S\+S\+R\+C (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPTransmissionStats_a22212a413305506f9521995eb3b4319f}
+
+
+Definition at line 180 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References f\+S\+S\+R\+C.
+
+
+\begin{DoxyCode}
+180 \{\textcolor{keywordflow}{return} fSSRC;\}
+\end{DoxyCode}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!time\+Created@{time\+Created}}
+\index{time\+Created@{time\+Created}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{time\+Created() const }]{\setlength{\rightskip}{0pt plus 5cm}struct timeval const\& R\+T\+P\+Transmission\+Stats\+::time\+Created (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPTransmissionStats_af645ac5c244a4bb456d07330e508f6e7}
+
+
+Definition at line 191 of file R\+T\+P\+Sink.\+hh.
+
+
+\begin{DoxyCode}
+191 \{\textcolor{keywordflow}{return} fTimeCreated;\}
+\end{DoxyCode}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!tot\+Num\+Packets\+Lost@{tot\+Num\+Packets\+Lost}}
+\index{tot\+Num\+Packets\+Lost@{tot\+Num\+Packets\+Lost}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{tot\+Num\+Packets\+Lost() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Transmission\+Stats\+::tot\+Num\+Packets\+Lost (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPTransmissionStats_a44939ccd7f24164e983fe04f6d03216c}
+
+
+Definition at line 184 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References f\+Tot\+Num\+Packets\+Lost.
+
+
+\begin{DoxyCode}
+184 \{\textcolor{keywordflow}{return} fTotNumPacketsLost;\}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}}
+\index{R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{R\+T\+P\+Transmission\+Stats\+D\+B}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf R\+T\+P\+Transmission\+Stats\+D\+B}\hspace{0.3cm}{\ttfamily [friend]}}\label{classRTPTransmissionStats_ac7f8f9524bb9741410250f4cbbfd94e4}
+
+
+Definition at line 204 of file R\+T\+P\+Sink.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+At\+Least\+Two\+R\+Rs\+Have\+Been\+Received@{f\+At\+Least\+Two\+R\+Rs\+Have\+Been\+Received}}
+\index{f\+At\+Least\+Two\+R\+Rs\+Have\+Been\+Received@{f\+At\+Least\+Two\+R\+Rs\+Have\+Been\+Received}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+At\+Least\+Two\+R\+Rs\+Have\+Been\+Received}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+P\+Transmission\+Stats\+::f\+At\+Least\+Two\+R\+Rs\+Have\+Been\+Received\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_afeb10f7722111e630e3afc205643fe6e}
+
+
+Definition at line 224 of file R\+T\+P\+Sink.\+hh.
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+Diff\+S\+R\+\_\+\+R\+R\+Time@{f\+Diff\+S\+R\+\_\+\+R\+R\+Time}}
+\index{f\+Diff\+S\+R\+\_\+\+R\+R\+Time@{f\+Diff\+S\+R\+\_\+\+R\+R\+Time}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+Diff\+S\+R\+\_\+\+R\+R\+Time}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Transmission\+Stats\+::f\+Diff\+S\+R\+\_\+\+R\+R\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_ab5009937938b8508c085d2ce2c14da38}
+
+
+Definition at line 222 of file R\+T\+P\+Sink.\+hh.
+
+
+
+Referenced by diff\+S\+R\+\_\+\+R\+R\+Time().
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+First\+Packet@{f\+First\+Packet}}
+\index{f\+First\+Packet@{f\+First\+Packet}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+First\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+P\+Transmission\+Stats\+::f\+First\+Packet\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_a920fa5f8e6fad82b15ae4ad35ad687a1}
+
+
+Definition at line 227 of file R\+T\+P\+Sink.\+hh.
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+First\+Packet\+Num\+Reported@{f\+First\+Packet\+Num\+Reported}}
+\index{f\+First\+Packet\+Num\+Reported@{f\+First\+Packet\+Num\+Reported}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+First\+Packet\+Num\+Reported}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Transmission\+Stats\+::f\+First\+Packet\+Num\+Reported\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_a08c190aef650c979fc48aba862db26ad}
+
+
+Definition at line 228 of file R\+T\+P\+Sink.\+hh.
+
+
+
+Referenced by first\+Packet\+Num\+Reported().
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+Jitter@{f\+Jitter}}
+\index{f\+Jitter@{f\+Jitter}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+Jitter}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Transmission\+Stats\+::f\+Jitter\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_a23f3d6ff017ff4865919867d155f078d}
+
+
+Definition at line 220 of file R\+T\+P\+Sink.\+hh.
+
+
+
+Referenced by jitter().
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+Last\+From\+Address@{f\+Last\+From\+Address}}
+\index{f\+Last\+From\+Address@{f\+Last\+From\+Address}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+Last\+From\+Address}]{\setlength{\rightskip}{0pt plus 5cm}struct sockaddr\+\_\+in R\+T\+P\+Transmission\+Stats\+::f\+Last\+From\+Address\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_a29e2f31ae2b13e9c6cb0c2dafb5061e7}
+
+
+Definition at line 216 of file R\+T\+P\+Sink.\+hh.
+
+
+
+Referenced by last\+From\+Address().
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+Last\+Octet\+Count@{f\+Last\+Octet\+Count}}
+\index{f\+Last\+Octet\+Count@{f\+Last\+Octet\+Count}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+Last\+Octet\+Count}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+P\+Transmission\+Stats\+::f\+Last\+Octet\+Count\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_a3a80287578885e081ec2d53b46673470}
+
+
+Definition at line 229 of file R\+T\+P\+Sink.\+hh.
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+Last\+Packet\+Count@{f\+Last\+Packet\+Count}}
+\index{f\+Last\+Packet\+Count@{f\+Last\+Packet\+Count}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+Last\+Packet\+Count}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+P\+Transmission\+Stats\+::f\+Last\+Packet\+Count\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_a8b92474e9534f62563b0c5f01bcb9706}
+
+
+Definition at line 230 of file R\+T\+P\+Sink.\+hh.
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+Last\+Packet\+Num\+Received@{f\+Last\+Packet\+Num\+Received}}
+\index{f\+Last\+Packet\+Num\+Received@{f\+Last\+Packet\+Num\+Received}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+Last\+Packet\+Num\+Received}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Transmission\+Stats\+::f\+Last\+Packet\+Num\+Received\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_a42b82f1e614948d6225075999f1c8e3f}
+
+
+Definition at line 217 of file R\+T\+P\+Sink.\+hh.
+
+
+
+Referenced by last\+Packet\+Num\+Received().
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+Last\+S\+R\+Time@{f\+Last\+S\+R\+Time}}
+\index{f\+Last\+S\+R\+Time@{f\+Last\+S\+R\+Time}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+Last\+S\+R\+Time}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Transmission\+Stats\+::f\+Last\+S\+R\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_a108f29eecaa43cda502f2acc3bfcd9b9}
+
+
+Definition at line 221 of file R\+T\+P\+Sink.\+hh.
+
+
+
+Referenced by last\+S\+R\+Time().
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+Old\+Last\+Packet\+Num\+Received@{f\+Old\+Last\+Packet\+Num\+Received}}
+\index{f\+Old\+Last\+Packet\+Num\+Received@{f\+Old\+Last\+Packet\+Num\+Received}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+Old\+Last\+Packet\+Num\+Received}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Transmission\+Stats\+::f\+Old\+Last\+Packet\+Num\+Received\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_a3002d1738366daa5d1fe77a742b6bf2b}
+
+
+Definition at line 225 of file R\+T\+P\+Sink.\+hh.
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+Old\+Tot\+Num\+Packets\+Lost@{f\+Old\+Tot\+Num\+Packets\+Lost}}
+\index{f\+Old\+Tot\+Num\+Packets\+Lost@{f\+Old\+Tot\+Num\+Packets\+Lost}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+Old\+Tot\+Num\+Packets\+Lost}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Transmission\+Stats\+::f\+Old\+Tot\+Num\+Packets\+Lost\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_a197ee40c20fd6abc261fdf679060db23}
+
+
+Definition at line 226 of file R\+T\+P\+Sink.\+hh.
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+Our\+R\+T\+P\+Sink@{f\+Our\+R\+T\+P\+Sink}}
+\index{f\+Our\+R\+T\+P\+Sink@{f\+Our\+R\+T\+P\+Sink}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+Our\+R\+T\+P\+Sink}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+P\+Sink}\& R\+T\+P\+Transmission\+Stats\+::f\+Our\+R\+T\+P\+Sink\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_a555441c396530e40ccaedbc95b58ce18}
+
+
+Definition at line 214 of file R\+T\+P\+Sink.\+hh.
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+Packet\+Loss\+Ratio@{f\+Packet\+Loss\+Ratio}}
+\index{f\+Packet\+Loss\+Ratio@{f\+Packet\+Loss\+Ratio}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+Packet\+Loss\+Ratio}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t R\+T\+P\+Transmission\+Stats\+::f\+Packet\+Loss\+Ratio\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_affa2f6e8bd23caf0eda31a9ab21bce5d}
+
+
+Definition at line 218 of file R\+T\+P\+Sink.\+hh.
+
+
+
+Referenced by packet\+Loss\+Ratio().
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+S\+S\+R\+C@{f\+S\+S\+R\+C}}
+\index{f\+S\+S\+R\+C@{f\+S\+S\+R\+C}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+S\+S\+R\+C}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+P\+Transmission\+Stats\+::f\+S\+S\+R\+C\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_a122fbf3d54da5e2a3dde7202800cfdde}
+
+
+Definition at line 215 of file R\+T\+P\+Sink.\+hh.
+
+
+
+Referenced by S\+S\+R\+C().
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+Time\+Received@{f\+Time\+Received}}
+\index{f\+Time\+Received@{f\+Time\+Received}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+Time\+Received}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval f\+Time\+Created R\+T\+P\+Transmission\+Stats\+::f\+Time\+Received\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_a5353d170980c65ed5ffb46ec4278033b}
+
+
+Definition at line 223 of file R\+T\+P\+Sink.\+hh.
+
+
+
+Referenced by last\+Time\+Received().
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+Total\+Octet\+Count\+\_\+hi@{f\+Total\+Octet\+Count\+\_\+hi}}
+\index{f\+Total\+Octet\+Count\+\_\+hi@{f\+Total\+Octet\+Count\+\_\+hi}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+Total\+Octet\+Count\+\_\+hi}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+P\+Transmission\+Stats\+::f\+Total\+Octet\+Count\+\_\+hi\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_a25a332c32462cc755689f75900d20f08}
+
+
+Definition at line 229 of file R\+T\+P\+Sink.\+hh.
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+Total\+Octet\+Count\+\_\+lo@{f\+Total\+Octet\+Count\+\_\+lo}}
+\index{f\+Total\+Octet\+Count\+\_\+lo@{f\+Total\+Octet\+Count\+\_\+lo}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+Total\+Octet\+Count\+\_\+lo}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+P\+Transmission\+Stats\+::f\+Total\+Octet\+Count\+\_\+lo\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_ab1cf92cc5459471dfbcdd7d2fc3a1044}
+
+
+Definition at line 229 of file R\+T\+P\+Sink.\+hh.
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+Total\+Packet\+Count\+\_\+hi@{f\+Total\+Packet\+Count\+\_\+hi}}
+\index{f\+Total\+Packet\+Count\+\_\+hi@{f\+Total\+Packet\+Count\+\_\+hi}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+Total\+Packet\+Count\+\_\+hi}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+P\+Transmission\+Stats\+::f\+Total\+Packet\+Count\+\_\+hi\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_a6ce5032af75d8e83506876b7df213d2c}
+
+
+Definition at line 230 of file R\+T\+P\+Sink.\+hh.
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+Total\+Packet\+Count\+\_\+lo@{f\+Total\+Packet\+Count\+\_\+lo}}
+\index{f\+Total\+Packet\+Count\+\_\+lo@{f\+Total\+Packet\+Count\+\_\+lo}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+Total\+Packet\+Count\+\_\+lo}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+P\+Transmission\+Stats\+::f\+Total\+Packet\+Count\+\_\+lo\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_a20f368a5b0b2aec7c5628f67b6f12b71}
+
+
+Definition at line 230 of file R\+T\+P\+Sink.\+hh.
+
+\index{R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}!f\+Tot\+Num\+Packets\+Lost@{f\+Tot\+Num\+Packets\+Lost}}
+\index{f\+Tot\+Num\+Packets\+Lost@{f\+Tot\+Num\+Packets\+Lost}!R\+T\+P\+Transmission\+Stats@{R\+T\+P\+Transmission\+Stats}}
+\subsubsection[{f\+Tot\+Num\+Packets\+Lost}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Transmission\+Stats\+::f\+Tot\+Num\+Packets\+Lost\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStats_af52144db41fe17a04ab27a3bf7968800}
+
+
+Definition at line 219 of file R\+T\+P\+Sink.\+hh.
+
+
+
+Referenced by tot\+Num\+Packets\+Lost().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf R\+T\+P\+Sink.\+hh}\end{DoxyCompactItemize}

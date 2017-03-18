@@ -1,0 +1,791 @@
+\section{A\+V\+I\+File\+Sink Class Reference}
+\label{classAVIFileSink}\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+
+
+{\ttfamily \#include $<$A\+V\+I\+File\+Sink.\+hh$>$}
+
+
+
+Inheritance diagram for A\+V\+I\+File\+Sink\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=111pt]{classAVIFileSink__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+V\+I\+File\+Sink\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAVIFileSink__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void( {\bf after\+Playing\+Func}) (void $\ast$client\+Data)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Boolean} {\bf start\+Playing} ({\bf after\+Playing\+Func} $\ast$after\+Func, void $\ast$after\+Client\+Data)
+\item 
+unsigned {\bf num\+Active\+Subsessions} () const 
+\item 
+{\bf Usage\+Environment} \& {\bf envir} () const 
+\item 
+char const $\ast$ {\bf name} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Source} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Sink} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+C\+P\+Instance} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Client} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Server} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Media\+Session} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Server\+Media\+Session} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf A\+V\+I\+File\+Sink} $\ast$ {\bf create\+New} ({\bf Usage\+Environment} \&env, {\bf Media\+Session} \&input\+Session, char const $\ast$output\+File\+Name, unsigned buffer\+Size=20000, unsigned short movie\+Width=240, unsigned short movie\+Height=180, unsigned movie\+F\+P\+S=15, {\bf Boolean} packet\+Loss\+Compensate={\bf False})
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name, {\bf Medium} $\ast$\&result\+Medium)
+\item 
+static void {\bf close} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name)
+\item 
+static void {\bf close} ({\bf Medium} $\ast$medium)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Task\+Token} \& {\bf next\+Task} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf A\+V\+I\+File\+Sink} ({\bf Usage\+Environment} \&env, {\bf Media\+Session} \&input\+Session, char const $\ast$output\+File\+Name, unsigned buffer\+Size, unsigned short movie\+Width, unsigned short movie\+Height, unsigned movie\+F\+P\+S, {\bf Boolean} packet\+Loss\+Compensate)
+\item 
+virtual {\bf $\sim$\+A\+V\+I\+File\+Sink} ()
+\item 
+{\bf Boolean} {\bf continue\+Playing} ()
+\item 
+void {\bf on\+Source\+Closure1} ()
+\item 
+void {\bf add\+Index\+Record} (class A\+V\+I\+Index\+Record $\ast$new\+Index\+Record)
+\item 
+void {\bf complete\+Output\+File} ()
+\item 
+unsigned {\bf add\+Word} (unsigned word)
+\item 
+unsigned {\bf add\+Half\+Word} (unsigned short half\+Word)
+\item 
+unsigned {\bf add\+Byte} (unsigned char byte)
+\item 
+unsigned {\bf add\+Zero\+Words} (unsigned num\+Words)
+\item 
+unsigned {\bf add4\+Byte\+String} (char const $\ast$str)
+\item 
+void {\bf set\+Word} (unsigned file\+Posn, unsigned size)
+\item 
+{\bf \+\_\+header} (A\+V\+I)
+\item 
+{\bf \+\_\+header} (hdrl)
+\item 
+{\bf \+\_\+header} (avih)
+\item 
+{\bf \+\_\+header} (strl)
+\item 
+{\bf \+\_\+header} (strh)
+\item 
+{\bf \+\_\+header} (strf)
+\item 
+{\bf \+\_\+header} (J\+U\+N\+K)
+\item 
+{\bf \+\_\+header} (movi)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf after\+Getting\+Frame} (void $\ast$client\+Data, unsigned frame\+Size, unsigned num\+Truncated\+Bytes, struct timeval presentation\+Time, unsigned duration\+In\+Microseconds)
+\item 
+static void {\bf on\+Source\+Closure} (void $\ast$client\+Data)
+\item 
+static void {\bf on\+R\+T\+C\+P\+Bye} (void $\ast$client\+Data)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Media\+Session} \& {\bf f\+Input\+Session}
+\item 
+F\+I\+L\+E $\ast$ {\bf f\+Out\+Fid}
+\item 
+class A\+V\+I\+Index\+Record $\ast$ {\bf f\+Index\+Records\+Head}
+\item 
+class A\+V\+I\+Index\+Record $\ast$ {\bf f\+Index\+Records\+Tail}
+\item 
+unsigned {\bf f\+Num\+Index\+Records}
+\item 
+unsigned {\bf f\+Buffer\+Size}
+\item 
+{\bf Boolean} {\bf f\+Packet\+Loss\+Compensate}
+\item 
+{\bf Boolean} {\bf f\+Are\+Currently\+Being\+Played}
+\item 
+{\bf after\+Playing\+Func} $\ast$ {\bf f\+After\+Func}
+\item 
+void $\ast$ {\bf f\+After\+Client\+Data}
+\item 
+unsigned {\bf f\+Num\+Subsessions}
+\item 
+unsigned {\bf f\+Num\+Bytes\+Written}
+\item 
+struct timeval {\bf f\+Start\+Time}
+\item 
+{\bf Boolean} {\bf f\+Have\+Completed\+Output\+File}
+\item 
+unsigned short {\bf f\+Movie\+Width}
+\item 
+unsigned short {\bf f\+Movie\+Height}
+\item 
+unsigned {\bf f\+Movie\+F\+P\+S}
+\item 
+unsigned {\bf f\+R\+I\+F\+F\+Size\+Position}
+\item 
+unsigned {\bf f\+R\+I\+F\+F\+Size\+Value}
+\item 
+unsigned {\bf f\+A\+V\+I\+H\+Max\+Bytes\+Per\+Second\+Position}
+\item 
+unsigned {\bf f\+A\+V\+I\+H\+Frame\+Count\+Position}
+\item 
+unsigned {\bf f\+Movi\+Size\+Position}
+\item 
+unsigned {\bf f\+Movi\+Size\+Value}
+\item 
+class {\bf A\+V\+I\+Subsession\+I\+O\+State} $\ast$ {\bf f\+Current\+I\+O\+State}
+\item 
+unsigned {\bf f\+Junk\+Number}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf A\+V\+I\+Subsession\+I\+O\+State}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file A\+V\+I\+File\+Sink.\+hh.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!after\+Playing\+Func@{after\+Playing\+Func}}
+\index{after\+Playing\+Func@{after\+Playing\+Func}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{after\+Playing\+Func}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( A\+V\+I\+File\+Sink\+::after\+Playing\+Func) (void $\ast$client\+Data)}\label{classAVIFileSink_af99f6e540376939c42ec0ca2226eff8d}
+
+
+Definition at line 39 of file A\+V\+I\+File\+Sink.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{A\+V\+I\+File\+Sink(\+Usage\+Environment \&env, Media\+Session \&input\+Session, char const $\ast$output\+File\+Name, unsigned buffer\+Size, unsigned short movie\+Width, unsigned short movie\+Height, unsigned movie\+F\+P\+S, Boolean packet\+Loss\+Compensate)}]{\setlength{\rightskip}{0pt plus 5cm}A\+V\+I\+File\+Sink\+::\+A\+V\+I\+File\+Sink (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf Media\+Session} \&}]{input\+Session, }
+\item[{char const $\ast$}]{output\+File\+Name, }
+\item[{unsigned}]{buffer\+Size, }
+\item[{unsigned short}]{movie\+Width, }
+\item[{unsigned short}]{movie\+Height, }
+\item[{unsigned}]{movie\+F\+P\+S, }
+\item[{{\bf Boolean}}]{packet\+Loss\+Compensate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_af04234f643179d630a325005a77ffe8c}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!````~A\+V\+I\+File\+Sink@{$\sim$\+A\+V\+I\+File\+Sink}}
+\index{````~A\+V\+I\+File\+Sink@{$\sim$\+A\+V\+I\+File\+Sink}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{$\sim$\+A\+V\+I\+File\+Sink()}]{\setlength{\rightskip}{0pt plus 5cm}virtual A\+V\+I\+File\+Sink\+::$\sim$\+A\+V\+I\+File\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classAVIFileSink_a9f39547b669bc41f93549149d3b75c92}
+
+
+\subsection{Member Function Documentation}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!\+\_\+header@{\+\_\+header}}
+\index{\+\_\+header@{\+\_\+header}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{\+\_\+header(\+A\+V\+I)}]{\setlength{\rightskip}{0pt plus 5cm}A\+V\+I\+File\+Sink\+::\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{A\+V\+I}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a96f0a4b5f72d26f8ad507d6dc87dd247}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!\+\_\+header@{\+\_\+header}}
+\index{\+\_\+header@{\+\_\+header}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{\+\_\+header(hdrl)}]{\setlength{\rightskip}{0pt plus 5cm}A\+V\+I\+File\+Sink\+::\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{hdrl}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a4152da69347059c7311ad8032230f608}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!\+\_\+header@{\+\_\+header}}
+\index{\+\_\+header@{\+\_\+header}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{\+\_\+header(avih)}]{\setlength{\rightskip}{0pt plus 5cm}A\+V\+I\+File\+Sink\+::\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{avih}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a7c8e43ee834fd775a32b1c229c1c3ec7}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!\+\_\+header@{\+\_\+header}}
+\index{\+\_\+header@{\+\_\+header}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{\+\_\+header(strl)}]{\setlength{\rightskip}{0pt plus 5cm}A\+V\+I\+File\+Sink\+::\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{strl}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_abb3806df3ae3d7f56e42444a75e7f4a4}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!\+\_\+header@{\+\_\+header}}
+\index{\+\_\+header@{\+\_\+header}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{\+\_\+header(strh)}]{\setlength{\rightskip}{0pt plus 5cm}A\+V\+I\+File\+Sink\+::\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{strh}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_ac22f074c2e4956e1e1e9358c5870f09f}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!\+\_\+header@{\+\_\+header}}
+\index{\+\_\+header@{\+\_\+header}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{\+\_\+header(strf)}]{\setlength{\rightskip}{0pt plus 5cm}A\+V\+I\+File\+Sink\+::\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{strf}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a0164188014d322357b361a90968c4d47}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!\+\_\+header@{\+\_\+header}}
+\index{\+\_\+header@{\+\_\+header}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{\+\_\+header(\+J\+U\+N\+K)}]{\setlength{\rightskip}{0pt plus 5cm}A\+V\+I\+File\+Sink\+::\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{J\+U\+N\+K}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a723d2931d1031e9e21e7cfaa4df6159a}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!\+\_\+header@{\+\_\+header}}
+\index{\+\_\+header@{\+\_\+header}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{\+\_\+header(movi)}]{\setlength{\rightskip}{0pt plus 5cm}A\+V\+I\+File\+Sink\+::\+\_\+header (
+\begin{DoxyParamCaption}
+\item[{movi}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a02e8bafbf560ab8a629b582a0e28533e}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!add4\+Byte\+String@{add4\+Byte\+String}}
+\index{add4\+Byte\+String@{add4\+Byte\+String}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{add4\+Byte\+String(char const $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned A\+V\+I\+File\+Sink\+::add4\+Byte\+String (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a3c71a9dc8b912e9eb7191e77cd50faf2}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!add\+Byte@{add\+Byte}}
+\index{add\+Byte@{add\+Byte}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{add\+Byte(unsigned char byte)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned A\+V\+I\+File\+Sink\+::add\+Byte (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{byte}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classAVIFileSink_a0400fca79367a6b6ba0807bd0bdcfc71}
+
+
+Definition at line 85 of file A\+V\+I\+File\+Sink.\+hh.
+
+
+\begin{DoxyCode}
+85                                        \{
+86     putc(byte, fOutFid);
+87     \textcolor{keywordflow}{return} 1;
+88   \}
+\end{DoxyCode}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!add\+Half\+Word@{add\+Half\+Word}}
+\index{add\+Half\+Word@{add\+Half\+Word}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{add\+Half\+Word(unsigned short half\+Word)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned A\+V\+I\+File\+Sink\+::add\+Half\+Word (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{half\+Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a266071d644cc7c25e84505ff43d49952}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!add\+Index\+Record@{add\+Index\+Record}}
+\index{add\+Index\+Record@{add\+Index\+Record}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{add\+Index\+Record(class A\+V\+I\+Index\+Record $\ast$new\+Index\+Record)}]{\setlength{\rightskip}{0pt plus 5cm}void A\+V\+I\+File\+Sink\+::add\+Index\+Record (
+\begin{DoxyParamCaption}
+\item[{class A\+V\+I\+Index\+Record $\ast$}]{new\+Index\+Record}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a3bfefad8f06e9e4570ded1a0f6e6b6ac}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!add\+Word@{add\+Word}}
+\index{add\+Word@{add\+Word}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{add\+Word(unsigned word)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned A\+V\+I\+File\+Sink\+::add\+Word (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a98368c6edd71d79d87740cf8c9f2fe1a}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!add\+Zero\+Words@{add\+Zero\+Words}}
+\index{add\+Zero\+Words@{add\+Zero\+Words}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{add\+Zero\+Words(unsigned num\+Words)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned A\+V\+I\+File\+Sink\+::add\+Zero\+Words (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Words}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_ae07efebeb866b6136ec3ccc2a3acad93}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!after\+Getting\+Frame@{after\+Getting\+Frame}}
+\index{after\+Getting\+Frame@{after\+Getting\+Frame}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{after\+Getting\+Frame(void $\ast$client\+Data, unsigned frame\+Size, unsigned num\+Truncated\+Bytes, struct timeval presentation\+Time, unsigned duration\+In\+Microseconds)}]{\setlength{\rightskip}{0pt plus 5cm}static void A\+V\+I\+File\+Sink\+::after\+Getting\+Frame (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data, }
+\item[{unsigned}]{frame\+Size, }
+\item[{unsigned}]{num\+Truncated\+Bytes, }
+\item[{struct timeval}]{presentation\+Time, }
+\item[{unsigned}]{duration\+In\+Microseconds}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classAVIFileSink_af755e1dc3cf9e8a48592d392a455f5d7}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!close@{close}}
+\index{close@{close}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{close(\+Usage\+Environment \&env, char const $\ast$medium\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a9968c7ce6eedb848f2cc095730c01b17}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!close@{close}}
+\index{close@{close}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{close(\+Medium $\ast$medium)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_aee50624faf6909b3944dd803fd485467}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!complete\+Output\+File@{complete\+Output\+File}}
+\index{complete\+Output\+File@{complete\+Output\+File}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{complete\+Output\+File()}]{\setlength{\rightskip}{0pt plus 5cm}void A\+V\+I\+File\+Sink\+::complete\+Output\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a24a42598264496ab04fd2aaae6df406f}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!continue\+Playing@{continue\+Playing}}
+\index{continue\+Playing@{continue\+Playing}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{continue\+Playing()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} A\+V\+I\+File\+Sink\+::continue\+Playing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a88dd5f8b46d645169c02b9e1a7d89a53}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!create\+New@{create\+New}}
+\index{create\+New@{create\+New}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{create\+New(\+Usage\+Environment \&env, Media\+Session \&input\+Session, char const $\ast$output\+File\+Name, unsigned buffer\+Size=20000, unsigned short movie\+Width=240, unsigned short movie\+Height=180, unsigned movie\+F\+P\+S=15, Boolean packet\+Loss\+Compensate=\+False)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\+V\+I\+File\+Sink}$\ast$ A\+V\+I\+File\+Sink\+::create\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf Media\+Session} \&}]{input\+Session, }
+\item[{char const $\ast$}]{output\+File\+Name, }
+\item[{unsigned}]{buffer\+Size = {\ttfamily 20000}, }
+\item[{unsigned short}]{movie\+Width = {\ttfamily 240}, }
+\item[{unsigned short}]{movie\+Height = {\ttfamily 180}, }
+\item[{unsigned}]{movie\+F\+P\+S = {\ttfamily 15}, }
+\item[{{\bf Boolean}}]{packet\+Loss\+Compensate = {\ttfamily {\bf False}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classAVIFileSink_a4557fde94ca2550449245be1aa3e93e1}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!envir@{envir}}
+\index{envir@{envir}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{envir() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Medium\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a32f7ecdd95f2b8400e1a26a5009e3b8e}
+
+
+Definition at line 59 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Environ.
+
+
+
+Referenced by Media\+Subsession\+::env(), R\+T\+P\+Interface\+::envir(), Generic\+Media\+Server\+::\+Client\+Connection\+::envir(), and Generic\+Media\+Server\+::\+Client\+Session\+::envir().
+
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} fEnviron;\}
+\end{DoxyCode}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!is\+Media\+Session@{is\+Media\+Session}}
+\index{is\+Media\+Session@{is\+Media\+Session}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{is\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ac5858707c4e7a15bd59d476cf48289d6}
+
+
+Reimplemented in {\bf Media\+Session} \doxyref{}{p.}{classMediaSession_a3b2a06a722374ab4477ac05a2ce28829}.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}}
+\index{is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{is\+R\+T\+C\+P\+Instance() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ab5f9f20324698f89a35513d596b2e7be}
+
+
+Reimplemented in {\bf R\+T\+C\+P\+Instance} \doxyref{}{p.}{classRTCPInstance_a844292518419e1dbf24170812fd1e4b5}.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}}
+\index{is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{is\+R\+T\+S\+P\+Client() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aed1c1816867f910ce8c98350686ac038}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Client} \doxyref{}{p.}{classRTSPClient_add07b3a68432b546998080b24380e7e8}.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}}
+\index{is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{is\+R\+T\+S\+P\+Server() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a346e111b31bfde4b7f4ed593e0b97fd3}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Server} \doxyref{}{p.}{classRTSPServer_a45f9fc5ddd8f214169358493215a064a}.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!is\+Server\+Media\+Session@{is\+Server\+Media\+Session}}
+\index{is\+Server\+Media\+Session@{is\+Server\+Media\+Session}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{is\+Server\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aa9fd26c4b954ffba5f79925ecd0283a0}
+
+
+Reimplemented in {\bf Server\+Media\+Session} \doxyref{}{p.}{classServerMediaSession_a34b59e04644b6f0841ea5af99dbf32f6}.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!is\+Sink@{is\+Sink}}
+\index{is\+Sink@{is\+Sink}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{is\+Sink() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a23d49bf466482784b9d4378490d17b5f}
+
+
+Reimplemented in {\bf Media\+Sink} \doxyref{}{p.}{classMediaSink_aa8649dcdf21d5005f9ec319f898f91b6}.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!is\+Source@{is\+Source}}
+\index{is\+Source@{is\+Source}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{is\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a6cdbd02c73a3e9c1cbab8fce9e9497b1}
+
+
+Reimplemented in {\bf Media\+Source} \doxyref{}{p.}{classMediaSource_a4d75fa9ee2b476b1231594282a6854be}.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$medium\+Name, Medium $\ast$\&result\+Medium)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Medium\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name, }
+\item[{{\bf Medium} $\ast$\&}]{result\+Medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a418c860c1e0ef2766ee0d0f64b346291}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!name@{name}}
+\index{name@{name}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Medium\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a575649802dc781c0e59e097a3870fcdb}
+
+
+Definition at line 61 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Medium\+Name.
+
+
+\begin{DoxyCode}
+61 \{\textcolor{keywordflow}{return} fMediumName;\}
+\end{DoxyCode}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{next\+Task()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token}\& Medium\+::next\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMedium_a5c8788adec90be1a584393a5bf11a5c9}
+
+
+Definition at line 77 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Next\+Task.
+
+
+\begin{DoxyCode}
+77                         \{
+78         \textcolor{keywordflow}{return} fNextTask;
+79   \}
+\end{DoxyCode}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!num\+Active\+Subsessions@{num\+Active\+Subsessions}}
+\index{num\+Active\+Subsessions@{num\+Active\+Subsessions}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{num\+Active\+Subsessions() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned A\+V\+I\+File\+Sink\+::num\+Active\+Subsessions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classAVIFileSink_a2f618f293a706f5b8648eb767356c23e}
+
+
+Definition at line 43 of file A\+V\+I\+File\+Sink.\+hh.
+
+
+
+References f\+Num\+Subsessions.
+
+
+\begin{DoxyCode}
+43 \{ \textcolor{keywordflow}{return} fNumSubsessions; \}
+\end{DoxyCode}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!on\+R\+T\+C\+P\+Bye@{on\+R\+T\+C\+P\+Bye}}
+\index{on\+R\+T\+C\+P\+Bye@{on\+R\+T\+C\+P\+Bye}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{on\+R\+T\+C\+P\+Bye(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void A\+V\+I\+File\+Sink\+::on\+R\+T\+C\+P\+Bye (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classAVIFileSink_ac207c33c49175c5d295f4201e5302253}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!on\+Source\+Closure@{on\+Source\+Closure}}
+\index{on\+Source\+Closure@{on\+Source\+Closure}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{on\+Source\+Closure(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void A\+V\+I\+File\+Sink\+::on\+Source\+Closure (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classAVIFileSink_ab861a616da50aace7bf3a9682bdcd256}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!on\+Source\+Closure1@{on\+Source\+Closure1}}
+\index{on\+Source\+Closure1@{on\+Source\+Closure1}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{on\+Source\+Closure1()}]{\setlength{\rightskip}{0pt plus 5cm}void A\+V\+I\+File\+Sink\+::on\+Source\+Closure1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_adc4eeb7b7280f5c101571173852dafd5}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!set\+Word@{set\+Word}}
+\index{set\+Word@{set\+Word}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{set\+Word(unsigned file\+Posn, unsigned size)}]{\setlength{\rightskip}{0pt plus 5cm}void A\+V\+I\+File\+Sink\+::set\+Word (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{file\+Posn, }
+\item[{unsigned}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_aa0d7a9bec5585c544fa42e05bf5a4d11}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!start\+Playing@{start\+Playing}}
+\index{start\+Playing@{start\+Playing}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{start\+Playing(after\+Playing\+Func $\ast$after\+Func, void $\ast$after\+Client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} A\+V\+I\+File\+Sink\+::start\+Playing (
+\begin{DoxyParamCaption}
+\item[{{\bf after\+Playing\+Func} $\ast$}]{after\+Func, }
+\item[{void $\ast$}]{after\+Client\+Data}
+\end{DoxyParamCaption}
+)}\label{classAVIFileSink_a9bc0d6533aa83bc44684c326387a408d}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!A\+V\+I\+Subsession\+I\+O\+State@{A\+V\+I\+Subsession\+I\+O\+State}}
+\index{A\+V\+I\+Subsession\+I\+O\+State@{A\+V\+I\+Subsession\+I\+O\+State}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{A\+V\+I\+Subsession\+I\+O\+State}]{\setlength{\rightskip}{0pt plus 5cm}friend class A\+V\+I\+Subsession\+I\+O\+State\hspace{0.3cm}{\ttfamily [friend]}}\label{classAVIFileSink_a0c94dfff6ef37f5ec1f1b2d95852f85f}
+
+
+Definition at line 65 of file A\+V\+I\+File\+Sink.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+After\+Client\+Data@{f\+After\+Client\+Data}}
+\index{f\+After\+Client\+Data@{f\+After\+Client\+Data}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+After\+Client\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ A\+V\+I\+File\+Sink\+::f\+After\+Client\+Data\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a2e15522739092514f7d27a0e26c7f2a5}
+
+
+Definition at line 74 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+After\+Func@{f\+After\+Func}}
+\index{f\+After\+Func@{f\+After\+Func}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+After\+Func}]{\setlength{\rightskip}{0pt plus 5cm}{\bf after\+Playing\+Func}$\ast$ A\+V\+I\+File\+Sink\+::f\+After\+Func\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_acfc43f28d3ec09b518fb48b3102735bf}
+
+
+Definition at line 73 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+Are\+Currently\+Being\+Played@{f\+Are\+Currently\+Being\+Played}}
+\index{f\+Are\+Currently\+Being\+Played@{f\+Are\+Currently\+Being\+Played}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+Are\+Currently\+Being\+Played}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} A\+V\+I\+File\+Sink\+::f\+Are\+Currently\+Being\+Played\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a4356963055509d20d8543a1347514b7d}
+
+
+Definition at line 72 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+A\+V\+I\+H\+Frame\+Count\+Position@{f\+A\+V\+I\+H\+Frame\+Count\+Position}}
+\index{f\+A\+V\+I\+H\+Frame\+Count\+Position@{f\+A\+V\+I\+H\+Frame\+Count\+Position}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+A\+V\+I\+H\+Frame\+Count\+Position}]{\setlength{\rightskip}{0pt plus 5cm}unsigned A\+V\+I\+File\+Sink\+::f\+A\+V\+I\+H\+Frame\+Count\+Position\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a68ecdc0af2ce514108f169d17a4a7b6a}
+
+
+Definition at line 109 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+A\+V\+I\+H\+Max\+Bytes\+Per\+Second\+Position@{f\+A\+V\+I\+H\+Max\+Bytes\+Per\+Second\+Position}}
+\index{f\+A\+V\+I\+H\+Max\+Bytes\+Per\+Second\+Position@{f\+A\+V\+I\+H\+Max\+Bytes\+Per\+Second\+Position}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+A\+V\+I\+H\+Max\+Bytes\+Per\+Second\+Position}]{\setlength{\rightskip}{0pt plus 5cm}unsigned A\+V\+I\+File\+Sink\+::f\+A\+V\+I\+H\+Max\+Bytes\+Per\+Second\+Position\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a3be6da041ea2c852bb7a35aad910e19c}
+
+
+Definition at line 108 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+Buffer\+Size@{f\+Buffer\+Size}}
+\index{f\+Buffer\+Size@{f\+Buffer\+Size}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+Buffer\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned A\+V\+I\+File\+Sink\+::f\+Buffer\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_abbcea17acdce19551d7ae5ed148152ab}
+
+
+Definition at line 70 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+Current\+I\+O\+State@{f\+Current\+I\+O\+State}}
+\index{f\+Current\+I\+O\+State@{f\+Current\+I\+O\+State}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+Current\+I\+O\+State}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf A\+V\+I\+Subsession\+I\+O\+State}$\ast$ A\+V\+I\+File\+Sink\+::f\+Current\+I\+O\+State\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a311302e0e105ac538149f4227017971c}
+
+
+Definition at line 111 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+Have\+Completed\+Output\+File@{f\+Have\+Completed\+Output\+File}}
+\index{f\+Have\+Completed\+Output\+File@{f\+Have\+Completed\+Output\+File}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+Have\+Completed\+Output\+File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} A\+V\+I\+File\+Sink\+::f\+Have\+Completed\+Output\+File\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a7646e59fe74ca2099324b724f019294e}
+
+
+Definition at line 78 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+Index\+Records\+Head@{f\+Index\+Records\+Head}}
+\index{f\+Index\+Records\+Head@{f\+Index\+Records\+Head}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+Index\+Records\+Head}]{\setlength{\rightskip}{0pt plus 5cm}class A\+V\+I\+Index\+Record$\ast$ A\+V\+I\+File\+Sink\+::f\+Index\+Records\+Head\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a2aba0850d31a5483afd44cba12d985b2}
+
+
+Definition at line 68 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+Index\+Records\+Tail@{f\+Index\+Records\+Tail}}
+\index{f\+Index\+Records\+Tail@{f\+Index\+Records\+Tail}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+Index\+Records\+Tail}]{\setlength{\rightskip}{0pt plus 5cm}class A\+V\+I\+Index\+Record $\ast$ A\+V\+I\+File\+Sink\+::f\+Index\+Records\+Tail\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_ad251acd52ccc357baf02512252b993a7}
+
+
+Definition at line 68 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+Input\+Session@{f\+Input\+Session}}
+\index{f\+Input\+Session@{f\+Input\+Session}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+Input\+Session}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Media\+Session}\& A\+V\+I\+File\+Sink\+::f\+Input\+Session\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a716a957656b7ac4430c7a5bd72934d7c}
+
+
+Definition at line 66 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+Junk\+Number@{f\+Junk\+Number}}
+\index{f\+Junk\+Number@{f\+Junk\+Number}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+Junk\+Number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned A\+V\+I\+File\+Sink\+::f\+Junk\+Number\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_ac80998b07e95a47f346f5a6b78409d37}
+
+
+Definition at line 112 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+Movie\+F\+P\+S@{f\+Movie\+F\+P\+S}}
+\index{f\+Movie\+F\+P\+S@{f\+Movie\+F\+P\+S}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+Movie\+F\+P\+S}]{\setlength{\rightskip}{0pt plus 5cm}unsigned A\+V\+I\+File\+Sink\+::f\+Movie\+F\+P\+S\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a49461299d3d2985c823b0110b1714326}
+
+
+Definition at line 106 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+Movie\+Height@{f\+Movie\+Height}}
+\index{f\+Movie\+Height@{f\+Movie\+Height}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+Movie\+Height}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short A\+V\+I\+File\+Sink\+::f\+Movie\+Height\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a8493405f16f6ff80b82ec1fc616b91bb}
+
+
+Definition at line 105 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+Movie\+Width@{f\+Movie\+Width}}
+\index{f\+Movie\+Width@{f\+Movie\+Width}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+Movie\+Width}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short A\+V\+I\+File\+Sink\+::f\+Movie\+Width\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a5d7e4786fc32c9f3436e0bb649d8d512}
+
+
+Definition at line 105 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+Movi\+Size\+Position@{f\+Movi\+Size\+Position}}
+\index{f\+Movi\+Size\+Position@{f\+Movi\+Size\+Position}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+Movi\+Size\+Position}]{\setlength{\rightskip}{0pt plus 5cm}unsigned A\+V\+I\+File\+Sink\+::f\+Movi\+Size\+Position\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a349e7f3004cd9765e13982b570f51af7}
+
+
+Definition at line 110 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+Movi\+Size\+Value@{f\+Movi\+Size\+Value}}
+\index{f\+Movi\+Size\+Value@{f\+Movi\+Size\+Value}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+Movi\+Size\+Value}]{\setlength{\rightskip}{0pt plus 5cm}unsigned A\+V\+I\+File\+Sink\+::f\+Movi\+Size\+Value\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_abadeb2ef0cdfee92d374d9bd379bf0e0}
+
+
+Definition at line 110 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+Num\+Bytes\+Written@{f\+Num\+Bytes\+Written}}
+\index{f\+Num\+Bytes\+Written@{f\+Num\+Bytes\+Written}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+Num\+Bytes\+Written}]{\setlength{\rightskip}{0pt plus 5cm}unsigned A\+V\+I\+File\+Sink\+::f\+Num\+Bytes\+Written\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a06665637a07a5585b9425d48de42fc48}
+
+
+Definition at line 76 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+Num\+Index\+Records@{f\+Num\+Index\+Records}}
+\index{f\+Num\+Index\+Records@{f\+Num\+Index\+Records}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+Num\+Index\+Records}]{\setlength{\rightskip}{0pt plus 5cm}unsigned A\+V\+I\+File\+Sink\+::f\+Num\+Index\+Records\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a44a05df4c7a7701a0fc2c405e56f3a45}
+
+
+Definition at line 69 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+Num\+Subsessions@{f\+Num\+Subsessions}}
+\index{f\+Num\+Subsessions@{f\+Num\+Subsessions}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+Num\+Subsessions}]{\setlength{\rightskip}{0pt plus 5cm}unsigned A\+V\+I\+File\+Sink\+::f\+Num\+Subsessions\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a58ac8a6a6f255e154735134cb82c2d95}
+
+
+Definition at line 75 of file A\+V\+I\+File\+Sink.\+hh.
+
+
+
+Referenced by num\+Active\+Subsessions().
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+Out\+Fid@{f\+Out\+Fid}}
+\index{f\+Out\+Fid@{f\+Out\+Fid}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+Out\+Fid}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ A\+V\+I\+File\+Sink\+::f\+Out\+Fid\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_aafa0c6dfbb74d7541e68f099c4385629}
+
+
+Definition at line 67 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+Packet\+Loss\+Compensate@{f\+Packet\+Loss\+Compensate}}
+\index{f\+Packet\+Loss\+Compensate@{f\+Packet\+Loss\+Compensate}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+Packet\+Loss\+Compensate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} A\+V\+I\+File\+Sink\+::f\+Packet\+Loss\+Compensate\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_adb35456dd38f0fe22fc361dbc505f954}
+
+
+Definition at line 71 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+R\+I\+F\+F\+Size\+Position@{f\+R\+I\+F\+F\+Size\+Position}}
+\index{f\+R\+I\+F\+F\+Size\+Position@{f\+R\+I\+F\+F\+Size\+Position}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+R\+I\+F\+F\+Size\+Position}]{\setlength{\rightskip}{0pt plus 5cm}unsigned A\+V\+I\+File\+Sink\+::f\+R\+I\+F\+F\+Size\+Position\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a53ecc3c379935591de6b9a029a96cd9f}
+
+
+Definition at line 107 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+R\+I\+F\+F\+Size\+Value@{f\+R\+I\+F\+F\+Size\+Value}}
+\index{f\+R\+I\+F\+F\+Size\+Value@{f\+R\+I\+F\+F\+Size\+Value}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+R\+I\+F\+F\+Size\+Value}]{\setlength{\rightskip}{0pt plus 5cm}unsigned A\+V\+I\+File\+Sink\+::f\+R\+I\+F\+F\+Size\+Value\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a51626d2953115978920234c73ad2c393}
+
+
+Definition at line 107 of file A\+V\+I\+File\+Sink.\+hh.
+
+\index{A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}!f\+Start\+Time@{f\+Start\+Time}}
+\index{f\+Start\+Time@{f\+Start\+Time}!A\+V\+I\+File\+Sink@{A\+V\+I\+File\+Sink}}
+\subsubsection[{f\+Start\+Time}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval A\+V\+I\+File\+Sink\+::f\+Start\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classAVIFileSink_a8be500dd50733587c977c6251d567b97}
+
+
+Definition at line 77 of file A\+V\+I\+File\+Sink.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf A\+V\+I\+File\+Sink.\+hh}\end{DoxyCompactItemize}

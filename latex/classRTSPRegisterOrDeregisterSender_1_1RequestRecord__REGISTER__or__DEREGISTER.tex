@@ -1,0 +1,395 @@
+\section{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+:\+:Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R Class Reference}
+\label{classRTSPRegisterOrDeregisterSender_1_1RequestRecord__REGISTER__or__DEREGISTER}\index{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+
+
+{\ttfamily \#include $<$R\+T\+S\+P\+Register\+Sender.\+hh$>$}
+
+
+
+Inheritance diagram for R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+:\+:Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRTSPRegisterOrDeregisterSender_1_1RequestRecord__REGISTER__or__DEREGISTER__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+:\+:Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRTSPRegisterOrDeregisterSender_1_1RequestRecord__REGISTER__or__DEREGISTER__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R} (unsigned {\bf cseq}, char const $\ast$cmd\+Name, {\bf R\+T\+S\+P\+Client\+::response\+Handler} $\ast$rtsp\+Response\+Handler, char const $\ast$rtsp\+U\+R\+L\+To\+Register\+Or\+Deregister, char const $\ast${\bf proxy\+U\+R\+L\+Suffix})
+\item 
+virtual {\bf $\sim$\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R} ()
+\item 
+char const $\ast$ {\bf proxy\+U\+R\+L\+Suffix} () const 
+\item 
+{\bf Request\+Record} $\ast$\& {\bf next} ()
+\item 
+unsigned \& {\bf cseq} ()
+\item 
+char const $\ast$ {\bf command\+Name} () const 
+\item 
+{\bf Media\+Session} $\ast$ {\bf session} () const 
+\item 
+{\bf Media\+Subsession} $\ast$ {\bf subsession} () const 
+\item 
+u\+\_\+int32\+\_\+t {\bf boolean\+Flags} () const 
+\item 
+double {\bf start} () const 
+\item 
+double {\bf end} () const 
+\item 
+char const $\ast$ {\bf abs\+Start\+Time} () const 
+\item 
+char const $\ast$ {\bf abs\+End\+Time} () const 
+\item 
+float {\bf scale} () const 
+\item 
+char $\ast$ {\bf content\+Str} () const 
+\item 
+{\bf response\+Handler} $\ast$\& {\bf handler} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ {\bf f\+R\+T\+S\+P\+U\+R\+L\+To\+Register\+Or\+Deregister}
+\item 
+char $\ast$ {\bf f\+Proxy\+U\+R\+L\+Suffix}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 40 of file R\+T\+S\+P\+Register\+Sender.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\index{Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\subsubsection[{Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R(unsigned cseq, char const $\ast$cmd\+Name, R\+T\+S\+P\+Client\+::response\+Handler $\ast$rtsp\+Response\+Handler, char const $\ast$rtsp\+U\+R\+L\+To\+Register\+Or\+Deregister, char const $\ast$proxy\+U\+R\+L\+Suffix)}]{\setlength{\rightskip}{0pt plus 5cm}R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{cseq, }
+\item[{char const $\ast$}]{cmd\+Name, }
+\item[{{\bf R\+T\+S\+P\+Client\+::response\+Handler} $\ast$}]{rtsp\+Response\+Handler, }
+\item[{char const $\ast$}]{rtsp\+U\+R\+L\+To\+Register\+Or\+Deregister, }
+\item[{char const $\ast$}]{proxy\+U\+R\+L\+Suffix}
+\end{DoxyParamCaption}
+)}\label{classRTSPRegisterOrDeregisterSender_1_1RequestRecord__REGISTER__or__DEREGISTER_a70d95431b62858b074a221c9b29b582b}
+\index{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!````~Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{$\sim$\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\index{````~Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{$\sim$\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\subsubsection[{$\sim$\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R()}]{\setlength{\rightskip}{0pt plus 5cm}virtual R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R\+::$\sim$\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classRTSPRegisterOrDeregisterSender_1_1RequestRecord__REGISTER__or__DEREGISTER_a2c7e1be41c9badf3082e1fd38adb401c}
+
+
+\subsection{Member Function Documentation}
+\index{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!abs\+End\+Time@{abs\+End\+Time}}
+\index{abs\+End\+Time@{abs\+End\+Time}!R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\subsubsection[{abs\+End\+Time() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::abs\+End\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_1_1RequestRecord_aedd85446dc16aff36dead39df1767e48}
+
+
+Definition at line 214 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Abs\+End\+Time.
+
+
+\begin{DoxyCode}
+214 \{ \textcolor{keywordflow}{return} fAbsEndTime; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!abs\+Start\+Time@{abs\+Start\+Time}}
+\index{abs\+Start\+Time@{abs\+Start\+Time}!R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\subsubsection[{abs\+Start\+Time() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::abs\+Start\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_1_1RequestRecord_a7ae5b852477853dee80b90385f0c5c73}
+
+
+Definition at line 213 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Abs\+Start\+Time.
+
+
+\begin{DoxyCode}
+213 \{ \textcolor{keywordflow}{return} fAbsStartTime; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!boolean\+Flags@{boolean\+Flags}}
+\index{boolean\+Flags@{boolean\+Flags}!R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\subsubsection[{boolean\+Flags() const }]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+S\+P\+Client\+::\+Request\+Record\+::boolean\+Flags (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_1_1RequestRecord_ac0b6f8e34d9bbe7e8ed41aa7aa4df838}
+
+
+Definition at line 210 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Boolean\+Flags.
+
+
+\begin{DoxyCode}
+210 \{ \textcolor{keywordflow}{return} fBooleanFlags; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!command\+Name@{command\+Name}}
+\index{command\+Name@{command\+Name}!R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\subsubsection[{command\+Name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::command\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_1_1RequestRecord_a4860ce1823b7df69b2c23171e72d9c37}
+
+
+Definition at line 207 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Command\+Name.
+
+
+\begin{DoxyCode}
+207 \{ \textcolor{keywordflow}{return} fCommandName; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!content\+Str@{content\+Str}}
+\index{content\+Str@{content\+Str}!R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\subsubsection[{content\+Str() const }]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::content\+Str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_1_1RequestRecord_aceb3f4d253f83750af074046c2e756f7}
+
+
+Definition at line 216 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Content\+Str.
+
+
+\begin{DoxyCode}
+216 \{ \textcolor{keywordflow}{return} fContentStr; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!cseq@{cseq}}
+\index{cseq@{cseq}!R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\subsubsection[{cseq()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned\& R\+T\+S\+P\+Client\+::\+Request\+Record\+::cseq (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_1_1RequestRecord_a77a7fb3a4cfcb958569c663879855fe2}
+
+
+Definition at line 206 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+C\+Seq.
+
+
+\begin{DoxyCode}
+206 \{ \textcolor{keywordflow}{return} fCSeq; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!end@{end}}
+\index{end@{end}!R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\subsubsection[{end() const }]{\setlength{\rightskip}{0pt plus 5cm}double R\+T\+S\+P\+Client\+::\+Request\+Record\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_1_1RequestRecord_ad72427f0d3622270387bb15373f9dfa4}
+
+
+Definition at line 212 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+End.
+
+
+\begin{DoxyCode}
+212 \{ \textcolor{keywordflow}{return} fEnd; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!handler@{handler}}
+\index{handler@{handler}!R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\subsubsection[{handler()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf response\+Handler}$\ast$\& R\+T\+S\+P\+Client\+::\+Request\+Record\+::handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_1_1RequestRecord_aa64e60fe0193b571a9695ec2ba65706c}
+
+
+Definition at line 217 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Handler.
+
+
+\begin{DoxyCode}
+217 \{ \textcolor{keywordflow}{return} fHandler; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!next@{next}}
+\index{next@{next}!R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\subsubsection[{next()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Request\+Record}$\ast$\& R\+T\+S\+P\+Client\+::\+Request\+Record\+::next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_1_1RequestRecord_ad27bc96348a091072d8429cc2289a955}
+
+
+Definition at line 205 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Next.
+
+
+\begin{DoxyCode}
+205 \{ \textcolor{keywordflow}{return} fNext; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!proxy\+U\+R\+L\+Suffix@{proxy\+U\+R\+L\+Suffix}}
+\index{proxy\+U\+R\+L\+Suffix@{proxy\+U\+R\+L\+Suffix}!R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\subsubsection[{proxy\+U\+R\+L\+Suffix() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R\+::proxy\+U\+R\+L\+Suffix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTSPRegisterOrDeregisterSender_1_1RequestRecord__REGISTER__or__DEREGISTER_abdfe0017a3a0695aece57f9d15a79bdd}
+
+
+Definition at line 45 of file R\+T\+S\+P\+Register\+Sender.\+hh.
+
+
+
+References f\+Proxy\+U\+R\+L\+Suffix.
+
+
+\begin{DoxyCode}
+45 \{ \textcolor{keywordflow}{return} fProxyURLSuffix; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!scale@{scale}}
+\index{scale@{scale}!R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\subsubsection[{scale() const }]{\setlength{\rightskip}{0pt plus 5cm}float R\+T\+S\+P\+Client\+::\+Request\+Record\+::scale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_1_1RequestRecord_aa069ebb663831f82b0134594414c561b}
+
+
+Definition at line 215 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Scale.
+
+
+\begin{DoxyCode}
+215 \{ \textcolor{keywordflow}{return} fScale; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!session@{session}}
+\index{session@{session}!R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\subsubsection[{session() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Media\+Session}$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_1_1RequestRecord_a42dfe543d6a7fc6c6f446c9add3e9057}
+
+
+Definition at line 208 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Session.
+
+
+\begin{DoxyCode}
+208 \{ \textcolor{keywordflow}{return} fSession; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!start@{start}}
+\index{start@{start}!R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\subsubsection[{start() const }]{\setlength{\rightskip}{0pt plus 5cm}double R\+T\+S\+P\+Client\+::\+Request\+Record\+::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_1_1RequestRecord_a87118561b85b8b929831f9d4283e76c8}
+
+
+Definition at line 211 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Start.
+
+
+\begin{DoxyCode}
+211 \{ \textcolor{keywordflow}{return} fStart; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!subsession@{subsession}}
+\index{subsession@{subsession}!R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\subsubsection[{subsession() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Media\+Subsession}$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Record\+::subsession (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTSPClient_1_1RequestRecord_a8d4455c1ac686bbd2d6d50c5120faa78}
+
+
+Definition at line 209 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References R\+T\+S\+P\+Client\+::\+Request\+Record\+::f\+Subsession.
+
+
+\begin{DoxyCode}
+209 \{ \textcolor{keywordflow}{return} fSubsession; \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!f\+Proxy\+U\+R\+L\+Suffix@{f\+Proxy\+U\+R\+L\+Suffix}}
+\index{f\+Proxy\+U\+R\+L\+Suffix@{f\+Proxy\+U\+R\+L\+Suffix}!R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\subsubsection[{f\+Proxy\+U\+R\+L\+Suffix}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R\+::f\+Proxy\+U\+R\+L\+Suffix\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTSPRegisterOrDeregisterSender_1_1RequestRecord__REGISTER__or__DEREGISTER_ab086f182246889a7f89781d2d315dde8}
+
+
+Definition at line 49 of file R\+T\+S\+P\+Register\+Sender.\+hh.
+
+
+
+Referenced by proxy\+U\+R\+L\+Suffix().
+
+\index{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}!f\+R\+T\+S\+P\+U\+R\+L\+To\+Register\+Or\+Deregister@{f\+R\+T\+S\+P\+U\+R\+L\+To\+Register\+Or\+Deregister}}
+\index{f\+R\+T\+S\+P\+U\+R\+L\+To\+Register\+Or\+Deregister@{f\+R\+T\+S\+P\+U\+R\+L\+To\+Register\+Or\+Deregister}!R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R@{R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R}}
+\subsubsection[{f\+R\+T\+S\+P\+U\+R\+L\+To\+Register\+Or\+Deregister}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ R\+T\+S\+P\+Register\+Or\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+or\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R\+::f\+R\+T\+S\+P\+U\+R\+L\+To\+Register\+Or\+Deregister\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTSPRegisterOrDeregisterSender_1_1RequestRecord__REGISTER__or__DEREGISTER_a0f64ba313a2cc03bc1b9f4219ee992c8}
+
+
+Definition at line 48 of file R\+T\+S\+P\+Register\+Sender.\+hh.
+
+
+
+Referenced by R\+T\+S\+P\+Deregister\+Sender\+::\+Request\+Record\+\_\+\+D\+E\+R\+E\+G\+I\+S\+T\+E\+R\+::rtsp\+U\+R\+L\+To\+Deregister(), and R\+T\+S\+P\+Register\+Sender\+::\+Request\+Record\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+::rtsp\+U\+R\+L\+To\+Register().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf R\+T\+S\+P\+Register\+Sender.\+hh}\end{DoxyCompactItemize}

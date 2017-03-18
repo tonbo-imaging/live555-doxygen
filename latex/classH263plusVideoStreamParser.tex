@@ -1,0 +1,693 @@
+\section{H263plus\+Video\+Stream\+Parser Class Reference}
+\label{classH263plusVideoStreamParser}\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+
+
+{\ttfamily \#include $<$H263plus\+Video\+Stream\+Parser.\+hh$>$}
+
+
+
+Inheritance diagram for H263plus\+Video\+Stream\+Parser\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classH263plusVideoStreamParser__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for H263plus\+Video\+Stream\+Parser\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classH263plusVideoStreamParser__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf H263plus\+Video\+Stream\+Parser} (class {\bf H263plus\+Video\+Stream\+Framer} $\ast$using\+Source, {\bf Framed\+Source} $\ast$input\+Source)
+\item 
+virtual {\bf $\sim$\+H263plus\+Video\+Stream\+Parser} ()
+\item 
+void {\bf register\+Read\+Interest} (unsigned char $\ast$to, unsigned max\+Size)
+\item 
+unsigned {\bf parse} (u\+\_\+int64\+\_\+t \&current\+Duration)
+\item 
+unsigned {\bf num\+Truncated\+Bytes} () const 
+\item 
+virtual void {\bf flush\+Input} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void( {\bf client\+Continue\+Func}) (void $\ast$client\+Data, unsigned char $\ast$ptr, unsigned size, struct timeval presentation\+Time)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf set\+Parse\+State} ()
+\item 
+void {\bf save\+Parser\+State} ()
+\item 
+u\+\_\+int32\+\_\+t {\bf get4\+Bytes} ()
+\item 
+u\+\_\+int32\+\_\+t {\bf test4\+Bytes} ()
+\item 
+u\+\_\+int16\+\_\+t {\bf get2\+Bytes} ()
+\item 
+u\+\_\+int8\+\_\+t {\bf get1\+Byte} ()
+\item 
+u\+\_\+int8\+\_\+t {\bf test1\+Byte} ()
+\item 
+void {\bf get\+Bytes} (u\+\_\+int8\+\_\+t $\ast$to, unsigned num\+Bytes)
+\item 
+void {\bf test\+Bytes} (u\+\_\+int8\+\_\+t $\ast$to, unsigned num\+Bytes)
+\item 
+void {\bf skip\+Bytes} (unsigned num\+Bytes)
+\item 
+void {\bf skip\+Bits} (unsigned num\+Bits)
+\item 
+unsigned {\bf get\+Bits} (unsigned num\+Bits)
+\item 
+unsigned {\bf cur\+Offset} () const 
+\item 
+unsigned \& {\bf tot\+Num\+Valid\+Bytes} ()
+\item 
+{\bf Boolean} {\bf have\+Seen\+E\+O\+F} () const 
+\item 
+unsigned {\bf bank\+Size} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf H263plus\+Video\+Stream\+Framer} $\ast$ {\bf f\+Using\+Source}
+\item 
+unsigned char $\ast$ {\bf f\+To}
+\item 
+unsigned {\bf f\+Max\+Size}
+\item 
+unsigned char $\ast$ {\bf f\+Start\+Of\+Frame}
+\item 
+unsigned char $\ast$ {\bf f\+Saved\+To}
+\item 
+unsigned char $\ast$ {\bf f\+Limit}
+\item 
+unsigned {\bf f\+Num\+Truncated\+Bytes}
+\item 
+unsigned {\bf f\+Saved\+Num\+Truncated\+Bytes}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf parse\+H263\+Frame} ()
+\item 
+bool {\bf Parse\+Short\+Header} (u\+\_\+int8\+\_\+t $\ast$header\+Buffer, {\bf H263\+I\+N\+F\+O} $\ast$output\+Info\+Struct)
+\item 
+void {\bf Get\+Max\+Bitrate} ({\bf Max\+Bitrate\+\_\+\+C\+T\+X} $\ast$ctx, u\+\_\+int32\+\_\+t frame\+Size, u\+\_\+int8\+\_\+t frame\+T\+R\+Diff)
+\item 
+u\+\_\+int64\+\_\+t {\bf Calculate\+Duration} (u\+\_\+int8\+\_\+t tr\+Diff)
+\item 
+bool {\bf Get\+Width\+And\+Height} (u\+\_\+int8\+\_\+t fmt, u\+\_\+int16\+\_\+t $\ast$width, u\+\_\+int16\+\_\+t $\ast$height)
+\item 
+u\+\_\+int8\+\_\+t {\bf Get\+T\+R\+Difference} (u\+\_\+int8\+\_\+t next\+T\+R, u\+\_\+int8\+\_\+t current\+T\+R)
+\item 
+virtual void {\bf restore\+Saved\+Parser\+State} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf H263\+I\+N\+F\+O} {\bf f\+Next\+Info}
+\item 
+{\bf H263\+I\+N\+F\+O} {\bf f\+Current\+Info}
+\item 
+{\bf Max\+Bitrate\+\_\+\+C\+T\+X} {\bf f\+Max\+Bitrate\+Ctx}
+\item 
+char {\bf f\+States} [3][256]
+\item 
+u\+\_\+int8\+\_\+t {\bf f\+Next\+Header} [{\bf H263\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S}]
+\item 
+u\+\_\+int32\+\_\+t {\bf fnext\+T\+R}
+\item 
+u\+\_\+int64\+\_\+t {\bf fcurrent\+P\+T}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 71 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!client\+Continue\+Func@{client\+Continue\+Func}}
+\index{client\+Continue\+Func@{client\+Continue\+Func}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{client\+Continue\+Func}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( Stream\+Parser\+::client\+Continue\+Func) (void $\ast$client\+Data, unsigned char $\ast$ptr, unsigned size, struct timeval presentation\+Time)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_af64ee5887e237d64d1df3072f10e11fb}
+
+
+Definition at line 33 of file Stream\+Parser.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{H263plus\+Video\+Stream\+Parser(class H263plus\+Video\+Stream\+Framer $\ast$using\+Source, Framed\+Source $\ast$input\+Source)}]{\setlength{\rightskip}{0pt plus 5cm}H263plus\+Video\+Stream\+Parser\+::\+H263plus\+Video\+Stream\+Parser (
+\begin{DoxyParamCaption}
+\item[{class {\bf H263plus\+Video\+Stream\+Framer} $\ast$}]{using\+Source, }
+\item[{{\bf Framed\+Source} $\ast$}]{input\+Source}
+\end{DoxyParamCaption}
+)}\label{classH263plusVideoStreamParser_a005f55f15f1c0b3a90f4b09760eb31cd}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!````~H263plus\+Video\+Stream\+Parser@{$\sim$\+H263plus\+Video\+Stream\+Parser}}
+\index{````~H263plus\+Video\+Stream\+Parser@{$\sim$\+H263plus\+Video\+Stream\+Parser}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{$\sim$\+H263plus\+Video\+Stream\+Parser()}]{\setlength{\rightskip}{0pt plus 5cm}virtual H263plus\+Video\+Stream\+Parser\+::$\sim$\+H263plus\+Video\+Stream\+Parser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classH263plusVideoStreamParser_a4ec6d471e3f56c6e5e2516e2aa6a3064}
+
+
+\subsection{Member Function Documentation}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!bank\+Size@{bank\+Size}}
+\index{bank\+Size@{bank\+Size}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{bank\+Size() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+Parser\+::bank\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_a861774b85359a9a8b3de447ac88da9f2}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!Calculate\+Duration@{Calculate\+Duration}}
+\index{Calculate\+Duration@{Calculate\+Duration}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{Calculate\+Duration(u\+\_\+int8\+\_\+t tr\+Diff)}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int64\+\_\+t H263plus\+Video\+Stream\+Parser\+::\+Calculate\+Duration (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t}]{tr\+Diff}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classH263plusVideoStreamParser_aebcc67a048e8cb2ec4bc8709bbac357b}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!cur\+Offset@{cur\+Offset}}
+\index{cur\+Offset@{cur\+Offset}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{cur\+Offset() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+Parser\+::cur\+Offset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_ad7f2eaf42a390a5ebc257b5ac5dc9fed}
+
+
+Definition at line 100 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::f\+Cur\+Parser\+Index.
+
+
+\begin{DoxyCode}
+100 \{ \textcolor{keywordflow}{return} fCurParserIndex; \}
+\end{DoxyCode}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!flush\+Input@{flush\+Input}}
+\index{flush\+Input@{flush\+Input}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{flush\+Input()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Stream\+Parser\+::flush\+Input (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classStreamParser_a3225e9b48cf370e2ff9a9aa3a60308fd}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!get1\+Byte@{get1\+Byte}}
+\index{get1\+Byte@{get1\+Byte}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{get1\+Byte()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t Stream\+Parser\+::get1\+Byte (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_aa198ceef145e9c25617b3e7c10ed8476}
+
+
+Definition at line 72 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::cur\+Bank(), Stream\+Parser\+::ensure\+Valid\+Bytes(), Stream\+Parser\+::f\+Cur\+Parser\+Index, and Stream\+Parser\+::f\+Remaining\+Unparsed\+Bits.
+
+
+
+Referenced by M\+P\+E\+G\+Video\+Stream\+Parser\+::save\+To\+Next\+Code(), and M\+P\+E\+G\+Video\+Stream\+Parser\+::skip\+To\+Next\+Code().
+
+
+\begin{DoxyCode}
+72                       \{ \textcolor{comment}{// byte-aligned}
+73     ensureValidBytes(1);
+74     fRemainingUnparsedBits = 0;
+75     \textcolor{keywordflow}{return} curBank()[fCurParserIndex++];
+76   \}
+\end{DoxyCode}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!get2\+Bytes@{get2\+Bytes}}
+\index{get2\+Bytes@{get2\+Bytes}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{get2\+Bytes()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int16\+\_\+t Stream\+Parser\+::get2\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_aa32642bfa6d9705d04d894d7bf820821}
+
+
+Definition at line 60 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::ensure\+Valid\+Bytes(), Stream\+Parser\+::f\+Cur\+Parser\+Index, Stream\+Parser\+::f\+Remaining\+Unparsed\+Bits, and Stream\+Parser\+::next\+To\+Parse().
+
+
+\begin{DoxyCode}
+60                         \{
+61     ensureValidBytes(2);
+62 
+63     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \textcolor{keyword}{const}* ptr = nextToParse();
+64     u\_int16\_t result = (ptr[0]<<8)|ptr[1];
+65 
+66     fCurParserIndex += 2;
+67     fRemainingUnparsedBits = 0;
+68 
+69     \textcolor{keywordflow}{return} result;
+70   \}
+\end{DoxyCode}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!get4\+Bytes@{get4\+Bytes}}
+\index{get4\+Bytes@{get4\+Bytes}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{get4\+Bytes()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t Stream\+Parser\+::get4\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_adad1edf3d565b40e56878a33b015ba71}
+
+
+Definition at line 46 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::f\+Cur\+Parser\+Index, Stream\+Parser\+::f\+Remaining\+Unparsed\+Bits, and Stream\+Parser\+::test4\+Bytes().
+
+
+
+Referenced by M\+P\+E\+G\+Video\+Stream\+Parser\+::save\+To\+Next\+Code(), and M\+P\+E\+G\+Video\+Stream\+Parser\+::skip\+To\+Next\+Code().
+
+
+\begin{DoxyCode}
+46                         \{ \textcolor{comment}{// byte-aligned; returned in big-endian order}
+47     u\_int32\_t result = test4Bytes();
+48     fCurParserIndex += 4;
+49     fRemainingUnparsedBits = 0;
+50 
+51     \textcolor{keywordflow}{return} result;
+52   \}
+\end{DoxyCode}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!get\+Bits@{get\+Bits}}
+\index{get\+Bits@{get\+Bits}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{get\+Bits(unsigned num\+Bits)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+Parser\+::get\+Bits (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bits}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_a4c2c541641d32e623cee26a87c7757b9}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!get\+Bytes@{get\+Bytes}}
+\index{get\+Bytes@{get\+Bytes}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{get\+Bytes(u\+\_\+int8\+\_\+t $\ast$to, unsigned num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::get\+Bytes (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t $\ast$}]{to, }
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_a51d3d9bd192703f2e68abc091ad52df5}
+
+
+Definition at line 82 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::f\+Cur\+Parser\+Index, Stream\+Parser\+::f\+Remaining\+Unparsed\+Bits, and Stream\+Parser\+::test\+Bytes().
+
+
+\begin{DoxyCode}
+82                                                  \{
+83     testBytes(to, numBytes);
+84     fCurParserIndex += numBytes;
+85     fRemainingUnparsedBits = 0;
+86   \}
+\end{DoxyCode}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!Get\+Max\+Bitrate@{Get\+Max\+Bitrate}}
+\index{Get\+Max\+Bitrate@{Get\+Max\+Bitrate}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{Get\+Max\+Bitrate(\+Max\+Bitrate\+\_\+\+C\+T\+X $\ast$ctx, u\+\_\+int32\+\_\+t frame\+Size, u\+\_\+int8\+\_\+t frame\+T\+R\+Diff)}]{\setlength{\rightskip}{0pt plus 5cm}void H263plus\+Video\+Stream\+Parser\+::\+Get\+Max\+Bitrate (
+\begin{DoxyParamCaption}
+\item[{{\bf Max\+Bitrate\+\_\+\+C\+T\+X} $\ast$}]{ctx, }
+\item[{u\+\_\+int32\+\_\+t}]{frame\+Size, }
+\item[{u\+\_\+int8\+\_\+t}]{frame\+T\+R\+Diff}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classH263plusVideoStreamParser_a7629c88abc3c8c6023315edb07b84bed}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!Get\+T\+R\+Difference@{Get\+T\+R\+Difference}}
+\index{Get\+T\+R\+Difference@{Get\+T\+R\+Difference}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{Get\+T\+R\+Difference(u\+\_\+int8\+\_\+t next\+T\+R, u\+\_\+int8\+\_\+t current\+T\+R)}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t H263plus\+Video\+Stream\+Parser\+::\+Get\+T\+R\+Difference (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t}]{next\+T\+R, }
+\item[{u\+\_\+int8\+\_\+t}]{current\+T\+R}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classH263plusVideoStreamParser_a65334115633b08eecf034706363f416b}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!Get\+Width\+And\+Height@{Get\+Width\+And\+Height}}
+\index{Get\+Width\+And\+Height@{Get\+Width\+And\+Height}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{Get\+Width\+And\+Height(u\+\_\+int8\+\_\+t fmt, u\+\_\+int16\+\_\+t $\ast$width, u\+\_\+int16\+\_\+t $\ast$height)}]{\setlength{\rightskip}{0pt plus 5cm}bool H263plus\+Video\+Stream\+Parser\+::\+Get\+Width\+And\+Height (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t}]{fmt, }
+\item[{u\+\_\+int16\+\_\+t $\ast$}]{width, }
+\item[{u\+\_\+int16\+\_\+t $\ast$}]{height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classH263plusVideoStreamParser_ac04fd9c76e67d9bad4bedc043f4f2d71}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!have\+Seen\+E\+O\+F@{have\+Seen\+E\+O\+F}}
+\index{have\+Seen\+E\+O\+F@{have\+Seen\+E\+O\+F}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{have\+Seen\+E\+O\+F() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Stream\+Parser\+::have\+Seen\+E\+O\+F (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_abf3705cbce3ed9bce23d13fa50641fbd}
+
+
+Definition at line 104 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::f\+Have\+Seen\+E\+O\+F.
+
+
+\begin{DoxyCode}
+104 \{ \textcolor{keywordflow}{return} fHaveSeenEOF; \}
+\end{DoxyCode}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!num\+Truncated\+Bytes@{num\+Truncated\+Bytes}}
+\index{num\+Truncated\+Bytes@{num\+Truncated\+Bytes}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{num\+Truncated\+Bytes() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned H263plus\+Video\+Stream\+Parser\+::num\+Truncated\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classH263plusVideoStreamParser_a0ab0a058011fb5fb20424387d430748d}
+
+
+Definition at line 82 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+
+
+References f\+Num\+Truncated\+Bytes.
+
+
+\begin{DoxyCode}
+82 \{ \textcolor{keywordflow}{return} fNumTruncatedBytes; \}  \textcolor{comment}{// The number of truncated bytes (if any)}
+\end{DoxyCode}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!parse@{parse}}
+\index{parse@{parse}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{parse(u\+\_\+int64\+\_\+t \&current\+Duration)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned H263plus\+Video\+Stream\+Parser\+::parse (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int64\+\_\+t \&}]{current\+Duration}
+\end{DoxyParamCaption}
+)}\label{classH263plusVideoStreamParser_a504c69bce204abe7ed2f8bd1d36d9924}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!parse\+H263\+Frame@{parse\+H263\+Frame}}
+\index{parse\+H263\+Frame@{parse\+H263\+Frame}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{parse\+H263\+Frame()}]{\setlength{\rightskip}{0pt plus 5cm}int H263plus\+Video\+Stream\+Parser\+::parse\+H263\+Frame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classH263plusVideoStreamParser_a96c895350a9a7bdde7f38da9b1fb532c}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!Parse\+Short\+Header@{Parse\+Short\+Header}}
+\index{Parse\+Short\+Header@{Parse\+Short\+Header}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{Parse\+Short\+Header(u\+\_\+int8\+\_\+t $\ast$header\+Buffer, H263\+I\+N\+F\+O $\ast$output\+Info\+Struct)}]{\setlength{\rightskip}{0pt plus 5cm}bool H263plus\+Video\+Stream\+Parser\+::\+Parse\+Short\+Header (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t $\ast$}]{header\+Buffer, }
+\item[{{\bf H263\+I\+N\+F\+O} $\ast$}]{output\+Info\+Struct}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classH263plusVideoStreamParser_ad2b729bab335ceda2e2803de8b8edb78}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!register\+Read\+Interest@{register\+Read\+Interest}}
+\index{register\+Read\+Interest@{register\+Read\+Interest}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{register\+Read\+Interest(unsigned char $\ast$to, unsigned max\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}void H263plus\+Video\+Stream\+Parser\+::register\+Read\+Interest (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{to, }
+\item[{unsigned}]{max\+Size}
+\end{DoxyParamCaption}
+)}\label{classH263plusVideoStreamParser_a5bb3ff58d22edc3f40068ec52df1db28}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!restore\+Saved\+Parser\+State@{restore\+Saved\+Parser\+State}}
+\index{restore\+Saved\+Parser\+State@{restore\+Saved\+Parser\+State}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{restore\+Saved\+Parser\+State()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void H263plus\+Video\+Stream\+Parser\+::restore\+Saved\+Parser\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classH263plusVideoStreamParser_a58481083d419747e3b16be83e9ff17d2}
+
+
+Reimplemented from {\bf Stream\+Parser} \doxyref{}{p.}{classStreamParser_ac15f8f98fdd79ae31b8cee01f1a963e9}.
+
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!save\+Parser\+State@{save\+Parser\+State}}
+\index{save\+Parser\+State@{save\+Parser\+State}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{save\+Parser\+State()}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::save\+Parser\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_afad3a870af863d25ea1927ab9c07b3f2}
+
+
+Referenced by M\+P\+E\+G\+Video\+Stream\+Parser\+::set\+Parse\+State().
+
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!set\+Parse\+State@{set\+Parse\+State}}
+\index{set\+Parse\+State@{set\+Parse\+State}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{set\+Parse\+State()}]{\setlength{\rightskip}{0pt plus 5cm}void H263plus\+Video\+Stream\+Parser\+::set\+Parse\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classH263plusVideoStreamParser_a733e9d98ac431ef3ade6de0da76770d7}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!skip\+Bits@{skip\+Bits}}
+\index{skip\+Bits@{skip\+Bits}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{skip\+Bits(unsigned num\+Bits)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::skip\+Bits (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bits}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_aaf2cf90f248fbd494ab74e5bccec5546}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!skip\+Bytes@{skip\+Bytes}}
+\index{skip\+Bytes@{skip\+Bytes}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{skip\+Bytes(unsigned num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::skip\+Bytes (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_aa340f831acf01b8626060818a530cfb5}
+
+
+Definition at line 91 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::ensure\+Valid\+Bytes(), and Stream\+Parser\+::f\+Cur\+Parser\+Index.
+
+
+\begin{DoxyCode}
+91                                     \{
+92     ensureValidBytes(numBytes);
+93     fCurParserIndex += numBytes;
+94   \}
+\end{DoxyCode}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!test1\+Byte@{test1\+Byte}}
+\index{test1\+Byte@{test1\+Byte}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{test1\+Byte()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t Stream\+Parser\+::test1\+Byte (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_a6d099b5aed1c181e2f2d320721d2f87f}
+
+
+Definition at line 77 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::ensure\+Valid\+Bytes(), and Stream\+Parser\+::next\+To\+Parse().
+
+
+\begin{DoxyCode}
+77                        \{ \textcolor{comment}{// as above, but doesn't advance ptr}
+78     ensureValidBytes(1);
+79     \textcolor{keywordflow}{return} nextToParse()[0];
+80   \}
+\end{DoxyCode}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!test4\+Bytes@{test4\+Bytes}}
+\index{test4\+Bytes@{test4\+Bytes}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{test4\+Bytes()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t Stream\+Parser\+::test4\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_ab27bd80b6ff148a1a6afbc54e9938385}
+
+
+Definition at line 53 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::ensure\+Valid\+Bytes(), and Stream\+Parser\+::next\+To\+Parse().
+
+
+
+Referenced by Stream\+Parser\+::get4\+Bytes().
+
+
+\begin{DoxyCode}
+53                          \{ \textcolor{comment}{// as above, but doesn't advance ptr}
+54     ensureValidBytes(4);
+55 
+56     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \textcolor{keyword}{const}* ptr = nextToParse();
+57     \textcolor{keywordflow}{return} (ptr[0]<<24)|(ptr[1]<<16)|(ptr[2]<<8)|ptr[3];
+58   \}
+\end{DoxyCode}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!test\+Bytes@{test\+Bytes}}
+\index{test\+Bytes@{test\+Bytes}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{test\+Bytes(u\+\_\+int8\+\_\+t $\ast$to, unsigned num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::test\+Bytes (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t $\ast$}]{to, }
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_a2ded9a22a9d1fc854303c80f9c1ad6b3}
+
+
+Definition at line 87 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::ensure\+Valid\+Bytes(), and Stream\+Parser\+::next\+To\+Parse().
+
+
+
+Referenced by Stream\+Parser\+::get\+Bytes().
+
+
+\begin{DoxyCode}
+87                                                   \{ \textcolor{comment}{// as above, but doesn't advance ptr}
+88     ensureValidBytes(numBytes);
+89     memmove(to, nextToParse(), numBytes);
+90   \}
+\end{DoxyCode}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!tot\+Num\+Valid\+Bytes@{tot\+Num\+Valid\+Bytes}}
+\index{tot\+Num\+Valid\+Bytes@{tot\+Num\+Valid\+Bytes}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{tot\+Num\+Valid\+Bytes()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned\& Stream\+Parser\+::tot\+Num\+Valid\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_a9cf19a8362a39bff364a8f3d2a5136cf}
+
+
+Definition at line 102 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::f\+Tot\+Num\+Valid\+Bytes.
+
+
+\begin{DoxyCode}
+102 \{ \textcolor{keywordflow}{return} fTotNumValidBytes; \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!f\+Current\+Info@{f\+Current\+Info}}
+\index{f\+Current\+Info@{f\+Current\+Info}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{f\+Current\+Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H263\+I\+N\+F\+O} H263plus\+Video\+Stream\+Parser\+::f\+Current\+Info\hspace{0.3cm}{\ttfamily [private]}}\label{classH263plusVideoStreamParser_ae744f8c9acff6a504c19cd093aca0040}
+
+
+Definition at line 117 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!fcurrent\+P\+T@{fcurrent\+P\+T}}
+\index{fcurrent\+P\+T@{fcurrent\+P\+T}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{fcurrent\+P\+T}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int64\+\_\+t H263plus\+Video\+Stream\+Parser\+::fcurrent\+P\+T\hspace{0.3cm}{\ttfamily [private]}}\label{classH263plusVideoStreamParser_aced049734c54ac11db416e06d1d19a0e}
+
+
+Definition at line 123 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!f\+Limit@{f\+Limit}}
+\index{f\+Limit@{f\+Limit}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{f\+Limit}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ H263plus\+Video\+Stream\+Parser\+::f\+Limit\hspace{0.3cm}{\ttfamily [protected]}}\label{classH263plusVideoStreamParser_a4a98a602eee901f7a37b3d8900cb2654}
+
+
+Definition at line 111 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!f\+Max\+Bitrate\+Ctx@{f\+Max\+Bitrate\+Ctx}}
+\index{f\+Max\+Bitrate\+Ctx@{f\+Max\+Bitrate\+Ctx}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{f\+Max\+Bitrate\+Ctx}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Max\+Bitrate\+\_\+\+C\+T\+X} H263plus\+Video\+Stream\+Parser\+::f\+Max\+Bitrate\+Ctx\hspace{0.3cm}{\ttfamily [private]}}\label{classH263plusVideoStreamParser_ac6324a1f9b31a93fd8210f2f3229a9a1}
+
+
+Definition at line 118 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!f\+Max\+Size@{f\+Max\+Size}}
+\index{f\+Max\+Size@{f\+Max\+Size}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{f\+Max\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned H263plus\+Video\+Stream\+Parser\+::f\+Max\+Size\hspace{0.3cm}{\ttfamily [protected]}}\label{classH263plusVideoStreamParser_aaf7fbfc2ea4e9a2c5609cd1955488a2b}
+
+
+Definition at line 108 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!f\+Next\+Header@{f\+Next\+Header}}
+\index{f\+Next\+Header@{f\+Next\+Header}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{f\+Next\+Header}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t H263plus\+Video\+Stream\+Parser\+::f\+Next\+Header[{\bf H263\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+S\+I\+Z\+E\+\_\+\+B\+Y\+T\+E\+S}]\hspace{0.3cm}{\ttfamily [private]}}\label{classH263plusVideoStreamParser_aa1213be4e92277d1d9c13e50239e1608}
+
+
+Definition at line 120 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!f\+Next\+Info@{f\+Next\+Info}}
+\index{f\+Next\+Info@{f\+Next\+Info}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{f\+Next\+Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf H263\+I\+N\+F\+O} H263plus\+Video\+Stream\+Parser\+::f\+Next\+Info\hspace{0.3cm}{\ttfamily [private]}}\label{classH263plusVideoStreamParser_a59b4c4a2f6f748ed3feeeb5a7c1c5840}
+
+
+Definition at line 116 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!fnext\+T\+R@{fnext\+T\+R}}
+\index{fnext\+T\+R@{fnext\+T\+R}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{fnext\+T\+R}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t H263plus\+Video\+Stream\+Parser\+::fnext\+T\+R\hspace{0.3cm}{\ttfamily [private]}}\label{classH263plusVideoStreamParser_a229e5bc9c28107d9fc6b041113c9f85a}
+
+
+Definition at line 122 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!f\+Num\+Truncated\+Bytes@{f\+Num\+Truncated\+Bytes}}
+\index{f\+Num\+Truncated\+Bytes@{f\+Num\+Truncated\+Bytes}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{f\+Num\+Truncated\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}unsigned H263plus\+Video\+Stream\+Parser\+::f\+Num\+Truncated\+Bytes\hspace{0.3cm}{\ttfamily [protected]}}\label{classH263plusVideoStreamParser_adf0c7bb4f86fe862e9ccf1b253d5aa62}
+
+
+Definition at line 112 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+
+
+Referenced by num\+Truncated\+Bytes().
+
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!f\+Saved\+Num\+Truncated\+Bytes@{f\+Saved\+Num\+Truncated\+Bytes}}
+\index{f\+Saved\+Num\+Truncated\+Bytes@{f\+Saved\+Num\+Truncated\+Bytes}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{f\+Saved\+Num\+Truncated\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}unsigned H263plus\+Video\+Stream\+Parser\+::f\+Saved\+Num\+Truncated\+Bytes\hspace{0.3cm}{\ttfamily [protected]}}\label{classH263plusVideoStreamParser_af458f9ddbd5f1ee4c09b5616cec6e184}
+
+
+Definition at line 113 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!f\+Saved\+To@{f\+Saved\+To}}
+\index{f\+Saved\+To@{f\+Saved\+To}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{f\+Saved\+To}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ H263plus\+Video\+Stream\+Parser\+::f\+Saved\+To\hspace{0.3cm}{\ttfamily [protected]}}\label{classH263plusVideoStreamParser_a5e9820910815ffaa71a8c498fb440b00}
+
+
+Definition at line 110 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!f\+Start\+Of\+Frame@{f\+Start\+Of\+Frame}}
+\index{f\+Start\+Of\+Frame@{f\+Start\+Of\+Frame}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{f\+Start\+Of\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ H263plus\+Video\+Stream\+Parser\+::f\+Start\+Of\+Frame\hspace{0.3cm}{\ttfamily [protected]}}\label{classH263plusVideoStreamParser_a6b8e10f68bc0a50c8b8b7c9615cbb4c8}
+
+
+Definition at line 109 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!f\+States@{f\+States}}
+\index{f\+States@{f\+States}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{f\+States}]{\setlength{\rightskip}{0pt plus 5cm}char H263plus\+Video\+Stream\+Parser\+::f\+States[3][256]\hspace{0.3cm}{\ttfamily [private]}}\label{classH263plusVideoStreamParser_a148d15fe8e05c483c8912ec416ebaef4}
+
+
+Definition at line 119 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!f\+To@{f\+To}}
+\index{f\+To@{f\+To}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{f\+To}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ H263plus\+Video\+Stream\+Parser\+::f\+To\hspace{0.3cm}{\ttfamily [protected]}}\label{classH263plusVideoStreamParser_a303e8cc06be3ddb6af1996584e7a3f04}
+
+
+Definition at line 107 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+\index{H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}!f\+Using\+Source@{f\+Using\+Source}}
+\index{f\+Using\+Source@{f\+Using\+Source}!H263plus\+Video\+Stream\+Parser@{H263plus\+Video\+Stream\+Parser}}
+\subsubsection[{f\+Using\+Source}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf H263plus\+Video\+Stream\+Framer}$\ast$ H263plus\+Video\+Stream\+Parser\+::f\+Using\+Source\hspace{0.3cm}{\ttfamily [protected]}}\label{classH263plusVideoStreamParser_ad0bcb7a157c527d68b6764e1a091760e}
+
+
+Definition at line 105 of file H263plus\+Video\+Stream\+Parser.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/{\bf H263plus\+Video\+Stream\+Parser.\+hh}\end{DoxyCompactItemize}

@@ -1,0 +1,845 @@
+\section{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession Class Reference}
+\label{classMPEG2TransportFileServerMediaSubsession}\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+
+
+{\ttfamily \#include $<$M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh$>$}
+
+
+
+Inheritance diagram for M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classMPEG2TransportFileServerMediaSubsession__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMPEG2TransportFileServerMediaSubsession__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf multiplex\+R\+T\+C\+P\+With\+R\+T\+P} ()
+\item 
+void {\bf set\+R\+T\+C\+P\+App\+Packet\+Handler} ({\bf R\+T\+C\+P\+App\+Handler\+Func} $\ast$handler, void $\ast$client\+Data)
+\item 
+void {\bf send\+R\+T\+C\+P\+App\+Packet} (u\+\_\+int8\+\_\+t subtype, char const $\ast${\bf name}, u\+\_\+int8\+\_\+t $\ast$app\+Dependent\+Data, unsigned app\+Dependent\+Data\+Size)
+\item 
+unsigned {\bf track\+Number} () const 
+\item 
+char const $\ast$ {\bf track\+Id} ()
+\item 
+virtual void {\bf get\+Absolute\+Time\+Range} (char $\ast$\&abs\+Start\+Time, char $\ast$\&abs\+End\+Time) const 
+\item 
+void {\bf set\+Server\+Address\+And\+Port\+For\+S\+D\+P} ({\bf net\+Address\+Bits} address\+Bits, {\bf port\+Num\+Bits} port\+Bits)
+\item 
+{\bf Usage\+Environment} \& {\bf envir} () const 
+\item 
+char const $\ast$ {\bf name} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Source} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Sink} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+C\+P\+Instance} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Client} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Server} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Media\+Session} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Server\+Media\+Session} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession} $\ast$ {\bf create\+New} ({\bf Usage\+Environment} \&env, char const $\ast$data\+File\+Name, char const $\ast$index\+File\+Name, {\bf Boolean} reuse\+First\+Source)
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name, {\bf Medium} $\ast$\&result\+Medium)
+\item 
+static void {\bf close} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name)
+\item 
+static void {\bf close} ({\bf Medium} $\ast$medium)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession} ({\bf Usage\+Environment} \&env, char const $\ast$file\+Name, {\bf M\+P\+E\+G2\+Transport\+Stream\+Index\+File} $\ast$index\+File, {\bf Boolean} reuse\+First\+Source)
+\item 
+virtual {\bf $\sim$\+M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession} ()
+\item 
+virtual {\bf Client\+Trick\+Play\+State} $\ast$ {\bf new\+Client\+Trick\+Play\+State} ()
+\item 
+virtual char const $\ast$ {\bf sdp\+Lines} ()
+\item 
+virtual void {\bf get\+Stream\+Parameters} (unsigned client\+Session\+Id, {\bf net\+Address\+Bits} client\+Address, {\bf Port} const \&client\+R\+T\+P\+Port, {\bf Port} const \&client\+R\+T\+C\+P\+Port, int tcp\+Socket\+Num, unsigned char rtp\+Channel\+Id, unsigned char rtcp\+Channel\+Id, {\bf net\+Address\+Bits} \&destination\+Address, u\+\_\+int8\+\_\+t \&destination\+T\+T\+L, {\bf Boolean} \&is\+Multicast, {\bf Port} \&server\+R\+T\+P\+Port, {\bf Port} \&server\+R\+T\+C\+P\+Port, void $\ast$\&stream\+Token)
+\item 
+virtual void {\bf seek\+Stream} (unsigned client\+Session\+Id, void $\ast$stream\+Token, char $\ast$\&abs\+Start, char $\ast$\&abs\+End)
+\item 
+virtual void {\bf null\+Seek\+Stream} (unsigned client\+Session\+Id, void $\ast$stream\+Token, double stream\+End\+Time, u\+\_\+int64\+\_\+t \&num\+Bytes)
+\item 
+virtual float {\bf get\+Current\+N\+P\+T} (void $\ast$stream\+Token)
+\item 
+virtual {\bf Framed\+Source} $\ast$ {\bf get\+Stream\+Source} (void $\ast$stream\+Token)
+\item 
+virtual void {\bf get\+R\+T\+P\+Sinkand\+R\+T\+C\+P} (void $\ast$stream\+Token, {\bf R\+T\+P\+Sink} const $\ast$\&rtp\+Sink, {\bf R\+T\+C\+P\+Instance} const $\ast$\&rtcp)
+\item 
+virtual char const $\ast$ {\bf get\+Aux\+S\+D\+P\+Line} ({\bf R\+T\+P\+Sink} $\ast$rtp\+Sink, {\bf Framed\+Source} $\ast$input\+Source)
+\item 
+virtual void {\bf seek\+Stream\+Source} ({\bf Framed\+Source} $\ast$input\+Source, double \&seek\+N\+P\+T, double stream\+Duration, u\+\_\+int64\+\_\+t \&num\+Bytes)
+\item 
+virtual void {\bf seek\+Stream\+Source} ({\bf Framed\+Source} $\ast$input\+Source, char $\ast$\&abs\+Start, char $\ast$\&abs\+End)
+\item 
+virtual void {\bf set\+Stream\+Source\+Scale} ({\bf Framed\+Source} $\ast$input\+Source, float scale)
+\item 
+virtual void {\bf set\+Stream\+Source\+Duration} ({\bf Framed\+Source} $\ast$input\+Source, double stream\+Duration, u\+\_\+int64\+\_\+t \&num\+Bytes)
+\item 
+virtual void {\bf close\+Stream\+Source} ({\bf Framed\+Source} $\ast$input\+Source)
+\item 
+virtual {\bf Groupsock} $\ast$ {\bf create\+Groupsock} (struct in\+\_\+addr const \&addr, {\bf Port} port)
+\item 
+virtual {\bf R\+T\+C\+P\+Instance} $\ast$ {\bf create\+R\+T\+C\+P} ({\bf Groupsock} $\ast$R\+T\+C\+Pgs, unsigned tot\+Session\+B\+W, unsigned char const $\ast$cname, {\bf R\+T\+P\+Sink} $\ast$sink)
+\item 
+char const $\ast$ {\bf range\+S\+D\+P\+Line} () const 
+\item 
+{\bf Task\+Token} \& {\bf next\+Task} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char const $\ast$ {\bf f\+File\+Name}
+\item 
+u\+\_\+int64\+\_\+t {\bf f\+File\+Size}
+\item 
+char $\ast$ {\bf f\+S\+D\+P\+Lines}
+\item 
+{\bf Hash\+Table} $\ast$ {\bf f\+Destinations\+Hash\+Table}
+\item 
+{\bf Server\+Media\+Session} $\ast$ {\bf f\+Parent\+Session}
+\item 
+{\bf net\+Address\+Bits} {\bf f\+Server\+Address\+For\+S\+D\+P}
+\item 
+{\bf port\+Num\+Bits} {\bf f\+Port\+Num\+For\+S\+D\+P}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf start\+Stream} (unsigned client\+Session\+Id, void $\ast$stream\+Token, {\bf Task\+Func} $\ast$rtcp\+R\+R\+Handler, void $\ast$rtcp\+R\+R\+Handler\+Client\+Data, unsigned short \&rtp\+Seq\+Num, unsigned \&rtp\+Timestamp, {\bf Server\+Request\+Alternative\+Byte\+Handler} $\ast$server\+Request\+Alternative\+Byte\+Handler, void $\ast$server\+Request\+Alternative\+Byte\+Handler\+Client\+Data)
+\item 
+virtual void {\bf pause\+Stream} (unsigned client\+Session\+Id, void $\ast$stream\+Token)
+\item 
+virtual void {\bf seek\+Stream} (unsigned client\+Session\+Id, void $\ast$stream\+Token, double \&seek\+N\+P\+T, double stream\+Duration, u\+\_\+int64\+\_\+t \&num\+Bytes)
+\item 
+virtual void {\bf set\+Stream\+Scale} (unsigned client\+Session\+Id, void $\ast$stream\+Token, float scale)
+\item 
+virtual void {\bf delete\+Stream} (unsigned client\+Session\+Id, void $\ast$\&stream\+Token)
+\item 
+virtual {\bf Framed\+Source} $\ast$ {\bf create\+New\+Stream\+Source} (unsigned client\+Session\+Id, unsigned \&est\+Bitrate)
+\item 
+virtual {\bf R\+T\+P\+Sink} $\ast$ {\bf create\+New\+R\+T\+P\+Sink} ({\bf Groupsock} $\ast$rtp\+Groupsock, unsigned char rtp\+Payload\+Type\+If\+Dynamic, {\bf Framed\+Source} $\ast$input\+Source)
+\item 
+virtual void {\bf test\+Scale\+Factor} (float \&scale)
+\item 
+virtual float {\bf duration} () const 
+\item 
+{\bf Client\+Trick\+Play\+State} $\ast$ {\bf lookup\+Client} (unsigned client\+Session\+Id)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf M\+P\+E\+G2\+Transport\+Stream\+Index\+File} $\ast$ {\bf f\+Index\+File}
+\item 
+float {\bf f\+Duration}
+\item 
+{\bf Hash\+Table} $\ast$ {\bf f\+Client\+Session\+Hash\+Table}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 43 of file M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession(\+Usage\+Environment \&env, char const $\ast$file\+Name, M\+P\+E\+G2\+Transport\+Stream\+Index\+File $\ast$index\+File, Boolean reuse\+First\+Source)}]{\setlength{\rightskip}{0pt plus 5cm}M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession\+::\+M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{file\+Name, }
+\item[{{\bf M\+P\+E\+G2\+Transport\+Stream\+Index\+File} $\ast$}]{index\+File, }
+\item[{{\bf Boolean}}]{reuse\+First\+Source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classMPEG2TransportFileServerMediaSubsession_a419beb1bf9faf5d597a328ff884d2bbe}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!````~M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{$\sim$\+M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\index{````~M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{$\sim$\+M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{$\sim$\+M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession()}]{\setlength{\rightskip}{0pt plus 5cm}virtual M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession\+::$\sim$\+M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classMPEG2TransportFileServerMediaSubsession_a3a130b387fcbf041d59a1c1ec69b6176}
+
+
+\subsection{Member Function Documentation}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!close@{close}}
+\index{close@{close}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{close(\+Usage\+Environment \&env, char const $\ast$medium\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a9968c7ce6eedb848f2cc095730c01b17}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!close@{close}}
+\index{close@{close}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{close(\+Medium $\ast$medium)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_aee50624faf6909b3944dd803fd485467}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!close\+Stream\+Source@{close\+Stream\+Source}}
+\index{close\+Stream\+Source@{close\+Stream\+Source}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{close\+Stream\+Source(\+Framed\+Source $\ast$input\+Source)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void On\+Demand\+Server\+Media\+Subsession\+::close\+Stream\+Source (
+\begin{DoxyParamCaption}
+\item[{{\bf Framed\+Source} $\ast$}]{input\+Source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_a70558acd35d462ad033f69da2d30c99f}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!create\+Groupsock@{create\+Groupsock}}
+\index{create\+Groupsock@{create\+Groupsock}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{create\+Groupsock(struct in\+\_\+addr const \&addr, Port port)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Groupsock}$\ast$ On\+Demand\+Server\+Media\+Subsession\+::create\+Groupsock (
+\begin{DoxyParamCaption}
+\item[{struct in\+\_\+addr const \&}]{addr, }
+\item[{{\bf Port}}]{port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_a1e9bf541523b870f3d427787036b3479}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!create\+New@{create\+New}}
+\index{create\+New@{create\+New}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{create\+New(\+Usage\+Environment \&env, char const $\ast$data\+File\+Name, char const $\ast$index\+File\+Name, Boolean reuse\+First\+Source)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}$\ast$ M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession\+::create\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{data\+File\+Name, }
+\item[{char const $\ast$}]{index\+File\+Name, }
+\item[{{\bf Boolean}}]{reuse\+First\+Source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classMPEG2TransportFileServerMediaSubsession_a73fd41005e8398a0a460435659a92395}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!create\+New\+R\+T\+P\+Sink@{create\+New\+R\+T\+P\+Sink}}
+\index{create\+New\+R\+T\+P\+Sink@{create\+New\+R\+T\+P\+Sink}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{create\+New\+R\+T\+P\+Sink(\+Groupsock $\ast$rtp\+Groupsock, unsigned char rtp\+Payload\+Type\+If\+Dynamic, Framed\+Source $\ast$input\+Source)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf R\+T\+P\+Sink}$\ast$ M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession\+::create\+New\+R\+T\+P\+Sink (
+\begin{DoxyParamCaption}
+\item[{{\bf Groupsock} $\ast$}]{rtp\+Groupsock, }
+\item[{unsigned char}]{rtp\+Payload\+Type\+If\+Dynamic, }
+\item[{{\bf Framed\+Source} $\ast$}]{input\+Source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classMPEG2TransportFileServerMediaSubsession_a6735556adc6ca87505c381836d753501}
+
+
+Implements {\bf On\+Demand\+Server\+Media\+Subsession} \doxyref{}{p.}{classOnDemandServerMediaSubsession_ac889cbdc15b1d1e411adffeea8c37e51}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!create\+New\+Stream\+Source@{create\+New\+Stream\+Source}}
+\index{create\+New\+Stream\+Source@{create\+New\+Stream\+Source}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{create\+New\+Stream\+Source(unsigned client\+Session\+Id, unsigned \&est\+Bitrate)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Framed\+Source}$\ast$ M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession\+::create\+New\+Stream\+Source (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{client\+Session\+Id, }
+\item[{unsigned \&}]{est\+Bitrate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classMPEG2TransportFileServerMediaSubsession_a11801005f5c5ca402a68455ca76b63d6}
+
+
+Implements {\bf On\+Demand\+Server\+Media\+Subsession} \doxyref{}{p.}{classOnDemandServerMediaSubsession_a23aacb135fb22fb999fa81d217b875c1}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!create\+R\+T\+C\+P@{create\+R\+T\+C\+P}}
+\index{create\+R\+T\+C\+P@{create\+R\+T\+C\+P}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{create\+R\+T\+C\+P(\+Groupsock $\ast$\+R\+T\+C\+Pgs, unsigned tot\+Session\+B\+W, unsigned char const $\ast$cname, R\+T\+P\+Sink $\ast$sink)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf R\+T\+C\+P\+Instance}$\ast$ On\+Demand\+Server\+Media\+Subsession\+::create\+R\+T\+C\+P (
+\begin{DoxyParamCaption}
+\item[{{\bf Groupsock} $\ast$}]{R\+T\+C\+Pgs, }
+\item[{unsigned}]{tot\+Session\+B\+W, }
+\item[{unsigned char const $\ast$}]{cname, }
+\item[{{\bf R\+T\+P\+Sink} $\ast$}]{sink}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_ada5ad523c31f195f5f7031565d69c8fa}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!delete\+Stream@{delete\+Stream}}
+\index{delete\+Stream@{delete\+Stream}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{delete\+Stream(unsigned client\+Session\+Id, void $\ast$\&stream\+Token)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession\+::delete\+Stream (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{client\+Session\+Id, }
+\item[{void $\ast$\&}]{stream\+Token}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classMPEG2TransportFileServerMediaSubsession_aac304f399a22b5e2c48a7b97d45c13b1}
+
+
+Reimplemented from {\bf On\+Demand\+Server\+Media\+Subsession} \doxyref{}{p.}{classOnDemandServerMediaSubsession_af53f4986af45eec93fdb22ba147b4f5c}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!duration@{duration}}
+\index{duration@{duration}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{duration() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual float M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession\+::duration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classMPEG2TransportFileServerMediaSubsession_ac9b7a397774642ca9c538dff7a40bff4}
+
+
+Reimplemented from {\bf Server\+Media\+Subsession} \doxyref{}{p.}{classServerMediaSubsession_a75097fc3f36e8c032e207a69ca4b0127}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!envir@{envir}}
+\index{envir@{envir}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{envir() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Medium\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a32f7ecdd95f2b8400e1a26a5009e3b8e}
+
+
+Definition at line 59 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Environ.
+
+
+
+Referenced by Media\+Subsession\+::env(), R\+T\+P\+Interface\+::envir(), Generic\+Media\+Server\+::\+Client\+Connection\+::envir(), and Generic\+Media\+Server\+::\+Client\+Session\+::envir().
+
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} fEnviron;\}
+\end{DoxyCode}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!get\+Absolute\+Time\+Range@{get\+Absolute\+Time\+Range}}
+\index{get\+Absolute\+Time\+Range@{get\+Absolute\+Time\+Range}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{get\+Absolute\+Time\+Range(char $\ast$\&abs\+Start\+Time, char $\ast$\&abs\+End\+Time) const }]{\setlength{\rightskip}{0pt plus 5cm}virtual void Server\+Media\+Subsession\+::get\+Absolute\+Time\+Range (
+\begin{DoxyParamCaption}
+\item[{char $\ast$\&}]{abs\+Start\+Time, }
+\item[{char $\ast$\&}]{abs\+End\+Time}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classServerMediaSubsession_a711ebfd8bf7337cbda27acb854f26909}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!get\+Aux\+S\+D\+P\+Line@{get\+Aux\+S\+D\+P\+Line}}
+\index{get\+Aux\+S\+D\+P\+Line@{get\+Aux\+S\+D\+P\+Line}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{get\+Aux\+S\+D\+P\+Line(\+R\+T\+P\+Sink $\ast$rtp\+Sink, Framed\+Source $\ast$input\+Source)}]{\setlength{\rightskip}{0pt plus 5cm}virtual char const$\ast$ On\+Demand\+Server\+Media\+Subsession\+::get\+Aux\+S\+D\+P\+Line (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+P\+Sink} $\ast$}]{rtp\+Sink, }
+\item[{{\bf Framed\+Source} $\ast$}]{input\+Source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_a6a7035d5193d40e4f42bde60c7900965}
+
+
+Reimplemented in {\bf H264\+Video\+File\+Server\+Media\+Subsession} \doxyref{}{p.}{classH264VideoFileServerMediaSubsession_af5db92cab03250dbfb03b299dc275357}, {\bf H265\+Video\+File\+Server\+Media\+Subsession} \doxyref{}{p.}{classH265VideoFileServerMediaSubsession_a9c2197a345b9cecdb5b56ada7771aa1f}, {\bf M\+P\+E\+G4\+Video\+File\+Server\+Media\+Subsession} \doxyref{}{p.}{classMPEG4VideoFileServerMediaSubsession_aab70ca46ddd1dbff482e3e9236244341}, and {\bf D\+V\+Video\+File\+Server\+Media\+Subsession} \doxyref{}{p.}{classDVVideoFileServerMediaSubsession_a6f2afefd9ffa09e8e6c7860b1bd8becd}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!get\+Current\+N\+P\+T@{get\+Current\+N\+P\+T}}
+\index{get\+Current\+N\+P\+T@{get\+Current\+N\+P\+T}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{get\+Current\+N\+P\+T(void $\ast$stream\+Token)}]{\setlength{\rightskip}{0pt plus 5cm}virtual float On\+Demand\+Server\+Media\+Subsession\+::get\+Current\+N\+P\+T (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{stream\+Token}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_a49ef52d675850e3f1b8a2dd277c50680}
+
+
+Reimplemented from {\bf Server\+Media\+Subsession} \doxyref{}{p.}{classServerMediaSubsession_a71b4e0fa27233957769f981cea19a3c6}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!get\+R\+T\+P\+Sinkand\+R\+T\+C\+P@{get\+R\+T\+P\+Sinkand\+R\+T\+C\+P}}
+\index{get\+R\+T\+P\+Sinkand\+R\+T\+C\+P@{get\+R\+T\+P\+Sinkand\+R\+T\+C\+P}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{get\+R\+T\+P\+Sinkand\+R\+T\+C\+P(void $\ast$stream\+Token, R\+T\+P\+Sink const $\ast$\&rtp\+Sink, R\+T\+C\+P\+Instance const $\ast$\&rtcp)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void On\+Demand\+Server\+Media\+Subsession\+::get\+R\+T\+P\+Sinkand\+R\+T\+C\+P (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{stream\+Token, }
+\item[{{\bf R\+T\+P\+Sink} const $\ast$\&}]{rtp\+Sink, }
+\item[{{\bf R\+T\+C\+P\+Instance} const $\ast$\&}]{rtcp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_a71027c79d92b36aba764e3b8e1927a04}
+
+
+Implements {\bf Server\+Media\+Subsession} \doxyref{}{p.}{classServerMediaSubsession_ac5b79ec7d478cb4b7f83c64f6d446b36}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!get\+Stream\+Parameters@{get\+Stream\+Parameters}}
+\index{get\+Stream\+Parameters@{get\+Stream\+Parameters}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{get\+Stream\+Parameters(unsigned client\+Session\+Id, net\+Address\+Bits client\+Address, Port const \&client\+R\+T\+P\+Port, Port const \&client\+R\+T\+C\+P\+Port, int tcp\+Socket\+Num, unsigned char rtp\+Channel\+Id, unsigned char rtcp\+Channel\+Id, net\+Address\+Bits \&destination\+Address, u\+\_\+int8\+\_\+t \&destination\+T\+T\+L, Boolean \&is\+Multicast, Port \&server\+R\+T\+P\+Port, Port \&server\+R\+T\+C\+P\+Port, void $\ast$\&stream\+Token)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void On\+Demand\+Server\+Media\+Subsession\+::get\+Stream\+Parameters (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{client\+Session\+Id, }
+\item[{{\bf net\+Address\+Bits}}]{client\+Address, }
+\item[{{\bf Port} const \&}]{client\+R\+T\+P\+Port, }
+\item[{{\bf Port} const \&}]{client\+R\+T\+C\+P\+Port, }
+\item[{int}]{tcp\+Socket\+Num, }
+\item[{unsigned char}]{rtp\+Channel\+Id, }
+\item[{unsigned char}]{rtcp\+Channel\+Id, }
+\item[{{\bf net\+Address\+Bits} \&}]{destination\+Address, }
+\item[{u\+\_\+int8\+\_\+t \&}]{destination\+T\+T\+L, }
+\item[{{\bf Boolean} \&}]{is\+Multicast, }
+\item[{{\bf Port} \&}]{server\+R\+T\+P\+Port, }
+\item[{{\bf Port} \&}]{server\+R\+T\+C\+P\+Port, }
+\item[{void $\ast$\&}]{stream\+Token}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_ac9fabea8fb6d344adb61d2e49a47633f}
+
+
+Implements {\bf Server\+Media\+Subsession} \doxyref{}{p.}{classServerMediaSubsession_a8007431e5645abe4744e1ac05ecfa35c}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!get\+Stream\+Source@{get\+Stream\+Source}}
+\index{get\+Stream\+Source@{get\+Stream\+Source}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{get\+Stream\+Source(void $\ast$stream\+Token)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Framed\+Source}$\ast$ On\+Demand\+Server\+Media\+Subsession\+::get\+Stream\+Source (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{stream\+Token}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_a36c1ecb809dccae401c1cfb676e90497}
+
+
+Reimplemented from {\bf Server\+Media\+Subsession} \doxyref{}{p.}{classServerMediaSubsession_aa6f5e8d461d150ec0dfc2175d0ca386e}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!is\+Media\+Session@{is\+Media\+Session}}
+\index{is\+Media\+Session@{is\+Media\+Session}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{is\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ac5858707c4e7a15bd59d476cf48289d6}
+
+
+Reimplemented in {\bf Media\+Session} \doxyref{}{p.}{classMediaSession_a3b2a06a722374ab4477ac05a2ce28829}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}}
+\index{is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{is\+R\+T\+C\+P\+Instance() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ab5f9f20324698f89a35513d596b2e7be}
+
+
+Reimplemented in {\bf R\+T\+C\+P\+Instance} \doxyref{}{p.}{classRTCPInstance_a844292518419e1dbf24170812fd1e4b5}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}}
+\index{is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{is\+R\+T\+S\+P\+Client() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aed1c1816867f910ce8c98350686ac038}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Client} \doxyref{}{p.}{classRTSPClient_add07b3a68432b546998080b24380e7e8}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}}
+\index{is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{is\+R\+T\+S\+P\+Server() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a346e111b31bfde4b7f4ed593e0b97fd3}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Server} \doxyref{}{p.}{classRTSPServer_a45f9fc5ddd8f214169358493215a064a}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!is\+Server\+Media\+Session@{is\+Server\+Media\+Session}}
+\index{is\+Server\+Media\+Session@{is\+Server\+Media\+Session}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{is\+Server\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aa9fd26c4b954ffba5f79925ecd0283a0}
+
+
+Reimplemented in {\bf Server\+Media\+Session} \doxyref{}{p.}{classServerMediaSession_a34b59e04644b6f0841ea5af99dbf32f6}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!is\+Sink@{is\+Sink}}
+\index{is\+Sink@{is\+Sink}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{is\+Sink() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a23d49bf466482784b9d4378490d17b5f}
+
+
+Reimplemented in {\bf Media\+Sink} \doxyref{}{p.}{classMediaSink_aa8649dcdf21d5005f9ec319f898f91b6}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!is\+Source@{is\+Source}}
+\index{is\+Source@{is\+Source}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{is\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a6cdbd02c73a3e9c1cbab8fce9e9497b1}
+
+
+Reimplemented in {\bf Media\+Source} \doxyref{}{p.}{classMediaSource_a4d75fa9ee2b476b1231594282a6854be}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$medium\+Name, Medium $\ast$\&result\+Medium)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Medium\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name, }
+\item[{{\bf Medium} $\ast$\&}]{result\+Medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a418c860c1e0ef2766ee0d0f64b346291}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!lookup\+Client@{lookup\+Client}}
+\index{lookup\+Client@{lookup\+Client}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{lookup\+Client(unsigned client\+Session\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Client\+Trick\+Play\+State}$\ast$ M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession\+::lookup\+Client (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{client\+Session\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportFileServerMediaSubsession_a67ab9571c79c91d2a0463dc8f21b74ce}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!multiplex\+R\+T\+C\+P\+With\+R\+T\+P@{multiplex\+R\+T\+C\+P\+With\+R\+T\+P}}
+\index{multiplex\+R\+T\+C\+P\+With\+R\+T\+P@{multiplex\+R\+T\+C\+P\+With\+R\+T\+P}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{multiplex\+R\+T\+C\+P\+With\+R\+T\+P()}]{\setlength{\rightskip}{0pt plus 5cm}void On\+Demand\+Server\+Media\+Subsession\+::multiplex\+R\+T\+C\+P\+With\+R\+T\+P (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_a3e792d659b73b129aeae9d6d62c362f7}
+
+
+Definition at line 109 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+References On\+Demand\+Server\+Media\+Subsession\+::f\+Multiplex\+R\+T\+C\+P\+With\+R\+T\+P, and True.
+
+
+\begin{DoxyCode}
+109 \{ fMultiplexRTCPWithRTP = True; \}
+\end{DoxyCode}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!name@{name}}
+\index{name@{name}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Medium\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a575649802dc781c0e59e097a3870fcdb}
+
+
+Definition at line 61 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Medium\+Name.
+
+
+\begin{DoxyCode}
+61 \{\textcolor{keywordflow}{return} fMediumName;\}
+\end{DoxyCode}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!new\+Client\+Trick\+Play\+State@{new\+Client\+Trick\+Play\+State}}
+\index{new\+Client\+Trick\+Play\+State@{new\+Client\+Trick\+Play\+State}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{new\+Client\+Trick\+Play\+State()}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Client\+Trick\+Play\+State}$\ast$ M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession\+::new\+Client\+Trick\+Play\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classMPEG2TransportFileServerMediaSubsession_a47855a51e7eeb797f58bd551a2354298}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{next\+Task()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token}\& Medium\+::next\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMedium_a5c8788adec90be1a584393a5bf11a5c9}
+
+
+Definition at line 77 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Next\+Task.
+
+
+\begin{DoxyCode}
+77                         \{
+78         \textcolor{keywordflow}{return} fNextTask;
+79   \}
+\end{DoxyCode}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!null\+Seek\+Stream@{null\+Seek\+Stream}}
+\index{null\+Seek\+Stream@{null\+Seek\+Stream}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{null\+Seek\+Stream(unsigned client\+Session\+Id, void $\ast$stream\+Token, double stream\+End\+Time, u\+\_\+int64\+\_\+t \&num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void On\+Demand\+Server\+Media\+Subsession\+::null\+Seek\+Stream (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{client\+Session\+Id, }
+\item[{void $\ast$}]{stream\+Token, }
+\item[{double}]{stream\+End\+Time, }
+\item[{u\+\_\+int64\+\_\+t \&}]{num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_adcd803197b7b1fbbc2bdd9c47a69c7ea}
+
+
+Reimplemented from {\bf Server\+Media\+Subsession} \doxyref{}{p.}{classServerMediaSubsession_aa39c41fcba82ae55833357350c945dd7}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!pause\+Stream@{pause\+Stream}}
+\index{pause\+Stream@{pause\+Stream}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{pause\+Stream(unsigned client\+Session\+Id, void $\ast$stream\+Token)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession\+::pause\+Stream (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{client\+Session\+Id, }
+\item[{void $\ast$}]{stream\+Token}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classMPEG2TransportFileServerMediaSubsession_afaa54cf2d578f1cb8597e7aad13bb6c8}
+
+
+Reimplemented from {\bf On\+Demand\+Server\+Media\+Subsession} \doxyref{}{p.}{classOnDemandServerMediaSubsession_ac7490fa238c99c7bdfbee7b557c97868}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!range\+S\+D\+P\+Line@{range\+S\+D\+P\+Line}}
+\index{range\+S\+D\+P\+Line@{range\+S\+D\+P\+Line}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{range\+S\+D\+P\+Line() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Server\+Media\+Subsession\+::range\+S\+D\+P\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classServerMediaSubsession_afd912d887182e0688f0b27eab301943b}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!sdp\+Lines@{sdp\+Lines}}
+\index{sdp\+Lines@{sdp\+Lines}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{sdp\+Lines()}]{\setlength{\rightskip}{0pt plus 5cm}virtual char const$\ast$ On\+Demand\+Server\+Media\+Subsession\+::sdp\+Lines (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_a8aa11e1e11809531dc1c468372b74b9a}
+
+
+Implements {\bf Server\+Media\+Subsession} \doxyref{}{p.}{classServerMediaSubsession_ac1f2b9040a962bd4835ee8ce9a96334d}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!seek\+Stream@{seek\+Stream}}
+\index{seek\+Stream@{seek\+Stream}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{seek\+Stream(unsigned client\+Session\+Id, void $\ast$stream\+Token, char $\ast$\&abs\+Start, char $\ast$\&abs\+End)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void On\+Demand\+Server\+Media\+Subsession\+::seek\+Stream (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{client\+Session\+Id, }
+\item[{void $\ast$}]{stream\+Token, }
+\item[{char $\ast$\&}]{abs\+Start, }
+\item[{char $\ast$\&}]{abs\+End}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_a5ec0ae2e7eed970114ab0f553088a222}
+
+
+Reimplemented from {\bf Server\+Media\+Subsession} \doxyref{}{p.}{classServerMediaSubsession_a49957e17f809ff412ba27d85f2179b39}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!seek\+Stream@{seek\+Stream}}
+\index{seek\+Stream@{seek\+Stream}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{seek\+Stream(unsigned client\+Session\+Id, void $\ast$stream\+Token, double \&seek\+N\+P\+T, double stream\+Duration, u\+\_\+int64\+\_\+t \&num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession\+::seek\+Stream (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{client\+Session\+Id, }
+\item[{void $\ast$}]{stream\+Token, }
+\item[{double \&}]{seek\+N\+P\+T, }
+\item[{double}]{stream\+Duration, }
+\item[{u\+\_\+int64\+\_\+t \&}]{num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classMPEG2TransportFileServerMediaSubsession_adcb9d7c887056c9c30d62903570e6cb8}
+
+
+Reimplemented from {\bf On\+Demand\+Server\+Media\+Subsession} \doxyref{}{p.}{classOnDemandServerMediaSubsession_a1cbbeef3b4fb5874b041129cdd870b04}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!seek\+Stream\+Source@{seek\+Stream\+Source}}
+\index{seek\+Stream\+Source@{seek\+Stream\+Source}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{seek\+Stream\+Source(\+Framed\+Source $\ast$input\+Source, double \&seek\+N\+P\+T, double stream\+Duration, u\+\_\+int64\+\_\+t \&num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void On\+Demand\+Server\+Media\+Subsession\+::seek\+Stream\+Source (
+\begin{DoxyParamCaption}
+\item[{{\bf Framed\+Source} $\ast$}]{input\+Source, }
+\item[{double \&}]{seek\+N\+P\+T, }
+\item[{double}]{stream\+Duration, }
+\item[{u\+\_\+int64\+\_\+t \&}]{num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_a108d678c737276c59a34c1e6f88c2cfe}
+
+
+Reimplemented in {\bf M\+P3\+Audio\+File\+Server\+Media\+Subsession} \doxyref{}{p.}{classMP3AudioFileServerMediaSubsession_ad736fb9f9b35977b6c2400150b1f4e04}, {\bf M\+P\+E\+G1or2\+Demuxed\+Server\+Media\+Subsession} \doxyref{}{p.}{classMPEG1or2DemuxedServerMediaSubsession_a2c5f62a3a153ff14b1a737f6e2758699}, {\bf M\+P3\+Audio\+Matroska\+File\+Server\+Media\+Subsession} \doxyref{}{p.}{classMP3AudioMatroskaFileServerMediaSubsession_a9f5d4ef5b2727fef40373c6543b04595}, {\bf W\+A\+V\+Audio\+File\+Server\+Media\+Subsession} \doxyref{}{p.}{classWAVAudioFileServerMediaSubsession_abc4163492c0fa0beb8de86a3790db0b1}, {\bf Matroska\+File\+Server\+Media\+Subsession} \doxyref{}{p.}{classMatroskaFileServerMediaSubsession_abf3428d1edefaf7357c0fee2f1fad214}, and {\bf D\+V\+Video\+File\+Server\+Media\+Subsession} \doxyref{}{p.}{classDVVideoFileServerMediaSubsession_aca8e4c64bc5d0a18d881d827ea7fb76b}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!seek\+Stream\+Source@{seek\+Stream\+Source}}
+\index{seek\+Stream\+Source@{seek\+Stream\+Source}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{seek\+Stream\+Source(\+Framed\+Source $\ast$input\+Source, char $\ast$\&abs\+Start, char $\ast$\&abs\+End)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void On\+Demand\+Server\+Media\+Subsession\+::seek\+Stream\+Source (
+\begin{DoxyParamCaption}
+\item[{{\bf Framed\+Source} $\ast$}]{input\+Source, }
+\item[{char $\ast$\&}]{abs\+Start, }
+\item[{char $\ast$\&}]{abs\+End}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_a5f6461b25e66d5adbf1823e03a3407ca}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!send\+R\+T\+C\+P\+App\+Packet@{send\+R\+T\+C\+P\+App\+Packet}}
+\index{send\+R\+T\+C\+P\+App\+Packet@{send\+R\+T\+C\+P\+App\+Packet}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{send\+R\+T\+C\+P\+App\+Packet(u\+\_\+int8\+\_\+t subtype, char const $\ast$name, u\+\_\+int8\+\_\+t $\ast$app\+Dependent\+Data, unsigned app\+Dependent\+Data\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}void On\+Demand\+Server\+Media\+Subsession\+::send\+R\+T\+C\+P\+App\+Packet (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t}]{subtype, }
+\item[{char const $\ast$}]{name, }
+\item[{u\+\_\+int8\+\_\+t $\ast$}]{app\+Dependent\+Data, }
+\item[{unsigned}]{app\+Dependent\+Data\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_a1e33a33b783a0f1e3bb886e7789e2949}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!set\+R\+T\+C\+P\+App\+Packet\+Handler@{set\+R\+T\+C\+P\+App\+Packet\+Handler}}
+\index{set\+R\+T\+C\+P\+App\+Packet\+Handler@{set\+R\+T\+C\+P\+App\+Packet\+Handler}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{set\+R\+T\+C\+P\+App\+Packet\+Handler(\+R\+T\+C\+P\+App\+Handler\+Func $\ast$handler, void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}void On\+Demand\+Server\+Media\+Subsession\+::set\+R\+T\+C\+P\+App\+Packet\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+C\+P\+App\+Handler\+Func} $\ast$}]{handler, }
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_a9d2667b4f37f2e27189e2a1ecc47b756}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!set\+Server\+Address\+And\+Port\+For\+S\+D\+P@{set\+Server\+Address\+And\+Port\+For\+S\+D\+P}}
+\index{set\+Server\+Address\+And\+Port\+For\+S\+D\+P@{set\+Server\+Address\+And\+Port\+For\+S\+D\+P}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{set\+Server\+Address\+And\+Port\+For\+S\+D\+P(net\+Address\+Bits address\+Bits, port\+Num\+Bits port\+Bits)}]{\setlength{\rightskip}{0pt plus 5cm}void Server\+Media\+Subsession\+::set\+Server\+Address\+And\+Port\+For\+S\+D\+P (
+\begin{DoxyParamCaption}
+\item[{{\bf net\+Address\+Bits}}]{address\+Bits, }
+\item[{{\bf port\+Num\+Bits}}]{port\+Bits}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classServerMediaSubsession_a9a596cf1e13a60df5f168917fe7f6f5f}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!set\+Stream\+Scale@{set\+Stream\+Scale}}
+\index{set\+Stream\+Scale@{set\+Stream\+Scale}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{set\+Stream\+Scale(unsigned client\+Session\+Id, void $\ast$stream\+Token, float scale)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession\+::set\+Stream\+Scale (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{client\+Session\+Id, }
+\item[{void $\ast$}]{stream\+Token, }
+\item[{float}]{scale}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classMPEG2TransportFileServerMediaSubsession_a7b59d4a0ec467d814f517f4f0cd2f69e}
+
+
+Reimplemented from {\bf On\+Demand\+Server\+Media\+Subsession} \doxyref{}{p.}{classOnDemandServerMediaSubsession_a3c45ef793b750d195ced67557a1cbe55}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!set\+Stream\+Source\+Duration@{set\+Stream\+Source\+Duration}}
+\index{set\+Stream\+Source\+Duration@{set\+Stream\+Source\+Duration}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{set\+Stream\+Source\+Duration(\+Framed\+Source $\ast$input\+Source, double stream\+Duration, u\+\_\+int64\+\_\+t \&num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void On\+Demand\+Server\+Media\+Subsession\+::set\+Stream\+Source\+Duration (
+\begin{DoxyParamCaption}
+\item[{{\bf Framed\+Source} $\ast$}]{input\+Source, }
+\item[{double}]{stream\+Duration, }
+\item[{u\+\_\+int64\+\_\+t \&}]{num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_a54b7befa950c9cb350ba2fbce03efe7f}
+
+
+Reimplemented in {\bf W\+A\+V\+Audio\+File\+Server\+Media\+Subsession} \doxyref{}{p.}{classWAVAudioFileServerMediaSubsession_a04e19237c8b81d6353a12140fc09ea47}, and {\bf D\+V\+Video\+File\+Server\+Media\+Subsession} \doxyref{}{p.}{classDVVideoFileServerMediaSubsession_a346482b219284a81cdc6361f0c199c92}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!set\+Stream\+Source\+Scale@{set\+Stream\+Source\+Scale}}
+\index{set\+Stream\+Source\+Scale@{set\+Stream\+Source\+Scale}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{set\+Stream\+Source\+Scale(\+Framed\+Source $\ast$input\+Source, float scale)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void On\+Demand\+Server\+Media\+Subsession\+::set\+Stream\+Source\+Scale (
+\begin{DoxyParamCaption}
+\item[{{\bf Framed\+Source} $\ast$}]{input\+Source, }
+\item[{float}]{scale}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_a59283bc17aba5ac159a5fd331c4325d0}
+
+
+Reimplemented in {\bf M\+P3\+Audio\+File\+Server\+Media\+Subsession} \doxyref{}{p.}{classMP3AudioFileServerMediaSubsession_aaeb63146bce5284c6727a32127c30402}, and {\bf W\+A\+V\+Audio\+File\+Server\+Media\+Subsession} \doxyref{}{p.}{classWAVAudioFileServerMediaSubsession_ad42e75b009aae9d977d36a41ab075e0c}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!start\+Stream@{start\+Stream}}
+\index{start\+Stream@{start\+Stream}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{start\+Stream(unsigned client\+Session\+Id, void $\ast$stream\+Token, Task\+Func $\ast$rtcp\+R\+R\+Handler, void $\ast$rtcp\+R\+R\+Handler\+Client\+Data, unsigned short \&rtp\+Seq\+Num, unsigned \&rtp\+Timestamp, Server\+Request\+Alternative\+Byte\+Handler $\ast$server\+Request\+Alternative\+Byte\+Handler, void $\ast$server\+Request\+Alternative\+Byte\+Handler\+Client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession\+::start\+Stream (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{client\+Session\+Id, }
+\item[{void $\ast$}]{stream\+Token, }
+\item[{{\bf Task\+Func} $\ast$}]{rtcp\+R\+R\+Handler, }
+\item[{void $\ast$}]{rtcp\+R\+R\+Handler\+Client\+Data, }
+\item[{unsigned short \&}]{rtp\+Seq\+Num, }
+\item[{unsigned \&}]{rtp\+Timestamp, }
+\item[{{\bf Server\+Request\+Alternative\+Byte\+Handler} $\ast$}]{server\+Request\+Alternative\+Byte\+Handler, }
+\item[{void $\ast$}]{server\+Request\+Alternative\+Byte\+Handler\+Client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classMPEG2TransportFileServerMediaSubsession_a4ddd9af39c773eea4d7b7db9c9a073a5}
+
+
+Reimplemented from {\bf On\+Demand\+Server\+Media\+Subsession} \doxyref{}{p.}{classOnDemandServerMediaSubsession_a4d0e9abcfcc31a8af0af117b1f475826}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!test\+Scale\+Factor@{test\+Scale\+Factor}}
+\index{test\+Scale\+Factor@{test\+Scale\+Factor}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{test\+Scale\+Factor(float \&scale)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession\+::test\+Scale\+Factor (
+\begin{DoxyParamCaption}
+\item[{float \&}]{scale}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classMPEG2TransportFileServerMediaSubsession_a7a0202de1ac2f84f96ef61c9a2ad16c9}
+
+
+Reimplemented from {\bf Server\+Media\+Subsession} \doxyref{}{p.}{classServerMediaSubsession_aa7b06aa3685f10fc4a43a03f79c3440f}.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!track\+Id@{track\+Id}}
+\index{track\+Id@{track\+Id}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{track\+Id()}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Server\+Media\+Subsession\+::track\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classServerMediaSubsession_a9e1e74b90ead45b4a7aaa4f9974c89b1}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!track\+Number@{track\+Number}}
+\index{track\+Number@{track\+Number}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{track\+Number() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Server\+Media\+Subsession\+::track\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classServerMediaSubsession_a2996b19fe0db807a7754e355502c7e93}
+
+
+Definition at line 122 of file Server\+Media\+Session.\+hh.
+
+
+
+References Server\+Media\+Subsession\+::f\+Track\+Number.
+
+
+\begin{DoxyCode}
+122 \{ \textcolor{keywordflow}{return} fTrackNumber; \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!f\+Client\+Session\+Hash\+Table@{f\+Client\+Session\+Hash\+Table}}
+\index{f\+Client\+Session\+Hash\+Table@{f\+Client\+Session\+Hash\+Table}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{f\+Client\+Session\+Hash\+Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hash\+Table}$\ast$ M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession\+::f\+Client\+Session\+Hash\+Table\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportFileServerMediaSubsession_a016368345995ce61b2cd83524ff79e97}
+
+
+Definition at line 93 of file M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!f\+Destinations\+Hash\+Table@{f\+Destinations\+Hash\+Table}}
+\index{f\+Destinations\+Hash\+Table@{f\+Destinations\+Hash\+Table}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{f\+Destinations\+Hash\+Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hash\+Table}$\ast$ On\+Demand\+Server\+Media\+Subsession\+::f\+Destinations\+Hash\+Table\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_a52f705283ee44515c089c2f922a02e2c}
+
+
+Definition at line 135 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!f\+Duration@{f\+Duration}}
+\index{f\+Duration@{f\+Duration}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{f\+Duration}]{\setlength{\rightskip}{0pt plus 5cm}float M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession\+::f\+Duration\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportFileServerMediaSubsession_ab40ab33906b81959293d5c6ba7eb19d7}
+
+
+Definition at line 92 of file M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!f\+File\+Name@{f\+File\+Name}}
+\index{f\+File\+Name@{f\+File\+Name}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{f\+File\+Name}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ File\+Server\+Media\+Subsession\+::f\+File\+Name\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classFileServerMediaSubsession_a2b14623e2ab27954312f99621d7b0b4a}
+
+
+Definition at line 39 of file File\+Server\+Media\+Subsession.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!f\+File\+Size@{f\+File\+Size}}
+\index{f\+File\+Size@{f\+File\+Size}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{f\+File\+Size}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int64\+\_\+t File\+Server\+Media\+Subsession\+::f\+File\+Size\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classFileServerMediaSubsession_acb1211712e0a6328f2acad830d898bf6}
+
+
+Definition at line 40 of file File\+Server\+Media\+Subsession.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!f\+Index\+File@{f\+Index\+File}}
+\index{f\+Index\+File@{f\+Index\+File}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{f\+Index\+File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+P\+E\+G2\+Transport\+Stream\+Index\+File}$\ast$ M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession\+::f\+Index\+File\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportFileServerMediaSubsession_a14128ea277a8ab68b32166e255f125f5}
+
+
+Definition at line 91 of file M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!f\+Parent\+Session@{f\+Parent\+Session}}
+\index{f\+Parent\+Session@{f\+Parent\+Session}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{f\+Parent\+Session}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Server\+Media\+Session}$\ast$ Server\+Media\+Subsession\+::f\+Parent\+Session\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classServerMediaSubsession_a32133700ef4b1261a08461710be7b129}
+
+
+Definition at line 190 of file Server\+Media\+Session.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!f\+Port\+Num\+For\+S\+D\+P@{f\+Port\+Num\+For\+S\+D\+P}}
+\index{f\+Port\+Num\+For\+S\+D\+P@{f\+Port\+Num\+For\+S\+D\+P}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{f\+Port\+Num\+For\+S\+D\+P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf port\+Num\+Bits} Server\+Media\+Subsession\+::f\+Port\+Num\+For\+S\+D\+P\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classServerMediaSubsession_a2ed95c69f2b0c15cbcac8ded234bc5d8}
+
+
+Definition at line 192 of file Server\+Media\+Session.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!f\+S\+D\+P\+Lines@{f\+S\+D\+P\+Lines}}
+\index{f\+S\+D\+P\+Lines@{f\+S\+D\+P\+Lines}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{f\+S\+D\+P\+Lines}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ On\+Demand\+Server\+Media\+Subsession\+::f\+S\+D\+P\+Lines\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classOnDemandServerMediaSubsession_afbdba0ca7b4b896c90a61d4e8d1534de}
+
+
+Definition at line 134 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}!f\+Server\+Address\+For\+S\+D\+P@{f\+Server\+Address\+For\+S\+D\+P}}
+\index{f\+Server\+Address\+For\+S\+D\+P@{f\+Server\+Address\+For\+S\+D\+P}!M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession@{M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession}}
+\subsubsection[{f\+Server\+Address\+For\+S\+D\+P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf net\+Address\+Bits} Server\+Media\+Subsession\+::f\+Server\+Address\+For\+S\+D\+P\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classServerMediaSubsession_aa0c81ee2bf8abfa36b67ca11710f39e4}
+
+
+Definition at line 191 of file Server\+Media\+Session.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf M\+P\+E\+G2\+Transport\+File\+Server\+Media\+Subsession.\+hh}\end{DoxyCompactItemize}

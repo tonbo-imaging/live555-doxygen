@@ -1,0 +1,247 @@
+\section{Generic\+Media\+Server\+:\+:Client\+Connection Class Reference}
+\label{classGenericMediaServer_1_1ClientConnection}\index{Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}}
+
+
+{\ttfamily \#include $<$Generic\+Media\+Server.\+hh$>$}
+
+
+
+Inheritance diagram for Generic\+Media\+Server\+:\+:Client\+Connection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classGenericMediaServer_1_1ClientConnection__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Generic\+Media\+Server\+:\+:Client\+Connection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGenericMediaServer_1_1ClientConnection__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Client\+Connection} ({\bf Generic\+Media\+Server} \&our\+Server, int client\+Socket, struct sockaddr\+\_\+in client\+Addr)
+\item 
+virtual {\bf $\sim$\+Client\+Connection} ()
+\item 
+{\bf Usage\+Environment} \& {\bf envir} ()
+\item 
+void {\bf close\+Sockets} ()
+\item 
+void {\bf incoming\+Request\+Handler} ()
+\item 
+virtual void {\bf handle\+Request\+Bytes} (int new\+Bytes\+Read)=0
+\item 
+void {\bf reset\+Request\+Buffer} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf incoming\+Request\+Handler} (void $\ast$, int)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Generic\+Media\+Server} \& {\bf f\+Our\+Server}
+\item 
+int {\bf f\+Our\+Socket}
+\item 
+struct sockaddr\+\_\+in {\bf f\+Client\+Addr}
+\item 
+unsigned char {\bf f\+Request\+Buffer} [{\bf R\+E\+Q\+U\+E\+S\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}]
+\item 
+unsigned char {\bf f\+Response\+Buffer} [{\bf R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}]
+\item 
+unsigned {\bf f\+Request\+Bytes\+Already\+Seen}
+\item 
+unsigned {\bf f\+Request\+Buffer\+Bytes\+Left}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Generic\+Media\+Server}
+\item 
+class {\bf Client\+Session}
+\item 
+class {\bf R\+T\+S\+P\+Server}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 85 of file Generic\+Media\+Server.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}!Client\+Connection@{Client\+Connection}}
+\index{Client\+Connection@{Client\+Connection}!Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}}
+\subsubsection[{Client\+Connection(\+Generic\+Media\+Server \&our\+Server, int client\+Socket, struct sockaddr\+\_\+in client\+Addr)}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+Media\+Server\+::\+Client\+Connection\+::\+Client\+Connection (
+\begin{DoxyParamCaption}
+\item[{{\bf Generic\+Media\+Server} \&}]{our\+Server, }
+\item[{int}]{client\+Socket, }
+\item[{struct sockaddr\+\_\+in}]{client\+Addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientConnection_a36f572407c74a79bb8581a4d6b9f94d7}
+\index{Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}!````~Client\+Connection@{$\sim$\+Client\+Connection}}
+\index{````~Client\+Connection@{$\sim$\+Client\+Connection}!Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}}
+\subsubsection[{$\sim$\+Client\+Connection()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Generic\+Media\+Server\+::\+Client\+Connection\+::$\sim$\+Client\+Connection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classGenericMediaServer_1_1ClientConnection_a3cfa303ee73958acef05e2d74dacbe49}
+
+
+\subsection{Member Function Documentation}
+\index{Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}!close\+Sockets@{close\+Sockets}}
+\index{close\+Sockets@{close\+Sockets}!Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}}
+\subsubsection[{close\+Sockets()}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+Media\+Server\+::\+Client\+Connection\+::close\+Sockets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientConnection_aa24bbdd41272cc597d0e51c21ad51fca}
+\index{Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}!envir@{envir}}
+\index{envir@{envir}!Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}}
+\subsubsection[{envir()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Generic\+Media\+Server\+::\+Client\+Connection\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientConnection_a5f5f7c9a3b383cea4408880b329ec45f}
+
+
+Definition at line 90 of file Generic\+Media\+Server.\+hh.
+
+
+
+References Medium\+::envir(), and f\+Our\+Server.
+
+
+\begin{DoxyCode}
+90 \{ \textcolor{keywordflow}{return} fOurServer.envir(); \}
+\end{DoxyCode}
+\index{Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}!handle\+Request\+Bytes@{handle\+Request\+Bytes}}
+\index{handle\+Request\+Bytes@{handle\+Request\+Bytes}!Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}}
+\subsubsection[{handle\+Request\+Bytes(int new\+Bytes\+Read)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Generic\+Media\+Server\+::\+Client\+Connection\+::handle\+Request\+Bytes (
+\begin{DoxyParamCaption}
+\item[{int}]{new\+Bytes\+Read}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\label{classGenericMediaServer_1_1ClientConnection_a11bd52b42912300396d51703acb6331d}
+
+
+Implemented in {\bf R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection} \doxyref{}{p.}{classRTSPServer_1_1RTSPClientConnection_a4200ef89d07d8db0bb66d0f1fdaa7330}.
+
+\index{Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}!incoming\+Request\+Handler@{incoming\+Request\+Handler}}
+\index{incoming\+Request\+Handler@{incoming\+Request\+Handler}!Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}}
+\subsubsection[{incoming\+Request\+Handler(void $\ast$, int)}]{\setlength{\rightskip}{0pt plus 5cm}static void Generic\+Media\+Server\+::\+Client\+Connection\+::incoming\+Request\+Handler (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{, }
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientConnection_a8973cd88b238a1cad3ee576eec96218e}
+\index{Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}!incoming\+Request\+Handler@{incoming\+Request\+Handler}}
+\index{incoming\+Request\+Handler@{incoming\+Request\+Handler}!Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}}
+\subsubsection[{incoming\+Request\+Handler()}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+Media\+Server\+::\+Client\+Connection\+::incoming\+Request\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientConnection_a701f1fd7571bfca0bbdc213ca8f3ece2}
+\index{Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}!reset\+Request\+Buffer@{reset\+Request\+Buffer}}
+\index{reset\+Request\+Buffer@{reset\+Request\+Buffer}!Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}}
+\subsubsection[{reset\+Request\+Buffer()}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+Media\+Server\+::\+Client\+Connection\+::reset\+Request\+Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientConnection_aec486fb33c60f414423bf11a4e2fdca1}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}!Client\+Session@{Client\+Session}}
+\index{Client\+Session@{Client\+Session}!Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}}
+\subsubsection[{Client\+Session}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Client\+Session}\hspace{0.3cm}{\ttfamily [friend]}}\label{classGenericMediaServer_1_1ClientConnection_ad342ca85dd3eb926b8f8b0b0d9193e3e}
+
+
+Definition at line 100 of file Generic\+Media\+Server.\+hh.
+
+\index{Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}!Generic\+Media\+Server@{Generic\+Media\+Server}}
+\index{Generic\+Media\+Server@{Generic\+Media\+Server}!Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}}
+\subsubsection[{Generic\+Media\+Server}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Generic\+Media\+Server}\hspace{0.3cm}{\ttfamily [friend]}}\label{classGenericMediaServer_1_1ClientConnection_a126ab726581d2a15d95bb3de815ee65c}
+
+
+Definition at line 99 of file Generic\+Media\+Server.\+hh.
+
+\index{Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}!R\+T\+S\+P\+Server@{R\+T\+S\+P\+Server}}
+\index{R\+T\+S\+P\+Server@{R\+T\+S\+P\+Server}!Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}}
+\subsubsection[{R\+T\+S\+P\+Server}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf R\+T\+S\+P\+Server}\hspace{0.3cm}{\ttfamily [friend]}}\label{classGenericMediaServer_1_1ClientConnection_a73161e09d71662ab62de02af14e02a94}
+
+
+Definition at line 101 of file Generic\+Media\+Server.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}!f\+Client\+Addr@{f\+Client\+Addr}}
+\index{f\+Client\+Addr@{f\+Client\+Addr}!Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}}
+\subsubsection[{f\+Client\+Addr}]{\setlength{\rightskip}{0pt plus 5cm}struct sockaddr\+\_\+in Generic\+Media\+Server\+::\+Client\+Connection\+::f\+Client\+Addr\hspace{0.3cm}{\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientConnection_a4580bad00ed80b5e8693d98d8f107f4f}
+
+
+Definition at line 104 of file Generic\+Media\+Server.\+hh.
+
+\index{Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}!f\+Our\+Server@{f\+Our\+Server}}
+\index{f\+Our\+Server@{f\+Our\+Server}!Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}}
+\subsubsection[{f\+Our\+Server}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Generic\+Media\+Server}\& Generic\+Media\+Server\+::\+Client\+Connection\+::f\+Our\+Server\hspace{0.3cm}{\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientConnection_aac70c62bdedea73360cb5a17b620bd66}
+
+
+Definition at line 102 of file Generic\+Media\+Server.\+hh.
+
+
+
+Referenced by envir().
+
+\index{Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}!f\+Our\+Socket@{f\+Our\+Socket}}
+\index{f\+Our\+Socket@{f\+Our\+Socket}!Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}}
+\subsubsection[{f\+Our\+Socket}]{\setlength{\rightskip}{0pt plus 5cm}int Generic\+Media\+Server\+::\+Client\+Connection\+::f\+Our\+Socket\hspace{0.3cm}{\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientConnection_acb7c9a31f78bbebfdf85de30fcc6777a}
+
+
+Definition at line 103 of file Generic\+Media\+Server.\+hh.
+
+\index{Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}!f\+Request\+Buffer@{f\+Request\+Buffer}}
+\index{f\+Request\+Buffer@{f\+Request\+Buffer}!Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}}
+\subsubsection[{f\+Request\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Generic\+Media\+Server\+::\+Client\+Connection\+::f\+Request\+Buffer[{\bf R\+E\+Q\+U\+E\+S\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}]\hspace{0.3cm}{\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientConnection_ab54f42b910ab5764d51261497abbe9c2}
+
+
+Definition at line 105 of file Generic\+Media\+Server.\+hh.
+
+\index{Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}!f\+Request\+Buffer\+Bytes\+Left@{f\+Request\+Buffer\+Bytes\+Left}}
+\index{f\+Request\+Buffer\+Bytes\+Left@{f\+Request\+Buffer\+Bytes\+Left}!Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}}
+\subsubsection[{f\+Request\+Buffer\+Bytes\+Left}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Generic\+Media\+Server\+::\+Client\+Connection\+::f\+Request\+Buffer\+Bytes\+Left\hspace{0.3cm}{\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientConnection_a693ff981dcd8f8a3709acc934f58f404}
+
+
+Definition at line 107 of file Generic\+Media\+Server.\+hh.
+
+\index{Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}!f\+Request\+Bytes\+Already\+Seen@{f\+Request\+Bytes\+Already\+Seen}}
+\index{f\+Request\+Bytes\+Already\+Seen@{f\+Request\+Bytes\+Already\+Seen}!Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}}
+\subsubsection[{f\+Request\+Bytes\+Already\+Seen}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Generic\+Media\+Server\+::\+Client\+Connection\+::f\+Request\+Bytes\+Already\+Seen\hspace{0.3cm}{\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientConnection_a57bddbe55b434dbfbb091df09cef4040}
+
+
+Definition at line 107 of file Generic\+Media\+Server.\+hh.
+
+\index{Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}!f\+Response\+Buffer@{f\+Response\+Buffer}}
+\index{f\+Response\+Buffer@{f\+Response\+Buffer}!Generic\+Media\+Server\+::\+Client\+Connection@{Generic\+Media\+Server\+::\+Client\+Connection}}
+\subsubsection[{f\+Response\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Generic\+Media\+Server\+::\+Client\+Connection\+::f\+Response\+Buffer[{\bf R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}]\hspace{0.3cm}{\ttfamily [protected]}}\label{classGenericMediaServer_1_1ClientConnection_adb91e088daddbed8f603ce9a6eebcb6d}
+
+
+Definition at line 106 of file Generic\+Media\+Server.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf Generic\+Media\+Server.\+hh}\end{DoxyCompactItemize}

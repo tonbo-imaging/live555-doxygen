@@ -1,0 +1,787 @@
+\section{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source Class Reference}
+\label{classMPEG2TransportStreamFromESSource}\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+
+
+{\ttfamily \#include $<$M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source.\+hh$>$}
+
+
+
+Inheritance diagram for M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classMPEG2TransportStreamFromESSource__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{classMPEG2TransportStreamFromESSource__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void( {\bf after\+Getting\+Func}) (void $\ast$client\+Data, unsigned frame\+Size, unsigned num\+Truncated\+Bytes, struct timeval presentation\+Time, unsigned duration\+In\+Microseconds)
+\item 
+typedef void( {\bf on\+Close\+Func}) (void $\ast$client\+Data)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf add\+New\+Video\+Source} ({\bf Framed\+Source} $\ast$input\+Source, int mpeg\+Version, int16\+\_\+t P\+I\+D=-\/1)
+\item 
+void {\bf add\+New\+Audio\+Source} ({\bf Framed\+Source} $\ast$input\+Source, int mpeg\+Version, int16\+\_\+t P\+I\+D=-\/1)
+\item 
+{\bf Boolean} {\bf can\+Deliver\+New\+Frame\+Immediately} () const 
+\item 
+void {\bf get\+Next\+Frame} (unsigned char $\ast$to, unsigned max\+Size, {\bf after\+Getting\+Func} $\ast${\bf after\+Getting\+Func}, void $\ast$after\+Getting\+Client\+Data, {\bf on\+Close\+Func} $\ast${\bf on\+Close\+Func}, void $\ast$on\+Close\+Client\+Data)
+\item 
+void {\bf handle\+Closure} ()
+\item 
+void {\bf stop\+Getting\+Frames} ()
+\item 
+virtual unsigned {\bf max\+Frame\+Size} () const 
+\item 
+{\bf Boolean} {\bf is\+Currently\+Awaiting\+Data} () const 
+\item 
+virtual void {\bf get\+Attributes} () const 
+\item 
+virtual char const $\ast$ {\bf M\+I\+M\+Etype} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+P\+Source} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+M\+P\+E\+G1or2\+Video\+Stream\+Framer} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+M\+P\+E\+G4\+Video\+Stream\+Framer} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+H264\+Video\+Stream\+Framer} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+H265\+Video\+Stream\+Framer} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+D\+V\+Video\+Stream\+Framer} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+J\+P\+E\+G\+Video\+Source} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+A\+M\+R\+Audio\+Source} () const 
+\item 
+{\bf Usage\+Environment} \& {\bf envir} () const 
+\item 
+char const $\ast$ {\bf name} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Sink} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+C\+P\+Instance} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Client} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Server} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Media\+Session} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Server\+Media\+Session} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source} $\ast$ {\bf create\+New} ({\bf Usage\+Environment} \&env)
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$source\+Name, {\bf Framed\+Source} $\ast$\&result\+Source)
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$source\+Name, {\bf Media\+Source} $\ast$\&result\+Source)
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name, {\bf Medium} $\ast$\&result\+Medium)
+\item 
+static void {\bf handle\+Closure} (void $\ast$client\+Data)
+\item 
+static void {\bf after\+Getting} ({\bf Framed\+Source} $\ast$source)
+\item 
+static void {\bf close} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name)
+\item 
+static void {\bf close} ({\bf Medium} $\ast$medium)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned {\bf max\+Input\+E\+S\+Frame\+Size}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source} ({\bf Usage\+Environment} \&env)
+\item 
+virtual {\bf $\sim$\+M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source} ()
+\item 
+void {\bf add\+New\+Input\+Source} ({\bf Framed\+Source} $\ast$input\+Source, u\+\_\+int8\+\_\+t stream\+Id, int mpeg\+Version, int16\+\_\+t P\+I\+D=-\/1)
+\item 
+void {\bf handle\+New\+Buffer} (unsigned char $\ast$buffer, unsigned buffer\+Size, int mpeg\+Version, {\bf M\+P\+E\+G1or2\+Demux\+::\+S\+C\+R} scr, int16\+\_\+t P\+I\+D=-\/1)
+\item 
+{\bf Task\+Token} \& {\bf next\+Task} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Boolean} {\bf f\+Have\+Video\+Streams}
+\item 
+unsigned char $\ast$ {\bf f\+To}
+\item 
+unsigned {\bf f\+Max\+Size}
+\item 
+unsigned {\bf f\+Frame\+Size}
+\item 
+unsigned {\bf f\+Num\+Truncated\+Bytes}
+\item 
+struct timeval {\bf f\+Presentation\+Time}
+\item 
+unsigned {\bf f\+Duration\+In\+Microseconds}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf do\+Stop\+Getting\+Frames} ()
+\item 
+virtual void {\bf await\+New\+Buffer} (unsigned char $\ast$old\+Buffer)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Input\+E\+S\+Source\+Record} $\ast$ {\bf f\+Input\+Sources}
+\item 
+unsigned {\bf f\+Video\+Source\+Counter}
+\item 
+unsigned {\bf f\+Audio\+Source\+Counter}
+\item 
+{\bf Boolean} {\bf f\+Awaiting\+Background\+Delivery}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Input\+E\+S\+Source\+Record}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 29 of file M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source.\+hh.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!after\+Getting\+Func@{after\+Getting\+Func}}
+\index{after\+Getting\+Func@{after\+Getting\+Func}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{after\+Getting\+Func}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( Framed\+Source\+::after\+Getting\+Func) (void $\ast$client\+Data, unsigned frame\+Size, unsigned num\+Truncated\+Bytes, struct timeval presentation\+Time, unsigned duration\+In\+Microseconds)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classFramedSource_a5deb406351df0ac499a75f7a8aea8d45}
+
+
+Definition at line 36 of file Framed\+Source.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!on\+Close\+Func@{on\+Close\+Func}}
+\index{on\+Close\+Func@{on\+Close\+Func}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{on\+Close\+Func}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( Framed\+Source\+::on\+Close\+Func) (void $\ast$client\+Data)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classFramedSource_adecd580b0fdf339ca1ee6447fddfa1e7}
+
+
+Definition at line 40 of file Framed\+Source.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source(\+Usage\+Environment \&env)}]{\setlength{\rightskip}{0pt plus 5cm}M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source\+::\+M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classMPEG2TransportStreamFromESSource_ab95fcb7eaf1cc1b5f51ebfc43d3828d1}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!````~M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{$\sim$\+M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\index{````~M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{$\sim$\+M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{$\sim$\+M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source()}]{\setlength{\rightskip}{0pt plus 5cm}virtual M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source\+::$\sim$\+M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classMPEG2TransportStreamFromESSource_a9c7a96961bd8d9bfd97d74f8d320e5a2}
+
+
+\subsection{Member Function Documentation}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!add\+New\+Audio\+Source@{add\+New\+Audio\+Source}}
+\index{add\+New\+Audio\+Source@{add\+New\+Audio\+Source}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{add\+New\+Audio\+Source(\+Framed\+Source $\ast$input\+Source, int mpeg\+Version, int16\+\_\+t P\+I\+D=-\/1)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source\+::add\+New\+Audio\+Source (
+\begin{DoxyParamCaption}
+\item[{{\bf Framed\+Source} $\ast$}]{input\+Source, }
+\item[{int}]{mpeg\+Version, }
+\item[{int16\+\_\+t}]{P\+I\+D = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}\label{classMPEG2TransportStreamFromESSource_ad3dfcf18ee3b5f4402fe4c014a940b54}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!add\+New\+Input\+Source@{add\+New\+Input\+Source}}
+\index{add\+New\+Input\+Source@{add\+New\+Input\+Source}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{add\+New\+Input\+Source(\+Framed\+Source $\ast$input\+Source, u\+\_\+int8\+\_\+t stream\+Id, int mpeg\+Version, int16\+\_\+t P\+I\+D=-\/1)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source\+::add\+New\+Input\+Source (
+\begin{DoxyParamCaption}
+\item[{{\bf Framed\+Source} $\ast$}]{input\+Source, }
+\item[{u\+\_\+int8\+\_\+t}]{stream\+Id, }
+\item[{int}]{mpeg\+Version, }
+\item[{int16\+\_\+t}]{P\+I\+D = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classMPEG2TransportStreamFromESSource_a43eea62d53819b4df9cb749be95b06b8}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!add\+New\+Video\+Source@{add\+New\+Video\+Source}}
+\index{add\+New\+Video\+Source@{add\+New\+Video\+Source}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{add\+New\+Video\+Source(\+Framed\+Source $\ast$input\+Source, int mpeg\+Version, int16\+\_\+t P\+I\+D=-\/1)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source\+::add\+New\+Video\+Source (
+\begin{DoxyParamCaption}
+\item[{{\bf Framed\+Source} $\ast$}]{input\+Source, }
+\item[{int}]{mpeg\+Version, }
+\item[{int16\+\_\+t}]{P\+I\+D = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}\label{classMPEG2TransportStreamFromESSource_acbe647687ade63147a96670ccaf43109}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!after\+Getting@{after\+Getting}}
+\index{after\+Getting@{after\+Getting}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{after\+Getting(\+Framed\+Source $\ast$source)}]{\setlength{\rightskip}{0pt plus 5cm}static void Framed\+Source\+::after\+Getting (
+\begin{DoxyParamCaption}
+\item[{{\bf Framed\+Source} $\ast$}]{source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classFramedSource_a668a6056ffa7f92d92a6770bcb29c8e5}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!await\+New\+Buffer@{await\+New\+Buffer}}
+\index{await\+New\+Buffer@{await\+New\+Buffer}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{await\+New\+Buffer(unsigned char $\ast$old\+Buffer)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source\+::await\+New\+Buffer (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{old\+Buffer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classMPEG2TransportStreamFromESSource_af51055ac6af08caa2846a4901915320a}
+
+
+Implements {\bf M\+P\+E\+G2\+Transport\+Stream\+Multiplexor} \doxyref{}{p.}{classMPEG2TransportStreamMultiplexor_aa2b37b7298b565d6e3a20b6dc6159352}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!can\+Deliver\+New\+Frame\+Immediately@{can\+Deliver\+New\+Frame\+Immediately}}
+\index{can\+Deliver\+New\+Frame\+Immediately@{can\+Deliver\+New\+Frame\+Immediately}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{can\+Deliver\+New\+Frame\+Immediately() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P\+E\+G2\+Transport\+Stream\+Multiplexor\+::can\+Deliver\+New\+Frame\+Immediately (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMPEG2TransportStreamMultiplexor_a99a4fe7927389de0b66ff7d253b5c70e}
+
+
+Definition at line 36 of file M\+P\+E\+G2\+Transport\+Stream\+Multiplexor.\+hh.
+
+
+
+References M\+P\+E\+G2\+Transport\+Stream\+Multiplexor\+::f\+Input\+Buffer\+Bytes\+Used, and M\+P\+E\+G2\+Transport\+Stream\+Multiplexor\+::f\+Input\+Buffer\+Size.
+
+
+\begin{DoxyCode}
+36 \{ \textcolor{keywordflow}{return} fInputBufferBytesUsed < fInputBufferSize; \}
+\end{DoxyCode}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!close@{close}}
+\index{close@{close}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{close(\+Usage\+Environment \&env, char const $\ast$medium\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a9968c7ce6eedb848f2cc095730c01b17}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!close@{close}}
+\index{close@{close}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{close(\+Medium $\ast$medium)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_aee50624faf6909b3944dd803fd485467}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!create\+New@{create\+New}}
+\index{create\+New@{create\+New}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{create\+New(\+Usage\+Environment \&env)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}$\ast$ M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source\+::create\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classMPEG2TransportStreamFromESSource_ae80485480aa251a668acccd6963891a6}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!do\+Stop\+Getting\+Frames@{do\+Stop\+Getting\+Frames}}
+\index{do\+Stop\+Getting\+Frames@{do\+Stop\+Getting\+Frames}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{do\+Stop\+Getting\+Frames()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source\+::do\+Stop\+Getting\+Frames (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classMPEG2TransportStreamFromESSource_aceda1a9c820b2cf0e067fe779e8891e2}
+
+
+Reimplemented from {\bf Framed\+Source} \doxyref{}{p.}{classFramedSource_a09551ecb5012dd528a0869c58e584a4a}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!envir@{envir}}
+\index{envir@{envir}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{envir() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Medium\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a32f7ecdd95f2b8400e1a26a5009e3b8e}
+
+
+Definition at line 59 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Environ.
+
+
+
+Referenced by Media\+Subsession\+::env(), R\+T\+P\+Interface\+::envir(), Generic\+Media\+Server\+::\+Client\+Connection\+::envir(), and Generic\+Media\+Server\+::\+Client\+Session\+::envir().
+
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} fEnviron;\}
+\end{DoxyCode}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!get\+Attributes@{get\+Attributes}}
+\index{get\+Attributes@{get\+Attributes}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{get\+Attributes() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual void Media\+Source\+::get\+Attributes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMediaSource_aa3b32d43f5bd650b66eb9aa20e416c04}
+
+
+Reimplemented in {\bf R\+T\+P\+Source} \doxyref{}{p.}{classRTPSource_a7e2c20868be3184137f54d8d7f807ede}, {\bf M\+P3\+File\+Source} \doxyref{}{p.}{classMP3FileSource_a4814908f6f91a18ebc0270407e281efd}, {\bf Framed\+Filter} \doxyref{}{p.}{classFramedFilter_a7e5f7a9224d3b0776cfe9bba0df28d51}, and {\bf M\+P3\+A\+D\+U\+Transcoder} \doxyref{}{p.}{classMP3ADUTranscoder_a039b8d9b85851dcac49d08b9a35c0093}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!get\+Next\+Frame@{get\+Next\+Frame}}
+\index{get\+Next\+Frame@{get\+Next\+Frame}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{get\+Next\+Frame(unsigned char $\ast$to, unsigned max\+Size, after\+Getting\+Func $\ast$after\+Getting\+Func, void $\ast$after\+Getting\+Client\+Data, on\+Close\+Func $\ast$on\+Close\+Func, void $\ast$on\+Close\+Client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}void Framed\+Source\+::get\+Next\+Frame (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{to, }
+\item[{unsigned}]{max\+Size, }
+\item[{{\bf after\+Getting\+Func} $\ast$}]{after\+Getting\+Func, }
+\item[{void $\ast$}]{after\+Getting\+Client\+Data, }
+\item[{{\bf on\+Close\+Func} $\ast$}]{on\+Close\+Func, }
+\item[{void $\ast$}]{on\+Close\+Client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classFramedSource_a22127204d0df6adfddbb33e299886039}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!handle\+Closure@{handle\+Closure}}
+\index{handle\+Closure@{handle\+Closure}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{handle\+Closure(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void Framed\+Source\+::handle\+Closure (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classFramedSource_ae26308292c2872c39ddb063ae5044fc4}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!handle\+Closure@{handle\+Closure}}
+\index{handle\+Closure@{handle\+Closure}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{handle\+Closure()}]{\setlength{\rightskip}{0pt plus 5cm}void Framed\+Source\+::handle\+Closure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classFramedSource_ae41e541e11d067120233904df95b0caf}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!handle\+New\+Buffer@{handle\+New\+Buffer}}
+\index{handle\+New\+Buffer@{handle\+New\+Buffer}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{handle\+New\+Buffer(unsigned char $\ast$buffer, unsigned buffer\+Size, int mpeg\+Version, M\+P\+E\+G1or2\+Demux\+::\+S\+C\+R scr, int16\+\_\+t P\+I\+D=-\/1)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P\+E\+G2\+Transport\+Stream\+Multiplexor\+::handle\+New\+Buffer (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{unsigned}]{buffer\+Size, }
+\item[{int}]{mpeg\+Version, }
+\item[{{\bf M\+P\+E\+G1or2\+Demux\+::\+S\+C\+R}}]{scr, }
+\item[{int16\+\_\+t}]{P\+I\+D = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMPEG2TransportStreamMultiplexor_aa1836bee15dd35fa693e851dc14d838d}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!is\+A\+M\+R\+Audio\+Source@{is\+A\+M\+R\+Audio\+Source}}
+\index{is\+A\+M\+R\+Audio\+Source@{is\+A\+M\+R\+Audio\+Source}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{is\+A\+M\+R\+Audio\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Media\+Source\+::is\+A\+M\+R\+Audio\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMediaSource_ae1addd9e8ec40226c93a1f4dafea05c3}
+
+
+Reimplemented in {\bf A\+M\+R\+Audio\+Source} \doxyref{}{p.}{classAMRAudioSource_a89be51eb28babf74f7554a2bc01400bc}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!is\+Currently\+Awaiting\+Data@{is\+Currently\+Awaiting\+Data}}
+\index{is\+Currently\+Awaiting\+Data@{is\+Currently\+Awaiting\+Data}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{is\+Currently\+Awaiting\+Data() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Framed\+Source\+::is\+Currently\+Awaiting\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classFramedSource_a1f27f893ffaa38c93b98bca9d461e09a}
+
+
+Definition at line 61 of file Framed\+Source.\+hh.
+
+
+
+References Framed\+Source\+::f\+Is\+Currently\+Awaiting\+Data.
+
+
+\begin{DoxyCode}
+61 \{\textcolor{keywordflow}{return} fIsCurrentlyAwaitingData;\}
+\end{DoxyCode}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!is\+D\+V\+Video\+Stream\+Framer@{is\+D\+V\+Video\+Stream\+Framer}}
+\index{is\+D\+V\+Video\+Stream\+Framer@{is\+D\+V\+Video\+Stream\+Framer}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{is\+D\+V\+Video\+Stream\+Framer() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Media\+Source\+::is\+D\+V\+Video\+Stream\+Framer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMediaSource_a2267cf32e76db762fd83ad9f164c9006}
+
+
+Reimplemented in {\bf D\+V\+Video\+Stream\+Framer} \doxyref{}{p.}{classDVVideoStreamFramer_a184ea2a340497d9d2d701d48bb0b3dad}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!is\+H264\+Video\+Stream\+Framer@{is\+H264\+Video\+Stream\+Framer}}
+\index{is\+H264\+Video\+Stream\+Framer@{is\+H264\+Video\+Stream\+Framer}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{is\+H264\+Video\+Stream\+Framer() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Media\+Source\+::is\+H264\+Video\+Stream\+Framer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMediaSource_abf8ebcacb41538602f23338375a3dd6c}
+
+
+Reimplemented in {\bf H264\+Video\+Stream\+Discrete\+Framer} \doxyref{}{p.}{classH264VideoStreamDiscreteFramer_a69387839556a54a147dcef9b7a2f7a66}, and {\bf H264\+Video\+Stream\+Framer} \doxyref{}{p.}{classH264VideoStreamFramer_a1c40330d753df8abd9a2b182f764205e}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!is\+H265\+Video\+Stream\+Framer@{is\+H265\+Video\+Stream\+Framer}}
+\index{is\+H265\+Video\+Stream\+Framer@{is\+H265\+Video\+Stream\+Framer}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{is\+H265\+Video\+Stream\+Framer() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Media\+Source\+::is\+H265\+Video\+Stream\+Framer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMediaSource_accd0fafa28aceec23284636b83534d78}
+
+
+Reimplemented in {\bf H265\+Video\+Stream\+Discrete\+Framer} \doxyref{}{p.}{classH265VideoStreamDiscreteFramer_ad211e243862dc97352bc1997fcca738b}, and {\bf H265\+Video\+Stream\+Framer} \doxyref{}{p.}{classH265VideoStreamFramer_aad572258acf21b2a99df8378fa72e3dc}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!is\+J\+P\+E\+G\+Video\+Source@{is\+J\+P\+E\+G\+Video\+Source}}
+\index{is\+J\+P\+E\+G\+Video\+Source@{is\+J\+P\+E\+G\+Video\+Source}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{is\+J\+P\+E\+G\+Video\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Media\+Source\+::is\+J\+P\+E\+G\+Video\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMediaSource_afc1ad115ddd2910e1188727ad7b33e9e}
+
+
+Reimplemented in {\bf J\+P\+E\+G\+Video\+Source} \doxyref{}{p.}{classJPEGVideoSource_ae5553fc446f9c786d4b779f731c86bc8}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!is\+Media\+Session@{is\+Media\+Session}}
+\index{is\+Media\+Session@{is\+Media\+Session}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{is\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ac5858707c4e7a15bd59d476cf48289d6}
+
+
+Reimplemented in {\bf Media\+Session} \doxyref{}{p.}{classMediaSession_a3b2a06a722374ab4477ac05a2ce28829}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!is\+M\+P\+E\+G1or2\+Video\+Stream\+Framer@{is\+M\+P\+E\+G1or2\+Video\+Stream\+Framer}}
+\index{is\+M\+P\+E\+G1or2\+Video\+Stream\+Framer@{is\+M\+P\+E\+G1or2\+Video\+Stream\+Framer}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{is\+M\+P\+E\+G1or2\+Video\+Stream\+Framer() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Media\+Source\+::is\+M\+P\+E\+G1or2\+Video\+Stream\+Framer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMediaSource_a5aec72777d371cfb63a559b0801145bc}
+
+
+Reimplemented in {\bf M\+P\+E\+G1or2\+Video\+Stream\+Framer} \doxyref{}{p.}{classMPEG1or2VideoStreamFramer_ae87a81f129f69cc95a13a24e4d49339d}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!is\+M\+P\+E\+G4\+Video\+Stream\+Framer@{is\+M\+P\+E\+G4\+Video\+Stream\+Framer}}
+\index{is\+M\+P\+E\+G4\+Video\+Stream\+Framer@{is\+M\+P\+E\+G4\+Video\+Stream\+Framer}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{is\+M\+P\+E\+G4\+Video\+Stream\+Framer() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Media\+Source\+::is\+M\+P\+E\+G4\+Video\+Stream\+Framer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMediaSource_aed455478be108310034159800d2c8e34}
+
+
+Reimplemented in {\bf M\+P\+E\+G4\+Video\+Stream\+Framer} \doxyref{}{p.}{classMPEG4VideoStreamFramer_afab47ecafe47cdf06ee5d6aab8f4a395}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}}
+\index{is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{is\+R\+T\+C\+P\+Instance() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ab5f9f20324698f89a35513d596b2e7be}
+
+
+Reimplemented in {\bf R\+T\+C\+P\+Instance} \doxyref{}{p.}{classRTCPInstance_a844292518419e1dbf24170812fd1e4b5}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!is\+R\+T\+P\+Source@{is\+R\+T\+P\+Source}}
+\index{is\+R\+T\+P\+Source@{is\+R\+T\+P\+Source}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{is\+R\+T\+P\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Media\+Source\+::is\+R\+T\+P\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMediaSource_a62c84d220cbc02aa7d1ef2c5acf0e579}
+
+
+Reimplemented in {\bf R\+T\+P\+Source} \doxyref{}{p.}{classRTPSource_ae49c2cdad281ab432832107e67e2d44b}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}}
+\index{is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{is\+R\+T\+S\+P\+Client() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aed1c1816867f910ce8c98350686ac038}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Client} \doxyref{}{p.}{classRTSPClient_add07b3a68432b546998080b24380e7e8}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}}
+\index{is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{is\+R\+T\+S\+P\+Server() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a346e111b31bfde4b7f4ed593e0b97fd3}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Server} \doxyref{}{p.}{classRTSPServer_a45f9fc5ddd8f214169358493215a064a}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!is\+Server\+Media\+Session@{is\+Server\+Media\+Session}}
+\index{is\+Server\+Media\+Session@{is\+Server\+Media\+Session}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{is\+Server\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aa9fd26c4b954ffba5f79925ecd0283a0}
+
+
+Reimplemented in {\bf Server\+Media\+Session} \doxyref{}{p.}{classServerMediaSession_a34b59e04644b6f0841ea5af99dbf32f6}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!is\+Sink@{is\+Sink}}
+\index{is\+Sink@{is\+Sink}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{is\+Sink() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a23d49bf466482784b9d4378490d17b5f}
+
+
+Reimplemented in {\bf Media\+Sink} \doxyref{}{p.}{classMediaSink_aa8649dcdf21d5005f9ec319f898f91b6}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$source\+Name, Media\+Source $\ast$\&result\+Source)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Media\+Source\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{source\+Name, }
+\item[{{\bf Media\+Source} $\ast$\&}]{result\+Source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMediaSource_a33646d93c5d639bee4060a06baf5a4f9}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$source\+Name, Framed\+Source $\ast$\&result\+Source)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Framed\+Source\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{source\+Name, }
+\item[{{\bf Framed\+Source} $\ast$\&}]{result\+Source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classFramedSource_a047cbd1e3fd7c228a40b667750b58f58}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$medium\+Name, Medium $\ast$\&result\+Medium)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Medium\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name, }
+\item[{{\bf Medium} $\ast$\&}]{result\+Medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a418c860c1e0ef2766ee0d0f64b346291}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!max\+Frame\+Size@{max\+Frame\+Size}}
+\index{max\+Frame\+Size@{max\+Frame\+Size}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{max\+Frame\+Size() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned Framed\+Source\+::max\+Frame\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classFramedSource_a136d5b87f32f06eb62a65b7fd8005448}
+
+
+Reimplemented in {\bf M\+P\+E\+G1or2\+Demuxed\+Elementary\+Stream} \doxyref{}{p.}{classMPEG1or2DemuxedElementaryStream_aaa7a3457b84e380bb22e5e45fd8394c1}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!M\+I\+M\+Etype@{M\+I\+M\+Etype}}
+\index{M\+I\+M\+Etype@{M\+I\+M\+Etype}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{M\+I\+M\+Etype() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual char const$\ast$ Media\+Source\+::\+M\+I\+M\+Etype (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMediaSource_ad7ab526a83f12ff2bd109b399df92273}
+
+
+Reimplemented in {\bf M\+P3\+From\+A\+D\+U\+Source} \doxyref{}{p.}{classMP3FromADUSource_ad3342ab41dc3b1f86110282804449b92}, {\bf Quick\+Time\+Generic\+R\+T\+P\+Source} \doxyref{}{p.}{classQuickTimeGenericRTPSource_a7542ba24f365f8d974ac5d35c144328b}, {\bf M\+P\+E\+G4\+Generic\+R\+T\+P\+Source} \doxyref{}{p.}{classMPEG4GenericRTPSource_a614d656c4df280610b5c192accfec938}, {\bf Simple\+R\+T\+P\+Source} \doxyref{}{p.}{classSimpleRTPSource_a835522d7f48a2759e45462da5d22141b}, {\bf H263plus\+Video\+R\+T\+P\+Source} \doxyref{}{p.}{classH263plusVideoRTPSource_a8b32507a27530b80c25c0d228bb41c04}, {\bf J\+P\+E\+G\+Video\+R\+T\+P\+Source} \doxyref{}{p.}{classJPEGVideoRTPSource_a27f2929384f92e5c914ee5988f5146cd}, {\bf M\+P3\+File\+Source} \doxyref{}{p.}{classMP3FileSource_ab4f5de89ef0d7533601f59675a916d86}, {\bf H265\+Video\+R\+T\+P\+Source} \doxyref{}{p.}{classH265VideoRTPSource_ace7a529651ea801899342b6c4bb7156e}, {\bf M\+P\+E\+G4\+L\+A\+T\+M\+Audio\+R\+T\+P\+Source} \doxyref{}{p.}{classMPEG4LATMAudioRTPSource_ae3ce256f18ac304b771f89082c9c2fff}, {\bf A\+D\+U\+From\+M\+P3\+Source} \doxyref{}{p.}{classADUFromMP3Source_a68ac61f92876af796c6d503d416b1c33}, {\bf H261\+Video\+R\+T\+P\+Source} \doxyref{}{p.}{classH261VideoRTPSource_aaaf8a029b4385ab41143730dd425281c}, {\bf M\+P\+E\+G1or2\+Video\+R\+T\+P\+Source} \doxyref{}{p.}{classMPEG1or2VideoRTPSource_a987148ab5a14453c0641f645f1b45bdb}, {\bf Vorbis\+Audio\+R\+T\+P\+Source} \doxyref{}{p.}{classVorbisAudioRTPSource_a0a435e501954877e3e2b3900e5ffd4bf}, {\bf A\+C3\+Audio\+R\+T\+P\+Source} \doxyref{}{p.}{classAC3AudioRTPSource_a1629d9ea4cfcceb824eebe7abd884dd2}, {\bf D\+V\+Video\+R\+T\+P\+Source} \doxyref{}{p.}{classDVVideoRTPSource_a5ed0c208b34d85b16adc3e17c427465a}, {\bf M\+P\+E\+G1or2\+Audio\+R\+T\+P\+Source} \doxyref{}{p.}{classMPEG1or2AudioRTPSource_ad45a31603a76de4977fee976989630f3}, {\bf M\+P\+E\+G4\+E\+S\+Video\+R\+T\+P\+Source} \doxyref{}{p.}{classMPEG4ESVideoRTPSource_a7e084af84fededf16c1ab35c01ffc340}, {\bf H264\+Video\+R\+T\+P\+Source} \doxyref{}{p.}{classH264VideoRTPSource_a6932e4e02ecbb86ea40ecd891c7d7590}, {\bf Theora\+Video\+R\+T\+P\+Source} \doxyref{}{p.}{classTheoraVideoRTPSource_aa182b9dc0c6bd4cd0e000baad0cac197}, {\bf V\+P8\+Video\+R\+T\+P\+Source} \doxyref{}{p.}{classVP8VideoRTPSource_a75ed552f069aa112ed6e66e3882dab58}, {\bf V\+P9\+Video\+R\+T\+P\+Source} \doxyref{}{p.}{classVP9VideoRTPSource_a782b07ecff9fe0fd3fd6612f81f5023d}, {\bf M\+P3\+A\+D\+U\+R\+T\+P\+Source} \doxyref{}{p.}{classMP3ADURTPSource_a920dfef038438e2427cecfe1a4b43703}, {\bf M\+P\+E\+G1or2\+Demuxed\+Elementary\+Stream} \doxyref{}{p.}{classMPEG1or2DemuxedElementaryStream_a1a9f098a4952c55bdfc462d8dff6b0c1}, {\bf Framed\+Filter} \doxyref{}{p.}{classFramedFilter_a087230879e92f61c6a016d74da4bccfd}, {\bf A\+M\+R\+Audio\+Source} \doxyref{}{p.}{classAMRAudioSource_af892da07a5c30c93668f098fa6b33803}, {\bf Matroska\+Demuxed\+Track} \doxyref{}{p.}{classMatroskaDemuxedTrack_a0bd82afa4032f4cad1c00e54858bf947}, and {\bf Ogg\+Demuxed\+Track} \doxyref{}{p.}{classOggDemuxedTrack_a68e866b8cbdacf373f8b00493f290760}.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!name@{name}}
+\index{name@{name}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Medium\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a575649802dc781c0e59e097a3870fcdb}
+
+
+Definition at line 61 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Medium\+Name.
+
+
+\begin{DoxyCode}
+61 \{\textcolor{keywordflow}{return} fMediumName;\}
+\end{DoxyCode}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{next\+Task()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token}\& Medium\+::next\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMedium_a5c8788adec90be1a584393a5bf11a5c9}
+
+
+Definition at line 77 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Next\+Task.
+
+
+\begin{DoxyCode}
+77                         \{
+78         \textcolor{keywordflow}{return} fNextTask;
+79   \}
+\end{DoxyCode}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!stop\+Getting\+Frames@{stop\+Getting\+Frames}}
+\index{stop\+Getting\+Frames@{stop\+Getting\+Frames}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{stop\+Getting\+Frames()}]{\setlength{\rightskip}{0pt plus 5cm}void Framed\+Source\+::stop\+Getting\+Frames (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classFramedSource_a9209663e36860a038904ddfedb7abfd8}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!Input\+E\+S\+Source\+Record@{Input\+E\+S\+Source\+Record}}
+\index{Input\+E\+S\+Source\+Record@{Input\+E\+S\+Source\+Record}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{Input\+E\+S\+Source\+Record}]{\setlength{\rightskip}{0pt plus 5cm}friend class Input\+E\+S\+Source\+Record\hspace{0.3cm}{\ttfamily [friend]}}\label{classMPEG2TransportStreamFromESSource_adcf3b749f5e7696888ea1319bd58475f}
+
+
+Definition at line 57 of file M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!counter@{counter}}
+\index{counter@{counter}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{counter}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P\+E\+G2\+Transport\+Stream\+Multiplexor\+::counter\hspace{0.3cm}{\ttfamily [inherited]}}\label{classMPEG2TransportStreamMultiplexor_ad51ba7cb23114ec02fc4a64edb9d0a97}
+
+
+Definition at line 77 of file M\+P\+E\+G2\+Transport\+Stream\+Multiplexor.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!f\+Audio\+Source\+Counter@{f\+Audio\+Source\+Counter}}
+\index{f\+Audio\+Source\+Counter@{f\+Audio\+Source\+Counter}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{f\+Audio\+Source\+Counter}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source\+::f\+Audio\+Source\+Counter\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamFromESSource_aafe7e642d565e9200f219dff4ac9b5c3}
+
+
+Definition at line 59 of file M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!f\+Awaiting\+Background\+Delivery@{f\+Awaiting\+Background\+Delivery}}
+\index{f\+Awaiting\+Background\+Delivery@{f\+Awaiting\+Background\+Delivery}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{f\+Awaiting\+Background\+Delivery}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source\+::f\+Awaiting\+Background\+Delivery\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamFromESSource_aa7d3ced12808579e2af21733de68a659}
+
+
+Definition at line 60 of file M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!f\+Duration\+In\+Microseconds@{f\+Duration\+In\+Microseconds}}
+\index{f\+Duration\+In\+Microseconds@{f\+Duration\+In\+Microseconds}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{f\+Duration\+In\+Microseconds}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Framed\+Source\+::f\+Duration\+In\+Microseconds\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classFramedSource_a5928344a57d8ffacd21ed7243b6f7f26}
+
+
+Definition at line 80 of file Framed\+Source.\+hh.
+
+
+
+Referenced by Ogg\+Demuxed\+Track\+::duration\+In\+Microseconds(), and Matroska\+Demuxed\+Track\+::duration\+In\+Microseconds().
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!f\+Frame\+Size@{f\+Frame\+Size}}
+\index{f\+Frame\+Size@{f\+Frame\+Size}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{f\+Frame\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Framed\+Source\+::f\+Frame\+Size\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classFramedSource_a2871eb7dbf64aac933e30e1f39eb80e5}
+
+
+Definition at line 77 of file Framed\+Source.\+hh.
+
+
+
+Referenced by Ogg\+Demuxed\+Track\+::frame\+Size(), and Matroska\+Demuxed\+Track\+::frame\+Size().
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!f\+Have\+Video\+Streams@{f\+Have\+Video\+Streams}}
+\index{f\+Have\+Video\+Streams@{f\+Have\+Video\+Streams}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{f\+Have\+Video\+Streams}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P\+E\+G2\+Transport\+Stream\+Multiplexor\+::f\+Have\+Video\+Streams\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMPEG2TransportStreamMultiplexor_a108e9cf33d20094b9af0f8651dae916d}
+
+
+Definition at line 69 of file M\+P\+E\+G2\+Transport\+Stream\+Multiplexor.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!f\+Input\+Sources@{f\+Input\+Sources}}
+\index{f\+Input\+Sources@{f\+Input\+Sources}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{f\+Input\+Sources}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Input\+E\+S\+Source\+Record}$\ast$ M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source\+::f\+Input\+Sources\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamFromESSource_a368509d0799cd9a6e8f444e278eb32f5}
+
+
+Definition at line 58 of file M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!f\+Max\+Size@{f\+Max\+Size}}
+\index{f\+Max\+Size@{f\+Max\+Size}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{f\+Max\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Framed\+Source\+::f\+Max\+Size\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classFramedSource_a7f4137643c61539e313e3a92085efc08}
+
+
+Definition at line 76 of file Framed\+Source.\+hh.
+
+
+
+Referenced by Ogg\+Demuxed\+Track\+::max\+Size(), and Matroska\+Demuxed\+Track\+::max\+Size().
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!f\+Num\+Truncated\+Bytes@{f\+Num\+Truncated\+Bytes}}
+\index{f\+Num\+Truncated\+Bytes@{f\+Num\+Truncated\+Bytes}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{f\+Num\+Truncated\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Framed\+Source\+::f\+Num\+Truncated\+Bytes\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classFramedSource_a337ad49493202c89afd93564cc6263da}
+
+
+Definition at line 78 of file Framed\+Source.\+hh.
+
+
+
+Referenced by Ogg\+Demuxed\+Track\+::num\+Truncated\+Bytes(), and Matroska\+Demuxed\+Track\+::num\+Truncated\+Bytes().
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!f\+Presentation\+Time@{f\+Presentation\+Time}}
+\index{f\+Presentation\+Time@{f\+Presentation\+Time}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{f\+Presentation\+Time}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval Framed\+Source\+::f\+Presentation\+Time\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classFramedSource_acceb0ff3e18a67f361961337f0461c93}
+
+
+Definition at line 79 of file Framed\+Source.\+hh.
+
+
+
+Referenced by Ogg\+Demuxed\+Track\+::presentation\+Time(), Matroska\+Demuxed\+Track\+::presentation\+Time(), and H264or5\+Video\+Stream\+Framer\+::set\+Presentation\+Time().
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!f\+To@{f\+To}}
+\index{f\+To@{f\+To}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{f\+To}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ Framed\+Source\+::f\+To\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classFramedSource_aa2a8e89b11d40a5f64447ee55b0573ee}
+
+
+Definition at line 75 of file Framed\+Source.\+hh.
+
+
+
+Referenced by Ogg\+Demuxed\+Track\+::to(), and Matroska\+Demuxed\+Track\+::to().
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!f\+Video\+Source\+Counter@{f\+Video\+Source\+Counter}}
+\index{f\+Video\+Source\+Counter@{f\+Video\+Source\+Counter}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{f\+Video\+Source\+Counter}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source\+::f\+Video\+Source\+Counter\hspace{0.3cm}{\ttfamily [private]}}\label{classMPEG2TransportStreamFromESSource_a37cbed975c22e58261d9bf88bbffb8d4}
+
+
+Definition at line 59 of file M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!max\+Input\+E\+S\+Frame\+Size@{max\+Input\+E\+S\+Frame\+Size}}
+\index{max\+Input\+E\+S\+Frame\+Size@{max\+Input\+E\+S\+Frame\+Size}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{max\+Input\+E\+S\+Frame\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source\+::max\+Input\+E\+S\+Frame\+Size\hspace{0.3cm}{\ttfamily [static]}}\label{classMPEG2TransportStreamFromESSource_ac01df8d966071d3cb8ffd7b4a5eb1e8a}
+
+
+Definition at line 40 of file M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source.\+hh.
+
+\index{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}!stream\+Type@{stream\+Type}}
+\index{stream\+Type@{stream\+Type}!M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source@{M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source}}
+\subsubsection[{stream\+Type}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t M\+P\+E\+G2\+Transport\+Stream\+Multiplexor\+::stream\+Type\hspace{0.3cm}{\ttfamily [inherited]}}\label{classMPEG2TransportStreamMultiplexor_a20388c9d8a2ac52601c7db776b6339f2}
+
+
+Definition at line 78 of file M\+P\+E\+G2\+Transport\+Stream\+Multiplexor.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf M\+P\+E\+G2\+Transport\+Stream\+From\+E\+S\+Source.\+hh}\end{DoxyCompactItemize}

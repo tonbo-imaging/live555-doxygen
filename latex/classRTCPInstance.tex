@@ -1,0 +1,1134 @@
+\section{R\+T\+C\+P\+Instance Class Reference}
+\label{classRTCPInstance}\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+
+
+{\ttfamily \#include $<$R\+T\+C\+P.\+hh$>$}
+
+
+
+Inheritance diagram for R\+T\+C\+P\+Instance\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=124pt]{classRTCPInstance__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for R\+T\+C\+P\+Instance\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRTCPInstance__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf num\+Members} () const 
+\item 
+unsigned {\bf tot\+Session\+B\+W} () const 
+\item 
+void {\bf set\+Bye\+Handler} ({\bf Task\+Func} $\ast$handler\+Task, void $\ast$client\+Data, {\bf Boolean} handle\+Active\+Participants\+Only={\bf True})
+\item 
+void {\bf set\+S\+R\+Handler} ({\bf Task\+Func} $\ast$handler\+Task, void $\ast$client\+Data)
+\item 
+void {\bf set\+R\+R\+Handler} ({\bf Task\+Func} $\ast$handler\+Task, void $\ast$client\+Data)
+\item 
+void {\bf set\+Specific\+R\+R\+Handler} ({\bf net\+Address\+Bits} from\+Address, {\bf Port} from\+Port, {\bf Task\+Func} $\ast$handler\+Task, void $\ast$client\+Data)
+\item 
+void {\bf unset\+Specific\+R\+R\+Handler} ({\bf net\+Address\+Bits} from\+Address, {\bf Port} from\+Port)
+\item 
+void {\bf set\+App\+Handler} ({\bf R\+T\+C\+P\+App\+Handler\+Func} $\ast$handler\+Task, void $\ast$client\+Data)
+\item 
+void {\bf send\+App\+Packet} (u\+\_\+int8\+\_\+t subtype, char const $\ast${\bf name}, u\+\_\+int8\+\_\+t $\ast$app\+Dependent\+Data, unsigned app\+Dependent\+Data\+Size)
+\item 
+{\bf Groupsock} $\ast$ {\bf R\+T\+C\+Pgs} () const 
+\item 
+void {\bf set\+Stream\+Socket} (int sock\+Num, unsigned char stream\+Channel\+Id)
+\item 
+void {\bf add\+Stream\+Socket} (int sock\+Num, unsigned char stream\+Channel\+Id)
+\item 
+void {\bf remove\+Stream\+Socket} (int sock\+Num, unsigned char stream\+Channel\+Id)
+\item 
+void {\bf set\+Auxilliary\+Read\+Handler} ({\bf Aux\+Handler\+Func} $\ast$handler\+Func, void $\ast$handler\+Client\+Data)
+\item 
+void {\bf inject\+Report} (u\+\_\+int8\+\_\+t const $\ast${\bf packet}, unsigned packet\+Size, struct sockaddr\+\_\+in const \&from\+Address)
+\item 
+void {\bf schedule} (double next\+Time)
+\item 
+void {\bf reschedule} (double next\+Time)
+\item 
+void {\bf send\+Report} ()
+\item 
+void {\bf send\+B\+Y\+E} ()
+\item 
+int {\bf type\+Of\+Event} ()
+\item 
+int {\bf sent\+Packet\+Size} ()
+\item 
+int {\bf packet\+Type} ()
+\item 
+int {\bf received\+Packet\+Size} ()
+\item 
+int {\bf check\+New\+S\+S\+R\+C} ()
+\item 
+void {\bf remove\+Last\+Received\+S\+S\+R\+C} ()
+\item 
+void {\bf remove\+S\+S\+R\+C} (u\+\_\+int32\+\_\+t ssrc, {\bf Boolean} also\+Remove\+Stats)
+\item 
+{\bf Usage\+Environment} \& {\bf envir} () const 
+\item 
+char const $\ast$ {\bf name} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Source} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Sink} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Client} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Server} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Media\+Session} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Server\+Media\+Session} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf R\+T\+C\+P\+Instance} $\ast$ {\bf create\+New} ({\bf Usage\+Environment} \&env, {\bf Groupsock} $\ast${\bf R\+T\+C\+Pgs}, unsigned {\bf tot\+Session\+B\+W}, unsigned char const $\ast$cname, {\bf R\+T\+P\+Sink} $\ast$sink, {\bf R\+T\+P\+Source} $\ast$source, {\bf Boolean} is\+S\+S\+M\+Source={\bf False})
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$instance\+Name, {\bf R\+T\+C\+P\+Instance} $\ast$\&result\+Instance)
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name, {\bf Medium} $\ast$\&result\+Medium)
+\item 
+static void {\bf close} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name)
+\item 
+static void {\bf close} ({\bf Medium} $\ast$medium)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf R\+T\+C\+P\+Instance} ({\bf Usage\+Environment} \&env, {\bf Groupsock} $\ast$R\+T\+Pgs, unsigned {\bf tot\+Session\+B\+W}, unsigned char const $\ast$cname, {\bf R\+T\+P\+Sink} $\ast$sink, {\bf R\+T\+P\+Source} $\ast$source, {\bf Boolean} is\+S\+S\+M\+Source)
+\item 
+virtual {\bf $\sim$\+R\+T\+C\+P\+Instance} ()
+\item 
+virtual void {\bf note\+Arriving\+R\+R} (struct sockaddr\+\_\+in const \&from\+Address\+And\+Port, int tcp\+Socket\+Num, unsigned char tcp\+Stream\+Channel\+Id)
+\item 
+void {\bf incoming\+Report\+Handler1} ()
+\item 
+{\bf Task\+Token} \& {\bf next\+Task} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+C\+P\+Instance} () const 
+\item 
+{\bf Boolean} {\bf add\+Report} ({\bf Boolean} always\+Add={\bf False})
+\item 
+void {\bf add\+S\+R} ()
+\item 
+void {\bf add\+R\+R} ()
+\item 
+void {\bf enqueue\+Common\+Report\+Prefix} (unsigned char {\bf packet\+Type}, u\+\_\+int32\+\_\+t S\+S\+R\+C, unsigned num\+Extra\+Words=0)
+\item 
+void {\bf enqueue\+Common\+Report\+Suffix} ()
+\item 
+void {\bf enqueue\+Report\+Block} ({\bf R\+T\+P\+Reception\+Stats} $\ast$reception\+Stats)
+\item 
+void {\bf add\+S\+D\+E\+S} ()
+\item 
+void {\bf add\+B\+Y\+E} ()
+\item 
+void {\bf send\+Built\+Packet} ()
+\item 
+void {\bf on\+Expire1} ()
+\item 
+void {\bf process\+Incoming\+Report} (unsigned packet\+Size, struct sockaddr\+\_\+in const \&from\+Address\+And\+Port, int tcp\+Socket\+Num, unsigned char tcp\+Stream\+Channel\+Id)
+\item 
+void {\bf on\+Receive} (int type\+Of\+Packet, int tot\+Packet\+Size, u\+\_\+int32\+\_\+t ssrc)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf on\+Expire} ({\bf R\+T\+C\+P\+Instance} $\ast$instance)
+\item 
+static void {\bf incoming\+Report\+Handler} ({\bf R\+T\+C\+P\+Instance} $\ast$instance, int)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+u\+\_\+int8\+\_\+t $\ast$ {\bf f\+In\+Buf}
+\item 
+unsigned {\bf f\+Num\+Bytes\+Already\+Read}
+\item 
+{\bf Out\+Packet\+Buffer} $\ast$ {\bf f\+Out\+Buf}
+\item 
+{\bf R\+T\+P\+Interface} {\bf f\+R\+T\+C\+P\+Interface}
+\item 
+unsigned {\bf f\+Tot\+Session\+B\+W}
+\item 
+{\bf R\+T\+P\+Sink} $\ast$ {\bf f\+Sink}
+\item 
+{\bf R\+T\+P\+Source} $\ast$ {\bf f\+Source}
+\item 
+{\bf Boolean} {\bf f\+Is\+S\+S\+M\+Source}
+\item 
+{\bf S\+D\+E\+S\+Item} {\bf f\+C\+N\+A\+M\+E}
+\item 
+R\+T\+C\+P\+Member\+Database $\ast$ {\bf f\+Known\+Members}
+\item 
+unsigned {\bf f\+Outgoing\+Report\+Count}
+\item 
+double {\bf f\+Ave\+R\+T\+C\+P\+Size}
+\item 
+int {\bf f\+Is\+Initial}
+\item 
+double {\bf f\+Prev\+Report\+Time}
+\item 
+double {\bf f\+Next\+Report\+Time}
+\item 
+int {\bf f\+Prev\+Num\+Members}
+\item 
+int {\bf f\+Last\+Sent\+Size}
+\item 
+int {\bf f\+Last\+Received\+Size}
+\item 
+u\+\_\+int32\+\_\+t {\bf f\+Last\+Received\+S\+S\+R\+C}
+\item 
+int {\bf f\+Type\+Of\+Event}
+\item 
+int {\bf f\+Type\+Of\+Packet}
+\item 
+{\bf Boolean} {\bf f\+Have\+Just\+Sent\+Packet}
+\item 
+unsigned {\bf f\+Last\+Packet\+Sent\+Size}
+\item 
+{\bf Task\+Func} $\ast$ {\bf f\+Bye\+Handler\+Task}
+\item 
+void $\ast$ {\bf f\+Bye\+Handler\+Client\+Data}
+\item 
+{\bf Boolean} {\bf f\+Bye\+Handle\+Active\+Participants\+Only}
+\item 
+{\bf Task\+Func} $\ast$ {\bf f\+S\+R\+Handler\+Task}
+\item 
+void $\ast$ {\bf f\+S\+R\+Handler\+Client\+Data}
+\item 
+{\bf Task\+Func} $\ast$ {\bf f\+R\+R\+Handler\+Task}
+\item 
+void $\ast$ {\bf f\+R\+R\+Handler\+Client\+Data}
+\item 
+{\bf Address\+Port\+Lookup\+Table} $\ast$ {\bf f\+Specific\+R\+R\+Handler\+Table}
+\item 
+{\bf R\+T\+C\+P\+App\+Handler\+Func} $\ast$ {\bf f\+App\+Handler\+Task}
+\item 
+void $\ast$ {\bf f\+App\+Handler\+Client\+Data}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 48 of file R\+T\+C\+P.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{R\+T\+C\+P\+Instance(\+Usage\+Environment \&env, Groupsock $\ast$\+R\+T\+Pgs, unsigned tot\+Session\+B\+W, unsigned char const $\ast$cname, R\+T\+P\+Sink $\ast$sink, R\+T\+P\+Source $\ast$source, Boolean is\+S\+S\+M\+Source)}]{\setlength{\rightskip}{0pt plus 5cm}R\+T\+C\+P\+Instance\+::\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf Groupsock} $\ast$}]{R\+T\+Pgs, }
+\item[{unsigned}]{tot\+Session\+B\+W, }
+\item[{unsigned char const $\ast$}]{cname, }
+\item[{{\bf R\+T\+P\+Sink} $\ast$}]{sink, }
+\item[{{\bf R\+T\+P\+Source} $\ast$}]{source, }
+\item[{{\bf Boolean}}]{is\+S\+S\+M\+Source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTCPInstance_a69ee695340077ac057b262b97896fc7f}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!````~R\+T\+C\+P\+Instance@{$\sim$\+R\+T\+C\+P\+Instance}}
+\index{````~R\+T\+C\+P\+Instance@{$\sim$\+R\+T\+C\+P\+Instance}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{$\sim$\+R\+T\+C\+P\+Instance()}]{\setlength{\rightskip}{0pt plus 5cm}virtual R\+T\+C\+P\+Instance\+::$\sim$\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classRTCPInstance_ac39d2396b4701d135610e0d1c8c892e9}
+
+
+\subsection{Member Function Documentation}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!add\+B\+Y\+E@{add\+B\+Y\+E}}
+\index{add\+B\+Y\+E@{add\+B\+Y\+E}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{add\+B\+Y\+E()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::add\+B\+Y\+E (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a4135cc3ef15cc33c62ab6254000ffdf0}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!add\+Report@{add\+Report}}
+\index{add\+Report@{add\+Report}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{add\+Report(\+Boolean always\+Add=\+False)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+C\+P\+Instance\+::add\+Report (
+\begin{DoxyParamCaption}
+\item[{{\bf Boolean}}]{always\+Add = {\ttfamily {\bf False}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a506463cdeef190168e17eec73647e775}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!add\+R\+R@{add\+R\+R}}
+\index{add\+R\+R@{add\+R\+R}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{add\+R\+R()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::add\+R\+R (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_ab3dbb566fa725044ced850e76aedea5c}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!add\+S\+D\+E\+S@{add\+S\+D\+E\+S}}
+\index{add\+S\+D\+E\+S@{add\+S\+D\+E\+S}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{add\+S\+D\+E\+S()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::add\+S\+D\+E\+S (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a94dc4965731709e7cdc9b01509f65bfe}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!add\+S\+R@{add\+S\+R}}
+\index{add\+S\+R@{add\+S\+R}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{add\+S\+R()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::add\+S\+R (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_afc27b49bdb50d6f3ec8b29c277ec503c}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!add\+Stream\+Socket@{add\+Stream\+Socket}}
+\index{add\+Stream\+Socket@{add\+Stream\+Socket}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{add\+Stream\+Socket(int sock\+Num, unsigned char stream\+Channel\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::add\+Stream\+Socket (
+\begin{DoxyParamCaption}
+\item[{int}]{sock\+Num, }
+\item[{unsigned char}]{stream\+Channel\+Id}
+\end{DoxyParamCaption}
+)}\label{classRTCPInstance_a59b41dde1d9fa61ac975770d856bfe47}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!check\+New\+S\+S\+R\+C@{check\+New\+S\+S\+R\+C}}
+\index{check\+New\+S\+S\+R\+C@{check\+New\+S\+S\+R\+C}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{check\+New\+S\+S\+R\+C()}]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+C\+P\+Instance\+::check\+New\+S\+S\+R\+C (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classRTCPInstance_a7072cc60717b97394d9d44814f5055dd}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!close@{close}}
+\index{close@{close}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{close(\+Usage\+Environment \&env, char const $\ast$medium\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a9968c7ce6eedb848f2cc095730c01b17}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!close@{close}}
+\index{close@{close}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{close(\+Medium $\ast$medium)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_aee50624faf6909b3944dd803fd485467}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!create\+New@{create\+New}}
+\index{create\+New@{create\+New}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{create\+New(\+Usage\+Environment \&env, Groupsock $\ast$\+R\+T\+C\+Pgs, unsigned tot\+Session\+B\+W, unsigned char const $\ast$cname, R\+T\+P\+Sink $\ast$sink, R\+T\+P\+Source $\ast$source, Boolean is\+S\+S\+M\+Source=\+False)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf R\+T\+C\+P\+Instance}$\ast$ R\+T\+C\+P\+Instance\+::create\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf Groupsock} $\ast$}]{R\+T\+C\+Pgs, }
+\item[{unsigned}]{tot\+Session\+B\+W, }
+\item[{unsigned char const $\ast$}]{cname, }
+\item[{{\bf R\+T\+P\+Sink} $\ast$}]{sink, }
+\item[{{\bf R\+T\+P\+Source} $\ast$}]{source, }
+\item[{{\bf Boolean}}]{is\+S\+S\+M\+Source = {\ttfamily {\bf False}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classRTCPInstance_a17dc52c24843c7d835b65f7f7a75f3cd}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!enqueue\+Common\+Report\+Prefix@{enqueue\+Common\+Report\+Prefix}}
+\index{enqueue\+Common\+Report\+Prefix@{enqueue\+Common\+Report\+Prefix}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{enqueue\+Common\+Report\+Prefix(unsigned char packet\+Type, u\+\_\+int32\+\_\+t S\+S\+R\+C, unsigned num\+Extra\+Words=0)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::enqueue\+Common\+Report\+Prefix (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{packet\+Type, }
+\item[{u\+\_\+int32\+\_\+t}]{S\+S\+R\+C, }
+\item[{unsigned}]{num\+Extra\+Words = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a5c9ae95d759af9bafb0bf6a4e8c3bac1}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!enqueue\+Common\+Report\+Suffix@{enqueue\+Common\+Report\+Suffix}}
+\index{enqueue\+Common\+Report\+Suffix@{enqueue\+Common\+Report\+Suffix}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{enqueue\+Common\+Report\+Suffix()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::enqueue\+Common\+Report\+Suffix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_ae1d558daf18508daf6f97b5df6b74aaa}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!enqueue\+Report\+Block@{enqueue\+Report\+Block}}
+\index{enqueue\+Report\+Block@{enqueue\+Report\+Block}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{enqueue\+Report\+Block(\+R\+T\+P\+Reception\+Stats $\ast$reception\+Stats)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::enqueue\+Report\+Block (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+P\+Reception\+Stats} $\ast$}]{reception\+Stats}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a0ff1e9706f364f70b2dd99b6ba7280e1}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!envir@{envir}}
+\index{envir@{envir}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{envir() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Medium\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a32f7ecdd95f2b8400e1a26a5009e3b8e}
+
+
+Definition at line 59 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Environ.
+
+
+
+Referenced by Media\+Subsession\+::env(), R\+T\+P\+Interface\+::envir(), Generic\+Media\+Server\+::\+Client\+Connection\+::envir(), and Generic\+Media\+Server\+::\+Client\+Session\+::envir().
+
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} fEnviron;\}
+\end{DoxyCode}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!incoming\+Report\+Handler@{incoming\+Report\+Handler}}
+\index{incoming\+Report\+Handler@{incoming\+Report\+Handler}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{incoming\+Report\+Handler(\+R\+T\+C\+P\+Instance $\ast$instance, int)}]{\setlength{\rightskip}{0pt plus 5cm}static void R\+T\+C\+P\+Instance\+::incoming\+Report\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+C\+P\+Instance} $\ast$}]{instance, }
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classRTCPInstance_ab5b8c25506935cff820f7d373da6110e}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!incoming\+Report\+Handler1@{incoming\+Report\+Handler1}}
+\index{incoming\+Report\+Handler1@{incoming\+Report\+Handler1}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{incoming\+Report\+Handler1()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::incoming\+Report\+Handler1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classRTCPInstance_a1a2c47f14bdab3781360d24627b8a5d4}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!inject\+Report@{inject\+Report}}
+\index{inject\+Report@{inject\+Report}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{inject\+Report(u\+\_\+int8\+\_\+t const $\ast$packet, unsigned packet\+Size, struct sockaddr\+\_\+in const \&from\+Address)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::inject\+Report (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t const $\ast$}]{packet, }
+\item[{unsigned}]{packet\+Size, }
+\item[{struct sockaddr\+\_\+in const \&}]{from\+Address}
+\end{DoxyParamCaption}
+)}\label{classRTCPInstance_a4d95ef86cbd56a6e336143a078a7df7e}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!is\+Media\+Session@{is\+Media\+Session}}
+\index{is\+Media\+Session@{is\+Media\+Session}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{is\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ac5858707c4e7a15bd59d476cf48289d6}
+
+
+Reimplemented in {\bf Media\+Session} \doxyref{}{p.}{classMediaSession_a3b2a06a722374ab4477ac05a2ce28829}.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}}
+\index{is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{is\+R\+T\+C\+P\+Instance() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} R\+T\+C\+P\+Instance\+::is\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classRTCPInstance_a844292518419e1dbf24170812fd1e4b5}
+
+
+Reimplemented from {\bf Medium} \doxyref{}{p.}{classMedium_ab5f9f20324698f89a35513d596b2e7be}.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}}
+\index{is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{is\+R\+T\+S\+P\+Client() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aed1c1816867f910ce8c98350686ac038}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Client} \doxyref{}{p.}{classRTSPClient_add07b3a68432b546998080b24380e7e8}.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}}
+\index{is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{is\+R\+T\+S\+P\+Server() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a346e111b31bfde4b7f4ed593e0b97fd3}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Server} \doxyref{}{p.}{classRTSPServer_a45f9fc5ddd8f214169358493215a064a}.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!is\+Server\+Media\+Session@{is\+Server\+Media\+Session}}
+\index{is\+Server\+Media\+Session@{is\+Server\+Media\+Session}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{is\+Server\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aa9fd26c4b954ffba5f79925ecd0283a0}
+
+
+Reimplemented in {\bf Server\+Media\+Session} \doxyref{}{p.}{classServerMediaSession_a34b59e04644b6f0841ea5af99dbf32f6}.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!is\+Sink@{is\+Sink}}
+\index{is\+Sink@{is\+Sink}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{is\+Sink() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a23d49bf466482784b9d4378490d17b5f}
+
+
+Reimplemented in {\bf Media\+Sink} \doxyref{}{p.}{classMediaSink_aa8649dcdf21d5005f9ec319f898f91b6}.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!is\+Source@{is\+Source}}
+\index{is\+Source@{is\+Source}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{is\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a6cdbd02c73a3e9c1cbab8fce9e9497b1}
+
+
+Reimplemented in {\bf Media\+Source} \doxyref{}{p.}{classMediaSource_a4d75fa9ee2b476b1231594282a6854be}.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$medium\+Name, Medium $\ast$\&result\+Medium)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Medium\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name, }
+\item[{{\bf Medium} $\ast$\&}]{result\+Medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a418c860c1e0ef2766ee0d0f64b346291}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$instance\+Name, R\+T\+C\+P\+Instance $\ast$\&result\+Instance)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} R\+T\+C\+P\+Instance\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{instance\+Name, }
+\item[{{\bf R\+T\+C\+P\+Instance} $\ast$\&}]{result\+Instance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classRTCPInstance_a69d45d663b51c23f5f121972c7cb2fce}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!name@{name}}
+\index{name@{name}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Medium\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a575649802dc781c0e59e097a3870fcdb}
+
+
+Definition at line 61 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Medium\+Name.
+
+
+\begin{DoxyCode}
+61 \{\textcolor{keywordflow}{return} fMediumName;\}
+\end{DoxyCode}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{next\+Task()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token}\& Medium\+::next\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMedium_a5c8788adec90be1a584393a5bf11a5c9}
+
+
+Definition at line 77 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Next\+Task.
+
+
+\begin{DoxyCode}
+77                         \{
+78         \textcolor{keywordflow}{return} fNextTask;
+79   \}
+\end{DoxyCode}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!note\+Arriving\+R\+R@{note\+Arriving\+R\+R}}
+\index{note\+Arriving\+R\+R@{note\+Arriving\+R\+R}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{note\+Arriving\+R\+R(struct sockaddr\+\_\+in const \&from\+Address\+And\+Port, int tcp\+Socket\+Num, unsigned char tcp\+Stream\+Channel\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+C\+P\+Instance\+::note\+Arriving\+R\+R (
+\begin{DoxyParamCaption}
+\item[{struct sockaddr\+\_\+in const \&}]{from\+Address\+And\+Port, }
+\item[{int}]{tcp\+Socket\+Num, }
+\item[{unsigned char}]{tcp\+Stream\+Channel\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classRTCPInstance_a1c70ee08cb903f577a7498d747bac116}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!num\+Members@{num\+Members}}
+\index{num\+Members@{num\+Members}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{num\+Members() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+C\+P\+Instance\+::num\+Members (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classRTCPInstance_a12525b0a840c1e340f244b38f10e05e7}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!on\+Expire@{on\+Expire}}
+\index{on\+Expire@{on\+Expire}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{on\+Expire(\+R\+T\+C\+P\+Instance $\ast$instance)}]{\setlength{\rightskip}{0pt plus 5cm}static void R\+T\+C\+P\+Instance\+::on\+Expire (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+C\+P\+Instance} $\ast$}]{instance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classRTCPInstance_a94d68fd6b0a7b14b4294db4330477409}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!on\+Expire1@{on\+Expire1}}
+\index{on\+Expire1@{on\+Expire1}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{on\+Expire1()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::on\+Expire1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a8d2c828c42e95062d67bfbd6b777e0a4}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!on\+Receive@{on\+Receive}}
+\index{on\+Receive@{on\+Receive}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{on\+Receive(int type\+Of\+Packet, int tot\+Packet\+Size, u\+\_\+int32\+\_\+t ssrc)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::on\+Receive (
+\begin{DoxyParamCaption}
+\item[{int}]{type\+Of\+Packet, }
+\item[{int}]{tot\+Packet\+Size, }
+\item[{u\+\_\+int32\+\_\+t}]{ssrc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_ac6c82bbddf99a1b18984f0dd7b88ec36}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!packet\+Type@{packet\+Type}}
+\index{packet\+Type@{packet\+Type}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{packet\+Type()}]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+C\+P\+Instance\+::packet\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTCPInstance_ac50776233d45b6964f7da85eb2790f5b}
+
+
+Definition at line 201 of file R\+T\+C\+P.\+hh.
+
+
+
+References f\+Type\+Of\+Packet.
+
+
+\begin{DoxyCode}
+201 \{\textcolor{keywordflow}{return} fTypeOfPacket;\}
+\end{DoxyCode}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!process\+Incoming\+Report@{process\+Incoming\+Report}}
+\index{process\+Incoming\+Report@{process\+Incoming\+Report}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{process\+Incoming\+Report(unsigned packet\+Size, struct sockaddr\+\_\+in const \&from\+Address\+And\+Port, int tcp\+Socket\+Num, unsigned char tcp\+Stream\+Channel\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::process\+Incoming\+Report (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{packet\+Size, }
+\item[{struct sockaddr\+\_\+in const \&}]{from\+Address\+And\+Port, }
+\item[{int}]{tcp\+Socket\+Num, }
+\item[{unsigned char}]{tcp\+Stream\+Channel\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a93403018f9a6679c2b308df539f40821}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!received\+Packet\+Size@{received\+Packet\+Size}}
+\index{received\+Packet\+Size@{received\+Packet\+Size}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{received\+Packet\+Size()}]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+C\+P\+Instance\+::received\+Packet\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTCPInstance_a0ddff5cd3c43c988c93201435814c04a}
+
+
+Definition at line 202 of file R\+T\+C\+P.\+hh.
+
+
+
+References f\+Last\+Received\+Size.
+
+
+\begin{DoxyCode}
+202 \{\textcolor{keywordflow}{return} fLastReceivedSize;\}
+\end{DoxyCode}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!remove\+Last\+Received\+S\+S\+R\+C@{remove\+Last\+Received\+S\+S\+R\+C}}
+\index{remove\+Last\+Received\+S\+S\+R\+C@{remove\+Last\+Received\+S\+S\+R\+C}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{remove\+Last\+Received\+S\+S\+R\+C()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::remove\+Last\+Received\+S\+S\+R\+C (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classRTCPInstance_aba652060931736e957a1713592681eca}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!remove\+S\+S\+R\+C@{remove\+S\+S\+R\+C}}
+\index{remove\+S\+S\+R\+C@{remove\+S\+S\+R\+C}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{remove\+S\+S\+R\+C(u\+\_\+int32\+\_\+t ssrc, Boolean also\+Remove\+Stats)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::remove\+S\+S\+R\+C (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t}]{ssrc, }
+\item[{{\bf Boolean}}]{also\+Remove\+Stats}
+\end{DoxyParamCaption}
+)}\label{classRTCPInstance_ab241438af699c53ec44336357bbbf68d}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!remove\+Stream\+Socket@{remove\+Stream\+Socket}}
+\index{remove\+Stream\+Socket@{remove\+Stream\+Socket}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{remove\+Stream\+Socket(int sock\+Num, unsigned char stream\+Channel\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::remove\+Stream\+Socket (
+\begin{DoxyParamCaption}
+\item[{int}]{sock\+Num, }
+\item[{unsigned char}]{stream\+Channel\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTCPInstance_ae092fb1d946bbd5b8a85c95a023dc0fe}
+
+
+Definition at line 103 of file R\+T\+C\+P.\+hh.
+
+
+
+References f\+R\+T\+C\+P\+Interface, and R\+T\+P\+Interface\+::remove\+Stream\+Socket().
+
+
+\begin{DoxyCode}
+103                                                                       \{
+104     fRTCPInterface.removeStreamSocket(sockNum, streamChannelId);
+105   \}
+\end{DoxyCode}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!reschedule@{reschedule}}
+\index{reschedule@{reschedule}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{reschedule(double next\+Time)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::reschedule (
+\begin{DoxyParamCaption}
+\item[{double}]{next\+Time}
+\end{DoxyParamCaption}
+)}\label{classRTCPInstance_a0e7635695d341f438f63dcd4a61376bc}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!R\+T\+C\+Pgs@{R\+T\+C\+Pgs}}
+\index{R\+T\+C\+Pgs@{R\+T\+C\+Pgs}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{R\+T\+C\+Pgs() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Groupsock}$\ast$ R\+T\+C\+P\+Instance\+::\+R\+T\+C\+Pgs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTCPInstance_a435f8612154dfe6d1dec3a5785546ae6}
+
+
+Definition at line 99 of file R\+T\+C\+P.\+hh.
+
+
+
+References f\+R\+T\+C\+P\+Interface, and R\+T\+P\+Interface\+::gs().
+
+
+\begin{DoxyCode}
+99 \{ \textcolor{keywordflow}{return} fRTCPInterface.gs(); \}
+\end{DoxyCode}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!schedule@{schedule}}
+\index{schedule@{schedule}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{schedule(double next\+Time)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::schedule (
+\begin{DoxyParamCaption}
+\item[{double}]{next\+Time}
+\end{DoxyParamCaption}
+)}\label{classRTCPInstance_ab0e1f8cb48a499341b532185142abb3f}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!send\+App\+Packet@{send\+App\+Packet}}
+\index{send\+App\+Packet@{send\+App\+Packet}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{send\+App\+Packet(u\+\_\+int8\+\_\+t subtype, char const $\ast$name, u\+\_\+int8\+\_\+t $\ast$app\+Dependent\+Data, unsigned app\+Dependent\+Data\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::send\+App\+Packet (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t}]{subtype, }
+\item[{char const $\ast$}]{name, }
+\item[{u\+\_\+int8\+\_\+t $\ast$}]{app\+Dependent\+Data, }
+\item[{unsigned}]{app\+Dependent\+Data\+Size}
+\end{DoxyParamCaption}
+)}\label{classRTCPInstance_a7ffb99d452e9f9d372a451440fbccbd4}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!send\+Built\+Packet@{send\+Built\+Packet}}
+\index{send\+Built\+Packet@{send\+Built\+Packet}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{send\+Built\+Packet()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::send\+Built\+Packet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_aa934275d521250eabeec8989b8b3ee03}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!send\+B\+Y\+E@{send\+B\+Y\+E}}
+\index{send\+B\+Y\+E@{send\+B\+Y\+E}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{send\+B\+Y\+E()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::send\+B\+Y\+E (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classRTCPInstance_a6e7aacd24b7a96941aea1ea5c6b069b7}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!send\+Report@{send\+Report}}
+\index{send\+Report@{send\+Report}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{send\+Report()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::send\+Report (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classRTCPInstance_a9f8839f6a32016cb988a1cb90e43220d}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!sent\+Packet\+Size@{sent\+Packet\+Size}}
+\index{sent\+Packet\+Size@{sent\+Packet\+Size}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{sent\+Packet\+Size()}]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+C\+P\+Instance\+::sent\+Packet\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTCPInstance_adef2d12e5dacb38b6628dc5c92a2dbc2}
+
+
+Definition at line 200 of file R\+T\+C\+P.\+hh.
+
+
+
+References f\+Last\+Sent\+Size.
+
+
+\begin{DoxyCode}
+200 \{\textcolor{keywordflow}{return} fLastSentSize;\}
+\end{DoxyCode}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!set\+App\+Handler@{set\+App\+Handler}}
+\index{set\+App\+Handler@{set\+App\+Handler}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{set\+App\+Handler(\+R\+T\+C\+P\+App\+Handler\+Func $\ast$handler\+Task, void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::set\+App\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+C\+P\+App\+Handler\+Func} $\ast$}]{handler\+Task, }
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)}\label{classRTCPInstance_a918ab9d86137298872e1756cd47205b6}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!set\+Auxilliary\+Read\+Handler@{set\+Auxilliary\+Read\+Handler}}
+\index{set\+Auxilliary\+Read\+Handler@{set\+Auxilliary\+Read\+Handler}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{set\+Auxilliary\+Read\+Handler(\+Aux\+Handler\+Func $\ast$handler\+Func, void $\ast$handler\+Client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::set\+Auxilliary\+Read\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf Aux\+Handler\+Func} $\ast$}]{handler\+Func, }
+\item[{void $\ast$}]{handler\+Client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTCPInstance_ab66024cf153dcc0d0de3d74a5ca5fa83}
+
+
+Definition at line 108 of file R\+T\+C\+P.\+hh.
+
+
+
+References f\+R\+T\+C\+P\+Interface, and R\+T\+P\+Interface\+::set\+Auxilliary\+Read\+Handler().
+
+
+\begin{DoxyCode}
+109                                                          \{
+110     fRTCPInterface.setAuxilliaryReadHandler(handlerFunc,
+111                                             handlerClientData);
+112   \}
+\end{DoxyCode}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!set\+Bye\+Handler@{set\+Bye\+Handler}}
+\index{set\+Bye\+Handler@{set\+Bye\+Handler}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{set\+Bye\+Handler(\+Task\+Func $\ast$handler\+Task, void $\ast$client\+Data, Boolean handle\+Active\+Participants\+Only=\+True)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::set\+Bye\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf Task\+Func} $\ast$}]{handler\+Task, }
+\item[{void $\ast$}]{client\+Data, }
+\item[{{\bf Boolean}}]{handle\+Active\+Participants\+Only = {\ttfamily {\bf True}}}
+\end{DoxyParamCaption}
+)}\label{classRTCPInstance_a4c390a4352840f9e4019fa440791d675}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!set\+R\+R\+Handler@{set\+R\+R\+Handler}}
+\index{set\+R\+R\+Handler@{set\+R\+R\+Handler}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{set\+R\+R\+Handler(\+Task\+Func $\ast$handler\+Task, void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::set\+R\+R\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf Task\+Func} $\ast$}]{handler\+Task, }
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)}\label{classRTCPInstance_aa3d5617436238732e9128cfdebd4c3a1}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!set\+Specific\+R\+R\+Handler@{set\+Specific\+R\+R\+Handler}}
+\index{set\+Specific\+R\+R\+Handler@{set\+Specific\+R\+R\+Handler}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{set\+Specific\+R\+R\+Handler(net\+Address\+Bits from\+Address, Port from\+Port, Task\+Func $\ast$handler\+Task, void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::set\+Specific\+R\+R\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf net\+Address\+Bits}}]{from\+Address, }
+\item[{{\bf Port}}]{from\+Port, }
+\item[{{\bf Task\+Func} $\ast$}]{handler\+Task, }
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)}\label{classRTCPInstance_a1dae5f9cd36a6445307d56fd25f986d8}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!set\+S\+R\+Handler@{set\+S\+R\+Handler}}
+\index{set\+S\+R\+Handler@{set\+S\+R\+Handler}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{set\+S\+R\+Handler(\+Task\+Func $\ast$handler\+Task, void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::set\+S\+R\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf Task\+Func} $\ast$}]{handler\+Task, }
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)}\label{classRTCPInstance_abd7f15b1ba40d634570ae8b7a259d2ed}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!set\+Stream\+Socket@{set\+Stream\+Socket}}
+\index{set\+Stream\+Socket@{set\+Stream\+Socket}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{set\+Stream\+Socket(int sock\+Num, unsigned char stream\+Channel\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::set\+Stream\+Socket (
+\begin{DoxyParamCaption}
+\item[{int}]{sock\+Num, }
+\item[{unsigned char}]{stream\+Channel\+Id}
+\end{DoxyParamCaption}
+)}\label{classRTCPInstance_acd9178e2d4c29bdccd8b448f700efbac}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!tot\+Session\+B\+W@{tot\+Session\+B\+W}}
+\index{tot\+Session\+B\+W@{tot\+Session\+B\+W}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{tot\+Session\+B\+W() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+C\+P\+Instance\+::tot\+Session\+B\+W (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTCPInstance_a2a3fef7cff03e12da046acb37d80be6c}
+
+
+Definition at line 61 of file R\+T\+C\+P.\+hh.
+
+
+
+References f\+Tot\+Session\+B\+W.
+
+
+\begin{DoxyCode}
+61 \{ \textcolor{keywordflow}{return} fTotSessionBW; \}
+\end{DoxyCode}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!type\+Of\+Event@{type\+Of\+Event}}
+\index{type\+Of\+Event@{type\+Of\+Event}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{type\+Of\+Event()}]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+C\+P\+Instance\+::type\+Of\+Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTCPInstance_ae302facecbcb6665c01b96b2c3ae7030}
+
+
+Definition at line 199 of file R\+T\+C\+P.\+hh.
+
+
+
+References f\+Type\+Of\+Event.
+
+
+\begin{DoxyCode}
+199 \{\textcolor{keywordflow}{return} fTypeOfEvent;\}
+\end{DoxyCode}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!unset\+Specific\+R\+R\+Handler@{unset\+Specific\+R\+R\+Handler}}
+\index{unset\+Specific\+R\+R\+Handler@{unset\+Specific\+R\+R\+Handler}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{unset\+Specific\+R\+R\+Handler(net\+Address\+Bits from\+Address, Port from\+Port)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+C\+P\+Instance\+::unset\+Specific\+R\+R\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf net\+Address\+Bits}}]{from\+Address, }
+\item[{{\bf Port}}]{from\+Port}
+\end{DoxyParamCaption}
+)}\label{classRTCPInstance_a82f19fa5b9ce0088465bd77a426d154b}
+
+
+\subsection{Field Documentation}
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+App\+Handler\+Client\+Data@{f\+App\+Handler\+Client\+Data}}
+\index{f\+App\+Handler\+Client\+Data@{f\+App\+Handler\+Client\+Data}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+App\+Handler\+Client\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ R\+T\+C\+P\+Instance\+::f\+App\+Handler\+Client\+Data\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_afb066c19e6e94af3397a0372a89eeacb}
+
+
+Definition at line 192 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+App\+Handler\+Task@{f\+App\+Handler\+Task}}
+\index{f\+App\+Handler\+Task@{f\+App\+Handler\+Task}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+App\+Handler\+Task}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+C\+P\+App\+Handler\+Func}$\ast$ R\+T\+C\+P\+Instance\+::f\+App\+Handler\+Task\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a19654f7f4a6b5b74cb5c5d840aae0b86}
+
+
+Definition at line 191 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Ave\+R\+T\+C\+P\+Size@{f\+Ave\+R\+T\+C\+P\+Size}}
+\index{f\+Ave\+R\+T\+C\+P\+Size@{f\+Ave\+R\+T\+C\+P\+Size}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Ave\+R\+T\+C\+P\+Size}]{\setlength{\rightskip}{0pt plus 5cm}double R\+T\+C\+P\+Instance\+::f\+Ave\+R\+T\+C\+P\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a234e3bde6e1a33fd0608566b4ebcc7ac}
+
+
+Definition at line 169 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Bye\+Handle\+Active\+Participants\+Only@{f\+Bye\+Handle\+Active\+Participants\+Only}}
+\index{f\+Bye\+Handle\+Active\+Participants\+Only@{f\+Bye\+Handle\+Active\+Participants\+Only}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Bye\+Handle\+Active\+Participants\+Only}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+C\+P\+Instance\+::f\+Bye\+Handle\+Active\+Participants\+Only\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_af92f9c3452e4083daa0f56af7cc5a42b}
+
+
+Definition at line 185 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Bye\+Handler\+Client\+Data@{f\+Bye\+Handler\+Client\+Data}}
+\index{f\+Bye\+Handler\+Client\+Data@{f\+Bye\+Handler\+Client\+Data}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Bye\+Handler\+Client\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ R\+T\+C\+P\+Instance\+::f\+Bye\+Handler\+Client\+Data\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_ac12c1a2fa8cef88e36294fbb30f5715a}
+
+
+Definition at line 184 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Bye\+Handler\+Task@{f\+Bye\+Handler\+Task}}
+\index{f\+Bye\+Handler\+Task@{f\+Bye\+Handler\+Task}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Bye\+Handler\+Task}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Func}$\ast$ R\+T\+C\+P\+Instance\+::f\+Bye\+Handler\+Task\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_af4035b1ad8c0da6bf03a1de0f77791f8}
+
+
+Definition at line 183 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+C\+N\+A\+M\+E@{f\+C\+N\+A\+M\+E}}
+\index{f\+C\+N\+A\+M\+E@{f\+C\+N\+A\+M\+E}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+C\+N\+A\+M\+E}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+D\+E\+S\+Item} R\+T\+C\+P\+Instance\+::f\+C\+N\+A\+M\+E\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a491067109ce84bb937efbeb0de8d8a4d}
+
+
+Definition at line 165 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Have\+Just\+Sent\+Packet@{f\+Have\+Just\+Sent\+Packet}}
+\index{f\+Have\+Just\+Sent\+Packet@{f\+Have\+Just\+Sent\+Packet}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Have\+Just\+Sent\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+C\+P\+Instance\+::f\+Have\+Just\+Sent\+Packet\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_aab075f536b60cd80b2f8f767375fc2b4}
+
+
+Definition at line 180 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+In\+Buf@{f\+In\+Buf}}
+\index{f\+In\+Buf@{f\+In\+Buf}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+In\+Buf}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t$\ast$ R\+T\+C\+P\+Instance\+::f\+In\+Buf\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a8d8759e337ee6d14530a32a8d03ea2cb}
+
+
+Definition at line 156 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Is\+Initial@{f\+Is\+Initial}}
+\index{f\+Is\+Initial@{f\+Is\+Initial}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Is\+Initial}]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+C\+P\+Instance\+::f\+Is\+Initial\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a106f03e5c75f4c8d5a90ca61e8b7bd12}
+
+
+Definition at line 170 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Is\+S\+S\+M\+Source@{f\+Is\+S\+S\+M\+Source}}
+\index{f\+Is\+S\+S\+M\+Source@{f\+Is\+S\+S\+M\+Source}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Is\+S\+S\+M\+Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+C\+P\+Instance\+::f\+Is\+S\+S\+M\+Source\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_ad44396823f6d7e6a9c79d464b1049bc3}
+
+
+Definition at line 163 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Known\+Members@{f\+Known\+Members}}
+\index{f\+Known\+Members@{f\+Known\+Members}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Known\+Members}]{\setlength{\rightskip}{0pt plus 5cm}R\+T\+C\+P\+Member\+Database$\ast$ R\+T\+C\+P\+Instance\+::f\+Known\+Members\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a300b585752394cd7cf6b82cdaf598024}
+
+
+Definition at line 166 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Last\+Packet\+Sent\+Size@{f\+Last\+Packet\+Sent\+Size}}
+\index{f\+Last\+Packet\+Sent\+Size@{f\+Last\+Packet\+Sent\+Size}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Last\+Packet\+Sent\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+C\+P\+Instance\+::f\+Last\+Packet\+Sent\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_af89b3370ec6d9e591f8da7fbde33e84a}
+
+
+Definition at line 181 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Last\+Received\+Size@{f\+Last\+Received\+Size}}
+\index{f\+Last\+Received\+Size@{f\+Last\+Received\+Size}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Last\+Received\+Size}]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+C\+P\+Instance\+::f\+Last\+Received\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_aac4a2dd4342f47805e020d7edb87f056}
+
+
+Definition at line 176 of file R\+T\+C\+P.\+hh.
+
+
+
+Referenced by received\+Packet\+Size().
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Last\+Received\+S\+S\+R\+C@{f\+Last\+Received\+S\+S\+R\+C}}
+\index{f\+Last\+Received\+S\+S\+R\+C@{f\+Last\+Received\+S\+S\+R\+C}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Last\+Received\+S\+S\+R\+C}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+C\+P\+Instance\+::f\+Last\+Received\+S\+S\+R\+C\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a5ed68019ad4ef5a1e09ab71f8f51dd09}
+
+
+Definition at line 177 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Last\+Sent\+Size@{f\+Last\+Sent\+Size}}
+\index{f\+Last\+Sent\+Size@{f\+Last\+Sent\+Size}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Last\+Sent\+Size}]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+C\+P\+Instance\+::f\+Last\+Sent\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_afdb6009f2b41ee946907cc3ed91fae55}
+
+
+Definition at line 175 of file R\+T\+C\+P.\+hh.
+
+
+
+Referenced by sent\+Packet\+Size().
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Next\+Report\+Time@{f\+Next\+Report\+Time}}
+\index{f\+Next\+Report\+Time@{f\+Next\+Report\+Time}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Next\+Report\+Time}]{\setlength{\rightskip}{0pt plus 5cm}double R\+T\+C\+P\+Instance\+::f\+Next\+Report\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_afad94308fd8c1e4bdc21b1a3a8049a85}
+
+
+Definition at line 172 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Num\+Bytes\+Already\+Read@{f\+Num\+Bytes\+Already\+Read}}
+\index{f\+Num\+Bytes\+Already\+Read@{f\+Num\+Bytes\+Already\+Read}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Num\+Bytes\+Already\+Read}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+C\+P\+Instance\+::f\+Num\+Bytes\+Already\+Read\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_af581b637ad435492d0c01214db03fe1e}
+
+
+Definition at line 157 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Out\+Buf@{f\+Out\+Buf}}
+\index{f\+Out\+Buf@{f\+Out\+Buf}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Out\+Buf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Out\+Packet\+Buffer}$\ast$ R\+T\+C\+P\+Instance\+::f\+Out\+Buf\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a5a8c7fbb3fc15dd320260d5020598ce8}
+
+
+Definition at line 158 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Outgoing\+Report\+Count@{f\+Outgoing\+Report\+Count}}
+\index{f\+Outgoing\+Report\+Count@{f\+Outgoing\+Report\+Count}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Outgoing\+Report\+Count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+C\+P\+Instance\+::f\+Outgoing\+Report\+Count\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a70e050b2a2cdd63a955679bda5b339ad}
+
+
+Definition at line 167 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Prev\+Num\+Members@{f\+Prev\+Num\+Members}}
+\index{f\+Prev\+Num\+Members@{f\+Prev\+Num\+Members}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Prev\+Num\+Members}]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+C\+P\+Instance\+::f\+Prev\+Num\+Members\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a477647ea7565171b56d29cc27328f6aa}
+
+
+Definition at line 173 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Prev\+Report\+Time@{f\+Prev\+Report\+Time}}
+\index{f\+Prev\+Report\+Time@{f\+Prev\+Report\+Time}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Prev\+Report\+Time}]{\setlength{\rightskip}{0pt plus 5cm}double R\+T\+C\+P\+Instance\+::f\+Prev\+Report\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a1154b61fd84ad15156b2ead10b54d413}
+
+
+Definition at line 171 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+R\+R\+Handler\+Client\+Data@{f\+R\+R\+Handler\+Client\+Data}}
+\index{f\+R\+R\+Handler\+Client\+Data@{f\+R\+R\+Handler\+Client\+Data}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+R\+R\+Handler\+Client\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ R\+T\+C\+P\+Instance\+::f\+R\+R\+Handler\+Client\+Data\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_ad4cd4978e884db7b0b5a4946f96fb263}
+
+
+Definition at line 189 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+R\+R\+Handler\+Task@{f\+R\+R\+Handler\+Task}}
+\index{f\+R\+R\+Handler\+Task@{f\+R\+R\+Handler\+Task}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+R\+R\+Handler\+Task}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Func}$\ast$ R\+T\+C\+P\+Instance\+::f\+R\+R\+Handler\+Task\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a55a89d707b0a5557b8f7451146d48d44}
+
+
+Definition at line 188 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+R\+T\+C\+P\+Interface@{f\+R\+T\+C\+P\+Interface}}
+\index{f\+R\+T\+C\+P\+Interface@{f\+R\+T\+C\+P\+Interface}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+R\+T\+C\+P\+Interface}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+P\+Interface} R\+T\+C\+P\+Instance\+::f\+R\+T\+C\+P\+Interface\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_aa55a9375fd32134c58e86b4059fff900}
+
+
+Definition at line 159 of file R\+T\+C\+P.\+hh.
+
+
+
+Referenced by remove\+Stream\+Socket(), R\+T\+C\+Pgs(), and set\+Auxilliary\+Read\+Handler().
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Sink@{f\+Sink}}
+\index{f\+Sink@{f\+Sink}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Sink}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+P\+Sink}$\ast$ R\+T\+C\+P\+Instance\+::f\+Sink\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a6d4187bf79a8393e1e446f5e2a6df206}
+
+
+Definition at line 161 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Source@{f\+Source}}
+\index{f\+Source@{f\+Source}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+P\+Source}$\ast$ R\+T\+C\+P\+Instance\+::f\+Source\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a86a5aacadc9bd26e2f1bd85d1892e762}
+
+
+Definition at line 162 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Specific\+R\+R\+Handler\+Table@{f\+Specific\+R\+R\+Handler\+Table}}
+\index{f\+Specific\+R\+R\+Handler\+Table@{f\+Specific\+R\+R\+Handler\+Table}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Specific\+R\+R\+Handler\+Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Address\+Port\+Lookup\+Table}$\ast$ R\+T\+C\+P\+Instance\+::f\+Specific\+R\+R\+Handler\+Table\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a8db6deff47e332c0af5f9e9427446bd8}
+
+
+Definition at line 190 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+S\+R\+Handler\+Client\+Data@{f\+S\+R\+Handler\+Client\+Data}}
+\index{f\+S\+R\+Handler\+Client\+Data@{f\+S\+R\+Handler\+Client\+Data}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+S\+R\+Handler\+Client\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ R\+T\+C\+P\+Instance\+::f\+S\+R\+Handler\+Client\+Data\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_ad736e80cd8b106253aa90c82d13fe7fe}
+
+
+Definition at line 187 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+S\+R\+Handler\+Task@{f\+S\+R\+Handler\+Task}}
+\index{f\+S\+R\+Handler\+Task@{f\+S\+R\+Handler\+Task}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+S\+R\+Handler\+Task}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Func}$\ast$ R\+T\+C\+P\+Instance\+::f\+S\+R\+Handler\+Task\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_aea70c1188474f40c087a73dacc7447c9}
+
+
+Definition at line 186 of file R\+T\+C\+P.\+hh.
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Tot\+Session\+B\+W@{f\+Tot\+Session\+B\+W}}
+\index{f\+Tot\+Session\+B\+W@{f\+Tot\+Session\+B\+W}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Tot\+Session\+B\+W}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+C\+P\+Instance\+::f\+Tot\+Session\+B\+W\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_acf1fedd7597f346e524e7e2ef4be0244}
+
+
+Definition at line 160 of file R\+T\+C\+P.\+hh.
+
+
+
+Referenced by tot\+Session\+B\+W().
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Type\+Of\+Event@{f\+Type\+Of\+Event}}
+\index{f\+Type\+Of\+Event@{f\+Type\+Of\+Event}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Type\+Of\+Event}]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+C\+P\+Instance\+::f\+Type\+Of\+Event\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a4ab3733e1fba58c3d4f134db485fe0b5}
+
+
+Definition at line 178 of file R\+T\+C\+P.\+hh.
+
+
+
+Referenced by type\+Of\+Event().
+
+\index{R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}!f\+Type\+Of\+Packet@{f\+Type\+Of\+Packet}}
+\index{f\+Type\+Of\+Packet@{f\+Type\+Of\+Packet}!R\+T\+C\+P\+Instance@{R\+T\+C\+P\+Instance}}
+\subsubsection[{f\+Type\+Of\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+C\+P\+Instance\+::f\+Type\+Of\+Packet\hspace{0.3cm}{\ttfamily [private]}}\label{classRTCPInstance_a1bc96aafbe1006b7b4854a93a0a527b3}
+
+
+Definition at line 179 of file R\+T\+C\+P.\+hh.
+
+
+
+Referenced by packet\+Type().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf R\+T\+C\+P.\+hh}\end{DoxyCompactItemize}

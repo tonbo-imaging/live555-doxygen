@@ -1,0 +1,354 @@
+\section{Timeval Class Reference}
+\label{classTimeval}\index{Timeval@{Timeval}}
+
+
+{\ttfamily \#include $<$Delay\+Queue.\+hh$>$}
+
+
+
+Inheritance diagram for Timeval\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classTimeval__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf time\+\_\+base\+\_\+seconds} {\bf seconds} () const 
+\item 
+{\bf time\+\_\+base\+\_\+seconds} {\bf seconds} ()
+\item 
+{\bf time\+\_\+base\+\_\+seconds} {\bf useconds} () const 
+\item 
+{\bf time\+\_\+base\+\_\+seconds} {\bf useconds} ()
+\item 
+int {\bf operator$>$=} ({\bf Timeval} const \&arg2) const 
+\item 
+int {\bf operator$<$=} ({\bf Timeval} const \&arg2) const 
+\item 
+int {\bf operator$<$} ({\bf Timeval} const \&arg2) const 
+\item 
+int {\bf operator$>$} ({\bf Timeval} const \&arg2) const 
+\item 
+int {\bf operator==} ({\bf Timeval} const \&arg2) const 
+\item 
+int {\bf operator!=} ({\bf Timeval} const \&arg2) const 
+\item 
+void {\bf operator+=} (class {\bf Delay\+Interval} const \&arg2)
+\item 
+void {\bf operator-\/=} (class {\bf Delay\+Interval} const \&arg2)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Timeval} ({\bf time\+\_\+base\+\_\+seconds} {\bf seconds}, {\bf time\+\_\+base\+\_\+seconds} {\bf useconds})
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf time\+\_\+base\+\_\+seconds} \& {\bf secs} ()
+\item 
+{\bf time\+\_\+base\+\_\+seconds} \& {\bf usecs} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+struct timeval {\bf f\+Tv}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 35 of file Delay\+Queue.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Timeval@{Timeval}!Timeval@{Timeval}}
+\index{Timeval@{Timeval}!Timeval@{Timeval}}
+\subsubsection[{Timeval(time\+\_\+base\+\_\+seconds seconds, time\+\_\+base\+\_\+seconds useconds)}]{\setlength{\rightskip}{0pt plus 5cm}Timeval\+::\+Timeval (
+\begin{DoxyParamCaption}
+\item[{{\bf time\+\_\+base\+\_\+seconds}}]{seconds, }
+\item[{{\bf time\+\_\+base\+\_\+seconds}}]{useconds}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTimeval_a2fd54145d406c72ee62def892d4932e0}
+
+
+Definition at line 72 of file Delay\+Queue.\+hh.
+
+
+
+References f\+Tv, seconds(), and useconds().
+
+
+\begin{DoxyCode}
+72                                                                  \{
+73     fTv.tv\_sec = seconds; fTv.tv\_usec = useconds;
+74   \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{Timeval@{Timeval}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Timeval@{Timeval}}
+\subsubsection[{operator"!=(\+Timeval const \&arg2) const }]{\setlength{\rightskip}{0pt plus 5cm}int Timeval\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{{\bf Timeval} const \&}]{arg2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTimeval_a83b7f15d81e24e74d56faa3b10c1a26c}
+
+
+Definition at line 63 of file Delay\+Queue.\+hh.
+
+
+\begin{DoxyCode}
+63                                             \{
+64     \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} == arg2);
+65   \}
+\end{DoxyCode}
+\index{Timeval@{Timeval}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Timeval@{Timeval}}
+\subsubsection[{operator+=(class Delay\+Interval const \&arg2)}]{\setlength{\rightskip}{0pt plus 5cm}void Timeval\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{class {\bf Delay\+Interval} const \&}]{arg2}
+\end{DoxyParamCaption}
+)}\label{classTimeval_a1db195de86ad8a4a4e7cacb539782a2d}
+\index{Timeval@{Timeval}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Timeval@{Timeval}}
+\subsubsection[{operator-\/=(class Delay\+Interval const \&arg2)}]{\setlength{\rightskip}{0pt plus 5cm}void Timeval\+::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{class {\bf Delay\+Interval} const \&}]{arg2}
+\end{DoxyParamCaption}
+)}\label{classTimeval_a8b8f4af8b0ce6966b0f7fb08c5c76400}
+\index{Timeval@{Timeval}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Timeval@{Timeval}}
+\subsubsection[{operator$<$(\+Timeval const \&arg2) const }]{\setlength{\rightskip}{0pt plus 5cm}int Timeval\+::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Timeval} const \&}]{arg2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTimeval_af9d81b5f553f697726ef4ae2fb3aa310}
+
+
+Definition at line 54 of file Delay\+Queue.\+hh.
+
+
+\begin{DoxyCode}
+54                                            \{
+55     \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} >= arg2);
+56   \}
+\end{DoxyCode}
+\index{Timeval@{Timeval}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Timeval@{Timeval}}
+\subsubsection[{operator$<$=(\+Timeval const \&arg2) const }]{\setlength{\rightskip}{0pt plus 5cm}int Timeval\+::operator$<$= (
+\begin{DoxyParamCaption}
+\item[{{\bf Timeval} const \&}]{arg2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTimeval_aa0260545b749b8d8178645525736168b}
+
+
+Definition at line 51 of file Delay\+Queue.\+hh.
+
+
+\begin{DoxyCode}
+51                                             \{
+52     \textcolor{keywordflow}{return} arg2 >= *\textcolor{keyword}{this};
+53   \}
+\end{DoxyCode}
+\index{Timeval@{Timeval}!operator==@{operator==}}
+\index{operator==@{operator==}!Timeval@{Timeval}}
+\subsubsection[{operator==(\+Timeval const \&arg2) const }]{\setlength{\rightskip}{0pt plus 5cm}int Timeval\+::operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf Timeval} const \&}]{arg2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTimeval_a7fece1b59e87253fe72d374320ea79bc}
+
+
+Definition at line 60 of file Delay\+Queue.\+hh.
+
+
+\begin{DoxyCode}
+60                                             \{
+61     \textcolor{keywordflow}{return} *\textcolor{keyword}{this} >= arg2 && arg2 >= *\textcolor{keyword}{this};
+62   \}
+\end{DoxyCode}
+\index{Timeval@{Timeval}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Timeval@{Timeval}}
+\subsubsection[{operator$>$(\+Timeval const \&arg2) const }]{\setlength{\rightskip}{0pt plus 5cm}int Timeval\+::operator$>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Timeval} const \&}]{arg2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTimeval_a1c2215d65af987319543b67fa0b9672b}
+
+
+Definition at line 57 of file Delay\+Queue.\+hh.
+
+
+\begin{DoxyCode}
+57                                            \{
+58     \textcolor{keywordflow}{return} arg2 < *\textcolor{keyword}{this};
+59   \}
+\end{DoxyCode}
+\index{Timeval@{Timeval}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!Timeval@{Timeval}}
+\subsubsection[{operator$>$=(\+Timeval const \&arg2) const }]{\setlength{\rightskip}{0pt plus 5cm}int Timeval\+::operator$>$= (
+\begin{DoxyParamCaption}
+\item[{{\bf Timeval} const \&}]{arg2}
+\end{DoxyParamCaption}
+) const}\label{classTimeval_aea47f84b60114e0dad00610b89f65fb9}
+\index{Timeval@{Timeval}!seconds@{seconds}}
+\index{seconds@{seconds}!Timeval@{Timeval}}
+\subsubsection[{seconds() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf time\+\_\+base\+\_\+seconds} Timeval\+::seconds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTimeval_af4e7d48167e15f4bb32556fd25738dd0}
+
+
+Definition at line 37 of file Delay\+Queue.\+hh.
+
+
+
+References f\+Tv.
+
+
+
+Referenced by Timeval().
+
+
+\begin{DoxyCode}
+37                                     \{
+38     \textcolor{keywordflow}{return} fTv.tv\_sec;
+39   \}
+\end{DoxyCode}
+\index{Timeval@{Timeval}!seconds@{seconds}}
+\index{seconds@{seconds}!Timeval@{Timeval}}
+\subsubsection[{seconds()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf time\+\_\+base\+\_\+seconds} Timeval\+::seconds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTimeval_a68702aa7af3a25e3133872b8fa34b301}
+
+
+Definition at line 40 of file Delay\+Queue.\+hh.
+
+
+
+References f\+Tv.
+
+
+\begin{DoxyCode}
+40                               \{
+41     \textcolor{keywordflow}{return} fTv.tv\_sec;
+42   \}
+\end{DoxyCode}
+\index{Timeval@{Timeval}!secs@{secs}}
+\index{secs@{secs}!Timeval@{Timeval}}
+\subsubsection[{secs()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf time\+\_\+base\+\_\+seconds}\& Timeval\+::secs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classTimeval_ab573747882929ac5d6de9a6768abd180}
+
+
+Definition at line 77 of file Delay\+Queue.\+hh.
+
+
+
+References f\+Tv.
+
+
+\begin{DoxyCode}
+77                             \{
+78     \textcolor{keywordflow}{return} (time_base_seconds&)fTv.tv\_sec;
+79   \}
+\end{DoxyCode}
+\index{Timeval@{Timeval}!useconds@{useconds}}
+\index{useconds@{useconds}!Timeval@{Timeval}}
+\subsubsection[{useconds() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf time\+\_\+base\+\_\+seconds} Timeval\+::useconds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTimeval_a1c5c9fe8ba33850bb2c5c051adbee168}
+
+
+Definition at line 43 of file Delay\+Queue.\+hh.
+
+
+
+References f\+Tv.
+
+
+
+Referenced by Timeval().
+
+
+\begin{DoxyCode}
+43                                      \{
+44     \textcolor{keywordflow}{return} fTv.tv\_usec;
+45   \}
+\end{DoxyCode}
+\index{Timeval@{Timeval}!useconds@{useconds}}
+\index{useconds@{useconds}!Timeval@{Timeval}}
+\subsubsection[{useconds()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf time\+\_\+base\+\_\+seconds} Timeval\+::useconds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTimeval_adf0a500911dc59696817bce74de3801f}
+
+
+Definition at line 46 of file Delay\+Queue.\+hh.
+
+
+
+References f\+Tv.
+
+
+\begin{DoxyCode}
+46                                \{
+47     \textcolor{keywordflow}{return} fTv.tv\_usec;
+48   \}
+\end{DoxyCode}
+\index{Timeval@{Timeval}!usecs@{usecs}}
+\index{usecs@{usecs}!Timeval@{Timeval}}
+\subsubsection[{usecs()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf time\+\_\+base\+\_\+seconds}\& Timeval\+::usecs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classTimeval_aa22437ec04ed84e09af1ba3a76ee494c}
+
+
+Definition at line 80 of file Delay\+Queue.\+hh.
+
+
+
+References f\+Tv.
+
+
+\begin{DoxyCode}
+80                              \{
+81     \textcolor{keywordflow}{return} (time_base_seconds&)fTv.tv\_usec;
+82   \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Timeval@{Timeval}!f\+Tv@{f\+Tv}}
+\index{f\+Tv@{f\+Tv}!Timeval@{Timeval}}
+\subsubsection[{f\+Tv}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval Timeval\+::f\+Tv\hspace{0.3cm}{\ttfamily [private]}}\label{classTimeval_abb6bd9389450ff4f37714e0b99691923}
+
+
+Definition at line 84 of file Delay\+Queue.\+hh.
+
+
+
+Referenced by seconds(), secs(), Timeval(), useconds(), and usecs().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Basic\+Usage\+Environment/include/{\bf Delay\+Queue.\+hh}\end{DoxyCompactItemize}

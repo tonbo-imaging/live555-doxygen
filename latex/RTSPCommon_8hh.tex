@@ -1,0 +1,120 @@
+\section{live\+Media/include/\+R\+T\+S\+P\+Common.hh File Reference}
+\label{RTSPCommon_8hh}\index{live\+Media/include/\+R\+T\+S\+P\+Common.\+hh@{live\+Media/include/\+R\+T\+S\+P\+Common.\+hh}}
+{\ttfamily \#include \char`\"{}Boolean.\+hh\char`\"{}}\\*
+{\ttfamily \#include $<$Media.\+hh$>$}\\*
+Include dependency graph for R\+T\+S\+P\+Common.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{RTSPCommon_8hh__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf \+\_\+strncasecmp}~strncasecmp
+\item 
+\#define {\bf R\+T\+S\+P\+\_\+\+P\+A\+R\+A\+M\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X}~200
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Boolean} {\bf parse\+R\+T\+S\+P\+Request\+String} (char const $\ast$req\+Str, unsigned req\+Str\+Size, char $\ast$result\+Cmd\+Name, unsigned result\+Cmd\+Name\+Max\+Size, char $\ast$result\+U\+R\+L\+Pre\+Suffix, unsigned result\+U\+R\+L\+Pre\+Suffix\+Max\+Size, char $\ast$result\+U\+R\+L\+Suffix, unsigned result\+U\+R\+L\+Suffix\+Max\+Size, char $\ast$result\+C\+Seq, unsigned result\+C\+Seq\+Max\+Size, char $\ast$result\+Session\+Id, unsigned result\+Session\+Id\+Max\+Size, unsigned \&content\+Length)
+\item 
+{\bf Boolean} {\bf parse\+Range\+Param} (char const $\ast$param\+Str, double \&range\+Start, double \&range\+End, char $\ast$\&abs\+Start\+Time, char $\ast$\&abs\+End\+Time, {\bf Boolean} \&start\+Time\+Is\+Now)
+\item 
+{\bf Boolean} {\bf parse\+Range\+Header} (char const $\ast$buf, double \&range\+Start, double \&range\+End, char $\ast$\&abs\+Start\+Time, char $\ast$\&abs\+End\+Time, {\bf Boolean} \&start\+Time\+Is\+Now)
+\item 
+{\bf Boolean} {\bf parse\+Scale\+Header} (char const $\ast$buf, float \&scale)
+\item 
+{\bf Boolean} {\bf R\+T\+S\+P\+Option\+Is\+Supported} (char const $\ast$command\+Name, char const $\ast$options\+Response\+String)
+\item 
+char const $\ast$ {\bf date\+Header} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{R\+T\+S\+P\+Common.\+hh@{R\+T\+S\+P\+Common.\+hh}!\+\_\+strncasecmp@{\+\_\+strncasecmp}}
+\index{\+\_\+strncasecmp@{\+\_\+strncasecmp}!R\+T\+S\+P\+Common.\+hh@{R\+T\+S\+P\+Common.\+hh}}
+\subsubsection[{\+\_\+strncasecmp}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+strncasecmp~strncasecmp}\label{RTSPCommon_8hh_a04aa9246de29862064d2a5bfb13e455c}
+
+
+Definition at line 36 of file R\+T\+S\+P\+Common.\+hh.
+
+\index{R\+T\+S\+P\+Common.\+hh@{R\+T\+S\+P\+Common.\+hh}!R\+T\+S\+P\+\_\+\+P\+A\+R\+A\+M\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X@{R\+T\+S\+P\+\_\+\+P\+A\+R\+A\+M\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X}}
+\index{R\+T\+S\+P\+\_\+\+P\+A\+R\+A\+M\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X@{R\+T\+S\+P\+\_\+\+P\+A\+R\+A\+M\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X}!R\+T\+S\+P\+Common.\+hh@{R\+T\+S\+P\+Common.\+hh}}
+\subsubsection[{R\+T\+S\+P\+\_\+\+P\+A\+R\+A\+M\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+T\+S\+P\+\_\+\+P\+A\+R\+A\+M\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+M\+A\+X~200}\label{RTSPCommon_8hh_a67928b7b83f322714ac07cb9cdbfb1e0}
+
+
+Definition at line 39 of file R\+T\+S\+P\+Common.\+hh.
+
+
+
+\subsection{Function Documentation}
+\index{R\+T\+S\+P\+Common.\+hh@{R\+T\+S\+P\+Common.\+hh}!date\+Header@{date\+Header}}
+\index{date\+Header@{date\+Header}!R\+T\+S\+P\+Common.\+hh@{R\+T\+S\+P\+Common.\+hh}}
+\subsubsection[{date\+Header()}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ date\+Header (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{RTSPCommon_8hh_a9a4eab7cb27c7d4132e20cd080ebc2d5}
+\index{R\+T\+S\+P\+Common.\+hh@{R\+T\+S\+P\+Common.\+hh}!parse\+Range\+Header@{parse\+Range\+Header}}
+\index{parse\+Range\+Header@{parse\+Range\+Header}!R\+T\+S\+P\+Common.\+hh@{R\+T\+S\+P\+Common.\+hh}}
+\subsubsection[{parse\+Range\+Header(char const $\ast$buf, double \&range\+Start, double \&range\+End, char $\ast$\&abs\+Start\+Time, char $\ast$\&abs\+End\+Time, Boolean \&start\+Time\+Is\+Now)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} parse\+Range\+Header (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{buf, }
+\item[{double \&}]{range\+Start, }
+\item[{double \&}]{range\+End, }
+\item[{char $\ast$\&}]{abs\+Start\+Time, }
+\item[{char $\ast$\&}]{abs\+End\+Time, }
+\item[{{\bf Boolean} \&}]{start\+Time\+Is\+Now}
+\end{DoxyParamCaption}
+)}\label{RTSPCommon_8hh_a41cda8b8809572682772cac50ef28d30}
+\index{R\+T\+S\+P\+Common.\+hh@{R\+T\+S\+P\+Common.\+hh}!parse\+Range\+Param@{parse\+Range\+Param}}
+\index{parse\+Range\+Param@{parse\+Range\+Param}!R\+T\+S\+P\+Common.\+hh@{R\+T\+S\+P\+Common.\+hh}}
+\subsubsection[{parse\+Range\+Param(char const $\ast$param\+Str, double \&range\+Start, double \&range\+End, char $\ast$\&abs\+Start\+Time, char $\ast$\&abs\+End\+Time, Boolean \&start\+Time\+Is\+Now)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} parse\+Range\+Param (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{param\+Str, }
+\item[{double \&}]{range\+Start, }
+\item[{double \&}]{range\+End, }
+\item[{char $\ast$\&}]{abs\+Start\+Time, }
+\item[{char $\ast$\&}]{abs\+End\+Time, }
+\item[{{\bf Boolean} \&}]{start\+Time\+Is\+Now}
+\end{DoxyParamCaption}
+)}\label{RTSPCommon_8hh_a8e224af672c34bb9affe518e579ba3be}
+\index{R\+T\+S\+P\+Common.\+hh@{R\+T\+S\+P\+Common.\+hh}!parse\+R\+T\+S\+P\+Request\+String@{parse\+R\+T\+S\+P\+Request\+String}}
+\index{parse\+R\+T\+S\+P\+Request\+String@{parse\+R\+T\+S\+P\+Request\+String}!R\+T\+S\+P\+Common.\+hh@{R\+T\+S\+P\+Common.\+hh}}
+\subsubsection[{parse\+R\+T\+S\+P\+Request\+String(char const $\ast$req\+Str, unsigned req\+Str\+Size, char $\ast$result\+Cmd\+Name, unsigned result\+Cmd\+Name\+Max\+Size, char $\ast$result\+U\+R\+L\+Pre\+Suffix, unsigned result\+U\+R\+L\+Pre\+Suffix\+Max\+Size, char $\ast$result\+U\+R\+L\+Suffix, unsigned result\+U\+R\+L\+Suffix\+Max\+Size, char $\ast$result\+C\+Seq, unsigned result\+C\+Seq\+Max\+Size, char $\ast$result\+Session\+Id, unsigned result\+Session\+Id\+Max\+Size, unsigned \&content\+Length)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} parse\+R\+T\+S\+P\+Request\+String (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{req\+Str, }
+\item[{unsigned}]{req\+Str\+Size, }
+\item[{char $\ast$}]{result\+Cmd\+Name, }
+\item[{unsigned}]{result\+Cmd\+Name\+Max\+Size, }
+\item[{char $\ast$}]{result\+U\+R\+L\+Pre\+Suffix, }
+\item[{unsigned}]{result\+U\+R\+L\+Pre\+Suffix\+Max\+Size, }
+\item[{char $\ast$}]{result\+U\+R\+L\+Suffix, }
+\item[{unsigned}]{result\+U\+R\+L\+Suffix\+Max\+Size, }
+\item[{char $\ast$}]{result\+C\+Seq, }
+\item[{unsigned}]{result\+C\+Seq\+Max\+Size, }
+\item[{char $\ast$}]{result\+Session\+Id, }
+\item[{unsigned}]{result\+Session\+Id\+Max\+Size, }
+\item[{unsigned \&}]{content\+Length}
+\end{DoxyParamCaption}
+)}\label{RTSPCommon_8hh_a9ba60a8ee9056fe9287050cc69c52280}
+\index{R\+T\+S\+P\+Common.\+hh@{R\+T\+S\+P\+Common.\+hh}!parse\+Scale\+Header@{parse\+Scale\+Header}}
+\index{parse\+Scale\+Header@{parse\+Scale\+Header}!R\+T\+S\+P\+Common.\+hh@{R\+T\+S\+P\+Common.\+hh}}
+\subsubsection[{parse\+Scale\+Header(char const $\ast$buf, float \&scale)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} parse\+Scale\+Header (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{buf, }
+\item[{float \&}]{scale}
+\end{DoxyParamCaption}
+)}\label{RTSPCommon_8hh_a96036fa778a303d3773f04b3189200fb}
+\index{R\+T\+S\+P\+Common.\+hh@{R\+T\+S\+P\+Common.\+hh}!R\+T\+S\+P\+Option\+Is\+Supported@{R\+T\+S\+P\+Option\+Is\+Supported}}
+\index{R\+T\+S\+P\+Option\+Is\+Supported@{R\+T\+S\+P\+Option\+Is\+Supported}!R\+T\+S\+P\+Common.\+hh@{R\+T\+S\+P\+Common.\+hh}}
+\subsubsection[{R\+T\+S\+P\+Option\+Is\+Supported(char const $\ast$command\+Name, char const $\ast$options\+Response\+String)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+S\+P\+Option\+Is\+Supported (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{command\+Name, }
+\item[{char const $\ast$}]{options\+Response\+String}
+\end{DoxyParamCaption}
+)}\label{RTSPCommon_8hh_aa480920d344e2702d1894471f06d06db}

@@ -1,0 +1,93 @@
+\section{live\+Media/\+M\+P3\+Internals\+Huffman.hh File Reference}
+\label{MP3InternalsHuffman_8hh}\index{live\+Media/\+M\+P3\+Internals\+Huffman.\+hh@{live\+Media/\+M\+P3\+Internals\+Huffman.\+hh}}
+{\ttfamily \#include \char`\"{}M\+P3\+Internals.\+hh\char`\"{}}\\*
+Include dependency graph for M\+P3\+Internals\+Huffman.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{MP3InternalsHuffman_8hh__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf M\+P3\+Huffman\+Encoding\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf S\+S\+L\+I\+M\+I\+T}~18
+\item 
+\#define {\bf B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+V\+A\+L\+U\+E}~1
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf update\+Side\+Info\+For\+Huffman} ({\bf M\+P3\+Side\+Info} \&side\+Info, {\bf Boolean} is\+M\+P\+E\+G2, unsigned char const $\ast$main\+Data\+Ptr, unsigned p23\+L0, unsigned p23\+L1, unsigned \&part23\+Length0a, unsigned \&part23\+Length0a\+Truncation, unsigned \&part23\+Length0b, unsigned \&part23\+Length0b\+Truncation, unsigned \&part23\+Length1a, unsigned \&part23\+Length1a\+Truncation, unsigned \&part23\+Length1b, unsigned \&part23\+Length1b\+Truncation)
+\item 
+void {\bf M\+P3\+Huffman\+Decode} ({\bf M\+P3\+Side\+Info\+::gr\+\_\+info\+\_\+s\+\_\+t} $\ast$gr, {\bf Boolean} is\+M\+P\+E\+G2, unsigned char const $\ast$from\+Base\+Ptr, unsigned from\+Bit\+Offset, unsigned from\+Length, unsigned \&scale\+Factors\+Length, {\bf M\+P3\+Huffman\+Encoding\+Info} \&hei)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char {\bf huffdec} [$\,$]
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{M\+P3\+Internals\+Huffman.\+hh@{M\+P3\+Internals\+Huffman.\+hh}!B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+V\+A\+L\+U\+E@{B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+V\+A\+L\+U\+E}}
+\index{B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+V\+A\+L\+U\+E@{B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+V\+A\+L\+U\+E}!M\+P3\+Internals\+Huffman.\+hh@{M\+P3\+Internals\+Huffman.\+hh}}
+\subsubsection[{B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+V\+A\+L\+U\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+V\+A\+L\+U\+E~1}\label{MP3InternalsHuffman_8hh_af40762483b32db29f215ef1a7f22071c}
+
+
+Definition at line 71 of file M\+P3\+Internals\+Huffman.\+hh.
+
+\index{M\+P3\+Internals\+Huffman.\+hh@{M\+P3\+Internals\+Huffman.\+hh}!S\+S\+L\+I\+M\+I\+T@{S\+S\+L\+I\+M\+I\+T}}
+\index{S\+S\+L\+I\+M\+I\+T@{S\+S\+L\+I\+M\+I\+T}!M\+P3\+Internals\+Huffman.\+hh@{M\+P3\+Internals\+Huffman.\+hh}}
+\subsubsection[{S\+S\+L\+I\+M\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+S\+L\+I\+M\+I\+T~18}\label{MP3InternalsHuffman_8hh_afcbb4bb3c0ff58ec3bf3c286c7e67044}
+
+
+Definition at line 40 of file M\+P3\+Internals\+Huffman.\+hh.
+
+
+
+\subsection{Function Documentation}
+\index{M\+P3\+Internals\+Huffman.\+hh@{M\+P3\+Internals\+Huffman.\+hh}!M\+P3\+Huffman\+Decode@{M\+P3\+Huffman\+Decode}}
+\index{M\+P3\+Huffman\+Decode@{M\+P3\+Huffman\+Decode}!M\+P3\+Internals\+Huffman.\+hh@{M\+P3\+Internals\+Huffman.\+hh}}
+\subsubsection[{M\+P3\+Huffman\+Decode(\+M\+P3\+Side\+Info\+::gr\+\_\+info\+\_\+s\+\_\+t $\ast$gr, Boolean is\+M\+P\+E\+G2, unsigned char const $\ast$from\+Base\+Ptr, unsigned from\+Bit\+Offset, unsigned from\+Length, unsigned \&scale\+Factors\+Length, M\+P3\+Huffman\+Encoding\+Info \&hei)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P3\+Huffman\+Decode (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+P3\+Side\+Info\+::gr\+\_\+info\+\_\+s\+\_\+t} $\ast$}]{gr, }
+\item[{{\bf Boolean}}]{is\+M\+P\+E\+G2, }
+\item[{unsigned char const $\ast$}]{from\+Base\+Ptr, }
+\item[{unsigned}]{from\+Bit\+Offset, }
+\item[{unsigned}]{from\+Length, }
+\item[{unsigned \&}]{scale\+Factors\+Length, }
+\item[{{\bf M\+P3\+Huffman\+Encoding\+Info} \&}]{hei}
+\end{DoxyParamCaption}
+)}\label{MP3InternalsHuffman_8hh_ac171f54fd35c3cc9e9121765a0a642d6}
+\index{M\+P3\+Internals\+Huffman.\+hh@{M\+P3\+Internals\+Huffman.\+hh}!update\+Side\+Info\+For\+Huffman@{update\+Side\+Info\+For\+Huffman}}
+\index{update\+Side\+Info\+For\+Huffman@{update\+Side\+Info\+For\+Huffman}!M\+P3\+Internals\+Huffman.\+hh@{M\+P3\+Internals\+Huffman.\+hh}}
+\subsubsection[{update\+Side\+Info\+For\+Huffman(\+M\+P3\+Side\+Info \&side\+Info, Boolean is\+M\+P\+E\+G2, unsigned char const $\ast$main\+Data\+Ptr, unsigned p23\+L0, unsigned p23\+L1, unsigned \&part23\+Length0a, unsigned \&part23\+Length0a\+Truncation, unsigned \&part23\+Length0b, unsigned \&part23\+Length0b\+Truncation, unsigned \&part23\+Length1a, unsigned \&part23\+Length1a\+Truncation, unsigned \&part23\+Length1b, unsigned \&part23\+Length1b\+Truncation)}]{\setlength{\rightskip}{0pt plus 5cm}void update\+Side\+Info\+For\+Huffman (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+P3\+Side\+Info} \&}]{side\+Info, }
+\item[{{\bf Boolean}}]{is\+M\+P\+E\+G2, }
+\item[{unsigned char const $\ast$}]{main\+Data\+Ptr, }
+\item[{unsigned}]{p23\+L0, }
+\item[{unsigned}]{p23\+L1, }
+\item[{unsigned \&}]{part23\+Length0a, }
+\item[{unsigned \&}]{part23\+Length0a\+Truncation, }
+\item[{unsigned \&}]{part23\+Length0b, }
+\item[{unsigned \&}]{part23\+Length0b\+Truncation, }
+\item[{unsigned \&}]{part23\+Length1a, }
+\item[{unsigned \&}]{part23\+Length1a\+Truncation, }
+\item[{unsigned \&}]{part23\+Length1b, }
+\item[{unsigned \&}]{part23\+Length1b\+Truncation}
+\end{DoxyParamCaption}
+)}\label{MP3InternalsHuffman_8hh_a7319ad8415a76c9ff3117f7a848d6173}
+
+
+\subsection{Variable Documentation}
+\index{M\+P3\+Internals\+Huffman.\+hh@{M\+P3\+Internals\+Huffman.\+hh}!huffdec@{huffdec}}
+\index{huffdec@{huffdec}!M\+P3\+Internals\+Huffman.\+hh@{M\+P3\+Internals\+Huffman.\+hh}}
+\subsubsection[{huffdec}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char huffdec[$\,$]}\label{MP3InternalsHuffman_8hh_abba208fcf35166f680bf47747400178d}

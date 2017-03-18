@@ -1,0 +1,610 @@
+\section{Server\+Media\+Session Class Reference}
+\label{classServerMediaSession}\index{Server\+Media\+Session@{Server\+Media\+Session}}
+
+
+{\ttfamily \#include $<$Server\+Media\+Session.\+hh$>$}
+
+
+
+Inheritance diagram for Server\+Media\+Session\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classServerMediaSession__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Server\+Media\+Session\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classServerMediaSession__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ {\bf generate\+S\+D\+P\+Description} ()
+\item 
+char const $\ast$ {\bf stream\+Name} () const 
+\item 
+{\bf Boolean} {\bf add\+Subsession} ({\bf Server\+Media\+Subsession} $\ast$subsession)
+\item 
+unsigned {\bf num\+Subsessions} () const 
+\item 
+void {\bf test\+Scale\+Factor} (float \&scale)
+\item 
+float {\bf duration} () const 
+\item 
+virtual void {\bf note\+Liveness} ()
+\item 
+unsigned {\bf reference\+Count} () const 
+\item 
+void {\bf increment\+Reference\+Count} ()
+\item 
+void {\bf decrement\+Reference\+Count} ()
+\item 
+{\bf Boolean} \& {\bf delete\+When\+Unreferenced} ()
+\item 
+void {\bf delete\+All\+Subsessions} ()
+\item 
+{\bf Usage\+Environment} \& {\bf envir} () const 
+\item 
+char const $\ast$ {\bf name} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Source} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Sink} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+C\+P\+Instance} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Client} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Server} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Media\+Session} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Server\+Media\+Session} $\ast$ {\bf create\+New} ({\bf Usage\+Environment} \&env, char const $\ast${\bf stream\+Name}={\bf N\+U\+L\+L}, char const $\ast$info={\bf N\+U\+L\+L}, char const $\ast$description={\bf N\+U\+L\+L}, {\bf Boolean} is\+S\+S\+M={\bf False}, char const $\ast$misc\+S\+D\+P\+Lines={\bf N\+U\+L\+L})
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name, {\bf Server\+Media\+Session} $\ast$\&result\+Session)
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name, {\bf Medium} $\ast$\&result\+Medium)
+\item 
+static void {\bf close} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name)
+\item 
+static void {\bf close} ({\bf Medium} $\ast$medium)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Server\+Media\+Session} ({\bf Usage\+Environment} \&env, char const $\ast${\bf stream\+Name}, char const $\ast$info, char const $\ast$description, {\bf Boolean} is\+S\+S\+M, char const $\ast$misc\+S\+D\+P\+Lines)
+\item 
+virtual {\bf $\sim$\+Server\+Media\+Session} ()
+\item 
+{\bf Task\+Token} \& {\bf next\+Task} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf Boolean} {\bf is\+Server\+Media\+Session} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Boolean} {\bf f\+Is\+S\+S\+M}
+\item 
+{\bf Server\+Media\+Subsession} $\ast$ {\bf f\+Subsessions\+Head}
+\item 
+{\bf Server\+Media\+Subsession} $\ast$ {\bf f\+Subsessions\+Tail}
+\item 
+unsigned {\bf f\+Subsession\+Counter}
+\item 
+char $\ast$ {\bf f\+Stream\+Name}
+\item 
+char $\ast$ {\bf f\+Info\+S\+D\+P\+String}
+\item 
+char $\ast$ {\bf f\+Description\+S\+D\+P\+String}
+\item 
+char $\ast$ {\bf f\+Misc\+S\+D\+P\+Lines}
+\item 
+struct timeval {\bf f\+Creation\+Time}
+\item 
+unsigned {\bf f\+Reference\+Count}
+\item 
+{\bf Boolean} {\bf f\+Delete\+When\+Unreferenced}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Server\+Media\+Subsession\+Iterator}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 33 of file Server\+Media\+Session.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!Server\+Media\+Session@{Server\+Media\+Session}}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{Server\+Media\+Session(\+Usage\+Environment \&env, char const $\ast$stream\+Name, char const $\ast$info, char const $\ast$description, Boolean is\+S\+S\+M, char const $\ast$misc\+S\+D\+P\+Lines)}]{\setlength{\rightskip}{0pt plus 5cm}Server\+Media\+Session\+::\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{stream\+Name, }
+\item[{char const $\ast$}]{info, }
+\item[{char const $\ast$}]{description, }
+\item[{{\bf Boolean}}]{is\+S\+S\+M, }
+\item[{char const $\ast$}]{misc\+S\+D\+P\+Lines}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classServerMediaSession_a7717cc0632fc88c41b2a87dffa90851d}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!````~Server\+Media\+Session@{$\sim$\+Server\+Media\+Session}}
+\index{````~Server\+Media\+Session@{$\sim$\+Server\+Media\+Session}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{$\sim$\+Server\+Media\+Session()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Server\+Media\+Session\+::$\sim$\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classServerMediaSession_af880eef8b53f19c4385d2400d9157eeb}
+
+
+\subsection{Member Function Documentation}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!add\+Subsession@{add\+Subsession}}
+\index{add\+Subsession@{add\+Subsession}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{add\+Subsession(\+Server\+Media\+Subsession $\ast$subsession)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Server\+Media\+Session\+::add\+Subsession (
+\begin{DoxyParamCaption}
+\item[{{\bf Server\+Media\+Subsession} $\ast$}]{subsession}
+\end{DoxyParamCaption}
+)}\label{classServerMediaSession_a903c0b20aeb67878d92971aba8173993}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!close@{close}}
+\index{close@{close}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{close(\+Usage\+Environment \&env, char const $\ast$medium\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a9968c7ce6eedb848f2cc095730c01b17}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!close@{close}}
+\index{close@{close}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{close(\+Medium $\ast$medium)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_aee50624faf6909b3944dd803fd485467}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!create\+New@{create\+New}}
+\index{create\+New@{create\+New}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{create\+New(\+Usage\+Environment \&env, char const $\ast$stream\+Name=\+N\+U\+L\+L, char const $\ast$info=\+N\+U\+L\+L, char const $\ast$description=\+N\+U\+L\+L, Boolean is\+S\+S\+M=\+False, char const $\ast$misc\+S\+D\+P\+Lines=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Server\+Media\+Session}$\ast$ Server\+Media\+Session\+::create\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{stream\+Name = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{char const $\ast$}]{info = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{char const $\ast$}]{description = {\ttfamily {\bf N\+U\+L\+L}}, }
+\item[{{\bf Boolean}}]{is\+S\+S\+M = {\ttfamily {\bf False}}, }
+\item[{char const $\ast$}]{misc\+S\+D\+P\+Lines = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classServerMediaSession_ac774a31eb536a423a540b9e66719f1af}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!decrement\+Reference\+Count@{decrement\+Reference\+Count}}
+\index{decrement\+Reference\+Count@{decrement\+Reference\+Count}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{decrement\+Reference\+Count()}]{\setlength{\rightskip}{0pt plus 5cm}void Server\+Media\+Session\+::decrement\+Reference\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classServerMediaSession_a97a4671e5cfc4dc5e08cdadbed81ef32}
+
+
+Definition at line 67 of file Server\+Media\+Session.\+hh.
+
+
+
+References f\+Reference\+Count.
+
+
+\begin{DoxyCode}
+67 \{ \textcolor{keywordflow}{if} (fReferenceCount > 0) --fReferenceCount; \}
+\end{DoxyCode}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!delete\+All\+Subsessions@{delete\+All\+Subsessions}}
+\index{delete\+All\+Subsessions@{delete\+All\+Subsessions}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{delete\+All\+Subsessions()}]{\setlength{\rightskip}{0pt plus 5cm}void Server\+Media\+Session\+::delete\+All\+Subsessions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classServerMediaSession_a1eadb32e0675d5f27d236680248d7c08}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!delete\+When\+Unreferenced@{delete\+When\+Unreferenced}}
+\index{delete\+When\+Unreferenced@{delete\+When\+Unreferenced}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{delete\+When\+Unreferenced()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean}\& Server\+Media\+Session\+::delete\+When\+Unreferenced (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classServerMediaSession_a8a1de8f0886a3833bbe5ec2dc8e3863b}
+
+
+Definition at line 68 of file Server\+Media\+Session.\+hh.
+
+
+
+References f\+Delete\+When\+Unreferenced.
+
+
+\begin{DoxyCode}
+68 \{ \textcolor{keywordflow}{return} fDeleteWhenUnreferenced; \}
+\end{DoxyCode}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!duration@{duration}}
+\index{duration@{duration}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{duration() const }]{\setlength{\rightskip}{0pt plus 5cm}float Server\+Media\+Session\+::duration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classServerMediaSession_a917bc9d42bcca46794b3dc4d8e5ef830}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!envir@{envir}}
+\index{envir@{envir}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{envir() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Medium\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a32f7ecdd95f2b8400e1a26a5009e3b8e}
+
+
+Definition at line 59 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Environ.
+
+
+
+Referenced by Media\+Subsession\+::env(), R\+T\+P\+Interface\+::envir(), Generic\+Media\+Server\+::\+Client\+Connection\+::envir(), and Generic\+Media\+Server\+::\+Client\+Session\+::envir().
+
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} fEnviron;\}
+\end{DoxyCode}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!generate\+S\+D\+P\+Description@{generate\+S\+D\+P\+Description}}
+\index{generate\+S\+D\+P\+Description@{generate\+S\+D\+P\+Description}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{generate\+S\+D\+P\+Description()}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Server\+Media\+Session\+::generate\+S\+D\+P\+Description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classServerMediaSession_a071f7bf0fbb20d2df70ab496a845ee0e}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!increment\+Reference\+Count@{increment\+Reference\+Count}}
+\index{increment\+Reference\+Count@{increment\+Reference\+Count}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{increment\+Reference\+Count()}]{\setlength{\rightskip}{0pt plus 5cm}void Server\+Media\+Session\+::increment\+Reference\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classServerMediaSession_a791d46c12d1b1f0583c4d905f85727b5}
+
+
+Definition at line 66 of file Server\+Media\+Session.\+hh.
+
+
+
+References f\+Reference\+Count.
+
+
+\begin{DoxyCode}
+66 \{ ++fReferenceCount; \}
+\end{DoxyCode}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!is\+Media\+Session@{is\+Media\+Session}}
+\index{is\+Media\+Session@{is\+Media\+Session}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{is\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ac5858707c4e7a15bd59d476cf48289d6}
+
+
+Reimplemented in {\bf Media\+Session} \doxyref{}{p.}{classMediaSession_a3b2a06a722374ab4477ac05a2ce28829}.
+
+\index{Server\+Media\+Session@{Server\+Media\+Session}!is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}}
+\index{is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{is\+R\+T\+C\+P\+Instance() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ab5f9f20324698f89a35513d596b2e7be}
+
+
+Reimplemented in {\bf R\+T\+C\+P\+Instance} \doxyref{}{p.}{classRTCPInstance_a844292518419e1dbf24170812fd1e4b5}.
+
+\index{Server\+Media\+Session@{Server\+Media\+Session}!is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}}
+\index{is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{is\+R\+T\+S\+P\+Client() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aed1c1816867f910ce8c98350686ac038}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Client} \doxyref{}{p.}{classRTSPClient_add07b3a68432b546998080b24380e7e8}.
+
+\index{Server\+Media\+Session@{Server\+Media\+Session}!is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}}
+\index{is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{is\+R\+T\+S\+P\+Server() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a346e111b31bfde4b7f4ed593e0b97fd3}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Server} \doxyref{}{p.}{classRTSPServer_a45f9fc5ddd8f214169358493215a064a}.
+
+\index{Server\+Media\+Session@{Server\+Media\+Session}!is\+Server\+Media\+Session@{is\+Server\+Media\+Session}}
+\index{is\+Server\+Media\+Session@{is\+Server\+Media\+Session}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{is\+Server\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Server\+Media\+Session\+::is\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classServerMediaSession_a34b59e04644b6f0841ea5af99dbf32f6}
+
+
+Reimplemented from {\bf Medium} \doxyref{}{p.}{classMedium_aa9fd26c4b954ffba5f79925ecd0283a0}.
+
+\index{Server\+Media\+Session@{Server\+Media\+Session}!is\+Sink@{is\+Sink}}
+\index{is\+Sink@{is\+Sink}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{is\+Sink() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a23d49bf466482784b9d4378490d17b5f}
+
+
+Reimplemented in {\bf Media\+Sink} \doxyref{}{p.}{classMediaSink_aa8649dcdf21d5005f9ec319f898f91b6}.
+
+\index{Server\+Media\+Session@{Server\+Media\+Session}!is\+Source@{is\+Source}}
+\index{is\+Source@{is\+Source}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{is\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a6cdbd02c73a3e9c1cbab8fce9e9497b1}
+
+
+Reimplemented in {\bf Media\+Source} \doxyref{}{p.}{classMediaSource_a4d75fa9ee2b476b1231594282a6854be}.
+
+\index{Server\+Media\+Session@{Server\+Media\+Session}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$medium\+Name, Server\+Media\+Session $\ast$\&result\+Session)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Server\+Media\+Session\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name, }
+\item[{{\bf Server\+Media\+Session} $\ast$\&}]{result\+Session}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classServerMediaSession_addff23228c8299d1c1a78b972f752910}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$medium\+Name, Medium $\ast$\&result\+Medium)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Medium\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name, }
+\item[{{\bf Medium} $\ast$\&}]{result\+Medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a418c860c1e0ef2766ee0d0f64b346291}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!name@{name}}
+\index{name@{name}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Medium\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a575649802dc781c0e59e097a3870fcdb}
+
+
+Definition at line 61 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Medium\+Name.
+
+
+\begin{DoxyCode}
+61 \{\textcolor{keywordflow}{return} fMediumName;\}
+\end{DoxyCode}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{next\+Task()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token}\& Medium\+::next\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMedium_a5c8788adec90be1a584393a5bf11a5c9}
+
+
+Definition at line 77 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Next\+Task.
+
+
+\begin{DoxyCode}
+77                         \{
+78         \textcolor{keywordflow}{return} fNextTask;
+79   \}
+\end{DoxyCode}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!note\+Liveness@{note\+Liveness}}
+\index{note\+Liveness@{note\+Liveness}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{note\+Liveness()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Server\+Media\+Session\+::note\+Liveness (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classServerMediaSession_a51a074962e4b679bb99e1dff3fd5b473}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!num\+Subsessions@{num\+Subsessions}}
+\index{num\+Subsessions@{num\+Subsessions}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{num\+Subsessions() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Server\+Media\+Session\+::num\+Subsessions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classServerMediaSession_adea8ed46c70957446c44584ecc9227ff}
+
+
+Definition at line 52 of file Server\+Media\+Session.\+hh.
+
+
+
+References f\+Subsession\+Counter.
+
+
+\begin{DoxyCode}
+52 \{ \textcolor{keywordflow}{return} fSubsessionCounter; \}
+\end{DoxyCode}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!reference\+Count@{reference\+Count}}
+\index{reference\+Count@{reference\+Count}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{reference\+Count() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Server\+Media\+Session\+::reference\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classServerMediaSession_aff7a12492035e5eef6a2461252a67532}
+
+
+Definition at line 65 of file Server\+Media\+Session.\+hh.
+
+
+
+References f\+Reference\+Count.
+
+
+\begin{DoxyCode}
+65 \{ \textcolor{keywordflow}{return} fReferenceCount; \}
+\end{DoxyCode}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!stream\+Name@{stream\+Name}}
+\index{stream\+Name@{stream\+Name}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{stream\+Name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Server\+Media\+Session\+::stream\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classServerMediaSession_a95e7757c25c95f16dbdbcb69f216e8f7}
+
+
+Definition at line 49 of file Server\+Media\+Session.\+hh.
+
+
+
+References f\+Stream\+Name.
+
+
+\begin{DoxyCode}
+49 \{ \textcolor{keywordflow}{return} fStreamName; \}
+\end{DoxyCode}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!test\+Scale\+Factor@{test\+Scale\+Factor}}
+\index{test\+Scale\+Factor@{test\+Scale\+Factor}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{test\+Scale\+Factor(float \&scale)}]{\setlength{\rightskip}{0pt plus 5cm}void Server\+Media\+Session\+::test\+Scale\+Factor (
+\begin{DoxyParamCaption}
+\item[{float \&}]{scale}
+\end{DoxyParamCaption}
+)}\label{classServerMediaSession_a00f66ceef2c67090c79e7f47cebad865}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!Server\+Media\+Subsession\+Iterator@{Server\+Media\+Subsession\+Iterator}}
+\index{Server\+Media\+Subsession\+Iterator@{Server\+Media\+Subsession\+Iterator}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{Server\+Media\+Subsession\+Iterator}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Server\+Media\+Subsession\+Iterator}\hspace{0.3cm}{\ttfamily [friend]}}\label{classServerMediaSession_ad817c2d4f9e8a61b78da76729a88f36a}
+
+
+Definition at line 91 of file Server\+Media\+Session.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{Server\+Media\+Session@{Server\+Media\+Session}!f\+Creation\+Time@{f\+Creation\+Time}}
+\index{f\+Creation\+Time@{f\+Creation\+Time}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{f\+Creation\+Time}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval Server\+Media\+Session\+::f\+Creation\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classServerMediaSession_a7b5b8dc9714ade8d7437ccaab255368a}
+
+
+Definition at line 100 of file Server\+Media\+Session.\+hh.
+
+\index{Server\+Media\+Session@{Server\+Media\+Session}!f\+Delete\+When\+Unreferenced@{f\+Delete\+When\+Unreferenced}}
+\index{f\+Delete\+When\+Unreferenced@{f\+Delete\+When\+Unreferenced}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{f\+Delete\+When\+Unreferenced}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Server\+Media\+Session\+::f\+Delete\+When\+Unreferenced\hspace{0.3cm}{\ttfamily [private]}}\label{classServerMediaSession_af8eaa7474d882f461cc2ee22f0203a20}
+
+
+Definition at line 102 of file Server\+Media\+Session.\+hh.
+
+
+
+Referenced by delete\+When\+Unreferenced().
+
+\index{Server\+Media\+Session@{Server\+Media\+Session}!f\+Description\+S\+D\+P\+String@{f\+Description\+S\+D\+P\+String}}
+\index{f\+Description\+S\+D\+P\+String@{f\+Description\+S\+D\+P\+String}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{f\+Description\+S\+D\+P\+String}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Server\+Media\+Session\+::f\+Description\+S\+D\+P\+String\hspace{0.3cm}{\ttfamily [private]}}\label{classServerMediaSession_a22227567a41ed1fe7c348aa1ae8f0f72}
+
+
+Definition at line 98 of file Server\+Media\+Session.\+hh.
+
+\index{Server\+Media\+Session@{Server\+Media\+Session}!f\+Info\+S\+D\+P\+String@{f\+Info\+S\+D\+P\+String}}
+\index{f\+Info\+S\+D\+P\+String@{f\+Info\+S\+D\+P\+String}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{f\+Info\+S\+D\+P\+String}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Server\+Media\+Session\+::f\+Info\+S\+D\+P\+String\hspace{0.3cm}{\ttfamily [private]}}\label{classServerMediaSession_a20653ecc2fdf0ebacbc7135a9ac2f3a5}
+
+
+Definition at line 97 of file Server\+Media\+Session.\+hh.
+
+\index{Server\+Media\+Session@{Server\+Media\+Session}!f\+Is\+S\+S\+M@{f\+Is\+S\+S\+M}}
+\index{f\+Is\+S\+S\+M@{f\+Is\+S\+S\+M}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{f\+Is\+S\+S\+M}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Server\+Media\+Session\+::f\+Is\+S\+S\+M\hspace{0.3cm}{\ttfamily [private]}}\label{classServerMediaSession_a8ddd2753e990597b5d1bb96867093bfe}
+
+
+Definition at line 88 of file Server\+Media\+Session.\+hh.
+
+\index{Server\+Media\+Session@{Server\+Media\+Session}!f\+Misc\+S\+D\+P\+Lines@{f\+Misc\+S\+D\+P\+Lines}}
+\index{f\+Misc\+S\+D\+P\+Lines@{f\+Misc\+S\+D\+P\+Lines}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{f\+Misc\+S\+D\+P\+Lines}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Server\+Media\+Session\+::f\+Misc\+S\+D\+P\+Lines\hspace{0.3cm}{\ttfamily [private]}}\label{classServerMediaSession_a7e3b2a09229808bcd5e3bb088cd26222}
+
+
+Definition at line 99 of file Server\+Media\+Session.\+hh.
+
+\index{Server\+Media\+Session@{Server\+Media\+Session}!f\+Reference\+Count@{f\+Reference\+Count}}
+\index{f\+Reference\+Count@{f\+Reference\+Count}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{f\+Reference\+Count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Server\+Media\+Session\+::f\+Reference\+Count\hspace{0.3cm}{\ttfamily [private]}}\label{classServerMediaSession_a7f9df3274622635911947670cdff2b53}
+
+
+Definition at line 101 of file Server\+Media\+Session.\+hh.
+
+
+
+Referenced by decrement\+Reference\+Count(), increment\+Reference\+Count(), and reference\+Count().
+
+\index{Server\+Media\+Session@{Server\+Media\+Session}!f\+Stream\+Name@{f\+Stream\+Name}}
+\index{f\+Stream\+Name@{f\+Stream\+Name}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{f\+Stream\+Name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Server\+Media\+Session\+::f\+Stream\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classServerMediaSession_ad5fec5f5e8990eb84783d7569b1c0350}
+
+
+Definition at line 96 of file Server\+Media\+Session.\+hh.
+
+
+
+Referenced by stream\+Name().
+
+\index{Server\+Media\+Session@{Server\+Media\+Session}!f\+Subsession\+Counter@{f\+Subsession\+Counter}}
+\index{f\+Subsession\+Counter@{f\+Subsession\+Counter}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{f\+Subsession\+Counter}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Server\+Media\+Session\+::f\+Subsession\+Counter\hspace{0.3cm}{\ttfamily [private]}}\label{classServerMediaSession_ac2de8452eb5a157d44fd5dbbd8bb92b5}
+
+
+Definition at line 94 of file Server\+Media\+Session.\+hh.
+
+
+
+Referenced by num\+Subsessions().
+
+\index{Server\+Media\+Session@{Server\+Media\+Session}!f\+Subsessions\+Head@{f\+Subsessions\+Head}}
+\index{f\+Subsessions\+Head@{f\+Subsessions\+Head}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{f\+Subsessions\+Head}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Server\+Media\+Subsession}$\ast$ Server\+Media\+Session\+::f\+Subsessions\+Head\hspace{0.3cm}{\ttfamily [private]}}\label{classServerMediaSession_a49c0a5513474c824e2a2222cf4f1623c}
+
+
+Definition at line 92 of file Server\+Media\+Session.\+hh.
+
+\index{Server\+Media\+Session@{Server\+Media\+Session}!f\+Subsessions\+Tail@{f\+Subsessions\+Tail}}
+\index{f\+Subsessions\+Tail@{f\+Subsessions\+Tail}!Server\+Media\+Session@{Server\+Media\+Session}}
+\subsubsection[{f\+Subsessions\+Tail}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Server\+Media\+Subsession}$\ast$ Server\+Media\+Session\+::f\+Subsessions\+Tail\hspace{0.3cm}{\ttfamily [private]}}\label{classServerMediaSession_a86787c853ae1113f9cde85e123392195}
+
+
+Definition at line 93 of file Server\+Media\+Session.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf Server\+Media\+Session.\+hh}\end{DoxyCompactItemize}

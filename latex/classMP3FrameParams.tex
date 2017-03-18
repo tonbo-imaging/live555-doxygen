@@ -1,0 +1,389 @@
+\section{M\+P3\+Frame\+Params Class Reference}
+\label{classMP3FrameParams}\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+
+
+{\ttfamily \#include $<$M\+P3\+Internals.\+hh$>$}
+
+
+
+Collaboration diagram for M\+P3\+Frame\+Params\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=147pt]{classMP3FrameParams__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf M\+P3\+Frame\+Params} ()
+\item 
+{\bf $\sim$\+M\+P3\+Frame\+Params} ()
+\item 
+void {\bf set\+Params\+From\+Header} ()
+\item 
+void {\bf set\+Byte\+Pointer} (unsigned char const $\ast$rest\+Of\+Frame, unsigned tot\+Num\+Bytes)
+\item 
+void {\bf get\+Side\+Info} ({\bf M\+P3\+Side\+Info} \&si)
+\item 
+unsigned {\bf get\+Bits} (unsigned num\+Bits)
+\item 
+unsigned {\bf get1\+Bit} ()
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf hdr}
+\item 
+unsigned char {\bf frame\+Bytes} [{\bf M\+A\+X\+\_\+\+M\+P3\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+I\+Z\+E}]
+\item 
+{\bf Boolean} {\bf is\+M\+P\+E\+G2}
+\item 
+unsigned {\bf layer}
+\item 
+unsigned {\bf bitrate}
+\item 
+unsigned {\bf sampling\+Freq}
+\item 
+{\bf Boolean} {\bf is\+Stereo}
+\item 
+{\bf Boolean} {\bf is\+Free\+Format}
+\item 
+unsigned {\bf frame\+Size}
+\item 
+unsigned {\bf side\+Info\+Size}
+\item 
+{\bf Boolean} {\bf has\+C\+R\+C}
+\item 
+unsigned {\bf old\+Hdr}
+\item 
+unsigned {\bf first\+Hdr}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf compute\+Side\+Info\+Size} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Bit\+Vector} {\bf bv}
+\item 
+unsigned {\bf bitrate\+Index}
+\item 
+unsigned {\bf sampling\+Freq\+Index}
+\item 
+{\bf Boolean} {\bf is\+M\+P\+E\+G2\+\_\+5}
+\item 
+{\bf Boolean} {\bf padding}
+\item 
+{\bf Boolean} {\bf extension}
+\item 
+unsigned {\bf mode}
+\item 
+unsigned {\bf mode\+\_\+ext}
+\item 
+{\bf Boolean} {\bf copyright}
+\item 
+{\bf Boolean} {\bf original}
+\item 
+unsigned {\bf emphasis}
+\item 
+unsigned {\bf stereo}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 66 of file M\+P3\+Internals.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{M\+P3\+Frame\+Params()}]{\setlength{\rightskip}{0pt plus 5cm}M\+P3\+Frame\+Params\+::\+M\+P3\+Frame\+Params (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classMP3FrameParams_af06c113d2aa0eae9fc193f45b444542e}
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!````~M\+P3\+Frame\+Params@{$\sim$\+M\+P3\+Frame\+Params}}
+\index{````~M\+P3\+Frame\+Params@{$\sim$\+M\+P3\+Frame\+Params}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{$\sim$\+M\+P3\+Frame\+Params()}]{\setlength{\rightskip}{0pt plus 5cm}M\+P3\+Frame\+Params\+::$\sim$\+M\+P3\+Frame\+Params (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classMP3FrameParams_aa023bdaec2029ced861cfdc7cb6e7b22}
+
+
+\subsection{Member Function Documentation}
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!compute\+Side\+Info\+Size@{compute\+Side\+Info\+Size}}
+\index{compute\+Side\+Info\+Size@{compute\+Side\+Info\+Size}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{compute\+Side\+Info\+Size()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Frame\+Params\+::compute\+Side\+Info\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3FrameParams_a1d39cf80fd5497ee13a107550cca5bcf}
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!get1\+Bit@{get1\+Bit}}
+\index{get1\+Bit@{get1\+Bit}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{get1\+Bit()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Frame\+Params\+::get1\+Bit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMP3FrameParams_ad13a2308b50f3f3ec8a095c604381a06}
+
+
+Definition at line 102 of file M\+P3\+Internals.\+hh.
+
+
+
+References bv, and Bit\+Vector\+::get1\+Bit().
+
+
+\begin{DoxyCode}
+102 \{ \textcolor{keywordflow}{return} bv.get1Bit(); \}
+\end{DoxyCode}
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!get\+Bits@{get\+Bits}}
+\index{get\+Bits@{get\+Bits}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{get\+Bits(unsigned num\+Bits)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Frame\+Params\+::get\+Bits (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bits}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMP3FrameParams_a378d6256db324c916cb9de99e8bfad80}
+
+
+Definition at line 101 of file M\+P3\+Internals.\+hh.
+
+
+
+References bv, and Bit\+Vector\+::get\+Bits().
+
+
+\begin{DoxyCode}
+101 \{ \textcolor{keywordflow}{return} bv.getBits(numBits); \}
+\end{DoxyCode}
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!get\+Side\+Info@{get\+Side\+Info}}
+\index{get\+Side\+Info@{get\+Side\+Info}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{get\+Side\+Info(\+M\+P3\+Side\+Info \&si)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P3\+Frame\+Params\+::get\+Side\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+P3\+Side\+Info} \&}]{si}
+\end{DoxyParamCaption}
+)}\label{classMP3FrameParams_abf6ec614526a529ecec302016aba1fb8}
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!set\+Byte\+Pointer@{set\+Byte\+Pointer}}
+\index{set\+Byte\+Pointer@{set\+Byte\+Pointer}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{set\+Byte\+Pointer(unsigned char const $\ast$rest\+Of\+Frame, unsigned tot\+Num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P3\+Frame\+Params\+::set\+Byte\+Pointer (
+\begin{DoxyParamCaption}
+\item[{unsigned char const $\ast$}]{rest\+Of\+Frame, }
+\item[{unsigned}]{tot\+Num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMP3FrameParams_aee10c9446aeab775f8a112faf67a8054}
+
+
+Definition at line 89 of file M\+P3\+Internals.\+hh.
+
+
+
+References bv, and Bit\+Vector\+::setup().
+
+
+\begin{DoxyCode}
+90                                             \{\textcolor{comment}{// called during setup}
+91     bv.setup((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}*)restOfFrame, 0, 8*totNumBytes);
+92   \}
+\end{DoxyCode}
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!set\+Params\+From\+Header@{set\+Params\+From\+Header}}
+\index{set\+Params\+From\+Header@{set\+Params\+From\+Header}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{set\+Params\+From\+Header()}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P3\+Frame\+Params\+::set\+Params\+From\+Header (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classMP3FrameParams_af0788dbfe14cbba4fca8bf48c14d503a}
+
+
+\subsection{Field Documentation}
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!bitrate@{bitrate}}
+\index{bitrate@{bitrate}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{bitrate}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Frame\+Params\+::bitrate}\label{classMP3FrameParams_a92c042d173796aabfb38fc36882672fc}
+
+
+Definition at line 81 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!bitrate\+Index@{bitrate\+Index}}
+\index{bitrate\+Index@{bitrate\+Index}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{bitrate\+Index}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Frame\+Params\+::bitrate\+Index\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3FrameParams_a02ca455aa0b7179d70b8d7cd75961049}
+
+
+Definition at line 108 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!bv@{bv}}
+\index{bv@{bv}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{bv}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bit\+Vector} M\+P3\+Frame\+Params\+::bv\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3FrameParams_a62a7844ad65c8ffacd2c6b0c5460f649}
+
+
+Definition at line 105 of file M\+P3\+Internals.\+hh.
+
+
+
+Referenced by get1\+Bit(), get\+Bits(), and set\+Byte\+Pointer().
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!copyright@{copyright}}
+\index{copyright@{copyright}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{copyright}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P3\+Frame\+Params\+::copyright\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3FrameParams_aa36c376b5e7f957f073f3cc684b3f628}
+
+
+Definition at line 115 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!emphasis@{emphasis}}
+\index{emphasis@{emphasis}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{emphasis}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Frame\+Params\+::emphasis\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3FrameParams_a9aac0048f3940afafc158008b18ed4ed}
+
+
+Definition at line 117 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!extension@{extension}}
+\index{extension@{extension}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{extension}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P3\+Frame\+Params\+::extension\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3FrameParams_a5fb8c5ef97a8bf2f157dce1aeedcf1bd}
+
+
+Definition at line 112 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!first\+Hdr@{first\+Hdr}}
+\index{first\+Hdr@{first\+Hdr}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{first\+Hdr}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Frame\+Params\+::first\+Hdr}\label{classMP3FrameParams_aa841ac2404d5bcf9d9e148370e1c4dfd}
+
+
+Definition at line 95 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!frame\+Bytes@{frame\+Bytes}}
+\index{frame\+Bytes@{frame\+Bytes}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{frame\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char M\+P3\+Frame\+Params\+::frame\+Bytes[{\bf M\+A\+X\+\_\+\+M\+P3\+\_\+\+F\+R\+A\+M\+E\+\_\+\+S\+I\+Z\+E}]}\label{classMP3FrameParams_a33684180c7b54c0bbcbce744a7eb660e}
+
+
+Definition at line 75 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!frame\+Size@{frame\+Size}}
+\index{frame\+Size@{frame\+Size}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{frame\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Frame\+Params\+::frame\+Size}\label{classMP3FrameParams_a77f9793f6129ef823c6e4dfa432d30c6}
+
+
+Definition at line 85 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!has\+C\+R\+C@{has\+C\+R\+C}}
+\index{has\+C\+R\+C@{has\+C\+R\+C}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{has\+C\+R\+C}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P3\+Frame\+Params\+::has\+C\+R\+C}\label{classMP3FrameParams_abf5cc2775aec936beb32cb18d54216b4}
+
+
+Definition at line 87 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!hdr@{hdr}}
+\index{hdr@{hdr}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{hdr}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Frame\+Params\+::hdr}\label{classMP3FrameParams_a115b347e3fedbdfe92cd84e61325c8d1}
+
+
+Definition at line 72 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!is\+Free\+Format@{is\+Free\+Format}}
+\index{is\+Free\+Format@{is\+Free\+Format}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{is\+Free\+Format}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P3\+Frame\+Params\+::is\+Free\+Format}\label{classMP3FrameParams_adc0e85625c433a441b28eebcd4f8b80a}
+
+
+Definition at line 84 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!is\+M\+P\+E\+G2@{is\+M\+P\+E\+G2}}
+\index{is\+M\+P\+E\+G2@{is\+M\+P\+E\+G2}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{is\+M\+P\+E\+G2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P3\+Frame\+Params\+::is\+M\+P\+E\+G2}\label{classMP3FrameParams_ade7cca167a23890ecf7482110c129bff}
+
+
+Definition at line 79 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!is\+M\+P\+E\+G2\+\_\+5@{is\+M\+P\+E\+G2\+\_\+5}}
+\index{is\+M\+P\+E\+G2\+\_\+5@{is\+M\+P\+E\+G2\+\_\+5}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{is\+M\+P\+E\+G2\+\_\+5}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P3\+Frame\+Params\+::is\+M\+P\+E\+G2\+\_\+5\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3FrameParams_aa369c29dc18b3c27e0d449d0bad4ebea}
+
+
+Definition at line 110 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!is\+Stereo@{is\+Stereo}}
+\index{is\+Stereo@{is\+Stereo}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{is\+Stereo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P3\+Frame\+Params\+::is\+Stereo}\label{classMP3FrameParams_a36700fd8732ccccb76869300ba5ccd32}
+
+
+Definition at line 83 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!layer@{layer}}
+\index{layer@{layer}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{layer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Frame\+Params\+::layer}\label{classMP3FrameParams_afd2eac47e61cd82e6be9a37329d72830}
+
+
+Definition at line 80 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!mode@{mode}}
+\index{mode@{mode}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Frame\+Params\+::mode\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3FrameParams_a6ed08ea7bcad2d0172b83a7553fb708a}
+
+
+Definition at line 113 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!mode\+\_\+ext@{mode\+\_\+ext}}
+\index{mode\+\_\+ext@{mode\+\_\+ext}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{mode\+\_\+ext}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Frame\+Params\+::mode\+\_\+ext\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3FrameParams_aafd34b224aabcfb2f2b2bc3224a627d0}
+
+
+Definition at line 114 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!old\+Hdr@{old\+Hdr}}
+\index{old\+Hdr@{old\+Hdr}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{old\+Hdr}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Frame\+Params\+::old\+Hdr}\label{classMP3FrameParams_a425e8321d521693b24d958da466c7489}
+
+
+Definition at line 95 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!original@{original}}
+\index{original@{original}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{original}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P3\+Frame\+Params\+::original\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3FrameParams_af671ffc5fdd0f49d6ec79d6971fcbda4}
+
+
+Definition at line 116 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!padding@{padding}}
+\index{padding@{padding}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{padding}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P3\+Frame\+Params\+::padding\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3FrameParams_ae5743b41d64a03a8953f11746952eadf}
+
+
+Definition at line 111 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!sampling\+Freq@{sampling\+Freq}}
+\index{sampling\+Freq@{sampling\+Freq}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{sampling\+Freq}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Frame\+Params\+::sampling\+Freq}\label{classMP3FrameParams_afcc6164a19e049eaddff5f54ea3d2c44}
+
+
+Definition at line 82 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!sampling\+Freq\+Index@{sampling\+Freq\+Index}}
+\index{sampling\+Freq\+Index@{sampling\+Freq\+Index}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{sampling\+Freq\+Index}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Frame\+Params\+::sampling\+Freq\+Index\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3FrameParams_a337e2bcfe793665d408fa053877a2b5e}
+
+
+Definition at line 109 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!side\+Info\+Size@{side\+Info\+Size}}
+\index{side\+Info\+Size@{side\+Info\+Size}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{side\+Info\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Frame\+Params\+::side\+Info\+Size}\label{classMP3FrameParams_a01b5417c715cc4ff46ff3b715239e633}
+
+
+Definition at line 86 of file M\+P3\+Internals.\+hh.
+
+\index{M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}!stereo@{stereo}}
+\index{stereo@{stereo}!M\+P3\+Frame\+Params@{M\+P3\+Frame\+Params}}
+\subsubsection[{stereo}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Frame\+Params\+::stereo\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3FrameParams_a53e7771d49f16bda33ae3322c623bef9}
+
+
+Definition at line 118 of file M\+P3\+Internals.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/{\bf M\+P3\+Internals.\+hh}\end{DoxyCompactItemize}

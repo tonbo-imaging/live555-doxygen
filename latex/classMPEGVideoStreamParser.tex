@@ -1,0 +1,748 @@
+\section{M\+P\+E\+G\+Video\+Stream\+Parser Class Reference}
+\label{classMPEGVideoStreamParser}\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+
+
+{\ttfamily \#include $<$M\+P\+E\+G\+Video\+Stream\+Parser.\+hh$>$}
+
+
+
+Inheritance diagram for M\+P\+E\+G\+Video\+Stream\+Parser\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classMPEGVideoStreamParser__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for M\+P\+E\+G\+Video\+Stream\+Parser\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{classMPEGVideoStreamParser__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf M\+P\+E\+G\+Video\+Stream\+Parser} ({\bf M\+P\+E\+G\+Video\+Stream\+Framer} $\ast$using\+Source, {\bf Framed\+Source} $\ast$input\+Source)
+\item 
+virtual {\bf $\sim$\+M\+P\+E\+G\+Video\+Stream\+Parser} ()
+\item 
+void {\bf register\+Read\+Interest} (unsigned char $\ast$to, unsigned max\+Size)
+\item 
+virtual unsigned {\bf parse} ()=0
+\item 
+unsigned {\bf num\+Truncated\+Bytes} () const 
+\item 
+virtual void {\bf flush\+Input} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void( {\bf client\+Continue\+Func}) (void $\ast$client\+Data, unsigned char $\ast$ptr, unsigned size, struct timeval presentation\+Time)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf set\+Parse\+State} ()
+\item 
+void {\bf save\+Byte} (u\+\_\+int8\+\_\+t byte)
+\item 
+void {\bf save4\+Bytes} (u\+\_\+int32\+\_\+t word)
+\item 
+void {\bf save\+To\+Next\+Code} (u\+\_\+int32\+\_\+t \&cur\+Word)
+\item 
+void {\bf skip\+To\+Next\+Code} (u\+\_\+int32\+\_\+t \&cur\+Word)
+\item 
+unsigned {\bf cur\+Frame\+Size} ()
+\item 
+void {\bf save\+Parser\+State} ()
+\item 
+u\+\_\+int32\+\_\+t {\bf get4\+Bytes} ()
+\item 
+u\+\_\+int32\+\_\+t {\bf test4\+Bytes} ()
+\item 
+u\+\_\+int16\+\_\+t {\bf get2\+Bytes} ()
+\item 
+u\+\_\+int8\+\_\+t {\bf get1\+Byte} ()
+\item 
+u\+\_\+int8\+\_\+t {\bf test1\+Byte} ()
+\item 
+void {\bf get\+Bytes} (u\+\_\+int8\+\_\+t $\ast$to, unsigned num\+Bytes)
+\item 
+void {\bf test\+Bytes} (u\+\_\+int8\+\_\+t $\ast$to, unsigned num\+Bytes)
+\item 
+void {\bf skip\+Bytes} (unsigned num\+Bytes)
+\item 
+void {\bf skip\+Bits} (unsigned num\+Bits)
+\item 
+unsigned {\bf get\+Bits} (unsigned num\+Bits)
+\item 
+unsigned {\bf cur\+Offset} () const 
+\item 
+unsigned \& {\bf tot\+Num\+Valid\+Bytes} ()
+\item 
+{\bf Boolean} {\bf have\+Seen\+E\+O\+F} () const 
+\item 
+unsigned {\bf bank\+Size} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf M\+P\+E\+G\+Video\+Stream\+Framer} $\ast$ {\bf f\+Using\+Source}
+\item 
+unsigned char $\ast$ {\bf f\+Start\+Of\+Frame}
+\item 
+unsigned char $\ast$ {\bf f\+To}
+\item 
+unsigned char $\ast$ {\bf f\+Limit}
+\item 
+unsigned {\bf f\+Num\+Truncated\+Bytes}
+\item 
+unsigned char $\ast$ {\bf f\+Saved\+To}
+\item 
+unsigned {\bf f\+Saved\+Num\+Truncated\+Bytes}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf restore\+Saved\+Parser\+State} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 33 of file M\+P\+E\+G\+Video\+Stream\+Parser.\+hh.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!client\+Continue\+Func@{client\+Continue\+Func}}
+\index{client\+Continue\+Func@{client\+Continue\+Func}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{client\+Continue\+Func}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( Stream\+Parser\+::client\+Continue\+Func) (void $\ast$client\+Data, unsigned char $\ast$ptr, unsigned size, struct timeval presentation\+Time)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_af64ee5887e237d64d1df3072f10e11fb}
+
+
+Definition at line 33 of file Stream\+Parser.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{M\+P\+E\+G\+Video\+Stream\+Parser(\+M\+P\+E\+G\+Video\+Stream\+Framer $\ast$using\+Source, Framed\+Source $\ast$input\+Source)}]{\setlength{\rightskip}{0pt plus 5cm}M\+P\+E\+G\+Video\+Stream\+Parser\+::\+M\+P\+E\+G\+Video\+Stream\+Parser (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+P\+E\+G\+Video\+Stream\+Framer} $\ast$}]{using\+Source, }
+\item[{{\bf Framed\+Source} $\ast$}]{input\+Source}
+\end{DoxyParamCaption}
+)}\label{classMPEGVideoStreamParser_a71b0404e0df531b762bae779823e61ec}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!````~M\+P\+E\+G\+Video\+Stream\+Parser@{$\sim$\+M\+P\+E\+G\+Video\+Stream\+Parser}}
+\index{````~M\+P\+E\+G\+Video\+Stream\+Parser@{$\sim$\+M\+P\+E\+G\+Video\+Stream\+Parser}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{$\sim$\+M\+P\+E\+G\+Video\+Stream\+Parser()}]{\setlength{\rightskip}{0pt plus 5cm}virtual M\+P\+E\+G\+Video\+Stream\+Parser\+::$\sim$\+M\+P\+E\+G\+Video\+Stream\+Parser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classMPEGVideoStreamParser_afec2965df27328b20239868120631903}
+
+
+\subsection{Member Function Documentation}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!bank\+Size@{bank\+Size}}
+\index{bank\+Size@{bank\+Size}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{bank\+Size() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+Parser\+::bank\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_a861774b85359a9a8b3de447ac88da9f2}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!cur\+Frame\+Size@{cur\+Frame\+Size}}
+\index{cur\+Frame\+Size@{cur\+Frame\+Size}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{cur\+Frame\+Size()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P\+E\+G\+Video\+Stream\+Parser\+::cur\+Frame\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classMPEGVideoStreamParser_aa07b3b97939df7c3d18edb338e602aa0}
+
+
+Definition at line 114 of file M\+P\+E\+G\+Video\+Stream\+Parser.\+hh.
+
+
+
+References f\+Start\+Of\+Frame.
+
+
+\begin{DoxyCode}
+114 \{ \textcolor{keywordflow}{return} fTo - fStartOfFrame; \}
+\end{DoxyCode}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!cur\+Offset@{cur\+Offset}}
+\index{cur\+Offset@{cur\+Offset}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{cur\+Offset() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+Parser\+::cur\+Offset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_ad7f2eaf42a390a5ebc257b5ac5dc9fed}
+
+
+Definition at line 100 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::f\+Cur\+Parser\+Index.
+
+
+\begin{DoxyCode}
+100 \{ \textcolor{keywordflow}{return} fCurParserIndex; \}
+\end{DoxyCode}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!flush\+Input@{flush\+Input}}
+\index{flush\+Input@{flush\+Input}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{flush\+Input()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Stream\+Parser\+::flush\+Input (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classStreamParser_a3225e9b48cf370e2ff9a9aa3a60308fd}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!get1\+Byte@{get1\+Byte}}
+\index{get1\+Byte@{get1\+Byte}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{get1\+Byte()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t Stream\+Parser\+::get1\+Byte (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_aa198ceef145e9c25617b3e7c10ed8476}
+
+
+Definition at line 72 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::cur\+Bank(), Stream\+Parser\+::ensure\+Valid\+Bytes(), Stream\+Parser\+::f\+Cur\+Parser\+Index, and Stream\+Parser\+::f\+Remaining\+Unparsed\+Bits.
+
+
+
+Referenced by save\+To\+Next\+Code(), and skip\+To\+Next\+Code().
+
+
+\begin{DoxyCode}
+72                       \{ \textcolor{comment}{// byte-aligned}
+73     ensureValidBytes(1);
+74     fRemainingUnparsedBits = 0;
+75     \textcolor{keywordflow}{return} curBank()[fCurParserIndex++];
+76   \}
+\end{DoxyCode}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!get2\+Bytes@{get2\+Bytes}}
+\index{get2\+Bytes@{get2\+Bytes}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{get2\+Bytes()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int16\+\_\+t Stream\+Parser\+::get2\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_aa32642bfa6d9705d04d894d7bf820821}
+
+
+Definition at line 60 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::ensure\+Valid\+Bytes(), Stream\+Parser\+::f\+Cur\+Parser\+Index, Stream\+Parser\+::f\+Remaining\+Unparsed\+Bits, and Stream\+Parser\+::next\+To\+Parse().
+
+
+\begin{DoxyCode}
+60                         \{
+61     ensureValidBytes(2);
+62 
+63     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \textcolor{keyword}{const}* ptr = nextToParse();
+64     u\_int16\_t result = (ptr[0]<<8)|ptr[1];
+65 
+66     fCurParserIndex += 2;
+67     fRemainingUnparsedBits = 0;
+68 
+69     \textcolor{keywordflow}{return} result;
+70   \}
+\end{DoxyCode}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!get4\+Bytes@{get4\+Bytes}}
+\index{get4\+Bytes@{get4\+Bytes}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{get4\+Bytes()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t Stream\+Parser\+::get4\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_adad1edf3d565b40e56878a33b015ba71}
+
+
+Definition at line 46 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::f\+Cur\+Parser\+Index, Stream\+Parser\+::f\+Remaining\+Unparsed\+Bits, and Stream\+Parser\+::test4\+Bytes().
+
+
+
+Referenced by save\+To\+Next\+Code(), and skip\+To\+Next\+Code().
+
+
+\begin{DoxyCode}
+46                         \{ \textcolor{comment}{// byte-aligned; returned in big-endian order}
+47     u\_int32\_t result = test4Bytes();
+48     fCurParserIndex += 4;
+49     fRemainingUnparsedBits = 0;
+50 
+51     \textcolor{keywordflow}{return} result;
+52   \}
+\end{DoxyCode}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!get\+Bits@{get\+Bits}}
+\index{get\+Bits@{get\+Bits}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{get\+Bits(unsigned num\+Bits)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+Parser\+::get\+Bits (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bits}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_a4c2c541641d32e623cee26a87c7757b9}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!get\+Bytes@{get\+Bytes}}
+\index{get\+Bytes@{get\+Bytes}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{get\+Bytes(u\+\_\+int8\+\_\+t $\ast$to, unsigned num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::get\+Bytes (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t $\ast$}]{to, }
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_a51d3d9bd192703f2e68abc091ad52df5}
+
+
+Definition at line 82 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::f\+Cur\+Parser\+Index, Stream\+Parser\+::f\+Remaining\+Unparsed\+Bits, and Stream\+Parser\+::test\+Bytes().
+
+
+\begin{DoxyCode}
+82                                                  \{
+83     testBytes(to, numBytes);
+84     fCurParserIndex += numBytes;
+85     fRemainingUnparsedBits = 0;
+86   \}
+\end{DoxyCode}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!have\+Seen\+E\+O\+F@{have\+Seen\+E\+O\+F}}
+\index{have\+Seen\+E\+O\+F@{have\+Seen\+E\+O\+F}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{have\+Seen\+E\+O\+F() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Stream\+Parser\+::have\+Seen\+E\+O\+F (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_abf3705cbce3ed9bce23d13fa50641fbd}
+
+
+Definition at line 104 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::f\+Have\+Seen\+E\+O\+F.
+
+
+\begin{DoxyCode}
+104 \{ \textcolor{keywordflow}{return} fHaveSeenEOF; \}
+\end{DoxyCode}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!num\+Truncated\+Bytes@{num\+Truncated\+Bytes}}
+\index{num\+Truncated\+Bytes@{num\+Truncated\+Bytes}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{num\+Truncated\+Bytes() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P\+E\+G\+Video\+Stream\+Parser\+::num\+Truncated\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classMPEGVideoStreamParser_a7538596d80fcd35361c8ebca4248dbc3}
+
+
+Definition at line 45 of file M\+P\+E\+G\+Video\+Stream\+Parser.\+hh.
+
+
+
+References f\+Num\+Truncated\+Bytes.
+
+
+\begin{DoxyCode}
+45 \{ \textcolor{keywordflow}{return} fNumTruncatedBytes; \}
+\end{DoxyCode}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!parse@{parse}}
+\index{parse@{parse}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{parse()=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned M\+P\+E\+G\+Video\+Stream\+Parser\+::parse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classMPEGVideoStreamParser_ac3911c87dfb92d03639b3d87c4637987}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!register\+Read\+Interest@{register\+Read\+Interest}}
+\index{register\+Read\+Interest@{register\+Read\+Interest}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{register\+Read\+Interest(unsigned char $\ast$to, unsigned max\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P\+E\+G\+Video\+Stream\+Parser\+::register\+Read\+Interest (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{to, }
+\item[{unsigned}]{max\+Size}
+\end{DoxyParamCaption}
+)}\label{classMPEGVideoStreamParser_a9cd7b58698dce4afc6b777ada72d3d9e}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!restore\+Saved\+Parser\+State@{restore\+Saved\+Parser\+State}}
+\index{restore\+Saved\+Parser\+State@{restore\+Saved\+Parser\+State}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{restore\+Saved\+Parser\+State()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void M\+P\+E\+G\+Video\+Stream\+Parser\+::restore\+Saved\+Parser\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classMPEGVideoStreamParser_a5e739b73408c43237316c95a5bb93d00}
+
+
+Reimplemented from {\bf Stream\+Parser} \doxyref{}{p.}{classStreamParser_ac15f8f98fdd79ae31b8cee01f1a963e9}.
+
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!save4\+Bytes@{save4\+Bytes}}
+\index{save4\+Bytes@{save4\+Bytes}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{save4\+Bytes(u\+\_\+int32\+\_\+t word)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P\+E\+G\+Video\+Stream\+Parser\+::save4\+Bytes (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t}]{word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classMPEGVideoStreamParser_abc497193b40739050d0d0a4ee0d9d72d}
+
+
+Definition at line 64 of file M\+P\+E\+G\+Video\+Stream\+Parser.\+hh.
+
+
+
+References f\+Limit, f\+Num\+Truncated\+Bytes, and f\+To.
+
+
+
+Referenced by save\+To\+Next\+Code().
+
+
+\begin{DoxyCode}
+64                                   \{
+65     \textcolor{keywordflow}{if} (fTo+4 > fLimit) \{ \textcolor{comment}{// there's no space left}
+66       fNumTruncatedBytes += 4;
+67       \textcolor{keywordflow}{return};
+68     \}
+69 
+70     *fTo++ = word>>24; *fTo++ = word>>16; *fTo++ = word>>8; *fTo++ = word;
+71   \}
+\end{DoxyCode}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!save\+Byte@{save\+Byte}}
+\index{save\+Byte@{save\+Byte}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{save\+Byte(u\+\_\+int8\+\_\+t byte)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P\+E\+G\+Video\+Stream\+Parser\+::save\+Byte (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t}]{byte}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classMPEGVideoStreamParser_add437fa6967521d849e691f39bc511b5}
+
+
+Definition at line 55 of file M\+P\+E\+G\+Video\+Stream\+Parser.\+hh.
+
+
+
+References f\+Limit, f\+Num\+Truncated\+Bytes, and f\+To.
+
+
+
+Referenced by save\+To\+Next\+Code().
+
+
+\begin{DoxyCode}
+55                                \{
+56     \textcolor{keywordflow}{if} (fTo >= fLimit) \{ \textcolor{comment}{// there's no space left}
+57       ++fNumTruncatedBytes;
+58       \textcolor{keywordflow}{return};
+59     \}
+60 
+61     *fTo++ = byte;
+62   \}
+\end{DoxyCode}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!save\+Parser\+State@{save\+Parser\+State}}
+\index{save\+Parser\+State@{save\+Parser\+State}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{save\+Parser\+State()}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::save\+Parser\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_afad3a870af863d25ea1927ab9c07b3f2}
+
+
+Referenced by set\+Parse\+State().
+
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!save\+To\+Next\+Code@{save\+To\+Next\+Code}}
+\index{save\+To\+Next\+Code@{save\+To\+Next\+Code}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{save\+To\+Next\+Code(u\+\_\+int32\+\_\+t \&cur\+Word)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P\+E\+G\+Video\+Stream\+Parser\+::save\+To\+Next\+Code (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t \&}]{cur\+Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classMPEGVideoStreamParser_ab4b5e2a2cba5006a11ba9c2acbfb4e58}
+
+
+Definition at line 74 of file M\+P\+E\+G\+Video\+Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::get1\+Byte(), Stream\+Parser\+::get4\+Bytes(), save4\+Bytes(), and save\+Byte().
+
+
+\begin{DoxyCode}
+74                                           \{
+75     saveByte(curWord>>24);
+76     curWord = (curWord<<8)|get1Byte();
+77     \textcolor{keywordflow}{while} ((curWord&0xFFFFFF00) != 0x00000100) \{
+78       \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{unsigned})(curWord&0xFF) > 1) \{
+79         \textcolor{comment}{// a sync word definitely doesn't begin anywhere in "curWord"}
+80         save4Bytes(curWord);
+81         curWord = get4Bytes();
+82       \} \textcolor{keywordflow}{else} \{
+83         \textcolor{comment}{// a sync word might begin in "curWord", although not at its start}
+84         saveByte(curWord>>24);
+85         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} newByte = get1Byte();
+86         curWord = (curWord<<8)|newByte;
+87       \}
+88     \}
+89   \}
+\end{DoxyCode}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!set\+Parse\+State@{set\+Parse\+State}}
+\index{set\+Parse\+State@{set\+Parse\+State}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{set\+Parse\+State()}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P\+E\+G\+Video\+Stream\+Parser\+::set\+Parse\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classMPEGVideoStreamParser_a03f964f49b11ff7eecd1eae4b0588b06}
+
+
+Definition at line 48 of file M\+P\+E\+G\+Video\+Stream\+Parser.\+hh.
+
+
+
+References f\+Num\+Truncated\+Bytes, f\+Saved\+Num\+Truncated\+Bytes, f\+Saved\+To, f\+To, and Stream\+Parser\+::save\+Parser\+State().
+
+
+\begin{DoxyCode}
+48                        \{
+49     fSavedTo = fTo;
+50     fSavedNumTruncatedBytes = fNumTruncatedBytes;
+51     saveParserState();
+52   \}
+\end{DoxyCode}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!skip\+Bits@{skip\+Bits}}
+\index{skip\+Bits@{skip\+Bits}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{skip\+Bits(unsigned num\+Bits)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::skip\+Bits (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bits}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_aaf2cf90f248fbd494ab74e5bccec5546}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!skip\+Bytes@{skip\+Bytes}}
+\index{skip\+Bytes@{skip\+Bytes}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{skip\+Bytes(unsigned num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::skip\+Bytes (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_aa340f831acf01b8626060818a530cfb5}
+
+
+Definition at line 91 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::ensure\+Valid\+Bytes(), and Stream\+Parser\+::f\+Cur\+Parser\+Index.
+
+
+\begin{DoxyCode}
+91                                     \{
+92     ensureValidBytes(numBytes);
+93     fCurParserIndex += numBytes;
+94   \}
+\end{DoxyCode}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!skip\+To\+Next\+Code@{skip\+To\+Next\+Code}}
+\index{skip\+To\+Next\+Code@{skip\+To\+Next\+Code}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{skip\+To\+Next\+Code(u\+\_\+int32\+\_\+t \&cur\+Word)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P\+E\+G\+Video\+Stream\+Parser\+::skip\+To\+Next\+Code (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t \&}]{cur\+Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classMPEGVideoStreamParser_a9600b841c75d1e2c64dbc438ca4c0df0}
+
+
+Definition at line 92 of file M\+P\+E\+G\+Video\+Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::get1\+Byte(), and Stream\+Parser\+::get4\+Bytes().
+
+
+\begin{DoxyCode}
+92                                           \{
+93     curWord = (curWord<<8)|get1Byte();
+94     \textcolor{keywordflow}{while} ((curWord&0xFFFFFF00) != 0x00000100) \{
+95       \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{unsigned})(curWord&0xFF) > 1) \{
+96         \textcolor{comment}{// a sync word definitely doesn't begin anywhere in "curWord"}
+97         curWord = get4Bytes();
+98       \} \textcolor{keywordflow}{else} \{
+99         \textcolor{comment}{// a sync word might begin in "curWord", although not at its start}
+100         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} newByte = get1Byte();
+101         curWord = (curWord<<8)|newByte;
+102       \}
+103     \}
+104   \}
+\end{DoxyCode}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!test1\+Byte@{test1\+Byte}}
+\index{test1\+Byte@{test1\+Byte}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{test1\+Byte()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t Stream\+Parser\+::test1\+Byte (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_a6d099b5aed1c181e2f2d320721d2f87f}
+
+
+Definition at line 77 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::ensure\+Valid\+Bytes(), and Stream\+Parser\+::next\+To\+Parse().
+
+
+\begin{DoxyCode}
+77                        \{ \textcolor{comment}{// as above, but doesn't advance ptr}
+78     ensureValidBytes(1);
+79     \textcolor{keywordflow}{return} nextToParse()[0];
+80   \}
+\end{DoxyCode}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!test4\+Bytes@{test4\+Bytes}}
+\index{test4\+Bytes@{test4\+Bytes}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{test4\+Bytes()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t Stream\+Parser\+::test4\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_ab27bd80b6ff148a1a6afbc54e9938385}
+
+
+Definition at line 53 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::ensure\+Valid\+Bytes(), and Stream\+Parser\+::next\+To\+Parse().
+
+
+
+Referenced by Stream\+Parser\+::get4\+Bytes().
+
+
+\begin{DoxyCode}
+53                          \{ \textcolor{comment}{// as above, but doesn't advance ptr}
+54     ensureValidBytes(4);
+55 
+56     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \textcolor{keyword}{const}* ptr = nextToParse();
+57     \textcolor{keywordflow}{return} (ptr[0]<<24)|(ptr[1]<<16)|(ptr[2]<<8)|ptr[3];
+58   \}
+\end{DoxyCode}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!test\+Bytes@{test\+Bytes}}
+\index{test\+Bytes@{test\+Bytes}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{test\+Bytes(u\+\_\+int8\+\_\+t $\ast$to, unsigned num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::test\+Bytes (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t $\ast$}]{to, }
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_a2ded9a22a9d1fc854303c80f9c1ad6b3}
+
+
+Definition at line 87 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::ensure\+Valid\+Bytes(), and Stream\+Parser\+::next\+To\+Parse().
+
+
+
+Referenced by Stream\+Parser\+::get\+Bytes().
+
+
+\begin{DoxyCode}
+87                                                   \{ \textcolor{comment}{// as above, but doesn't advance ptr}
+88     ensureValidBytes(numBytes);
+89     memmove(to, nextToParse(), numBytes);
+90   \}
+\end{DoxyCode}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!tot\+Num\+Valid\+Bytes@{tot\+Num\+Valid\+Bytes}}
+\index{tot\+Num\+Valid\+Bytes@{tot\+Num\+Valid\+Bytes}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{tot\+Num\+Valid\+Bytes()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned\& Stream\+Parser\+::tot\+Num\+Valid\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_a9cf19a8362a39bff364a8f3d2a5136cf}
+
+
+Definition at line 102 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::f\+Tot\+Num\+Valid\+Bytes.
+
+
+\begin{DoxyCode}
+102 \{ \textcolor{keywordflow}{return} fTotNumValidBytes; \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!f\+Limit@{f\+Limit}}
+\index{f\+Limit@{f\+Limit}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{f\+Limit}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ M\+P\+E\+G\+Video\+Stream\+Parser\+::f\+Limit\hspace{0.3cm}{\ttfamily [protected]}}\label{classMPEGVideoStreamParser_a2ccd5b8fd2dc1f775dd68cf742512437}
+
+
+Definition at line 112 of file M\+P\+E\+G\+Video\+Stream\+Parser.\+hh.
+
+
+
+Referenced by save4\+Bytes(), and save\+Byte().
+
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!f\+Num\+Truncated\+Bytes@{f\+Num\+Truncated\+Bytes}}
+\index{f\+Num\+Truncated\+Bytes@{f\+Num\+Truncated\+Bytes}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{f\+Num\+Truncated\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P\+E\+G\+Video\+Stream\+Parser\+::f\+Num\+Truncated\+Bytes\hspace{0.3cm}{\ttfamily [protected]}}\label{classMPEGVideoStreamParser_a17687bf623bb1f9ae466ef70e6046557}
+
+
+Definition at line 113 of file M\+P\+E\+G\+Video\+Stream\+Parser.\+hh.
+
+
+
+Referenced by num\+Truncated\+Bytes(), save4\+Bytes(), save\+Byte(), and set\+Parse\+State().
+
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!f\+Saved\+Num\+Truncated\+Bytes@{f\+Saved\+Num\+Truncated\+Bytes}}
+\index{f\+Saved\+Num\+Truncated\+Bytes@{f\+Saved\+Num\+Truncated\+Bytes}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{f\+Saved\+Num\+Truncated\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P\+E\+G\+Video\+Stream\+Parser\+::f\+Saved\+Num\+Truncated\+Bytes\hspace{0.3cm}{\ttfamily [protected]}}\label{classMPEGVideoStreamParser_a0b22357e5365b97a30d88580d5a80b4a}
+
+
+Definition at line 116 of file M\+P\+E\+G\+Video\+Stream\+Parser.\+hh.
+
+
+
+Referenced by set\+Parse\+State().
+
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!f\+Saved\+To@{f\+Saved\+To}}
+\index{f\+Saved\+To@{f\+Saved\+To}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{f\+Saved\+To}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ M\+P\+E\+G\+Video\+Stream\+Parser\+::f\+Saved\+To\hspace{0.3cm}{\ttfamily [protected]}}\label{classMPEGVideoStreamParser_a95c0e0e9a10f268cde37b7bbe35f5ddf}
+
+
+Definition at line 115 of file M\+P\+E\+G\+Video\+Stream\+Parser.\+hh.
+
+
+
+Referenced by set\+Parse\+State().
+
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!f\+Start\+Of\+Frame@{f\+Start\+Of\+Frame}}
+\index{f\+Start\+Of\+Frame@{f\+Start\+Of\+Frame}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{f\+Start\+Of\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ M\+P\+E\+G\+Video\+Stream\+Parser\+::f\+Start\+Of\+Frame\hspace{0.3cm}{\ttfamily [protected]}}\label{classMPEGVideoStreamParser_a2c09b36e533a81277483c30698e46b0a}
+
+
+Definition at line 110 of file M\+P\+E\+G\+Video\+Stream\+Parser.\+hh.
+
+
+
+Referenced by cur\+Frame\+Size().
+
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!f\+To@{f\+To}}
+\index{f\+To@{f\+To}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{f\+To}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ M\+P\+E\+G\+Video\+Stream\+Parser\+::f\+To\hspace{0.3cm}{\ttfamily [protected]}}\label{classMPEGVideoStreamParser_aadff80f7bfbe093ac2e67845c5b6a245}
+
+
+Definition at line 111 of file M\+P\+E\+G\+Video\+Stream\+Parser.\+hh.
+
+
+
+Referenced by save4\+Bytes(), save\+Byte(), and set\+Parse\+State().
+
+\index{M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}!f\+Using\+Source@{f\+Using\+Source}}
+\index{f\+Using\+Source@{f\+Using\+Source}!M\+P\+E\+G\+Video\+Stream\+Parser@{M\+P\+E\+G\+Video\+Stream\+Parser}}
+\subsubsection[{f\+Using\+Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+P\+E\+G\+Video\+Stream\+Framer}$\ast$ M\+P\+E\+G\+Video\+Stream\+Parser\+::f\+Using\+Source\hspace{0.3cm}{\ttfamily [protected]}}\label{classMPEGVideoStreamParser_ac968d85cd4df6ab965d43389fac8d7fc}
+
+
+Definition at line 107 of file M\+P\+E\+G\+Video\+Stream\+Parser.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/{\bf M\+P\+E\+G\+Video\+Stream\+Parser.\+hh}\end{DoxyCompactItemize}

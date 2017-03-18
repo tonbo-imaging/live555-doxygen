@@ -1,0 +1,1338 @@
+\section{Audio\+R\+T\+P\+Sink Class Reference}
+\label{classAudioRTPSink}\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+
+
+{\ttfamily \#include $<$Audio\+R\+T\+P\+Sink.\+hh$>$}
+
+
+
+Inheritance diagram for Audio\+R\+T\+P\+Sink\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAudioRTPSink__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Audio\+R\+T\+P\+Sink\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAudioRTPSink__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void( {\bf on\+Send\+Error\+Func}) (void $\ast$client\+Data)
+\item 
+typedef void( {\bf after\+Playing\+Func}) (void $\ast$client\+Data)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf set\+Packet\+Sizes} (unsigned preferred\+Packet\+Size, unsigned max\+Packet\+Size)
+\item 
+void {\bf set\+On\+Send\+Error\+Func} ({\bf on\+Send\+Error\+Func} $\ast${\bf on\+Send\+Error\+Func}, void $\ast$on\+Send\+Error\+Func\+Data)
+\item 
+virtual void {\bf stop\+Playing} ()
+\item 
+{\bf Groupsock} const \& {\bf groupsock\+Being\+Used} () const 
+\item 
+{\bf Groupsock} \& {\bf groupsock\+Being\+Used} ()
+\item 
+unsigned char {\bf rtp\+Payload\+Type} () const 
+\item 
+unsigned {\bf rtp\+Timestamp\+Frequency} () const 
+\item 
+void {\bf set\+R\+T\+P\+Timestamp\+Frequency} (unsigned freq)
+\item 
+char const $\ast$ {\bf rtp\+Payload\+Format\+Name} () const 
+\item 
+unsigned {\bf num\+Channels} () const 
+\item 
+virtual char $\ast$ {\bf rtpmap\+Line} () const 
+\item 
+virtual char const $\ast$ {\bf aux\+S\+D\+P\+Line} ()
+\item 
+u\+\_\+int16\+\_\+t {\bf current\+Seq\+No} () const 
+\item 
+u\+\_\+int32\+\_\+t {\bf preset\+Next\+Timestamp} ()
+\item 
+{\bf R\+T\+P\+Transmission\+Stats\+D\+B} \& {\bf transmission\+Stats\+D\+B} () const 
+\item 
+{\bf Boolean} {\bf next\+Timestamp\+Has\+Been\+Preset} () const 
+\item 
+{\bf Boolean} \& {\bf enable\+R\+T\+C\+P\+Reports} ()
+\item 
+void {\bf get\+Total\+Bitrate} (unsigned \&out\+Num\+Bytes, double \&out\+Elapsed\+Time)
+\item 
+struct timeval const \& {\bf creation\+Time} () const 
+\item 
+struct timeval const \& {\bf initial\+Presentation\+Time} () const 
+\item 
+struct timeval const \& {\bf most\+Recent\+Presentation\+Time} () const 
+\item 
+void {\bf reset\+Presentation\+Times} ()
+\item 
+void {\bf set\+Stream\+Socket} (int sock\+Num, unsigned char stream\+Channel\+Id)
+\item 
+void {\bf add\+Stream\+Socket} (int sock\+Num, unsigned char stream\+Channel\+Id)
+\item 
+void {\bf remove\+Stream\+Socket} (int sock\+Num, unsigned char stream\+Channel\+Id)
+\item 
+unsigned \& {\bf estimated\+Bitrate} ()
+\item 
+u\+\_\+int32\+\_\+t {\bf S\+S\+R\+C} () const 
+\item 
+{\bf Boolean} {\bf start\+Playing} ({\bf Media\+Source} \&{\bf source}, {\bf after\+Playing\+Func} $\ast$after\+Func, void $\ast$after\+Client\+Data)
+\item 
+{\bf Framed\+Source} $\ast$ {\bf source} () const 
+\item 
+{\bf Usage\+Environment} \& {\bf envir} () const 
+\item 
+char const $\ast$ {\bf name} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Source} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+C\+P\+Instance} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Client} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Server} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Media\+Session} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Server\+Media\+Session} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$sink\+Name, {\bf R\+T\+P\+Sink} $\ast$\&result\+Sink)
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$sink\+Name, {\bf Media\+Sink} $\ast$\&result\+Sink)
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name, {\bf Medium} $\ast$\&result\+Medium)
+\item 
+static void {\bf close} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name)
+\item 
+static void {\bf close} ({\bf Medium} $\ast$medium)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Audio\+R\+T\+P\+Sink} ({\bf Usage\+Environment} \&env, {\bf Groupsock} $\ast$rtpgs, unsigned char {\bf rtp\+Payload\+Type}, unsigned {\bf rtp\+Timestamp\+Frequency}, char const $\ast${\bf rtp\+Payload\+Format\+Name}, unsigned {\bf num\+Channels}=1)
+\item 
+virtual {\bf $\sim$\+Audio\+R\+T\+P\+Sink} ()
+\item 
+virtual void {\bf do\+Special\+Frame\+Handling} (unsigned fragmentation\+Offset, unsigned char $\ast$frame\+Start, unsigned num\+Bytes\+In\+Frame, struct timeval frame\+Presentation\+Time, unsigned num\+Remaining\+Bytes)
+\item 
+virtual {\bf Boolean} {\bf allow\+Fragmentation\+After\+Start} () const 
+\item 
+virtual {\bf Boolean} {\bf allow\+Other\+Frames\+After\+Last\+Fragment} () const 
+\item 
+virtual {\bf Boolean} {\bf frame\+Can\+Appear\+After\+Packet\+Start} (unsigned char const $\ast$frame\+Start, unsigned num\+Bytes\+In\+Frame) const 
+\item 
+virtual unsigned {\bf special\+Header\+Size} () const 
+\item 
+virtual unsigned {\bf frame\+Specific\+Header\+Size} () const 
+\item 
+virtual unsigned {\bf compute\+Overflow\+For\+New\+Frame} (unsigned new\+Frame\+Size) const 
+\item 
+{\bf Boolean} {\bf is\+First\+Packet} () const 
+\item 
+{\bf Boolean} {\bf is\+First\+Frame\+In\+Packet} () const 
+\item 
+unsigned {\bf cur\+Fragmentation\+Offset} () const 
+\item 
+void {\bf set\+Marker\+Bit} ()
+\item 
+void {\bf set\+Timestamp} (struct timeval frame\+Presentation\+Time)
+\item 
+void {\bf set\+Special\+Header\+Word} (unsigned word, unsigned word\+Position=0)
+\item 
+void {\bf set\+Special\+Header\+Bytes} (unsigned char const $\ast$bytes, unsigned num\+Bytes, unsigned byte\+Position=0)
+\item 
+void {\bf set\+Frame\+Specific\+Header\+Word} (unsigned word, unsigned word\+Position=0)
+\item 
+void {\bf set\+Frame\+Specific\+Header\+Bytes} (unsigned char const $\ast$bytes, unsigned num\+Bytes, unsigned byte\+Position=0)
+\item 
+void {\bf set\+Frame\+Padding} (unsigned num\+Padding\+Bytes)
+\item 
+unsigned {\bf num\+Frames\+Used\+So\+Far} () const 
+\item 
+unsigned {\bf our\+Max\+Packet\+Size} () const 
+\item 
+virtual {\bf Boolean} {\bf continue\+Playing} ()
+\item 
+u\+\_\+int32\+\_\+t {\bf convert\+To\+R\+T\+P\+Timestamp} (struct timeval tv)
+\item 
+unsigned {\bf packet\+Count} () const 
+\item 
+unsigned {\bf octet\+Count} () const 
+\item 
+virtual {\bf Boolean} {\bf source\+Is\+Compatible\+With\+Us} ({\bf Media\+Source} \&{\bf source})
+\item 
+void {\bf on\+Source\+Closure} ()
+\item 
+{\bf Task\+Token} \& {\bf next\+Task} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf on\+Source\+Closure} (void $\ast$client\+Data)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf R\+T\+P\+Interface} {\bf f\+R\+T\+P\+Interface}
+\item 
+unsigned char {\bf f\+R\+T\+P\+Payload\+Type}
+\item 
+unsigned {\bf f\+Packet\+Count}
+\item 
+unsigned {\bf f\+Octet\+Count}
+\item 
+unsigned {\bf f\+Total\+Octet\+Count}
+\item 
+struct timeval f\+Total\+Octet\+Count\+Start\+Time f\+Initial\+Presentation\+Time {\bf f\+Most\+Recent\+Presentation\+Time}
+\item 
+u\+\_\+int32\+\_\+t {\bf f\+Current\+Timestamp}
+\item 
+u\+\_\+int16\+\_\+t {\bf f\+Seq\+No}
+\item 
+{\bf Framed\+Source} $\ast$ {\bf f\+Source}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual char const $\ast$ {\bf sdp\+Media\+Type} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file Audio\+R\+T\+P\+Sink.\+hh.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!after\+Playing\+Func@{after\+Playing\+Func}}
+\index{after\+Playing\+Func@{after\+Playing\+Func}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{after\+Playing\+Func}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( Media\+Sink\+::after\+Playing\+Func) (void $\ast$client\+Data)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classMediaSink_a82f23f021a7da1c7b18d325c62cade7a}
+
+
+Definition at line 33 of file Media\+Sink.\+hh.
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!on\+Send\+Error\+Func@{on\+Send\+Error\+Func}}
+\index{on\+Send\+Error\+Func@{on\+Send\+Error\+Func}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{on\+Send\+Error\+Func}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( Multi\+Framed\+R\+T\+P\+Sink\+::on\+Send\+Error\+Func) (void $\ast$client\+Data)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classMultiFramedRTPSink_a7ba08ef6bff62ce5ee5627fbdd8772fc}
+
+
+Definition at line 33 of file Multi\+Framed\+R\+T\+P\+Sink.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{Audio\+R\+T\+P\+Sink(\+Usage\+Environment \&env, Groupsock $\ast$rtpgs, unsigned char rtp\+Payload\+Type, unsigned rtp\+Timestamp\+Frequency, char const $\ast$rtp\+Payload\+Format\+Name, unsigned num\+Channels=1)}]{\setlength{\rightskip}{0pt plus 5cm}Audio\+R\+T\+P\+Sink\+::\+Audio\+R\+T\+P\+Sink (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf Groupsock} $\ast$}]{rtpgs, }
+\item[{unsigned char}]{rtp\+Payload\+Type, }
+\item[{unsigned}]{rtp\+Timestamp\+Frequency, }
+\item[{char const $\ast$}]{rtp\+Payload\+Format\+Name, }
+\item[{unsigned}]{num\+Channels = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classAudioRTPSink_abe7c06c3bff5be87a62eff532aabb13c}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!````~Audio\+R\+T\+P\+Sink@{$\sim$\+Audio\+R\+T\+P\+Sink}}
+\index{````~Audio\+R\+T\+P\+Sink@{$\sim$\+Audio\+R\+T\+P\+Sink}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{$\sim$\+Audio\+R\+T\+P\+Sink()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Audio\+R\+T\+P\+Sink\+::$\sim$\+Audio\+R\+T\+P\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classAudioRTPSink_ac049bf8557c405e7f184dbaf7d70dcea}
+
+
+\subsection{Member Function Documentation}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!add\+Stream\+Socket@{add\+Stream\+Socket}}
+\index{add\+Stream\+Socket@{add\+Stream\+Socket}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{add\+Stream\+Socket(int sock\+Num, unsigned char stream\+Channel\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Sink\+::add\+Stream\+Socket (
+\begin{DoxyParamCaption}
+\item[{int}]{sock\+Num, }
+\item[{unsigned char}]{stream\+Channel\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTPSink_a316481c4a3ec9dea0e38b6cd695a34d8}
+
+
+Definition at line 81 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Interface\+::add\+Stream\+Socket(), and R\+T\+P\+Sink\+::f\+R\+T\+P\+Interface.
+
+
+\begin{DoxyCode}
+81                                                                    \{
+82     fRTPInterface.addStreamSocket(sockNum, streamChannelId);
+83   \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!allow\+Fragmentation\+After\+Start@{allow\+Fragmentation\+After\+Start}}
+\index{allow\+Fragmentation\+After\+Start@{allow\+Fragmentation\+After\+Start}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{allow\+Fragmentation\+After\+Start() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Multi\+Framed\+R\+T\+P\+Sink\+::allow\+Fragmentation\+After\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_a1a447580ee5eb3f0441d555715274a1a}
+
+
+Reimplemented in {\bf M\+P\+E\+G4\+E\+S\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classMPEG4ESVideoRTPSink_aaacf84c08099475de0d6abc44a07fd60}, and {\bf M\+P\+E\+G1or2\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classMPEG1or2VideoRTPSink_a7e8e2f1b0bdacb3047e8107659a39b58}.
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!allow\+Other\+Frames\+After\+Last\+Fragment@{allow\+Other\+Frames\+After\+Last\+Fragment}}
+\index{allow\+Other\+Frames\+After\+Last\+Fragment@{allow\+Other\+Frames\+After\+Last\+Fragment}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{allow\+Other\+Frames\+After\+Last\+Fragment() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Multi\+Framed\+R\+T\+P\+Sink\+::allow\+Other\+Frames\+After\+Last\+Fragment (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_aa270e176f6607598b22e67d2cbe2c727}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!aux\+S\+D\+P\+Line@{aux\+S\+D\+P\+Line}}
+\index{aux\+S\+D\+P\+Line@{aux\+S\+D\+P\+Line}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{aux\+S\+D\+P\+Line()}]{\setlength{\rightskip}{0pt plus 5cm}virtual char const$\ast$ R\+T\+P\+Sink\+::aux\+S\+D\+P\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTPSink_a90b5e47a56d3d5d6478e29334bcb1935}
+
+
+Reimplemented in {\bf M\+P\+E\+G4\+Generic\+R\+T\+P\+Sink} \doxyref{}{p.}{classMPEG4GenericRTPSink_a11991dca0cc821b023cc8803e4d177ac}, {\bf M\+P\+E\+G4\+L\+A\+T\+M\+Audio\+R\+T\+P\+Sink} \doxyref{}{p.}{classMPEG4LATMAudioRTPSink_aa462ff000fbac933aae3379b7c32103e}, {\bf M\+P\+E\+G4\+E\+S\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classMPEG4ESVideoRTPSink_a482e856e9b8531ff2a6974969a83b1f7}, {\bf A\+M\+R\+Audio\+R\+T\+P\+Sink} \doxyref{}{p.}{classAMRAudioRTPSink_a0871ae6aa5a04e139b3d027fbf9278cb}, {\bf Vorbis\+Audio\+R\+T\+P\+Sink} \doxyref{}{p.}{classVorbisAudioRTPSink_aa41622d4b62ed63a38431fbd560cf3ed}, {\bf H265\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classH265VideoRTPSink_ab59049477ca0850514e9c8446a772128}, {\bf Theora\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classTheoraVideoRTPSink_a147c34aad9ee50bf49ba192cee87ab00}, {\bf H264\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classH264VideoRTPSink_a0ed61d1fb0711ef21747abc4c21551a4}, and {\bf D\+V\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classDVVideoRTPSink_a88217c1b071a87dc10ac53784f34f3ad}.
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!close@{close}}
+\index{close@{close}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{close(\+Usage\+Environment \&env, char const $\ast$medium\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a9968c7ce6eedb848f2cc095730c01b17}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!close@{close}}
+\index{close@{close}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{close(\+Medium $\ast$medium)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_aee50624faf6909b3944dd803fd485467}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!compute\+Overflow\+For\+New\+Frame@{compute\+Overflow\+For\+New\+Frame}}
+\index{compute\+Overflow\+For\+New\+Frame@{compute\+Overflow\+For\+New\+Frame}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{compute\+Overflow\+For\+New\+Frame(unsigned new\+Frame\+Size) const }]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned Multi\+Framed\+R\+T\+P\+Sink\+::compute\+Overflow\+For\+New\+Frame (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{new\+Frame\+Size}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_a205bc28b3ef97b55a3525090caff7771}
+
+
+Reimplemented in {\bf D\+V\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classDVVideoRTPSink_afea933ca122ff9f4672f9b389d369697}.
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!continue\+Playing@{continue\+Playing}}
+\index{continue\+Playing@{continue\+Playing}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{continue\+Playing()}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Multi\+Framed\+R\+T\+P\+Sink\+::continue\+Playing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_aff0c4f8d452f4e38717f901aca0b598b}
+
+
+Implements {\bf Media\+Sink} \doxyref{}{p.}{classMediaSink_a2b612d3f1f2a7f8dd3dc053923c7a44d}.
+
+
+
+Reimplemented in {\bf T140\+Text\+R\+T\+P\+Sink} \doxyref{}{p.}{classT140TextRTPSink_a01f956cc91f68d2e928e9809264fc1da}, and {\bf H264or5\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classH264or5VideoRTPSink_a759416ee1dbb31e84b0f5ddb64a293c9}.
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!convert\+To\+R\+T\+P\+Timestamp@{convert\+To\+R\+T\+P\+Timestamp}}
+\index{convert\+To\+R\+T\+P\+Timestamp@{convert\+To\+R\+T\+P\+Timestamp}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{convert\+To\+R\+T\+P\+Timestamp(struct timeval tv)}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+P\+Sink\+::convert\+To\+R\+T\+P\+Timestamp (
+\begin{DoxyParamCaption}
+\item[{struct timeval}]{tv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTPSink_a0fd88fa5324e2c632231019752d945f2}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!creation\+Time@{creation\+Time}}
+\index{creation\+Time@{creation\+Time}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{creation\+Time() const }]{\setlength{\rightskip}{0pt plus 5cm}struct timeval const\& R\+T\+P\+Sink\+::creation\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTPSink_a2d8fd9772e645efc04637611858c4f85}
+
+
+Definition at line 72 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Sink\+::f\+Creation\+Time.
+
+
+\begin{DoxyCode}
+72 \{ \textcolor{keywordflow}{return} fCreationTime; \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!cur\+Fragmentation\+Offset@{cur\+Fragmentation\+Offset}}
+\index{cur\+Fragmentation\+Offset@{cur\+Fragmentation\+Offset}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{cur\+Fragmentation\+Offset() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Multi\+Framed\+R\+T\+P\+Sink\+::cur\+Fragmentation\+Offset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_af1613ecbb86b52b695ffa2adf19153d1}
+
+
+Definition at line 79 of file Multi\+Framed\+R\+T\+P\+Sink.\+hh.
+
+
+
+References Multi\+Framed\+R\+T\+P\+Sink\+::f\+Cur\+Fragmentation\+Offset.
+
+
+\begin{DoxyCode}
+79 \{ \textcolor{keywordflow}{return} fCurFragmentationOffset; \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!current\+Seq\+No@{current\+Seq\+No}}
+\index{current\+Seq\+No@{current\+Seq\+No}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{current\+Seq\+No() const }]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int16\+\_\+t R\+T\+P\+Sink\+::current\+Seq\+No (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTPSink_a5468767b45322d98bd8bb0ef0ac70993}
+
+
+Definition at line 56 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Sink\+::f\+Seq\+No.
+
+
+\begin{DoxyCode}
+56 \{ \textcolor{keywordflow}{return} fSeqNo; \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!do\+Special\+Frame\+Handling@{do\+Special\+Frame\+Handling}}
+\index{do\+Special\+Frame\+Handling@{do\+Special\+Frame\+Handling}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{do\+Special\+Frame\+Handling(unsigned fragmentation\+Offset, unsigned char $\ast$frame\+Start, unsigned num\+Bytes\+In\+Frame, struct timeval frame\+Presentation\+Time, unsigned num\+Remaining\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Multi\+Framed\+R\+T\+P\+Sink\+::do\+Special\+Frame\+Handling (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{fragmentation\+Offset, }
+\item[{unsigned char $\ast$}]{frame\+Start, }
+\item[{unsigned}]{num\+Bytes\+In\+Frame, }
+\item[{struct timeval}]{frame\+Presentation\+Time, }
+\item[{unsigned}]{num\+Remaining\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_a6898439d5c9e4c09da47e172978d4120}
+
+
+Reimplemented in {\bf Simple\+R\+T\+P\+Sink} \doxyref{}{p.}{classSimpleRTPSink_af1ea6a1578926d8107ed641917e3da59}, {\bf Vorbis\+Audio\+R\+T\+P\+Sink} \doxyref{}{p.}{classVorbisAudioRTPSink_ad85af60af87cb03f4e51e322738ec323}, {\bf Theora\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classTheoraVideoRTPSink_a6203c7eccdbcc4fe4c1d460dc02d2c90}, {\bf M\+P\+E\+G4\+Generic\+R\+T\+P\+Sink} \doxyref{}{p.}{classMPEG4GenericRTPSink_aa3bf90ebdbafcc541c81e232a56591d7}, {\bf M\+P\+E\+G4\+L\+A\+T\+M\+Audio\+R\+T\+P\+Sink} \doxyref{}{p.}{classMPEG4LATMAudioRTPSink_a4baa585f061fbd0e6d86d95dad34db58}, {\bf M\+P\+E\+G4\+E\+S\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classMPEG4ESVideoRTPSink_af349569f2199bf9864c09953fdae2606}, {\bf A\+M\+R\+Audio\+R\+T\+P\+Sink} \doxyref{}{p.}{classAMRAudioRTPSink_adf10e48e297f0de43886ef4309459a7a}, {\bf A\+C3\+Audio\+R\+T\+P\+Sink} \doxyref{}{p.}{classAC3AudioRTPSink_a489ebeff5cb5860cccac7e7af4d0a33d}, {\bf D\+V\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classDVVideoRTPSink_aff04371a6ae5d7b58e8416fa83a27076}, {\bf T140\+Text\+R\+T\+P\+Sink} \doxyref{}{p.}{classT140TextRTPSink_a3dacff33487d8a0a5bd8d030c7704bc1}, {\bf M\+P3\+A\+D\+U\+R\+T\+P\+Sink} \doxyref{}{p.}{classMP3ADURTPSink_aa4c676ba05a7637d35f12874c07ba872}, {\bf H263plus\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classH263plusVideoRTPSink_a758f3696c639d7fcff4d9f1b6607fae3}, {\bf H264or5\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classH264or5VideoRTPSink_a724bf80158ffd7a141a5bd9c782a7178}, {\bf J\+P\+E\+G\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classJPEGVideoRTPSink_a4b1390178a1ebcb55733f54ca1e14c72}, {\bf M\+P\+E\+G1or2\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classMPEG1or2VideoRTPSink_aeb1270dadbcf06446317259da0310305}, {\bf M\+P\+E\+G1or2\+Audio\+R\+T\+P\+Sink} \doxyref{}{p.}{classMPEG1or2AudioRTPSink_ab61aedc6e8bb132c9f80127d08e2d20a}, {\bf V\+P8\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classVP8VideoRTPSink_aded44481e3f30b20eb73e88ff5f25640}, and {\bf V\+P9\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classVP9VideoRTPSink_aebc691a85102864c40c3a3e15246e3b4}.
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!enable\+R\+T\+C\+P\+Reports@{enable\+R\+T\+C\+P\+Reports}}
+\index{enable\+R\+T\+C\+P\+Reports@{enable\+R\+T\+C\+P\+Reports}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{enable\+R\+T\+C\+P\+Reports()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean}\& R\+T\+P\+Sink\+::enable\+R\+T\+C\+P\+Reports (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTPSink_adbfef80578b993f070dc83c92bf5c235}
+
+
+Definition at line 66 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Sink\+::f\+Enable\+R\+T\+C\+P\+Reports.
+
+
+\begin{DoxyCode}
+66 \{ \textcolor{keywordflow}{return} fEnableRTCPReports; \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!envir@{envir}}
+\index{envir@{envir}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{envir() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Medium\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a32f7ecdd95f2b8400e1a26a5009e3b8e}
+
+
+Definition at line 59 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Environ.
+
+
+
+Referenced by Media\+Subsession\+::env(), R\+T\+P\+Interface\+::envir(), Generic\+Media\+Server\+::\+Client\+Connection\+::envir(), and Generic\+Media\+Server\+::\+Client\+Session\+::envir().
+
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} fEnviron;\}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!estimated\+Bitrate@{estimated\+Bitrate}}
+\index{estimated\+Bitrate@{estimated\+Bitrate}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{estimated\+Bitrate()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned\& R\+T\+P\+Sink\+::estimated\+Bitrate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTPSink_a23f765eae1951ffcf9b203a4b8d4d5ce}
+
+
+Definition at line 87 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Sink\+::f\+Estimated\+Bitrate.
+
+
+\begin{DoxyCode}
+87 \{ \textcolor{keywordflow}{return} fEstimatedBitrate; \} \textcolor{comment}{// kbps; usually 0 (i.e., unset)}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!frame\+Can\+Appear\+After\+Packet\+Start@{frame\+Can\+Appear\+After\+Packet\+Start}}
+\index{frame\+Can\+Appear\+After\+Packet\+Start@{frame\+Can\+Appear\+After\+Packet\+Start}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{frame\+Can\+Appear\+After\+Packet\+Start(unsigned char const $\ast$frame\+Start, unsigned num\+Bytes\+In\+Frame) const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Multi\+Framed\+R\+T\+P\+Sink\+::frame\+Can\+Appear\+After\+Packet\+Start (
+\begin{DoxyParamCaption}
+\item[{unsigned char const $\ast$}]{frame\+Start, }
+\item[{unsigned}]{num\+Bytes\+In\+Frame}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_adaebcb9efc021d8065f7c62678737ed4}
+
+
+Reimplemented in {\bf Simple\+R\+T\+P\+Sink} \doxyref{}{p.}{classSimpleRTPSink_a600750c3230859c86974d159c6453239}, {\bf Vorbis\+Audio\+R\+T\+P\+Sink} \doxyref{}{p.}{classVorbisAudioRTPSink_af76633faaca274fa28a05732fd9b44a2}, {\bf Theora\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classTheoraVideoRTPSink_a6e05f397a02b898f7f255f2428643931}, {\bf M\+P\+E\+G4\+L\+A\+T\+M\+Audio\+R\+T\+P\+Sink} \doxyref{}{p.}{classMPEG4LATMAudioRTPSink_a2667c3584d23f50b8362956246467bf8}, {\bf M\+P\+E\+G4\+E\+S\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classMPEG4ESVideoRTPSink_aa7b6d4b29e5bf5ee1ca5c1e28e5f21e3}, {\bf A\+M\+R\+Audio\+R\+T\+P\+Sink} \doxyref{}{p.}{classAMRAudioRTPSink_a9853c6deb38285def1982e6c72f7bfe1}, {\bf M\+P\+E\+G4\+Generic\+R\+T\+P\+Sink} \doxyref{}{p.}{classMPEG4GenericRTPSink_a1c7bbccd04bf798db956d1bdd3a0bddf}, {\bf T140\+Text\+R\+T\+P\+Sink} \doxyref{}{p.}{classT140TextRTPSink_a4a4ff9da400fa807f1720316973d115a}, {\bf H263plus\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classH263plusVideoRTPSink_a12b0f4f89492ba8bd2e092bfa2805f10}, {\bf H264or5\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classH264or5VideoRTPSink_a04f28c14ceba874b5f5b6d53d2066145}, {\bf M\+P\+E\+G1or2\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classMPEG1or2VideoRTPSink_acc639f608b185d64182fd1a709f3ef36}, {\bf J\+P\+E\+G\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classJPEGVideoRTPSink_a5f1beb0da9117969c5739c77b53dce4c}, {\bf V\+P8\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classVP8VideoRTPSink_aa6f532b53382867ff103c7531bb9413b}, {\bf V\+P9\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classVP9VideoRTPSink_a68eca5fa5eff483e24e78e8874eccf3c}, {\bf A\+C3\+Audio\+R\+T\+P\+Sink} \doxyref{}{p.}{classAC3AudioRTPSink_adbd5be316efe68733567a5c7cecab3a9}, and {\bf G\+S\+M\+Audio\+R\+T\+P\+Sink} \doxyref{}{p.}{classGSMAudioRTPSink_a8d25195f603d3f4cb42a0faa4ad7b4a8}.
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!frame\+Specific\+Header\+Size@{frame\+Specific\+Header\+Size}}
+\index{frame\+Specific\+Header\+Size@{frame\+Specific\+Header\+Size}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{frame\+Specific\+Header\+Size() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned Multi\+Framed\+R\+T\+P\+Sink\+::frame\+Specific\+Header\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_a4e40e5aed035ab9b66d2ba945bd6cf21}
+
+
+Reimplemented in {\bf Vorbis\+Audio\+R\+T\+P\+Sink} \doxyref{}{p.}{classVorbisAudioRTPSink_a17a8f9ae6e9290063451cc8b2f37e086}.
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!get\+Total\+Bitrate@{get\+Total\+Bitrate}}
+\index{get\+Total\+Bitrate@{get\+Total\+Bitrate}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{get\+Total\+Bitrate(unsigned \&out\+Num\+Bytes, double \&out\+Elapsed\+Time)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Sink\+::get\+Total\+Bitrate (
+\begin{DoxyParamCaption}
+\item[{unsigned \&}]{out\+Num\+Bytes, }
+\item[{double \&}]{out\+Elapsed\+Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTPSink_a999e6914dd297174a9860c0cf33b193c}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!groupsock\+Being\+Used@{groupsock\+Being\+Used}}
+\index{groupsock\+Being\+Used@{groupsock\+Being\+Used}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{groupsock\+Being\+Used() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Groupsock} const\& R\+T\+P\+Sink\+::groupsock\+Being\+Used (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTPSink_a69399e6b7f164dfc14afbf5e10f731d1}
+
+
+Definition at line 39 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Sink\+::f\+R\+T\+P\+Interface, and R\+T\+P\+Interface\+::gs().
+
+
+\begin{DoxyCode}
+39 \{ \textcolor{keywordflow}{return} *(fRTPInterface.gs()); \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!groupsock\+Being\+Used@{groupsock\+Being\+Used}}
+\index{groupsock\+Being\+Used@{groupsock\+Being\+Used}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{groupsock\+Being\+Used()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Groupsock}\& R\+T\+P\+Sink\+::groupsock\+Being\+Used (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTPSink_aedb6e062429ceea24ea17c6d28ea3241}
+
+
+Definition at line 40 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Sink\+::f\+R\+T\+P\+Interface, and R\+T\+P\+Interface\+::gs().
+
+
+\begin{DoxyCode}
+40 \{ \textcolor{keywordflow}{return} *(fRTPInterface.gs()); \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!initial\+Presentation\+Time@{initial\+Presentation\+Time}}
+\index{initial\+Presentation\+Time@{initial\+Presentation\+Time}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{initial\+Presentation\+Time() const }]{\setlength{\rightskip}{0pt plus 5cm}struct timeval const\& R\+T\+P\+Sink\+::initial\+Presentation\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTPSink_ada2794ea818b921d5609a3543a20dd07}
+
+
+Definition at line 73 of file R\+T\+P\+Sink.\+hh.
+
+
+\begin{DoxyCode}
+73 \{ \textcolor{keywordflow}{return} fInitialPresentationTime; \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!is\+First\+Frame\+In\+Packet@{is\+First\+Frame\+In\+Packet}}
+\index{is\+First\+Frame\+In\+Packet@{is\+First\+Frame\+In\+Packet}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{is\+First\+Frame\+In\+Packet() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Multi\+Framed\+R\+T\+P\+Sink\+::is\+First\+Frame\+In\+Packet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_a03e6b7aa737b95f41fcd59d701f6c414}
+
+
+Definition at line 78 of file Multi\+Framed\+R\+T\+P\+Sink.\+hh.
+
+
+
+References Multi\+Framed\+R\+T\+P\+Sink\+::f\+Num\+Frames\+Used\+So\+Far.
+
+
+\begin{DoxyCode}
+78 \{ \textcolor{keywordflow}{return} fNumFramesUsedSoFar == 0; \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!is\+First\+Packet@{is\+First\+Packet}}
+\index{is\+First\+Packet@{is\+First\+Packet}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{is\+First\+Packet() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Multi\+Framed\+R\+T\+P\+Sink\+::is\+First\+Packet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_af0306c56c962ce9c294ee261e9a08367}
+
+
+Definition at line 77 of file Multi\+Framed\+R\+T\+P\+Sink.\+hh.
+
+
+
+References Multi\+Framed\+R\+T\+P\+Sink\+::f\+Is\+First\+Packet.
+
+
+\begin{DoxyCode}
+77 \{ \textcolor{keywordflow}{return} fIsFirstPacket; \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!is\+Media\+Session@{is\+Media\+Session}}
+\index{is\+Media\+Session@{is\+Media\+Session}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{is\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ac5858707c4e7a15bd59d476cf48289d6}
+
+
+Reimplemented in {\bf Media\+Session} \doxyref{}{p.}{classMediaSession_a3b2a06a722374ab4477ac05a2ce28829}.
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}}
+\index{is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{is\+R\+T\+C\+P\+Instance() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ab5f9f20324698f89a35513d596b2e7be}
+
+
+Reimplemented in {\bf R\+T\+C\+P\+Instance} \doxyref{}{p.}{classRTCPInstance_a844292518419e1dbf24170812fd1e4b5}.
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}}
+\index{is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{is\+R\+T\+S\+P\+Client() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aed1c1816867f910ce8c98350686ac038}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Client} \doxyref{}{p.}{classRTSPClient_add07b3a68432b546998080b24380e7e8}.
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}}
+\index{is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{is\+R\+T\+S\+P\+Server() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a346e111b31bfde4b7f4ed593e0b97fd3}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Server} \doxyref{}{p.}{classRTSPServer_a45f9fc5ddd8f214169358493215a064a}.
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!is\+Server\+Media\+Session@{is\+Server\+Media\+Session}}
+\index{is\+Server\+Media\+Session@{is\+Server\+Media\+Session}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{is\+Server\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aa9fd26c4b954ffba5f79925ecd0283a0}
+
+
+Reimplemented in {\bf Server\+Media\+Session} \doxyref{}{p.}{classServerMediaSession_a34b59e04644b6f0841ea5af99dbf32f6}.
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!is\+Source@{is\+Source}}
+\index{is\+Source@{is\+Source}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{is\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a6cdbd02c73a3e9c1cbab8fce9e9497b1}
+
+
+Reimplemented in {\bf Media\+Source} \doxyref{}{p.}{classMediaSource_a4d75fa9ee2b476b1231594282a6854be}.
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$sink\+Name, Media\+Sink $\ast$\&result\+Sink)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Media\+Sink\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{sink\+Name, }
+\item[{{\bf Media\+Sink} $\ast$\&}]{result\+Sink}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMediaSink_a21b783380b88ac02a0abd4e44c87d5e2}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$sink\+Name, R\+T\+P\+Sink $\ast$\&result\+Sink)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} R\+T\+P\+Sink\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{sink\+Name, }
+\item[{{\bf R\+T\+P\+Sink} $\ast$\&}]{result\+Sink}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classRTPSink_a61360ccfa722d59e5a49fdc6163e792a}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$medium\+Name, Medium $\ast$\&result\+Medium)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Medium\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name, }
+\item[{{\bf Medium} $\ast$\&}]{result\+Medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a418c860c1e0ef2766ee0d0f64b346291}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!most\+Recent\+Presentation\+Time@{most\+Recent\+Presentation\+Time}}
+\index{most\+Recent\+Presentation\+Time@{most\+Recent\+Presentation\+Time}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{most\+Recent\+Presentation\+Time() const }]{\setlength{\rightskip}{0pt plus 5cm}struct timeval const\& R\+T\+P\+Sink\+::most\+Recent\+Presentation\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTPSink_ae5613ade80fb5855dc699510f9d7a3d3}
+
+
+Definition at line 74 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Sink\+::f\+Most\+Recent\+Presentation\+Time.
+
+
+\begin{DoxyCode}
+74 \{ \textcolor{keywordflow}{return} fMostRecentPresentationTime; \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!name@{name}}
+\index{name@{name}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Medium\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a575649802dc781c0e59e097a3870fcdb}
+
+
+Definition at line 61 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Medium\+Name.
+
+
+\begin{DoxyCode}
+61 \{\textcolor{keywordflow}{return} fMediumName;\}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{next\+Task()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token}\& Medium\+::next\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMedium_a5c8788adec90be1a584393a5bf11a5c9}
+
+
+Definition at line 77 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Next\+Task.
+
+
+\begin{DoxyCode}
+77                         \{
+78         \textcolor{keywordflow}{return} fNextTask;
+79   \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!next\+Timestamp\+Has\+Been\+Preset@{next\+Timestamp\+Has\+Been\+Preset}}
+\index{next\+Timestamp\+Has\+Been\+Preset@{next\+Timestamp\+Has\+Been\+Preset}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{next\+Timestamp\+Has\+Been\+Preset() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+P\+Sink\+::next\+Timestamp\+Has\+Been\+Preset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTPSink_a6456402e7f4fc5da11cfb90f79968832}
+
+
+Definition at line 65 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Sink\+::f\+Next\+Timestamp\+Has\+Been\+Preset.
+
+
+\begin{DoxyCode}
+65 \{ \textcolor{keywordflow}{return} fNextTimestampHasBeenPreset; \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!num\+Channels@{num\+Channels}}
+\index{num\+Channels@{num\+Channels}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{num\+Channels() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Sink\+::num\+Channels (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTPSink_a36e02904e113eea2de6ccf3e1cf013a8}
+
+
+Definition at line 49 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Sink\+::f\+Num\+Channels.
+
+
+\begin{DoxyCode}
+49 \{ \textcolor{keywordflow}{return} fNumChannels; \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!num\+Frames\+Used\+So\+Far@{num\+Frames\+Used\+So\+Far}}
+\index{num\+Frames\+Used\+So\+Far@{num\+Frames\+Used\+So\+Far}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{num\+Frames\+Used\+So\+Far() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Multi\+Framed\+R\+T\+P\+Sink\+::num\+Frames\+Used\+So\+Far (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_a77d2bd6207f617e2c6ebe5f0488c5b25}
+
+
+Definition at line 91 of file Multi\+Framed\+R\+T\+P\+Sink.\+hh.
+
+
+
+References Multi\+Framed\+R\+T\+P\+Sink\+::f\+Num\+Frames\+Used\+So\+Far.
+
+
+\begin{DoxyCode}
+91 \{ \textcolor{keywordflow}{return} fNumFramesUsedSoFar; \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!octet\+Count@{octet\+Count}}
+\index{octet\+Count@{octet\+Count}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{octet\+Count() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Sink\+::octet\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTPSink_ac5410497eaf0fb4c074040dd62bffaff}
+
+
+Definition at line 107 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Sink\+::f\+Octet\+Count.
+
+
+\begin{DoxyCode}
+107 \{\textcolor{keywordflow}{return} fOctetCount;\}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!on\+Source\+Closure@{on\+Source\+Closure}}
+\index{on\+Source\+Closure@{on\+Source\+Closure}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{on\+Source\+Closure(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void Media\+Sink\+::on\+Source\+Closure (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMediaSink_a4eb503afc914d8d237a3ca400c4e3a1f}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!on\+Source\+Closure@{on\+Source\+Closure}}
+\index{on\+Source\+Closure@{on\+Source\+Closure}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{on\+Source\+Closure()}]{\setlength{\rightskip}{0pt plus 5cm}void Media\+Sink\+::on\+Source\+Closure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMediaSink_ac4a6cfbc5d85c6cfad5ea77ddf0c3ab4}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!our\+Max\+Packet\+Size@{our\+Max\+Packet\+Size}}
+\index{our\+Max\+Packet\+Size@{our\+Max\+Packet\+Size}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{our\+Max\+Packet\+Size() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Multi\+Framed\+R\+T\+P\+Sink\+::our\+Max\+Packet\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_a2d692202558fedee437a886b3f180e5b}
+
+
+Definition at line 92 of file Multi\+Framed\+R\+T\+P\+Sink.\+hh.
+
+
+
+References Multi\+Framed\+R\+T\+P\+Sink\+::f\+Our\+Max\+Packet\+Size.
+
+
+\begin{DoxyCode}
+92 \{ \textcolor{keywordflow}{return} fOurMaxPacketSize; \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!packet\+Count@{packet\+Count}}
+\index{packet\+Count@{packet\+Count}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{packet\+Count() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Sink\+::packet\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTPSink_a7dbb6345357bc9996800b02d2ecfdc92}
+
+
+Definition at line 106 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Sink\+::f\+Packet\+Count.
+
+
+\begin{DoxyCode}
+106 \{\textcolor{keywordflow}{return} fPacketCount;\}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!preset\+Next\+Timestamp@{preset\+Next\+Timestamp}}
+\index{preset\+Next\+Timestamp@{preset\+Next\+Timestamp}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{preset\+Next\+Timestamp()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+P\+Sink\+::preset\+Next\+Timestamp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTPSink_a57c7022494c24c38b89d82e72ac3c5b2}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!remove\+Stream\+Socket@{remove\+Stream\+Socket}}
+\index{remove\+Stream\+Socket@{remove\+Stream\+Socket}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{remove\+Stream\+Socket(int sock\+Num, unsigned char stream\+Channel\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Sink\+::remove\+Stream\+Socket (
+\begin{DoxyParamCaption}
+\item[{int}]{sock\+Num, }
+\item[{unsigned char}]{stream\+Channel\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTPSink_a7a342955e2178eedca82bc6d7a1d2674}
+
+
+Definition at line 84 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Sink\+::f\+R\+T\+P\+Interface, and R\+T\+P\+Interface\+::remove\+Stream\+Socket().
+
+
+\begin{DoxyCode}
+84                                                                       \{
+85     fRTPInterface.removeStreamSocket(sockNum, streamChannelId);
+86   \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!reset\+Presentation\+Times@{reset\+Presentation\+Times}}
+\index{reset\+Presentation\+Times@{reset\+Presentation\+Times}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{reset\+Presentation\+Times()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Sink\+::reset\+Presentation\+Times (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classRTPSink_a4e568f1f31c86228781b4a8c1989068b}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!rtpmap\+Line@{rtpmap\+Line}}
+\index{rtpmap\+Line@{rtpmap\+Line}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{rtpmap\+Line() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual char$\ast$ R\+T\+P\+Sink\+::rtpmap\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTPSink_ab4f7ff3a1c4370d3e798612efb830f31}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!rtp\+Payload\+Format\+Name@{rtp\+Payload\+Format\+Name}}
+\index{rtp\+Payload\+Format\+Name@{rtp\+Payload\+Format\+Name}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{rtp\+Payload\+Format\+Name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ R\+T\+P\+Sink\+::rtp\+Payload\+Format\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTPSink_a49ca0ec286f8473ba552b42c5d0daeda}
+
+
+Definition at line 47 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Sink\+::f\+R\+T\+P\+Payload\+Format\+Name.
+
+
+\begin{DoxyCode}
+47 \{\textcolor{keywordflow}{return} fRTPPayloadFormatName;\}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!rtp\+Payload\+Type@{rtp\+Payload\+Type}}
+\index{rtp\+Payload\+Type@{rtp\+Payload\+Type}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{rtp\+Payload\+Type() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned char R\+T\+P\+Sink\+::rtp\+Payload\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTPSink_a6c411d0895844bdb3c0f5dd9e0d1fba5}
+
+
+Definition at line 42 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Sink\+::f\+R\+T\+P\+Payload\+Type.
+
+
+\begin{DoxyCode}
+42 \{ \textcolor{keywordflow}{return} fRTPPayloadType; \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!rtp\+Timestamp\+Frequency@{rtp\+Timestamp\+Frequency}}
+\index{rtp\+Timestamp\+Frequency@{rtp\+Timestamp\+Frequency}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{rtp\+Timestamp\+Frequency() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Sink\+::rtp\+Timestamp\+Frequency (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTPSink_a059eeecd49a97023f7f21c0f58786a3b}
+
+
+Definition at line 43 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Sink\+::f\+Timestamp\+Frequency.
+
+
+\begin{DoxyCode}
+43 \{ \textcolor{keywordflow}{return} fTimestampFrequency; \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!sdp\+Media\+Type@{sdp\+Media\+Type}}
+\index{sdp\+Media\+Type@{sdp\+Media\+Type}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{sdp\+Media\+Type() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual char const$\ast$ Audio\+R\+T\+P\+Sink\+::sdp\+Media\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classAudioRTPSink_a358c4883495e6b95054600f624129c66}
+
+
+Reimplemented from {\bf R\+T\+P\+Sink} \doxyref{}{p.}{classRTPSink_ad65d59ce61e89c69ecb657b72310c6fb}.
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!set\+Frame\+Padding@{set\+Frame\+Padding}}
+\index{set\+Frame\+Padding@{set\+Frame\+Padding}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{set\+Frame\+Padding(unsigned num\+Padding\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Multi\+Framed\+R\+T\+P\+Sink\+::set\+Frame\+Padding (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Padding\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_ad8eb2d9b64c1283eec0b46fb84e1a638}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!set\+Frame\+Specific\+Header\+Bytes@{set\+Frame\+Specific\+Header\+Bytes}}
+\index{set\+Frame\+Specific\+Header\+Bytes@{set\+Frame\+Specific\+Header\+Bytes}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{set\+Frame\+Specific\+Header\+Bytes(unsigned char const $\ast$bytes, unsigned num\+Bytes, unsigned byte\+Position=0)}]{\setlength{\rightskip}{0pt plus 5cm}void Multi\+Framed\+R\+T\+P\+Sink\+::set\+Frame\+Specific\+Header\+Bytes (
+\begin{DoxyParamCaption}
+\item[{unsigned char const $\ast$}]{bytes, }
+\item[{unsigned}]{num\+Bytes, }
+\item[{unsigned}]{byte\+Position = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_ad5e9e20a4f5a286d5d34e1d79f42b582}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!set\+Frame\+Specific\+Header\+Word@{set\+Frame\+Specific\+Header\+Word}}
+\index{set\+Frame\+Specific\+Header\+Word@{set\+Frame\+Specific\+Header\+Word}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{set\+Frame\+Specific\+Header\+Word(unsigned word, unsigned word\+Position=0)}]{\setlength{\rightskip}{0pt plus 5cm}void Multi\+Framed\+R\+T\+P\+Sink\+::set\+Frame\+Specific\+Header\+Word (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{word, }
+\item[{unsigned}]{word\+Position = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_aa678c4a60f7f94908e29b448124242c6}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!set\+Marker\+Bit@{set\+Marker\+Bit}}
+\index{set\+Marker\+Bit@{set\+Marker\+Bit}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{set\+Marker\+Bit()}]{\setlength{\rightskip}{0pt plus 5cm}void Multi\+Framed\+R\+T\+P\+Sink\+::set\+Marker\+Bit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_a4a3815df141c030322461a1133376ab0}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!set\+On\+Send\+Error\+Func@{set\+On\+Send\+Error\+Func}}
+\index{set\+On\+Send\+Error\+Func@{set\+On\+Send\+Error\+Func}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{set\+On\+Send\+Error\+Func(on\+Send\+Error\+Func $\ast$on\+Send\+Error\+Func, void $\ast$on\+Send\+Error\+Func\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}void Multi\+Framed\+R\+T\+P\+Sink\+::set\+On\+Send\+Error\+Func (
+\begin{DoxyParamCaption}
+\item[{{\bf on\+Send\+Error\+Func} $\ast$}]{on\+Send\+Error\+Func, }
+\item[{void $\ast$}]{on\+Send\+Error\+Func\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_a313da94ecee32852d5f7bf15d7b99507}
+
+
+Definition at line 34 of file Multi\+Framed\+R\+T\+P\+Sink.\+hh.
+
+
+
+References Multi\+Framed\+R\+T\+P\+Sink\+::f\+On\+Send\+Error\+Data, and Multi\+Framed\+R\+T\+P\+Sink\+::f\+On\+Send\+Error\+Func.
+
+
+\begin{DoxyCode}
+34                                                                                        \{
+35     \textcolor{comment}{// Can be used to set a callback function to be called if there's an error sending RTP packets on our
+       socket.}
+36     fOnSendErrorFunc = onSendErrorFunc;
+37     fOnSendErrorData = onSendErrorFuncData;
+38   \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!set\+Packet\+Sizes@{set\+Packet\+Sizes}}
+\index{set\+Packet\+Sizes@{set\+Packet\+Sizes}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{set\+Packet\+Sizes(unsigned preferred\+Packet\+Size, unsigned max\+Packet\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}void Multi\+Framed\+R\+T\+P\+Sink\+::set\+Packet\+Sizes (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{preferred\+Packet\+Size, }
+\item[{unsigned}]{max\+Packet\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classMultiFramedRTPSink_a7aa47e1c5a36cca7a89473ce7581f598}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!set\+R\+T\+P\+Timestamp\+Frequency@{set\+R\+T\+P\+Timestamp\+Frequency}}
+\index{set\+R\+T\+P\+Timestamp\+Frequency@{set\+R\+T\+P\+Timestamp\+Frequency}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{set\+R\+T\+P\+Timestamp\+Frequency(unsigned freq)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Sink\+::set\+R\+T\+P\+Timestamp\+Frequency (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{freq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTPSink_ab79fc75c91157d81130ff7cca5a5b9c9}
+
+
+Definition at line 44 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Sink\+::f\+Timestamp\+Frequency.
+
+
+\begin{DoxyCode}
+44                                                \{
+45     fTimestampFrequency = freq;
+46   \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!set\+Special\+Header\+Bytes@{set\+Special\+Header\+Bytes}}
+\index{set\+Special\+Header\+Bytes@{set\+Special\+Header\+Bytes}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{set\+Special\+Header\+Bytes(unsigned char const $\ast$bytes, unsigned num\+Bytes, unsigned byte\+Position=0)}]{\setlength{\rightskip}{0pt plus 5cm}void Multi\+Framed\+R\+T\+P\+Sink\+::set\+Special\+Header\+Bytes (
+\begin{DoxyParamCaption}
+\item[{unsigned char const $\ast$}]{bytes, }
+\item[{unsigned}]{num\+Bytes, }
+\item[{unsigned}]{byte\+Position = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_a331f3b49e368d0c21ba1b923c61f46e7}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!set\+Special\+Header\+Word@{set\+Special\+Header\+Word}}
+\index{set\+Special\+Header\+Word@{set\+Special\+Header\+Word}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{set\+Special\+Header\+Word(unsigned word, unsigned word\+Position=0)}]{\setlength{\rightskip}{0pt plus 5cm}void Multi\+Framed\+R\+T\+P\+Sink\+::set\+Special\+Header\+Word (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{word, }
+\item[{unsigned}]{word\+Position = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_a0652462927a97a2c481e06c4c576a026}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!set\+Stream\+Socket@{set\+Stream\+Socket}}
+\index{set\+Stream\+Socket@{set\+Stream\+Socket}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{set\+Stream\+Socket(int sock\+Num, unsigned char stream\+Channel\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Sink\+::set\+Stream\+Socket (
+\begin{DoxyParamCaption}
+\item[{int}]{sock\+Num, }
+\item[{unsigned char}]{stream\+Channel\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTPSink_a8fe32a7473ac574643ca0cd3b3c13b72}
+
+
+Definition at line 78 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Sink\+::f\+R\+T\+P\+Interface, and R\+T\+P\+Interface\+::set\+Stream\+Socket().
+
+
+\begin{DoxyCode}
+78                                                                    \{
+79     fRTPInterface.setStreamSocket(sockNum, streamChannelId);
+80   \}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!set\+Timestamp@{set\+Timestamp}}
+\index{set\+Timestamp@{set\+Timestamp}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{set\+Timestamp(struct timeval frame\+Presentation\+Time)}]{\setlength{\rightskip}{0pt plus 5cm}void Multi\+Framed\+R\+T\+P\+Sink\+::set\+Timestamp (
+\begin{DoxyParamCaption}
+\item[{struct timeval}]{frame\+Presentation\+Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_ae09caf39fa66662c38d31ad46727d7de}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!source@{source}}
+\index{source@{source}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{source() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Framed\+Source}$\ast$ Media\+Sink\+::source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMediaSink_ac7e050cf272fb33cee9b199cae71d93c}
+
+
+Definition at line 42 of file Media\+Sink.\+hh.
+
+
+
+References Media\+Sink\+::f\+Source.
+
+
+\begin{DoxyCode}
+42 \{\textcolor{keywordflow}{return} fSource;\}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!source\+Is\+Compatible\+With\+Us@{source\+Is\+Compatible\+With\+Us}}
+\index{source\+Is\+Compatible\+With\+Us@{source\+Is\+Compatible\+With\+Us}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{source\+Is\+Compatible\+With\+Us(\+Media\+Source \&source)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Media\+Sink\+::source\+Is\+Compatible\+With\+Us (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Source} \&}]{source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMediaSink_ac66ee6fd21ec2f990b6e8265534fd145}
+
+
+Reimplemented in {\bf H265\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classH265VideoRTPSink_a2a34bc714dc26ed366d4f6ae9ffa20a7}, {\bf H264\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classH264VideoRTPSink_adee372db2aeef2d2098b4788a896ecab}, {\bf A\+M\+R\+Audio\+R\+T\+P\+Sink} \doxyref{}{p.}{classAMRAudioRTPSink_a42dee942478f666a5de8cc2122e32b29}, {\bf M\+P\+E\+G4\+E\+S\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classMPEG4ESVideoRTPSink_ace6080984caddb73333689b471aa51e8}, {\bf D\+V\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classDVVideoRTPSink_a589be2b6c5a8d5c98b4a5f95aaa72fac}, {\bf A\+M\+R\+Audio\+File\+Sink} \doxyref{}{p.}{classAMRAudioFileSink_a2222db59a93a157d6e2f7e847d42ffc1}, {\bf J\+P\+E\+G\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classJPEGVideoRTPSink_a71c7d39a99651cfa4651c2bd37811210}, and {\bf M\+P\+E\+G1or2\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classMPEG1or2VideoRTPSink_a1dcf1cc9b4855a5756dc5595dbd67547}.
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!special\+Header\+Size@{special\+Header\+Size}}
+\index{special\+Header\+Size@{special\+Header\+Size}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{special\+Header\+Size() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned Multi\+Framed\+R\+T\+P\+Sink\+::special\+Header\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_a38f6816bce9057f1ea94f2fb0624f29c}
+
+
+Reimplemented in {\bf Vorbis\+Audio\+R\+T\+P\+Sink} \doxyref{}{p.}{classVorbisAudioRTPSink_a14e88e6d572103d8d54fa50bc428a770}, {\bf Theora\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classTheoraVideoRTPSink_a18daf4173fd4394f6d674ce716017d69}, {\bf A\+M\+R\+Audio\+R\+T\+P\+Sink} \doxyref{}{p.}{classAMRAudioRTPSink_ac3be4e4e9a1b6c7d2166e9cc2a67b3a6}, {\bf M\+P\+E\+G4\+Generic\+R\+T\+P\+Sink} \doxyref{}{p.}{classMPEG4GenericRTPSink_a3556f61af43f4ab5972e5eb10bf81312}, {\bf A\+C3\+Audio\+R\+T\+P\+Sink} \doxyref{}{p.}{classAC3AudioRTPSink_ad9ae00fcc1b55797f08244b60b43594e}, {\bf H263plus\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classH263plusVideoRTPSink_a96b142af774dafaccebb0357a80f060c}, {\bf M\+P\+E\+G1or2\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classMPEG1or2VideoRTPSink_aa8f133f889a6d03748c46a508cf1e9b3}, {\bf J\+P\+E\+G\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classJPEGVideoRTPSink_ac83ae0df6119cc3476a119986dc5732c}, {\bf M\+P3\+A\+D\+U\+R\+T\+P\+Sink} \doxyref{}{p.}{classMP3ADURTPSink_ac8ea01347aad8dca8183df57003fc9bd}, {\bf V\+P8\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classVP8VideoRTPSink_ae4e1e4e18f5ba0f98f6a1e1da79b1f5c}, {\bf V\+P9\+Video\+R\+T\+P\+Sink} \doxyref{}{p.}{classVP9VideoRTPSink_a6f2c67f0130fc676e285e36b2c1bbf59}, and {\bf M\+P\+E\+G1or2\+Audio\+R\+T\+P\+Sink} \doxyref{}{p.}{classMPEG1or2AudioRTPSink_abc544c3e260dced2ac63810e9d3b5fb8}.
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!S\+S\+R\+C@{S\+S\+R\+C}}
+\index{S\+S\+R\+C@{S\+S\+R\+C}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{S\+S\+R\+C() const }]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+P\+Sink\+::\+S\+S\+R\+C (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTPSink_a22fc35faf9da4e7b7459ea5f559767a0}
+
+
+Definition at line 89 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Sink\+::f\+S\+S\+R\+C.
+
+
+\begin{DoxyCode}
+89 \{\textcolor{keywordflow}{return} fSSRC;\}
+\end{DoxyCode}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!start\+Playing@{start\+Playing}}
+\index{start\+Playing@{start\+Playing}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{start\+Playing(\+Media\+Source \&source, after\+Playing\+Func $\ast$after\+Func, void $\ast$after\+Client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Media\+Sink\+::start\+Playing (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Source} \&}]{source, }
+\item[{{\bf after\+Playing\+Func} $\ast$}]{after\+Func, }
+\item[{void $\ast$}]{after\+Client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}\label{classMediaSink_a990739ba5f62f8fd9efe3130d6178638}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!stop\+Playing@{stop\+Playing}}
+\index{stop\+Playing@{stop\+Playing}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{stop\+Playing()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Multi\+Framed\+R\+T\+P\+Sink\+::stop\+Playing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMultiFramedRTPSink_a43e607c3221b7658bfb640d01601d917}
+
+
+Reimplemented from {\bf Media\+Sink} \doxyref{}{p.}{classMediaSink_ad10487a6fe7c1d24ac4daf7cc2f77e00}.
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!transmission\+Stats\+D\+B@{transmission\+Stats\+D\+B}}
+\index{transmission\+Stats\+D\+B@{transmission\+Stats\+D\+B}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{transmission\+Stats\+D\+B() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+P\+Transmission\+Stats\+D\+B}\& R\+T\+P\+Sink\+::transmission\+Stats\+D\+B (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classRTPSink_a242fd9191a074da7d2b605e0778338d4}
+
+
+Definition at line 61 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References R\+T\+P\+Sink\+::f\+Transmission\+Stats\+D\+B.
+
+
+\begin{DoxyCode}
+61                                                       \{
+62     \textcolor{keywordflow}{return} *fTransmissionStatsDB;
+63   \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!f\+Current\+Timestamp@{f\+Current\+Timestamp}}
+\index{f\+Current\+Timestamp@{f\+Current\+Timestamp}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{f\+Current\+Timestamp}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+P\+Sink\+::f\+Current\+Timestamp\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTPSink_a80e53492114a372cfd0be10c09c99334}
+
+
+Definition at line 114 of file R\+T\+P\+Sink.\+hh.
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!f\+Most\+Recent\+Presentation\+Time@{f\+Most\+Recent\+Presentation\+Time}}
+\index{f\+Most\+Recent\+Presentation\+Time@{f\+Most\+Recent\+Presentation\+Time}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{f\+Most\+Recent\+Presentation\+Time}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval f\+Total\+Octet\+Count\+Start\+Time f\+Initial\+Presentation\+Time R\+T\+P\+Sink\+::f\+Most\+Recent\+Presentation\+Time\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTPSink_a935073b85d3a29b31eab0456008d3f4b}
+
+
+Definition at line 113 of file R\+T\+P\+Sink.\+hh.
+
+
+
+Referenced by R\+T\+P\+Sink\+::most\+Recent\+Presentation\+Time().
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!f\+Octet\+Count@{f\+Octet\+Count}}
+\index{f\+Octet\+Count@{f\+Octet\+Count}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{f\+Octet\+Count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Sink\+::f\+Octet\+Count\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTPSink_ad8fd089ce4d9be3d339f736aedb3b265}
+
+
+Definition at line 112 of file R\+T\+P\+Sink.\+hh.
+
+
+
+Referenced by R\+T\+P\+Sink\+::octet\+Count().
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!f\+Packet\+Count@{f\+Packet\+Count}}
+\index{f\+Packet\+Count@{f\+Packet\+Count}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{f\+Packet\+Count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Sink\+::f\+Packet\+Count\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTPSink_a210ea0784a9705095272cf1c48252462}
+
+
+Definition at line 112 of file R\+T\+P\+Sink.\+hh.
+
+
+
+Referenced by R\+T\+P\+Sink\+::packet\+Count().
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!f\+R\+T\+P\+Interface@{f\+R\+T\+P\+Interface}}
+\index{f\+R\+T\+P\+Interface@{f\+R\+T\+P\+Interface}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{f\+R\+T\+P\+Interface}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+P\+Interface} R\+T\+P\+Sink\+::f\+R\+T\+P\+Interface\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTPSink_afa11419b8f671e7f4685cdb64f102d72}
+
+
+Definition at line 110 of file R\+T\+P\+Sink.\+hh.
+
+
+
+Referenced by R\+T\+P\+Sink\+::add\+Stream\+Socket(), R\+T\+P\+Sink\+::groupsock\+Being\+Used(), R\+T\+P\+Sink\+::remove\+Stream\+Socket(), and R\+T\+P\+Sink\+::set\+Stream\+Socket().
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!f\+R\+T\+P\+Payload\+Type@{f\+R\+T\+P\+Payload\+Type}}
+\index{f\+R\+T\+P\+Payload\+Type@{f\+R\+T\+P\+Payload\+Type}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{f\+R\+T\+P\+Payload\+Type}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char R\+T\+P\+Sink\+::f\+R\+T\+P\+Payload\+Type\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTPSink_ab9965cf415b8a9258b424c8e8e25bd59}
+
+
+Definition at line 111 of file R\+T\+P\+Sink.\+hh.
+
+
+
+Referenced by R\+T\+P\+Sink\+::rtp\+Payload\+Type().
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!f\+Seq\+No@{f\+Seq\+No}}
+\index{f\+Seq\+No@{f\+Seq\+No}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{f\+Seq\+No}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int16\+\_\+t R\+T\+P\+Sink\+::f\+Seq\+No\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTPSink_a3d658a268eb22ceb0c061154b9c0a51a}
+
+
+Definition at line 115 of file R\+T\+P\+Sink.\+hh.
+
+
+
+Referenced by R\+T\+P\+Sink\+::current\+Seq\+No().
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!f\+Source@{f\+Source}}
+\index{f\+Source@{f\+Source}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{f\+Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Framed\+Source}$\ast$ Media\+Sink\+::f\+Source\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMediaSink_a0b6dbfb4005b4653025aa59ba82ca4a1}
+
+
+Definition at line 58 of file Media\+Sink.\+hh.
+
+
+
+Referenced by Media\+Sink\+::source().
+
+\index{Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}!f\+Total\+Octet\+Count@{f\+Total\+Octet\+Count}}
+\index{f\+Total\+Octet\+Count@{f\+Total\+Octet\+Count}!Audio\+R\+T\+P\+Sink@{Audio\+R\+T\+P\+Sink}}
+\subsubsection[{f\+Total\+Octet\+Count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Sink\+::f\+Total\+Octet\+Count\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTPSink_a23188a39577723e518c02e9301feeeff}
+
+
+Definition at line 112 of file R\+T\+P\+Sink.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf Audio\+R\+T\+P\+Sink.\+hh}\end{DoxyCompactItemize}

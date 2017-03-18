@@ -1,0 +1,872 @@
+%!PS-Adobe-3.0
+%%Creator: graphviz version 2.38.0 (20140413.2041)
+%%Title: MPEGVideoStreamFramer
+%%Pages: (atend)
+%%BoundingBox: (atend)
+%%EndComments
+save
+%%BeginProlog
+/DotDict 200 dict def
+DotDict begin
+
+/setupLatin1 {
+mark
+/EncodingVector 256 array def
+ EncodingVector 0
+
+ISOLatin1Encoding 0 255 getinterval putinterval
+EncodingVector 45 /hyphen put
+
+% Set up ISO Latin 1 character encoding
+/starnetISO {
+        dup dup findfont dup length dict begin
+        { 1 index /FID ne { def }{ pop pop } ifelse
+        } forall
+        /Encoding EncodingVector def
+        currentdict end definefont
+} def
+/Times-Roman starnetISO def
+/Times-Italic starnetISO def
+/Times-Bold starnetISO def
+/Times-BoldItalic starnetISO def
+/Helvetica starnetISO def
+/Helvetica-Oblique starnetISO def
+/Helvetica-Bold starnetISO def
+/Helvetica-BoldOblique starnetISO def
+/Courier starnetISO def
+/Courier-Oblique starnetISO def
+/Courier-Bold starnetISO def
+/Courier-BoldOblique starnetISO def
+cleartomark
+} bind def
+
+%%BeginResource: procset graphviz 0 0
+/coord-font-family /Times-Roman def
+/default-font-family /Times-Roman def
+/coordfont coord-font-family findfont 8 scalefont def
+
+/InvScaleFactor 1.0 def
+/set_scale {
+       dup 1 exch div /InvScaleFactor exch def
+       scale
+} bind def
+
+% styles
+/solid { [] 0 setdash } bind def
+/dashed { [9 InvScaleFactor mul dup ] 0 setdash } bind def
+/dotted { [1 InvScaleFactor mul 6 InvScaleFactor mul] 0 setdash } bind def
+/invis {/fill {newpath} def /stroke {newpath} def /show {pop newpath} def} bind def
+/bold { 2 setlinewidth } bind def
+/filled { } bind def
+/unfilled { } bind def
+/rounded { } bind def
+/diagonals { } bind def
+/tapered { } bind def
+
+% hooks for setting color 
+/nodecolor { sethsbcolor } bind def
+/edgecolor { sethsbcolor } bind def
+/graphcolor { sethsbcolor } bind def
+/nopcolor {pop pop pop} bind def
+
+/beginpage {	% i j npages
+	/npages exch def
+	/j exch def
+	/i exch def
+	/str 10 string def
+	npages 1 gt {
+		gsave
+			coordfont setfont
+			0 0 moveto
+			(\() show i str cvs show (,) show j str cvs show (\)) show
+		grestore
+	} if
+} bind def
+
+/set_font {
+	findfont exch
+	scalefont setfont
+} def
+
+% draw text fitted to its expected width
+/alignedtext {			% width text
+	/text exch def
+	/width exch def
+	gsave
+		width 0 gt {
+			[] 0 setdash
+			text stringwidth pop width exch sub text length div 0 text ashow
+		} if
+	grestore
+} def
+
+/boxprim {				% xcorner ycorner xsize ysize
+		4 2 roll
+		moveto
+		2 copy
+		exch 0 rlineto
+		0 exch rlineto
+		pop neg 0 rlineto
+		closepath
+} bind def
+
+/ellipse_path {
+	/ry exch def
+	/rx exch def
+	/y exch def
+	/x exch def
+	matrix currentmatrix
+	newpath
+	x y translate
+	rx ry scale
+	0 0 1 0 360 arc
+	setmatrix
+} bind def
+
+/endpage { showpage } bind def
+/showpage { } def
+
+/layercolorseq
+	[	% layer color sequence - darkest to lightest
+		[0 0 0]
+		[.2 .8 .8]
+		[.4 .8 .8]
+		[.6 .8 .8]
+		[.8 .8 .8]
+	]
+def
+
+/layerlen layercolorseq length def
+
+/setlayer {/maxlayer exch def /curlayer exch def
+	layercolorseq curlayer 1 sub layerlen mod get
+	aload pop sethsbcolor
+	/nodecolor {nopcolor} def
+	/edgecolor {nopcolor} def
+	/graphcolor {nopcolor} def
+} bind def
+
+/onlayer { curlayer ne {invis} if } def
+
+/onlayers {
+	/myupper exch def
+	/mylower exch def
+	curlayer mylower lt
+	curlayer myupper gt
+	or
+	{invis} if
+} def
+
+/curlayer 0 def
+
+%%EndResource
+%%EndProlog
+%%BeginSetup
+14 default-font-family set_font
+1 setmiterlimit
+% /arrowlength 10 def
+% /arrowwidth 5 def
+
+% make sure pdfmark is harmless for PS-interpreters other than Distiller
+/pdfmark where {pop} {userdict /pdfmark /cleartomark load put} ifelse
+% make '<<' and '>>' safe on PS Level 1 devices
+/languagelevel where {pop languagelevel}{1} ifelse
+2 lt {
+    userdict (<<) cvn ([) cvn load put
+    userdict (>>) cvn ([) cvn load put
+} if
+
+%%EndSetup
+setupLatin1
+%%Page: 1 1
+%%PageBoundingBox: 36 36 1243 264
+%%PageOrientation: Portrait
+0 0 1 beginpage
+gsave
+36 36 1207 228 boxprim clip newpath
+1 1 set_scale 0 rotate 40 40 translate
+% Node1
+gsave
+0 0 0.74902 nodecolor
+newpath 439 55 moveto
+439 74 lineto
+580 74 lineto
+580 55 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 439 55 moveto
+439 74 lineto
+580 74 lineto
+580 55 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+447 62 moveto 125 (MPEGVideoStreamFramer) alignedtext
+grestore
+% Node6
+gsave
+[ /Rect [ 620 117.5 775 137.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classH264or5VideoStreamFramer.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 620 118 moveto
+620 137 lineto
+775 137 lineto
+775 118 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 620 118 moveto
+620 137 lineto
+775 137 lineto
+775 118 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+628 125 moveto 139 (H264or5VideoStreamFramer) alignedtext
+grestore
+% Node1->Node6
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 548.3 77.3 moveto
+583.85 89.34 636.26 107.1 668.29 117.95 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 549.34 73.96 moveto
+538.75 74.07 lineto
+547.1 80.59 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 549.34 73.96 moveto
+538.75 74.07 lineto
+547.1 80.59 lineto
+closepath stroke
+grestore
+% Node12
+gsave
+[ /Rect [ 616 54.5 779 74.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classMPEG1or2VideoStreamFramer.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 616 55 moveto
+616 74 lineto
+779 74 lineto
+779 55 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 616 55 moveto
+616 74 lineto
+779 74 lineto
+779 55 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+624 62 moveto 147 (MPEG1or2VideoStreamFramer) alignedtext
+grestore
+% Node1->Node12
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 590.25 64.5 moveto
+598.71 64.5 607.31 64.5 615.78 64.5 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 590.02 61 moveto
+580.02 64.5 lineto
+590.02 68 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 590.02 61 moveto
+580.02 64.5 lineto
+590.02 68 lineto
+closepath stroke
+grestore
+% Node14
+gsave
+[ /Rect [ 624 11.5 771 31.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classMPEG4VideoStreamFramer.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 624 12 moveto
+624 31 lineto
+771 31 lineto
+771 12 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 624 12 moveto
+624 31 lineto
+771 31 lineto
+771 12 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+632 19 moveto 131 (MPEG4VideoStreamFramer) alignedtext
+grestore
+% Node1->Node14
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 561.88 52.62 moveto
+591.33 45.81 627.79 37.38 655.34 31.02 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 560.73 49.29 moveto
+551.78 54.96 lineto
+562.31 56.11 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 560.73 49.29 moveto
+551.78 54.96 lineto
+562.31 56.11 lineto
+closepath stroke
+grestore
+% Node2
+gsave
+[ /Rect [ 328 54.5 403 74.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classFramedFilter.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 328 55 moveto
+328 74 lineto
+403 74 lineto
+403 55 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 328 55 moveto
+328 74 lineto
+403 74 lineto
+403 55 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+336 62 moveto 59 (FramedFilter) alignedtext
+grestore
+% Node2->Node1
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 413.22 64.5 moveto
+421.48 64.5 430.23 64.5 438.96 64.5 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 413.07 61 moveto
+403.07 64.5 lineto
+413.07 68 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 413.07 61 moveto
+403.07 64.5 lineto
+413.07 68 lineto
+closepath stroke
+grestore
+% Node3
+gsave
+[ /Rect [ 206 54.5 292 74.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classFramedSource.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 206 55 moveto
+206 74 lineto
+292 74 lineto
+292 55 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 206 55 moveto
+206 74 lineto
+292 74 lineto
+292 55 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+214 62 moveto 70 (FramedSource) alignedtext
+grestore
+% Node3->Node2
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 302.53 64.5 moveto
+311.01 64.5 319.63 64.5 327.64 64.5 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 302.31 61 moveto
+292.31 64.5 lineto
+302.31 68 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 302.31 61 moveto
+292.31 64.5 lineto
+302.31 68 lineto
+closepath stroke
+grestore
+% Node4
+gsave
+[ /Rect [ 91 54.5 170 74.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classMediaSource.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 91 55 moveto
+91 74 lineto
+170 74 lineto
+170 55 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 91 55 moveto
+91 74 lineto
+170 74 lineto
+170 55 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+99 62 moveto 63 (MediaSource) alignedtext
+grestore
+% Node4->Node3
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 180.4 64.5 moveto
+188.83 64.5 197.53 64.5 205.77 64.5 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 180.29 61 moveto
+170.29 64.5 lineto
+180.29 68 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 180.29 61 moveto
+170.29 64.5 lineto
+180.29 68 lineto
+closepath stroke
+grestore
+% Node5
+gsave
+[ /Rect [ 0 54.5 55 74.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classMedium.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 0 55 moveto
+0 74 lineto
+55 74 lineto
+55 55 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 0 55 moveto
+0 74 lineto
+55 74 lineto
+55 55 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+8 62 moveto 39 (Medium) alignedtext
+grestore
+% Node5->Node4
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 65.27 64.5 moveto
+73.63 64.5 82.55 64.5 90.98 64.5 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 65.04 61 moveto
+55.04 64.5 lineto
+65.04 68 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 65.04 61 moveto
+55.04 64.5 lineto
+65.04 68 lineto
+closepath stroke
+grestore
+% Node7
+gsave
+[ /Rect [ 819 175 980 206 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classH264or5VideoStreamDiscreteFramer.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 819 175.5 moveto
+819 205.5 lineto
+980 205.5 lineto
+980 175.5 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 819 175.5 moveto
+819 205.5 lineto
+980 205.5 lineto
+980 175.5 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+827 193.5 moveto 145 (H264or5VideoStreamDiscrete) alignedtext
+0 0 0 nodecolor
+10 /Helvetica set_font
+882.5 182.5 moveto 34 (Framer) alignedtext
+grestore
+% Node6->Node7
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 736.77 140.24 moveto
+759.47 147.74 788.82 157.31 815 165.5 curveto
+825.54 168.8 836.86 172.25 847.66 175.49 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 737.76 136.88 moveto
+727.16 137.07 lineto
+735.56 143.53 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 737.76 136.88 moveto
+727.16 137.07 lineto
+735.56 143.53 lineto
+closepath stroke
+grestore
+% Node10
+gsave
+[ /Rect [ 830 136.5 969 156.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classH264VideoStreamFramer.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 830 137 moveto
+830 156 lineto
+969 156 lineto
+969 137 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 830 137 moveto
+830 156 lineto
+969 156 lineto
+969 137 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+838 144 moveto 123 (H264VideoStreamFramer) alignedtext
+grestore
+% Node6->Node10
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 785.45 135.76 moveto
+800.29 137.17 815.52 138.62 829.8 139.97 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 785.54 132.25 moveto
+775.25 134.79 lineto
+784.88 139.22 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 785.54 132.25 moveto
+775.25 134.79 lineto
+784.88 139.22 lineto
+closepath stroke
+grestore
+% Node11
+gsave
+[ /Rect [ 830 98.5 969 118.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classH265VideoStreamFramer.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 830 99 moveto
+830 118 lineto
+969 118 lineto
+969 99 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 830 99 moveto
+830 118 lineto
+969 118 lineto
+969 99 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+838 106 moveto 123 (H265VideoStreamFramer) alignedtext
+grestore
+% Node6->Node11
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 785.45 119.24 moveto
+800.29 117.83 815.52 116.38 829.8 115.03 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 784.88 115.78 moveto
+775.25 120.21 lineto
+785.54 122.75 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 784.88 115.78 moveto
+775.25 120.21 lineto
+785.54 122.75 lineto
+closepath stroke
+grestore
+% Node8
+gsave
+[ /Rect [ 1020 199.5 1199 219.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classH264VideoStreamDiscreteFramer.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 1020 200 moveto
+1020 219 lineto
+1199 219 lineto
+1199 200 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 1020 200 moveto
+1020 219 lineto
+1199 219 lineto
+1199 200 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+1028 207 moveto 163 (H264VideoStreamDiscreteFramer) alignedtext
+grestore
+% Node7->Node8
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 990.23 198.7 moveto
+1000.1 199.6 1010.14 200.52 1020 201.42 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 990.3 195.19 moveto
+980.03 197.76 lineto
+989.67 202.16 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 990.3 195.19 moveto
+980.03 197.76 lineto
+989.67 202.16 lineto
+closepath stroke
+grestore
+% Node9
+gsave
+[ /Rect [ 1020 161.5 1199 181.5 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classH265VideoStreamDiscreteFramer.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 1020 162 moveto
+1020 181 lineto
+1199 181 lineto
+1199 162 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 1020 162 moveto
+1020 181 lineto
+1199 181 lineto
+1199 162 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+1028 169 moveto 163 (H265VideoStreamDiscreteFramer) alignedtext
+grestore
+% Node7->Node9
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 990.23 182.3 moveto
+1000.1 181.4 1010.14 180.48 1020 179.58 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 989.67 178.84 moveto
+980.03 183.24 lineto
+990.3 185.81 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 989.67 178.84 moveto
+980.03 183.24 lineto
+990.3 185.81 lineto
+closepath stroke
+grestore
+% Node13
+gsave
+[ /Rect [ 815 49 984 80 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classMPEG1or2VideoStreamDiscreteFramer.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 815 49.5 moveto
+815 79.5 lineto
+984 79.5 lineto
+984 49.5 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 815 49.5 moveto
+815 79.5 lineto
+984 79.5 lineto
+984 49.5 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+823 67.5 moveto 153 (MPEG1or2VideoStreamDiscrete) alignedtext
+0 0 0 nodecolor
+10 /Helvetica set_font
+882.5 56.5 moveto 34 (Framer) alignedtext
+grestore
+% Node12->Node13
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 789.5 64.5 moveto
+797.93 64.5 806.45 64.5 814.82 64.5 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 789.27 61 moveto
+779.27 64.5 lineto
+789.27 68 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 789.27 61 moveto
+779.27 64.5 lineto
+789.27 68 lineto
+closepath stroke
+grestore
+% Node15
+gsave
+[ /Rect [ 823 0 976 31 ]
+  /Border [ 0 0 0 ]
+  /Action << /Subtype /URI /URI ($classMPEG4VideoStreamDiscreteFramer.html) >>
+  /Subtype /Link
+/ANN pdfmark
+0 0 1 nodecolor
+newpath 823 .5 moveto
+823 30.5 lineto
+976 30.5 lineto
+976 .5 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 nodecolor
+newpath 823 .5 moveto
+823 30.5 lineto
+976 30.5 lineto
+976 .5 lineto
+closepath stroke
+0 0 0 nodecolor
+10 /Helvetica set_font
+831 18.5 moveto 137 (MPEG4VideoStreamDiscrete) alignedtext
+0 0 0 nodecolor
+10 /Helvetica set_font
+882.5 7.5 moveto 34 (Framer) alignedtext
+grestore
+% Node14->Node15
+gsave
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 781.6 19.01 moveto
+795.24 18.6 809.31 18.18 822.76 17.77 curveto
+stroke
+0.66667 0.77647 0.43922 edgecolor
+newpath 781.16 15.52 moveto
+771.27 19.32 lineto
+781.37 22.52 lineto
+closepath fill
+1 setlinewidth
+solid
+0.66667 0.77647 0.43922 edgecolor
+newpath 781.16 15.52 moveto
+771.27 19.32 lineto
+781.37 22.52 lineto
+closepath stroke
+grestore
+endpage
+showpage
+grestore
+%%PageTrailer
+%%EndPage: 1
+%%Trailer
+%%Pages: 1
+%%BoundingBox: 36 36 1243 264
+end
+restore
+%%EOF

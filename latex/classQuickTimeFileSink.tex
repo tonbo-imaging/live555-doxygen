@@ -1,0 +1,1384 @@
+\section{Quick\+Time\+File\+Sink Class Reference}
+\label{classQuickTimeFileSink}\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+
+
+{\ttfamily \#include $<$Quick\+Time\+File\+Sink.\+hh$>$}
+
+
+
+Inheritance diagram for Quick\+Time\+File\+Sink\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{classQuickTimeFileSink__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Quick\+Time\+File\+Sink\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classQuickTimeFileSink__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void( {\bf after\+Playing\+Func}) (void $\ast$client\+Data)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Boolean} {\bf start\+Playing} ({\bf after\+Playing\+Func} $\ast$after\+Func, void $\ast$after\+Client\+Data)
+\item 
+unsigned {\bf num\+Active\+Subsessions} () const 
+\item 
+{\bf Usage\+Environment} \& {\bf envir} () const 
+\item 
+char const $\ast$ {\bf name} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Source} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Sink} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+C\+P\+Instance} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Client} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+R\+T\+S\+P\+Server} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Media\+Session} () const 
+\item 
+virtual {\bf Boolean} {\bf is\+Server\+Media\+Session} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Quick\+Time\+File\+Sink} $\ast$ {\bf create\+New} ({\bf Usage\+Environment} \&env, {\bf Media\+Session} \&input\+Session, char const $\ast$output\+File\+Name, unsigned buffer\+Size=20000, unsigned short movie\+Width=240, unsigned short movie\+Height=180, unsigned movie\+F\+P\+S=15, {\bf Boolean} packet\+Loss\+Compensate={\bf False}, {\bf Boolean} sync\+Streams={\bf False}, {\bf Boolean} generate\+Hint\+Tracks={\bf False}, {\bf Boolean} generate\+M\+P4\+Format={\bf False})
+\item 
+static {\bf Boolean} {\bf lookup\+By\+Name} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name, {\bf Medium} $\ast$\&result\+Medium)
+\item 
+static void {\bf close} ({\bf Usage\+Environment} \&env, char const $\ast$medium\+Name)
+\item 
+static void {\bf close} ({\bf Medium} $\ast$medium)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Quick\+Time\+File\+Sink} ({\bf Usage\+Environment} \&env, {\bf Media\+Session} \&input\+Session, char const $\ast$output\+File\+Name, unsigned buffer\+Size, unsigned short movie\+Width, unsigned short movie\+Height, unsigned movie\+F\+P\+S, {\bf Boolean} packet\+Loss\+Compensate, {\bf Boolean} sync\+Streams, {\bf Boolean} generate\+Hint\+Tracks, {\bf Boolean} generate\+M\+P4\+Format)
+\item 
+virtual {\bf $\sim$\+Quick\+Time\+File\+Sink} ()
+\item 
+virtual void {\bf note\+Recorded\+Frame} ({\bf Media\+Subsession} \&input\+Subsession, unsigned packet\+Data\+Size, struct timeval const \&presentation\+Time)
+\item 
+{\bf Task\+Token} \& {\bf next\+Task} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Boolean} {\bf continue\+Playing} ()
+\item 
+void {\bf on\+Source\+Closure1} ()
+\item 
+void {\bf complete\+Output\+File} ()
+\item 
+unsigned {\bf add\+Word64} (u\+\_\+int64\+\_\+t word)
+\item 
+unsigned {\bf add\+Word} (unsigned word)
+\item 
+unsigned {\bf add\+Half\+Word} (unsigned short half\+Word)
+\item 
+unsigned {\bf add\+Byte} (unsigned char byte)
+\item 
+unsigned {\bf add\+Zero\+Words} (unsigned num\+Words)
+\item 
+unsigned {\bf add4\+Byte\+String} (char const $\ast$str)
+\item 
+unsigned {\bf add\+Arbitrary\+String} (char const $\ast$str, {\bf Boolean} one\+Byte\+Length={\bf True})
+\item 
+unsigned {\bf add\+Atom\+Header} (char const $\ast$atom\+Name)
+\item 
+unsigned {\bf add\+Atom\+Header64} (char const $\ast$atom\+Name)
+\item 
+void {\bf set\+Word} (int64\+\_\+t file\+Posn, unsigned size)
+\item 
+void {\bf set\+Word64} (int64\+\_\+t file\+Posn, u\+\_\+int64\+\_\+t size)
+\item 
+unsigned {\bf movie\+Time\+Scale} () const 
+\item 
+{\bf \+\_\+atom} (ftyp)
+\item 
+{\bf \+\_\+atom} (moov)
+\item 
+{\bf \+\_\+atom} (mvhd)
+\item 
+{\bf \+\_\+atom} (iods)
+\item 
+{\bf \+\_\+atom} (trak)
+\item 
+{\bf \+\_\+atom} (tkhd)
+\item 
+{\bf \+\_\+atom} (edts)
+\item 
+{\bf \+\_\+atom} (elst)
+\item 
+{\bf \+\_\+atom} (tref)
+\item 
+{\bf \+\_\+atom} (hint)
+\item 
+{\bf \+\_\+atom} (mdia)
+\item 
+{\bf \+\_\+atom} (mdhd)
+\item 
+{\bf \+\_\+atom} (hdlr)
+\item 
+{\bf \+\_\+atom} (minf)
+\item 
+{\bf \+\_\+atom} (smhd)
+\item 
+{\bf \+\_\+atom} (vmhd)
+\item 
+{\bf \+\_\+atom} (gmhd)
+\item 
+{\bf \+\_\+atom} (gmin)
+\item 
+unsigned {\bf add\+Atom\+\_\+hdlr2} ()
+\item 
+{\bf \+\_\+atom} (dinf)
+\item 
+{\bf \+\_\+atom} (dref)
+\item 
+{\bf \+\_\+atom} (alis)
+\item 
+{\bf \+\_\+atom} (stbl)
+\item 
+{\bf \+\_\+atom} (stsd)
+\item 
+unsigned {\bf add\+Atom\+\_\+generic\+Media} ()
+\item 
+unsigned {\bf add\+Atom\+\_\+sound\+Media\+General} ()
+\item 
+{\bf \+\_\+atom} (ulaw)
+\item 
+{\bf \+\_\+atom} (alaw)
+\item 
+{\bf \+\_\+atom} (Qclp)
+\item 
+{\bf \+\_\+atom} (wave)
+\item 
+{\bf \+\_\+atom} (frma)
+\item 
+{\bf \+\_\+atom} (Fclp)
+\item 
+{\bf \+\_\+atom} (Hclp)
+\item 
+{\bf \+\_\+atom} (mp4a)
+\item 
+{\bf \+\_\+atom} (esds)
+\item 
+{\bf \+\_\+atom} (srcq)
+\item 
+{\bf \+\_\+atom} (h263)
+\item 
+{\bf \+\_\+atom} (avc1)
+\item 
+{\bf \+\_\+atom} (avc\+C)
+\item 
+{\bf \+\_\+atom} (mp4v)
+\item 
+{\bf \+\_\+atom} (rtp)
+\item 
+{\bf \+\_\+atom} (tims)
+\item 
+{\bf \+\_\+atom} (stts)
+\item 
+{\bf \+\_\+atom} (stss)
+\item 
+{\bf \+\_\+atom} (stsc)
+\item 
+{\bf \+\_\+atom} (stsz)
+\item 
+{\bf \+\_\+atom} (co64)
+\item 
+{\bf \+\_\+atom} (udta)
+\item 
+{\bf \+\_\+atom} ({\bf name})
+\item 
+{\bf \+\_\+atom} (hnti)
+\item 
+{\bf \+\_\+atom} (sdp)
+\item 
+{\bf \+\_\+atom} (hinf)
+\item 
+{\bf \+\_\+atom} (totl)
+\item 
+{\bf \+\_\+atom} (npck)
+\item 
+{\bf \+\_\+atom} (tpay)
+\item 
+{\bf \+\_\+atom} (trpy)
+\item 
+{\bf \+\_\+atom} (nump)
+\item 
+{\bf \+\_\+atom} (tpyl)
+\item 
+{\bf \+\_\+atom} (dmed)
+\item 
+{\bf \+\_\+atom} (dimm)
+\item 
+{\bf \+\_\+atom} (drep)
+\item 
+{\bf \+\_\+atom} (tmin)
+\item 
+{\bf \+\_\+atom} (tmax)
+\item 
+{\bf \+\_\+atom} (pmax)
+\item 
+{\bf \+\_\+atom} (dmax)
+\item 
+{\bf \+\_\+atom} (payt)
+\item 
+unsigned {\bf add\+Atom\+\_\+dummy} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf after\+Getting\+Frame} (void $\ast$client\+Data, unsigned frame\+Size, unsigned num\+Truncated\+Bytes, struct timeval presentation\+Time, unsigned duration\+In\+Microseconds)
+\item 
+static void {\bf on\+Source\+Closure} (void $\ast$client\+Data)
+\item 
+static void {\bf on\+R\+T\+C\+P\+Bye} (void $\ast$client\+Data)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Media\+Session} \& {\bf f\+Input\+Session}
+\item 
+F\+I\+L\+E $\ast$ {\bf f\+Out\+Fid}
+\item 
+unsigned {\bf f\+Buffer\+Size}
+\item 
+{\bf Boolean} {\bf f\+Packet\+Loss\+Compensate}
+\item 
+{\bf Boolean} {\bf f\+Sync\+Streams}
+\item 
+{\bf Boolean} {\bf f\+Generate\+M\+P4\+Format}
+\item 
+struct timeval f\+Newest\+Sync\+Time {\bf f\+First\+Data\+Time}
+\item 
+{\bf Boolean} {\bf f\+Are\+Currently\+Being\+Played}
+\item 
+{\bf after\+Playing\+Func} $\ast$ {\bf f\+After\+Func}
+\item 
+void $\ast$ {\bf f\+After\+Client\+Data}
+\item 
+unsigned {\bf f\+Apple\+Creation\+Time}
+\item 
+unsigned {\bf f\+Largest\+R\+T\+Ptimestamp\+Frequency}
+\item 
+unsigned {\bf f\+Num\+Subsessions}
+\item 
+unsigned {\bf f\+Num\+Synced\+Subsessions}
+\item 
+struct timeval {\bf f\+Start\+Time}
+\item 
+{\bf Boolean} {\bf f\+Have\+Completed\+Output\+File}
+\item 
+unsigned short {\bf f\+Movie\+Width}
+\item 
+unsigned short {\bf f\+Movie\+Height}
+\item 
+unsigned {\bf f\+Movie\+F\+P\+S}
+\item 
+int64\+\_\+t {\bf f\+M\+D\+A\+Tposition}
+\item 
+int64\+\_\+t {\bf f\+M\+V\+H\+D\+\_\+duration\+Posn}
+\item 
+unsigned {\bf f\+Max\+Track\+Duration\+M}
+\item 
+class {\bf Subsession\+I\+O\+State} $\ast$ {\bf f\+Current\+I\+O\+State}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Subsession\+I\+O\+State}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file Quick\+Time\+File\+Sink.\+hh.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!after\+Playing\+Func@{after\+Playing\+Func}}
+\index{after\+Playing\+Func@{after\+Playing\+Func}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{after\+Playing\+Func}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( Quick\+Time\+File\+Sink\+::after\+Playing\+Func) (void $\ast$client\+Data)}\label{classQuickTimeFileSink_a863a56c84f4e3e20605d39b24723582e}
+
+
+Definition at line 42 of file Quick\+Time\+File\+Sink.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{Quick\+Time\+File\+Sink(\+Usage\+Environment \&env, Media\+Session \&input\+Session, char const $\ast$output\+File\+Name, unsigned buffer\+Size, unsigned short movie\+Width, unsigned short movie\+Height, unsigned movie\+F\+P\+S, Boolean packet\+Loss\+Compensate, Boolean sync\+Streams, Boolean generate\+Hint\+Tracks, Boolean generate\+M\+P4\+Format)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+Quick\+Time\+File\+Sink (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf Media\+Session} \&}]{input\+Session, }
+\item[{char const $\ast$}]{output\+File\+Name, }
+\item[{unsigned}]{buffer\+Size, }
+\item[{unsigned short}]{movie\+Width, }
+\item[{unsigned short}]{movie\+Height, }
+\item[{unsigned}]{movie\+F\+P\+S, }
+\item[{{\bf Boolean}}]{packet\+Loss\+Compensate, }
+\item[{{\bf Boolean}}]{sync\+Streams, }
+\item[{{\bf Boolean}}]{generate\+Hint\+Tracks, }
+\item[{{\bf Boolean}}]{generate\+M\+P4\+Format}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classQuickTimeFileSink_a49d837cae2df47a248c6b6b87848013c}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!````~Quick\+Time\+File\+Sink@{$\sim$\+Quick\+Time\+File\+Sink}}
+\index{````~Quick\+Time\+File\+Sink@{$\sim$\+Quick\+Time\+File\+Sink}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{$\sim$\+Quick\+Time\+File\+Sink()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Quick\+Time\+File\+Sink\+::$\sim$\+Quick\+Time\+File\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classQuickTimeFileSink_aed402eb77707847ed5e907dd537e617d}
+
+
+\subsection{Member Function Documentation}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(ftyp)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{ftyp}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_aeac476862bfcf6bf0c185b66b956a581}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(moov)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{moov}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_aa6b97d23cdc084e668aaa3153af3cdeb}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(mvhd)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{mvhd}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_ae25b1304ffeed21029e17f7ce10e5da3}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(iods)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{iods}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_aa046509d47b70f24ac42e016ac28a49c}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(trak)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{trak}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a80981fecb8c8d171af27720ae9c86f49}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(tkhd)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{tkhd}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_ad19789b3c3f508dafbbdffbece2d7576}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(edts)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{edts}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a5a9d18660b4b637a1551891da5a58ac1}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(elst)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{elst}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_ab8cf16e5308661af06806fe04fad124b}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(tref)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{tref}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_af454bd73962c030c3dedcfd3d51c71fe}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(hint)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{hint}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a8b2ffc990252384f3523184aa8f67198}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(mdia)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{mdia}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a9a0910ccf1be12e1c37d13f26e4456e4}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(mdhd)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{mdhd}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_aa3596338016916c4820edfe0ad2d9746}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(hdlr)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{hdlr}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a78ef8f0d5770b0db52397044fc4593c3}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(minf)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{minf}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a4b69732fc7a0a1c9bc007235c7f9a5d5}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(smhd)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{smhd}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a9226ef664d3569af1dcc67b9ae009cf7}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(vmhd)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{vmhd}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a0b9ad92d5aae6d6f959a324102f2eb00}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(gmhd)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{gmhd}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a70d0cbfa11432e0320e3827dd90f7f43}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(gmin)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{gmin}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_ab868305b510d6491abe807d8673c2236}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(dinf)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{dinf}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_ad95984a5d8a7fa94a12598a494eaa718}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(dref)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{dref}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a66d1f4cdc71f6ec377226e8e64920db8}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(alis)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{alis}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_aeb3d6ace4e96ea4e6507daab3d265acb}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(stbl)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{stbl}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a7b7b8aa739cd9efd8a26de729874cbbb}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(stsd)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{stsd}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a18ca867157d6b0a1291c2156ca979d7a}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(ulaw)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{ulaw}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a7ff1975e56314b2e9e6920c2d4f8eb43}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(alaw)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{alaw}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_abb7aad4101cd71417b6fa74f38e1cb96}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(\+Qclp)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{Qclp}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a3aaae26dfa8ae95f48b204bb51ad7c8e}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(wave)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{wave}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a9df80f39ac3d5ca30a290efc7e389993}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(frma)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{frma}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_acccf30e86e297ba78e11945e916a51f2}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(\+Fclp)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{Fclp}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a963354685a8b4b6e4f411224cae32d6e}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(\+Hclp)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{Hclp}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_ac819dde658e3532ec9276a4990996029}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(mp4a)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{mp4a}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a3ba64b61740827900ddf2f508f759da3}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(esds)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{esds}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a7b461a47583955239d8159ca1478402e}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(srcq)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{srcq}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a6243b73714ce6c487d3385c3bac30bcd}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(h263)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{h263}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a16339a4f590d2b809af76c47831591ce}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(avc1)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{avc1}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_abc818a871e68be399b275e4f50f77874}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(avc\+C)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{avc\+C}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_aef75b98121531f9896483c86e5f22718}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(mp4v)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{mp4v}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a06c324d4e18c1b13076cb9ea2dc7ae1c}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(rtp)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{rtp}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a621a02cc5a891ac7fcce6672fa0a4ee4}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(tims)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{tims}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a91536d6369344bf4fba15823c15715f4}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(stts)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{stts}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_aa8a8d59fb2421147b76f89309ec6f3eb}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(stss)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{stss}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a2e0f72644ef2bc8a40aa555b547f2cb5}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(stsc)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{stsc}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_ab94971847784e8c7a6fdf14d6d3c5c39}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(stsz)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{stsz}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_aebb9e7c833055393b9e3699cb7bff8b2}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(co64)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{co64}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a7aff8b2a38cdc8d8cf05f499fcd336fc}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(udta)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{udta}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a3c5b205bf22f329c67437793fb1aedcb}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(name)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{{\bf name}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_abe2c5c528869bf4d2e8f20f35e8bb6ef}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(hnti)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{hnti}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_ab3f710510bf38594c87e5e0535bebfa2}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(sdp)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{sdp}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_acee6acf10b9ba36c0165d9d23048154a}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(hinf)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{hinf}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a5c6511e9673b17576d08da0d5a0f8ca0}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(totl)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{totl}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_af8a9ef4e6f7c2df9687f8129e65203b8}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(npck)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{npck}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_aed37e6d146428d24bc6be77f5f04bfda}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(tpay)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{tpay}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_ac6100ff06b37c309db9ad7e52c4e3379}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(trpy)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{trpy}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a5e96ee085b8037eefb65483a193871e1}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(nump)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{nump}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_af6e7f3a2f9b10aea60557aaa54c9225d}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(tpyl)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{tpyl}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a44b2d81f9266b09a05605746e216b62b}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(dmed)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{dmed}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_aeea1280b09d0b11f6bcff456b6c996a2}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(dimm)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{dimm}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a853737998f200198a7951e9cf5a6a0ec}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(drep)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{drep}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a9917fe5d8d7958ee62758ca58dac89fc}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(tmin)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{tmin}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a2924843594e6ea2280e9c632edb652d2}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(tmax)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{tmax}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_accc0ed03f8b9def0fb63191a6306bda5}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(pmax)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{pmax}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a01290058a5d0e63d787c8e25f0e90e85}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(dmax)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{dmax}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_aa6bcd8f98754702914ce5464d814da5e}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!\+\_\+atom@{\+\_\+atom}}
+\index{\+\_\+atom@{\+\_\+atom}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{\+\_\+atom(payt)}]{\setlength{\rightskip}{0pt plus 5cm}Quick\+Time\+File\+Sink\+::\+\_\+atom (
+\begin{DoxyParamCaption}
+\item[{payt}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a16239435283c42f0044d330dd0a36f8b}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!add4\+Byte\+String@{add4\+Byte\+String}}
+\index{add4\+Byte\+String@{add4\+Byte\+String}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{add4\+Byte\+String(char const $\ast$str)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::add4\+Byte\+String (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a3b466bfc0463b6f958d5f2b4c79185ef}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!add\+Arbitrary\+String@{add\+Arbitrary\+String}}
+\index{add\+Arbitrary\+String@{add\+Arbitrary\+String}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{add\+Arbitrary\+String(char const $\ast$str, Boolean one\+Byte\+Length=\+True)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::add\+Arbitrary\+String (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{str, }
+\item[{{\bf Boolean}}]{one\+Byte\+Length = {\ttfamily {\bf True}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a1c77c5bc95fac48417f2a00414b37eca}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!add\+Atom\+\_\+dummy@{add\+Atom\+\_\+dummy}}
+\index{add\+Atom\+\_\+dummy@{add\+Atom\+\_\+dummy}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{add\+Atom\+\_\+dummy()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::add\+Atom\+\_\+dummy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_acfa364b24a9995f59e7005196a4e385d}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!add\+Atom\+\_\+generic\+Media@{add\+Atom\+\_\+generic\+Media}}
+\index{add\+Atom\+\_\+generic\+Media@{add\+Atom\+\_\+generic\+Media}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{add\+Atom\+\_\+generic\+Media()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::add\+Atom\+\_\+generic\+Media (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a42b72f7482d76f3e975584134347a2d5}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!add\+Atom\+\_\+hdlr2@{add\+Atom\+\_\+hdlr2}}
+\index{add\+Atom\+\_\+hdlr2@{add\+Atom\+\_\+hdlr2}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{add\+Atom\+\_\+hdlr2()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::add\+Atom\+\_\+hdlr2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a0a6d4703d89382ca0200b183e60a2084}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!add\+Atom\+\_\+sound\+Media\+General@{add\+Atom\+\_\+sound\+Media\+General}}
+\index{add\+Atom\+\_\+sound\+Media\+General@{add\+Atom\+\_\+sound\+Media\+General}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{add\+Atom\+\_\+sound\+Media\+General()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::add\+Atom\+\_\+sound\+Media\+General (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a7bb233e8f0336821582b3668e4da1101}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!add\+Atom\+Header@{add\+Atom\+Header}}
+\index{add\+Atom\+Header@{add\+Atom\+Header}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{add\+Atom\+Header(char const $\ast$atom\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::add\+Atom\+Header (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{atom\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a9cb706e7c3979b75f103f1fee39424ea}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!add\+Atom\+Header64@{add\+Atom\+Header64}}
+\index{add\+Atom\+Header64@{add\+Atom\+Header64}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{add\+Atom\+Header64(char const $\ast$atom\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::add\+Atom\+Header64 (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{atom\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a9003e36ba31937554ab6ab35e636943c}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!add\+Byte@{add\+Byte}}
+\index{add\+Byte@{add\+Byte}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{add\+Byte(unsigned char byte)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::add\+Byte (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{byte}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classQuickTimeFileSink_af89c795aa3811317d988936500c727a0}
+
+
+Definition at line 95 of file Quick\+Time\+File\+Sink.\+hh.
+
+
+\begin{DoxyCode}
+95                                        \{
+96     putc(byte, fOutFid);
+97     \textcolor{keywordflow}{return} 1;
+98   \}
+\end{DoxyCode}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!add\+Half\+Word@{add\+Half\+Word}}
+\index{add\+Half\+Word@{add\+Half\+Word}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{add\+Half\+Word(unsigned short half\+Word)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::add\+Half\+Word (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{half\+Word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a945e8c3fe5e6cd1b6d84813d182d13ca}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!add\+Word@{add\+Word}}
+\index{add\+Word@{add\+Word}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{add\+Word(unsigned word)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::add\+Word (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a0dcdf3ba67513845930005c5759f9db5}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!add\+Word64@{add\+Word64}}
+\index{add\+Word64@{add\+Word64}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{add\+Word64(u\+\_\+int64\+\_\+t word)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::add\+Word64 (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int64\+\_\+t}]{word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_addd941b985efc9ec79a8f917412091cf}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!add\+Zero\+Words@{add\+Zero\+Words}}
+\index{add\+Zero\+Words@{add\+Zero\+Words}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{add\+Zero\+Words(unsigned num\+Words)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::add\+Zero\+Words (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Words}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a4d449effc8961941a24c81a51b258f37}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!after\+Getting\+Frame@{after\+Getting\+Frame}}
+\index{after\+Getting\+Frame@{after\+Getting\+Frame}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{after\+Getting\+Frame(void $\ast$client\+Data, unsigned frame\+Size, unsigned num\+Truncated\+Bytes, struct timeval presentation\+Time, unsigned duration\+In\+Microseconds)}]{\setlength{\rightskip}{0pt plus 5cm}static void Quick\+Time\+File\+Sink\+::after\+Getting\+Frame (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data, }
+\item[{unsigned}]{frame\+Size, }
+\item[{unsigned}]{num\+Truncated\+Bytes, }
+\item[{struct timeval}]{presentation\+Time, }
+\item[{unsigned}]{duration\+In\+Microseconds}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classQuickTimeFileSink_adf8fcb50bcde06f5f5cc7b3b0ed9853f}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!close@{close}}
+\index{close@{close}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{close(\+Usage\+Environment \&env, char const $\ast$medium\+Name)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a9968c7ce6eedb848f2cc095730c01b17}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!close@{close}}
+\index{close@{close}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{close(\+Medium $\ast$medium)}]{\setlength{\rightskip}{0pt plus 5cm}static void Medium\+::close (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium} $\ast$}]{medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_aee50624faf6909b3944dd803fd485467}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!complete\+Output\+File@{complete\+Output\+File}}
+\index{complete\+Output\+File@{complete\+Output\+File}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{complete\+Output\+File()}]{\setlength{\rightskip}{0pt plus 5cm}void Quick\+Time\+File\+Sink\+::complete\+Output\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a129e122e96889a958ee26170e3abe073}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!continue\+Playing@{continue\+Playing}}
+\index{continue\+Playing@{continue\+Playing}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{continue\+Playing()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Quick\+Time\+File\+Sink\+::continue\+Playing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a45239396afc899ae0adc5cceec443ef3}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!create\+New@{create\+New}}
+\index{create\+New@{create\+New}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{create\+New(\+Usage\+Environment \&env, Media\+Session \&input\+Session, char const $\ast$output\+File\+Name, unsigned buffer\+Size=20000, unsigned short movie\+Width=240, unsigned short movie\+Height=180, unsigned movie\+F\+P\+S=15, Boolean packet\+Loss\+Compensate=\+False, Boolean sync\+Streams=\+False, Boolean generate\+Hint\+Tracks=\+False, Boolean generate\+M\+P4\+Format=\+False)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Quick\+Time\+File\+Sink}$\ast$ Quick\+Time\+File\+Sink\+::create\+New (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf Media\+Session} \&}]{input\+Session, }
+\item[{char const $\ast$}]{output\+File\+Name, }
+\item[{unsigned}]{buffer\+Size = {\ttfamily 20000}, }
+\item[{unsigned short}]{movie\+Width = {\ttfamily 240}, }
+\item[{unsigned short}]{movie\+Height = {\ttfamily 180}, }
+\item[{unsigned}]{movie\+F\+P\+S = {\ttfamily 15}, }
+\item[{{\bf Boolean}}]{packet\+Loss\+Compensate = {\ttfamily {\bf False}}, }
+\item[{{\bf Boolean}}]{sync\+Streams = {\ttfamily {\bf False}}, }
+\item[{{\bf Boolean}}]{generate\+Hint\+Tracks = {\ttfamily {\bf False}}, }
+\item[{{\bf Boolean}}]{generate\+M\+P4\+Format = {\ttfamily {\bf False}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classQuickTimeFileSink_af9a8efe08a41a8e940cd907321402825}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!envir@{envir}}
+\index{envir@{envir}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{envir() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Medium\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a32f7ecdd95f2b8400e1a26a5009e3b8e}
+
+
+Definition at line 59 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Environ.
+
+
+
+Referenced by Media\+Subsession\+::env(), R\+T\+P\+Interface\+::envir(), Generic\+Media\+Server\+::\+Client\+Connection\+::envir(), and Generic\+Media\+Server\+::\+Client\+Session\+::envir().
+
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} fEnviron;\}
+\end{DoxyCode}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!is\+Media\+Session@{is\+Media\+Session}}
+\index{is\+Media\+Session@{is\+Media\+Session}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{is\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ac5858707c4e7a15bd59d476cf48289d6}
+
+
+Reimplemented in {\bf Media\+Session} \doxyref{}{p.}{classMediaSession_a3b2a06a722374ab4477ac05a2ce28829}.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}}
+\index{is\+R\+T\+C\+P\+Instance@{is\+R\+T\+C\+P\+Instance}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{is\+R\+T\+C\+P\+Instance() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+C\+P\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_ab5f9f20324698f89a35513d596b2e7be}
+
+
+Reimplemented in {\bf R\+T\+C\+P\+Instance} \doxyref{}{p.}{classRTCPInstance_a844292518419e1dbf24170812fd1e4b5}.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}}
+\index{is\+R\+T\+S\+P\+Client@{is\+R\+T\+S\+P\+Client}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{is\+R\+T\+S\+P\+Client() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aed1c1816867f910ce8c98350686ac038}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Client} \doxyref{}{p.}{classRTSPClient_add07b3a68432b546998080b24380e7e8}.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}}
+\index{is\+R\+T\+S\+P\+Server@{is\+R\+T\+S\+P\+Server}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{is\+R\+T\+S\+P\+Server() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+R\+T\+S\+P\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a346e111b31bfde4b7f4ed593e0b97fd3}
+
+
+Reimplemented in {\bf R\+T\+S\+P\+Server} \doxyref{}{p.}{classRTSPServer_a45f9fc5ddd8f214169358493215a064a}.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!is\+Server\+Media\+Session@{is\+Server\+Media\+Session}}
+\index{is\+Server\+Media\+Session@{is\+Server\+Media\+Session}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{is\+Server\+Media\+Session() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Server\+Media\+Session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_aa9fd26c4b954ffba5f79925ecd0283a0}
+
+
+Reimplemented in {\bf Server\+Media\+Session} \doxyref{}{p.}{classServerMediaSession_a34b59e04644b6f0841ea5af99dbf32f6}.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!is\+Sink@{is\+Sink}}
+\index{is\+Sink@{is\+Sink}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{is\+Sink() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a23d49bf466482784b9d4378490d17b5f}
+
+
+Reimplemented in {\bf Media\+Sink} \doxyref{}{p.}{classMediaSink_aa8649dcdf21d5005f9ec319f898f91b6}.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!is\+Source@{is\+Source}}
+\index{is\+Source@{is\+Source}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{is\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Medium\+::is\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classMedium_a6cdbd02c73a3e9c1cbab8fce9e9497b1}
+
+
+Reimplemented in {\bf Media\+Source} \doxyref{}{p.}{classMediaSource_a4d75fa9ee2b476b1231594282a6854be}.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!lookup\+By\+Name@{lookup\+By\+Name}}
+\index{lookup\+By\+Name@{lookup\+By\+Name}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{lookup\+By\+Name(\+Usage\+Environment \&env, char const $\ast$medium\+Name, Medium $\ast$\&result\+Medium)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Boolean} Medium\+::lookup\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{char const $\ast$}]{medium\+Name, }
+\item[{{\bf Medium} $\ast$\&}]{result\+Medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classMedium_a418c860c1e0ef2766ee0d0f64b346291}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!movie\+Time\+Scale@{movie\+Time\+Scale}}
+\index{movie\+Time\+Scale@{movie\+Time\+Scale}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{movie\+Time\+Scale() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::movie\+Time\+Scale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classQuickTimeFileSink_a810372e8fae71d5ce0f683b7d196607d}
+
+
+Definition at line 109 of file Quick\+Time\+File\+Sink.\+hh.
+
+
+
+References f\+Largest\+R\+T\+Ptimestamp\+Frequency.
+
+
+\begin{DoxyCode}
+109 \{\textcolor{keywordflow}{return} fLargestRTPtimestampFrequency;\}
+\end{DoxyCode}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!name@{name}}
+\index{name@{name}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{name() const }]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ Medium\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}\label{classMedium_a575649802dc781c0e59e097a3870fcdb}
+
+
+Definition at line 61 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Medium\+Name.
+
+
+\begin{DoxyCode}
+61 \{\textcolor{keywordflow}{return} fMediumName;\}
+\end{DoxyCode}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{next\+Task()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Task\+Token}\& Medium\+::next\+Task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classMedium_a5c8788adec90be1a584393a5bf11a5c9}
+
+
+Definition at line 77 of file Media.\+hh.
+
+
+
+References Medium\+::f\+Next\+Task.
+
+
+\begin{DoxyCode}
+77                         \{
+78         \textcolor{keywordflow}{return} fNextTask;
+79   \}
+\end{DoxyCode}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!note\+Recorded\+Frame@{note\+Recorded\+Frame}}
+\index{note\+Recorded\+Frame@{note\+Recorded\+Frame}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{note\+Recorded\+Frame(\+Media\+Subsession \&input\+Subsession, unsigned packet\+Data\+Size, struct timeval const \&presentation\+Time)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Quick\+Time\+File\+Sink\+::note\+Recorded\+Frame (
+\begin{DoxyParamCaption}
+\item[{{\bf Media\+Subsession} \&}]{input\+Subsession, }
+\item[{unsigned}]{packet\+Data\+Size, }
+\item[{struct timeval const \&}]{presentation\+Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classQuickTimeFileSink_ae2925d362bb63a3bba8ddd35fa19f0d3}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!num\+Active\+Subsessions@{num\+Active\+Subsessions}}
+\index{num\+Active\+Subsessions@{num\+Active\+Subsessions}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{num\+Active\+Subsessions() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::num\+Active\+Subsessions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classQuickTimeFileSink_afecf217e29f7ab7f4e8ae4d126452334}
+
+
+Definition at line 46 of file Quick\+Time\+File\+Sink.\+hh.
+
+
+
+References f\+Num\+Subsessions.
+
+
+\begin{DoxyCode}
+46 \{ \textcolor{keywordflow}{return} fNumSubsessions; \}
+\end{DoxyCode}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!on\+R\+T\+C\+P\+Bye@{on\+R\+T\+C\+P\+Bye}}
+\index{on\+R\+T\+C\+P\+Bye@{on\+R\+T\+C\+P\+Bye}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{on\+R\+T\+C\+P\+Bye(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void Quick\+Time\+File\+Sink\+::on\+R\+T\+C\+P\+Bye (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classQuickTimeFileSink_a10a98ccba523197b2e89fb96bcbc5eaf}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!on\+Source\+Closure@{on\+Source\+Closure}}
+\index{on\+Source\+Closure@{on\+Source\+Closure}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{on\+Source\+Closure(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void Quick\+Time\+File\+Sink\+::on\+Source\+Closure (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classQuickTimeFileSink_a880fb9f1f2b9c19bbda1715ff589a6d7}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!on\+Source\+Closure1@{on\+Source\+Closure1}}
+\index{on\+Source\+Closure1@{on\+Source\+Closure1}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{on\+Source\+Closure1()}]{\setlength{\rightskip}{0pt plus 5cm}void Quick\+Time\+File\+Sink\+::on\+Source\+Closure1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a4e773fb6e32143c66ee35eafffd0fa01}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!set\+Word@{set\+Word}}
+\index{set\+Word@{set\+Word}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{set\+Word(int64\+\_\+t file\+Posn, unsigned size)}]{\setlength{\rightskip}{0pt plus 5cm}void Quick\+Time\+File\+Sink\+::set\+Word (
+\begin{DoxyParamCaption}
+\item[{int64\+\_\+t}]{file\+Posn, }
+\item[{unsigned}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_acb63bc8d04bf4e2d00ebac8e38d9719b}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!set\+Word64@{set\+Word64}}
+\index{set\+Word64@{set\+Word64}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{set\+Word64(int64\+\_\+t file\+Posn, u\+\_\+int64\+\_\+t size)}]{\setlength{\rightskip}{0pt plus 5cm}void Quick\+Time\+File\+Sink\+::set\+Word64 (
+\begin{DoxyParamCaption}
+\item[{int64\+\_\+t}]{file\+Posn, }
+\item[{u\+\_\+int64\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a13a664e2cdbf13c2339a7ad965897fe2}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!start\+Playing@{start\+Playing}}
+\index{start\+Playing@{start\+Playing}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{start\+Playing(after\+Playing\+Func $\ast$after\+Func, void $\ast$after\+Client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Quick\+Time\+File\+Sink\+::start\+Playing (
+\begin{DoxyParamCaption}
+\item[{{\bf after\+Playing\+Func} $\ast$}]{after\+Func, }
+\item[{void $\ast$}]{after\+Client\+Data}
+\end{DoxyParamCaption}
+)}\label{classQuickTimeFileSink_ad3ad272593b4a7be98e7bdfae36f1574}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!Subsession\+I\+O\+State@{Subsession\+I\+O\+State}}
+\index{Subsession\+I\+O\+State@{Subsession\+I\+O\+State}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{Subsession\+I\+O\+State}]{\setlength{\rightskip}{0pt plus 5cm}friend class Subsession\+I\+O\+State\hspace{0.3cm}{\ttfamily [friend]}}\label{classQuickTimeFileSink_adadb17c50217319cd49a2d64d237f470}
+
+
+Definition at line 73 of file Quick\+Time\+File\+Sink.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+After\+Client\+Data@{f\+After\+Client\+Data}}
+\index{f\+After\+Client\+Data@{f\+After\+Client\+Data}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+After\+Client\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Quick\+Time\+File\+Sink\+::f\+After\+Client\+Data\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_ad2077511e7ca623786293f6bf9da7f34}
+
+
+Definition at line 82 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+After\+Func@{f\+After\+Func}}
+\index{f\+After\+Func@{f\+After\+Func}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+After\+Func}]{\setlength{\rightskip}{0pt plus 5cm}{\bf after\+Playing\+Func}$\ast$ Quick\+Time\+File\+Sink\+::f\+After\+Func\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a3ebd772b5b93a045363c07b278ba0a44}
+
+
+Definition at line 81 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+Apple\+Creation\+Time@{f\+Apple\+Creation\+Time}}
+\index{f\+Apple\+Creation\+Time@{f\+Apple\+Creation\+Time}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+Apple\+Creation\+Time}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::f\+Apple\+Creation\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a1e5a165c6c638d6a4d13b923be7a6925}
+
+
+Definition at line 83 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+Are\+Currently\+Being\+Played@{f\+Are\+Currently\+Being\+Played}}
+\index{f\+Are\+Currently\+Being\+Played@{f\+Are\+Currently\+Being\+Played}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+Are\+Currently\+Being\+Played}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Quick\+Time\+File\+Sink\+::f\+Are\+Currently\+Being\+Played\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_af13d0418d7ee88bbec48e429749d8672}
+
+
+Definition at line 80 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+Buffer\+Size@{f\+Buffer\+Size}}
+\index{f\+Buffer\+Size@{f\+Buffer\+Size}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+Buffer\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::f\+Buffer\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a4131941fa9a34fda8018bc2a30949a2b}
+
+
+Definition at line 76 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+Current\+I\+O\+State@{f\+Current\+I\+O\+State}}
+\index{f\+Current\+I\+O\+State@{f\+Current\+I\+O\+State}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+Current\+I\+O\+State}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf Subsession\+I\+O\+State}$\ast$ Quick\+Time\+File\+Sink\+::f\+Current\+I\+O\+State\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a4e54d41fadc787db483b950ada43f547}
+
+
+Definition at line 189 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+First\+Data\+Time@{f\+First\+Data\+Time}}
+\index{f\+First\+Data\+Time@{f\+First\+Data\+Time}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+First\+Data\+Time}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval f\+Newest\+Sync\+Time Quick\+Time\+File\+Sink\+::f\+First\+Data\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_ac799f1d8d4c83fa2b99cf36f71059856}
+
+
+Definition at line 79 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+Generate\+M\+P4\+Format@{f\+Generate\+M\+P4\+Format}}
+\index{f\+Generate\+M\+P4\+Format@{f\+Generate\+M\+P4\+Format}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+Generate\+M\+P4\+Format}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Quick\+Time\+File\+Sink\+::f\+Generate\+M\+P4\+Format\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a524e4dd7bbc6f9043a930816b01e9f13}
+
+
+Definition at line 78 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+Have\+Completed\+Output\+File@{f\+Have\+Completed\+Output\+File}}
+\index{f\+Have\+Completed\+Output\+File@{f\+Have\+Completed\+Output\+File}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+Have\+Completed\+Output\+File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Quick\+Time\+File\+Sink\+::f\+Have\+Completed\+Output\+File\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a1848a7092ae0401763603eb8cef07c85}
+
+
+Definition at line 87 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+Input\+Session@{f\+Input\+Session}}
+\index{f\+Input\+Session@{f\+Input\+Session}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+Input\+Session}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Media\+Session}\& Quick\+Time\+File\+Sink\+::f\+Input\+Session\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a640e4f243490bee4d48929a55c2767f2}
+
+
+Definition at line 74 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+Largest\+R\+T\+Ptimestamp\+Frequency@{f\+Largest\+R\+T\+Ptimestamp\+Frequency}}
+\index{f\+Largest\+R\+T\+Ptimestamp\+Frequency@{f\+Largest\+R\+T\+Ptimestamp\+Frequency}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+Largest\+R\+T\+Ptimestamp\+Frequency}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::f\+Largest\+R\+T\+Ptimestamp\+Frequency\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a7dc52df48f59042928f245ca180bfcf8}
+
+
+Definition at line 84 of file Quick\+Time\+File\+Sink.\+hh.
+
+
+
+Referenced by movie\+Time\+Scale().
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+Max\+Track\+Duration\+M@{f\+Max\+Track\+Duration\+M}}
+\index{f\+Max\+Track\+Duration\+M@{f\+Max\+Track\+Duration\+M}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+Max\+Track\+Duration\+M}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::f\+Max\+Track\+Duration\+M\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_ae1f5084feb985b5f3e59ad64e955f579}
+
+
+Definition at line 188 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+M\+D\+A\+Tposition@{f\+M\+D\+A\+Tposition}}
+\index{f\+M\+D\+A\+Tposition@{f\+M\+D\+A\+Tposition}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+M\+D\+A\+Tposition}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t Quick\+Time\+File\+Sink\+::f\+M\+D\+A\+Tposition\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_aa504ac6634e3d40636eff9374f991b34}
+
+
+Definition at line 186 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+Movie\+F\+P\+S@{f\+Movie\+F\+P\+S}}
+\index{f\+Movie\+F\+P\+S@{f\+Movie\+F\+P\+S}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+Movie\+F\+P\+S}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::f\+Movie\+F\+P\+S\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a1ef8e13094b0b23ad17ae825955476b9}
+
+
+Definition at line 185 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+Movie\+Height@{f\+Movie\+Height}}
+\index{f\+Movie\+Height@{f\+Movie\+Height}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+Movie\+Height}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Quick\+Time\+File\+Sink\+::f\+Movie\+Height\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a498a4a1b062f0c65987e654143525050}
+
+
+Definition at line 184 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+Movie\+Width@{f\+Movie\+Width}}
+\index{f\+Movie\+Width@{f\+Movie\+Width}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+Movie\+Width}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Quick\+Time\+File\+Sink\+::f\+Movie\+Width\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a677172348e2efd75a98d0da17384d418}
+
+
+Definition at line 184 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+M\+V\+H\+D\+\_\+duration\+Posn@{f\+M\+V\+H\+D\+\_\+duration\+Posn}}
+\index{f\+M\+V\+H\+D\+\_\+duration\+Posn@{f\+M\+V\+H\+D\+\_\+duration\+Posn}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+M\+V\+H\+D\+\_\+duration\+Posn}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t Quick\+Time\+File\+Sink\+::f\+M\+V\+H\+D\+\_\+duration\+Posn\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a45f54069e4a44518810518a0b580b97f}
+
+
+Definition at line 187 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+Num\+Subsessions@{f\+Num\+Subsessions}}
+\index{f\+Num\+Subsessions@{f\+Num\+Subsessions}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+Num\+Subsessions}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::f\+Num\+Subsessions\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_ac4c9932e3d8f0209b1bc31c64fcff83f}
+
+
+Definition at line 85 of file Quick\+Time\+File\+Sink.\+hh.
+
+
+
+Referenced by num\+Active\+Subsessions().
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+Num\+Synced\+Subsessions@{f\+Num\+Synced\+Subsessions}}
+\index{f\+Num\+Synced\+Subsessions@{f\+Num\+Synced\+Subsessions}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+Num\+Synced\+Subsessions}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Quick\+Time\+File\+Sink\+::f\+Num\+Synced\+Subsessions\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a3f6b98393aeb14788506e7fadde60036}
+
+
+Definition at line 85 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+Out\+Fid@{f\+Out\+Fid}}
+\index{f\+Out\+Fid@{f\+Out\+Fid}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+Out\+Fid}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ Quick\+Time\+File\+Sink\+::f\+Out\+Fid\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_afd1baee197c1214a36c36fbbec9a1bd7}
+
+
+Definition at line 75 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+Packet\+Loss\+Compensate@{f\+Packet\+Loss\+Compensate}}
+\index{f\+Packet\+Loss\+Compensate@{f\+Packet\+Loss\+Compensate}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+Packet\+Loss\+Compensate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Quick\+Time\+File\+Sink\+::f\+Packet\+Loss\+Compensate\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_ae8e956b0939ca9284570b5752ea20aaf}
+
+
+Definition at line 77 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+Start\+Time@{f\+Start\+Time}}
+\index{f\+Start\+Time@{f\+Start\+Time}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+Start\+Time}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval Quick\+Time\+File\+Sink\+::f\+Start\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_a200b47538d23cfd456feda3e4149a29e}
+
+
+Definition at line 86 of file Quick\+Time\+File\+Sink.\+hh.
+
+\index{Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}!f\+Sync\+Streams@{f\+Sync\+Streams}}
+\index{f\+Sync\+Streams@{f\+Sync\+Streams}!Quick\+Time\+File\+Sink@{Quick\+Time\+File\+Sink}}
+\subsubsection[{f\+Sync\+Streams}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Quick\+Time\+File\+Sink\+::f\+Sync\+Streams\hspace{0.3cm}{\ttfamily [private]}}\label{classQuickTimeFileSink_aa0b5b28ea8481fe6e40f16a8d7f5384d}
+
+
+Definition at line 78 of file Quick\+Time\+File\+Sink.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf Quick\+Time\+File\+Sink.\+hh}\end{DoxyCompactItemize}

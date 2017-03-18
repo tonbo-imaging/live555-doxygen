@@ -1,0 +1,642 @@
+\section{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+:\+:R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming Class Reference}
+\label{classRTSPServerSupportingHTTPStreaming_1_1RTSPClientConnectionSupportingHTTPStreaming}\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+
+
+{\ttfamily \#include $<$R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming.\+hh$>$}
+
+
+
+Inheritance diagram for R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+:\+:R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classRTSPServerSupportingHTTPStreaming_1_1RTSPClientConnectionSupportingHTTPStreaming__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+:\+:R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRTSPServerSupportingHTTPStreaming_1_1RTSPClientConnectionSupportingHTTPStreaming__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming} ({\bf R\+T\+S\+P\+Server} \&our\+Server, int client\+Socket, struct sockaddr\+\_\+in client\+Addr)
+\item 
+virtual {\bf $\sim$\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf handle\+H\+T\+T\+P\+Cmd\+\_\+\+Streaming\+G\+E\+T} (char const $\ast$url\+Suffix, char const $\ast$full\+Request\+Str)
+\item 
+virtual void {\bf handle\+Request\+Bytes} (int new\+Bytes\+Read)
+\item 
+virtual void {\bf handle\+Cmd\+\_\+\+O\+P\+T\+I\+O\+N\+S} ()
+\item 
+virtual void {\bf handle\+Cmd\+\_\+\+G\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R} (char const $\ast$full\+Request\+Str)
+\item 
+virtual void {\bf handle\+Cmd\+\_\+\+S\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R} (char const $\ast$full\+Request\+Str)
+\item 
+virtual void {\bf handle\+Cmd\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E} (char const $\ast$url\+Pre\+Suffix, char const $\ast$url\+Suffix, char const $\ast$full\+Request\+Str)
+\item 
+virtual void {\bf handle\+Cmd\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R} (char const $\ast$cmd, char const $\ast$url, char const $\ast$url\+Suffix, char const $\ast$full\+Request\+Str, {\bf Boolean} reuse\+Connection, {\bf Boolean} deliver\+Via\+T\+C\+P, char const $\ast$proxy\+U\+R\+L\+Suffix)
+\item 
+virtual void {\bf handle\+Cmd\+\_\+bad} ()
+\item 
+virtual void {\bf handle\+Cmd\+\_\+not\+Supported} ()
+\item 
+virtual void {\bf handle\+Cmd\+\_\+not\+Found} ()
+\item 
+virtual void {\bf handle\+Cmd\+\_\+session\+Not\+Found} ()
+\item 
+virtual void {\bf handle\+Cmd\+\_\+unsupported\+Transport} ()
+\item 
+virtual {\bf Boolean} {\bf parse\+H\+T\+T\+P\+Request\+String} (char $\ast$result\+Cmd\+Name, unsigned result\+Cmd\+Name\+Max\+Size, char $\ast$url\+Suffix, unsigned url\+Suffix\+Max\+Size, char $\ast$session\+Cookie, unsigned session\+Cookie\+Max\+Size, char $\ast$accept\+Str, unsigned accept\+Str\+Max\+Size)
+\item 
+virtual void {\bf handle\+H\+T\+T\+P\+Cmd\+\_\+not\+Supported} ()
+\item 
+virtual void {\bf handle\+H\+T\+T\+P\+Cmd\+\_\+not\+Found} ()
+\item 
+virtual void {\bf handle\+H\+T\+T\+P\+Cmd\+\_\+\+O\+P\+T\+I\+O\+N\+S} ()
+\item 
+virtual void {\bf handle\+H\+T\+T\+P\+Cmd\+\_\+\+Tunneling\+G\+E\+T} (char const $\ast$session\+Cookie)
+\item 
+virtual {\bf Boolean} {\bf handle\+H\+T\+T\+P\+Cmd\+\_\+\+Tunneling\+P\+O\+S\+T} (char const $\ast$session\+Cookie, unsigned char const $\ast$extra\+Data, unsigned extra\+Data\+Size)
+\item 
+void {\bf reset\+Request\+Buffer} ()
+\item 
+void {\bf close\+Sockets\+R\+T\+S\+P} ()
+\item 
+void {\bf handle\+Alternative\+Request\+Byte1} (u\+\_\+int8\+\_\+t request\+Byte)
+\item 
+{\bf Boolean} {\bf authentication\+O\+K} (char const $\ast$cmd\+Name, char const $\ast$url\+Suffix, char const $\ast$full\+Request\+Str)
+\item 
+void {\bf change\+Client\+Input\+Socket} (int new\+Socket\+Num, unsigned char const $\ast$extra\+Data, unsigned extra\+Data\+Size)
+\item 
+virtual void {\bf continue\+Handling\+R\+E\+G\+I\+S\+T\+E\+R1} ({\bf Params\+For\+R\+E\+G\+I\+S\+T\+E\+R} $\ast$params)
+\item 
+void {\bf set\+R\+T\+S\+P\+Response} (char const $\ast$response\+Str)
+\item 
+void {\bf set\+R\+T\+S\+P\+Response} (char const $\ast$response\+Str, u\+\_\+int32\+\_\+t session\+Id)
+\item 
+void {\bf set\+R\+T\+S\+P\+Response} (char const $\ast$response\+Str, char const $\ast$content\+Str)
+\item 
+void {\bf set\+R\+T\+S\+P\+Response} (char const $\ast$response\+Str, u\+\_\+int32\+\_\+t session\+Id, char const $\ast$content\+Str)
+\item 
+{\bf Usage\+Environment} \& {\bf envir} ()
+\item 
+void {\bf close\+Sockets} ()
+\item 
+void {\bf incoming\+Request\+Handler} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf after\+Streaming} (void $\ast$client\+Data)
+\item 
+static void {\bf handle\+Alternative\+Request\+Byte} (void $\ast$, u\+\_\+int8\+\_\+t request\+Byte)
+\item 
+static void {\bf continue\+Handling\+R\+E\+G\+I\+S\+T\+E\+R} ({\bf Params\+For\+R\+E\+G\+I\+S\+T\+E\+R} $\ast$params)
+\item 
+static void {\bf incoming\+Request\+Handler} (void $\ast$, int)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf R\+T\+S\+P\+Server} \& {\bf f\+Our\+R\+T\+S\+P\+Server}
+\item 
+int \& {\bf f\+Client\+Input\+Socket}
+\item 
+int {\bf f\+Client\+Output\+Socket}
+\item 
+{\bf Boolean} {\bf f\+Is\+Active}
+\item 
+unsigned char $\ast$ {\bf f\+Last\+C\+R\+L\+F}
+\item 
+unsigned {\bf f\+Recursion\+Count}
+\item 
+char const $\ast$ {\bf f\+Current\+C\+Seq}
+\item 
+{\bf Authenticator} {\bf f\+Current\+Authenticator}
+\item 
+char $\ast$ {\bf f\+Our\+Session\+Cookie}
+\item 
+unsigned {\bf f\+Base64\+Remainder\+Count}
+\item 
+{\bf Generic\+Media\+Server} \& {\bf f\+Our\+Server}
+\item 
+int {\bf f\+Our\+Socket}
+\item 
+struct sockaddr\+\_\+in {\bf f\+Client\+Addr}
+\item 
+unsigned char {\bf f\+Request\+Buffer} [{\bf R\+E\+Q\+U\+E\+S\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}]
+\item 
+unsigned char {\bf f\+Response\+Buffer} [{\bf R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}]
+\item 
+unsigned {\bf f\+Request\+Bytes\+Already\+Seen}
+\item 
+unsigned {\bf f\+Request\+Buffer\+Bytes\+Left}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+u\+\_\+int32\+\_\+t {\bf f\+Client\+Session\+Id}
+\item 
+{\bf Framed\+Source} $\ast$ {\bf f\+Stream\+Source}
+\item 
+{\bf Byte\+Stream\+Memory\+Buffer\+Source} $\ast$ {\bf f\+Playlist\+Source}
+\item 
+{\bf T\+C\+P\+Stream\+Sink} $\ast$ {\bf f\+T\+C\+P\+Sink}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 54 of file R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\index{R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming(\+R\+T\+S\+P\+Server \&our\+Server, int client\+Socket, struct sockaddr\+\_\+in client\+Addr)}]{\setlength{\rightskip}{0pt plus 5cm}R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+S\+P\+Server} \&}]{our\+Server, }
+\item[{int}]{client\+Socket, }
+\item[{struct sockaddr\+\_\+in}]{client\+Addr}
+\end{DoxyParamCaption}
+)}\label{classRTSPServerSupportingHTTPStreaming_1_1RTSPClientConnectionSupportingHTTPStreaming_a1e68709a1c22417c14388bf46a58c505}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!````~R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{$\sim$\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\index{````~R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{$\sim$\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{$\sim$\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming()}]{\setlength{\rightskip}{0pt plus 5cm}virtual R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming\+::$\sim$\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classRTSPServerSupportingHTTPStreaming_1_1RTSPClientConnectionSupportingHTTPStreaming_a649bf74f7da7181929a8876a20029b5a}
+
+
+\subsection{Member Function Documentation}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!after\+Streaming@{after\+Streaming}}
+\index{after\+Streaming@{after\+Streaming}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{after\+Streaming(void $\ast$client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}static void R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming\+::after\+Streaming (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{classRTSPServerSupportingHTTPStreaming_1_1RTSPClientConnectionSupportingHTTPStreaming_a102fb94dbed5c230bcd0c94ab8e53da6}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!authentication\+O\+K@{authentication\+O\+K}}
+\index{authentication\+O\+K@{authentication\+O\+K}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{authentication\+O\+K(char const $\ast$cmd\+Name, char const $\ast$url\+Suffix, char const $\ast$full\+Request\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::authentication\+O\+K (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{cmd\+Name, }
+\item[{char const $\ast$}]{url\+Suffix, }
+\item[{char const $\ast$}]{full\+Request\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a48673ae11dc7f9ab2033c54e972bf0a4}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!change\+Client\+Input\+Socket@{change\+Client\+Input\+Socket}}
+\index{change\+Client\+Input\+Socket@{change\+Client\+Input\+Socket}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{change\+Client\+Input\+Socket(int new\+Socket\+Num, unsigned char const $\ast$extra\+Data, unsigned extra\+Data\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::change\+Client\+Input\+Socket (
+\begin{DoxyParamCaption}
+\item[{int}]{new\+Socket\+Num, }
+\item[{unsigned char const $\ast$}]{extra\+Data, }
+\item[{unsigned}]{extra\+Data\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_af9a31588bbe353dec1a20f524fb72427}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!close\+Sockets@{close\+Sockets}}
+\index{close\+Sockets@{close\+Sockets}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{close\+Sockets()}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+Media\+Server\+::\+Client\+Connection\+::close\+Sockets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_1_1ClientConnection_aa24bbdd41272cc597d0e51c21ad51fca}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!close\+Sockets\+R\+T\+S\+P@{close\+Sockets\+R\+T\+S\+P}}
+\index{close\+Sockets\+R\+T\+S\+P@{close\+Sockets\+R\+T\+S\+P}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{close\+Sockets\+R\+T\+S\+P()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::close\+Sockets\+R\+T\+S\+P (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_abf9ac15360610d0a1a1a285664e75183}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!continue\+Handling\+R\+E\+G\+I\+S\+T\+E\+R@{continue\+Handling\+R\+E\+G\+I\+S\+T\+E\+R}}
+\index{continue\+Handling\+R\+E\+G\+I\+S\+T\+E\+R@{continue\+Handling\+R\+E\+G\+I\+S\+T\+E\+R}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{continue\+Handling\+R\+E\+G\+I\+S\+T\+E\+R(\+Params\+For\+R\+E\+G\+I\+S\+T\+E\+R $\ast$params)}]{\setlength{\rightskip}{0pt plus 5cm}static void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::continue\+Handling\+R\+E\+G\+I\+S\+T\+E\+R (
+\begin{DoxyParamCaption}
+\item[{{\bf Params\+For\+R\+E\+G\+I\+S\+T\+E\+R} $\ast$}]{params}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a4f87b410ba7ddb04d1c07f35ea983143}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!continue\+Handling\+R\+E\+G\+I\+S\+T\+E\+R1@{continue\+Handling\+R\+E\+G\+I\+S\+T\+E\+R1}}
+\index{continue\+Handling\+R\+E\+G\+I\+S\+T\+E\+R1@{continue\+Handling\+R\+E\+G\+I\+S\+T\+E\+R1}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{continue\+Handling\+R\+E\+G\+I\+S\+T\+E\+R1(\+Params\+For\+R\+E\+G\+I\+S\+T\+E\+R $\ast$params)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::continue\+Handling\+R\+E\+G\+I\+S\+T\+E\+R1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Params\+For\+R\+E\+G\+I\+S\+T\+E\+R} $\ast$}]{params}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a6200776ee254196f64bae56c194a4ae7}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!envir@{envir}}
+\index{envir@{envir}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{envir()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Generic\+Media\+Server\+::\+Client\+Connection\+::envir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_1_1ClientConnection_a5f5f7c9a3b383cea4408880b329ec45f}
+
+
+Definition at line 90 of file Generic\+Media\+Server.\+hh.
+
+
+
+References Medium\+::envir(), and Generic\+Media\+Server\+::\+Client\+Connection\+::f\+Our\+Server.
+
+
+\begin{DoxyCode}
+90 \{ \textcolor{keywordflow}{return} fOurServer.envir(); \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!handle\+Alternative\+Request\+Byte@{handle\+Alternative\+Request\+Byte}}
+\index{handle\+Alternative\+Request\+Byte@{handle\+Alternative\+Request\+Byte}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{handle\+Alternative\+Request\+Byte(void $\ast$, u\+\_\+int8\+\_\+t request\+Byte)}]{\setlength{\rightskip}{0pt plus 5cm}static void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::handle\+Alternative\+Request\+Byte (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{, }
+\item[{u\+\_\+int8\+\_\+t}]{request\+Byte}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_aec20fb7d715c7366c10fdec0e1b9ca8f}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!handle\+Alternative\+Request\+Byte1@{handle\+Alternative\+Request\+Byte1}}
+\index{handle\+Alternative\+Request\+Byte1@{handle\+Alternative\+Request\+Byte1}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{handle\+Alternative\+Request\+Byte1(u\+\_\+int8\+\_\+t request\+Byte)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::handle\+Alternative\+Request\+Byte1 (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t}]{request\+Byte}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_adad328be882a37e7d64dbfb61b595402}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!handle\+Cmd\+\_\+bad@{handle\+Cmd\+\_\+bad}}
+\index{handle\+Cmd\+\_\+bad@{handle\+Cmd\+\_\+bad}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{handle\+Cmd\+\_\+bad()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::handle\+Cmd\+\_\+bad (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_ab38116c605c249b5416d03c09d54d0a2}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!handle\+Cmd\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E@{handle\+Cmd\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E}}
+\index{handle\+Cmd\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E@{handle\+Cmd\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{handle\+Cmd\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E(char const $\ast$url\+Pre\+Suffix, char const $\ast$url\+Suffix, char const $\ast$full\+Request\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::handle\+Cmd\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{url\+Pre\+Suffix, }
+\item[{char const $\ast$}]{url\+Suffix, }
+\item[{char const $\ast$}]{full\+Request\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_ac3130390cc5b78dc6b3ce474945cfefd}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!handle\+Cmd\+\_\+\+G\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R@{handle\+Cmd\+\_\+\+G\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R}}
+\index{handle\+Cmd\+\_\+\+G\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R@{handle\+Cmd\+\_\+\+G\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{handle\+Cmd\+\_\+\+G\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R(char const $\ast$full\+Request\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::handle\+Cmd\+\_\+\+G\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{full\+Request\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_ad5433d224363c08626352aef8bffa547}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!handle\+Cmd\+\_\+not\+Found@{handle\+Cmd\+\_\+not\+Found}}
+\index{handle\+Cmd\+\_\+not\+Found@{handle\+Cmd\+\_\+not\+Found}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{handle\+Cmd\+\_\+not\+Found()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::handle\+Cmd\+\_\+not\+Found (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a8ae5c979697cefd39467754b446607a3}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!handle\+Cmd\+\_\+not\+Supported@{handle\+Cmd\+\_\+not\+Supported}}
+\index{handle\+Cmd\+\_\+not\+Supported@{handle\+Cmd\+\_\+not\+Supported}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{handle\+Cmd\+\_\+not\+Supported()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::handle\+Cmd\+\_\+not\+Supported (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_af9544a732c77c19521b2d4be32f75ffa}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!handle\+Cmd\+\_\+\+O\+P\+T\+I\+O\+N\+S@{handle\+Cmd\+\_\+\+O\+P\+T\+I\+O\+N\+S}}
+\index{handle\+Cmd\+\_\+\+O\+P\+T\+I\+O\+N\+S@{handle\+Cmd\+\_\+\+O\+P\+T\+I\+O\+N\+S}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{handle\+Cmd\+\_\+\+O\+P\+T\+I\+O\+N\+S()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::handle\+Cmd\+\_\+\+O\+P\+T\+I\+O\+N\+S (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a17c175964a9ad095436b3b0ceb6ded93}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!handle\+Cmd\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R@{handle\+Cmd\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R}}
+\index{handle\+Cmd\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R@{handle\+Cmd\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{handle\+Cmd\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R(char const $\ast$cmd, char const $\ast$url, char const $\ast$url\+Suffix, char const $\ast$full\+Request\+Str, Boolean reuse\+Connection, Boolean deliver\+Via\+T\+C\+P, char const $\ast$proxy\+U\+R\+L\+Suffix)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::handle\+Cmd\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{cmd, }
+\item[{char const $\ast$}]{url, }
+\item[{char const $\ast$}]{url\+Suffix, }
+\item[{char const $\ast$}]{full\+Request\+Str, }
+\item[{{\bf Boolean}}]{reuse\+Connection, }
+\item[{{\bf Boolean}}]{deliver\+Via\+T\+C\+P, }
+\item[{char const $\ast$}]{proxy\+U\+R\+L\+Suffix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a3e88ce003db3216b3517772b4bc227b4}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!handle\+Cmd\+\_\+session\+Not\+Found@{handle\+Cmd\+\_\+session\+Not\+Found}}
+\index{handle\+Cmd\+\_\+session\+Not\+Found@{handle\+Cmd\+\_\+session\+Not\+Found}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{handle\+Cmd\+\_\+session\+Not\+Found()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::handle\+Cmd\+\_\+session\+Not\+Found (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_ae7febae56ff1605ade12e1dd54c539a1}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!handle\+Cmd\+\_\+\+S\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R@{handle\+Cmd\+\_\+\+S\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R}}
+\index{handle\+Cmd\+\_\+\+S\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R@{handle\+Cmd\+\_\+\+S\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{handle\+Cmd\+\_\+\+S\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R(char const $\ast$full\+Request\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::handle\+Cmd\+\_\+\+S\+E\+T\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{full\+Request\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_ad7fa753acf2375ac37250cecd24173e5}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!handle\+Cmd\+\_\+unsupported\+Transport@{handle\+Cmd\+\_\+unsupported\+Transport}}
+\index{handle\+Cmd\+\_\+unsupported\+Transport@{handle\+Cmd\+\_\+unsupported\+Transport}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{handle\+Cmd\+\_\+unsupported\+Transport()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::handle\+Cmd\+\_\+unsupported\+Transport (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a910c63d780355b8dad3db4a14e0199d7}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!handle\+H\+T\+T\+P\+Cmd\+\_\+not\+Found@{handle\+H\+T\+T\+P\+Cmd\+\_\+not\+Found}}
+\index{handle\+H\+T\+T\+P\+Cmd\+\_\+not\+Found@{handle\+H\+T\+T\+P\+Cmd\+\_\+not\+Found}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{handle\+H\+T\+T\+P\+Cmd\+\_\+not\+Found()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::handle\+H\+T\+T\+P\+Cmd\+\_\+not\+Found (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a6be2c00dc235ade49898ccebf35c7953}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!handle\+H\+T\+T\+P\+Cmd\+\_\+not\+Supported@{handle\+H\+T\+T\+P\+Cmd\+\_\+not\+Supported}}
+\index{handle\+H\+T\+T\+P\+Cmd\+\_\+not\+Supported@{handle\+H\+T\+T\+P\+Cmd\+\_\+not\+Supported}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{handle\+H\+T\+T\+P\+Cmd\+\_\+not\+Supported()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::handle\+H\+T\+T\+P\+Cmd\+\_\+not\+Supported (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a1bc3cc418d04c7dd9d4aea189136d4cd}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!handle\+H\+T\+T\+P\+Cmd\+\_\+\+O\+P\+T\+I\+O\+N\+S@{handle\+H\+T\+T\+P\+Cmd\+\_\+\+O\+P\+T\+I\+O\+N\+S}}
+\index{handle\+H\+T\+T\+P\+Cmd\+\_\+\+O\+P\+T\+I\+O\+N\+S@{handle\+H\+T\+T\+P\+Cmd\+\_\+\+O\+P\+T\+I\+O\+N\+S}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{handle\+H\+T\+T\+P\+Cmd\+\_\+\+O\+P\+T\+I\+O\+N\+S()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::handle\+H\+T\+T\+P\+Cmd\+\_\+\+O\+P\+T\+I\+O\+N\+S (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_ad7b93cb17d21238338eb84a9f315ec68}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!handle\+H\+T\+T\+P\+Cmd\+\_\+\+Streaming\+G\+E\+T@{handle\+H\+T\+T\+P\+Cmd\+\_\+\+Streaming\+G\+E\+T}}
+\index{handle\+H\+T\+T\+P\+Cmd\+\_\+\+Streaming\+G\+E\+T@{handle\+H\+T\+T\+P\+Cmd\+\_\+\+Streaming\+G\+E\+T}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{handle\+H\+T\+T\+P\+Cmd\+\_\+\+Streaming\+G\+E\+T(char const $\ast$url\+Suffix, char const $\ast$full\+Request\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming\+::handle\+H\+T\+T\+P\+Cmd\+\_\+\+Streaming\+G\+E\+T (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{url\+Suffix, }
+\item[{char const $\ast$}]{full\+Request\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classRTSPServerSupportingHTTPStreaming_1_1RTSPClientConnectionSupportingHTTPStreaming_abacdae39d96d2a9d4336f6104e791783}
+
+
+Reimplemented from {\bf R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection} \doxyref{}{p.}{classRTSPServer_1_1RTSPClientConnection_a65f9e4dd3451b2458a6b53ac7e956846}.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!handle\+H\+T\+T\+P\+Cmd\+\_\+\+Tunneling\+G\+E\+T@{handle\+H\+T\+T\+P\+Cmd\+\_\+\+Tunneling\+G\+E\+T}}
+\index{handle\+H\+T\+T\+P\+Cmd\+\_\+\+Tunneling\+G\+E\+T@{handle\+H\+T\+T\+P\+Cmd\+\_\+\+Tunneling\+G\+E\+T}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{handle\+H\+T\+T\+P\+Cmd\+\_\+\+Tunneling\+G\+E\+T(char const $\ast$session\+Cookie)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::handle\+H\+T\+T\+P\+Cmd\+\_\+\+Tunneling\+G\+E\+T (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{session\+Cookie}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a2fbdce62de1f85fe306f6023812d8ae1}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!handle\+H\+T\+T\+P\+Cmd\+\_\+\+Tunneling\+P\+O\+S\+T@{handle\+H\+T\+T\+P\+Cmd\+\_\+\+Tunneling\+P\+O\+S\+T}}
+\index{handle\+H\+T\+T\+P\+Cmd\+\_\+\+Tunneling\+P\+O\+S\+T@{handle\+H\+T\+T\+P\+Cmd\+\_\+\+Tunneling\+P\+O\+S\+T}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{handle\+H\+T\+T\+P\+Cmd\+\_\+\+Tunneling\+P\+O\+S\+T(char const $\ast$session\+Cookie, unsigned char const $\ast$extra\+Data, unsigned extra\+Data\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::handle\+H\+T\+T\+P\+Cmd\+\_\+\+Tunneling\+P\+O\+S\+T (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{session\+Cookie, }
+\item[{unsigned char const $\ast$}]{extra\+Data, }
+\item[{unsigned}]{extra\+Data\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a45f7d0abe416b702df6ddf8f079fb0c1}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!handle\+Request\+Bytes@{handle\+Request\+Bytes}}
+\index{handle\+Request\+Bytes@{handle\+Request\+Bytes}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{handle\+Request\+Bytes(int new\+Bytes\+Read)}]{\setlength{\rightskip}{0pt plus 5cm}virtual void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::handle\+Request\+Bytes (
+\begin{DoxyParamCaption}
+\item[{int}]{new\+Bytes\+Read}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a4200ef89d07d8db0bb66d0f1fdaa7330}
+
+
+Implements {\bf Generic\+Media\+Server\+::\+Client\+Connection} \doxyref{}{p.}{classGenericMediaServer_1_1ClientConnection_a11bd52b42912300396d51703acb6331d}.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!incoming\+Request\+Handler@{incoming\+Request\+Handler}}
+\index{incoming\+Request\+Handler@{incoming\+Request\+Handler}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{incoming\+Request\+Handler(void $\ast$, int)}]{\setlength{\rightskip}{0pt plus 5cm}static void Generic\+Media\+Server\+::\+Client\+Connection\+::incoming\+Request\+Handler (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{, }
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_1_1ClientConnection_a8973cd88b238a1cad3ee576eec96218e}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!incoming\+Request\+Handler@{incoming\+Request\+Handler}}
+\index{incoming\+Request\+Handler@{incoming\+Request\+Handler}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{incoming\+Request\+Handler()}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+Media\+Server\+::\+Client\+Connection\+::incoming\+Request\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_1_1ClientConnection_a701f1fd7571bfca0bbdc213ca8f3ece2}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!parse\+H\+T\+T\+P\+Request\+String@{parse\+H\+T\+T\+P\+Request\+String}}
+\index{parse\+H\+T\+T\+P\+Request\+String@{parse\+H\+T\+T\+P\+Request\+String}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{parse\+H\+T\+T\+P\+Request\+String(char $\ast$result\+Cmd\+Name, unsigned result\+Cmd\+Name\+Max\+Size, char $\ast$url\+Suffix, unsigned url\+Suffix\+Max\+Size, char $\ast$session\+Cookie, unsigned session\+Cookie\+Max\+Size, char $\ast$accept\+Str, unsigned accept\+Str\+Max\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::parse\+H\+T\+T\+P\+Request\+String (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{result\+Cmd\+Name, }
+\item[{unsigned}]{result\+Cmd\+Name\+Max\+Size, }
+\item[{char $\ast$}]{url\+Suffix, }
+\item[{unsigned}]{url\+Suffix\+Max\+Size, }
+\item[{char $\ast$}]{session\+Cookie, }
+\item[{unsigned}]{session\+Cookie\+Max\+Size, }
+\item[{char $\ast$}]{accept\+Str, }
+\item[{unsigned}]{accept\+Str\+Max\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a9829c58a72d9d79635091561991786ba}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!reset\+Request\+Buffer@{reset\+Request\+Buffer}}
+\index{reset\+Request\+Buffer@{reset\+Request\+Buffer}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{reset\+Request\+Buffer()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::reset\+Request\+Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_adc894c9c45e61630a09cc62f96e7fdd9}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!set\+R\+T\+S\+P\+Response@{set\+R\+T\+S\+P\+Response}}
+\index{set\+R\+T\+S\+P\+Response@{set\+R\+T\+S\+P\+Response}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{set\+R\+T\+S\+P\+Response(char const $\ast$response\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::set\+R\+T\+S\+P\+Response (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{response\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a41c6978dfa29b15c0835eb08806e29de}
+
+
+Referenced by R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Session\+::set\+R\+T\+S\+P\+Response().
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!set\+R\+T\+S\+P\+Response@{set\+R\+T\+S\+P\+Response}}
+\index{set\+R\+T\+S\+P\+Response@{set\+R\+T\+S\+P\+Response}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{set\+R\+T\+S\+P\+Response(char const $\ast$response\+Str, u\+\_\+int32\+\_\+t session\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::set\+R\+T\+S\+P\+Response (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{response\+Str, }
+\item[{u\+\_\+int32\+\_\+t}]{session\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a2966f03a3498611be806183fe7fbab00}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!set\+R\+T\+S\+P\+Response@{set\+R\+T\+S\+P\+Response}}
+\index{set\+R\+T\+S\+P\+Response@{set\+R\+T\+S\+P\+Response}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{set\+R\+T\+S\+P\+Response(char const $\ast$response\+Str, char const $\ast$content\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::set\+R\+T\+S\+P\+Response (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{response\+Str, }
+\item[{char const $\ast$}]{content\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a1c2c396eca62768610394da91a4ccb90}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!set\+R\+T\+S\+P\+Response@{set\+R\+T\+S\+P\+Response}}
+\index{set\+R\+T\+S\+P\+Response@{set\+R\+T\+S\+P\+Response}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{set\+R\+T\+S\+P\+Response(char const $\ast$response\+Str, u\+\_\+int32\+\_\+t session\+Id, char const $\ast$content\+Str)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::set\+R\+T\+S\+P\+Response (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{response\+Str, }
+\item[{u\+\_\+int32\+\_\+t}]{session\+Id, }
+\item[{char const $\ast$}]{content\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_ae9ba066cd95275f29ef4f445387899c8}
+
+
+\subsection{Field Documentation}
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Base64\+Remainder\+Count@{f\+Base64\+Remainder\+Count}}
+\index{f\+Base64\+Remainder\+Count@{f\+Base64\+Remainder\+Count}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Base64\+Remainder\+Count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::f\+Base64\+Remainder\+Count\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a97c3f19fc568709ae7a4cc151ce231ed}
+
+
+Definition at line 216 of file R\+T\+S\+P\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Client\+Addr@{f\+Client\+Addr}}
+\index{f\+Client\+Addr@{f\+Client\+Addr}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Client\+Addr}]{\setlength{\rightskip}{0pt plus 5cm}struct sockaddr\+\_\+in Generic\+Media\+Server\+::\+Client\+Connection\+::f\+Client\+Addr\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_1_1ClientConnection_a4580bad00ed80b5e8693d98d8f107f4f}
+
+
+Definition at line 104 of file Generic\+Media\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Client\+Input\+Socket@{f\+Client\+Input\+Socket}}
+\index{f\+Client\+Input\+Socket@{f\+Client\+Input\+Socket}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Client\+Input\+Socket}]{\setlength{\rightskip}{0pt plus 5cm}int\& R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::f\+Client\+Input\+Socket\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_adf9359b0dbde452db26661ee8521f2c2}
+
+
+Definition at line 208 of file R\+T\+S\+P\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Client\+Output\+Socket@{f\+Client\+Output\+Socket}}
+\index{f\+Client\+Output\+Socket@{f\+Client\+Output\+Socket}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Client\+Output\+Socket}]{\setlength{\rightskip}{0pt plus 5cm}int R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::f\+Client\+Output\+Socket\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a48053679fd7405f71628847fe9cadd32}
+
+
+Definition at line 209 of file R\+T\+S\+P\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Client\+Session\+Id@{f\+Client\+Session\+Id}}
+\index{f\+Client\+Session\+Id@{f\+Client\+Session\+Id}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Client\+Session\+Id}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming\+::f\+Client\+Session\+Id\hspace{0.3cm}{\ttfamily [private]}}\label{classRTSPServerSupportingHTTPStreaming_1_1RTSPClientConnectionSupportingHTTPStreaming_ad410a598527bbca16f33ca68ea2cb7a9}
+
+
+Definition at line 66 of file R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Current\+Authenticator@{f\+Current\+Authenticator}}
+\index{f\+Current\+Authenticator@{f\+Current\+Authenticator}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Current\+Authenticator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Authenticator} R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::f\+Current\+Authenticator\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_aba7da3f6617de8ceb7456db1dad4dc01}
+
+
+Definition at line 214 of file R\+T\+S\+P\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Current\+C\+Seq@{f\+Current\+C\+Seq}}
+\index{f\+Current\+C\+Seq@{f\+Current\+C\+Seq}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Current\+C\+Seq}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::f\+Current\+C\+Seq\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a4b2287cbdb5e6a74606aef838de54fc9}
+
+
+Definition at line 213 of file R\+T\+S\+P\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Is\+Active@{f\+Is\+Active}}
+\index{f\+Is\+Active@{f\+Is\+Active}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Is\+Active}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::f\+Is\+Active\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a1459d3ff8322fce614ffe26cad327ba8}
+
+
+Definition at line 210 of file R\+T\+S\+P\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Last\+C\+R\+L\+F@{f\+Last\+C\+R\+L\+F}}
+\index{f\+Last\+C\+R\+L\+F@{f\+Last\+C\+R\+L\+F}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Last\+C\+R\+L\+F}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::f\+Last\+C\+R\+L\+F\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a035701918e7671a8a3adae151b113c55}
+
+
+Definition at line 211 of file R\+T\+S\+P\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Our\+R\+T\+S\+P\+Server@{f\+Our\+R\+T\+S\+P\+Server}}
+\index{f\+Our\+R\+T\+S\+P\+Server@{f\+Our\+R\+T\+S\+P\+Server}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Our\+R\+T\+S\+P\+Server}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+S\+P\+Server}\& R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::f\+Our\+R\+T\+S\+P\+Server\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a8ea46ee303d1f7a8bf4f4ed47809f2fa}
+
+
+Definition at line 207 of file R\+T\+S\+P\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Our\+Server@{f\+Our\+Server}}
+\index{f\+Our\+Server@{f\+Our\+Server}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Our\+Server}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Generic\+Media\+Server}\& Generic\+Media\+Server\+::\+Client\+Connection\+::f\+Our\+Server\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_1_1ClientConnection_aac70c62bdedea73360cb5a17b620bd66}
+
+
+Definition at line 102 of file Generic\+Media\+Server.\+hh.
+
+
+
+Referenced by Generic\+Media\+Server\+::\+Client\+Connection\+::envir().
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Our\+Session\+Cookie@{f\+Our\+Session\+Cookie}}
+\index{f\+Our\+Session\+Cookie@{f\+Our\+Session\+Cookie}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Our\+Session\+Cookie}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::f\+Our\+Session\+Cookie\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_a5949baff6e3e45b5beaced93b63ed94c}
+
+
+Definition at line 215 of file R\+T\+S\+P\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Our\+Socket@{f\+Our\+Socket}}
+\index{f\+Our\+Socket@{f\+Our\+Socket}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Our\+Socket}]{\setlength{\rightskip}{0pt plus 5cm}int Generic\+Media\+Server\+::\+Client\+Connection\+::f\+Our\+Socket\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_1_1ClientConnection_acb7c9a31f78bbebfdf85de30fcc6777a}
+
+
+Definition at line 103 of file Generic\+Media\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Playlist\+Source@{f\+Playlist\+Source}}
+\index{f\+Playlist\+Source@{f\+Playlist\+Source}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Playlist\+Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Byte\+Stream\+Memory\+Buffer\+Source}$\ast$ R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming\+::f\+Playlist\+Source\hspace{0.3cm}{\ttfamily [private]}}\label{classRTSPServerSupportingHTTPStreaming_1_1RTSPClientConnectionSupportingHTTPStreaming_acb2cb0deefe80b2d0dbb1746d174bfdb}
+
+
+Definition at line 68 of file R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Recursion\+Count@{f\+Recursion\+Count}}
+\index{f\+Recursion\+Count@{f\+Recursion\+Count}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Recursion\+Count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+S\+P\+Server\+::\+R\+T\+S\+P\+Client\+Connection\+::f\+Recursion\+Count\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classRTSPServer_1_1RTSPClientConnection_af39ed12d6b61c7e5c2e2dfcfb31d2326}
+
+
+Definition at line 212 of file R\+T\+S\+P\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Request\+Buffer@{f\+Request\+Buffer}}
+\index{f\+Request\+Buffer@{f\+Request\+Buffer}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Request\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Generic\+Media\+Server\+::\+Client\+Connection\+::f\+Request\+Buffer[{\bf R\+E\+Q\+U\+E\+S\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}]\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_1_1ClientConnection_ab54f42b910ab5764d51261497abbe9c2}
+
+
+Definition at line 105 of file Generic\+Media\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Request\+Buffer\+Bytes\+Left@{f\+Request\+Buffer\+Bytes\+Left}}
+\index{f\+Request\+Buffer\+Bytes\+Left@{f\+Request\+Buffer\+Bytes\+Left}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Request\+Buffer\+Bytes\+Left}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Generic\+Media\+Server\+::\+Client\+Connection\+::f\+Request\+Buffer\+Bytes\+Left\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_1_1ClientConnection_a693ff981dcd8f8a3709acc934f58f404}
+
+
+Definition at line 107 of file Generic\+Media\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Request\+Bytes\+Already\+Seen@{f\+Request\+Bytes\+Already\+Seen}}
+\index{f\+Request\+Bytes\+Already\+Seen@{f\+Request\+Bytes\+Already\+Seen}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Request\+Bytes\+Already\+Seen}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Generic\+Media\+Server\+::\+Client\+Connection\+::f\+Request\+Bytes\+Already\+Seen\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_1_1ClientConnection_a57bddbe55b434dbfbb091df09cef4040}
+
+
+Definition at line 107 of file Generic\+Media\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Response\+Buffer@{f\+Response\+Buffer}}
+\index{f\+Response\+Buffer@{f\+Response\+Buffer}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Response\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Generic\+Media\+Server\+::\+Client\+Connection\+::f\+Response\+Buffer[{\bf R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E}]\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classGenericMediaServer_1_1ClientConnection_adb91e088daddbed8f603ce9a6eebcb6d}
+
+
+Definition at line 106 of file Generic\+Media\+Server.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+Stream\+Source@{f\+Stream\+Source}}
+\index{f\+Stream\+Source@{f\+Stream\+Source}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+Stream\+Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Framed\+Source}$\ast$ R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming\+::f\+Stream\+Source\hspace{0.3cm}{\ttfamily [private]}}\label{classRTSPServerSupportingHTTPStreaming_1_1RTSPClientConnectionSupportingHTTPStreaming_a3b33c65f0b5e1cef3c2d9abea7e7e629}
+
+
+Definition at line 67 of file R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming.\+hh.
+
+\index{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}!f\+T\+C\+P\+Sink@{f\+T\+C\+P\+Sink}}
+\index{f\+T\+C\+P\+Sink@{f\+T\+C\+P\+Sink}!R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming@{R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming}}
+\subsubsection[{f\+T\+C\+P\+Sink}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+C\+P\+Stream\+Sink}$\ast$ R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming\+::\+R\+T\+S\+P\+Client\+Connection\+Supporting\+H\+T\+T\+P\+Streaming\+::f\+T\+C\+P\+Sink\hspace{0.3cm}{\ttfamily [private]}}\label{classRTSPServerSupportingHTTPStreaming_1_1RTSPClientConnectionSupportingHTTPStreaming_a8d98e08958cede218998d125990643c9}
+
+
+Definition at line 69 of file R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf R\+T\+S\+P\+Server\+Supporting\+H\+T\+T\+P\+Streaming.\+hh}\end{DoxyCompactItemize}

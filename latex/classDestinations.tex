@@ -1,0 +1,144 @@
+\section{Destinations Class Reference}
+\label{classDestinations}\index{Destinations@{Destinations}}
+
+
+{\ttfamily \#include $<$On\+Demand\+Server\+Media\+Subsession.\+hh$>$}
+
+
+
+Collaboration diagram for Destinations\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=125pt]{classDestinations__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Destinations} (struct in\+\_\+addr const \&dest\+Addr, {\bf Port} const \&rtp\+Dest\+Port, {\bf Port} const \&rtcp\+Dest\+Port)
+\item 
+{\bf Destinations} (int tcp\+Sock\+Num, unsigned char rtp\+Chan\+Id, unsigned char rtcp\+Chan\+Id)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Boolean} {\bf is\+T\+C\+P}
+\item 
+struct in\+\_\+addr {\bf addr}
+\item 
+{\bf Port} {\bf rtp\+Port}
+\item 
+{\bf Port} {\bf rtcp\+Port}
+\item 
+int {\bf tcp\+Socket\+Num}
+\item 
+unsigned char {\bf rtp\+Channel\+Id}
+\item 
+unsigned char {\bf rtcp\+Channel\+Id}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 153 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Destinations@{Destinations}!Destinations@{Destinations}}
+\index{Destinations@{Destinations}!Destinations@{Destinations}}
+\subsubsection[{Destinations(struct in\+\_\+addr const \&dest\+Addr, Port const \&rtp\+Dest\+Port, Port const \&rtcp\+Dest\+Port)}]{\setlength{\rightskip}{0pt plus 5cm}Destinations\+::\+Destinations (
+\begin{DoxyParamCaption}
+\item[{struct in\+\_\+addr const \&}]{dest\+Addr, }
+\item[{{\bf Port} const \&}]{rtp\+Dest\+Port, }
+\item[{{\bf Port} const \&}]{rtcp\+Dest\+Port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classDestinations_a6ec15e52eb28dd76a4e950e45009b0f3}
+
+
+Definition at line 155 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+\begin{DoxyCode}
+158     : isTCP(False), addr(destAddr), rtpPort(rtpDestPort), rtcpPort(rtcpDestPort) \{
+159   \}
+\end{DoxyCode}
+\index{Destinations@{Destinations}!Destinations@{Destinations}}
+\index{Destinations@{Destinations}!Destinations@{Destinations}}
+\subsubsection[{Destinations(int tcp\+Sock\+Num, unsigned char rtp\+Chan\+Id, unsigned char rtcp\+Chan\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}Destinations\+::\+Destinations (
+\begin{DoxyParamCaption}
+\item[{int}]{tcp\+Sock\+Num, }
+\item[{unsigned char}]{rtp\+Chan\+Id, }
+\item[{unsigned char}]{rtcp\+Chan\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classDestinations_a0c1699b07d689fa6c9298fcd5abca999}
+
+
+Definition at line 160 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+\begin{DoxyCode}
+161     : isTCP(True), rtpPort(0) \textcolor{comment}{/*dummy*/}, rtcpPort(0) \textcolor{comment}{/*dummy*/},
+162       tcpSocketNum(tcpSockNum), rtpChannelId(rtpChanId), rtcpChannelId(rtcpChanId) \{
+163   \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Destinations@{Destinations}!addr@{addr}}
+\index{addr@{addr}!Destinations@{Destinations}}
+\subsubsection[{addr}]{\setlength{\rightskip}{0pt plus 5cm}struct in\+\_\+addr Destinations\+::addr}\label{classDestinations_a0e3d26c7c8157f833543b25ee7a9057d}
+
+
+Definition at line 167 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+\index{Destinations@{Destinations}!is\+T\+C\+P@{is\+T\+C\+P}}
+\index{is\+T\+C\+P@{is\+T\+C\+P}!Destinations@{Destinations}}
+\subsubsection[{is\+T\+C\+P}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Destinations\+::is\+T\+C\+P}\label{classDestinations_abab3aaeb007f3009aeb2410e5ff0ab24}
+
+
+Definition at line 166 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+\index{Destinations@{Destinations}!rtcp\+Channel\+Id@{rtcp\+Channel\+Id}}
+\index{rtcp\+Channel\+Id@{rtcp\+Channel\+Id}!Destinations@{Destinations}}
+\subsubsection[{rtcp\+Channel\+Id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Destinations\+::rtcp\+Channel\+Id}\label{classDestinations_a252dcd4a8fc7cd2cf0b07f05f8feb033}
+
+
+Definition at line 171 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+\index{Destinations@{Destinations}!rtcp\+Port@{rtcp\+Port}}
+\index{rtcp\+Port@{rtcp\+Port}!Destinations@{Destinations}}
+\subsubsection[{rtcp\+Port}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Port} Destinations\+::rtcp\+Port}\label{classDestinations_aa192ae86ec4a478c3d973c27b82d1ebb}
+
+
+Definition at line 169 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+\index{Destinations@{Destinations}!rtp\+Channel\+Id@{rtp\+Channel\+Id}}
+\index{rtp\+Channel\+Id@{rtp\+Channel\+Id}!Destinations@{Destinations}}
+\subsubsection[{rtp\+Channel\+Id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Destinations\+::rtp\+Channel\+Id}\label{classDestinations_a2d403b96d803c0964fd34038227e6e32}
+
+
+Definition at line 171 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+\index{Destinations@{Destinations}!rtp\+Port@{rtp\+Port}}
+\index{rtp\+Port@{rtp\+Port}!Destinations@{Destinations}}
+\subsubsection[{rtp\+Port}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Port} Destinations\+::rtp\+Port}\label{classDestinations_a44b8a5bcf00c56838356a6a790c4a665}
+
+
+Definition at line 168 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+\index{Destinations@{Destinations}!tcp\+Socket\+Num@{tcp\+Socket\+Num}}
+\index{tcp\+Socket\+Num@{tcp\+Socket\+Num}!Destinations@{Destinations}}
+\subsubsection[{tcp\+Socket\+Num}]{\setlength{\rightskip}{0pt plus 5cm}int Destinations\+::tcp\+Socket\+Num}\label{classDestinations_a67e647f007e964e0fb62802b92da1491}
+
+
+Definition at line 170 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf On\+Demand\+Server\+Media\+Subsession.\+hh}\end{DoxyCompactItemize}

@@ -1,0 +1,910 @@
+\section{Matroska\+File\+Parser Class Reference}
+\label{classMatroskaFileParser}\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+
+
+{\ttfamily \#include $<$Matroska\+File\+Parser.\+hh$>$}
+
+
+
+Inheritance diagram for Matroska\+File\+Parser\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{classMatroskaFileParser__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Matroska\+File\+Parser\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMatroskaFileParser__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Matroska\+File\+Parser} ({\bf Matroska\+File} \&our\+File, {\bf Framed\+Source} $\ast$input\+Source, {\bf Framed\+Source\+::on\+Close\+Func} $\ast$on\+End\+Func, void $\ast$on\+End\+Client\+Data, {\bf Matroska\+Demux} $\ast$our\+Demux={\bf N\+U\+L\+L})
+\item 
+virtual {\bf $\sim$\+Matroska\+File\+Parser} ()
+\item 
+void {\bf seek\+To\+Time} (double \&seek\+N\+P\+T)
+\item 
+void {\bf continue\+Parsing} ()
+\item 
+virtual void {\bf flush\+Input} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf continue\+Parsing} (void $\ast$client\+Data, unsigned char $\ast$ptr, unsigned size, struct timeval presentation\+Time)
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void( {\bf client\+Continue\+Func}) (void $\ast$client\+Data, unsigned char $\ast$ptr, unsigned size, struct timeval presentation\+Time)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf save\+Parser\+State} ()
+\item 
+u\+\_\+int32\+\_\+t {\bf get4\+Bytes} ()
+\item 
+u\+\_\+int32\+\_\+t {\bf test4\+Bytes} ()
+\item 
+u\+\_\+int16\+\_\+t {\bf get2\+Bytes} ()
+\item 
+u\+\_\+int8\+\_\+t {\bf get1\+Byte} ()
+\item 
+u\+\_\+int8\+\_\+t {\bf test1\+Byte} ()
+\item 
+void {\bf get\+Bytes} (u\+\_\+int8\+\_\+t $\ast$to, unsigned num\+Bytes)
+\item 
+void {\bf test\+Bytes} (u\+\_\+int8\+\_\+t $\ast$to, unsigned num\+Bytes)
+\item 
+void {\bf skip\+Bytes} (unsigned num\+Bytes)
+\item 
+void {\bf skip\+Bits} (unsigned num\+Bits)
+\item 
+unsigned {\bf get\+Bits} (unsigned num\+Bits)
+\item 
+unsigned {\bf cur\+Offset} () const 
+\item 
+unsigned \& {\bf tot\+Num\+Valid\+Bytes} ()
+\item 
+{\bf Boolean} {\bf have\+Seen\+E\+O\+F} () const 
+\item 
+unsigned {\bf bank\+Size} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Boolean} {\bf parse} ()
+\item 
+{\bf Boolean} {\bf parse\+Start\+Of\+File} ()
+\item 
+void {\bf look\+For\+Next\+Track} ()
+\item 
+{\bf Boolean} {\bf parse\+Track} ()
+\item 
+{\bf Boolean} {\bf parse\+Cues} ()
+\item 
+void {\bf look\+For\+Next\+Block} ()
+\item 
+void {\bf parse\+Block} ()
+\item 
+{\bf Boolean} {\bf deliver\+Frame\+Within\+Block} ()
+\item 
+void {\bf deliver\+Frame\+Bytes} ()
+\item 
+void {\bf get\+Common\+Frame\+Bytes} ({\bf Matroska\+Track} $\ast$track, u\+\_\+int8\+\_\+t $\ast$to, unsigned num\+Bytes\+To\+Get, unsigned num\+Bytes\+To\+Skip)
+\item 
+{\bf Boolean} {\bf parse\+E\+B\+M\+L\+Number} ({\bf E\+B\+M\+L\+Number} \&num)
+\item 
+{\bf Boolean} {\bf parse\+E\+B\+M\+L\+Id\+And\+Size} ({\bf E\+B\+M\+L\+Id} \&id, {\bf E\+B\+M\+L\+Data\+Size} \&size)
+\item 
+{\bf Boolean} {\bf parse\+E\+B\+M\+L\+Val\+\_\+unsigned64} ({\bf E\+B\+M\+L\+Data\+Size} \&size, u\+\_\+int64\+\_\+t \&result)
+\item 
+{\bf Boolean} {\bf parse\+E\+B\+M\+L\+Val\+\_\+unsigned} ({\bf E\+B\+M\+L\+Data\+Size} \&size, unsigned \&result)
+\item 
+{\bf Boolean} {\bf parse\+E\+B\+M\+L\+Val\+\_\+float} ({\bf E\+B\+M\+L\+Data\+Size} \&size, float \&result)
+\item 
+{\bf Boolean} {\bf parse\+E\+B\+M\+L\+Val\+\_\+string} ({\bf E\+B\+M\+L\+Data\+Size} \&size, char $\ast$\&result)
+\item 
+{\bf Boolean} {\bf parse\+E\+B\+M\+L\+Val\+\_\+binary} ({\bf E\+B\+M\+L\+Data\+Size} \&size, u\+\_\+int8\+\_\+t $\ast$\&result)
+\item 
+void {\bf skip\+Header} ({\bf E\+B\+M\+L\+Data\+Size} const \&size)
+\item 
+void {\bf skip\+Remaining\+Header\+Bytes} ({\bf Boolean} is\+Continuation)
+\item 
+void {\bf set\+Parse\+State} ()
+\item 
+void {\bf seek\+To\+File\+Position} (u\+\_\+int64\+\_\+t offset\+In\+File)
+\item 
+void {\bf seek\+To\+End\+Of\+File} ()
+\item 
+void {\bf reset\+State\+After\+Seeking} ()
+\item 
+virtual void {\bf restore\+Saved\+Parser\+State} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Matroska\+File} \& {\bf f\+Our\+File}
+\item 
+{\bf Framed\+Source} $\ast$ {\bf f\+Input\+Source}
+\item 
+{\bf Framed\+Source\+::on\+Close\+Func} $\ast$ {\bf f\+On\+End\+Func}
+\item 
+void $\ast$ {\bf f\+On\+End\+Client\+Data}
+\item 
+{\bf Matroska\+Demux} $\ast$ {\bf f\+Our\+Demux}
+\item 
+{\bf Matroska\+Parse\+State} {\bf f\+Current\+Parse\+State}
+\item 
+u\+\_\+int64\+\_\+t {\bf f\+Cur\+Offset\+In\+File}
+\item 
+u\+\_\+int64\+\_\+t {\bf f\+Saved\+Cur\+Offset\+In\+File}
+\item 
+u\+\_\+int64\+\_\+t {\bf f\+Limit\+Offset\+In\+File}
+\item 
+u\+\_\+int64\+\_\+t {\bf f\+Num\+Header\+Bytes\+To\+Skip}
+\item 
+{\bf E\+B\+M\+L\+Id} {\bf f\+Last\+Seek\+Id}
+\item 
+unsigned {\bf f\+Cluster\+Timecode}
+\item 
+unsigned {\bf f\+Block\+Size}
+\item 
+unsigned {\bf f\+Block\+Track\+Number}
+\item 
+short {\bf f\+Block\+Timecode}
+\item 
+unsigned {\bf f\+Num\+Frames\+In\+Block}
+\item 
+unsigned $\ast$ {\bf f\+Frame\+Sizes\+Within\+Block}
+\item 
+double {\bf f\+Presentation\+Time\+Offset}
+\item 
+unsigned {\bf f\+Next\+Frame\+Number\+To\+Deliver}
+\item 
+unsigned {\bf f\+Cur\+Offset\+Within\+Frame}
+\item 
+unsigned {\bf f\+Saved\+Cur\+Offset\+Within\+Frame}
+\item 
+u\+\_\+int8\+\_\+t $\ast$ {\bf f\+Cur\+Frame\+To}
+\item 
+unsigned {\bf f\+Cur\+Frame\+Num\+Bytes\+To\+Get}
+\item 
+unsigned {\bf f\+Cur\+Frame\+Num\+Bytes\+To\+Skip}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 46 of file Matroska\+File\+Parser.\+hh.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!client\+Continue\+Func@{client\+Continue\+Func}}
+\index{client\+Continue\+Func@{client\+Continue\+Func}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{client\+Continue\+Func}]{\setlength{\rightskip}{0pt plus 5cm}typedef void( Stream\+Parser\+::client\+Continue\+Func) (void $\ast$client\+Data, unsigned char $\ast$ptr, unsigned size, struct timeval presentation\+Time)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_af64ee5887e237d64d1df3072f10e11fb}
+
+
+Definition at line 33 of file Stream\+Parser.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{Matroska\+File\+Parser(\+Matroska\+File \&our\+File, Framed\+Source $\ast$input\+Source, Framed\+Source\+::on\+Close\+Func $\ast$on\+End\+Func, void $\ast$on\+End\+Client\+Data, Matroska\+Demux $\ast$our\+Demux=\+N\+U\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}Matroska\+File\+Parser\+::\+Matroska\+File\+Parser (
+\begin{DoxyParamCaption}
+\item[{{\bf Matroska\+File} \&}]{our\+File, }
+\item[{{\bf Framed\+Source} $\ast$}]{input\+Source, }
+\item[{{\bf Framed\+Source\+::on\+Close\+Func} $\ast$}]{on\+End\+Func, }
+\item[{void $\ast$}]{on\+End\+Client\+Data, }
+\item[{{\bf Matroska\+Demux} $\ast$}]{our\+Demux = {\ttfamily {\bf N\+U\+L\+L}}}
+\end{DoxyParamCaption}
+)}\label{classMatroskaFileParser_aae6522838d70f02d44b89a06dcc6b355}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!````~Matroska\+File\+Parser@{$\sim$\+Matroska\+File\+Parser}}
+\index{````~Matroska\+File\+Parser@{$\sim$\+Matroska\+File\+Parser}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{$\sim$\+Matroska\+File\+Parser()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Matroska\+File\+Parser\+::$\sim$\+Matroska\+File\+Parser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classMatroskaFileParser_a359bdda470753d2738aa2c406c2a9fae}
+
+
+\subsection{Member Function Documentation}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!bank\+Size@{bank\+Size}}
+\index{bank\+Size@{bank\+Size}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{bank\+Size() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+Parser\+::bank\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_a861774b85359a9a8b3de447ac88da9f2}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!continue\+Parsing@{continue\+Parsing}}
+\index{continue\+Parsing@{continue\+Parsing}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{continue\+Parsing(void $\ast$client\+Data, unsigned char $\ast$ptr, unsigned size, struct timeval presentation\+Time)}]{\setlength{\rightskip}{0pt plus 5cm}static void Matroska\+File\+Parser\+::continue\+Parsing (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{client\+Data, }
+\item[{unsigned char $\ast$}]{ptr, }
+\item[{unsigned}]{size, }
+\item[{struct timeval}]{presentation\+Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classMatroskaFileParser_ad5599abe7a9e5a0dfae5f4b00cff8f16}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!continue\+Parsing@{continue\+Parsing}}
+\index{continue\+Parsing@{continue\+Parsing}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{continue\+Parsing()}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+File\+Parser\+::continue\+Parsing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classMatroskaFileParser_a8ecdce430de9342e5763aeaa569c2366}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!cur\+Offset@{cur\+Offset}}
+\index{cur\+Offset@{cur\+Offset}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{cur\+Offset() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+Parser\+::cur\+Offset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_ad7f2eaf42a390a5ebc257b5ac5dc9fed}
+
+
+Definition at line 100 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::f\+Cur\+Parser\+Index.
+
+
+\begin{DoxyCode}
+100 \{ \textcolor{keywordflow}{return} fCurParserIndex; \}
+\end{DoxyCode}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!deliver\+Frame\+Bytes@{deliver\+Frame\+Bytes}}
+\index{deliver\+Frame\+Bytes@{deliver\+Frame\+Bytes}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{deliver\+Frame\+Bytes()}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+File\+Parser\+::deliver\+Frame\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a6c3723495da879de8a3178bff9c0b721}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!deliver\+Frame\+Within\+Block@{deliver\+Frame\+Within\+Block}}
+\index{deliver\+Frame\+Within\+Block@{deliver\+Frame\+Within\+Block}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{deliver\+Frame\+Within\+Block()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Matroska\+File\+Parser\+::deliver\+Frame\+Within\+Block (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_aa3c5ca6d5d1cdc1e99db07bf28160b87}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!flush\+Input@{flush\+Input}}
+\index{flush\+Input@{flush\+Input}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{flush\+Input()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Stream\+Parser\+::flush\+Input (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [inherited]}}\label{classStreamParser_a3225e9b48cf370e2ff9a9aa3a60308fd}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!get1\+Byte@{get1\+Byte}}
+\index{get1\+Byte@{get1\+Byte}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{get1\+Byte()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t Stream\+Parser\+::get1\+Byte (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_aa198ceef145e9c25617b3e7c10ed8476}
+
+
+Definition at line 72 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::cur\+Bank(), Stream\+Parser\+::ensure\+Valid\+Bytes(), Stream\+Parser\+::f\+Cur\+Parser\+Index, and Stream\+Parser\+::f\+Remaining\+Unparsed\+Bits.
+
+
+
+Referenced by M\+P\+E\+G\+Video\+Stream\+Parser\+::save\+To\+Next\+Code(), and M\+P\+E\+G\+Video\+Stream\+Parser\+::skip\+To\+Next\+Code().
+
+
+\begin{DoxyCode}
+72                       \{ \textcolor{comment}{// byte-aligned}
+73     ensureValidBytes(1);
+74     fRemainingUnparsedBits = 0;
+75     \textcolor{keywordflow}{return} curBank()[fCurParserIndex++];
+76   \}
+\end{DoxyCode}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!get2\+Bytes@{get2\+Bytes}}
+\index{get2\+Bytes@{get2\+Bytes}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{get2\+Bytes()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int16\+\_\+t Stream\+Parser\+::get2\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_aa32642bfa6d9705d04d894d7bf820821}
+
+
+Definition at line 60 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::ensure\+Valid\+Bytes(), Stream\+Parser\+::f\+Cur\+Parser\+Index, Stream\+Parser\+::f\+Remaining\+Unparsed\+Bits, and Stream\+Parser\+::next\+To\+Parse().
+
+
+\begin{DoxyCode}
+60                         \{
+61     ensureValidBytes(2);
+62 
+63     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \textcolor{keyword}{const}* ptr = nextToParse();
+64     u\_int16\_t result = (ptr[0]<<8)|ptr[1];
+65 
+66     fCurParserIndex += 2;
+67     fRemainingUnparsedBits = 0;
+68 
+69     \textcolor{keywordflow}{return} result;
+70   \}
+\end{DoxyCode}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!get4\+Bytes@{get4\+Bytes}}
+\index{get4\+Bytes@{get4\+Bytes}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{get4\+Bytes()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t Stream\+Parser\+::get4\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_adad1edf3d565b40e56878a33b015ba71}
+
+
+Definition at line 46 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::f\+Cur\+Parser\+Index, Stream\+Parser\+::f\+Remaining\+Unparsed\+Bits, and Stream\+Parser\+::test4\+Bytes().
+
+
+
+Referenced by M\+P\+E\+G\+Video\+Stream\+Parser\+::save\+To\+Next\+Code(), and M\+P\+E\+G\+Video\+Stream\+Parser\+::skip\+To\+Next\+Code().
+
+
+\begin{DoxyCode}
+46                         \{ \textcolor{comment}{// byte-aligned; returned in big-endian order}
+47     u\_int32\_t result = test4Bytes();
+48     fCurParserIndex += 4;
+49     fRemainingUnparsedBits = 0;
+50 
+51     \textcolor{keywordflow}{return} result;
+52   \}
+\end{DoxyCode}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!get\+Bits@{get\+Bits}}
+\index{get\+Bits@{get\+Bits}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{get\+Bits(unsigned num\+Bits)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+Parser\+::get\+Bits (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bits}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_a4c2c541641d32e623cee26a87c7757b9}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!get\+Bytes@{get\+Bytes}}
+\index{get\+Bytes@{get\+Bytes}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{get\+Bytes(u\+\_\+int8\+\_\+t $\ast$to, unsigned num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::get\+Bytes (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t $\ast$}]{to, }
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_a51d3d9bd192703f2e68abc091ad52df5}
+
+
+Definition at line 82 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::f\+Cur\+Parser\+Index, Stream\+Parser\+::f\+Remaining\+Unparsed\+Bits, and Stream\+Parser\+::test\+Bytes().
+
+
+\begin{DoxyCode}
+82                                                  \{
+83     testBytes(to, numBytes);
+84     fCurParserIndex += numBytes;
+85     fRemainingUnparsedBits = 0;
+86   \}
+\end{DoxyCode}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!get\+Common\+Frame\+Bytes@{get\+Common\+Frame\+Bytes}}
+\index{get\+Common\+Frame\+Bytes@{get\+Common\+Frame\+Bytes}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{get\+Common\+Frame\+Bytes(\+Matroska\+Track $\ast$track, u\+\_\+int8\+\_\+t $\ast$to, unsigned num\+Bytes\+To\+Get, unsigned num\+Bytes\+To\+Skip)}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+File\+Parser\+::get\+Common\+Frame\+Bytes (
+\begin{DoxyParamCaption}
+\item[{{\bf Matroska\+Track} $\ast$}]{track, }
+\item[{u\+\_\+int8\+\_\+t $\ast$}]{to, }
+\item[{unsigned}]{num\+Bytes\+To\+Get, }
+\item[{unsigned}]{num\+Bytes\+To\+Skip}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a6ab12a44247068c8048f202e9ef641ca}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!have\+Seen\+E\+O\+F@{have\+Seen\+E\+O\+F}}
+\index{have\+Seen\+E\+O\+F@{have\+Seen\+E\+O\+F}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{have\+Seen\+E\+O\+F() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Stream\+Parser\+::have\+Seen\+E\+O\+F (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_abf3705cbce3ed9bce23d13fa50641fbd}
+
+
+Definition at line 104 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::f\+Have\+Seen\+E\+O\+F.
+
+
+\begin{DoxyCode}
+104 \{ \textcolor{keywordflow}{return} fHaveSeenEOF; \}
+\end{DoxyCode}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!look\+For\+Next\+Block@{look\+For\+Next\+Block}}
+\index{look\+For\+Next\+Block@{look\+For\+Next\+Block}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{look\+For\+Next\+Block()}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+File\+Parser\+::look\+For\+Next\+Block (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a9796d61424019328efb6326f84eaae9d}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!look\+For\+Next\+Track@{look\+For\+Next\+Track}}
+\index{look\+For\+Next\+Track@{look\+For\+Next\+Track}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{look\+For\+Next\+Track()}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+File\+Parser\+::look\+For\+Next\+Track (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a5fc9b6a21e9df25343ee1c68464cc285}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!parse@{parse}}
+\index{parse@{parse}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{parse()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Matroska\+File\+Parser\+::parse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_adc6c0cea34f68aeae94562f795f67c79}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!parse\+Block@{parse\+Block}}
+\index{parse\+Block@{parse\+Block}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{parse\+Block()}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+File\+Parser\+::parse\+Block (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a31c1ddfc924ef1c05aec1c5f447047eb}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!parse\+Cues@{parse\+Cues}}
+\index{parse\+Cues@{parse\+Cues}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{parse\+Cues()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Matroska\+File\+Parser\+::parse\+Cues (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a27aa0b1b23cde7482bd6fe4523e28b43}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!parse\+E\+B\+M\+L\+Id\+And\+Size@{parse\+E\+B\+M\+L\+Id\+And\+Size}}
+\index{parse\+E\+B\+M\+L\+Id\+And\+Size@{parse\+E\+B\+M\+L\+Id\+And\+Size}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{parse\+E\+B\+M\+L\+Id\+And\+Size(\+E\+B\+M\+L\+Id \&id, E\+B\+M\+L\+Data\+Size \&size)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Matroska\+File\+Parser\+::parse\+E\+B\+M\+L\+Id\+And\+Size (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+B\+M\+L\+Id} \&}]{id, }
+\item[{{\bf E\+B\+M\+L\+Data\+Size} \&}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a0aee810fe0bb233347f5449f2cbdce68}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!parse\+E\+B\+M\+L\+Number@{parse\+E\+B\+M\+L\+Number}}
+\index{parse\+E\+B\+M\+L\+Number@{parse\+E\+B\+M\+L\+Number}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{parse\+E\+B\+M\+L\+Number(\+E\+B\+M\+L\+Number \&num)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Matroska\+File\+Parser\+::parse\+E\+B\+M\+L\+Number (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+B\+M\+L\+Number} \&}]{num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_adf97547193439dc3e4bd77372954757c}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!parse\+E\+B\+M\+L\+Val\+\_\+binary@{parse\+E\+B\+M\+L\+Val\+\_\+binary}}
+\index{parse\+E\+B\+M\+L\+Val\+\_\+binary@{parse\+E\+B\+M\+L\+Val\+\_\+binary}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{parse\+E\+B\+M\+L\+Val\+\_\+binary(\+E\+B\+M\+L\+Data\+Size \&size, u\+\_\+int8\+\_\+t $\ast$\&result)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Matroska\+File\+Parser\+::parse\+E\+B\+M\+L\+Val\+\_\+binary (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+B\+M\+L\+Data\+Size} \&}]{size, }
+\item[{u\+\_\+int8\+\_\+t $\ast$\&}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a49909d055d9bca74ab647d64f4e539d4}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!parse\+E\+B\+M\+L\+Val\+\_\+float@{parse\+E\+B\+M\+L\+Val\+\_\+float}}
+\index{parse\+E\+B\+M\+L\+Val\+\_\+float@{parse\+E\+B\+M\+L\+Val\+\_\+float}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{parse\+E\+B\+M\+L\+Val\+\_\+float(\+E\+B\+M\+L\+Data\+Size \&size, float \&result)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Matroska\+File\+Parser\+::parse\+E\+B\+M\+L\+Val\+\_\+float (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+B\+M\+L\+Data\+Size} \&}]{size, }
+\item[{float \&}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a4de1819f9fdc8082ab78c1f8db529564}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!parse\+E\+B\+M\+L\+Val\+\_\+string@{parse\+E\+B\+M\+L\+Val\+\_\+string}}
+\index{parse\+E\+B\+M\+L\+Val\+\_\+string@{parse\+E\+B\+M\+L\+Val\+\_\+string}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{parse\+E\+B\+M\+L\+Val\+\_\+string(\+E\+B\+M\+L\+Data\+Size \&size, char $\ast$\&result)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Matroska\+File\+Parser\+::parse\+E\+B\+M\+L\+Val\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+B\+M\+L\+Data\+Size} \&}]{size, }
+\item[{char $\ast$\&}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a5f3174f6e1e3afcd85b1c2639e8c4bbb}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!parse\+E\+B\+M\+L\+Val\+\_\+unsigned@{parse\+E\+B\+M\+L\+Val\+\_\+unsigned}}
+\index{parse\+E\+B\+M\+L\+Val\+\_\+unsigned@{parse\+E\+B\+M\+L\+Val\+\_\+unsigned}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{parse\+E\+B\+M\+L\+Val\+\_\+unsigned(\+E\+B\+M\+L\+Data\+Size \&size, unsigned \&result)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Matroska\+File\+Parser\+::parse\+E\+B\+M\+L\+Val\+\_\+unsigned (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+B\+M\+L\+Data\+Size} \&}]{size, }
+\item[{unsigned \&}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_acee305b1162128be93ffee0ed0865f7f}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!parse\+E\+B\+M\+L\+Val\+\_\+unsigned64@{parse\+E\+B\+M\+L\+Val\+\_\+unsigned64}}
+\index{parse\+E\+B\+M\+L\+Val\+\_\+unsigned64@{parse\+E\+B\+M\+L\+Val\+\_\+unsigned64}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{parse\+E\+B\+M\+L\+Val\+\_\+unsigned64(\+E\+B\+M\+L\+Data\+Size \&size, u\+\_\+int64\+\_\+t \&result)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Matroska\+File\+Parser\+::parse\+E\+B\+M\+L\+Val\+\_\+unsigned64 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+B\+M\+L\+Data\+Size} \&}]{size, }
+\item[{u\+\_\+int64\+\_\+t \&}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_afe53250158e8b1f20a9a28d3b0766bd1}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!parse\+Start\+Of\+File@{parse\+Start\+Of\+File}}
+\index{parse\+Start\+Of\+File@{parse\+Start\+Of\+File}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{parse\+Start\+Of\+File()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Matroska\+File\+Parser\+::parse\+Start\+Of\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a615c3646842d034e6303429116e78ac7}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!parse\+Track@{parse\+Track}}
+\index{parse\+Track@{parse\+Track}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{parse\+Track()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Matroska\+File\+Parser\+::parse\+Track (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a69b7a91c3a15cc69d06a9532f884e9fa}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!reset\+State\+After\+Seeking@{reset\+State\+After\+Seeking}}
+\index{reset\+State\+After\+Seeking@{reset\+State\+After\+Seeking}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{reset\+State\+After\+Seeking()}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+File\+Parser\+::reset\+State\+After\+Seeking (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_af8f255666a50b624fd83e11015f5b9e2}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!restore\+Saved\+Parser\+State@{restore\+Saved\+Parser\+State}}
+\index{restore\+Saved\+Parser\+State@{restore\+Saved\+Parser\+State}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{restore\+Saved\+Parser\+State()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Matroska\+File\+Parser\+::restore\+Saved\+Parser\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classMatroskaFileParser_a6bac9fa861c86b71ba7c531d808c976e}
+
+
+Reimplemented from {\bf Stream\+Parser} \doxyref{}{p.}{classStreamParser_ac15f8f98fdd79ae31b8cee01f1a963e9}.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!save\+Parser\+State@{save\+Parser\+State}}
+\index{save\+Parser\+State@{save\+Parser\+State}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{save\+Parser\+State()}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::save\+Parser\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_afad3a870af863d25ea1927ab9c07b3f2}
+
+
+Referenced by M\+P\+E\+G\+Video\+Stream\+Parser\+::set\+Parse\+State().
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!seek\+To\+End\+Of\+File@{seek\+To\+End\+Of\+File}}
+\index{seek\+To\+End\+Of\+File@{seek\+To\+End\+Of\+File}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{seek\+To\+End\+Of\+File()}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+File\+Parser\+::seek\+To\+End\+Of\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_ad659c983b9b8b3c201dbc87574814769}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!seek\+To\+File\+Position@{seek\+To\+File\+Position}}
+\index{seek\+To\+File\+Position@{seek\+To\+File\+Position}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{seek\+To\+File\+Position(u\+\_\+int64\+\_\+t offset\+In\+File)}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+File\+Parser\+::seek\+To\+File\+Position (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int64\+\_\+t}]{offset\+In\+File}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_ab46812191808a50b19a945861db7029e}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!seek\+To\+Time@{seek\+To\+Time}}
+\index{seek\+To\+Time@{seek\+To\+Time}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{seek\+To\+Time(double \&seek\+N\+P\+T)}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+File\+Parser\+::seek\+To\+Time (
+\begin{DoxyParamCaption}
+\item[{double \&}]{seek\+N\+P\+T}
+\end{DoxyParamCaption}
+)}\label{classMatroskaFileParser_a772d57e352ba89b70a0faa2f13c96496}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!set\+Parse\+State@{set\+Parse\+State}}
+\index{set\+Parse\+State@{set\+Parse\+State}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{set\+Parse\+State()}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+File\+Parser\+::set\+Parse\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a62e8a6832a68c417b1b9c90074e92cac}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!skip\+Bits@{skip\+Bits}}
+\index{skip\+Bits@{skip\+Bits}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{skip\+Bits(unsigned num\+Bits)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::skip\+Bits (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bits}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_aaf2cf90f248fbd494ab74e5bccec5546}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!skip\+Bytes@{skip\+Bytes}}
+\index{skip\+Bytes@{skip\+Bytes}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{skip\+Bytes(unsigned num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::skip\+Bytes (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_aa340f831acf01b8626060818a530cfb5}
+
+
+Definition at line 91 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::ensure\+Valid\+Bytes(), and Stream\+Parser\+::f\+Cur\+Parser\+Index.
+
+
+\begin{DoxyCode}
+91                                     \{
+92     ensureValidBytes(numBytes);
+93     fCurParserIndex += numBytes;
+94   \}
+\end{DoxyCode}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!skip\+Header@{skip\+Header}}
+\index{skip\+Header@{skip\+Header}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{skip\+Header(\+E\+B\+M\+L\+Data\+Size const \&size)}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+File\+Parser\+::skip\+Header (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+B\+M\+L\+Data\+Size} const \&}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a32c40108b775d1f4dbc9b80082441f30}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!skip\+Remaining\+Header\+Bytes@{skip\+Remaining\+Header\+Bytes}}
+\index{skip\+Remaining\+Header\+Bytes@{skip\+Remaining\+Header\+Bytes}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{skip\+Remaining\+Header\+Bytes(\+Boolean is\+Continuation)}]{\setlength{\rightskip}{0pt plus 5cm}void Matroska\+File\+Parser\+::skip\+Remaining\+Header\+Bytes (
+\begin{DoxyParamCaption}
+\item[{{\bf Boolean}}]{is\+Continuation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a88b64cb520563d3c3f9740dd0850083a}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!test1\+Byte@{test1\+Byte}}
+\index{test1\+Byte@{test1\+Byte}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{test1\+Byte()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t Stream\+Parser\+::test1\+Byte (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_a6d099b5aed1c181e2f2d320721d2f87f}
+
+
+Definition at line 77 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::ensure\+Valid\+Bytes(), and Stream\+Parser\+::next\+To\+Parse().
+
+
+\begin{DoxyCode}
+77                        \{ \textcolor{comment}{// as above, but doesn't advance ptr}
+78     ensureValidBytes(1);
+79     \textcolor{keywordflow}{return} nextToParse()[0];
+80   \}
+\end{DoxyCode}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!test4\+Bytes@{test4\+Bytes}}
+\index{test4\+Bytes@{test4\+Bytes}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{test4\+Bytes()}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int32\+\_\+t Stream\+Parser\+::test4\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_ab27bd80b6ff148a1a6afbc54e9938385}
+
+
+Definition at line 53 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::ensure\+Valid\+Bytes(), and Stream\+Parser\+::next\+To\+Parse().
+
+
+
+Referenced by Stream\+Parser\+::get4\+Bytes().
+
+
+\begin{DoxyCode}
+53                          \{ \textcolor{comment}{// as above, but doesn't advance ptr}
+54     ensureValidBytes(4);
+55 
+56     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \textcolor{keyword}{const}* ptr = nextToParse();
+57     \textcolor{keywordflow}{return} (ptr[0]<<24)|(ptr[1]<<16)|(ptr[2]<<8)|ptr[3];
+58   \}
+\end{DoxyCode}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!test\+Bytes@{test\+Bytes}}
+\index{test\+Bytes@{test\+Bytes}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{test\+Bytes(u\+\_\+int8\+\_\+t $\ast$to, unsigned num\+Bytes)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+Parser\+::test\+Bytes (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t $\ast$}]{to, }
+\item[{unsigned}]{num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_a2ded9a22a9d1fc854303c80f9c1ad6b3}
+
+
+Definition at line 87 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::ensure\+Valid\+Bytes(), and Stream\+Parser\+::next\+To\+Parse().
+
+
+
+Referenced by Stream\+Parser\+::get\+Bytes().
+
+
+\begin{DoxyCode}
+87                                                   \{ \textcolor{comment}{// as above, but doesn't advance ptr}
+88     ensureValidBytes(numBytes);
+89     memmove(to, nextToParse(), numBytes);
+90   \}
+\end{DoxyCode}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!tot\+Num\+Valid\+Bytes@{tot\+Num\+Valid\+Bytes}}
+\index{tot\+Num\+Valid\+Bytes@{tot\+Num\+Valid\+Bytes}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{tot\+Num\+Valid\+Bytes()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned\& Stream\+Parser\+::tot\+Num\+Valid\+Bytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [inherited]}}\label{classStreamParser_a9cf19a8362a39bff364a8f3d2a5136cf}
+
+
+Definition at line 102 of file Stream\+Parser.\+hh.
+
+
+
+References Stream\+Parser\+::f\+Tot\+Num\+Valid\+Bytes.
+
+
+\begin{DoxyCode}
+102 \{ \textcolor{keywordflow}{return} fTotNumValidBytes; \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Block\+Size@{f\+Block\+Size}}
+\index{f\+Block\+Size@{f\+Block\+Size}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Block\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+File\+Parser\+::f\+Block\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_ac231d37e631a6495ecf62b75b43dc590}
+
+
+Definition at line 117 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Block\+Timecode@{f\+Block\+Timecode}}
+\index{f\+Block\+Timecode@{f\+Block\+Timecode}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Block\+Timecode}]{\setlength{\rightskip}{0pt plus 5cm}short Matroska\+File\+Parser\+::f\+Block\+Timecode\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_af2bfc1368d1307e7c0aa6ead2bdf806c}
+
+
+Definition at line 119 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Block\+Track\+Number@{f\+Block\+Track\+Number}}
+\index{f\+Block\+Track\+Number@{f\+Block\+Track\+Number}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Block\+Track\+Number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+File\+Parser\+::f\+Block\+Track\+Number\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_ad3adea23f5291073d69e14b674999a90}
+
+
+Definition at line 118 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Cluster\+Timecode@{f\+Cluster\+Timecode}}
+\index{f\+Cluster\+Timecode@{f\+Cluster\+Timecode}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Cluster\+Timecode}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+File\+Parser\+::f\+Cluster\+Timecode\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a8cfaf83ebcc7e6a2165d59d59ab9ca1a}
+
+
+Definition at line 114 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Cur\+Frame\+Num\+Bytes\+To\+Get@{f\+Cur\+Frame\+Num\+Bytes\+To\+Get}}
+\index{f\+Cur\+Frame\+Num\+Bytes\+To\+Get@{f\+Cur\+Frame\+Num\+Bytes\+To\+Get}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Cur\+Frame\+Num\+Bytes\+To\+Get}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+File\+Parser\+::f\+Cur\+Frame\+Num\+Bytes\+To\+Get\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_ae5e0f748b6fd0952d2266f1379ca2b82}
+
+
+Definition at line 130 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Cur\+Frame\+Num\+Bytes\+To\+Skip@{f\+Cur\+Frame\+Num\+Bytes\+To\+Skip}}
+\index{f\+Cur\+Frame\+Num\+Bytes\+To\+Skip@{f\+Cur\+Frame\+Num\+Bytes\+To\+Skip}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Cur\+Frame\+Num\+Bytes\+To\+Skip}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+File\+Parser\+::f\+Cur\+Frame\+Num\+Bytes\+To\+Skip\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_afee87ecaec559ded1b4db94c54549a4a}
+
+
+Definition at line 131 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Cur\+Frame\+To@{f\+Cur\+Frame\+To}}
+\index{f\+Cur\+Frame\+To@{f\+Cur\+Frame\+To}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Cur\+Frame\+To}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t$\ast$ Matroska\+File\+Parser\+::f\+Cur\+Frame\+To\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a24e8c8886d1b8357e99ca1ed5688fd24}
+
+
+Definition at line 129 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Cur\+Offset\+In\+File@{f\+Cur\+Offset\+In\+File}}
+\index{f\+Cur\+Offset\+In\+File@{f\+Cur\+Offset\+In\+File}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Cur\+Offset\+In\+File}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int64\+\_\+t Matroska\+File\+Parser\+::f\+Cur\+Offset\+In\+File\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a00aeb0d57ac84f4132612df5c8cb3f27}
+
+
+Definition at line 105 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Cur\+Offset\+Within\+Frame@{f\+Cur\+Offset\+Within\+Frame}}
+\index{f\+Cur\+Offset\+Within\+Frame@{f\+Cur\+Offset\+Within\+Frame}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Cur\+Offset\+Within\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+File\+Parser\+::f\+Cur\+Offset\+Within\+Frame\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_aeeebcab6843b28b18511fddc99c84441}
+
+
+Definition at line 126 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Current\+Parse\+State@{f\+Current\+Parse\+State}}
+\index{f\+Current\+Parse\+State@{f\+Current\+Parse\+State}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Current\+Parse\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matroska\+Parse\+State} Matroska\+File\+Parser\+::f\+Current\+Parse\+State\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a339e53c7452fd1f35d5caafc7e710626}
+
+
+Definition at line 104 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Frame\+Sizes\+Within\+Block@{f\+Frame\+Sizes\+Within\+Block}}
+\index{f\+Frame\+Sizes\+Within\+Block@{f\+Frame\+Sizes\+Within\+Block}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Frame\+Sizes\+Within\+Block}]{\setlength{\rightskip}{0pt plus 5cm}unsigned$\ast$ Matroska\+File\+Parser\+::f\+Frame\+Sizes\+Within\+Block\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a5b4f1a827fd88d0585bff9ccb8427f5b}
+
+
+Definition at line 121 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Input\+Source@{f\+Input\+Source}}
+\index{f\+Input\+Source@{f\+Input\+Source}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Input\+Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Framed\+Source}$\ast$ Matroska\+File\+Parser\+::f\+Input\+Source\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a2c204857b783e141fae166d4195ced82}
+
+
+Definition at line 100 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Last\+Seek\+Id@{f\+Last\+Seek\+Id}}
+\index{f\+Last\+Seek\+Id@{f\+Last\+Seek\+Id}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Last\+Seek\+Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+B\+M\+L\+Id} Matroska\+File\+Parser\+::f\+Last\+Seek\+Id\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_aa22aaf7538de9b7c857aa117ce53de88}
+
+
+Definition at line 111 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Limit\+Offset\+In\+File@{f\+Limit\+Offset\+In\+File}}
+\index{f\+Limit\+Offset\+In\+File@{f\+Limit\+Offset\+In\+File}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Limit\+Offset\+In\+File}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int64\+\_\+t Matroska\+File\+Parser\+::f\+Limit\+Offset\+In\+File\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a8f06f22d2c500e9a364c7754703c8e7a}
+
+
+Definition at line 105 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Next\+Frame\+Number\+To\+Deliver@{f\+Next\+Frame\+Number\+To\+Deliver}}
+\index{f\+Next\+Frame\+Number\+To\+Deliver@{f\+Next\+Frame\+Number\+To\+Deliver}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Next\+Frame\+Number\+To\+Deliver}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+File\+Parser\+::f\+Next\+Frame\+Number\+To\+Deliver\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_ac57f340179f65d95431dc228a70b4f42}
+
+
+Definition at line 125 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Num\+Frames\+In\+Block@{f\+Num\+Frames\+In\+Block}}
+\index{f\+Num\+Frames\+In\+Block@{f\+Num\+Frames\+In\+Block}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Num\+Frames\+In\+Block}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+File\+Parser\+::f\+Num\+Frames\+In\+Block\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a42c1a81a3a68535a706819f5fbb5ba21}
+
+
+Definition at line 120 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Num\+Header\+Bytes\+To\+Skip@{f\+Num\+Header\+Bytes\+To\+Skip}}
+\index{f\+Num\+Header\+Bytes\+To\+Skip@{f\+Num\+Header\+Bytes\+To\+Skip}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Num\+Header\+Bytes\+To\+Skip}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int64\+\_\+t Matroska\+File\+Parser\+::f\+Num\+Header\+Bytes\+To\+Skip\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a405404ac630e6eb89f5145b4e6d2d54f}
+
+
+Definition at line 108 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+On\+End\+Client\+Data@{f\+On\+End\+Client\+Data}}
+\index{f\+On\+End\+Client\+Data@{f\+On\+End\+Client\+Data}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+On\+End\+Client\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Matroska\+File\+Parser\+::f\+On\+End\+Client\+Data\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a37fa481d982eef7dd58bedb35238731e}
+
+
+Definition at line 102 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+On\+End\+Func@{f\+On\+End\+Func}}
+\index{f\+On\+End\+Func@{f\+On\+End\+Func}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+On\+End\+Func}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Framed\+Source\+::on\+Close\+Func}$\ast$ Matroska\+File\+Parser\+::f\+On\+End\+Func\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a895430e0400313a486eea38051f263be}
+
+
+Definition at line 101 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Our\+Demux@{f\+Our\+Demux}}
+\index{f\+Our\+Demux@{f\+Our\+Demux}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Our\+Demux}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matroska\+Demux}$\ast$ Matroska\+File\+Parser\+::f\+Our\+Demux\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a934942bd607decbb8143900dc9e338bd}
+
+
+Definition at line 103 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Our\+File@{f\+Our\+File}}
+\index{f\+Our\+File@{f\+Our\+File}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Our\+File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matroska\+File}\& Matroska\+File\+Parser\+::f\+Our\+File\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a9b87afda6a086956e07d613a2a45d12a}
+
+
+Definition at line 99 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Presentation\+Time\+Offset@{f\+Presentation\+Time\+Offset}}
+\index{f\+Presentation\+Time\+Offset@{f\+Presentation\+Time\+Offset}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Presentation\+Time\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}double Matroska\+File\+Parser\+::f\+Presentation\+Time\+Offset\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a53096a1951a03dc5e56ae931c147792f}
+
+
+Definition at line 124 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Saved\+Cur\+Offset\+In\+File@{f\+Saved\+Cur\+Offset\+In\+File}}
+\index{f\+Saved\+Cur\+Offset\+In\+File@{f\+Saved\+Cur\+Offset\+In\+File}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Saved\+Cur\+Offset\+In\+File}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int64\+\_\+t Matroska\+File\+Parser\+::f\+Saved\+Cur\+Offset\+In\+File\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a6826ae0fc56556259800d208641555a2}
+
+
+Definition at line 105 of file Matroska\+File\+Parser.\+hh.
+
+\index{Matroska\+File\+Parser@{Matroska\+File\+Parser}!f\+Saved\+Cur\+Offset\+Within\+Frame@{f\+Saved\+Cur\+Offset\+Within\+Frame}}
+\index{f\+Saved\+Cur\+Offset\+Within\+Frame@{f\+Saved\+Cur\+Offset\+Within\+Frame}!Matroska\+File\+Parser@{Matroska\+File\+Parser}}
+\subsubsection[{f\+Saved\+Cur\+Offset\+Within\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Matroska\+File\+Parser\+::f\+Saved\+Cur\+Offset\+Within\+Frame\hspace{0.3cm}{\ttfamily [private]}}\label{classMatroskaFileParser_a332625a94c5e7ba69ae387f7595e79c5}
+
+
+Definition at line 126 of file Matroska\+File\+Parser.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/{\bf Matroska\+File\+Parser.\+hh}\end{DoxyCompactItemize}

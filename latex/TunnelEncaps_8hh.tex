@@ -1,0 +1,232 @@
+\section{groupsock/include/\+Tunnel\+Encaps.hh File Reference}
+\label{TunnelEncaps_8hh}\index{groupsock/include/\+Tunnel\+Encaps.\+hh@{groupsock/include/\+Tunnel\+Encaps.\+hh}}
+{\ttfamily \#include \char`\"{}Net\+Address.\+hh\char`\"{}}\\*
+Include dependency graph for Tunnel\+Encaps.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{TunnelEncaps_8hh__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Tunnel\+Encapsulation\+Trailer}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef u\+\_\+int16\+\_\+t {\bf Cookie}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Boolean} {\bf Tunnel\+Is\+Aux\+Cmd} (u\+\_\+int8\+\_\+t cmd)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned {\bf Tunnel\+Encapsulation\+Trailer\+Size} = 12
+\item 
+const unsigned {\bf Tunnel\+Encapsulation\+Trailer\+Aux\+Size} = 4
+\item 
+const unsigned {\bf Tunnel\+Encapsulation\+Trailer\+Max\+Size} = {\bf Tunnel\+Encapsulation\+Trailer\+Size} + {\bf Tunnel\+Encapsulation\+Trailer\+Aux\+Size}
+\item 
+const u\+\_\+int8\+\_\+t {\bf Tunnel\+Data\+Cmd} = 1
+\item 
+const u\+\_\+int8\+\_\+t {\bf Tunnel\+Join\+Group\+Cmd} = 2
+\item 
+const u\+\_\+int8\+\_\+t {\bf Tunnel\+Leave\+Group\+Cmd} = 3
+\item 
+const u\+\_\+int8\+\_\+t {\bf Tunnel\+Tear\+Down\+Cmd} = 4
+\item 
+const u\+\_\+int8\+\_\+t {\bf Tunnel\+Probe\+Cmd} = 5
+\item 
+const u\+\_\+int8\+\_\+t {\bf Tunnel\+Probe\+Ack\+Cmd} = 6
+\item 
+const u\+\_\+int8\+\_\+t {\bf Tunnel\+Probe\+Nack\+Cmd} = 7
+\item 
+const u\+\_\+int8\+\_\+t {\bf Tunnel\+Join\+R\+T\+P\+Group\+Cmd} = 8
+\item 
+const u\+\_\+int8\+\_\+t {\bf Tunnel\+Leave\+R\+T\+P\+Group\+Cmd} = 9
+\item 
+const u\+\_\+int8\+\_\+t {\bf Tunnel\+Extension\+Flag} = 0x80
+\item 
+const u\+\_\+int8\+\_\+t {\bf Tunnel\+Data\+Aux\+Cmd} = ({\bf Tunnel\+Extension\+Flag}$\vert${\bf Tunnel\+Data\+Cmd})
+\item 
+const u\+\_\+int8\+\_\+t {\bf Tunnel\+Join\+Group\+Aux\+Cmd} = ({\bf Tunnel\+Extension\+Flag}$\vert${\bf Tunnel\+Join\+Group\+Cmd})
+\item 
+const u\+\_\+int8\+\_\+t {\bf Tunnel\+Leave\+Group\+Aux\+Cmd} = ({\bf Tunnel\+Extension\+Flag}$\vert${\bf Tunnel\+Leave\+Group\+Cmd})
+\item 
+const u\+\_\+int8\+\_\+t {\bf Tunnel\+Join\+R\+T\+P\+Group\+Aux\+Cmd} = ({\bf Tunnel\+Extension\+Flag}$\vert${\bf Tunnel\+Join\+R\+T\+P\+Group\+Cmd})
+\item 
+const u\+\_\+int8\+\_\+t {\bf Tunnel\+Leave\+R\+T\+P\+Group\+Aux\+Cmd} = ({\bf Tunnel\+Extension\+Flag}$\vert${\bf Tunnel\+Leave\+R\+T\+P\+Group\+Cmd})
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Cookie@{Cookie}}
+\index{Cookie@{Cookie}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Cookie}]{\setlength{\rightskip}{0pt plus 5cm}typedef u\+\_\+int16\+\_\+t {\bf Cookie}}\label{TunnelEncaps_8hh_af4ca03e5a2068e72ebacf243a5411938}
+
+
+Definition at line 28 of file Tunnel\+Encaps.\+hh.
+
+
+
+\subsection{Function Documentation}
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Tunnel\+Is\+Aux\+Cmd@{Tunnel\+Is\+Aux\+Cmd}}
+\index{Tunnel\+Is\+Aux\+Cmd@{Tunnel\+Is\+Aux\+Cmd}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Tunnel\+Is\+Aux\+Cmd(u\+\_\+int8\+\_\+t cmd)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Tunnel\+Is\+Aux\+Cmd (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t}]{cmd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{TunnelEncaps_8hh_a75b337d49379aa4915bbe37e89354601}
+
+
+Definition at line 97 of file Tunnel\+Encaps.\+hh.
+
+
+
+References Tunnel\+Extension\+Flag.
+
+
+\begin{DoxyCode}
+97                                             \{
+98   \textcolor{keywordflow}{return} (cmd&TunnelExtensionFlag) != 0;
+99 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Tunnel\+Data\+Aux\+Cmd@{Tunnel\+Data\+Aux\+Cmd}}
+\index{Tunnel\+Data\+Aux\+Cmd@{Tunnel\+Data\+Aux\+Cmd}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Tunnel\+Data\+Aux\+Cmd}]{\setlength{\rightskip}{0pt plus 5cm}const u\+\_\+int8\+\_\+t Tunnel\+Data\+Aux\+Cmd = ({\bf Tunnel\+Extension\+Flag}$\vert${\bf Tunnel\+Data\+Cmd})}\label{TunnelEncaps_8hh_a7c4e5219a9d33f517367bb81498cd1b9}
+
+
+Definition at line 84 of file Tunnel\+Encaps.\+hh.
+
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Tunnel\+Data\+Cmd@{Tunnel\+Data\+Cmd}}
+\index{Tunnel\+Data\+Cmd@{Tunnel\+Data\+Cmd}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Tunnel\+Data\+Cmd}]{\setlength{\rightskip}{0pt plus 5cm}const u\+\_\+int8\+\_\+t Tunnel\+Data\+Cmd = 1}\label{TunnelEncaps_8hh_adbc943889677ba2928a4b8339a53192c}
+
+
+Definition at line 72 of file Tunnel\+Encaps.\+hh.
+
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Tunnel\+Encapsulation\+Trailer\+Aux\+Size@{Tunnel\+Encapsulation\+Trailer\+Aux\+Size}}
+\index{Tunnel\+Encapsulation\+Trailer\+Aux\+Size@{Tunnel\+Encapsulation\+Trailer\+Aux\+Size}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Tunnel\+Encapsulation\+Trailer\+Aux\+Size}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned Tunnel\+Encapsulation\+Trailer\+Aux\+Size = 4}\label{TunnelEncaps_8hh_afa227c427cc6aed67cd97bd7b2ed6181}
+
+
+Definition at line 66 of file Tunnel\+Encaps.\+hh.
+
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Tunnel\+Encapsulation\+Trailer\+Max\+Size@{Tunnel\+Encapsulation\+Trailer\+Max\+Size}}
+\index{Tunnel\+Encapsulation\+Trailer\+Max\+Size@{Tunnel\+Encapsulation\+Trailer\+Max\+Size}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Tunnel\+Encapsulation\+Trailer\+Max\+Size}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned Tunnel\+Encapsulation\+Trailer\+Max\+Size = {\bf Tunnel\+Encapsulation\+Trailer\+Size} + {\bf Tunnel\+Encapsulation\+Trailer\+Aux\+Size}}\label{TunnelEncaps_8hh_a9d54e931db0a16eaba303ec4ce183d98}
+
+
+Definition at line 68 of file Tunnel\+Encaps.\+hh.
+
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Tunnel\+Encapsulation\+Trailer\+Size@{Tunnel\+Encapsulation\+Trailer\+Size}}
+\index{Tunnel\+Encapsulation\+Trailer\+Size@{Tunnel\+Encapsulation\+Trailer\+Size}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Tunnel\+Encapsulation\+Trailer\+Size}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned Tunnel\+Encapsulation\+Trailer\+Size = 12}\label{TunnelEncaps_8hh_a5af96abea9a9b98f1ddadee1b9e30cb8}
+
+
+Definition at line 65 of file Tunnel\+Encaps.\+hh.
+
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Tunnel\+Extension\+Flag@{Tunnel\+Extension\+Flag}}
+\index{Tunnel\+Extension\+Flag@{Tunnel\+Extension\+Flag}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Tunnel\+Extension\+Flag}]{\setlength{\rightskip}{0pt plus 5cm}const u\+\_\+int8\+\_\+t Tunnel\+Extension\+Flag = 0x80}\label{TunnelEncaps_8hh_a3e17021f594803af1e7056be06198fe9}
+
+
+Definition at line 82 of file Tunnel\+Encaps.\+hh.
+
+
+
+Referenced by Tunnel\+Is\+Aux\+Cmd().
+
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Tunnel\+Join\+Group\+Aux\+Cmd@{Tunnel\+Join\+Group\+Aux\+Cmd}}
+\index{Tunnel\+Join\+Group\+Aux\+Cmd@{Tunnel\+Join\+Group\+Aux\+Cmd}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Tunnel\+Join\+Group\+Aux\+Cmd}]{\setlength{\rightskip}{0pt plus 5cm}const u\+\_\+int8\+\_\+t Tunnel\+Join\+Group\+Aux\+Cmd = ({\bf Tunnel\+Extension\+Flag}$\vert${\bf Tunnel\+Join\+Group\+Cmd})}\label{TunnelEncaps_8hh_ac46f12577f9d64490acab0f03d7310cf}
+
+
+Definition at line 86 of file Tunnel\+Encaps.\+hh.
+
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Tunnel\+Join\+Group\+Cmd@{Tunnel\+Join\+Group\+Cmd}}
+\index{Tunnel\+Join\+Group\+Cmd@{Tunnel\+Join\+Group\+Cmd}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Tunnel\+Join\+Group\+Cmd}]{\setlength{\rightskip}{0pt plus 5cm}const u\+\_\+int8\+\_\+t Tunnel\+Join\+Group\+Cmd = 2}\label{TunnelEncaps_8hh_a1818ff1f8a0fdda68288eb6929af523a}
+
+
+Definition at line 73 of file Tunnel\+Encaps.\+hh.
+
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Tunnel\+Join\+R\+T\+P\+Group\+Aux\+Cmd@{Tunnel\+Join\+R\+T\+P\+Group\+Aux\+Cmd}}
+\index{Tunnel\+Join\+R\+T\+P\+Group\+Aux\+Cmd@{Tunnel\+Join\+R\+T\+P\+Group\+Aux\+Cmd}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Tunnel\+Join\+R\+T\+P\+Group\+Aux\+Cmd}]{\setlength{\rightskip}{0pt plus 5cm}const u\+\_\+int8\+\_\+t Tunnel\+Join\+R\+T\+P\+Group\+Aux\+Cmd = ({\bf Tunnel\+Extension\+Flag}$\vert${\bf Tunnel\+Join\+R\+T\+P\+Group\+Cmd})}\label{TunnelEncaps_8hh_ac21d9fbe74b2845525fa3bc9a969c65b}
+
+
+Definition at line 92 of file Tunnel\+Encaps.\+hh.
+
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Tunnel\+Join\+R\+T\+P\+Group\+Cmd@{Tunnel\+Join\+R\+T\+P\+Group\+Cmd}}
+\index{Tunnel\+Join\+R\+T\+P\+Group\+Cmd@{Tunnel\+Join\+R\+T\+P\+Group\+Cmd}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Tunnel\+Join\+R\+T\+P\+Group\+Cmd}]{\setlength{\rightskip}{0pt plus 5cm}const u\+\_\+int8\+\_\+t Tunnel\+Join\+R\+T\+P\+Group\+Cmd = 8}\label{TunnelEncaps_8hh_a7393dc4ce5c803bb2c9e63b50bd9a0d1}
+
+
+Definition at line 79 of file Tunnel\+Encaps.\+hh.
+
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Tunnel\+Leave\+Group\+Aux\+Cmd@{Tunnel\+Leave\+Group\+Aux\+Cmd}}
+\index{Tunnel\+Leave\+Group\+Aux\+Cmd@{Tunnel\+Leave\+Group\+Aux\+Cmd}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Tunnel\+Leave\+Group\+Aux\+Cmd}]{\setlength{\rightskip}{0pt plus 5cm}const u\+\_\+int8\+\_\+t Tunnel\+Leave\+Group\+Aux\+Cmd = ({\bf Tunnel\+Extension\+Flag}$\vert${\bf Tunnel\+Leave\+Group\+Cmd})}\label{TunnelEncaps_8hh_a87d6876b5622d5212d88366139428775}
+
+
+Definition at line 88 of file Tunnel\+Encaps.\+hh.
+
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Tunnel\+Leave\+Group\+Cmd@{Tunnel\+Leave\+Group\+Cmd}}
+\index{Tunnel\+Leave\+Group\+Cmd@{Tunnel\+Leave\+Group\+Cmd}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Tunnel\+Leave\+Group\+Cmd}]{\setlength{\rightskip}{0pt plus 5cm}const u\+\_\+int8\+\_\+t Tunnel\+Leave\+Group\+Cmd = 3}\label{TunnelEncaps_8hh_a9c7baa260c6740aa1fc717134cb76c6d}
+
+
+Definition at line 74 of file Tunnel\+Encaps.\+hh.
+
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Tunnel\+Leave\+R\+T\+P\+Group\+Aux\+Cmd@{Tunnel\+Leave\+R\+T\+P\+Group\+Aux\+Cmd}}
+\index{Tunnel\+Leave\+R\+T\+P\+Group\+Aux\+Cmd@{Tunnel\+Leave\+R\+T\+P\+Group\+Aux\+Cmd}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Tunnel\+Leave\+R\+T\+P\+Group\+Aux\+Cmd}]{\setlength{\rightskip}{0pt plus 5cm}const u\+\_\+int8\+\_\+t Tunnel\+Leave\+R\+T\+P\+Group\+Aux\+Cmd = ({\bf Tunnel\+Extension\+Flag}$\vert${\bf Tunnel\+Leave\+R\+T\+P\+Group\+Cmd})}\label{TunnelEncaps_8hh_a3c7b4ed4b15d5eb275f88dbb36b9200c}
+
+
+Definition at line 94 of file Tunnel\+Encaps.\+hh.
+
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Tunnel\+Leave\+R\+T\+P\+Group\+Cmd@{Tunnel\+Leave\+R\+T\+P\+Group\+Cmd}}
+\index{Tunnel\+Leave\+R\+T\+P\+Group\+Cmd@{Tunnel\+Leave\+R\+T\+P\+Group\+Cmd}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Tunnel\+Leave\+R\+T\+P\+Group\+Cmd}]{\setlength{\rightskip}{0pt plus 5cm}const u\+\_\+int8\+\_\+t Tunnel\+Leave\+R\+T\+P\+Group\+Cmd = 9}\label{TunnelEncaps_8hh_afd127092ea9c952b9cb19875612065eb}
+
+
+Definition at line 80 of file Tunnel\+Encaps.\+hh.
+
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Tunnel\+Probe\+Ack\+Cmd@{Tunnel\+Probe\+Ack\+Cmd}}
+\index{Tunnel\+Probe\+Ack\+Cmd@{Tunnel\+Probe\+Ack\+Cmd}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Tunnel\+Probe\+Ack\+Cmd}]{\setlength{\rightskip}{0pt plus 5cm}const u\+\_\+int8\+\_\+t Tunnel\+Probe\+Ack\+Cmd = 6}\label{TunnelEncaps_8hh_a2c2ad11ede5deaa63e0adb10a2c75332}
+
+
+Definition at line 77 of file Tunnel\+Encaps.\+hh.
+
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Tunnel\+Probe\+Cmd@{Tunnel\+Probe\+Cmd}}
+\index{Tunnel\+Probe\+Cmd@{Tunnel\+Probe\+Cmd}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Tunnel\+Probe\+Cmd}]{\setlength{\rightskip}{0pt plus 5cm}const u\+\_\+int8\+\_\+t Tunnel\+Probe\+Cmd = 5}\label{TunnelEncaps_8hh_a1e5b98a4c7f3f5625e1ddf0ea3117b40}
+
+
+Definition at line 76 of file Tunnel\+Encaps.\+hh.
+
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Tunnel\+Probe\+Nack\+Cmd@{Tunnel\+Probe\+Nack\+Cmd}}
+\index{Tunnel\+Probe\+Nack\+Cmd@{Tunnel\+Probe\+Nack\+Cmd}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Tunnel\+Probe\+Nack\+Cmd}]{\setlength{\rightskip}{0pt plus 5cm}const u\+\_\+int8\+\_\+t Tunnel\+Probe\+Nack\+Cmd = 7}\label{TunnelEncaps_8hh_ab53da6f83f50001a5d3b473e146fdd6f}
+
+
+Definition at line 78 of file Tunnel\+Encaps.\+hh.
+
+\index{Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}!Tunnel\+Tear\+Down\+Cmd@{Tunnel\+Tear\+Down\+Cmd}}
+\index{Tunnel\+Tear\+Down\+Cmd@{Tunnel\+Tear\+Down\+Cmd}!Tunnel\+Encaps.\+hh@{Tunnel\+Encaps.\+hh}}
+\subsubsection[{Tunnel\+Tear\+Down\+Cmd}]{\setlength{\rightskip}{0pt plus 5cm}const u\+\_\+int8\+\_\+t Tunnel\+Tear\+Down\+Cmd = 4}\label{TunnelEncaps_8hh_a0b98b35e89b57d657b2a854b543a924b}
+
+
+Definition at line 75 of file Tunnel\+Encaps.\+hh.
+

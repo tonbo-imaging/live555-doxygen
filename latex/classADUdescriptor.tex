@@ -1,0 +1,72 @@
+\section{A\+D\+Udescriptor Class Reference}
+\label{classADUdescriptor}\index{A\+D\+Udescriptor@{A\+D\+Udescriptor}}
+
+
+{\ttfamily \#include $<$M\+P3\+A\+D\+Udescriptor.\+hh$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned {\bf compute\+Size} (unsigned remaining\+Frame\+Size)
+\item 
+static unsigned {\bf generate\+Descriptor} (unsigned char $\ast$\&to\+Ptr, unsigned remaining\+Frame\+Size)
+\item 
+static void {\bf generate\+Two\+Byte\+Descriptor} (unsigned char $\ast$\&to\+Ptr, unsigned remaining\+Frame\+Size)
+\item 
+static unsigned {\bf get\+Remaining\+Frame\+Size} (unsigned char $\ast$\&from\+Ptr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 26 of file M\+P3\+A\+D\+Udescriptor.\+hh.
+
+
+
+\subsection{Member Function Documentation}
+\index{A\+D\+Udescriptor@{A\+D\+Udescriptor}!compute\+Size@{compute\+Size}}
+\index{compute\+Size@{compute\+Size}!A\+D\+Udescriptor@{A\+D\+Udescriptor}}
+\subsubsection[{compute\+Size(unsigned remaining\+Frame\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned A\+D\+Udescriptor\+::compute\+Size (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{remaining\+Frame\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classADUdescriptor_afa773ee6bd291128beca0a4a565d1e02}
+
+
+Definition at line 29 of file M\+P3\+A\+D\+Udescriptor.\+hh.
+
+
+\begin{DoxyCode}
+29                                                            \{
+30     \textcolor{keywordflow}{return} remainingFrameSize >= 64 ? 2 : 1;
+31   \}
+\end{DoxyCode}
+\index{A\+D\+Udescriptor@{A\+D\+Udescriptor}!generate\+Descriptor@{generate\+Descriptor}}
+\index{generate\+Descriptor@{generate\+Descriptor}!A\+D\+Udescriptor@{A\+D\+Udescriptor}}
+\subsubsection[{generate\+Descriptor(unsigned char $\ast$\&to\+Ptr, unsigned remaining\+Frame\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned A\+D\+Udescriptor\+::generate\+Descriptor (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$\&}]{to\+Ptr, }
+\item[{unsigned}]{remaining\+Frame\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classADUdescriptor_a0c142df55ef392a61e7796c1ee71227e}
+\index{A\+D\+Udescriptor@{A\+D\+Udescriptor}!generate\+Two\+Byte\+Descriptor@{generate\+Two\+Byte\+Descriptor}}
+\index{generate\+Two\+Byte\+Descriptor@{generate\+Two\+Byte\+Descriptor}!A\+D\+Udescriptor@{A\+D\+Udescriptor}}
+\subsubsection[{generate\+Two\+Byte\+Descriptor(unsigned char $\ast$\&to\+Ptr, unsigned remaining\+Frame\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}static void A\+D\+Udescriptor\+::generate\+Two\+Byte\+Descriptor (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$\&}]{to\+Ptr, }
+\item[{unsigned}]{remaining\+Frame\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classADUdescriptor_ae191c110cafdae536fea0106a1ebaeb1}
+\index{A\+D\+Udescriptor@{A\+D\+Udescriptor}!get\+Remaining\+Frame\+Size@{get\+Remaining\+Frame\+Size}}
+\index{get\+Remaining\+Frame\+Size@{get\+Remaining\+Frame\+Size}!A\+D\+Udescriptor@{A\+D\+Udescriptor}}
+\subsubsection[{get\+Remaining\+Frame\+Size(unsigned char $\ast$\&from\+Ptr)}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned A\+D\+Udescriptor\+::get\+Remaining\+Frame\+Size (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$\&}]{from\+Ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classADUdescriptor_a712282751930e43997bb5df93e666bc8}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/{\bf M\+P3\+A\+D\+Udescriptor.\+hh}\end{DoxyCompactItemize}

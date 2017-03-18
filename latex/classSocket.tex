@@ -1,0 +1,234 @@
+\section{Socket Class Reference}
+\label{classSocket}\index{Socket@{Socket}}
+
+
+{\ttfamily \#include $<$Net\+Interface.\+hh$>$}
+
+
+
+Inheritance diagram for Socket\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{classSocket__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Socket\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classSocket__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\+Socket} ()
+\item 
+void {\bf reset} ()
+\item 
+virtual {\bf Boolean} {\bf handle\+Read} (unsigned char $\ast$buffer, unsigned buffer\+Max\+Size, unsigned \&bytes\+Read, struct sockaddr\+\_\+in \&from\+Address)=0
+\item 
+int {\bf socket\+Num} () const 
+\item 
+{\bf Port} {\bf port} () const 
+\item 
+{\bf Usage\+Environment} \& {\bf env} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int {\bf Debug\+Level}
+\item 
+static {\bf Usage\+Environment} $\ast$ {\bf Default\+Usage\+Environment}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Socket} ({\bf Usage\+Environment} \&{\bf env}, {\bf Port} {\bf port})
+\item 
+{\bf Boolean} {\bf change\+Port} ({\bf Port} new\+Port)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf f\+Socket\+Num}
+\item 
+{\bf Usage\+Environment} \& {\bf f\+Env}
+\item 
+{\bf Port} {\bf f\+Port}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 80 of file Net\+Interface.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Socket@{Socket}!````~Socket@{$\sim$\+Socket}}
+\index{````~Socket@{$\sim$\+Socket}!Socket@{Socket}}
+\subsubsection[{$\sim$\+Socket()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Socket\+::$\sim$\+Socket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classSocket_a594ef9479fc328ef703294d5c98fd024}
+\index{Socket@{Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!Socket@{Socket}}
+\subsubsection[{Socket(\+Usage\+Environment \&env, Port port)}]{\setlength{\rightskip}{0pt plus 5cm}Socket\+::\+Socket (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env, }
+\item[{{\bf Port}}]{port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSocket_a051beb78967bec1c919883182b07b2d2}
+
+
+\subsection{Member Function Documentation}
+\index{Socket@{Socket}!change\+Port@{change\+Port}}
+\index{change\+Port@{change\+Port}!Socket@{Socket}}
+\subsubsection[{change\+Port(\+Port new\+Port)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Socket\+::change\+Port (
+\begin{DoxyParamCaption}
+\item[{{\bf Port}}]{new\+Port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classSocket_a4410afe54cb46839fa07469a9c7f57dc}
+\index{Socket@{Socket}!env@{env}}
+\index{env@{env}!Socket@{Socket}}
+\subsubsection[{env() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Socket\+::env (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classSocket_a03712e18dc140b9f5c8cdad98460410b}
+
+
+Definition at line 96 of file Net\+Interface.\+hh.
+
+
+
+References f\+Env.
+
+
+\begin{DoxyCode}
+96 \{ \textcolor{keywordflow}{return} fEnv; \}
+\end{DoxyCode}
+\index{Socket@{Socket}!handle\+Read@{handle\+Read}}
+\index{handle\+Read@{handle\+Read}!Socket@{Socket}}
+\subsubsection[{handle\+Read(unsigned char $\ast$buffer, unsigned buffer\+Max\+Size, unsigned \&bytes\+Read, struct sockaddr\+\_\+in \&from\+Address)=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Boolean} Socket\+::handle\+Read (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{buffer, }
+\item[{unsigned}]{buffer\+Max\+Size, }
+\item[{unsigned \&}]{bytes\+Read, }
+\item[{struct sockaddr\+\_\+in \&}]{from\+Address}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classSocket_aa7537f42f1b740b627a8bb7ffc8c8986}
+
+
+Implemented in {\bf Groupsock} \doxyref{}{p.}{classGroupsock_a18d7581e148a255877cfdd8df6d9f9cd}, and {\bf Output\+Socket} \doxyref{}{p.}{classOutputSocket_a868eb3f203221c29ed6b06c81aab4de2}.
+
+\index{Socket@{Socket}!port@{port}}
+\index{port@{port}!Socket@{Socket}}
+\subsubsection[{port() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Port} Socket\+::port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classSocket_ae550f2f8bca46db0ee17fc7a77f1924b}
+
+
+Definition at line 92 of file Net\+Interface.\+hh.
+
+
+
+References f\+Port.
+
+
+\begin{DoxyCode}
+92                     \{
+93     \textcolor{keywordflow}{return} fPort;
+94   \}
+\end{DoxyCode}
+\index{Socket@{Socket}!reset@{reset}}
+\index{reset@{reset}!Socket@{Socket}}
+\subsubsection[{reset()}]{\setlength{\rightskip}{0pt plus 5cm}void Socket\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classSocket_aeb0279ac9f6aa44d522439efc1328d48}
+\index{Socket@{Socket}!socket\+Num@{socket\+Num}}
+\index{socket\+Num@{socket\+Num}!Socket@{Socket}}
+\subsubsection[{socket\+Num() const }]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::socket\+Num (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classSocket_aace6b9cee795e7814d11ac0e78bd7936}
+
+
+Definition at line 90 of file Net\+Interface.\+hh.
+
+
+
+References f\+Socket\+Num.
+
+
+\begin{DoxyCode}
+90 \{ \textcolor{keywordflow}{return} fSocketNum; \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Socket@{Socket}!Debug\+Level@{Debug\+Level}}
+\index{Debug\+Level@{Debug\+Level}!Socket@{Socket}}
+\subsubsection[{Debug\+Level}]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::\+Debug\+Level\hspace{0.3cm}{\ttfamily [static]}}\label{classSocket_af364aa5f7e6899ab56904e8fc5ee0e7a}
+
+
+Definition at line 98 of file Net\+Interface.\+hh.
+
+\index{Socket@{Socket}!Default\+Usage\+Environment@{Default\+Usage\+Environment}}
+\index{Default\+Usage\+Environment@{Default\+Usage\+Environment}!Socket@{Socket}}
+\subsubsection[{Default\+Usage\+Environment}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}$\ast$ Net\+Interface\+::\+Default\+Usage\+Environment\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [inherited]}}\label{classNetInterface_a570b15d8141a04f1d2691af1783dc30d}
+
+
+Definition at line 32 of file Net\+Interface.\+hh.
+
+\index{Socket@{Socket}!f\+Env@{f\+Env}}
+\index{f\+Env@{f\+Env}!Socket@{Socket}}
+\subsubsection[{f\+Env}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& Socket\+::f\+Env\hspace{0.3cm}{\ttfamily [private]}}\label{classSocket_a300e2e9169f8d91ee1279954bab5e85d}
+
+
+Definition at line 107 of file Net\+Interface.\+hh.
+
+
+
+Referenced by env().
+
+\index{Socket@{Socket}!f\+Port@{f\+Port}}
+\index{f\+Port@{f\+Port}!Socket@{Socket}}
+\subsubsection[{f\+Port}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Port} Socket\+::f\+Port\hspace{0.3cm}{\ttfamily [private]}}\label{classSocket_afdd188e6e0213b2e5c842465fc2f2565}
+
+
+Definition at line 108 of file Net\+Interface.\+hh.
+
+
+
+Referenced by port().
+
+\index{Socket@{Socket}!f\+Socket\+Num@{f\+Socket\+Num}}
+\index{f\+Socket\+Num@{f\+Socket\+Num}!Socket@{Socket}}
+\subsubsection[{f\+Socket\+Num}]{\setlength{\rightskip}{0pt plus 5cm}int Socket\+::f\+Socket\+Num\hspace{0.3cm}{\ttfamily [private]}}\label{classSocket_a917508e5a23efbada8df9a463bc608ce}
+
+
+Definition at line 106 of file Net\+Interface.\+hh.
+
+
+
+Referenced by socket\+Num().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+groupsock/include/{\bf Net\+Interface.\+hh}\end{DoxyCompactItemize}

@@ -1,0 +1,449 @@
+\section{Stream\+State Class Reference}
+\label{classStreamState}\index{Stream\+State@{Stream\+State}}
+
+
+{\ttfamily \#include $<$On\+Demand\+Server\+Media\+Subsession.\+hh$>$}
+
+
+
+Collaboration diagram for Stream\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStreamState__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Stream\+State} ({\bf On\+Demand\+Server\+Media\+Subsession} \&master, {\bf Port} const \&{\bf server\+R\+T\+P\+Port}, {\bf Port} const \&{\bf server\+R\+T\+C\+P\+Port}, {\bf R\+T\+P\+Sink} $\ast${\bf rtp\+Sink}, {\bf Basic\+U\+D\+P\+Sink} $\ast$udp\+Sink, unsigned total\+B\+W, {\bf Framed\+Source} $\ast${\bf media\+Source}, {\bf Groupsock} $\ast$rtp\+G\+S, {\bf Groupsock} $\ast$rtcp\+G\+S)
+\item 
+virtual {\bf $\sim$\+Stream\+State} ()
+\item 
+void {\bf start\+Playing} ({\bf Destinations} $\ast$destinations, unsigned client\+Session\+Id, {\bf Task\+Func} $\ast$rtcp\+R\+R\+Handler, void $\ast$rtcp\+R\+R\+Handler\+Client\+Data, {\bf Server\+Request\+Alternative\+Byte\+Handler} $\ast$server\+Request\+Alternative\+Byte\+Handler, void $\ast$server\+Request\+Alternative\+Byte\+Handler\+Client\+Data)
+\item 
+void {\bf pause} ()
+\item 
+void {\bf send\+R\+T\+C\+P\+App\+Packet} (u\+\_\+int8\+\_\+t subtype, char const $\ast$name, u\+\_\+int8\+\_\+t $\ast$app\+Dependent\+Data, unsigned app\+Dependent\+Data\+Size)
+\item 
+void {\bf end\+Playing} ({\bf Destinations} $\ast$destinations, unsigned client\+Session\+Id)
+\item 
+void {\bf reclaim} ()
+\item 
+unsigned \& {\bf reference\+Count} ()
+\item 
+{\bf Port} const \& {\bf server\+R\+T\+P\+Port} () const 
+\item 
+{\bf Port} const \& {\bf server\+R\+T\+C\+P\+Port} () const 
+\item 
+{\bf R\+T\+P\+Sink} $\ast$ {\bf rtp\+Sink} () const 
+\item 
+{\bf R\+T\+C\+P\+Instance} $\ast$ {\bf rtcp\+Instance} () const 
+\item 
+float {\bf stream\+Duration} () const 
+\item 
+{\bf Framed\+Source} $\ast$ {\bf media\+Source} () const 
+\item 
+float \& {\bf start\+N\+P\+T} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf On\+Demand\+Server\+Media\+Subsession} \& {\bf f\+Master}
+\item 
+{\bf Boolean} {\bf f\+Are\+Currently\+Playing}
+\item 
+unsigned {\bf f\+Reference\+Count}
+\item 
+{\bf Port} {\bf f\+Server\+R\+T\+P\+Port}
+\item 
+{\bf Port} {\bf f\+Server\+R\+T\+C\+P\+Port}
+\item 
+{\bf R\+T\+P\+Sink} $\ast$ {\bf f\+R\+T\+P\+Sink}
+\item 
+{\bf Basic\+U\+D\+P\+Sink} $\ast$ {\bf f\+U\+D\+P\+Sink}
+\item 
+float {\bf f\+Stream\+Duration}
+\item 
+unsigned {\bf f\+Total\+B\+W}
+\item 
+{\bf R\+T\+C\+P\+Instance} $\ast$ {\bf f\+R\+T\+C\+P\+Instance}
+\item 
+{\bf Framed\+Source} $\ast$ {\bf f\+Media\+Source}
+\item 
+float {\bf f\+Start\+N\+P\+T}
+\item 
+{\bf Groupsock} $\ast$ {\bf f\+R\+T\+Pgs}
+\item 
+{\bf Groupsock} $\ast$ {\bf f\+R\+T\+C\+Pgs}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 174 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Stream\+State@{Stream\+State}!Stream\+State@{Stream\+State}}
+\index{Stream\+State@{Stream\+State}!Stream\+State@{Stream\+State}}
+\subsubsection[{Stream\+State(\+On\+Demand\+Server\+Media\+Subsession \&master, Port const \&server\+R\+T\+P\+Port, Port const \&server\+R\+T\+C\+P\+Port, R\+T\+P\+Sink $\ast$rtp\+Sink, Basic\+U\+D\+P\+Sink $\ast$udp\+Sink, unsigned total\+B\+W, Framed\+Source $\ast$media\+Source, Groupsock $\ast$rtp\+G\+S, Groupsock $\ast$rtcp\+G\+S)}]{\setlength{\rightskip}{0pt plus 5cm}Stream\+State\+::\+Stream\+State (
+\begin{DoxyParamCaption}
+\item[{{\bf On\+Demand\+Server\+Media\+Subsession} \&}]{master, }
+\item[{{\bf Port} const \&}]{server\+R\+T\+P\+Port, }
+\item[{{\bf Port} const \&}]{server\+R\+T\+C\+P\+Port, }
+\item[{{\bf R\+T\+P\+Sink} $\ast$}]{rtp\+Sink, }
+\item[{{\bf Basic\+U\+D\+P\+Sink} $\ast$}]{udp\+Sink, }
+\item[{unsigned}]{total\+B\+W, }
+\item[{{\bf Framed\+Source} $\ast$}]{media\+Source, }
+\item[{{\bf Groupsock} $\ast$}]{rtp\+G\+S, }
+\item[{{\bf Groupsock} $\ast$}]{rtcp\+G\+S}
+\end{DoxyParamCaption}
+)}\label{classStreamState_a564d30b9c1b91e6aea1b6fcb47fe3a33}
+\index{Stream\+State@{Stream\+State}!````~Stream\+State@{$\sim$\+Stream\+State}}
+\index{````~Stream\+State@{$\sim$\+Stream\+State}!Stream\+State@{Stream\+State}}
+\subsubsection[{$\sim$\+Stream\+State()}]{\setlength{\rightskip}{0pt plus 5cm}virtual Stream\+State\+::$\sim$\+Stream\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classStreamState_a37f7c157ec0e62ba44ab2afede1c4cee}
+
+
+\subsection{Member Function Documentation}
+\index{Stream\+State@{Stream\+State}!end\+Playing@{end\+Playing}}
+\index{end\+Playing@{end\+Playing}!Stream\+State@{Stream\+State}}
+\subsubsection[{end\+Playing(\+Destinations $\ast$destinations, unsigned client\+Session\+Id)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+State\+::end\+Playing (
+\begin{DoxyParamCaption}
+\item[{{\bf Destinations} $\ast$}]{destinations, }
+\item[{unsigned}]{client\+Session\+Id}
+\end{DoxyParamCaption}
+)}\label{classStreamState_aa29dca1c6cb476ccf5942f1fd69fcbc1}
+\index{Stream\+State@{Stream\+State}!media\+Source@{media\+Source}}
+\index{media\+Source@{media\+Source}!Stream\+State@{Stream\+State}}
+\subsubsection[{media\+Source() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Framed\+Source}$\ast$ Stream\+State\+::media\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classStreamState_aea17410bb8b9e3fbd140dce04170ac7f}
+
+
+Definition at line 203 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+References f\+Media\+Source.
+
+
+\begin{DoxyCode}
+203 \{ \textcolor{keywordflow}{return} fMediaSource; \}
+\end{DoxyCode}
+\index{Stream\+State@{Stream\+State}!pause@{pause}}
+\index{pause@{pause}!Stream\+State@{Stream\+State}}
+\subsubsection[{pause()}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+State\+::pause (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classStreamState_a4712ad82b0a4d93acd5ce039c9c96650}
+\index{Stream\+State@{Stream\+State}!reclaim@{reclaim}}
+\index{reclaim@{reclaim}!Stream\+State@{Stream\+State}}
+\subsubsection[{reclaim()}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+State\+::reclaim (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classStreamState_ad9b14e0a70a3de23a44de37a964da7c7}
+\index{Stream\+State@{Stream\+State}!reference\+Count@{reference\+Count}}
+\index{reference\+Count@{reference\+Count}!Stream\+State@{Stream\+State}}
+\subsubsection[{reference\+Count()}]{\setlength{\rightskip}{0pt plus 5cm}unsigned\& Stream\+State\+::reference\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classStreamState_a9f49ac9197ea3dc89c05c4310c6c581e}
+
+
+Definition at line 193 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+References f\+Reference\+Count.
+
+
+\begin{DoxyCode}
+193 \{ \textcolor{keywordflow}{return} fReferenceCount; \}
+\end{DoxyCode}
+\index{Stream\+State@{Stream\+State}!rtcp\+Instance@{rtcp\+Instance}}
+\index{rtcp\+Instance@{rtcp\+Instance}!Stream\+State@{Stream\+State}}
+\subsubsection[{rtcp\+Instance() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+C\+P\+Instance}$\ast$ Stream\+State\+::rtcp\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classStreamState_ac41b9f6a981a1305951b8fd815d08d4b}
+
+
+Definition at line 199 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+References f\+R\+T\+C\+P\+Instance.
+
+
+\begin{DoxyCode}
+199 \{ \textcolor{keywordflow}{return} fRTCPInstance; \}
+\end{DoxyCode}
+\index{Stream\+State@{Stream\+State}!rtp\+Sink@{rtp\+Sink}}
+\index{rtp\+Sink@{rtp\+Sink}!Stream\+State@{Stream\+State}}
+\subsubsection[{rtp\+Sink() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+P\+Sink}$\ast$ Stream\+State\+::rtp\+Sink (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classStreamState_a0b8b781be7a50db6bb288d69b37f2eea}
+
+
+Definition at line 198 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+References f\+R\+T\+P\+Sink.
+
+
+\begin{DoxyCode}
+198 \{ \textcolor{keywordflow}{return} fRTPSink; \}
+\end{DoxyCode}
+\index{Stream\+State@{Stream\+State}!send\+R\+T\+C\+P\+App\+Packet@{send\+R\+T\+C\+P\+App\+Packet}}
+\index{send\+R\+T\+C\+P\+App\+Packet@{send\+R\+T\+C\+P\+App\+Packet}!Stream\+State@{Stream\+State}}
+\subsubsection[{send\+R\+T\+C\+P\+App\+Packet(u\+\_\+int8\+\_\+t subtype, char const $\ast$name, u\+\_\+int8\+\_\+t $\ast$app\+Dependent\+Data, unsigned app\+Dependent\+Data\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+State\+::send\+R\+T\+C\+P\+App\+Packet (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int8\+\_\+t}]{subtype, }
+\item[{char const $\ast$}]{name, }
+\item[{u\+\_\+int8\+\_\+t $\ast$}]{app\+Dependent\+Data, }
+\item[{unsigned}]{app\+Dependent\+Data\+Size}
+\end{DoxyParamCaption}
+)}\label{classStreamState_a3786239cbdab49d10fc7c7ab3eb00bba}
+\index{Stream\+State@{Stream\+State}!server\+R\+T\+C\+P\+Port@{server\+R\+T\+C\+P\+Port}}
+\index{server\+R\+T\+C\+P\+Port@{server\+R\+T\+C\+P\+Port}!Stream\+State@{Stream\+State}}
+\subsubsection[{server\+R\+T\+C\+P\+Port() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Port} const\& Stream\+State\+::server\+R\+T\+C\+P\+Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classStreamState_a359e4fc5db639d0298c489840aae71ca}
+
+
+Definition at line 196 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+References f\+Server\+R\+T\+C\+P\+Port.
+
+
+\begin{DoxyCode}
+196 \{ \textcolor{keywordflow}{return} fServerRTCPPort; \}
+\end{DoxyCode}
+\index{Stream\+State@{Stream\+State}!server\+R\+T\+P\+Port@{server\+R\+T\+P\+Port}}
+\index{server\+R\+T\+P\+Port@{server\+R\+T\+P\+Port}!Stream\+State@{Stream\+State}}
+\subsubsection[{server\+R\+T\+P\+Port() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Port} const\& Stream\+State\+::server\+R\+T\+P\+Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classStreamState_a0abfc27597839bd612e5e0da9e55c9b1}
+
+
+Definition at line 195 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+References f\+Server\+R\+T\+P\+Port.
+
+
+\begin{DoxyCode}
+195 \{ \textcolor{keywordflow}{return} fServerRTPPort; \}
+\end{DoxyCode}
+\index{Stream\+State@{Stream\+State}!start\+N\+P\+T@{start\+N\+P\+T}}
+\index{start\+N\+P\+T@{start\+N\+P\+T}!Stream\+State@{Stream\+State}}
+\subsubsection[{start\+N\+P\+T()}]{\setlength{\rightskip}{0pt plus 5cm}float\& Stream\+State\+::start\+N\+P\+T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classStreamState_ad51a8f3bb0dc9a4d9d186d9a6ac46e39}
+
+
+Definition at line 204 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+References f\+Start\+N\+P\+T.
+
+
+\begin{DoxyCode}
+204 \{ \textcolor{keywordflow}{return} fStartNPT; \}
+\end{DoxyCode}
+\index{Stream\+State@{Stream\+State}!start\+Playing@{start\+Playing}}
+\index{start\+Playing@{start\+Playing}!Stream\+State@{Stream\+State}}
+\subsubsection[{start\+Playing(\+Destinations $\ast$destinations, unsigned client\+Session\+Id, Task\+Func $\ast$rtcp\+R\+R\+Handler, void $\ast$rtcp\+R\+R\+Handler\+Client\+Data, Server\+Request\+Alternative\+Byte\+Handler $\ast$server\+Request\+Alternative\+Byte\+Handler, void $\ast$server\+Request\+Alternative\+Byte\+Handler\+Client\+Data)}]{\setlength{\rightskip}{0pt plus 5cm}void Stream\+State\+::start\+Playing (
+\begin{DoxyParamCaption}
+\item[{{\bf Destinations} $\ast$}]{destinations, }
+\item[{unsigned}]{client\+Session\+Id, }
+\item[{{\bf Task\+Func} $\ast$}]{rtcp\+R\+R\+Handler, }
+\item[{void $\ast$}]{rtcp\+R\+R\+Handler\+Client\+Data, }
+\item[{{\bf Server\+Request\+Alternative\+Byte\+Handler} $\ast$}]{server\+Request\+Alternative\+Byte\+Handler, }
+\item[{void $\ast$}]{server\+Request\+Alternative\+Byte\+Handler\+Client\+Data}
+\end{DoxyParamCaption}
+)}\label{classStreamState_aa680911b20fd4eba5124805faf483c0a}
+\index{Stream\+State@{Stream\+State}!stream\+Duration@{stream\+Duration}}
+\index{stream\+Duration@{stream\+Duration}!Stream\+State@{Stream\+State}}
+\subsubsection[{stream\+Duration() const }]{\setlength{\rightskip}{0pt plus 5cm}float Stream\+State\+::stream\+Duration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classStreamState_a0479b259f14fbbae14cafbec1993e625}
+
+
+Definition at line 201 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+References f\+Stream\+Duration.
+
+
+\begin{DoxyCode}
+201 \{ \textcolor{keywordflow}{return} fStreamDuration; \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{Stream\+State@{Stream\+State}!f\+Are\+Currently\+Playing@{f\+Are\+Currently\+Playing}}
+\index{f\+Are\+Currently\+Playing@{f\+Are\+Currently\+Playing}!Stream\+State@{Stream\+State}}
+\subsubsection[{f\+Are\+Currently\+Playing}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} Stream\+State\+::f\+Are\+Currently\+Playing\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamState_a3925a0326cc663be2f5b385911454c9c}
+
+
+Definition at line 208 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+\index{Stream\+State@{Stream\+State}!f\+Master@{f\+Master}}
+\index{f\+Master@{f\+Master}!Stream\+State@{Stream\+State}}
+\subsubsection[{f\+Master}]{\setlength{\rightskip}{0pt plus 5cm}{\bf On\+Demand\+Server\+Media\+Subsession}\& Stream\+State\+::f\+Master\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamState_adba07891824b4cbb48ee9a37bdc3e0d1}
+
+
+Definition at line 207 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+\index{Stream\+State@{Stream\+State}!f\+Media\+Source@{f\+Media\+Source}}
+\index{f\+Media\+Source@{f\+Media\+Source}!Stream\+State@{Stream\+State}}
+\subsubsection[{f\+Media\+Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Framed\+Source}$\ast$ Stream\+State\+::f\+Media\+Source\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamState_a570c9ef21f57b9711d4e6354b8ec016d}
+
+
+Definition at line 220 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+Referenced by media\+Source().
+
+\index{Stream\+State@{Stream\+State}!f\+Reference\+Count@{f\+Reference\+Count}}
+\index{f\+Reference\+Count@{f\+Reference\+Count}!Stream\+State@{Stream\+State}}
+\subsubsection[{f\+Reference\+Count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+State\+::f\+Reference\+Count\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamState_a34b99f7c2729ce52c321e2344c3d5122}
+
+
+Definition at line 209 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+Referenced by reference\+Count().
+
+\index{Stream\+State@{Stream\+State}!f\+R\+T\+C\+Pgs@{f\+R\+T\+C\+Pgs}}
+\index{f\+R\+T\+C\+Pgs@{f\+R\+T\+C\+Pgs}!Stream\+State@{Stream\+State}}
+\subsubsection[{f\+R\+T\+C\+Pgs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Groupsock}$\ast$ Stream\+State\+::f\+R\+T\+C\+Pgs\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamState_a7703bbe48caa0b45b886a1512e6f010b}
+
+
+Definition at line 224 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+\index{Stream\+State@{Stream\+State}!f\+R\+T\+C\+P\+Instance@{f\+R\+T\+C\+P\+Instance}}
+\index{f\+R\+T\+C\+P\+Instance@{f\+R\+T\+C\+P\+Instance}!Stream\+State@{Stream\+State}}
+\subsubsection[{f\+R\+T\+C\+P\+Instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+C\+P\+Instance}$\ast$ Stream\+State\+::f\+R\+T\+C\+P\+Instance\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamState_af8e6c3733115c25680f2b4850186134d}
+
+
+Definition at line 218 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+Referenced by rtcp\+Instance().
+
+\index{Stream\+State@{Stream\+State}!f\+R\+T\+Pgs@{f\+R\+T\+Pgs}}
+\index{f\+R\+T\+Pgs@{f\+R\+T\+Pgs}!Stream\+State@{Stream\+State}}
+\subsubsection[{f\+R\+T\+Pgs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Groupsock}$\ast$ Stream\+State\+::f\+R\+T\+Pgs\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamState_a9f95f5a2e1ce38242185f32831971b87}
+
+
+Definition at line 223 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+\index{Stream\+State@{Stream\+State}!f\+R\+T\+P\+Sink@{f\+R\+T\+P\+Sink}}
+\index{f\+R\+T\+P\+Sink@{f\+R\+T\+P\+Sink}!Stream\+State@{Stream\+State}}
+\subsubsection[{f\+R\+T\+P\+Sink}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+P\+Sink}$\ast$ Stream\+State\+::f\+R\+T\+P\+Sink\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamState_aac62eedf74ffa34e28b73d0a25b48929}
+
+
+Definition at line 213 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+Referenced by rtp\+Sink().
+
+\index{Stream\+State@{Stream\+State}!f\+Server\+R\+T\+C\+P\+Port@{f\+Server\+R\+T\+C\+P\+Port}}
+\index{f\+Server\+R\+T\+C\+P\+Port@{f\+Server\+R\+T\+C\+P\+Port}!Stream\+State@{Stream\+State}}
+\subsubsection[{f\+Server\+R\+T\+C\+P\+Port}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Port} Stream\+State\+::f\+Server\+R\+T\+C\+P\+Port\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamState_a5f94e17ecd26e76cd42be968164983d7}
+
+
+Definition at line 211 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+Referenced by server\+R\+T\+C\+P\+Port().
+
+\index{Stream\+State@{Stream\+State}!f\+Server\+R\+T\+P\+Port@{f\+Server\+R\+T\+P\+Port}}
+\index{f\+Server\+R\+T\+P\+Port@{f\+Server\+R\+T\+P\+Port}!Stream\+State@{Stream\+State}}
+\subsubsection[{f\+Server\+R\+T\+P\+Port}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Port} Stream\+State\+::f\+Server\+R\+T\+P\+Port\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamState_a6ee5725f3b01b00e56a94e56b5317095}
+
+
+Definition at line 211 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+Referenced by server\+R\+T\+P\+Port().
+
+\index{Stream\+State@{Stream\+State}!f\+Start\+N\+P\+T@{f\+Start\+N\+P\+T}}
+\index{f\+Start\+N\+P\+T@{f\+Start\+N\+P\+T}!Stream\+State@{Stream\+State}}
+\subsubsection[{f\+Start\+N\+P\+T}]{\setlength{\rightskip}{0pt plus 5cm}float Stream\+State\+::f\+Start\+N\+P\+T\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamState_ab8b4ef89e753764d601ad642ddccc57b}
+
+
+Definition at line 221 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+Referenced by start\+N\+P\+T().
+
+\index{Stream\+State@{Stream\+State}!f\+Stream\+Duration@{f\+Stream\+Duration}}
+\index{f\+Stream\+Duration@{f\+Stream\+Duration}!Stream\+State@{Stream\+State}}
+\subsubsection[{f\+Stream\+Duration}]{\setlength{\rightskip}{0pt plus 5cm}float Stream\+State\+::f\+Stream\+Duration\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamState_ae686c1a352dc63f8567a80d0abc1ac6a}
+
+
+Definition at line 216 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+Referenced by stream\+Duration().
+
+\index{Stream\+State@{Stream\+State}!f\+Total\+B\+W@{f\+Total\+B\+W}}
+\index{f\+Total\+B\+W@{f\+Total\+B\+W}!Stream\+State@{Stream\+State}}
+\subsubsection[{f\+Total\+B\+W}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Stream\+State\+::f\+Total\+B\+W\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamState_a6670c71b90010ea566439eb61d109c78}
+
+
+Definition at line 217 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+\index{Stream\+State@{Stream\+State}!f\+U\+D\+P\+Sink@{f\+U\+D\+P\+Sink}}
+\index{f\+U\+D\+P\+Sink@{f\+U\+D\+P\+Sink}!Stream\+State@{Stream\+State}}
+\subsubsection[{f\+U\+D\+P\+Sink}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Basic\+U\+D\+P\+Sink}$\ast$ Stream\+State\+::f\+U\+D\+P\+Sink\hspace{0.3cm}{\ttfamily [private]}}\label{classStreamState_ad438b91aa56989fa231fcf7cc2c656b8}
+
+
+Definition at line 214 of file On\+Demand\+Server\+Media\+Subsession.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf On\+Demand\+Server\+Media\+Subsession.\+hh}\end{DoxyCompactItemize}

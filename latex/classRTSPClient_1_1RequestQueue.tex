@@ -1,0 +1,154 @@
+\section{R\+T\+S\+P\+Client\+:\+:Request\+Queue Class Reference}
+\label{classRTSPClient_1_1RequestQueue}\index{R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}}
+
+
+Collaboration diagram for R\+T\+S\+P\+Client\+:\+:Request\+Queue\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRTSPClient_1_1RequestQueue__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Request\+Queue} ()
+\item 
+{\bf Request\+Queue} ({\bf Request\+Queue} \&orig\+Queue)
+\item 
+virtual {\bf $\sim$\+Request\+Queue} ()
+\item 
+void {\bf enqueue} ({\bf Request\+Record} $\ast$request)
+\item 
+{\bf Request\+Record} $\ast$ {\bf dequeue} ()
+\item 
+void {\bf put\+At\+Head} ({\bf Request\+Record} $\ast$request)
+\item 
+{\bf Request\+Record} $\ast$ {\bf find\+By\+C\+Seq} (unsigned cseq)
+\item 
+{\bf Boolean} {\bf is\+Empty} () const 
+\item 
+void {\bf reset} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Request\+Record} $\ast$ {\bf f\+Head}
+\item 
+{\bf Request\+Record} $\ast$ {\bf f\+Tail}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 254 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}!Request\+Queue@{Request\+Queue}}
+\index{Request\+Queue@{Request\+Queue}!R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}}
+\subsubsection[{Request\+Queue()}]{\setlength{\rightskip}{0pt plus 5cm}R\+T\+S\+P\+Client\+::\+Request\+Queue\+::\+Request\+Queue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classRTSPClient_1_1RequestQueue_a76caaa531add21e318f5ea83e2fdb248}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}!Request\+Queue@{Request\+Queue}}
+\index{Request\+Queue@{Request\+Queue}!R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}}
+\subsubsection[{Request\+Queue(\+Request\+Queue \&orig\+Queue)}]{\setlength{\rightskip}{0pt plus 5cm}R\+T\+S\+P\+Client\+::\+Request\+Queue\+::\+Request\+Queue (
+\begin{DoxyParamCaption}
+\item[{{\bf Request\+Queue} \&}]{orig\+Queue}
+\end{DoxyParamCaption}
+)}\label{classRTSPClient_1_1RequestQueue_a712b7a1b43868c7c2fa940758923e789}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}!````~Request\+Queue@{$\sim$\+Request\+Queue}}
+\index{````~Request\+Queue@{$\sim$\+Request\+Queue}!R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}}
+\subsubsection[{$\sim$\+Request\+Queue()}]{\setlength{\rightskip}{0pt plus 5cm}virtual R\+T\+S\+P\+Client\+::\+Request\+Queue\+::$\sim$\+Request\+Queue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classRTSPClient_1_1RequestQueue_a8a7eed992c5b1c505490a1b8547102cb}
+
+
+\subsection{Member Function Documentation}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}}
+\subsubsection[{dequeue()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Request\+Record}$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Queue\+::dequeue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classRTSPClient_1_1RequestQueue_a2d66e90e8254682d103dd1fb448c7ff9}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}}
+\subsubsection[{enqueue(\+Request\+Record $\ast$request)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Client\+::\+Request\+Queue\+::enqueue (
+\begin{DoxyParamCaption}
+\item[{{\bf Request\+Record} $\ast$}]{request}
+\end{DoxyParamCaption}
+)}\label{classRTSPClient_1_1RequestQueue_a03b23b4595eca3f07f9ad378194698fd}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}!find\+By\+C\+Seq@{find\+By\+C\+Seq}}
+\index{find\+By\+C\+Seq@{find\+By\+C\+Seq}!R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}}
+\subsubsection[{find\+By\+C\+Seq(unsigned cseq)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Request\+Record}$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Queue\+::find\+By\+C\+Seq (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{cseq}
+\end{DoxyParamCaption}
+)}\label{classRTSPClient_1_1RequestQueue_a39a70f0ea3b319489aad675b47b09354}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}}
+\subsubsection[{is\+Empty() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} R\+T\+S\+P\+Client\+::\+Request\+Queue\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTSPClient_1_1RequestQueue_ad0cbf1646ecc012f15c0f01fb23a4db8}
+
+
+Definition at line 264 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+References f\+Head, and N\+U\+L\+L.
+
+
+\begin{DoxyCode}
+264 \{ \textcolor{keywordflow}{return} fHead == NULL; \}
+\end{DoxyCode}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}!put\+At\+Head@{put\+At\+Head}}
+\index{put\+At\+Head@{put\+At\+Head}!R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}}
+\subsubsection[{put\+At\+Head(\+Request\+Record $\ast$request)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Client\+::\+Request\+Queue\+::put\+At\+Head (
+\begin{DoxyParamCaption}
+\item[{{\bf Request\+Record} $\ast$}]{request}
+\end{DoxyParamCaption}
+)}\label{classRTSPClient_1_1RequestQueue_a3898f23fab222137d16c144cabb7d456}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}!reset@{reset}}
+\index{reset@{reset}!R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}}
+\subsubsection[{reset()}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+S\+P\+Client\+::\+Request\+Queue\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classRTSPClient_1_1RequestQueue_aa49eb6f0013e70fb3b29f46fdb686845}
+
+
+\subsection{Field Documentation}
+\index{R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}!f\+Head@{f\+Head}}
+\index{f\+Head@{f\+Head}!R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}}
+\subsubsection[{f\+Head}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Request\+Record}$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Queue\+::f\+Head\hspace{0.3cm}{\ttfamily [private]}}\label{classRTSPClient_1_1RequestQueue_ae255a4885746ea098052d43913e966a3}
+
+
+Definition at line 268 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+Referenced by is\+Empty().
+
+\index{R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}!f\+Tail@{f\+Tail}}
+\index{f\+Tail@{f\+Tail}!R\+T\+S\+P\+Client\+::\+Request\+Queue@{R\+T\+S\+P\+Client\+::\+Request\+Queue}}
+\subsubsection[{f\+Tail}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Request\+Record}$\ast$ R\+T\+S\+P\+Client\+::\+Request\+Queue\+::f\+Tail\hspace{0.3cm}{\ttfamily [private]}}\label{classRTSPClient_1_1RequestQueue_abcd693dd5d0a7b9770836f493abbf6e7}
+
+
+Definition at line 269 of file R\+T\+S\+P\+Client.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf R\+T\+S\+P\+Client.\+hh}\end{DoxyCompactItemize}

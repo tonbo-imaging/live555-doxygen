@@ -1,0 +1,188 @@
+\section{R\+T\+P\+Transmission\+Stats\+D\+B Class Reference}
+\label{classRTPTransmissionStatsDB}\index{R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}}
+
+
+{\ttfamily \#include $<$R\+T\+P\+Sink.\+hh$>$}
+
+
+
+Collaboration diagram for R\+T\+P\+Transmission\+Stats\+D\+B\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRTPTransmissionStatsDB__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf num\+Receivers} () const 
+\item 
+void {\bf note\+Incoming\+R\+R} (u\+\_\+int32\+\_\+t S\+S\+R\+C, struct sockaddr\+\_\+in const \&last\+From\+Address, unsigned loss\+Stats, unsigned last\+Packet\+Num\+Received, unsigned jitter, unsigned last\+S\+R\+Time, unsigned diff\+S\+R\+\_\+\+R\+R\+Time)
+\item 
+void {\bf remove\+Record} (u\+\_\+int32\+\_\+t S\+S\+R\+C)
+\item 
+{\bf R\+T\+P\+Transmission\+Stats} $\ast$ {\bf lookup} (u\+\_\+int32\+\_\+t S\+S\+R\+C) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf R\+T\+P\+Transmission\+Stats\+D\+B} ({\bf R\+T\+P\+Sink} \&rtp\+Sink)
+\item 
+virtual {\bf $\sim$\+R\+T\+P\+Transmission\+Stats\+D\+B} ()
+\item 
+void {\bf add} (u\+\_\+int32\+\_\+t S\+S\+R\+C, {\bf R\+T\+P\+Transmission\+Stats} $\ast$stats)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf f\+Num\+Receivers}
+\item 
+{\bf R\+T\+P\+Sink} \& {\bf f\+Our\+R\+T\+P\+Sink}
+\item 
+{\bf Hash\+Table} $\ast$ {\bf f\+Table}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf R\+T\+P\+Sink}
+\item 
+class {\bf Iterator}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 137 of file R\+T\+P\+Sink.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}!R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}}
+\index{R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}!R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}}
+\subsubsection[{R\+T\+P\+Transmission\+Stats\+D\+B(\+R\+T\+P\+Sink \&rtp\+Sink)}]{\setlength{\rightskip}{0pt plus 5cm}R\+T\+P\+Transmission\+Stats\+D\+B\+::\+R\+T\+P\+Transmission\+Stats\+D\+B (
+\begin{DoxyParamCaption}
+\item[{{\bf R\+T\+P\+Sink} \&}]{rtp\+Sink}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStatsDB_a66b4587750c228090c2264addfe46536}
+\index{R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}!````~R\+T\+P\+Transmission\+Stats\+D\+B@{$\sim$\+R\+T\+P\+Transmission\+Stats\+D\+B}}
+\index{````~R\+T\+P\+Transmission\+Stats\+D\+B@{$\sim$\+R\+T\+P\+Transmission\+Stats\+D\+B}!R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}}
+\subsubsection[{$\sim$\+R\+T\+P\+Transmission\+Stats\+D\+B()}]{\setlength{\rightskip}{0pt plus 5cm}virtual R\+T\+P\+Transmission\+Stats\+D\+B\+::$\sim$\+R\+T\+P\+Transmission\+Stats\+D\+B (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classRTPTransmissionStatsDB_a84ab88ce2ee68c81004ef5e571127a05}
+
+
+\subsection{Member Function Documentation}
+\index{R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}!add@{add}}
+\index{add@{add}!R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}}
+\subsubsection[{add(u\+\_\+int32\+\_\+t S\+S\+R\+C, R\+T\+P\+Transmission\+Stats $\ast$stats)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Transmission\+Stats\+D\+B\+::add (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t}]{S\+S\+R\+C, }
+\item[{{\bf R\+T\+P\+Transmission\+Stats} $\ast$}]{stats}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStatsDB_a81ba598a1880e8effafceca3ba4765e0}
+\index{R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}!lookup@{lookup}}
+\index{lookup@{lookup}!R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}}
+\subsubsection[{lookup(u\+\_\+int32\+\_\+t S\+S\+R\+C) const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+P\+Transmission\+Stats}$\ast$ R\+T\+P\+Transmission\+Stats\+D\+B\+::lookup (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t}]{S\+S\+R\+C}
+\end{DoxyParamCaption}
+) const}\label{classRTPTransmissionStatsDB_ad6a06ccb69655bd7c91fe8a3f8e3a06b}
+\index{R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}!note\+Incoming\+R\+R@{note\+Incoming\+R\+R}}
+\index{note\+Incoming\+R\+R@{note\+Incoming\+R\+R}!R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}}
+\subsubsection[{note\+Incoming\+R\+R(u\+\_\+int32\+\_\+t S\+S\+R\+C, struct sockaddr\+\_\+in const \&last\+From\+Address, unsigned loss\+Stats, unsigned last\+Packet\+Num\+Received, unsigned jitter, unsigned last\+S\+R\+Time, unsigned diff\+S\+R\+\_\+\+R\+R\+Time)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Transmission\+Stats\+D\+B\+::note\+Incoming\+R\+R (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t}]{S\+S\+R\+C, }
+\item[{struct sockaddr\+\_\+in const \&}]{last\+From\+Address, }
+\item[{unsigned}]{loss\+Stats, }
+\item[{unsigned}]{last\+Packet\+Num\+Received, }
+\item[{unsigned}]{jitter, }
+\item[{unsigned}]{last\+S\+R\+Time, }
+\item[{unsigned}]{diff\+S\+R\+\_\+\+R\+R\+Time}
+\end{DoxyParamCaption}
+)}\label{classRTPTransmissionStatsDB_af531a7ee99584a53a35269fd6c224b1a}
+\index{R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}!num\+Receivers@{num\+Receivers}}
+\index{num\+Receivers@{num\+Receivers}!R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}}
+\subsubsection[{num\+Receivers() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Transmission\+Stats\+D\+B\+::num\+Receivers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classRTPTransmissionStatsDB_a28bcc31b16cd19577e73a3b30617dfd9}
+
+
+Definition at line 139 of file R\+T\+P\+Sink.\+hh.
+
+
+
+References f\+Num\+Receivers.
+
+
+\begin{DoxyCode}
+139 \{ \textcolor{keywordflow}{return} fNumReceivers; \}
+\end{DoxyCode}
+\index{R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}!remove\+Record@{remove\+Record}}
+\index{remove\+Record@{remove\+Record}!R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}}
+\subsubsection[{remove\+Record(u\+\_\+int32\+\_\+t S\+S\+R\+C)}]{\setlength{\rightskip}{0pt plus 5cm}void R\+T\+P\+Transmission\+Stats\+D\+B\+::remove\+Record (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+int32\+\_\+t}]{S\+S\+R\+C}
+\end{DoxyParamCaption}
+)}\label{classRTPTransmissionStatsDB_adf7bdf6deaf70add835afceadfb5a660}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}}
+\subsubsection[{Iterator}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Iterator}\hspace{0.3cm}{\ttfamily [friend]}}\label{classRTPTransmissionStatsDB_a9830fc407400559db7e7783cc10a9394}
+
+
+Definition at line 172 of file R\+T\+P\+Sink.\+hh.
+
+\index{R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}!R\+T\+P\+Sink@{R\+T\+P\+Sink}}
+\index{R\+T\+P\+Sink@{R\+T\+P\+Sink}!R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}}
+\subsubsection[{R\+T\+P\+Sink}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf R\+T\+P\+Sink}\hspace{0.3cm}{\ttfamily [friend]}}\label{classRTPTransmissionStatsDB_a2cb70d9710e623fedaaff5085bffcd5c}
+
+
+Definition at line 164 of file R\+T\+P\+Sink.\+hh.
+
+
+
+\subsection{Field Documentation}
+\index{R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}!f\+Num\+Receivers@{f\+Num\+Receivers}}
+\index{f\+Num\+Receivers@{f\+Num\+Receivers}!R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}}
+\subsubsection[{f\+Num\+Receivers}]{\setlength{\rightskip}{0pt plus 5cm}unsigned R\+T\+P\+Transmission\+Stats\+D\+B\+::f\+Num\+Receivers\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStatsDB_a8b61d7864e72bb2fd3b92bc610456f06}
+
+
+Definition at line 173 of file R\+T\+P\+Sink.\+hh.
+
+
+
+Referenced by num\+Receivers().
+
+\index{R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}!f\+Our\+R\+T\+P\+Sink@{f\+Our\+R\+T\+P\+Sink}}
+\index{f\+Our\+R\+T\+P\+Sink@{f\+Our\+R\+T\+P\+Sink}!R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}}
+\subsubsection[{f\+Our\+R\+T\+P\+Sink}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+T\+P\+Sink}\& R\+T\+P\+Transmission\+Stats\+D\+B\+::f\+Our\+R\+T\+P\+Sink\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStatsDB_a6097b8a9e9962d6abc2e3c28733c71b8}
+
+
+Definition at line 174 of file R\+T\+P\+Sink.\+hh.
+
+\index{R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}!f\+Table@{f\+Table}}
+\index{f\+Table@{f\+Table}!R\+T\+P\+Transmission\+Stats\+D\+B@{R\+T\+P\+Transmission\+Stats\+D\+B}}
+\subsubsection[{f\+Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Hash\+Table}$\ast$ R\+T\+P\+Transmission\+Stats\+D\+B\+::f\+Table\hspace{0.3cm}{\ttfamily [private]}}\label{classRTPTransmissionStatsDB_a098a40918bdfdf82337cfca577006c9f}
+
+
+Definition at line 175 of file R\+T\+P\+Sink.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/include/{\bf R\+T\+P\+Sink.\+hh}\end{DoxyCompactItemize}

@@ -1,0 +1,367 @@
+\section{M\+P3\+Stream\+State Class Reference}
+\label{classMP3StreamState}\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+
+
+{\ttfamily \#include $<$M\+P3\+Stream\+State.\+hh$>$}
+
+
+
+Collaboration diagram for M\+P3\+Stream\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classMP3StreamState__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf M\+P3\+Stream\+State} ({\bf Usage\+Environment} \&env)
+\item 
+virtual {\bf $\sim$\+M\+P3\+Stream\+State} ()
+\item 
+void {\bf assign\+Stream} (F\+I\+L\+E $\ast$fid, unsigned {\bf file\+Size})
+\item 
+unsigned {\bf find\+Next\+Header} (struct timeval \&presentation\+Time)
+\item 
+{\bf Boolean} {\bf read\+Frame} (unsigned char $\ast$out\+Buf, unsigned out\+Buf\+Size, unsigned \&result\+Frame\+Size, unsigned \&result\+Duration\+In\+Microseconds)
+\item 
+void {\bf get\+Attributes} (char $\ast$buffer, unsigned buffer\+Size) const 
+\item 
+float {\bf file\+Play\+Time} () const 
+\item 
+unsigned {\bf file\+Size} () const 
+\item 
+void {\bf set\+Presentation\+Time\+Scale} (unsigned scale)
+\item 
+unsigned {\bf get\+Byte\+Number\+From\+Position\+Fraction} (float fraction)
+\item 
+void {\bf seek\+Within\+File} (unsigned seek\+Byte\+Number)
+\item 
+void {\bf check\+For\+Xing\+Header} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf read\+From\+Stream} (unsigned char $\ast$buf, unsigned num\+Chars)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf M\+P3\+Frame\+Params} \& {\bf fr} ()
+\item 
+{\bf M\+P3\+Frame\+Params} const \& {\bf fr} () const 
+\item 
+struct timeval {\bf current\+Frame\+Play\+Time} () const 
+\item 
+{\bf Boolean} {\bf find\+Next\+Frame} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Usage\+Environment} \& {\bf f\+Env}
+\item 
+F\+I\+L\+E $\ast$ {\bf f\+Fid}
+\item 
+{\bf Boolean} {\bf f\+Fid\+Is\+Really\+A\+Socket}
+\item 
+unsigned {\bf f\+File\+Size}
+\item 
+unsigned {\bf f\+Num\+Frames\+In\+File}
+\item 
+unsigned {\bf f\+Presentation\+Time\+Scale}
+\item 
+{\bf Boolean} {\bf f\+Is\+V\+B\+R}
+\item 
+{\bf Boolean} {\bf f\+Has\+Xing\+T\+O\+C}
+\item 
+u\+\_\+int8\+\_\+t {\bf f\+Xing\+T\+O\+C} [{\bf X\+I\+N\+G\+\_\+\+T\+O\+C\+\_\+\+L\+E\+N\+G\+T\+H}]
+\item 
+{\bf M\+P3\+Frame\+Params} {\bf f\+Current\+Frame}
+\item 
+struct timeval {\bf f\+Next\+Frame\+Presentation\+Time}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 41 of file M\+P3\+Stream\+State.\+hh.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{M\+P3\+Stream\+State(\+Usage\+Environment \&env)}]{\setlength{\rightskip}{0pt plus 5cm}M\+P3\+Stream\+State\+::\+M\+P3\+Stream\+State (
+\begin{DoxyParamCaption}
+\item[{{\bf Usage\+Environment} \&}]{env}
+\end{DoxyParamCaption}
+)}\label{classMP3StreamState_adc749cb557192e7758bb9e3255572319}
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!````~M\+P3\+Stream\+State@{$\sim$\+M\+P3\+Stream\+State}}
+\index{````~M\+P3\+Stream\+State@{$\sim$\+M\+P3\+Stream\+State}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{$\sim$\+M\+P3\+Stream\+State()}]{\setlength{\rightskip}{0pt plus 5cm}virtual M\+P3\+Stream\+State\+::$\sim$\+M\+P3\+Stream\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classMP3StreamState_a87930b4e68b73dfbf16e5154d92b2ee0}
+
+
+\subsection{Member Function Documentation}
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!assign\+Stream@{assign\+Stream}}
+\index{assign\+Stream@{assign\+Stream}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{assign\+Stream(\+F\+I\+L\+E $\ast$fid, unsigned file\+Size)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P3\+Stream\+State\+::assign\+Stream (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{fid, }
+\item[{unsigned}]{file\+Size}
+\end{DoxyParamCaption}
+)}\label{classMP3StreamState_af7f9c9bec0a1dee2ec150d784b062de1}
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!check\+For\+Xing\+Header@{check\+For\+Xing\+Header}}
+\index{check\+For\+Xing\+Header@{check\+For\+Xing\+Header}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{check\+For\+Xing\+Header()}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P3\+Stream\+State\+::check\+For\+Xing\+Header (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classMP3StreamState_a848436b807b89213cac848630e531092}
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!current\+Frame\+Play\+Time@{current\+Frame\+Play\+Time}}
+\index{current\+Frame\+Play\+Time@{current\+Frame\+Play\+Time}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{current\+Frame\+Play\+Time() const }]{\setlength{\rightskip}{0pt plus 5cm}struct timeval M\+P3\+Stream\+State\+::current\+Frame\+Play\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3StreamState_ae4f3905f6cb1e1bd6d9b3a0e56a0abcd}
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!file\+Play\+Time@{file\+Play\+Time}}
+\index{file\+Play\+Time@{file\+Play\+Time}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{file\+Play\+Time() const }]{\setlength{\rightskip}{0pt plus 5cm}float M\+P3\+Stream\+State\+::file\+Play\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classMP3StreamState_a06cc9d338ba9aba8a2cd737309f4a775}
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!file\+Size@{file\+Size}}
+\index{file\+Size@{file\+Size}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{file\+Size() const }]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Stream\+State\+::file\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classMP3StreamState_abf11c91c5151fd74060bf75215afb60f}
+
+
+Definition at line 57 of file M\+P3\+Stream\+State.\+hh.
+
+
+
+References f\+File\+Size.
+
+
+\begin{DoxyCode}
+57 \{ \textcolor{keywordflow}{return} fFileSize; \}
+\end{DoxyCode}
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!find\+Next\+Frame@{find\+Next\+Frame}}
+\index{find\+Next\+Frame@{find\+Next\+Frame}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{find\+Next\+Frame()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P3\+Stream\+State\+::find\+Next\+Frame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3StreamState_a6b8f30bc77c25631f206a03ee0eb82d1}
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!find\+Next\+Header@{find\+Next\+Header}}
+\index{find\+Next\+Header@{find\+Next\+Header}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{find\+Next\+Header(struct timeval \&presentation\+Time)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Stream\+State\+::find\+Next\+Header (
+\begin{DoxyParamCaption}
+\item[{struct timeval \&}]{presentation\+Time}
+\end{DoxyParamCaption}
+)}\label{classMP3StreamState_aa2d77cd5122d73ceb358594e7bb62f49}
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!fr@{fr}}
+\index{fr@{fr}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{fr()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+P3\+Frame\+Params}\& M\+P3\+Stream\+State\+::fr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classMP3StreamState_a0a06f34f8ab2e9b6155d6c55328d4581}
+
+
+Definition at line 68 of file M\+P3\+Stream\+State.\+hh.
+
+
+
+References f\+Current\+Frame.
+
+
+\begin{DoxyCode}
+68 \{\textcolor{keywordflow}{return} fCurrentFrame;\}
+\end{DoxyCode}
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!fr@{fr}}
+\index{fr@{fr}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{fr() const }]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+P3\+Frame\+Params} const\& M\+P3\+Stream\+State\+::fr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classMP3StreamState_ae755ffa2ee296b013382f7349e4410f2}
+
+
+Definition at line 69 of file M\+P3\+Stream\+State.\+hh.
+
+
+
+References f\+Current\+Frame.
+
+
+\begin{DoxyCode}
+69 \{\textcolor{keywordflow}{return} fCurrentFrame;\}
+\end{DoxyCode}
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!get\+Attributes@{get\+Attributes}}
+\index{get\+Attributes@{get\+Attributes}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{get\+Attributes(char $\ast$buffer, unsigned buffer\+Size) const }]{\setlength{\rightskip}{0pt plus 5cm}void M\+P3\+Stream\+State\+::get\+Attributes (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{buffer, }
+\item[{unsigned}]{buffer\+Size}
+\end{DoxyParamCaption}
+) const}\label{classMP3StreamState_a4d6a02af1e7ebaf31fdf671aade8678d}
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!get\+Byte\+Number\+From\+Position\+Fraction@{get\+Byte\+Number\+From\+Position\+Fraction}}
+\index{get\+Byte\+Number\+From\+Position\+Fraction@{get\+Byte\+Number\+From\+Position\+Fraction}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{get\+Byte\+Number\+From\+Position\+Fraction(float fraction)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Stream\+State\+::get\+Byte\+Number\+From\+Position\+Fraction (
+\begin{DoxyParamCaption}
+\item[{float}]{fraction}
+\end{DoxyParamCaption}
+)}\label{classMP3StreamState_ab1343793337c4d74159e1b0dfc2365aa}
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!read\+Frame@{read\+Frame}}
+\index{read\+Frame@{read\+Frame}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{read\+Frame(unsigned char $\ast$out\+Buf, unsigned out\+Buf\+Size, unsigned \&result\+Frame\+Size, unsigned \&result\+Duration\+In\+Microseconds)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P3\+Stream\+State\+::read\+Frame (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{out\+Buf, }
+\item[{unsigned}]{out\+Buf\+Size, }
+\item[{unsigned \&}]{result\+Frame\+Size, }
+\item[{unsigned \&}]{result\+Duration\+In\+Microseconds}
+\end{DoxyParamCaption}
+)}\label{classMP3StreamState_aa3ecbacbf6b461decd548f271019db25}
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!read\+From\+Stream@{read\+From\+Stream}}
+\index{read\+From\+Stream@{read\+From\+Stream}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{read\+From\+Stream(unsigned char $\ast$buf, unsigned num\+Chars)}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Stream\+State\+::read\+From\+Stream (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{buf, }
+\item[{unsigned}]{num\+Chars}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classMP3StreamState_a1e7ab79b6e72af45ddfddc178df0f7ca}
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!seek\+Within\+File@{seek\+Within\+File}}
+\index{seek\+Within\+File@{seek\+Within\+File}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{seek\+Within\+File(unsigned seek\+Byte\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P3\+Stream\+State\+::seek\+Within\+File (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{seek\+Byte\+Number}
+\end{DoxyParamCaption}
+)}\label{classMP3StreamState_aacbd07580567a6373882b85a2a559e7e}
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!set\+Presentation\+Time\+Scale@{set\+Presentation\+Time\+Scale}}
+\index{set\+Presentation\+Time\+Scale@{set\+Presentation\+Time\+Scale}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{set\+Presentation\+Time\+Scale(unsigned scale)}]{\setlength{\rightskip}{0pt plus 5cm}void M\+P3\+Stream\+State\+::set\+Presentation\+Time\+Scale (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{scale}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classMP3StreamState_a9d16a81d963ddbe05290df9095d250b0}
+
+
+Definition at line 58 of file M\+P3\+Stream\+State.\+hh.
+
+
+
+References f\+Presentation\+Time\+Scale.
+
+
+\begin{DoxyCode}
+58 \{ fPresentationTimeScale = scale; \}
+\end{DoxyCode}
+
+
+\subsection{Field Documentation}
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!f\+Current\+Frame@{f\+Current\+Frame}}
+\index{f\+Current\+Frame@{f\+Current\+Frame}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{f\+Current\+Frame}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+P3\+Frame\+Params} M\+P3\+Stream\+State\+::f\+Current\+Frame\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3StreamState_a199e5646630948e51ed60c786b2304e1}
+
+
+Definition at line 86 of file M\+P3\+Stream\+State.\+hh.
+
+
+
+Referenced by fr().
+
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!f\+Env@{f\+Env}}
+\index{f\+Env@{f\+Env}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{f\+Env}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usage\+Environment}\& M\+P3\+Stream\+State\+::f\+Env\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3StreamState_a7b0cde40919fa5b23a73180901386e77}
+
+
+Definition at line 76 of file M\+P3\+Stream\+State.\+hh.
+
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!f\+Fid@{f\+Fid}}
+\index{f\+Fid@{f\+Fid}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{f\+Fid}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ M\+P3\+Stream\+State\+::f\+Fid\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3StreamState_aa7a72431b551eb62fd4e2caf468ed887}
+
+
+Definition at line 77 of file M\+P3\+Stream\+State.\+hh.
+
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!f\+Fid\+Is\+Really\+A\+Socket@{f\+Fid\+Is\+Really\+A\+Socket}}
+\index{f\+Fid\+Is\+Really\+A\+Socket@{f\+Fid\+Is\+Really\+A\+Socket}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{f\+Fid\+Is\+Really\+A\+Socket}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P3\+Stream\+State\+::f\+Fid\+Is\+Really\+A\+Socket\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3StreamState_a6d4d85f05c3363006211e8891a3668f2}
+
+
+Definition at line 78 of file M\+P3\+Stream\+State.\+hh.
+
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!f\+File\+Size@{f\+File\+Size}}
+\index{f\+File\+Size@{f\+File\+Size}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{f\+File\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Stream\+State\+::f\+File\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3StreamState_a38ca872dbd8158b958a4abebbef28432}
+
+
+Definition at line 79 of file M\+P3\+Stream\+State.\+hh.
+
+
+
+Referenced by file\+Size().
+
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!f\+Has\+Xing\+T\+O\+C@{f\+Has\+Xing\+T\+O\+C}}
+\index{f\+Has\+Xing\+T\+O\+C@{f\+Has\+Xing\+T\+O\+C}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{f\+Has\+Xing\+T\+O\+C}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P3\+Stream\+State\+::f\+Has\+Xing\+T\+O\+C\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3StreamState_ab574a0acc2ae53a41a25975270b3e5ca}
+
+
+Definition at line 83 of file M\+P3\+Stream\+State.\+hh.
+
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!f\+Is\+V\+B\+R@{f\+Is\+V\+B\+R}}
+\index{f\+Is\+V\+B\+R@{f\+Is\+V\+B\+R}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{f\+Is\+V\+B\+R}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Boolean} M\+P3\+Stream\+State\+::f\+Is\+V\+B\+R\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3StreamState_af84e3e3d88d850e3c92d189b5877cb02}
+
+
+Definition at line 83 of file M\+P3\+Stream\+State.\+hh.
+
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!f\+Next\+Frame\+Presentation\+Time@{f\+Next\+Frame\+Presentation\+Time}}
+\index{f\+Next\+Frame\+Presentation\+Time@{f\+Next\+Frame\+Presentation\+Time}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{f\+Next\+Frame\+Presentation\+Time}]{\setlength{\rightskip}{0pt plus 5cm}struct timeval M\+P3\+Stream\+State\+::f\+Next\+Frame\+Presentation\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3StreamState_a8b309cf133bd702492481fb6219e21f7}
+
+
+Definition at line 87 of file M\+P3\+Stream\+State.\+hh.
+
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!f\+Num\+Frames\+In\+File@{f\+Num\+Frames\+In\+File}}
+\index{f\+Num\+Frames\+In\+File@{f\+Num\+Frames\+In\+File}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{f\+Num\+Frames\+In\+File}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Stream\+State\+::f\+Num\+Frames\+In\+File\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3StreamState_ab646f6745aaf08b0d47244f2314772e9}
+
+
+Definition at line 80 of file M\+P3\+Stream\+State.\+hh.
+
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!f\+Presentation\+Time\+Scale@{f\+Presentation\+Time\+Scale}}
+\index{f\+Presentation\+Time\+Scale@{f\+Presentation\+Time\+Scale}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{f\+Presentation\+Time\+Scale}]{\setlength{\rightskip}{0pt plus 5cm}unsigned M\+P3\+Stream\+State\+::f\+Presentation\+Time\+Scale\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3StreamState_a79470c07c24813f30050bf53c31ad68f}
+
+
+Definition at line 81 of file M\+P3\+Stream\+State.\+hh.
+
+
+
+Referenced by set\+Presentation\+Time\+Scale().
+
+\index{M\+P3\+Stream\+State@{M\+P3\+Stream\+State}!f\+Xing\+T\+O\+C@{f\+Xing\+T\+O\+C}}
+\index{f\+Xing\+T\+O\+C@{f\+Xing\+T\+O\+C}!M\+P3\+Stream\+State@{M\+P3\+Stream\+State}}
+\subsubsection[{f\+Xing\+T\+O\+C}]{\setlength{\rightskip}{0pt plus 5cm}u\+\_\+int8\+\_\+t M\+P3\+Stream\+State\+::f\+Xing\+T\+O\+C[{\bf X\+I\+N\+G\+\_\+\+T\+O\+C\+\_\+\+L\+E\+N\+G\+T\+H}]\hspace{0.3cm}{\ttfamily [private]}}\label{classMP3StreamState_a701a1980640845f9862aeb06b8a0372b}
+
+
+Definition at line 84 of file M\+P3\+Stream\+State.\+hh.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+live\+Media/{\bf M\+P3\+Stream\+State.\+hh}\end{DoxyCompactItemize}
